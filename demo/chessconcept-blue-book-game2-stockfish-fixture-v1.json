@@ -1,0 +1,35 @@
+{
+  "commentary_evidence": [],
+  "engine_evidence": [
+    {
+      "id": "stockfish-19-multipv-1",
+      "move_uci": "e5g6",
+      "score_cp": -110
+    },
+    {
+      "id": "stockfish-19-multipv-2",
+      "move_uci": "a8b8",
+      "score_cp": -112
+    }
+  ],
+  "fen": "r5k1/pppqbrpp/2bp1p2/4n3/3NP2B/2N4P/PPP1QPP1/3R1RK1 b - - 2 15",
+  "game_id": "blue-book-16377-2",
+  "legal_board_verified": true,
+  "legal_replay_hash": "5661e27ae560e4553048aa68a0325cf00b82b14e0eeef1c7b0f7b53c04112881",
+  "limitations": [
+    "This is a real historically played position with public-domain book commentary.",
+    "Engine evidence is added separately and explanation quality remains unevaluated.",
+    "Engine candidates are from Stockfish 19 receipt: artifacts/chessconcept-v1/blue-book-real-position-game2-stockfish-comparison.json",
+    "This is one real-source position; it is not calibration or training."
+  ],
+  "move_uci": "e5g6",
+  "position_id": "gutenberg-blue-book-16377/game-2/ply-30-stockfish-19",
+  "schema_version": "position-evidence/v1",
+  "source": {
+    "game_ref": "gutenberg-blue-book-16377/game-2/ply-30",
+    "license": "public-domain-USA",
+    "rights_status": "verified",
+    "source_id": "gutenberg-blue-book-16377"
+  },
+  "split": "dev"
+}

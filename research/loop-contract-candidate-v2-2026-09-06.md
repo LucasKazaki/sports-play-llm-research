@@ -1,0 +1,11 @@
+# Soccer loop contract v2 — proposed work
+
+Test grounded soccer QA/retrieval. SYSTEMS GO / SEMANTIC NO-GO remains; no novelty/performance/doctoral claim. Frozen protocols are unchanged.
+
+1. Company Runtime schedules three bounded lanes: evaluation, sources, coach/demo. Require one owner, input hashes, output, budget and acceptance check; avoid repeated inventories. Test/inference needs a scoped broker; current workers lack one.
+2. Freeze per-asset source URL/version, hash, original match identity, license record and permitted processing/sharing in an immutable manifest. Preserve acquisition gates. Preflight SoccerMaster encoder/head separately from annotation; public files/size prove neither GPU fit nor rights.
+3. Require two independent human annotators and an adjudicator. Freeze the guide; train on development examples; blind raters to model predictions/conditions and hide commentary. Retain labels/disagreements; report agreement. Label observable answerability and minimal evidence; invalid calibration cannot justify field labels.
+4. Freeze whole-original-match-disjoint train/dev/test manifests; keep halves, overlaps, replays and alternate encodes together. Choose match count by development-only clustered power/precision. Two-match diagnostics remain descriptive. Seal predictions before label access; test-based tuning requires a new test set.
+5. Before testing, preregister accepted-answer rules, time/field eligibility and scoring, answerability, exclusions and failures. Proposed primary success: correct answer AND eligible time/field evidence on answerable requests; abstentions/timeouts/malformed outputs fail. Coverage=answered/all eligible requests. Report answer/joint risk among answered items, null false acceptance and denominators. Freeze practical-effect/minimum-coverage targets and match-clustered interval method before test access; zero coverage is not success.
+6. Match model, frames, questions, decoding/seeds, token/call/time budgets, retries and tool limits. Compare direct, tools, temporal-only, field-only and equal-budget repeat calls; human-label corruption answerability; separate commentary. Record latency and accepted evidence per call.
+7. Check official SoccerMaster daily; unchanged checks are activity. Version candidates; Luna review/corrections then Terra inspection precede promotion and Doc science updates.

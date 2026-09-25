@@ -1,0 +1,13 @@
+{
+  "schema_version": "position-evidence/v1",
+  "position_id": "internal-synthetic-fixture-v1",
+  "game_id": "internal-synthetic-fixture-v1",
+  "split": "dev",
+  "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "move_uci": "e2e4",
+  "legal_replay_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "legal_board_verified": false,
+  "source": {"source_id": "internal-synthetic-fixture-v1", "game_ref": "not-a-game", "license": "not-applicable", "rights_status": "synthetic_fixture"},
+  "engine_evidence": [],
+  "commentary_evidence": []
+}

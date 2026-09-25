@@ -1,0 +1,24 @@
+{
+  "schema": "sportsplay-agent-studio-import/v1",
+  "projectId": "sports-play-llm",
+  "workspacePath": "C:/AI/projects/SportsPlayLLMResearch",
+  "sourceArchive": "C:/Users/kazak/Downloads/SportsPlay_Chess_Agent_Handoff.zip",
+  "importPath": "research/handoffs/sportsplay_chess_handoff",
+  "manifest": "MANIFEST.sha256",
+  "manifestVerified": true,
+  "fileCountVerified": 13,
+  "status": "private_local_mirror_pending_C00_runtime_registration",
+  "interpretation": {
+    "bundleIs": "A proposed chess-phase plan, task graph, protocol, source manifest, and evidence templates.",
+    "bundleIsNot": "Completed chess implementation, benchmark evidence, learner result, or proof that agents have access.",
+    "instructionAuthority": "Use as project context after C00 verification; project-local AGENTS.md and current Company Runtime receipts remain controlling."
+  },
+  "observedGitState": {
+    "branch": "master",
+    "commitCount": 0,
+    "originRemote": null,
+    "githubAccess": "not_verified",
+    "requiredNextCheck": "Obtain the exact repository URL or approved GitHub route before configuring a remote; do not invent or push."
+  },
+  "requiredNextAction": "Run C00 through the existing Company Runtime: verify workspace, active roster, authorized Drive/local read route, resource registration, and per-agent read receipts before admitting chess work."
+}

@@ -1,0 +1,15 @@
+{
+  "template": true,
+  "status": "PENDING",
+  "agent_id": null,
+  "project_id": "sports-play-llm",
+  "hub_document_id": "1YtB0K7W4aT5NE4c7N6738kxu6V0cUoMuhpDvzm8JsH8",
+  "handoff_document_id": "1_w_YCoTMQtP1Ni9Sj_m1bkLCp77Cf0HPPjhxUyCam3M",
+  "protocol_version": "1.0",
+  "read_at_utc": null,
+  "source_revision": null,
+  "mirror_sha256": null,
+  "requirements_understood": [],
+  "access_route": null,
+  "error": null
+}

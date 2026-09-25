@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed_context_manifest",
+  "project_id": "sports-play-llm",
+  "protocol_version": "1.0",
+  "visibility": "private_internal",
+  "runtime_registration_status": "PENDING_LOCAL_VERIFICATION",
+  "canonical_folder_id": "1-5txmUyMiTw-a2U8e3AEOKlBgeykPsGW",
+  "resources": [
+    {
+      "resource_key": "sportsplay.research.hub",
+      "document_id": "1YtB0K7W4aT5NE4c7N6738kxu6V0cUoMuhpDvzm8JsH8",
+      "url": "https://docs.google.com/document/d/1YtB0K7W4aT5NE4c7N6738kxu6V0cUoMuhpDvzm8JsH8/edit",
+      "role": "living_internal_decisions_and_evidence",
+      "mirror_path": "INTERNAL_HUB_SNAPSHOT.md",
+      "source_revision": "ANLCKQkkKAhS9dc-AWz1L4lU4vax3lgSb_h9v0n-Y4cvUeaamsdiQavQ8AZ_0QTVMbuHD0Mi3mtTqZgBRym87bEPmTDcnb0K0Yxd6AkCvlo",
+      "mirror_note": "Readable content snapshot; native smart links are represented as Markdown links. Compare canonical document revisions before reuse.",
+      "mirror_sha256": "7db6bfe3ad6531c7b55d6a38ca7e694f065b84fb2e04e10a99fd686961e0eb48"
+    },
+    {
+      "resource_key": "sportsplay.chess.handoff",
+      "document_id": "1_w_YCoTMQtP1Ni9Sj_m1bkLCp77Cf0HPPjhxUyCam3M",
+      "url": "https://docs.google.com/document/d/1_w_YCoTMQtP1Ni9Sj_m1bkLCp77Cf0HPPjhxUyCam3M/edit",
+      "role": "versioned_implementation_and_evaluation_protocol",
+      "mirror_path": "CHESS_PHASE_HANDOFF.md",
+      "source_revision": "ANLCKQm4oIGca81TUzIiqtLzLrbrInjHsWUjSFLuv2d9e7mGNfy8lRHuAHHm7IuWbfAzKR5smWX7lvCKTSvdvyDb1eAQbQxP23aOWShUEYw",
+      "mirror_note": "Same substantive protocol, Markdown serialization. Native styling and source-link formatting differ.",
+      "mirror_sha256": "3e65e9508ceacefb1c89ddc8c6f5edbee9861a9e98e30644feeccf119e55862c"
+    }
+  ],
+  "policy": {
+    "all_active_project_agents_must_read": true,
+    "future_agent_enrollment_read_test": true,
+    "normal_writer_role": "documentation_coordinator",
+    "worker_default": "read_only_context_with_append_only_update_proposals",
+    "public_sharing_allowed": false,
+    "collaborator_document_auto_updates_allowed": false,
+    "protected_test_labels_shared_with_builders": false,
+    "missing_drive_read_route": "Use this private local snapshot within the verified project workspace; do not change sharing or copy credentials."
+  },
+  "collaborator_document": {
+    "document_id": "1uUdenRhHnkKJQSQVH4ppDhSdTbrlLJafrAuiZMzKEjk",
+    "url": "https://docs.google.com/document/d/1uUdenRhHnkKJQSQVH4ppDhSdTbrlLJafrAuiZMzKEjk/edit",
+    "auto_edit": false,
+    "include_internal_links": false
+  },
+  "local_access_evidence": {
+    "agent_roster": null,
+    "read_receipts": [],
+    "status": "PENDING"
+  },
+  "live_execution_started_by_this_bundle": false
+}

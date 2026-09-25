@@ -1,0 +1,1 @@
+This is a controlled receipt-path regression and makes no semantic research claim.

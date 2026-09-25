@@ -1,0 +1,190 @@
+[
+  {
+    "id": "S01",
+    "links": [
+      {
+        "label": "Stockfish 19 release",
+        "url": "https://stockfishchess.org/blog/2026/stockfish-19/"
+      },
+      {
+        "label": "official downloads",
+        "url": "https://stockfishchess.org/download/"
+      }
+    ]
+  },
+  {
+    "id": "S02",
+    "links": [
+      {
+        "label": "Stockfish FAQ",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Stockfish-FAQ.html"
+      }
+    ]
+  },
+  {
+    "id": "S03",
+    "links": [
+      {
+        "label": "python-chess core documentation",
+        "url": "https://python-chess.readthedocs.io/en/latest/core.html"
+      }
+    ]
+  },
+  {
+    "id": "S04",
+    "links": [
+      {
+        "label": "python-chess PGN documentation",
+        "url": "https://python-chess.readthedocs.io/en/latest/pgn.html"
+      }
+    ]
+  },
+  {
+    "id": "S05",
+    "links": [
+      {
+        "label": "python-chess Syzygy documentation",
+        "url": "https://python-chess.readthedocs.io/en/latest/syzygy.html"
+      }
+    ]
+  },
+  {
+    "id": "S06",
+    "links": [
+      {
+        "label": "python-chess engine communication",
+        "url": "https://python-chess.readthedocs.io/en/latest/engine.html"
+      }
+    ]
+  },
+  {
+    "id": "S07",
+    "links": [
+      {
+        "label": "Lichess open database",
+        "url": "https://database.lichess.org/"
+      }
+    ]
+  },
+  {
+    "id": "S08",
+    "links": [
+      {
+        "label": "Chess.com Analysis board",
+        "url": "https://support.chess.com/en/articles/8583825-how-do-i-use-the-analysis-board"
+      }
+    ]
+  },
+  {
+    "id": "S09",
+    "links": [
+      {
+        "label": "Chess.com Game Review",
+        "url": "https://support.chess.com/en/articles/8584089-how-does-game-review-work"
+      }
+    ]
+  },
+  {
+    "id": "S10",
+    "links": [
+      {
+        "label": "Why Chess.com move classifications change",
+        "url": "https://support.chess.com/en/articles/11845102-why-did-my-move-classification-change-in-game-review"
+      },
+      {
+        "label": "Chess.com engine implementation",
+        "url": "https://support.chess.com/en/articles/9462780-how-do-the-chess-engines-on-chess-com-work"
+      }
+    ]
+  },
+  {
+    "id": "S11",
+    "links": [
+      {
+        "label": "Chess.com Published Data API",
+        "url": "https://support.chess.com/en/articles/9650547-what-is-the-pubapi-and-how-do-i-use-it"
+      }
+    ]
+  },
+  {
+    "id": "S12",
+    "links": [
+      {
+        "label": "Chess.com User Agreement",
+        "url": "https://www.chess.com/legal/user-agreement"
+      }
+    ]
+  },
+  {
+    "id": "S13",
+    "links": [
+      {
+        "label": "Chess.com Fair Play Policy",
+        "url": "https://www.chess.com/legal/fair-play"
+      }
+    ]
+  },
+  {
+    "id": "S14",
+    "links": [
+      {
+        "label": "Improving Chess Commentaries by Combining Language Models with Symbolic Reasoning Engines",
+        "url": "https://arxiv.org/abs/2212.08195"
+      }
+    ]
+  },
+  {
+    "id": "S15",
+    "links": [
+      {
+        "label": "Hallucinations on the Board: Tool-Augmented Evaluation of LLM Chess Commentary",
+        "url": "https://arxiv.org/abs/2608.04240"
+      }
+    ]
+  },
+  {
+    "id": "S16",
+    "links": [
+      {
+        "label": "python-chess SVG rendering",
+        "url": "https://python-chess.readthedocs.io/en/latest/svg.html"
+      }
+    ]
+  },
+  {
+    "id": "S17",
+    "links": [
+      {
+        "label": "python-chess repository and license",
+        "url": "https://github.com/niklasf/python-chess"
+      }
+    ]
+  },
+  {
+    "id": "S18",
+    "links": [
+      {
+        "label": "Stockfish useful data",
+        "url": "https://official-stockfish.github.io/docs/stockfish-wiki/Useful-data.html"
+      }
+    ]
+  },
+  {
+    "id": "S19",
+    "links": [
+      {
+        "label": "UMD Institutional Review Board",
+        "url": "https://research.umd.edu/resources/irb"
+      }
+    ]
+  },
+  {
+    "id": "S20",
+    "links": [
+      {
+        "label": "Stockfish repository and license",
+        "url": "https://github.com/official-stockfish/Stockfish"
+      }
+    ]
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "chess-real-claim-factuality-v1",
+      "title": "Reject false chess claims on actual development positions",
+      "instructions": "Read research/chess-factuality-experiment-2026-09-22.md and its independent review first. The typed adapter and finite496-claim experiment are implemented, native-tested and independently accepted; do not recreate them or rerun unchanged checks as new progress. The broader original factuality requirement remains open: implement scripts/chess_extended_claims.py and meaningful tests for square occupation and explicit variation-legality claims using the source-bound real development positions and candidate references. Preserve scripts/chess_typed_position_evidence.py and all historical receipts so their hashes remain valid. Legally replay every claimed move; distinguish a retained engine PV from an asserted legal variation. Start with failing cases for false occupancy, invalid/empty moves, foreign references, changed source and explicit unsupported strategy/teaching claims. Add labelled synthetic en-passant/castling/promotion fixtures only for missing edge coverage; never call these new real data. Then freeze a bounded new development-only control manifest and retain full denominators/failures, provenance and independent verification. No model/engine call or heldout scoring is needed for this finite source repair. Preserve original task/job/session/attempt history, project isolation, sibling ownership, user stop intent, existing scheduler and actual external/shareable gates. Work via the native executor and leave a concrete next unresolved requirement.",
+      "readPaths": [
+        "research/chess-factuality-experiment-2026-09-22.md",
+        "research/chess-claim-factuality-independent-review-2026-09-22.md",
+        "scripts/chess_typed_position_evidence.py",
+        "tests/test_chess_typed_position_evidence.py",
+        "scripts/chess_claim_factuality_experiment.py",
+        "tests/test_chess_claim_factuality_experiment.py",
+        "tests/test_chess_claim_factuality_independent.py",
+        "artifacts/chess-typed-position-evidence-v1/dev8-adapter-v1.json",
+        "artifacts/chess-counterfactual-v1/dev8-node100k-v3.json",
+        "scripts/chess_counterfactual_evidence.py",
+        "data/open/chess/lichess-real-seed-v1/dev-source-projection-v1.json"
+      ]
+    },
+    {
+      "id": "chess-real-explanation-comparison-v1",
+      "title": "Measure the configured local explanation model against real-board baselines",
+      "instructions": "Current user authority is continuous chess-first local research and implementation using real permitted data. Read the current program and actual source before dispatch. Ordinary local dependency setup and bounded public open-data acquisition are authorized; the historical GPL/local dependency HOLD is superseded. Preserve existing job identity and disjoint file ownership. Use the existing project executor and discovered local tool/model configuration; do not create a scheduler, replay a job, change hosted routing, spend, publish, contact people or ingest unlicensed creator content. No chess result establishes sports competence. Record actual commands, hashes, complete failures and acceptance evidence. After this packet, add a distinct useful successor; this long-term project stays active. Inspect the current sibling-owned chessconcept model adapter and its fresh raw receipts; coordinate ownership before editing that adapter, or use a new isolated experiment file. Freeze eight real development inputs and compare deterministic board facts, raw principal variation and the existing configured local text generator. At most eight new local generation calls, fixed prompt/schema/model identity and raw-output retention. Keep solutions/themes out of generation input unless a predeclared condition explicitly labels them as assistance. Score factual claims, reference validity, abstention, latency and failures with the validated evaluator where available; otherwise implement the small necessary evaluator first or select an independent ready packet. Human teaching usefulness stays NOT_MEASURED and does not block implementation. Never spend the held-out test set for prompt tuning; never replace a missing real input with a made-up board.",
+      "readPaths": [
+        "research/chess-autonomous-research-program-2026-09-18.md",
+        "data/open/chess/lichess-real-seed-v1/dev-source-projection-v1.json",
+        "scripts/chess_dev_projection.py",
+        "tests/test_chess_dev_projection.py",
+        "artifacts/autonomy-audit-20260918/lichess-development-baseline-v2.json",
+        "prototype/chess_concept_model.py",
+        "prototype/chess_concept_schema_validator.py"
+      ]
+    },
+    {
+      "id": "chess-real-evidence-interface-v1",
+      "title": "Show real boards, alternatives and claim evidence in a useful local interface",
+      "instructions": "Current user authority is continuous chess-first local research and implementation using real permitted data. Read the current program and actual source before dispatch. Ordinary local dependency setup and bounded public open-data acquisition are authorized; the historical GPL/local dependency HOLD is superseded. Preserve existing job identity and disjoint file ownership. Use the existing project executor and discovered local tool/model configuration; do not create a scheduler, replay a job, change hosted routing, spend, publish, contact people or ingest unlicensed creator content. No chess result establishes sports competence. Record actual commands, hashes, complete failures and acceptance evidence. After this packet, add a distinct useful successor; this long-term project stays active. Build or adapt an independently owned local view of the real Lichess development evidence, reusing the generated board report. Show source game, pre/post board, selected move, engine alternatives, checkable claims, uncertainty and actual limitations in plain language. Label deterministic templates and raw PVs explicitly; do not present engine text as a trained explanation. Coordinate before changing the sibling-owned existing demo. Avoid duplicate listeners: use a static artifact or a finite preview with shutdown, or the existing service owner. Verify legal board orientation, source/evidence links, failed-case rendering and honest sample counts. Retain screenshots/inspection receipts when browser access exists. The next packet should close a concrete usability or evidence gap found by inspection.",
+      "readPaths": [
+        "research/chess-factuality-experiment-2026-09-22.md",
+        "research/chess-claim-factuality-independent-review-2026-09-22.md",
+        "scripts/chess_real_data.py",
+        "tests/test_chess_real_data.py",
+        "scripts/chess_typed_position_evidence.py",
+        "scripts/chess_claim_factuality_experiment.py",
+        "artifacts/chess-typed-position-evidence-v1/dev8-adapter-v1.json",
+        "data/open/chess/lichess-real-seed-v1/dev-source-projection-v1.json",
+        "research/chess-autonomous-research-program-2026-09-18.md"
+      ]
+    },
+    {
+      "id": "chess-harder-real-corpus-protocol-v1",
+      "title": "Design and acquire a harder game-disjoint real chess development cohort",
+      "instructions": "Current user authority is continuous chess-first local research and implementation using real permitted data. Read the current program and actual source before dispatch. Ordinary local dependency setup and bounded public open-data acquisition are authorized; the historical GPL/local dependency HOLD is superseded. Preserve existing job identity and disjoint file ownership. Use the existing project executor and discovered local tool/model configuration; do not create a scheduler, replay a job, change hosted routing, spend, publish, contact people or ingest unlicensed creator content. No chess result establishes sports competence. Record actual commands, hashes, complete failures and acceptance evidence. After this packet, add a distinct useful successor; this long-term project stays active. The first eight development puzzles are solved at both 10k and 100k nodes, so do not repeat that passing canary as new progress. Inspect primary-source Lichess puzzle format/rights and the retained prefix. Predeclare a larger bounded rating/theme-stratified development cohort, maximum 240 positions and 8 MiB additional compressed acquisition, excluding every current game ID and position from the new cohort. Preserve genuine source rows, license/time/hash metadata and legal replay; report convenience/ordering bias rather than calling it representative. The original eight test cases remain unscored; their labels entered an independent reviewer's durable read context, so strict blindness is not established. Keep the original test items and labels out of future model inputs; use the full manifest only in native machine validation and game/position exclusion checks, without returning heldout details. Before engine/model work freeze the budget, strata, exact acceptance definitions and outcome accounting. If a download route fails, diagnose once and use an authorized alternate primary endpoint or retained bytes; do not invent inputs or stop all independent project work.",
+      "readPaths": [
+        "research/chess-autonomous-research-program-2026-09-18.md",
+        "data/open/chess/lichess-real-seed-v1/dev-source-projection-v1.json",
+        "scripts/chess_dev_projection.py",
+        "tests/test_chess_dev_projection.py",
+        "artifacts/autonomy-audit-20260918/lichess-development-baseline-v2.json",
+        "scripts/chess_real_data.py",
+        "data/open/chess/lichess-real-seed-v1/README.md"
+      ]
+    },
+    {
+      "id": "chess-commentary-no-forward-gate-v1",
+      "title": "Build and test a no-forward Stockfish chess-commentary candidate",
+      "dependsOn": [
+        "chess-real-claim-factuality-v1",
+        "chess-real-explanation-comparison-v1",
+        "chess-harder-real-corpus-protocol-v1"
+      ],
+      "instructions": "Read research/chess-commentary-capability-gate-v1.md first. The current chess_concept_model prompt exposes retained engine PVs, so it cannot meet the requested commentator constraint. Implement a separately versioned no-forward commentator packet and evaluator without changing historic receipt formats or sibling-owned legacy model files unless ownership is coordinated. The generator may see only the pre-move FEN, selected move, deterministic transition facts, typed engine observation and declared concept vocabulary; it must never receive pv_uci, a post-move FEN, solution/theme, reply sequence, human annotation or continuation-derived feature. Add fail-first tests for every forbidden field, provenance/hash binding, legal board claims, engine-reference attribution, strategic-claim uncertainty and abstention. Freeze a new game-disjoint heldout protocol before any quality result; do not use the historical eight test items as blind evidence. Run local implementation/tests through the native executor, retain raw packets and complete failures, and send the exact result to independent acceptance. Do not call the result professional-level or expand to other board games unless every condition in the gate document, including independent qualified review, is actually satisfied. A passing structural test is only a candidate capability, not a commentary-quality result.",
+      "readPaths": [
+        "research/chess-commentary-capability-gate-v1.md",
+        "prototype/chess_concept_model.py",
+        "prototype/chess_concept_schema_validator.py",
+        "scripts/chess_typed_position_evidence.py",
+        "scripts/chess_counterfactual_evidence.py",
+        "tests/test_chess_typed_position_evidence.py",
+        "research/chess-autonomous-research-program-2026-09-18.md"
+      ]
+    }
+  ]
+}

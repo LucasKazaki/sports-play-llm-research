@@ -1,0 +1,31 @@
+{
+  "schema_version": "playground-bounded-task-proposal-v1",
+  "project_id": "sports-play-llm",
+  "title": "Validate the frozen Archit candidate and create a finite review input",
+  "workdir": "C:/AI/projects/SportsPlayLLMResearch",
+  "capabilities_required": ["project_owned_terminal", "project_exact_file_create"],
+  "source_of_truth": "artifacts/demo-readiness-2026-09-06-v1/candidate-evidence-index.json",
+  "command": ".venv-soccernet/Scripts/python.exe prototype/verify_demo_candidate.py --index artifacts/demo-readiness-2026-09-06-v1/candidate-evidence-index.json --out artifacts/demo-readiness-2026-09-06-v1/runtime-revalidation.json",
+  "output_path": "artifacts/demo-readiness-2026-09-06-v1/runtime-revalidation.json",
+  "output_policy": "create_only; command refuses an existing output",
+  "required_output_schema": "playground-candidate-gate-v1",
+  "acceptance": {
+    "exit_code": 0,
+    "passed": true,
+    "rehearsal_check_count": 23,
+    "performance_claim_allowed": false,
+    "promotion_allowed": false,
+    "all_index_paths_exist_and_hash_match": true,
+    "all_candidate_local_links_are_hash_bound": true
+  },
+  "allowed_followup": {
+    "task": "Independent Luna review of the exact candidate, index, fresh validator output, and supplied receipts",
+    "review_model": "gpt-5.6-luna",
+    "review_has_tools": false,
+    "director_model": "gpt-5.6-terra",
+    "promotion": "Terra inspects candidate plus Luna verdict plus exact receipts before dispatching exact promotion edit"
+  },
+  "do_not_infer": ["filenames", "file existence", "unmeasured metrics", "model availability from a timestamp", "coach validation", "permission to share footage"],
+  "do_not_emit": ["placeholder prose", "generic progress memo", "invented evidence path", "self-promoted deliverable"],
+  "scope": "Concrete deterministic pre-review task; does not replace the separate local-model experiment or SoccerMaster source-refresh lanes"
+}

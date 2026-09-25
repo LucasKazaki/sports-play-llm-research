@@ -1,0 +1,100 @@
+{
+  "approvals": {
+    "computation": null,
+    "license": null,
+    "rights": null
+  },
+  "assets": {
+    "backbone": null,
+    "event_head": null,
+    "siglip_config": null,
+    "source_code": null
+  },
+  "normalization": null,
+  "official_entrypoint": null,
+  "ontology": {
+    "background_class": "not_verified",
+    "class_names": [],
+    "mapping_status": "unresolved",
+    "paper_class_count": 24,
+    "previous_loader_literal_count": 23,
+    "source_sha256": null
+  },
+  "schema_version": "playground-soccermaster-preflight-config-v1",
+  "scope": {
+    "checkpoint_hashes": {
+      "backbone": null,
+      "event_head": null
+    },
+    "component": "encoder_event_head",
+    "input_contract_sha256": null,
+    "max_gpu_memory_bytes": 8589934592,
+    "max_model_calls": 1,
+    "media_sha256": null,
+    "remote_processing": false,
+    "source_revision": "2e5619712d93f634b841aaf37231cd9fceb6b262",
+    "spend_usd": 0
+  },
+  "sources": [
+    {
+      "receipt": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-readme.txt.receipt.json",
+        "sha256": "0e1c2d5b44f6f32bcdb03f6bf1a489e98700fb0fac9d8aac6bac0db6612c0668"
+      },
+      "snapshot": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-readme.txt",
+        "sha256": "9924dafc723a6dd7899869c222922dcaadc3c790fa397d6f07d60cf2e9e7db67"
+      }
+    },
+    {
+      "receipt": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-github.txt.receipt.json",
+        "sha256": "523dac5d0e0487c2580231ea5dff04aef0a65504f9739072e3a15492f93179bf"
+      },
+      "snapshot": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-github.txt",
+        "sha256": "f76398bb20efbed11fff775a0bda393ab2ea40ef78d4978a16050a87ac02f3fd"
+      }
+    },
+    {
+      "receipt": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-hf-metadata.txt.receipt.json",
+        "sha256": "4b47e55d65054091291960d55beb43cf83f33fdb28bfe48881334e1f71be26f0"
+      },
+      "snapshot": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-hf-metadata.txt",
+        "sha256": "0487a2c0ea1ef66f133a972f2709449f348e311fdb062598ad384727ef5afc5f"
+      }
+    },
+    {
+      "receipt": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-hf-tree.txt.receipt.json",
+        "sha256": "0db1338a67407f8e0a53d575b50a1c9db47eae65a98901ff43a908ceeecd24d7"
+      },
+      "snapshot": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-hf-tree.txt",
+        "sha256": "7d710984130d79c484f197901ea779ecf8dbc94d11ad1d32b91999e34c72a63b"
+      }
+    },
+    {
+      "receipt": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-paper-v2.txt.receipt.json",
+        "sha256": "b41f9d775a9d8e4f71d35755ff02a627e8e92f9c6efbffeca36600cf7adb9cd4"
+      },
+      "snapshot": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-paper-v2.txt",
+        "sha256": "1419024634ee8d649d63726b416bf10c84737ebd6135330348550de3fcdd38c5"
+      }
+    },
+    {
+      "receipt": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-project.txt.receipt.json",
+        "sha256": "9b49df3fd1e872c56f17ea00111bea60dda7f82454a8ec9dadbb56a58f4976aa"
+      },
+      "snapshot": {
+        "path": "artifacts/research-loop-agenda-20260906/sources/soccermaster-project.txt",
+        "sha256": "1aa9355a96991cd6dc90e06707fc4b1245bb98e112b7f635b33dde3251e680a6"
+      }
+    }
+  ]
+}

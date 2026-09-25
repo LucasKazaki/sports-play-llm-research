@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://playground.local/schemas/output-v1.json",
+  "title": "PlayGround answer and evidence output v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "clip_id", "question_id", "answer", "confidence", "temporal_evidence_s", "spatial_evidence", "trajectory", "abstained", "abstention_reason"],
+  "properties": {
+    "schema_version": {"const": "playground-output-v1"},
+    "clip_id": {"type": "string", "minLength": 1},
+    "question_id": {"type": "string", "minLength": 1},
+    "answer": {"type": "string", "minLength": 1},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "temporal_evidence_s": {"type": "array", "prefixItems": [{"type": "number", "minimum": 0}, {"type": "number", "minimum": 0}], "minItems": 2, "maxItems": 2},
+    "spatial_evidence": {"type": "array", "items": {"type": "string", "minLength": 1}, "uniqueItems": true},
+    "trajectory": {"type": "array", "items": {"$ref": "#/$defs/evidencePoint"}},
+    "abstained": {"type": "boolean"},
+    "abstention_reason": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "evidencePoint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timestamp_s", "x_norm", "y_norm", "frame_sha256"],
+      "properties": {
+        "timestamp_s": {"type": "number", "minimum": 0},
+        "x_norm": {"type": "number", "minimum": 0, "maximum": 1},
+        "y_norm": {"type": "number", "minimum": 0, "maximum": 1},
+        "frame_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    }
+  }
+}

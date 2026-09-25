@@ -1,0 +1,22 @@
+You are analyzing one physically silent soccer broadcast video for a coach-search research benchmark.
+
+Opaque clip identifier: {{CLIP_ID}}
+
+Use only pixels and temporal order in the supplied video. Audio, commentary, captions, event labels, team sheets, filenames, match metadata, and outside knowledge are unavailable and must not be inferred. Do not invent a player name from team identity. Name a player only when the name is directly visible in the video; otherwise use a visible jersey number, role, or appearance-based anonymous reference and state the identity basis.
+
+Return one JSON object that exactly follows the supplied `playground-coach-event-report-v1` schema. Report zero or more evidence-supported, retrieval-worthy events over the whole clip—not merely one class. Useful events include ordinary possession actions and tactical patterns as well as restarts and officiating events: passes, long balls, crosses, carries, dribbles, receptions, turnovers, tackles, duels, press triggers, line breaks, overloads, transitions, fouls, cards, offsides, throw-ins, corners, free kicks, shots, saves, and goals.
+
+For every event:
+
+- give start, peak, and end times relative to the clip;
+- distinguish direct visual observation from inferred possession, intent, or outcome;
+- describe the primary actor and any secondary participants without unsupported identity claims;
+- describe ball action, origin/destination pitch regions, movement direction, ordered action sequence, tactical intent, outcome, and coaching relevance;
+- cite at least one timestamped visible observation;
+- mark whether the footage is live action, replay, a close-up/graphic, or genuinely uncertain;
+- list plausible alternatives and uncertainties;
+- abstain on the event when its core claim is not visually supported.
+
+Do not turn a replay, celebration, referee close-up, scoreboard, or broadcast graphic into a live event merely because it suggests one. Do not claim the ball crossed the goal line, a player was offside, contact was a foul, or a pass was completed unless the video supports that specific claim. If the clip does not support any retrieval-worthy event, return an empty `events` array and use report-level abstention. Confidence values are uncalibrated model self-reports and must remain between 0 and 1.
+
+Return JSON only. Do not wrap it in Markdown and do not add prose outside the object.

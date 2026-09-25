@@ -1,0 +1,117 @@
+{
+  "schema": "playground-general-video-intake-template/v1",
+  "status": "UNENROLLED_TEMPLATE",
+  "minimum_clips": 6,
+  "target_clips": 12,
+  "maximum_clips": 15,
+  "actual_enrolled_clips": 0,
+  "not_a_benchmark_manifest": true,
+  "semantic_validation": false,
+  "required_before_enrollment": [
+    "actual source bytes/hash and duration",
+    "source ownership and third-party-processor authorization",
+    "frozen labels hash, split/match IDs and overlap audit",
+    "independent human judgments/adjudication",
+    "physically silent condition",
+    "account-specific zero-spend evidence and runtime credential",
+    "exact requested/returned provider version"
+  ],
+  "slots": [
+    {
+      "slot_id": "target-01",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-02",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-03",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-04",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-05",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-06",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-07",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-08",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-09",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-10",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-11",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    },
+    {
+      "slot_id": "target-12",
+      "source_asset_sha256": null,
+      "original_match_id": null,
+      "rights_record_id": null,
+      "labels_sha256": null,
+      "status": "unassigned-awaiting-evidence"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "archive": {
+    "path": "pg16377-images-3.epub",
+    "sha256": "8d20f0aae573f5c5862ec49a03c1a1cd89c7675c24a38942ee18dce8c048c3d9"
+  },
+  "extraction": {
+    "comment_nodes": 230,
+    "games": 85,
+    "pgn": "annotated-games.pgn",
+    "synthetic": false
+  },
+  "schema_version": "real-chess-source-manifest/v1",
+  "source": {
+    "download": "https://www.gutenberg.org/ebooks/16377.epub3.images",
+    "ebook_id": 16377,
+    "origin": "https://www.gutenberg.org/ebooks/16377",
+    "rights": "public_domain_in_USA",
+    "scope": "real historically played illustrative games with embedded book commentary",
+    "title": "The Blue Book of Chess"
+  }
+}

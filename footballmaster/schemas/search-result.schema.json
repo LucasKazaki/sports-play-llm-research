@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "footballmaster-search-result-v1",
+  "type": "object",
+  "required": ["schema_version", "sport", "query", "index", "count", "results"],
+  "properties": {
+    "schema_version": {"const": "footballmaster-search-result-v1"},
+    "sport": {"const": "american_football"},
+    "query": {"type": "string", "minLength": 1},
+    "count": {"type": "integer", "minimum": 0},
+    "results": {"type": "array"}
+  },
+  "additionalProperties": false
+}
