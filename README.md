@@ -31,3 +31,7 @@ The no-forward commentary capability gate in `research/chess-commentary-capabili
 Use this repository for the maintained project index, approved source/docs, decisions, and reviewable evidence. Each sync must identify exact commits and paths, exclude protected/generated/private material, run the smallest applicable verification, and read back the exact remote commit. Do not rewrite history, merge over active local work, or treat a successful command as research validation.
 
 Until native Git access is restored, GitHub-side documentation may be visible here while local agents cannot fetch it; that is not real-time synchronization. See [issue #1](https://github.com/LucasKazaki/sports-play-llm-research/issues/1) for the access blocker.
+
+## Current GitHub mirror status
+
+This repository is still being bootstrapped. As of 2026-09-25, its GitHub branch contains this operational README only; the local research sources and engineering workspace have not been mirrored here. The Agent Studio workspace remains the active local project while native Git access is repaired. Do not describe this repository as a real-time mirror yet, and do not copy the dirty local tree through ad hoc file writes. Once repository-scoped native Git access is restored, synchronize approved paths through the existing review process and verify the exact remote commit.
