@@ -1,0 +1,55 @@
+{
+  "schema": "playground-evaluation-preregistration-v1",
+  "status": "frozen-before-eligible-real-data-or-model-evaluation",
+  "claimBoundary": "Protocol and synthetic scorer plumbing only; no real-data, model-performance, calibration, or deployment claim.",
+  "primaryCorrectnessTarget": "joint_grounded_correct",
+  "secondaryCorrectnessTarget": "answer_correct",
+  "jointGroundingThresholds": {
+    "temporalIoUMinimum": 0.5,
+    "pitchRegionF1Minimum": 0.5,
+    "trajectoryNormalizedADEMaximum": 0.1,
+    "trajectoryTimeToleranceSeconds": 0.5,
+    "trajectoryDistanceToleranceNormalized": 0.1,
+    "missingRequiredEvidencePasses": false
+  },
+  "selectivePrediction": {
+    "operationalConfidenceThreshold": 0.5,
+    "thresholdPurpose": "fixed interface-pilot operating point; not claimed optimal or deployable",
+    "explicitAbstentionsCovered": false,
+    "confidenceRule": "cover non-abstained predictions with confidence greater than or equal to the threshold",
+    "tieRule": "never split equal-confidence items",
+    "primaryEndpoint": "joint-grounded selective risk at operational coverage",
+    "secondaryEndpoints": [
+      "answer selective risk at operational coverage",
+      "complete tie-grouped risk-coverage curves",
+      "C@1%",
+      "C@5%",
+      "C@10%",
+      "AURC normalized over attained maximum coverage"
+    ]
+  },
+  "calibration": {
+    "binCount": 5,
+    "binning": "equal-width [low, high), with confidence 1.0 included in the last bin",
+    "population": "answered/non-explicitly-abstained items only",
+    "targets": ["answer_correct", "joint_grounded_correct"]
+  },
+  "uncertainty": {
+    "method": "95% percentile grouped bootstrap",
+    "groupField": "match_id",
+    "replicates": 1000,
+    "seed": 20260806,
+    "fallbackRule": "If fewer than 10 independent match groups are eligible, label intervals descriptive/feasibility-only; do not substitute item-wise resampling."
+  },
+  "eligibility": {
+    "requiresMetricEligibleFrameReview": true,
+    "requiresFrozenManifest": true,
+    "requiresIndependentSecondAnnotationAndAdjudication": true,
+    "ineligibleItemsExcludedFromPerformanceEndpoints": true
+  },
+  "implementation": {
+    "scorer": "prototype/sports_play_lab.py::score_benchmark",
+    "syntheticFixtureCommand": "python prototype/sports_play_lab.py score-fixture --out artifacts/scoring-fixture-v7",
+    "testCommand": "python -m pytest -q"
+  }
+}

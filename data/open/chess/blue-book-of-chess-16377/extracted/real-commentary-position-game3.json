@@ -1,0 +1,28 @@
+{
+  "commentary_evidence": [
+    {
+      "id": "blue-book-comment-1",
+      "source_ref": "gutenberg-blue-book-16377/game-3/ply-47",
+      "text": "This\nlooks promising, but does not turn out well. He had better, perhaps,\nhave played Rg6."
+    }
+  ],
+  "engine_evidence": [],
+  "fen": "r3n3/ppp2rpk/5q1p/5p2/2Q2N2/5P2/PPP2P2/1K1R2R1 w - - 6 24",
+  "game_id": "blue-book-16377-3",
+  "legal_board_verified": true,
+  "legal_replay_hash": "5cf5680108d213831996aed980f329fa6371b0db6655c4a425ac0247f62461c1",
+  "limitations": [
+    "This is a real historically played position with public-domain book commentary.",
+    "Engine evidence is added separately and explanation quality remains unevaluated."
+  ],
+  "move_uci": "f4h5",
+  "position_id": "gutenberg-blue-book-16377/game-3/ply-47",
+  "schema_version": "position-evidence/v1",
+  "source": {
+    "game_ref": "gutenberg-blue-book-16377/game-3/ply-47",
+    "license": "public-domain-USA",
+    "rights_status": "verified",
+    "source_id": "gutenberg-blue-book-16377"
+  },
+  "split": "dev"
+}

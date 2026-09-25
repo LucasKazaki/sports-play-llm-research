@@ -1,0 +1,48 @@
+# Private, access-controlled SoccerNet media and transient local environments.
+data/private/
+.venv-soccernet/
+
+# Large, lawfully acquired open-source media remain local. Keep small provenance,
+# split, and validation records versionable without ever staging the raw video.
+data/open/**/media/
+
+# Never persist dataset credentials or authorization screenshots in the project.
+*.secret
+*.credentials
+
+# Local persistent job logs, scratch and temporary files
+.agent-runtime/
+
+# Local Agent Studio state and disposable workspaces. These may contain raw
+# receipts, prompt material, local paths, or machine-specific runtime state.
+.agent/
+.codex-work/
+.venv*/
+node_modules/
+__pycache__/
+.pytest_cache/
+
+# Keep generated binaries, model weights, archives, and raw media out of the
+# source repository. Curated code, manifests, and provenance summaries remain
+# versionable through the guarded GitHub mirror audit.
+*.exe
+*.dll
+*.pdb
+*.gguf
+*.onnx
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.zip
+*.7z
+*.tar
+*.gz
+*.zst
+*.mp4
+*.mov
+*.mkv
+*.avi
+*.webm
+data/public/
+artifacts/

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://playground.local/schemas/annotations-v2.json",
+  "title": "PlayGround frozen annotation export v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "items"],
+  "properties": {
+    "schema_version": {"const": "playground-annotations-v2"},
+    "items": {"type": "array", "items": {"$ref": "#/$defs/item"}}
+  },
+  "$defs": {
+    "spatialValidity": {
+      "type": "object", "additionalProperties": false,
+      "required": ["spatial_evidence_usable", "camera_visibility", "calibration_validity", "ball_localization", "identity_resolution", "failure_reason_codes"],
+      "properties": {
+        "spatial_evidence_usable": {"type": "boolean"},
+        "camera_visibility": {"enum": ["in_view", "partially_out_of_view", "out_of_view", "unknown"]},
+        "calibration_validity": {"enum": ["valid", "insufficient_pitch_lines", "failed", "not_attempted", "unknown"]},
+        "ball_localization": {"enum": ["supported_ground_plane", "unsupported_airborne_3d", "not_required", "unknown"]},
+        "identity_resolution": {"enum": ["resolved", "unresolved", "not_required", "unknown"]},
+        "failure_reason_codes": {"type": "array", "uniqueItems": true, "items": {"enum": ["camera_out_of_view", "camera_partially_out_of_view", "insufficient_pitch_lines", "calibration_failed", "unsupported_airborne_ball_3d", "unresolved_identity"]}}
+      }
+    },
+    "trajectoryPoint": {
+      "type": "object", "additionalProperties": false,
+      "required": ["timestamp_s", "x_norm", "y_norm"],
+      "properties": {"timestamp_s": {"type": "number", "minimum": 0}, "x_norm": {"type": "number", "minimum": 0, "maximum": 1}, "y_norm": {"type": "number", "minimum": 0, "maximum": 1}}
+    },
+    "item": {
+      "type": "object", "additionalProperties": false,
+      "required": ["clip_id", "question_id", "clip_sha256", "duration_s", "question_type", "answerability", "canonical_answer", "accepted_aliases", "temporal_intervals", "spatial_regions", "trajectory", "trajectory_unavailable", "spatial_validity", "unanswerable_reason_code", "evidence_entities", "rationale_note"],
+      "properties": {
+        "clip_id": {"type": "string", "minLength": 1}, "question_id": {"type": "string", "minLength": 1},
+        "clip_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "duration_s": {"type": "number", "exclusiveMinimum": 0},
+        "question_type": {"type": "string", "minLength": 1}, "answerability": {"enum": ["answerable", "insufficient_visual_evidence", "invalid_question"]},
+        "canonical_answer": {"type": ["string", "null"]}, "accepted_aliases": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "temporal_intervals": {"type": "array", "items": {"type": "array", "prefixItems": [{"type": "number"}, {"type": "number"}], "minItems": 2, "maxItems": 2}},
+        "spatial_regions": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "trajectory": {"type": "array", "items": {"$ref": "#/$defs/trajectoryPoint"}},
+        "trajectory_unavailable": {"type": "boolean"}, "spatial_validity": {"$ref": "#/$defs/spatialValidity"},
+        "unanswerable_reason_code": {"type": ["string", "null"]}, "evidence_entities": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "rationale_note": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

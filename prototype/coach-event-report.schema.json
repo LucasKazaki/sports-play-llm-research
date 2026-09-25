@@ -1,0 +1,114 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://playground.local/schemas/coach-event-report-v1.json",
+  "title": "PlayGround coach-search event report v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "clip_id",
+    "video_condition",
+    "window_summary",
+    "dominant_phase",
+    "events",
+    "report_abstained",
+    "abstention_reason",
+    "overall_uncertainty",
+    "coverage_limit"
+  ],
+  "properties": {
+    "schema_version": {"const": "playground-coach-event-report-v1"},
+    "clip_id": {"type": "string", "minLength": 1},
+    "video_condition": {"const": "physically_silent_video_only"},
+    "window_summary": {"type": "string", "minLength": 1},
+    "dominant_phase": {
+      "enum": ["build_up", "progression", "final_third", "transition", "restart", "stoppage", "mixed", "unclear"]
+    },
+    "events": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {"$ref": "#/$defs/eventCard"}
+    },
+    "report_abstained": {"type": "boolean"},
+    "abstention_reason": {"type": ["string", "null"]},
+    "overall_uncertainty": {"type": "string", "minLength": 1},
+    "coverage_limit": {"type": "string", "minLength": 1}
+  },
+  "$defs": {
+    "participant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reference", "team_side", "role", "visible_jersey_number", "identity_basis", "action", "confidence"],
+      "properties": {
+        "reference": {"type": "string", "minLength": 1},
+        "team_side": {"enum": ["left_attacking", "right_attacking", "official", "unknown"]},
+        "role": {"type": "string", "minLength": 1},
+        "visible_jersey_number": {"type": ["string", "null"]},
+        "identity_basis": {"enum": ["visible_name_graphic", "visible_jersey_number", "role_or_position", "appearance_only", "unknown"]},
+        "action": {"type": "string", "minLength": 1},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    },
+    "possession": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["team_side", "state", "confidence", "visibility_limit"],
+      "properties": {
+        "team_side": {"enum": ["left_attacking", "right_attacking", "none", "unknown"]},
+        "state": {"enum": ["controlled", "contested", "loose", "out_of_play", "unknown"]},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "visibility_limit": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["timestamp_s", "visible_support"],
+      "properties": {
+        "timestamp_s": {"type": "number", "minimum": 0},
+        "visible_support": {"type": "string", "minLength": 1}
+      }
+    },
+    "eventCard": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "event_id", "event_type", "event_subtype", "start_s", "peak_s", "end_s",
+        "phase_of_play", "restart_context", "team_side", "primary_actor",
+        "secondary_participants", "ball_action", "possession", "origin_pitch_region",
+        "destination_pitch_region", "movement_direction", "action_sequence", "tactical_intent",
+        "outcome", "coach_relevance", "evidence", "replay_status", "alternatives",
+        "uncertainties", "confidence", "abstain", "abstention_reason"
+      ],
+      "properties": {
+        "event_id": {"type": "string", "pattern": "^e[0-9]{2,}$"},
+        "event_type": {"type": "string", "minLength": 1},
+        "event_subtype": {"type": ["string", "null"]},
+        "start_s": {"type": "number", "minimum": 0},
+        "peak_s": {"type": "number", "minimum": 0},
+        "end_s": {"type": "number", "minimum": 0},
+        "phase_of_play": {"enum": ["build_up", "progression", "final_third", "transition", "restart", "stoppage", "mixed", "unclear"]},
+        "restart_context": {"type": ["string", "null"]},
+        "team_side": {"enum": ["left_attacking", "right_attacking", "both_or_contested", "official", "unknown"]},
+        "primary_actor": {"$ref": "#/$defs/participant"},
+        "secondary_participants": {"type": "array", "maxItems": 12, "items": {"$ref": "#/$defs/participant"}},
+        "ball_action": {"type": "string", "minLength": 1},
+        "possession": {"$ref": "#/$defs/possession"},
+        "origin_pitch_region": {"type": ["string", "null"]},
+        "destination_pitch_region": {"type": ["string", "null"]},
+        "movement_direction": {"type": ["string", "null"]},
+        "action_sequence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "tactical_intent": {"type": "string", "minLength": 1},
+        "outcome": {"type": "string", "minLength": 1},
+        "coach_relevance": {"type": "string", "minLength": 1},
+        "evidence": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/evidence"}},
+        "replay_status": {"enum": ["live_main_camera", "replay", "closeup_or_graphic", "uncertain"]},
+        "alternatives": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "uncertainties": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+        "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+        "abstain": {"type": "boolean"},
+        "abstention_reason": {"type": ["string", "null"]}
+      }
+    }
+  }
+}

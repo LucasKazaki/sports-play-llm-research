@@ -1,0 +1,19 @@
+{
+  "template": true,
+  "status": "NOT_RUN",
+  "protocol_version": "1.0",
+  "protocol_sha256": null,
+  "data_manifest_sha256": null,
+  "run_ids": [],
+  "requested_cases": null,
+  "completed_cases": null,
+  "failed_cases": null,
+  "primary_contrast": null,
+  "effect_estimate": null,
+  "confidence_interval": null,
+  "condition_metrics": [],
+  "software_gate_results": [],
+  "human_study_status": "NOT_RUN",
+  "claims": [],
+  "limitations": []
+}

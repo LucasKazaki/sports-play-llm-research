@@ -1,0 +1,22 @@
+{
+  "schema_version": "position-evidence/v1",
+  "position_id": "synthetic-contract-e2e4-v1",
+  "game_id": "synthetic-contract-fixture",
+  "split": "dev",
+  "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "move_uci": "e2e4",
+  "legal_replay_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "legal_board_verified": true,
+  "source": {
+    "source_id": "synthetic-contract-fixture",
+    "game_ref": "not-a-recorded-game",
+    "license": "CC0-1.0",
+    "rights_status": "verified"
+  },
+  "engine_evidence": [
+    {"id": "fixture-best", "move_uci": "e2e4", "score_cp": 20},
+    {"id": "fixture-alt", "move_uci": "d2d4", "score_cp": 12}
+  ],
+  "commentary_evidence": [],
+  "limitations": ["Synthetic contract fixture only; its candidate values are not an engine receipt."]
+}

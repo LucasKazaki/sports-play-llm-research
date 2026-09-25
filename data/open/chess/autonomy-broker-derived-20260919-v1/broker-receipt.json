@@ -1,0 +1,45 @@
+{
+  "schema": "project-public-data-acquisition/v1",
+  "status": "fetched",
+  "fetched": true,
+  "source": "lichess-puzzle-prefix",
+  "target": "data/open/chess/autonomy-broker-20260919-v1",
+  "synthetic": false,
+  "fullArchive": false,
+  "retrievedAt": "2026-09-19T04:39:15.501Z",
+  "timeoutMs": 60000,
+  "license": {
+    "spdx": "CC0-1.0",
+    "evidenceFile": "source-page.html",
+    "marker": "cc0"
+  },
+  "page": {
+    "url": "https://database.lichess.org/",
+    "file": "source-page.html",
+    "status": 200,
+    "bytes": 470282,
+    "sha256": "af8744cfbea38c1b571458796dbbeac9196845e3067fc172599fc86bb3021f08",
+    "headers": {
+      "etag": "\"6aa2a8fa-72d0a\"",
+      "lastModified": "Thu, 10 Sep 2026 12:56:26 GMT",
+      "contentType": "text/html",
+      "contentRange": null,
+      "contentLength": "470282"
+    }
+  },
+  "prefix": {
+    "url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+    "file": "puzzles.csv.zst.part",
+    "status": 206,
+    "bytes": 262144,
+    "sha256": "3073da1cd408f4686efe633be9c745b8cd3d54a3feedb963fea35ffa39e2ad9f",
+    "requestedMaxBytes": 262144,
+    "headers": {
+      "etag": "\"6aa199fe-12253910\"",
+      "lastModified": "Wed, 09 Sep 2026 17:40:14 GMT",
+      "contentType": "application/octet-stream",
+      "contentRange": "bytes 0-262143/304429328",
+      "contentLength": "262144"
+    }
+  }
+}

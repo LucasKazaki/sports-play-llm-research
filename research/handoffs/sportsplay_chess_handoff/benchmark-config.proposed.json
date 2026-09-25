@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0",
+  "status": "PROPOSED_NOT_RUN",
+  "seed": 20260914,
+  "ruleset": "standard chess; declare draw/history semantics",
+  "engine": {
+    "name": "Stockfish",
+    "initial_version": "19",
+    "binary_sha256": null,
+    "network_sha256": null,
+    "threads_per_case": 1,
+    "hash_mib": 256,
+    "base_nodes_per_root": 2000000,
+    "adjudication_nodes_per_root": 8000000,
+    "reset_hash_between_independent_cases": true,
+    "limit_strength": false,
+    "score_pov": "original mover",
+    "near_tie_cp": 25,
+    "review_candidate_loss_cp": 100
+  },
+  "datasets": {
+    "development_positions": 120,
+    "development_min_groups": 40,
+    "validation_positions": 80,
+    "validation_min_groups": 25,
+    "test_positions": 200,
+    "test_min_groups": 80,
+    "test_strata": {
+      "tactical": 80,
+      "quiet": 60,
+      "covered_endgame": 40,
+      "history_sensitive": 20
+    },
+    "retrieval_questions": 60,
+    "chesscom_comparison_cases": 30,
+    "visual_conditions_per_test_position": 4,
+    "replay_clips": 40,
+    "replay_min_groups": 20
+  },
+  "experiment": {
+    "conditions": [
+      "A0_templates",
+      "A1_llm_only",
+      "A2_tools",
+      "A3_tools_and_verification",
+      "V2_recovered_state_tools",
+      "V3_recovered_state_verified"
+    ],
+    "primary_contrast": [
+      "A3_tools_and_verification",
+      "A2_tools"
+    ],
+    "primary_metric": "user-visible factual assertion error rate, paired with answer and idea coverage",
+    "cluster": "game_or_scenario_family",
+    "bootstrap_resamples": 2000,
+    "max_repairs": 1,
+    "final_test_state": "NOT_RUN",
+    "model_id": null,
+    "model_config_sha256": null,
+    "protocol_sha256": null
+  },
+  "resources": {
+    "initial_gpu_inference_workers": 1,
+    "paid_api_budget_usd": 0,
+    "download_budget_bytes": null,
+    "note": "Measure downloads and obtain project-scoped approval for large transfers. No automatic purchases."
+  }
+}

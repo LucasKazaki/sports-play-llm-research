@@ -1,0 +1,85 @@
+{
+  "schema": "coach-query-design-cases/v1",
+  "status": "internal_query_design_unreviewed",
+  "scientific_validation": false,
+  "experiment_executed": false,
+  "frozen_for_evaluation": false,
+  "cases": [
+    {
+      "id": "visible_event",
+      "humanQuestion": "Show the pass received inside the penalty area.",
+      "plannedCondition": "Future permitted clip with independently labelled visible pass reception and eligible pitch evidence.",
+      "judgmentPrerequisites": [
+        "Permitted asset and immutable source/rights manifest",
+        "Original-match-disjoint train/dev/test audit",
+        "Two independent human annotators, adjudication and blinded guide",
+        "Independent answerability, event identity and time/field eligibility labels",
+        "Preregistered failures/denominators, numeric criteria and matched budgets before test access"
+      ],
+      "conditionalHandlingRule": "Retrieve the matching time evidence; use a field label only if calibration and annotation establish eligibility. Abstain if the available evidence is insufficient.",
+      "mediaBinding": null,
+      "goldAnswer": null
+    },
+    {
+      "id": "absent_event",
+      "humanQuestion": "Show the first shot on goal.",
+      "plannedCondition": "Future permitted clip independently labelled as containing no event satisfying this query.",
+      "judgmentPrerequisites": [
+        "Permitted asset and immutable source/rights manifest",
+        "Original-match-disjoint train/dev/test audit",
+        "Two independent human annotators, adjudication and blinded guide",
+        "Independent answerability, event identity and time/field eligibility labels",
+        "Preregistered failures/denominators, numeric criteria and matched budgets before test access"
+      ],
+      "conditionalHandlingRule": "Reject the absent requested event without inventing a retrieval match. Human absence labels are a prerequisite, not supplied by this design.",
+      "mediaBinding": null,
+      "goldAnswer": null
+    },
+    {
+      "id": "repeated_event",
+      "humanQuestion": "Show the second corner delivery.",
+      "plannedCondition": "Future permitted clip with at least two independently labelled corner deliveries.",
+      "judgmentPrerequisites": [
+        "Permitted asset and immutable source/rights manifest",
+        "Original-match-disjoint train/dev/test audit",
+        "Two independent human annotators, adjudication and blinded guide",
+        "Independent answerability, event identity and time/field eligibility labels",
+        "Preregistered failures/denominators, numeric criteria and matched budgets before test access"
+      ],
+      "conditionalHandlingRule": "Disambiguate the requested occurrence using labelled temporal order; do not return the first matching event merely because it is similar.",
+      "mediaBinding": null,
+      "goldAnswer": null
+    },
+    {
+      "id": "distractor",
+      "humanQuestion": "Show the through pass, excluding the nearby unrelated pass.",
+      "plannedCondition": "Future permitted clip containing independently labelled target and distractor events distinguished under a frozen guide.",
+      "judgmentPrerequisites": [
+        "Permitted asset and immutable source/rights manifest",
+        "Original-match-disjoint train/dev/test audit",
+        "Two independent human annotators, adjudication and blinded guide",
+        "Independent answerability, event identity and time/field eligibility labels",
+        "Preregistered failures/denominators, numeric criteria and matched budgets before test access"
+      ],
+      "conditionalHandlingRule": "Bind retrieval to the requested target and evidence; avoid inferring intent or adding an unsupported event identity.",
+      "mediaBinding": null,
+      "goldAnswer": null
+    },
+    {
+      "id": "insufficient_view",
+      "humanQuestion": "Who controls the ball during the occluded moment?",
+      "plannedCondition": "Future permitted clip independently labelled unanswerable for possession during the selected occlusion.",
+      "judgmentPrerequisites": [
+        "Permitted asset and immutable source/rights manifest",
+        "Original-match-disjoint train/dev/test audit",
+        "Two independent human annotators, adjudication and blinded guide",
+        "Independent answerability, event identity and time/field eligibility labels",
+        "Preregistered failures/denominators, numeric criteria and matched budgets before test access"
+      ],
+      "conditionalHandlingRule": "Permit system abstention when observable evidence is insufficient; do not infer hidden possession from commentary or an unsupported continuation.",
+      "mediaBinding": null,
+      "goldAnswer": null
+    }
+  ],
+  "note": "Internal proposed query designs only. No media bindings, human labels, scientific results, frozen evaluation protocol or coach outcomes exist in this fixture."
+}

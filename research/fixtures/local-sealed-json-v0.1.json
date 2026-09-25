@@ -1,0 +1,14 @@
+{
+  "id": "123e4567-e89b-12d3-a456-426614174000",
+  "sport": "soccer",
+  "description": "Synthetic kickoff event with no real footage.",
+  "provenance": {
+    "source": "synthetic generation",
+    "generatedAt": "2026-09-03T00:00:00Z"
+  },
+  "rights": "CC0-1.0",
+  "abstention": false,
+  "videoBinding": {
+    "url": "https://example.com/video.mp4"
+  }
+}
