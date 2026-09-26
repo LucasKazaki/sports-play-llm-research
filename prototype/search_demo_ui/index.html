@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102027">
+  <title>PlayGround · Evidence-first Match Search</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to search</a>
+  <header class="topbar">
+    <a class="brand" href="#mainContent" aria-label="PlayGround coach search home">
+      <span class="mark" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span><strong>PlayGround</strong><small>COACH SEARCH LAB</small></span>
+    </a>
+    <nav class="sport-switch" aria-label="Choose sport">
+      <button type="button" data-sport="soccer" aria-pressed="true"><span aria-hidden="true">●</span> Soccer</button>
+      <button type="button" data-sport="football" aria-pressed="false"><span aria-hidden="true">◆</span> American football</button>
+    </nav>
+    <div class="top-status">
+      <span id="systemStatus" class="status-chip go"><b></b>SYSTEMS GO</span>
+      <span id="claimStatus" class="status-chip nogo"><b></b>SEMANTIC NO-GO</span>
+      <span class="privacy">● LOCAL / PRIVATE</span>
+    </div>
+  </header>
+
+  <section id="warningBar" class="warning" role="status" aria-live="polite">
+    <span class="warning-icon" aria-hidden="true">!</span>
+    <div><strong id="warningTitle">FULL-GAME INDEX · SEMANTIC NO-GO</strong><span id="warningText">The search system is operational; its saved event claims are not reliable enough for coaching use.</span></div>
+    <button id="auditJump" type="button">See held-out audit ↓</button>
+  </section>
+
+  <main id="mainContent">
+    <section class="hero">
+      <div id="sportEyebrow" class="eyebrow"><span></span> SOCCER · NATURAL-LANGUAGE VIDEO RETRIEVAL</div>
+      <div class="hero-row">
+        <div>
+          <h1 id="heroTitle">Search a report.<br><em>Verify the footage.</em></h1>
+          <p id="heroCopy">Use this interface to trace retrieval and inspect source evidence. It is a research demonstrator, not a decision system.</p>
+        </div>
+        <div class="scope-card">
+          <span id="scopeLabel">COMPLETE HELD-OUT MATCH</span>
+          <strong><b id="windowCount">—</b> <span id="windowNoun">real window</span> · <b id="duration">—</b>&nbsp;<span id="durationUnit">s</span></strong>
+          <small id="matchId">LOADING LOCAL INDEX</small>
+        </div>
+      </div>
+      <form id="searchForm" class="search-box">
+        <span class="search-icon" aria-hidden="true"></span>
+        <label class="sr-only" for="queryInput">Coach search query</label>
+        <input id="queryInput" name="coach_query" maxlength="500" autocomplete="off" enterkeyhint="search" spellcheck="true" value="Find through balls into the attacking third" placeholder="e.g. Find through balls into the attacking third…">
+        <button id="searchButton" type="submit"><span id="searchButtonLabel">Search sealed reports</span><i aria-hidden="true">↗</i></button>
+      </form>
+      <div id="suggestions" class="suggestions" aria-label="Suggested searches"><span>TRY</span></div>
+      <div id="provenanceStrip" class="provenance-strip" role="status" aria-live="polite"></div>
+      <p id="participantCapabilityNote" class="fine-print">Player and kit words are text hints, not identity filters. This demo cannot restrict results to one player.</p>
+    </section>
+
+    <section id="researchStatus" class="research-status" aria-labelledby="researchStatusTitle">
+      <div class="research-heading">
+        <span id="researchKicker" class="kicker">RESEARCH RECORD · READ BEFORE INTERPRETING A HIT</span>
+        <h2 id="researchStatusTitle">What this demo can prove today</h2>
+        <p id="researchSummary">Loading the current research boundary…</p>
+      </div>
+      <dl id="researchFacts" class="research-facts" aria-label="Research evidence summary"></dl>
+      <aside class="research-limit" aria-labelledby="researchLimitTitle">
+        <div>
+          <span>DECISION BOUNDARY</span>
+          <h3 id="researchLimitTitle">A retrieval hit is not a verified play.</h3>
+          <p id="researchLimitCopy" aria-live="polite">Loading the current claim limit…</p>
+        </div>
+        <div class="research-actions">
+          <button id="researchAuditJump" type="button">Review Held-Out Audit <span aria-hidden="true">↓</span></button>
+          <button id="researchPipelineJump" type="button">Inspect Method <span aria-hidden="true">→</span></button>
+        </div>
+      </aside>
+    </section>
+
+    <section class="workspace">
+      <div class="results-column">
+        <div class="section-heading">
+          <div><span class="kicker">RETRIEVAL RESULTS</span><h2 id="resultTitle">Ready to search</h2></div>
+          <span id="resultCount" class="count">—</span>
+        </div>
+        <div id="loading" class="loading hidden" role="status" aria-live="polite"><div></div><span id="loadingText">Searching the sealed report index…</span></div>
+        <div id="emptyState" class="empty-state">
+          <span class="empty-play" aria-hidden="true">▶</span>
+          <h3>The demo is loaded.</h3>
+          <p>Run a suggested query to inspect the retrieval plan, untrusted VLM report matches, and playable source evidence.</p>
+        </div>
+        <div id="results" class="results" aria-live="polite"></div>
+      </div>
+
+      <aside class="evidence-column">
+        <div class="panel video-panel">
+          <div class="panel-title"><div><span class="live-dot"></span><strong id="videoSourceTitle">AUTHORIZED SOCCERNET FOOTAGE</strong></div><span id="videoInputLabel">8–16 SILENT FRAMES / WINDOW</span></div>
+          <div class="video-wrap">
+            <video id="reviewVideo" controls preload="metadata" playsinline aria-label="Selected evidence clip" aria-describedby="videoFinePrint"></video>
+            <div class="video-overlay"><span id="videoClock">SELECT A RESULT</span><span id="videoRightsLabel">PRIVATE REVIEW COPY</span></div>
+          </div>
+          <div id="eventMarkers" class="event-markers"></div>
+          <p id="videoFinePrint" class="fine-print">Playback is local. Audio was not supplied to the visual model.</p>
+        </div>
+
+        <div class="panel plan-panel" id="planPanel">
+          <div class="panel-title"><strong>QUERY PLANNER TRACE</strong><span id="modelState" class="model-state">CHECKING…</span></div>
+          <div id="planEmpty" class="plan-empty">Run a search to reveal exactly how this session interpreted your words.</div>
+          <div id="planContent" class="hidden">
+            <p id="intent" class="intent"></p>
+            <div class="plan-grid">
+              <div><span>EVENT FILTERS</span><div id="eventFilters" class="tokens"></div></div>
+              <div><span>SEARCH TERMS</span><div id="searchTerms" class="tokens"></div></div>
+              <div><span>PLAYER / ROLE</span><div id="participantTerms" class="tokens"></div></div>
+              <div><span>SPACE + PHASE</span><div id="spaceTerms" class="tokens"></div></div>
+            </div>
+            <p id="planExplanation" class="plan-explanation"></p>
+            <div class="trace-meta"><span id="traceSource"></span><span id="traceModel"></span><span id="traceLatency"></span></div>
+            <details><summary>Raw model interpretation</summary><pre id="rawTrace"></pre></details>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="audit" class="audit-section" aria-labelledby="auditTitle">
+      <div class="audit-copy">
+        <span id="auditKicker" class="kicker">POST-HOC ERROR AUDIT · NEVER SENT TO QUERY LLM</span>
+        <h2 id="auditTitle">Full-game indexing ran. Semantics did not pass.</h2>
+        <p id="auditCopy">The sealed index covers both complete halves, but post-seal labels and direct frame review show that detailed VLM claims are not reliable enough for coaching decisions.</p>
+      </div>
+      <div id="auditCards" class="audit-cards"></div>
+    </section>
+
+    <section id="method" class="pipeline" aria-labelledby="methodTitle">
+      <span class="kicker">WHAT HAPPENS ON THE BACKEND</span>
+      <h2 id="methodTitle" class="sr-only">Method and semantic boundary</h2>
+      <div class="pipeline-flow" id="pipelineFlow"></div>
+      <p id="semanticBoundary"><strong>Semantic boundary:</strong> the video VLM writes soccer event claims; the query LLM interprets the coach’s request. Ordinary code validates, stores, ranks, and serves evidence.</p>
+    </section>
+  </main>
+
+  <footer><span>PlayGround research prototype · local loopback only</span><span id="footerRights">Real SoccerNet footage · non-commercial research · do not redistribute</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+# Real-board factuality experiment — 22 September 2026
+
+Internal implementation evidence and next work; no shareable promotion or project completion.
+
+## Accepted finite increment
+
+The typed adapter already existed and was independently accepted at10:12UTC. This check implemented scripts/chess_claim_factuality_experiment.py, its20 tests and6 independent tests. Native red taskd7587079-20e0-468f-bbe3-f1081ba24da1 proved the absent module. Initial green task130d755e-02ed-4d71-8276-79f9b72d7f88 caught duplicate foreign-reference probe IDs. Corrected task2f0d88b5-1206-4496-8656-9f2a08db0486 retains both origin and submitted identities and passed55 focused tests. Every failure remains in its original task/job.
+
+The frozen manifest artifacts/chess-claim-factuality-v1/dev8-claims-v1.json SHA256790d1a92672483f5aee39bee645621c9796c2c99a7a1ffcfbfdfd492b00e9c79 precedes the measured report artifacts/chess-claim-factuality-v1/dev8-results-v1.json SHA2566903c0bdbc3e829df9a7b2c326704e6d28a3f11d63d78dc801d6925ecb2aed13. 272/272 supported controls accepted, 0/224 false/foreign/unsupported controls falsely accepted. The deliberately weak reference-only control accepted 192/224 negative probes. All496 requests completed; failures0. Aggregate per-claim validation time38.942 seconds includes complete input validation each time.
+
+Native full verification taskca09133f-d770-4ae4-bd4e-43d4bbe0325b, run0075ea3a-3ec9-46a8-bada-651fb9a0ea7f, job20aefb9f-540e-46d0-ac7d-34dbc57f9768, receiptSHA25691f1469d557bdf0144329f76e176895d2ae80be9c69fce78c7e2070a925120a6. Required doctor, reproduction, log collection, full verification, synthetic smoke and reset preview completed in that job. Exact full counts and caveats: [independent review](chess-claim-factuality-independent-review-2026-09-22.md). The experiment verification replayed496 recorded decisions; no model or engine was called and no heldout outcome scored.
+
+## Data and scientific boundary
+
+The same8 real Lichess development positions and16 original legal candidate observations are reused. Original v3SHA256a4a7e47533797e2cc08ca6d2fdefedfe2cb008d09f6bf1056d6aa421630f03e6, typed packetSHA2567743b9fac58695a99cee8f5918e0ca6225909c1750658fc60e34c57f42a9bd0c and source projectionSHA256946754a1d52723786aaa4b63a60b5d499a9cc06470eac43a25601ea1da6e6316 remain unchanged. The manifest stores original game URLs and development partition, actual claim/candidate identities, derivations and complete outcomes.256 supported board-transition fields and16 typed engine observations are controls;224 deliberate mutations/foreign references/unsupported claims are synthetic error probes on real boards. These correlated software controls do not measure human claims, independent chess truth, a learned explanation model or sports competence. Exact engine observations retain cp/mate, direction, perspective and bound qualifications.
+
+Primary implementation reference: https://python-chess.readthedocs.io/en/latest/core.html . Board.push alone is not a legality check; use the existing explicit is_valid/legal_moves validation before replay. This informed reuse of source-validated legal transitions, not invented annotations. The fixed reference-only comparison intentionally ignores claim truth; it is neither a model nor a competitive scientific baseline.
+
+## Actual remaining requirements
+
+The broader existing chess-real-claim-factuality-v1 item remains open. Add an independently owned scripts/chess_extended_claims.py and tests for square occupation and explicit variation-legality claims, preserving the accepted adapter and historical receipt bytes. Require current source-bound position/candidate references; legally replay every asserted move, distinguish retained engine PV from an independently asserted legal line, and test invalid/empty moves, foreign identities, occupancy errors and en-passant/castling/promotion edge cases as labelled synthetic fixtures where real coverage is absent. Freeze a new bounded development experiment only after red/green tests; do not rerun this unchanged496-case result as new work.
+
+The existing interface item also remains unmet: the unchanged old HTML only shows a pre-move board and raw baseline runs. It lacks post-move display, typed candidate/claim dispositions and readable uncertainty/failures. Its previous runtime acceptance0485c1ba-d57b-4f86-837b-20dc21f06232 was disputed by direct source/artifact inspection; Studio's new guard rejects the exact report-only claim without rewriting that record. Implement the actual interface in an independently owned new module/template or coordinate existing prototype ownership. Existing explanation-comparison and harder-corpus requirements remain separate.
+
+## Agenda preservation
+
+research/history/GOAL_WORK-before-20260922T1438Z.json preserves the exact pre-edit agenda SHA2567446bd21e6f792912170ab4a0005c5801d7272fc50a3fe3f2ff5ce69e125b6fa. Only the genuinely closed typed-adapter item chess-real-counterfactual-evidence-v1 is retired from the active file, using its prior independent source/native acceptance, not a fabricated Company completion marker. All original tasks/jobs/sessions/attempts and their IDs remain unchanged. The factuality ID keeps its residual scope and new source/evidence; other original IDs stay. No budgets are reset or failed jobs replayed. The local research mission continues through the existing Company scheduler, with independent review, sibling ownership, user stop intent and all real external-action/Luna→Terra shareable gates preserved.

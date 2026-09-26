@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "footballmaster-pilot-model-card-v1",
+  "type": "object",
+  "required": [
+    "schema_version", "generation_id", "model_name", "sport", "architecture_scope",
+    "actual_trained_parameters", "checkpoint_sha256", "config_sha256", "metrics_sha256",
+    "predictions_sha256", "training_log_sha256", "evaluated_target", "limitations",
+    "intended_use", "prohibited_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "footballmaster-pilot-model-card-v1"},
+    "sport": {"const": "american_football"},
+    "architecture_scope": {"const": "football_only"},
+    "actual_trained_parameters": {"const": true},
+    "evaluated_target": {"const": "is_touchdown"}
+  },
+  "additionalProperties": true
+}

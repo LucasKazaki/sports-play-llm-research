@@ -1,0 +1,22 @@
+{
+  "template": true,
+  "case_id": null,
+  "game_id": null,
+  "ply": null,
+  "fen": null,
+  "history_sha256": null,
+  "completed_game": null,
+  "surface": "Analysis_or_Game_Review",
+  "observed_at_utc": null,
+  "visible_engine": null,
+  "visible_strength_or_depth": null,
+  "platform_move_label": null,
+  "platform_eval_type": null,
+  "platform_eval_value": null,
+  "platform_eval_pov": null,
+  "local_reference_receipt": null,
+  "agreement_status": "NOT_RUN",
+  "discrepancy_explanation": null,
+  "access_limitation": null,
+  "redistribution_permission": false
+}

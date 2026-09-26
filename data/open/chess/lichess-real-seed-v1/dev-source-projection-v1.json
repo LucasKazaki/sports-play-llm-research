@@ -1,0 +1,108 @@
+{
+  "boundaries": [
+    "Verified real development source only; no synthetic replacement positions.",
+    "The source FEN precedes the opponent setup move; fen is the resulting decision position.",
+    "Solution, theme and rating labels are omitted; train/test items are omitted entirely.",
+    "Source integrity and legal replay are not outcome scoring or explanation-quality evidence.",
+    "The original eight test cases remain unscored; no claim of past model blinding is established here.",
+    "A deterministic source projection grants no extra read, inference, acceptance or progress authority."
+  ],
+  "items": [
+    {
+      "fen": "5rk1/1p3ppp/pq1Q1b2/8/8/1P3N2/P4PPP/3R2K1 b - - 3 27",
+      "game_id": "F8M8OS71",
+      "game_url": "https://lichess.org/F8M8OS71#53",
+      "position_id": "lichess-puzzle-0000D",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "d3d6",
+      "source_fen": "5rk1/1p3ppp/pq3b2/8/8/1P1Q1N2/P4PPP/3R2K1 w - - 2 27",
+      "split": "dev"
+    },
+    {
+      "fen": "8/5R2/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 b - - 2 64",
+      "game_id": "MQSyb3KW",
+      "game_url": "https://lichess.org/MQSyb3KW#127",
+      "position_id": "lichess-puzzle-0008Q",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "e7f7",
+      "source_fen": "8/4R3/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 w - - 1 64",
+      "split": "dev"
+    },
+    {
+      "fen": "8/8/4k1p1/2KpP2P/5P2/8/8/8 b - - 0 53",
+      "game_id": "l6AejDMO",
+      "game_url": "https://lichess.org/l6AejDMO#105",
+      "position_id": "lichess-puzzle-000Vc",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "g4h5",
+      "source_fen": "8/8/4k1p1/2KpP2p/5PP1/8/8/8 w - - 0 53",
+      "split": "dev"
+    },
+    {
+      "fen": "r1bq3r/pp1nbkp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 w - - 0 20",
+      "game_id": "71ygsFeE",
+      "game_url": "https://lichess.org/71ygsFeE/black#38",
+      "position_id": "lichess-puzzle-000hf",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "e8f7",
+      "source_fen": "r1bqk2r/pp1nbNp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 b kq - 0 19",
+      "split": "dev"
+    },
+    {
+      "fen": "6k1/1p4pp/p5n1/5Q2/3BpP2/1P2PP1K/P1q4P/7r w - - 2 34",
+      "game_id": "JgxFj109",
+      "game_url": "https://lichess.org/JgxFj109/black#66",
+      "position_id": "lichess-puzzle-000jr",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "f8g8",
+      "source_fen": "5k2/1p4pp/p5n1/5Q2/3BpP2/1P2PP1K/P1q4P/7r b - - 1 33",
+      "split": "dev"
+    },
+    {
+      "fen": "3r3r/pQNk1ppp/1qnR1n2/1B6/8/8/PPP3PP/5R1K b - - 0 19",
+      "game_id": "vaqz2bx6",
+      "game_url": "https://lichess.org/vaqz2bx6#37",
+      "position_id": "lichess-puzzle-000lC",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "d1d6",
+      "source_fen": "3r3r/pQNk1ppp/1qnb1n2/1B6/8/8/PPP3PP/3R1R1K w - - 5 19",
+      "split": "dev"
+    },
+    {
+      "fen": "5r1k/5rp1/p7/1b2B2p/1P1P1Pq1/2R3Q1/P3p1P1/2R3K1 b - - 1 41",
+      "game_id": "8sVpuwso",
+      "game_url": "https://lichess.org/8sVpuwso#81",
+      "position_id": "lichess-puzzle-000mr",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "e3g3",
+      "source_fen": "5r1k/5rp1/p7/1b2B2p/1P1P1Pq1/2R1Q3/P3p1P1/2R3K1 w - - 0 41",
+      "split": "dev"
+    },
+    {
+      "fen": "r2qk2r/pp2ppbp/1n1p2p1/3P4/2n5/2NBBP1P/PP3P2/R2QK2R w KQkq - 0 13",
+      "game_id": "ol84k0z4",
+      "game_url": "https://lichess.org/ol84k0z4/black#24",
+      "position_id": "lichess-puzzle-0017R",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "setup_move": "e5c4",
+      "source_fen": "r2qk2r/pp2ppbp/1n1p2p1/3Pn3/2P5/2NBBP1P/PP3P2/R2QK2R b KQkq - 0 12",
+      "split": "dev"
+    }
+  ],
+  "license": "CC0-1.0",
+  "schema": "chess-dev-source-projection/v1",
+  "selected_count": 8,
+  "selected_split": "dev",
+  "source_file_hashes": {
+    "sample.csv": "846f1664c84a3094e8a353406144f994b3aad802f0754b2c229c3d486fdd4112",
+    "source-page.html": "af8744cfbea38c1b571458796dbbeac9196845e3067fc172599fc86bb3021f08",
+    "source-prefix.csv.zst.part": "3073da1cd408f4686efe633be9c745b8cd3d54a3feedb963fea35ffa39e2ad9f"
+  },
+  "source_manifest_sha256": "ef8eef9ca70622ffa2689ba699479f1fec7d496416e453000b046945cbfcfde2",
+  "source_split_counts": {
+    "dev": 8,
+    "test": 8,
+    "train": 8
+  },
+  "source_url": "https://database.lichess.org/lichess_db_puzzle.csv.zst"
+}

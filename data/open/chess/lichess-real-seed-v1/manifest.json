@@ -1,0 +1,1467 @@
+{
+  "acquisition": {
+    "content_range": "bytes 0-262143/304429328",
+    "etag": "\"6aa199fe-12253910\"",
+    "last_modified": "Wed, 09 Sep 2026 17:40:14 GMT",
+    "status": 206,
+    "url": "https://database.lichess.org/lichess_db_puzzle.csv.zst"
+  },
+  "compressed_bytes_retained": 262144,
+  "created_at": "2026-09-19T02:27:40.225099+00:00",
+  "files": {
+    "sample.csv": {
+      "bytes": 4549,
+      "sha256": "846f1664c84a3094e8a353406144f994b3aad802f0754b2c229c3d486fdd4112"
+    },
+    "source-page.html": {
+      "bytes": 470282,
+      "sha256": "af8744cfbea38c1b571458796dbbeac9196845e3067fc172599fc86bb3021f08"
+    },
+    "source-prefix.csv.zst.part": {
+      "bytes": 262144,
+      "sha256": "3073da1cd408f4686efe633be9c745b8cd3d54a3feedb963fea35ffa39e2ad9f"
+    }
+  },
+  "full_database_downloaded": false,
+  "hash_scope": "retained prefix and selected CSV, not full upstream archive",
+  "items": [
+    {
+      "fen": "r6k/pp2r2p/4Rp1Q/3p4/8/1N1P2b1/PqP3PP/7K w - - 0 25",
+      "game_id": "787zsVup",
+      "game_url": "https://lichess.org/787zsVup/black#48",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "r6k/pp2r2p/4Rp1Q/3p4/8/1N1P2b1/PqP3PP/7K w - - 0 25",
+          "before": "r6k/pp2r2p/4Rp1Q/3p4/8/1N1P2R1/PqP2bPP/7K b - - 0 24",
+          "san": "Bxg3",
+          "uci": "f2g3"
+        },
+        {
+          "after": "r6k/pp2R2p/5p1Q/3p4/8/1N1P2b1/PqP3PP/7K b - - 0 25",
+          "before": "r6k/pp2r2p/4Rp1Q/3p4/8/1N1P2b1/PqP3PP/7K w - - 0 25",
+          "san": "Rxe7",
+          "uci": "e6e7"
+        },
+        {
+          "after": "r6k/pp2R2p/5p1Q/3p4/8/1N1P2b1/P1P3PP/1q5K w - - 1 26",
+          "before": "r6k/pp2R2p/5p1Q/3p4/8/1N1P2b1/PqP3PP/7K b - - 0 25",
+          "san": "Qb1+",
+          "uci": "b2b1"
+        },
+        {
+          "after": "r6k/pp2R2p/5p1Q/3p4/8/3P2b1/P1P3PP/1qN4K b - - 2 26",
+          "before": "r6k/pp2R2p/5p1Q/3p4/8/1N1P2b1/P1P3PP/1q5K w - - 1 26",
+          "san": "Nc1",
+          "uci": "b3c1"
+        },
+        {
+          "after": "r6k/pp2R2p/5p1Q/3p4/8/3P2b1/P1P3PP/2q4K w - - 0 27",
+          "before": "r6k/pp2R2p/5p1Q/3p4/8/3P2b1/P1P3PP/1qN4K b - - 2 26",
+          "san": "Qxc1+",
+          "uci": "b1c1"
+        },
+        {
+          "after": "r6k/pp2R2p/5p2/3p4/8/3P2b1/P1P3PP/2Q4K b - - 0 27",
+          "before": "r6k/pp2R2p/5p1Q/3p4/8/3P2b1/P1P3PP/2q4K w - - 0 27",
+          "san": "Qxc1",
+          "uci": "h6c1"
+        }
+      ],
+      "legal_replay_sha256": "11b19bee099ddf7512a3a95c11a5f33876f6622cc6c9bcd7f0fa848186e5614b",
+      "position_id": "lichess-puzzle-00008",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "00008",
+      "rating": 1797,
+      "setup_move": "f2g3",
+      "solution_uci": [
+        "e6e7",
+        "b2b1",
+        "b3c1",
+        "b1c1",
+        "h6c1"
+      ],
+      "source_fen": "r6k/pp2r2p/4Rp1Q/3p4/8/1N1P2R1/PqP2bPP/7K b - - 0 24",
+      "split": "train",
+      "target_move": "e6e7",
+      "themes": [
+        "crushing",
+        "hangingPiece",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "fen": "5rk1/1p3ppp/pq1Q1b2/8/8/1P3N2/P4PPP/3R2K1 b - - 3 27",
+      "game_id": "F8M8OS71",
+      "game_url": "https://lichess.org/F8M8OS71#53",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "5rk1/1p3ppp/pq1Q1b2/8/8/1P3N2/P4PPP/3R2K1 b - - 3 27",
+          "before": "5rk1/1p3ppp/pq3b2/8/8/1P1Q1N2/P4PPP/3R2K1 w - - 2 27",
+          "san": "Qd6",
+          "uci": "d3d6"
+        },
+        {
+          "after": "3r2k1/1p3ppp/pq1Q1b2/8/8/1P3N2/P4PPP/3R2K1 w - - 4 28",
+          "before": "5rk1/1p3ppp/pq1Q1b2/8/8/1P3N2/P4PPP/3R2K1 b - - 3 27",
+          "san": "Rd8",
+          "uci": "f8d8"
+        },
+        {
+          "after": "3Q2k1/1p3ppp/pq3b2/8/8/1P3N2/P4PPP/3R2K1 b - - 0 28",
+          "before": "3r2k1/1p3ppp/pq1Q1b2/8/8/1P3N2/P4PPP/3R2K1 w - - 4 28",
+          "san": "Qxd8+",
+          "uci": "d6d8"
+        },
+        {
+          "after": "3b2k1/1p3ppp/pq6/8/8/1P3N2/P4PPP/3R2K1 w - - 0 29",
+          "before": "3Q2k1/1p3ppp/pq3b2/8/8/1P3N2/P4PPP/3R2K1 b - - 0 28",
+          "san": "Bxd8",
+          "uci": "f6d8"
+        }
+      ],
+      "legal_replay_sha256": "139d5c9aed118daf368abbf51d3ec5b0d988a8ca604f919fcbd444087b3e6157",
+      "position_id": "lichess-puzzle-0000D",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "0000D",
+      "rating": 1468,
+      "setup_move": "d3d6",
+      "solution_uci": [
+        "f8d8",
+        "d6d8",
+        "f6d8"
+      ],
+      "source_fen": "5rk1/1p3ppp/pq3b2/8/8/1P1Q1N2/P4PPP/3R2K1 w - - 2 27",
+      "split": "dev",
+      "target_move": "f8d8",
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "fen": "8/5R2/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 b - - 2 64",
+      "game_id": "MQSyb3KW",
+      "game_url": "https://lichess.org/MQSyb3KW#127",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "8/5R2/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 b - - 2 64",
+          "before": "8/4R3/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 w - - 1 64",
+          "san": "Rf7",
+          "uci": "e7f7"
+        },
+        {
+          "after": "8/5R2/1p2P3/p3r3/P6p/1P3Pk1/4K3/8 w - - 3 65",
+          "before": "8/5R2/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 b - - 2 64",
+          "san": "Re5+",
+          "uci": "f5e5"
+        },
+        {
+          "after": "8/5R2/1p2P3/p3r3/P6p/1P3Pk1/8/5K2 b - - 4 65",
+          "before": "8/5R2/1p2P3/p3r3/P6p/1P3Pk1/4K3/8 w - - 3 65",
+          "san": "Kf1",
+          "uci": "e2f1"
+        },
+        {
+          "after": "8/5R2/1p2r3/p7/P6p/1P3Pk1/8/5K2 w - - 0 66",
+          "before": "8/5R2/1p2P3/p3r3/P6p/1P3Pk1/8/5K2 b - - 4 65",
+          "san": "Rxe6",
+          "uci": "e5e6"
+        }
+      ],
+      "legal_replay_sha256": "52c53f04c6c215a44fd0ba4cc904fd4bd46dba20c497b017009c3fb362db7c0f",
+      "position_id": "lichess-puzzle-0008Q",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "0008Q",
+      "rating": 1383,
+      "setup_move": "e7f7",
+      "solution_uci": [
+        "f5e5",
+        "e2f1",
+        "e5e6"
+      ],
+      "source_fen": "8/4R3/1p2P3/p4r2/P6p/1P3Pk1/4K3/8 w - - 1 64",
+      "split": "dev",
+      "target_move": "f5e5",
+      "themes": [
+        "advantage",
+        "endgame",
+        "rookEndgame",
+        "short"
+      ]
+    },
+    {
+      "fen": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 w - - 0 17",
+      "game_id": "4MWQCxQ6",
+      "game_url": "https://lichess.org/4MWQCxQ6/black#32",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 w - - 0 17",
+          "before": "r2qr1k1/b1p2ppp/pp4n1/P1P1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 b - - 1 16",
+          "san": "bxc5",
+          "uci": "b6c5"
+        },
+        {
+          "after": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1B1/B2P2Pb/3N1P1P/RN1QR1K1 b - - 0 17",
+          "before": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 w - - 0 17",
+          "san": "Bxg4",
+          "uci": "e2g4"
+        },
+        {
+          "after": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1b1/B2P2P1/3N1P1P/RN1QR1K1 w - - 0 18",
+          "before": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1B1/B2P2Pb/3N1P1P/RN1QR1K1 b - - 0 17",
+          "san": "Bxg4",
+          "uci": "h3g4"
+        },
+        {
+          "after": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1Q1/B2P2P1/3N1P1P/RN2R1K1 b - - 0 18",
+          "before": "r2qr1k1/b1p2ppp/p5n1/P1p1p3/4P1b1/B2P2P1/3N1P1P/RN1QR1K1 w - - 0 18",
+          "san": "Qxg4",
+          "uci": "d1g4"
+        }
+      ],
+      "legal_replay_sha256": "16b84e80cf0638873c8a0691230ee1c240a3622e9a69335b38c96b1cef9f2b35",
+      "position_id": "lichess-puzzle-0009B",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "0009B",
+      "rating": 1084,
+      "setup_move": "b6c5",
+      "solution_uci": [
+        "e2g4",
+        "h3g4",
+        "d1g4"
+      ],
+      "source_fen": "r2qr1k1/b1p2ppp/pp4n1/P1P1p3/4P1n1/B2P2Pb/3NBP1P/RN1QR1K1 b - - 1 16",
+      "split": "train",
+      "target_move": "e2g4",
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "fen": "6k1/5p1p/4p3/4q3/3n4/2Q3P1/PP1N1P1P/6K1 b - - 3 37",
+      "game_id": "au2lCK5o",
+      "game_url": "https://lichess.org/au2lCK5o#73",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "6k1/5p1p/4p3/4q3/3n4/2Q3P1/PP1N1P1P/6K1 b - - 3 37",
+          "before": "6k1/5p1p/4p3/4q3/3nN3/2Q3P1/PP3P1P/6K1 w - - 2 37",
+          "san": "Nd2",
+          "uci": "e4d2"
+        },
+        {
+          "after": "6k1/5p1p/4p3/4q3/8/2Q3P1/PP1NnP1P/6K1 w - - 4 38",
+          "before": "6k1/5p1p/4p3/4q3/3n4/2Q3P1/PP1N1P1P/6K1 b - - 3 37",
+          "san": "Ne2+",
+          "uci": "d4e2"
+        },
+        {
+          "after": "6k1/5p1p/4p3/4q3/8/2Q3P1/PP1NnP1P/5K2 b - - 5 38",
+          "before": "6k1/5p1p/4p3/4q3/8/2Q3P1/PP1NnP1P/6K1 w - - 4 38",
+          "san": "Kf1",
+          "uci": "g1f1"
+        },
+        {
+          "after": "6k1/5p1p/4p3/4q3/8/2n3P1/PP1N1P1P/5K2 w - - 0 39",
+          "before": "6k1/5p1p/4p3/4q3/8/2Q3P1/PP1NnP1P/5K2 b - - 5 38",
+          "san": "Nxc3",
+          "uci": "e2c3"
+        }
+      ],
+      "legal_replay_sha256": "1bf5cee3dfa18f5b44ef5694a95d61e6d0da01610c90566cd3c17aa2ec175d20",
+      "position_id": "lichess-puzzle-000Pw",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000Pw",
+      "rating": 1547,
+      "setup_move": "e4d2",
+      "solution_uci": [
+        "d4e2",
+        "g1f1",
+        "e2c3"
+      ],
+      "source_fen": "6k1/5p1p/4p3/4q3/3nN3/2Q3P1/PP3P1P/6K1 w - - 2 37",
+      "split": "test",
+      "target_move": "d4e2",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "short"
+      ]
+    },
+    {
+      "fen": "2Q2bk1/5p1p/p5p1/2p3P1/4B3/7P/qPr2P2/2K4R w - - 0 33",
+      "game_id": "lTTa9lwd",
+      "game_url": "https://lichess.org/lTTa9lwd/black#64",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "2Q2bk1/5p1p/p5p1/2p3P1/4B3/7P/qPr2P2/2K4R w - - 0 33",
+          "before": "2Q2bk1/5p1p/p5p1/2p3P1/2r1B3/7P/qPQ2P2/2K4R b - - 0 32",
+          "san": "Rxc2+",
+          "uci": "c4c2"
+        },
+        {
+          "after": "2Q2bk1/5p1p/p5p1/2p3P1/8/7P/qPB2P2/2K4R b - - 0 33",
+          "before": "2Q2bk1/5p1p/p5p1/2p3P1/4B3/7P/qPr2P2/2K4R w - - 0 33",
+          "san": "Bxc2",
+          "uci": "e4c2"
+        },
+        {
+          "after": "2Q2bk1/5p1p/p5p1/2p3P1/8/7P/1PB2P2/q1K4R w - - 1 34",
+          "before": "2Q2bk1/5p1p/p5p1/2p3P1/8/7P/qPB2P2/2K4R b - - 0 33",
+          "san": "Qa1+",
+          "uci": "a2a1"
+        },
+        {
+          "after": "2Q2bk1/5p1p/p5p1/2p3P1/8/7P/1P3P2/qBK4R b - - 2 34",
+          "before": "2Q2bk1/5p1p/p5p1/2p3P1/8/7P/1PB2P2/q1K4R w - - 1 34",
+          "san": "Bb1",
+          "uci": "c2b1"
+        }
+      ],
+      "legal_replay_sha256": "0ef37042a61d60fa267e0509c36f87a5ce019d55611037110ea549e96b6d13d6",
+      "position_id": "lichess-puzzle-000Sa",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000Sa",
+      "rating": 1655,
+      "setup_move": "c4c2",
+      "solution_uci": [
+        "e4c2",
+        "a2a1",
+        "c2b1"
+      ],
+      "source_fen": "2Q2bk1/5p1p/p5p1/2p3P1/2r1B3/7P/qPQ2P2/2K4R b - - 0 32",
+      "split": "test",
+      "target_move": "e4c2",
+      "themes": [
+        "advantage",
+        "endgame",
+        "short"
+      ]
+    },
+    {
+      "fen": "r4r2/1p3pkp/p7/3R1p1Q/3P4/8/P1q2P2/3R2K1 w - - 0 26",
+      "game_id": "e9AY2m5j",
+      "game_url": "https://lichess.org/e9AY2m5j/black#50",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "r4r2/1p3pkp/p7/3R1p1Q/3P4/8/P1q2P2/3R2K1 w - - 0 26",
+          "before": "r4r2/1p3pkp/p5p1/3R1N1Q/3P4/8/P1q2P2/3R2K1 b - - 3 25",
+          "san": "gxf5",
+          "uci": "g6f5"
+        },
+        {
+          "after": "r4r2/1p3pkp/p7/2R2p1Q/3P4/8/P1q2P2/3R2K1 b - - 1 26",
+          "before": "r4r2/1p3pkp/p7/3R1p1Q/3P4/8/P1q2P2/3R2K1 w - - 0 26",
+          "san": "Rc5",
+          "uci": "d5c5"
+        },
+        {
+          "after": "r4r2/1p3pkp/p7/2R2p1Q/3Pq3/8/P4P2/3R2K1 w - - 2 27",
+          "before": "r4r2/1p3pkp/p7/2R2p1Q/3P4/8/P1q2P2/3R2K1 b - - 1 26",
+          "san": "Qe4",
+          "uci": "c2e4"
+        },
+        {
+          "after": "r4r2/1p3pkp/p7/2R2pQ1/3Pq3/8/P4P2/3R2K1 b - - 3 27",
+          "before": "r4r2/1p3pkp/p7/2R2p1Q/3Pq3/8/P4P2/3R2K1 w - - 2 27",
+          "san": "Qg5+",
+          "uci": "h5g5"
+        },
+        {
+          "after": "r4r1k/1p3p1p/p7/2R2pQ1/3Pq3/8/P4P2/3R2K1 w - - 4 28",
+          "before": "r4r2/1p3pkp/p7/2R2pQ1/3Pq3/8/P4P2/3R2K1 b - - 3 27",
+          "san": "Kh8",
+          "uci": "g7h8"
+        },
+        {
+          "after": "r4r1k/1p3p1p/p4Q2/2R2p2/3Pq3/8/P4P2/3R2K1 b - - 5 28",
+          "before": "r4r1k/1p3p1p/p7/2R2pQ1/3Pq3/8/P4P2/3R2K1 w - - 4 28",
+          "san": "Qf6+",
+          "uci": "g5f6"
+        }
+      ],
+      "legal_replay_sha256": "2242d7030e86c736afe6d948a39c867bc168b79d1666fa538a002c8f944a7c22",
+      "position_id": "lichess-puzzle-000VW",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000VW",
+      "rating": 2869,
+      "setup_move": "g6f5",
+      "solution_uci": [
+        "d5c5",
+        "c2e4",
+        "h5g5",
+        "g7h8",
+        "g5f6"
+      ],
+      "source_fen": "r4r2/1p3pkp/p5p1/3R1N1Q/3P4/8/P1q2P2/3R2K1 b - - 3 25",
+      "split": "test",
+      "target_move": "d5c5",
+      "themes": [
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "fen": "8/8/4k1p1/2KpP2P/5P2/8/8/8 b - - 0 53",
+      "game_id": "l6AejDMO",
+      "game_url": "https://lichess.org/l6AejDMO#105",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "8/8/4k1p1/2KpP2P/5P2/8/8/8 b - - 0 53",
+          "before": "8/8/4k1p1/2KpP2p/5PP1/8/8/8 w - - 0 53",
+          "san": "gxh5",
+          "uci": "g4h5"
+        },
+        {
+          "after": "8/8/4k3/2KpP2p/5P2/8/8/8 w - - 0 54",
+          "before": "8/8/4k1p1/2KpP2P/5P2/8/8/8 b - - 0 53",
+          "san": "gxh5",
+          "uci": "g6h5"
+        },
+        {
+          "after": "8/8/4k3/2KpPP1p/8/8/8/8 b - - 0 54",
+          "before": "8/8/4k3/2KpP2p/5P2/8/8/8 w - - 0 54",
+          "san": "f5+",
+          "uci": "f4f5"
+        },
+        {
+          "after": "8/8/8/2KpkP1p/8/8/8/8 w - - 0 55",
+          "before": "8/8/4k3/2KpPP1p/8/8/8/8 b - - 0 54",
+          "san": "Kxe5",
+          "uci": "e6e5"
+        },
+        {
+          "after": "8/8/5P2/2Kpk2p/8/8/8/8 b - - 0 55",
+          "before": "8/8/8/2KpkP1p/8/8/8/8 w - - 0 55",
+          "san": "f6",
+          "uci": "f5f6"
+        },
+        {
+          "after": "8/8/5k2/2Kp3p/8/8/8/8 w - - 0 56",
+          "before": "8/8/5P2/2Kpk2p/8/8/8/8 b - - 0 55",
+          "san": "Kxf6",
+          "uci": "e5f6"
+        }
+      ],
+      "legal_replay_sha256": "f72982aa9b6556fa1c97e5509d37d586a6e407d675bacf392e15c70bd496f739",
+      "position_id": "lichess-puzzle-000Vc",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000Vc",
+      "rating": 1569,
+      "setup_move": "g4h5",
+      "solution_uci": [
+        "g6h5",
+        "f4f5",
+        "e6e5",
+        "f5f6",
+        "e5f6"
+      ],
+      "source_fen": "8/8/4k1p1/2KpP2p/5PP1/8/8/8 w - - 0 53",
+      "split": "dev",
+      "target_move": "g6h5",
+      "themes": [
+        "crushing",
+        "endgame",
+        "long",
+        "pawnEndgame"
+      ]
+    },
+    {
+      "fen": "4r3/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P4PP/6K1 b - - 0 35",
+      "game_id": "n8Ff742v",
+      "game_url": "https://lichess.org/n8Ff742v#69",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "4r3/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P4PP/6K1 b - - 0 35",
+          "before": "4r3/1k6/pp3r2/1b2P2p/3R1p2/P1R2P2/1P4PP/6K1 w - - 0 35",
+          "san": "exf6",
+          "uci": "e5f6"
+        },
+        {
+          "after": "8/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P4PP/4r1K1 w - - 1 36",
+          "before": "4r3/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P4PP/6K1 b - - 0 35",
+          "san": "Re1+",
+          "uci": "e8e1"
+        },
+        {
+          "after": "8/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P3KPP/4r3 b - - 2 36",
+          "before": "8/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P4PP/4r1K1 w - - 1 36",
+          "san": "Kf2",
+          "uci": "g1f2"
+        },
+        {
+          "after": "8/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P3KPP/5r2 w - - 3 37",
+          "before": "8/1k6/pp3P2/1b5p/3R1p2/P1R2P2/1P3KPP/4r3 b - - 2 36",
+          "san": "Rf1#",
+          "uci": "e1f1"
+        }
+      ],
+      "legal_replay_sha256": "f541e7973b751244a592b3058b213f25d84316c930f2391dec9096376228d597",
+      "position_id": "lichess-puzzle-000Zo",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000Zo",
+      "rating": 1363,
+      "setup_move": "e5f6",
+      "solution_uci": [
+        "e8e1",
+        "g1f2",
+        "e1f1"
+      ],
+      "source_fen": "4r3/1k6/pp3r2/1b2P2p/3R1p2/P1R2P2/1P4PP/6K1 w - - 0 35",
+      "split": "train",
+      "target_move": "e8e1",
+      "themes": [
+        "endgame",
+        "mate",
+        "mateIn2",
+        "operaMate",
+        "short"
+      ]
+    },
+    {
+      "fen": "r4rk1/pp2Bppp/2n1b3/q1pp4/8/P1Q2NP1/1PP1PP1P/2KR3R b - - 1 15",
+      "game_id": "iihZGl6t",
+      "game_url": "https://lichess.org/iihZGl6t#29",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "r4rk1/pp2Bppp/2n1b3/q1pp4/8/P1Q2NP1/1PP1PP1P/2KR3R b - - 1 15",
+          "before": "r4rk1/pp3ppp/2n1b3/q1pp2B1/8/P1Q2NP1/1PP1PP1P/2KR3R w - - 0 15",
+          "san": "Be7",
+          "uci": "g5e7"
+        },
+        {
+          "after": "r4rk1/pp2Bppp/2n1b3/2pp4/8/P1q2NP1/1PP1PP1P/2KR3R w - - 0 16",
+          "before": "r4rk1/pp2Bppp/2n1b3/q1pp4/8/P1Q2NP1/1PP1PP1P/2KR3R b - - 1 15",
+          "san": "Qxc3",
+          "uci": "a5c3"
+        },
+        {
+          "after": "r4rk1/pp2Bppp/2n1b3/2pp4/8/P1P2NP1/2P1PP1P/2KR3R b - - 0 16",
+          "before": "r4rk1/pp2Bppp/2n1b3/2pp4/8/P1q2NP1/1PP1PP1P/2KR3R w - - 0 16",
+          "san": "bxc3",
+          "uci": "b2c3"
+        },
+        {
+          "after": "r4rk1/pp2nppp/4b3/2pp4/8/P1P2NP1/2P1PP1P/2KR3R w - - 0 17",
+          "before": "r4rk1/pp2Bppp/2n1b3/2pp4/8/P1P2NP1/2P1PP1P/2KR3R b - - 0 16",
+          "san": "Nxe7",
+          "uci": "c6e7"
+        }
+      ],
+      "legal_replay_sha256": "e8ccd6659e3c78a9949a547ba615dbe4dacc93f5f26e35021355555fd348bc27",
+      "position_id": "lichess-puzzle-000aY",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000aY",
+      "rating": 1412,
+      "setup_move": "g5e7",
+      "solution_uci": [
+        "a5c3",
+        "b2c3",
+        "c6e7"
+      ],
+      "source_fen": "r4rk1/pp3ppp/2n1b3/q1pp2B1/8/P1Q2NP1/1PP1PP1P/2KR3R w - - 0 15",
+      "split": "test",
+      "target_move": "a5c3",
+      "themes": [
+        "advantage",
+        "master",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "fen": "5rk1/p5p1/3bRr1p/1Pp4q/3p4/1P1Q1N2/P4PPP/4R1K1 b - - 0 22",
+      "game_id": "OWe6M5dF",
+      "game_url": "https://lichess.org/OWe6M5dF#43",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "5rk1/p5p1/3bRr1p/1Pp4q/3p4/1P1Q1N2/P4PPP/4R1K1 b - - 0 22",
+          "before": "5rk1/p5p1/3bpr1p/1Pp4q/3pR3/1P1Q1N2/P4PPP/4R1K1 w - - 4 22",
+          "san": "Rxe6",
+          "uci": "e4e6"
+        },
+        {
+          "after": "5rk1/p5p1/3bR2p/1Pp4q/3p4/1P1Q1r2/P4PPP/4R1K1 w - - 0 23",
+          "before": "5rk1/p5p1/3bRr1p/1Pp4q/3p4/1P1Q1N2/P4PPP/4R1K1 b - - 0 22",
+          "san": "Rxf3",
+          "uci": "f6f3"
+        },
+        {
+          "after": "5rk1/p5p1/3bR2p/1Pp4q/3p4/1P1Q1P2/P4P1P/4R1K1 b - - 0 23",
+          "before": "5rk1/p5p1/3bR2p/1Pp4q/3p4/1P1Q1r2/P4PPP/4R1K1 w - - 0 23",
+          "san": "gxf3",
+          "uci": "g2f3"
+        },
+        {
+          "after": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P2/P4P1q/4R1K1 w - - 0 24",
+          "before": "5rk1/p5p1/3bR2p/1Pp4q/3p4/1P1Q1P2/P4P1P/4R1K1 b - - 0 23",
+          "san": "Qxh2+",
+          "uci": "h5h2"
+        },
+        {
+          "after": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P2/P4P1q/4RK2 b - - 1 24",
+          "before": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P2/P4P1q/4R1K1 w - - 0 24",
+          "san": "Kf1",
+          "uci": "g1f1"
+        },
+        {
+          "after": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P1q/P4P2/4RK2 w - - 2 25",
+          "before": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P2/P4P1q/4RK2 b - - 1 24",
+          "san": "Qh3+",
+          "uci": "h2h3"
+        },
+        {
+          "after": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P1q/P3KP2/4R3 b - - 3 25",
+          "before": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P1q/P4P2/4RK2 w - - 2 25",
+          "san": "Ke2",
+          "uci": "f1e2"
+        },
+        {
+          "after": "5rk1/p5p1/3bq2p/1Pp5/3p4/1P1Q1P2/P3KP2/4R3 w - - 0 26",
+          "before": "5rk1/p5p1/3bR2p/1Pp5/3p4/1P1Q1P1q/P3KP2/4R3 b - - 3 25",
+          "san": "Qxe6+",
+          "uci": "h3e6"
+        }
+      ],
+      "legal_replay_sha256": "a8193be805ec33150ba2c59734ef34c0aa5b531b518dd96d9f549a65afeb4f2f",
+      "position_id": "lichess-puzzle-000h0",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000h0",
+      "rating": 2052,
+      "setup_move": "e4e6",
+      "solution_uci": [
+        "f6f3",
+        "g2f3",
+        "h5h2",
+        "g1f1",
+        "h2h3",
+        "f1e2",
+        "h3e6"
+      ],
+      "source_fen": "5rk1/p5p1/3bpr1p/1Pp4q/3pR3/1P1Q1N2/P4PPP/4R1K1 w - - 4 22",
+      "split": "test",
+      "target_move": "f6f3",
+      "themes": [
+        "advantage",
+        "interference",
+        "kingsideAttack",
+        "middlegame",
+        "veryLong"
+      ]
+    },
+    {
+      "fen": "r1bq3r/pp1nbkp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 w - - 0 20",
+      "game_id": "71ygsFeE",
+      "game_url": "https://lichess.org/71ygsFeE/black#38",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "r1bq3r/pp1nbkp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 w - - 0 20",
+          "before": "r1bqk2r/pp1nbNp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 b kq - 0 19",
+          "san": "Kxf7",
+          "uci": "e8f7"
+        },
+        {
+          "after": "r1bq3r/pp1nbkp1/2p1Q2p/8/2BP4/1PN3P1/P4P1P/3R1RK1 b - - 0 20",
+          "before": "r1bq3r/pp1nbkp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 w - - 0 20",
+          "san": "Qxe6+",
+          "uci": "e2e6"
+        },
+        {
+          "after": "r1bq1k1r/pp1nb1p1/2p1Q2p/8/2BP4/1PN3P1/P4P1P/3R1RK1 w - - 1 21",
+          "before": "r1bq3r/pp1nbkp1/2p1Q2p/8/2BP4/1PN3P1/P4P1P/3R1RK1 b - - 0 20",
+          "san": "Kf8",
+          "uci": "f7f8"
+        },
+        {
+          "after": "r1bq1k1r/pp1nbQp1/2p4p/8/2BP4/1PN3P1/P4P1P/3R1RK1 b - - 2 21",
+          "before": "r1bq1k1r/pp1nb1p1/2p1Q2p/8/2BP4/1PN3P1/P4P1P/3R1RK1 w - - 1 21",
+          "san": "Qf7#",
+          "uci": "e6f7"
+        }
+      ],
+      "legal_replay_sha256": "9c0054d5df218a9c2d4550c027f604479168dc1020913d625304f6d02321a333",
+      "position_id": "lichess-puzzle-000hf",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000hf",
+      "rating": 1473,
+      "setup_move": "e8f7",
+      "solution_uci": [
+        "e2e6",
+        "f7f8",
+        "e6f7"
+      ],
+      "source_fen": "r1bqk2r/pp1nbNp1/2p1p2p/8/2BP4/1PN3P1/P3QP1P/3R1RK1 b kq - 0 19",
+      "split": "dev",
+      "target_move": "e2e6",
+      "themes": [
+        "mate",
+        "mateIn2",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "fen": "6k1/1p4pp/p5n1/5Q2/3BpP2/1P2PP1K/P1q4P/7r w - - 2 34",
+      "game_id": "JgxFj109",
+      "game_url": "https://lichess.org/JgxFj109/black#66",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "6k1/1p4pp/p5n1/5Q2/3BpP2/1P2PP1K/P1q4P/7r w - - 2 34",
+          "before": "5k2/1p4pp/p5n1/5Q2/3BpP2/1P2PP1K/P1q4P/7r b - - 1 33",
+          "san": "Kg8",
+          "uci": "f8g8"
+        },
+        {
+          "after": "6k1/1p4pp/p5n1/3Q4/3BpP2/1P2PP1K/P1q4P/7r b - - 3 34",
+          "before": "6k1/1p4pp/p5n1/5Q2/3BpP2/1P2PP1K/P1q4P/7r w - - 2 34",
+          "san": "Qd5+",
+          "uci": "f5d5"
+        },
+        {
+          "after": "5k2/1p4pp/p5n1/3Q4/3BpP2/1P2PP1K/P1q4P/7r w - - 4 35",
+          "before": "6k1/1p4pp/p5n1/3Q4/3BpP2/1P2PP1K/P1q4P/7r b - - 3 34",
+          "san": "Kf8",
+          "uci": "g8f8"
+        },
+        {
+          "after": "5k2/1p4pp/p5n1/2BQ4/4pP2/1P2PP1K/P1q4P/7r b - - 5 35",
+          "before": "5k2/1p4pp/p5n1/3Q4/3BpP2/1P2PP1K/P1q4P/7r w - - 4 35",
+          "san": "Bc5+",
+          "uci": "d4c5"
+        },
+        {
+          "after": "5k2/1p4pp/p5n1/2qQ4/4pP2/1P2PP1K/P6P/7r w - - 0 36",
+          "before": "5k2/1p4pp/p5n1/2BQ4/4pP2/1P2PP1K/P1q4P/7r b - - 5 35",
+          "san": "Qxc5",
+          "uci": "c2c5"
+        },
+        {
+          "after": "5k2/1p4pp/p5n1/2Q5/4pP2/1P2PP1K/P6P/7r b - - 0 36",
+          "before": "5k2/1p4pp/p5n1/2qQ4/4pP2/1P2PP1K/P6P/7r w - - 0 36",
+          "san": "Qxc5+",
+          "uci": "d5c5"
+        }
+      ],
+      "legal_replay_sha256": "9768ae673e30864f6dbfc0fd0cc68126f4fc560d7dd817de605377f496e09509",
+      "position_id": "lichess-puzzle-000jr",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000jr",
+      "rating": 2152,
+      "setup_move": "f8g8",
+      "solution_uci": [
+        "f5d5",
+        "g8f8",
+        "d4c5",
+        "c2c5",
+        "d5c5"
+      ],
+      "source_fen": "5k2/1p4pp/p5n1/5Q2/3BpP2/1P2PP1K/P1q4P/7r b - - 1 33",
+      "split": "dev",
+      "target_move": "f5d5",
+      "themes": [
+        "crushing",
+        "endgame",
+        "long"
+      ]
+    },
+    {
+      "fen": "3r3r/pQNk1ppp/1qnR1n2/1B6/8/8/PPP3PP/5R1K b - - 0 19",
+      "game_id": "vaqz2bx6",
+      "game_url": "https://lichess.org/vaqz2bx6#37",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "3r3r/pQNk1ppp/1qnR1n2/1B6/8/8/PPP3PP/5R1K b - - 0 19",
+          "before": "3r3r/pQNk1ppp/1qnb1n2/1B6/8/8/PPP3PP/3R1R1K w - - 5 19",
+          "san": "Rxd6+",
+          "uci": "d1d6"
+        },
+        {
+          "after": "3r3r/pQN2ppp/1qnk1n2/1B6/8/8/PPP3PP/5R1K w - - 0 20",
+          "before": "3r3r/pQNk1ppp/1qnR1n2/1B6/8/8/PPP3PP/5R1K b - - 0 19",
+          "san": "Kxd6",
+          "uci": "d7d6"
+        },
+        {
+          "after": "3r3r/p1N2ppp/1Qnk1n2/1B6/8/8/PPP3PP/5R1K b - - 0 20",
+          "before": "3r3r/pQN2ppp/1qnk1n2/1B6/8/8/PPP3PP/5R1K w - - 0 20",
+          "san": "Qxb6",
+          "uci": "b7b6"
+        },
+        {
+          "after": "3r3r/2N2ppp/1pnk1n2/1B6/8/8/PPP3PP/5R1K w - - 0 21",
+          "before": "3r3r/p1N2ppp/1Qnk1n2/1B6/8/8/PPP3PP/5R1K b - - 0 20",
+          "san": "axb6",
+          "uci": "a7b6"
+        }
+      ],
+      "legal_replay_sha256": "3bbda244005ad922d5bb930b51816f7096efe4f6165d04e6641fa4e224b28f83",
+      "position_id": "lichess-puzzle-000lC",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000lC",
+      "rating": 1379,
+      "setup_move": "d1d6",
+      "solution_uci": [
+        "d7d6",
+        "b7b6",
+        "a7b6"
+      ],
+      "source_fen": "3r3r/pQNk1ppp/1qnb1n2/1B6/8/8/PPP3PP/3R1R1K w - - 5 19",
+      "split": "dev",
+      "target_move": "d7d6",
+      "themes": [
+        "advantage",
+        "hangingPiece",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "fen": "5r1k/5rp1/p7/1b2B2p/1P1P1Pq1/2R3Q1/P3p1P1/2R3K1 b - - 1 41",
+      "game_id": "8sVpuwso",
+      "game_url": "https://lichess.org/8sVpuwso#81",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "5r1k/5rp1/p7/1b2B2p/1P1P1Pq1/2R3Q1/P3p1P1/2R3K1 b - - 1 41",
+          "before": "5r1k/5rp1/p7/1b2B2p/1P1P1Pq1/2R1Q3/P3p1P1/2R3K1 w - - 0 41",
+          "san": "Qg3",
+          "uci": "e3g3"
+        },
+        {
+          "after": "5r1k/6p1/p7/1b2B2p/1P1P1rq1/2R3Q1/P3p1P1/2R3K1 w - - 0 42",
+          "before": "5r1k/5rp1/p7/1b2B2p/1P1P1Pq1/2R3Q1/P3p1P1/2R3K1 b - - 1 41",
+          "san": "Rxf4",
+          "uci": "f7f4"
+        },
+        {
+          "after": "5r1k/6p1/p7/1b5p/1P1P1Bq1/2R3Q1/P3p1P1/2R3K1 b - - 0 42",
+          "before": "5r1k/6p1/p7/1b2B2p/1P1P1rq1/2R3Q1/P3p1P1/2R3K1 w - - 0 42",
+          "san": "Bxf4",
+          "uci": "e5f4"
+        },
+        {
+          "after": "7k/6p1/p7/1b5p/1P1P1rq1/2R3Q1/P3p1P1/2R3K1 w - - 0 43",
+          "before": "5r1k/6p1/p7/1b5p/1P1P1Bq1/2R3Q1/P3p1P1/2R3K1 b - - 0 42",
+          "san": "Rxf4",
+          "uci": "f8f4"
+        }
+      ],
+      "legal_replay_sha256": "dee2fc689b1ef0bceabfaae0fa9dc6576c688ec201320b684b1274a8a9c2302e",
+      "position_id": "lichess-puzzle-000mr",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000mr",
+      "rating": 1957,
+      "setup_move": "e3g3",
+      "solution_uci": [
+        "f7f4",
+        "e5f4",
+        "f8f4"
+      ],
+      "source_fen": "5r1k/5rp1/p7/1b2B2p/1P1P1Pq1/2R1Q3/P3p1P1/2R3K1 w - - 0 41",
+      "split": "dev",
+      "target_move": "f7f4",
+      "themes": [
+        "crushing",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "fen": "8/2p5/3k2p1/1p1P1p2/1P3P2/3K2Pp/7P/8 w - - 2 44",
+      "game_id": "BAY91mF3",
+      "game_url": "https://lichess.org/BAY91mF3/black#86",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "8/2p5/3k2p1/1p1P1p2/1P3P2/3K2Pp/7P/8 w - - 2 44",
+          "before": "8/2p1k3/6p1/1p1P1p2/1P3P2/3K2Pp/7P/8 b - - 1 43",
+          "san": "Kd6",
+          "uci": "e7d6"
+        },
+        {
+          "after": "8/2p5/3k2p1/1p1P1p2/1P1K1P2/6Pp/7P/8 b - - 3 44",
+          "before": "8/2p5/3k2p1/1p1P1p2/1P3P2/3K2Pp/7P/8 w - - 2 44",
+          "san": "Kd4",
+          "uci": "d3d4"
+        },
+        {
+          "after": "8/2p5/3k4/1p1P1pp1/1P1K1P2/6Pp/7P/8 w - - 0 45",
+          "before": "8/2p5/3k2p1/1p1P1p2/1P1K1P2/6Pp/7P/8 b - - 3 44",
+          "san": "g5",
+          "uci": "g6g5"
+        },
+        {
+          "after": "8/2p5/3k4/1p1P1pP1/1P1K4/6Pp/7P/8 b - - 0 45",
+          "before": "8/2p5/3k4/1p1P1pp1/1P1K1P2/6Pp/7P/8 w - - 0 45",
+          "san": "fxg5",
+          "uci": "f4g5"
+        }
+      ],
+      "legal_replay_sha256": "9cbd72af1b3e9a4db0f25296867eba778b0766ec1d9d19d4340e7036086af31c",
+      "position_id": "lichess-puzzle-000o3",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000o3",
+      "rating": 944,
+      "setup_move": "e7d6",
+      "solution_uci": [
+        "d3d4",
+        "g6g5",
+        "f4g5"
+      ],
+      "source_fen": "8/2p1k3/6p1/1p1P1p2/1P3P2/3K2Pp/7P/8 b - - 1 43",
+      "split": "train",
+      "target_move": "d3d4",
+      "themes": [
+        "crushing",
+        "endgame",
+        "pawnEndgame",
+        "short",
+        "zugzwang"
+      ]
+    },
+    {
+      "fen": "8/7R/8/5p2/4bk1P/8/2r5/5KR1 b - - 8 51",
+      "game_id": "r4xUR6fC",
+      "game_url": "https://lichess.org/r4xUR6fC#101",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "8/7R/8/5p2/4bk1P/8/2r5/5KR1 b - - 8 51",
+          "before": "8/7R/8/5p2/4bk1P/8/2r2K2/6R1 w - - 7 51",
+          "san": "Kf1",
+          "uci": "f2f1"
+        },
+        {
+          "after": "8/7R/8/5p2/4b2P/5k2/2r5/5KR1 w - - 9 52",
+          "before": "8/7R/8/5p2/4bk1P/8/2r5/5KR1 b - - 8 51",
+          "san": "Kf3",
+          "uci": "f4f3"
+        },
+        {
+          "after": "8/7R/8/5p2/4b2P/5k2/2r5/4K1R1 b - - 10 52",
+          "before": "8/7R/8/5p2/4b2P/5k2/2r5/5KR1 w - - 9 52",
+          "san": "Ke1",
+          "uci": "f1e1"
+        },
+        {
+          "after": "8/7R/8/5p2/4b2P/5k2/8/2r1K1R1 w - - 11 53",
+          "before": "8/7R/8/5p2/4b2P/5k2/2r5/4K1R1 b - - 10 52",
+          "san": "Rc1+",
+          "uci": "c2c1"
+        },
+        {
+          "after": "8/7R/8/5p2/4b2P/5k2/3K4/2r3R1 b - - 12 53",
+          "before": "8/7R/8/5p2/4b2P/5k2/8/2r1K1R1 w - - 11 53",
+          "san": "Kd2",
+          "uci": "e1d2"
+        },
+        {
+          "after": "8/7R/8/5p2/4b2P/5k2/3K4/6r1 w - - 0 54",
+          "before": "8/7R/8/5p2/4b2P/5k2/3K4/2r3R1 b - - 12 53",
+          "san": "Rxg1",
+          "uci": "c1g1"
+        }
+      ],
+      "legal_replay_sha256": "b443e62e7366c21d9b86db57d8300b1509d709c2c646a10234944ab5001d98a7",
+      "position_id": "lichess-puzzle-000qP",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000qP",
+      "rating": 2172,
+      "setup_move": "f2f1",
+      "solution_uci": [
+        "f4f3",
+        "f1e1",
+        "c2c1",
+        "e1d2",
+        "c1g1"
+      ],
+      "source_fen": "8/7R/8/5p2/4bk1P/8/2r2K2/6R1 w - - 7 51",
+      "split": "test",
+      "target_move": "f4f3",
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "long",
+        "skewer"
+      ]
+    },
+    {
+      "fen": "3R4/8/8/KB2b3/1p6/1P2k3/3p4/8 b - - 0 58",
+      "game_id": "tzeeBEc2",
+      "game_url": "https://lichess.org/tzeeBEc2#115",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "3R4/8/8/KB2b3/1p6/1P2k3/3p4/8 b - - 0 58",
+          "before": "3R4/8/K7/pB2b3/1p6/1P2k3/3p4/8 w - - 4 58",
+          "san": "Kxa5",
+          "uci": "a6a5"
+        },
+        {
+          "after": "3R4/2b5/8/KB6/1p6/1P2k3/3p4/8 w - - 1 59",
+          "before": "3R4/8/8/KB2b3/1p6/1P2k3/3p4/8 b - - 0 58",
+          "san": "Bc7+",
+          "uci": "e5c7"
+        },
+        {
+          "after": "3R4/2b5/8/1B6/1K6/1P2k3/3p4/8 b - - 0 59",
+          "before": "3R4/2b5/8/KB6/1p6/1P2k3/3p4/8 w - - 1 59",
+          "san": "Kxb4",
+          "uci": "a5b4"
+        },
+        {
+          "after": "3b4/8/8/1B6/1K6/1P2k3/3p4/8 w - - 0 60",
+          "before": "3R4/2b5/8/1B6/1K6/1P2k3/3p4/8 b - - 0 59",
+          "san": "Bxd8",
+          "uci": "c7d8"
+        }
+      ],
+      "legal_replay_sha256": "be12f3966f52fbd27a2a4ed46ec3de812f484e89ba2005f2ac75baa30134f909",
+      "position_id": "lichess-puzzle-000rO",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000rO",
+      "rating": 1110,
+      "setup_move": "a6a5",
+      "solution_uci": [
+        "e5c7",
+        "a5b4",
+        "c7d8"
+      ],
+      "source_fen": "3R4/8/K7/pB2b3/1p6/1P2k3/3p4/8 w - - 4 58",
+      "split": "test",
+      "target_move": "e5c7",
+      "themes": [
+        "crushing",
+        "endgame",
+        "fork",
+        "master",
+        "short"
+      ]
+    },
+    {
+      "fen": "2kr1b1r/p1p2pp1/2pqN3/7p/6n1/2NPB3/PPP2PPP/R2Q1RK1 b - - 0 13",
+      "game_id": "seIMDWkD",
+      "game_url": "https://lichess.org/seIMDWkD#25",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "2kr1b1r/p1p2pp1/2pqN3/7p/6n1/2NPB3/PPP2PPP/R2Q1RK1 b - - 0 13",
+          "before": "2kr1b1r/p1p2pp1/2pqb3/7p/3N2n1/2NPB3/PPP2PPP/R2Q1RK1 w - - 2 13",
+          "san": "Nxe6",
+          "uci": "d4e6"
+        },
+        {
+          "after": "2kr1b1r/p1p2pp1/2p1N3/7p/6n1/2NPB3/PPP2PPq/R2Q1RK1 w - - 0 14",
+          "before": "2kr1b1r/p1p2pp1/2pqN3/7p/6n1/2NPB3/PPP2PPP/R2Q1RK1 b - - 0 13",
+          "san": "Qxh2#",
+          "uci": "d6h2"
+        }
+      ],
+      "legal_replay_sha256": "36ae1041af1e9d6d1d79e73a257cbbd28416b7a22630508150e01a483beebd68",
+      "position_id": "lichess-puzzle-000rZ",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "000rZ",
+      "rating": 616,
+      "setup_move": "d4e6",
+      "solution_uci": [
+        "d6h2"
+      ],
+      "source_fen": "2kr1b1r/p1p2pp1/2pqb3/7p/3N2n1/2NPB3/PPP2PPP/R2Q1RK1 w - - 2 13",
+      "split": "train",
+      "target_move": "d6h2",
+      "themes": [
+        "kingsideAttack",
+        "mate",
+        "mateIn1",
+        "oneMove",
+        "opening"
+      ]
+    },
+    {
+      "fen": "r4rk1/5ppp/1np2q2/p1b5/2p1B3/P7/1P3PPP/R1BQ1RK1 w - - 2 18",
+      "game_id": "jcuxlI63",
+      "game_url": "https://lichess.org/jcuxlI63/black#34",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "r4rk1/5ppp/1np2q2/p1b5/2p1B3/P7/1P3PPP/R1BQ1RK1 w - - 2 18",
+          "before": "r2q1rk1/5ppp/1np5/p1b5/2p1B3/P7/1P3PPP/R1BQ1RK1 b - - 1 17",
+          "san": "Qf6",
+          "uci": "d8f6"
+        },
+        {
+          "after": "r4rk1/5ppp/1np2q2/p1b4Q/2p1B3/P7/1P3PPP/R1B2RK1 b - - 3 18",
+          "before": "r4rk1/5ppp/1np2q2/p1b5/2p1B3/P7/1P3PPP/R1BQ1RK1 w - - 2 18",
+          "san": "Qh5",
+          "uci": "d1h5"
+        },
+        {
+          "after": "r4rk1/5pp1/1np2q1p/p1b4Q/2p1B3/P7/1P3PPP/R1B2RK1 w - - 0 19",
+          "before": "r4rk1/5ppp/1np2q2/p1b4Q/2p1B3/P7/1P3PPP/R1B2RK1 b - - 3 18",
+          "san": "h6",
+          "uci": "h7h6"
+        },
+        {
+          "after": "r4rk1/5pp1/1np2q1p/p1Q5/2p1B3/P7/1P3PPP/R1B2RK1 b - - 0 19",
+          "before": "r4rk1/5pp1/1np2q1p/p1b4Q/2p1B3/P7/1P3PPP/R1B2RK1 w - - 0 19",
+          "san": "Qxc5",
+          "uci": "h5c5"
+        }
+      ],
+      "legal_replay_sha256": "4819cc1d6ab807a9f66ffd38a083335e425a28d50f05369d7f8c02227ee3cdc5",
+      "position_id": "lichess-puzzle-00143",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "00143",
+      "rating": 1800,
+      "setup_move": "d8f6",
+      "solution_uci": [
+        "d1h5",
+        "h7h6",
+        "h5c5"
+      ],
+      "source_fen": "r2q1rk1/5ppp/1np5/p1b5/2p1B3/P7/1P3PPP/R1BQ1RK1 b - - 1 17",
+      "split": "train",
+      "target_move": "d1h5",
+      "themes": [
+        "advantage",
+        "middlegame",
+        "short"
+      ]
+    },
+    {
+      "fen": "r2qk2r/pp2ppbp/1n1p2p1/3P4/2n5/2NBBP1P/PP3P2/R2QK2R w KQkq - 0 13",
+      "game_id": "ol84k0z4",
+      "game_url": "https://lichess.org/ol84k0z4/black#24",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "r2qk2r/pp2ppbp/1n1p2p1/3P4/2n5/2NBBP1P/PP3P2/R2QK2R w KQkq - 0 13",
+          "before": "r2qk2r/pp2ppbp/1n1p2p1/3Pn3/2P5/2NBBP1P/PP3P2/R2QK2R b KQkq - 0 12",
+          "san": "Nexc4",
+          "uci": "e5c4"
+        },
+        {
+          "after": "r2qk2r/pp2ppbp/1n1p2p1/3P4/2B5/2N1BP1P/PP3P2/R2QK2R b KQkq - 0 13",
+          "before": "r2qk2r/pp2ppbp/1n1p2p1/3P4/2n5/2NBBP1P/PP3P2/R2QK2R w KQkq - 0 13",
+          "san": "Bxc4",
+          "uci": "d3c4"
+        },
+        {
+          "after": "r2qk2r/pp2ppbp/3p2p1/3P4/2n5/2N1BP1P/PP3P2/R2QK2R w KQkq - 0 14",
+          "before": "r2qk2r/pp2ppbp/1n1p2p1/3P4/2B5/2N1BP1P/PP3P2/R2QK2R b KQkq - 0 13",
+          "san": "Nxc4",
+          "uci": "b6c4"
+        },
+        {
+          "after": "r2qk2r/pp2ppbp/3p2p1/3P4/Q1n5/2N1BP1P/PP3P2/R3K2R b KQkq - 1 14",
+          "before": "r2qk2r/pp2ppbp/3p2p1/3P4/2n5/2N1BP1P/PP3P2/R2QK2R w KQkq - 0 14",
+          "san": "Qa4+",
+          "uci": "d1a4"
+        },
+        {
+          "after": "r3k2r/pp1qppbp/3p2p1/3P4/Q1n5/2N1BP1P/PP3P2/R3K2R w KQkq - 2 15",
+          "before": "r2qk2r/pp2ppbp/3p2p1/3P4/Q1n5/2N1BP1P/PP3P2/R3K2R b KQkq - 1 14",
+          "san": "Qd7",
+          "uci": "d8d7"
+        },
+        {
+          "after": "r3k2r/pp1qppbp/3p2p1/3P4/2Q5/2N1BP1P/PP3P2/R3K2R b KQkq - 0 15",
+          "before": "r3k2r/pp1qppbp/3p2p1/3P4/Q1n5/2N1BP1P/PP3P2/R3K2R w KQkq - 2 15",
+          "san": "Qxc4",
+          "uci": "a4c4"
+        }
+      ],
+      "legal_replay_sha256": "4852a7bc40c864321652f02241561bd70742b7a27367a87cac5c692a9ef0fd03",
+      "position_id": "lichess-puzzle-0017R",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "0017R",
+      "rating": 1495,
+      "setup_move": "e5c4",
+      "solution_uci": [
+        "d3c4",
+        "b6c4",
+        "d1a4",
+        "d8d7",
+        "a4c4"
+      ],
+      "source_fen": "r2qk2r/pp2ppbp/1n1p2p1/3Pn3/2P5/2NBBP1P/PP3P2/R2QK2R b KQkq - 0 12",
+      "split": "dev",
+      "target_move": "d3c4",
+      "themes": [
+        "advantage",
+        "fork",
+        "long",
+        "middlegame"
+      ]
+    },
+    {
+      "fen": "5R2/1p6/p1p1k3/2P1r3/2K3p1/2P1p1P1/1P5P/8 w - - 2 45",
+      "game_id": "Xg1Gtfjr",
+      "game_url": "https://lichess.org/Xg1Gtfjr/black#88",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "5R2/1p6/p1p1k3/2P1r3/2K3p1/2P1p1P1/1P5P/8 w - - 2 45",
+          "before": "5R2/1p6/p1p5/2P1rk2/2K3p1/2P1p1P1/1P5P/8 b - - 1 44",
+          "san": "Ke6",
+          "uci": "f5e6"
+        },
+        {
+          "after": "4R3/1p6/p1p1k3/2P1r3/2K3p1/2P1p1P1/1P5P/8 b - - 3 45",
+          "before": "5R2/1p6/p1p1k3/2P1r3/2K3p1/2P1p1P1/1P5P/8 w - - 2 45",
+          "san": "Re8+",
+          "uci": "f8e8"
+        },
+        {
+          "after": "4R3/1p6/p1p5/2P1rk2/2K3p1/2P1p1P1/1P5P/8 w - - 4 46",
+          "before": "4R3/1p6/p1p1k3/2P1r3/2K3p1/2P1p1P1/1P5P/8 b - - 3 45",
+          "san": "Kf5",
+          "uci": "e6f5"
+        },
+        {
+          "after": "8/1p6/p1p5/2P1Rk2/2K3p1/2P1p1P1/1P5P/8 b - - 0 46",
+          "before": "4R3/1p6/p1p5/2P1rk2/2K3p1/2P1p1P1/1P5P/8 w - - 4 46",
+          "san": "Rxe5+",
+          "uci": "e8e5"
+        },
+        {
+          "after": "8/1p6/p1p5/2P1k3/2K3p1/2P1p1P1/1P5P/8 w - - 0 47",
+          "before": "8/1p6/p1p5/2P1Rk2/2K3p1/2P1p1P1/1P5P/8 b - - 0 46",
+          "san": "Kxe5",
+          "uci": "f5e5"
+        },
+        {
+          "after": "8/1p6/p1p5/2P1k3/6p1/2PKp1P1/1P5P/8 b - - 1 47",
+          "before": "8/1p6/p1p5/2P1k3/2K3p1/2P1p1P1/1P5P/8 w - - 0 47",
+          "san": "Kd3",
+          "uci": "c4d3"
+        },
+        {
+          "after": "8/1p6/p1p5/2Pk4/6p1/2PKp1P1/1P5P/8 w - - 2 48",
+          "before": "8/1p6/p1p5/2P1k3/6p1/2PKp1P1/1P5P/8 b - - 1 47",
+          "san": "Kd5",
+          "uci": "e5d5"
+        },
+        {
+          "after": "8/1p6/p1p5/2Pk4/6p1/2P1K1P1/1P5P/8 b - - 0 48",
+          "before": "8/1p6/p1p5/2Pk4/6p1/2PKp1P1/1P5P/8 w - - 2 48",
+          "san": "Kxe3",
+          "uci": "d3e3"
+        },
+        {
+          "after": "8/1p6/2p5/p1Pk4/6p1/2P1K1P1/1P5P/8 w - - 0 49",
+          "before": "8/1p6/p1p5/2Pk4/6p1/2P1K1P1/1P5P/8 b - - 0 48",
+          "san": "a5",
+          "uci": "a6a5"
+        },
+        {
+          "after": "8/1p6/2p5/p1Pk4/5Kp1/2P3P1/1P5P/8 b - - 1 49",
+          "before": "8/1p6/2p5/p1Pk4/6p1/2P1K1P1/1P5P/8 w - - 0 49",
+          "san": "Kf4",
+          "uci": "e3f4"
+        },
+        {
+          "after": "8/1p6/2p5/p1P5/2k2Kp1/2P3P1/1P5P/8 w - - 2 50",
+          "before": "8/1p6/2p5/p1Pk4/5Kp1/2P3P1/1P5P/8 b - - 1 49",
+          "san": "Kc4",
+          "uci": "d5c4"
+        },
+        {
+          "after": "8/1p6/2p5/p1P5/2k3K1/2P3P1/1P5P/8 b - - 0 50",
+          "before": "8/1p6/2p5/p1P5/2k2Kp1/2P3P1/1P5P/8 w - - 2 50",
+          "san": "Kxg4",
+          "uci": "f4g4"
+        }
+      ],
+      "legal_replay_sha256": "a63f2bbc5d70e7f24733e4dc230cefad1af4d3d703c6b1afeeff5783168e67bd",
+      "position_id": "lichess-puzzle-0018P",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "0018P",
+      "rating": 1903,
+      "setup_move": "f5e6",
+      "solution_uci": [
+        "f8e8",
+        "e6f5",
+        "e8e5",
+        "f5e5",
+        "c4d3",
+        "e5d5",
+        "d3e3",
+        "a6a5",
+        "e3f4",
+        "d5c4",
+        "f4g4"
+      ],
+      "source_fen": "5R2/1p6/p1p5/2P1rk2/2K3p1/2P1p1P1/1P5P/8 b - - 1 44",
+      "split": "train",
+      "target_move": "f8e8",
+      "themes": [
+        "crushing",
+        "endgame",
+        "exposedKing",
+        "rookEndgame",
+        "veryLong"
+      ]
+    },
+    {
+      "fen": "2kr3r/p4p2/1p2p2p/1N1p2p1/3Q4/1P1P4/2q2PPP/5RK1 w - - 0 21",
+      "game_id": "H1ARO2GL",
+      "game_url": "https://lichess.org/H1ARO2GL/black#40",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "2kr3r/p4p2/1p2p2p/1N1p2p1/3Q4/1P1P4/2q2PPP/5RK1 w - - 0 21",
+          "before": "2kr3r/pp3p2/4p2p/1N1p2p1/3Q4/1P1P4/2q2PPP/5RK1 b - - 1 20",
+          "san": "b6",
+          "uci": "b7b6"
+        },
+        {
+          "after": "2kr3r/p4p2/1p2p2p/1N1p2p1/8/1P1P4/2q2PPP/Q4RK1 b - - 1 21",
+          "before": "2kr3r/p4p2/1p2p2p/1N1p2p1/3Q4/1P1P4/2q2PPP/5RK1 w - - 0 21",
+          "san": "Qa1",
+          "uci": "d4a1"
+        },
+        {
+          "after": "2kr3r/5p2/1p2p2p/pN1p2p1/8/1P1P4/2q2PPP/Q4RK1 w - - 0 22",
+          "before": "2kr3r/p4p2/1p2p2p/1N1p2p1/8/1P1P4/2q2PPP/Q4RK1 b - - 1 21",
+          "san": "a5",
+          "uci": "a7a5"
+        },
+        {
+          "after": "2kr3r/5p2/1p2p2p/pN1p2p1/8/1P1P4/2q2PPP/Q1R3K1 b - - 1 22",
+          "before": "2kr3r/5p2/1p2p2p/pN1p2p1/8/1P1P4/2q2PPP/Q4RK1 w - - 0 22",
+          "san": "Rc1",
+          "uci": "f1c1"
+        }
+      ],
+      "legal_replay_sha256": "34fbdaced5af72bbc418c37b39989d199a5569c508c17f5a5351f829d7d8defb",
+      "position_id": "lichess-puzzle-0018S",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "0018S",
+      "rating": 2661,
+      "setup_move": "b7b6",
+      "solution_uci": [
+        "d4a1",
+        "a7a5",
+        "f1c1"
+      ],
+      "source_fen": "2kr3r/pp3p2/4p2p/1N1p2p1/3Q4/1P1P4/2q2PPP/5RK1 b - - 1 20",
+      "split": "train",
+      "target_move": "d4a1",
+      "themes": [
+        "advantage",
+        "endgame",
+        "pin",
+        "short"
+      ]
+    },
+    {
+      "fen": "5r1k/pQR3pp/5rp1/3B4/q2n4/7P/P4PP1/5RK1 b - - 4 30",
+      "game_id": "y0QalMAw",
+      "game_url": "https://lichess.org/y0QalMAw#59",
+      "label_origin": "Lichess engine generated puzzle and automatic themes; not human commentary",
+      "legal_replay": [
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/q2n4/7P/P4PP1/5RK1 b - - 4 30",
+          "before": "2R2r1k/pQ4pp/5rp1/3B4/q2n4/7P/P4PP1/5RK1 w - - 3 30",
+          "san": "Rc7",
+          "uci": "c8c7"
+        },
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/q7/7P/P3nPP1/5RK1 w - - 5 31",
+          "before": "5r1k/pQR3pp/5rp1/3B4/q2n4/7P/P4PP1/5RK1 b - - 4 30",
+          "san": "Ne2+",
+          "uci": "d4e2"
+        },
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/q7/7P/P3nPPK/5R2 b - - 6 31",
+          "before": "5r1k/pQR3pp/5rp1/3B4/q7/7P/P3nPP1/5RK1 w - - 5 31",
+          "san": "Kh2",
+          "uci": "g1h2"
+        },
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/5q2/7P/P3nPPK/5R2 w - - 7 32",
+          "before": "5r1k/pQR3pp/5rp1/3B4/q7/7P/P3nPPK/5R2 b - - 6 31",
+          "san": "Qf4+",
+          "uci": "a4f4"
+        },
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/5q2/7P/P3nPP1/5R1K b - - 8 32",
+          "before": "5r1k/pQR3pp/5rp1/3B4/5q2/7P/P3nPPK/5R2 w - - 7 32",
+          "san": "Kh1",
+          "uci": "h2h1"
+        },
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/5q2/6nP/P4PP1/5R1K w - - 9 33",
+          "before": "5r1k/pQR3pp/5rp1/3B4/5q2/7P/P3nPP1/5R1K b - - 8 32",
+          "san": "Ng3+",
+          "uci": "e2g3"
+        },
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/5q2/6PP/P5P1/5R1K b - - 0 33",
+          "before": "5r1k/pQR3pp/5rp1/3B4/5q2/6nP/P4PP1/5R1K w - - 9 33",
+          "san": "fxg3",
+          "uci": "f2g3"
+        },
+        {
+          "after": "5r1k/pQR3pp/5rp1/3B4/8/6PP/P5P1/5q1K w - - 0 34",
+          "before": "5r1k/pQR3pp/5rp1/3B4/5q2/6PP/P5P1/5R1K b - - 0 33",
+          "san": "Qxf1+",
+          "uci": "f4f1"
+        }
+      ],
+      "legal_replay_sha256": "4f7dfa0b280190734b6dcc1492051d13c58e950ddc631874e04e1f11f102df6f",
+      "position_id": "lichess-puzzle-001Fg",
+      "provenance_kind": "real_public_game_derived_puzzle",
+      "puzzle_id": "001Fg",
+      "rating": 1185,
+      "setup_move": "c8c7",
+      "solution_uci": [
+        "d4e2",
+        "g1h2",
+        "a4f4",
+        "h2h1",
+        "e2g3",
+        "f2g3",
+        "f4f1"
+      ],
+      "source_fen": "2R2r1k/pQ4pp/5rp1/3B4/q2n4/7P/P4PP1/5RK1 w - - 3 30",
+      "split": "test",
+      "target_move": "d4e2",
+      "themes": [
+        "advantage",
+        "middlegame",
+        "veryLong"
+      ]
+    }
+  ],
+  "license": "CC0-1.0",
+  "license_source": "https://database.lichess.org/",
+  "schema": "chess-real-seed/v1",
+  "selection": "First 24 distinct game IDs and positions in complete prefix rows; convenience sample, not representative",
+  "source_page": "https://database.lichess.org/",
+  "source_page_status": 200,
+  "source_url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+  "split_rule": "Sort SHA256('lichess-seed-v1:'+game_id), assign exactly 8 train / 8 dev / 8 test",
+  "test_policy": "Legality/integrity inspection only; no engine, model, tuning or outcome scoring on test"
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "playground-evaluation-outcome-contract/v1",
+  "status": "internal_design_unreviewed",
+  "scientific_validation": false,
+  "experiment_executed": false,
+  "provenance": "research/research-loop-agenda-candidate-v1-2026-09-06.md",
+  "record_fields": {
+    "request_id": "nonempty stable requested-item ID",
+    "original_match_id": "nonempty source-group ID; halves, replays and alternate encodes stay together",
+    "source_asset_sha256": "exact 64-character lowercase hexadecimal source hash",
+    "split_id": "frozen split assignment",
+    "method_id": "frozen comparison arm",
+    "model_revision": "exact model/weight/runtime identity",
+    "input_manifest_sha256": "exact 64-character lowercase hexadecimal input manifest hash",
+    "prediction_sha256": "64-character lowercase hexadecimal retained raw-output hash, or null with an explicit no-output failure",
+    "terminal_status": ["answered", "abstained", "timeout", "malformed", "validation_failed"],
+    "failure_reason": "null on ordinary answer/abstention; explicit cause on failure",
+    "answered": "boolean; true only for terminal_status=answered",
+    "human_answerability": ["answerable", "unanswerable", "unresolved"],
+    "endpoint_eligible": "boolean determined by frozen criteria; exclusion reason required when false",
+    "field_evidence_required": "boolean fixed by endpoint/query contract before evaluation",
+    "field_calibration_valid": "boolean or null when unresolved/not applicable",
+    "answer_correct": "boolean or null pending independent labels and eligibility",
+    "temporal_grounding_correct": "boolean or null pending independent labels and eligibility",
+    "field_grounding_correct": "boolean or null pending independent labels/valid calibration or when not applicable"
+  },
+  "validation_rules": [
+    "Retain every requested item and all attempt records; exactly one final outcome per requested item and comparison arm.",
+    "Missing provenance, invalid hashes, duplicate final rows and altered sealed inputs fail validation; record the failure without inventing missing metadata.",
+    "Primary denominator is all preregistered endpoint-eligible human-answerable requests. Model abstention, timeout, malformed output or validation failure cannot count as primary success.",
+    "Primary success requires an answered request with answer_correct=true and temporal_grounding_correct=true; when field evidence is required, field_calibration_valid=true and field_grounding_correct=true are also required.",
+    "Unresolved human labels or eligibility prevent scored scientific reporting. An unanswerable item is distinct from a model that did not answer.",
+    "Field-unobservable items and not-applicable dimensions must follow predeclared eligibility rules. Do not silently remove a method's invalid field evidence from its denominator.",
+    "Report requested, eligible, human-answerable, unanswerable, unresolved, answered, abstained, failure and exclusion counts with reasons and independent match counts; do not invent numeric values in this design artifact.",
+    "For each declared evaluated cohort, coverage is answered/eligible requests; selective risk is errors/answered requests. State the cohort and answer-only versus joint-grounded error definition.",
+    "With zero answered items, selective risk is undefined and coverage is zero; this is not perfect performance. With zero eligible items, coverage is undefined.",
+    "Correctness remains null when independent labels or an applicable observable dimension are absent. Model-written positive correctness is not evidence."
+  ],
+  "expected_rejection_cases": [
+    {"id": "missing-original-match", "synthetic": true, "mutation": "omit original_match_id", "expected": "reject provenance validation"},
+    {"id": "timeout-marked-success", "synthetic": true, "mutation": "terminal_status=timeout with primary_success=true", "expected": "reject outcome consistency"},
+    {"id": "invalid-field-correctness", "synthetic": true, "mutation": "field_calibration_valid=false with field_grounding_correct=true", "expected": "reject unsupported field correctness"}
+  ],
+  "verification_boundary": "This is an unscored field/rule contract, not an executable validator or observed experiment. Rejection cases describe expected behavior; no tests or model runs are claimed."
+}

@@ -1,0 +1,15 @@
+{
+  "status": "SYSTEMS GO / SEMANTIC NO-GO",
+  "promotion_identity": {
+    "candidatePath": "artifacts/soccer-loop-live-20260906/loop-contract-review-copy-v2.md",
+    "candidateSha256": "ca49b04735f1bd47b2dd5f1927cde0ad58d377e38e3a8de999d1eec379c36720",
+    "lunaVerdict": "PASS",
+    "lunaReviewId": "003beef9-4f93-4bb7-a40d-81245c421640",
+    "lunaReceipt": "610cdaa04d3766cd63f84832aa845d70d10039e7d50f3751b81ed39a3e2dc890",
+    "lunaModel": "gpt-5.6-luna",
+    "lunaTools": "zero",
+    "copyReceipt": "b727ccf7be0911386ba67a7d07ffe1652d63043bb723fc712ed3621c7e261694"
+  },
+  "fail_closed_statement": "This manifest does not establish performance, novelty, rights, processing permission, publication approval, or science-sharing eligibility.",
+  "contract_status": "SYSTEMS GO / SEMANTIC NO-GO"
+  }

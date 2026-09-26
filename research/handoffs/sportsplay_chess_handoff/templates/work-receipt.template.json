@@ -1,0 +1,20 @@
+{
+  "template": true,
+  "task_id": null,
+  "agent_id": null,
+  "status": "NOT_STARTED",
+  "parent_commit": null,
+  "result_commit": null,
+  "dirty_diff_sha256": null,
+  "command_argv": [],
+  "input_manifest": null,
+  "output_manifest": null,
+  "exit_code": null,
+  "stdout_path": null,
+  "stderr_path": null,
+  "started_at_utc": null,
+  "ended_at_utc": null,
+  "acceptance_checks": [],
+  "independent_verifier": null,
+  "limitations": []
+}

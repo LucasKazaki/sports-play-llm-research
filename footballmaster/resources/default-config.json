@@ -1,0 +1,15 @@
+{
+  "schema_version": "footballmaster-config-v1",
+  "sport": "american_football",
+  "target_name": "is_touchdown",
+  "target_classes": ["not_touchdown", "touchdown"],
+  "positive_fine_labels": ["rushing_touchdown", "touchdown_pass"],
+  "negative_fine_labels": ["field_goal_attempt", "interception_practice", "kickoff_return"],
+  "splits": ["train", "valid", "test"],
+  "rights_allowed": "approved_for_local_research",
+  "frame_count": 8,
+  "pca_components": 16,
+  "epochs": 500,
+  "learning_rate": 0.05,
+  "l2": 0.1
+}

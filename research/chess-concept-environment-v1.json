@@ -1,0 +1,39 @@
+{
+    "schema":  "sports-chess-c02-environment/v1",
+    "python":  "C:\\AI\\projects\\SportsPlayLLMResearch\\.venv-soccernet\\Scripts\\python.exe",
+    "probe":  {
+                  "engine_ready":  false,
+                  "executables":  {
+                                      "stockfish":  null,
+                                      "stockfish.exe":  null
+                                  },
+                  "installed_chess_related_distributions":  [
+                                                                "chess"
+                                                            ],
+                  "modules":  {
+                                  "chess":  true,
+                                  "stockfish":  false
+                              },
+                  "python":  "C:\\AI\\projects\\SportsPlayLLMResearch\\.venv-soccernet\\Scripts\\python.exe",
+                  "schema_version":  "chess-environment-probe/v1"
+              },
+    "requirements":  "research/chess-concept-requirements-v1.txt",
+    "requirementsSha256":  "5005dc2093f53c1bf0638e7061487849c0e42669944c7737d334d0e22c893ab2",
+    "packageCount":  59,
+    "limits":  {
+                   "maxConcurrentWorkers":  1,
+                   "commandTimeoutMs":  0,
+                   "previewHost":  "127.0.0.1",
+                   "publicHosting":  {
+
+                                     },
+                   "restrictedData":  {
+
+                                      },
+                   "paidServices":  {
+
+                                    }
+               },
+    "engineReady":  false,
+    "note":  "A false engineReady value is a verified local capability gap, not permission to install or fetch external software."
+}

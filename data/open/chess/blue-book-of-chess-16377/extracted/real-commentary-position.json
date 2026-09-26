@@ -1,0 +1,28 @@
+{
+  "commentary_evidence": [
+    {
+      "id": "blue-book-comment-1",
+      "source_ref": "gutenberg-blue-book-16377/game-1/ply-38",
+      "text": "To enable him to capture the Bishop, which is about\nto take the Kt., with the Q's Pawn."
+    }
+  ],
+  "engine_evidence": [],
+  "fen": "r5rk/1ppqb1pp/2bpNp2/p3nP2/P3P3/2N3B1/1PP1Q1PP/3R1RK1 b - - 4 19",
+  "game_id": "blue-book-16377-1",
+  "legal_board_verified": true,
+  "legal_replay_hash": "0cf83dde8a56ccbb30ba9fbcaf7536d383f4a4832905d44b8fcde462ad7ec1ab",
+  "limitations": [
+    "This is a real historically played position with public-domain book commentary.",
+    "Engine evidence is added separately and explanation quality remains unevaluated."
+  ],
+  "move_uci": "d7c8",
+  "position_id": "gutenberg-blue-book-16377/game-1/ply-38",
+  "schema_version": "position-evidence/v1",
+  "source": {
+    "game_ref": "gutenberg-blue-book-16377/game-1/ply-38",
+    "license": "public-domain-USA",
+    "rights_status": "verified",
+    "source_id": "gutenberg-blue-book-16377"
+  },
+  "split": "dev"
+}

@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0",
+  "kind": "proposed_task_graph",
+  "project_id": "sports-play-llm",
+  "protocol_version": "1.0",
+  "execution_started": false,
+  "runtime_instruction": "Translate into existing Company Runtime. Do not start a separate scheduler. Human work may receive a documented NOT_RUN disposition.",
+  "tasks": [
+    {
+      "id": "C00",
+      "title": "Verify workspace and shared document access",
+      "logical_owner": "coordinator",
+      "depends_on": [],
+      "optional_evidence_from": [],
+      "dependency_note": "none",
+      "status": "NOT_STARTED",
+      "specification": "Owner: coordinator. Dependencies: none. Inspect project identity, active roster, permissions, worktree, and available recipes. Register the hub and handoff, synchronize the mirror, and collect each agent's read receipt. Preserve the soccer baseline manifest. Output `bootstrap.json`, access receipts, and a short discovery note. Accept only when all active project agents can read the plan or explicit exceptions are visible. A missing Drive route must not prevent work from the supplied private bundle.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C01",
+      "title": "Freeze scope and reuse plan",
+      "logical_owner": "coordinator",
+      "depends_on": [
+        "C00"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C00",
+      "status": "NOT_STARTED",
+      "specification": "Owner: coordinator. Dependency: C00. Inspect existing retrieval, evidence-card, storage, interface, and model adapters. Choose reuse versus a small chess adapter for each component. Freeze standard chess, post-game-only behavior, required visual conditions, and final outputs. Output a module map and scoped architecture decision. Accept when there is one implementation path and no implicit dependency on a team contact, private footage, or a paid platform service.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C02",
+      "title": "Establish reproducible dependencies and resource limits",
+      "logical_owner": "chess engineer",
+      "depends_on": [
+        "C01"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C01",
+      "status": "NOT_STARTED",
+      "specification": "Owner: chess engineer. Dependency: C01. Pin Python packages, Stockfish binary/network, frontend tools, model configuration, and supported OS instructions. Measure a tiny engine/model canary on the actual host. Set bounded process concurrency, timeouts, and storage limits without changing unrelated PC settings. Output lockfiles and environment receipt. Accept when a clean environment can parse a game, run one UCI analysis, and save its identity.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C03",
+      "title": "Inventory sources, licenses, and permissions",
+      "logical_owner": "data curator",
+      "depends_on": [
+        "C01"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C01",
+      "status": "NOT_STARTED",
+      "specification": "Owner: data curator. Dependency: C01. Choose the small initial corpus, record origin/license and permitted uses, and separate platform-derived annotations from redistributable data. Review component and model licenses before packaging. Output source inventory and download manifest. Accept when every planned input and distributed component has a source and no unresolved permission is represented as granted.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C04",
+      "title": "Build state and PGN import/export",
+      "logical_owner": "chess engineer",
+      "depends_on": [
+        "C02"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C02",
+      "status": "NOT_STARTED",
+      "specification": "Owner: chess engineer. Dependency: C02. Implement validated standard-chess import, legal replay, move indexing, FEN/history preservation, branching, and annotated PGN export. Preserve or explicitly quarantine parser errors instead of importing a silent partial game. Output state module and deterministic tests. Accept round trips for castling, en passant, promotion, checks, terminal positions, and history-dependent draws, plus rejection of unsupported variants.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C05",
+      "title": "Construct development, validation, and test manifests",
+      "logical_owner": "data curator",
+      "depends_on": [
+        "C03",
+        "C04"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C03, C04",
+      "status": "NOT_STARTED",
+      "specification": "Owner: data curator. Dependencies: C03, C04. Sample completed games, quiet moves, tactical cases, rule/history cases, and generated endgames. Apply puzzle first-move semantics correctly. Group related positions and derivatives before splitting. Output manifests, exclusions, provenance, and duplicate audit. Accept only after no parent game, transposition family, or derived exercise crosses the declared split boundary.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C06",
+      "title": "Implement bounded UCI analysis and cache identity",
+      "logical_owner": "chess engineer",
+      "depends_on": [
+        "C02",
+        "C04"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C02, C04",
+      "status": "NOT_STARTED",
+      "specification": "Owner: chess engineer. Dependencies: C02, C04. Add process lifecycle, legal input checks, candidate/root-restricted analysis, cancellation, restart, and raw receipts. Include history and configuration in cache identity. Output service and error fixtures. Accept when stale-cache, opposite-side score, timeout, unavailable engine, and concurrent-request tests pass. No timeout may be presented as a draw or neutral evaluation.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C07",
+      "title": "Implement reference types and tablebase semantics",
+      "logical_owner": "data curator with chess engineer",
+      "depends_on": [
+        "C05",
+        "C06"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C05, C06",
+      "status": "NOT_STARTED",
+      "specification": "Owner: data curator with chess engineer. Dependencies: C05, C06. Build covered-endgame probing and engine-reference labeling, preserving raw WDL/DTZ and rule-aware outcomes. Inventory needed successor tables. Output reference records and coverage audit. Accept when uncovered positions, castling rights, halfmove limits, and cursed/blessed outcomes have correct explicit handling and no DTZ value is described as mate distance.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C08",
+      "title": "Implement evidence and result schemas",
+      "logical_owner": "coordinator with language engineer",
+      "depends_on": [
+        "C04",
+        "C06",
+        "C07"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C04, C06, C07",
+      "status": "NOT_STARTED",
+      "specification": "Owner: coordinator with language engineer. Dependencies: C04, C06, C07. Define versioned state, analysis, explanation, claim, retrieval, and result records. Validate referential integrity and hashes. Output schemas and example records. Accept when a changed game, move, engine configuration, or evidence file invalidates stale results rather than silently reusing them.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C09",
+      "title": "Implement deterministic factual checks",
+      "logical_owner": "chess engineer",
+      "depends_on": [
+        "C08"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C08",
+      "status": "NOT_STARTED",
+      "specification": "Owner: chess engineer. Dependency: C08. Add precise occupancy, move-legality, capture, check, material-change, line-validation, and reference-comparison tools. Separate attack geometry from tactical gain and unsupported strategic claims. Output checker tests, including deliberately false statements. Accept when known-false claims are rejected and inconclusive claims are not silently treated as true.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C10",
+      "title": "Build the non-LLM explanation baseline",
+      "logical_owner": "language engineer",
+      "depends_on": [
+        "C08",
+        "C09"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C08, C09",
+      "status": "NOT_STARTED",
+      "specification": "Owner: language engineer. Dependencies: C08, C09. Produce short templates that describe the actual move, supported consequences, one alternative, and one justified practice idea. Output A0 baseline and sample reviews. Accept when the complete review pipeline runs with no model installed and every literal assertion traces to deterministic or reference evidence.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C11",
+      "title": "Build the exact-state LLM-only baseline",
+      "logical_owner": "language engineer",
+      "depends_on": [
+        "C04",
+        "C08"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C04, C08",
+      "status": "NOT_STARTED",
+      "specification": "Owner: language engineer. Dependencies: C04, C08. Give the chosen local model the same state representation and relevant history but no engine tools, future moves, or answer labels. Use fixed generation limits and record failures. Output A1 runner and prompt manifest. Accept when isolation tests show no hidden engine, retrieval, or reference cache access.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C12",
+      "title": "Build the tool-assisted explanation baseline",
+      "logical_owner": "language engineer",
+      "depends_on": [
+        "C06",
+        "C08",
+        "C09",
+        "C11"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C06, C08, C09, C11",
+      "status": "NOT_STARTED",
+      "specification": "Owner: language engineer. Dependencies: C06, C08, C09, C11. Add allowlisted state/analysis tools with structured arguments and bounded calls. Require evidence-linked commentary, analysis, and coaching outputs. Output A2 runner. Accept when illegal tool requests fail clearly, requested evidence is retained, and every answer identifies the correct state and move.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C13",
+      "title": "Verify final prose and implement bounded repair",
+      "logical_owner": "language engineer with independent QA",
+      "depends_on": [
+        "C09",
+        "C12"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C09, C12",
+      "status": "NOT_STARTED",
+      "specification": "Owner: language engineer with independent QA. Dependencies: C09, C12. Extract assertions from final prose, run checks, allow one repair, and preserve original/revised outputs. Show partial verified answers or uncertainty when necessary. Output A3 runner and adversarial cases. Accept when rewriting cannot introduce unchecked claims or hide failed attempts from evaluation.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C14",
+      "title": "Add a source-linked lesson library",
+      "logical_owner": "data curator with language engineer",
+      "depends_on": [
+        "C03",
+        "C10",
+        "C12"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C03, C10, C12",
+      "status": "NOT_STARTED",
+      "specification": "Owner: data curator with language engineer. Dependencies: C03, C10, C12. Create a small allowed lesson collection, attach source and evidence records, and link exercises to supported mistakes. Keep primary evaluation offline. Output corpus and retrieval tests. Accept when retrieved text cannot override system instructions and held-out solutions are inaccessible. Live web retrieval remains a separately labeled ablation.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C15",
+      "title": "Implement board and replay rendering",
+      "logical_owner": "interface/vision engineer",
+      "depends_on": [
+        "C04",
+        "C08"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C04, C08",
+      "status": "NOT_STARTED",
+      "specification": "Owner: interface/vision engineer. Dependencies: C04, C08. Render saved games and alternative branches with stable coordinates, timestamps, and independently controlled overlays. Export short replay videos from legal histories. Output renderer, fixtures, and asset-license notes. Accept when frame/state alignment and board orientation round-trip correctly, and observation images contain no annotations that leak the intended answer.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C16",
+      "title": "Add searchable review events",
+      "logical_owner": "interface engineer",
+      "depends_on": [
+        "C08",
+        "C10"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C08, C10",
+      "status": "NOT_STARTED",
+      "specification": "Owner: interface engineer. Dependencies: C08, C10. Adapt existing lexical search and structured filters to game-ply event records. Handle paraphrases, negation, absence of a relevant event, and duplicate results. Output index and 60-question evaluation manifest. Accept when every result resolves to the exact saved state and no fabricated event is created to satisfy a query.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C17",
+      "title": "Assemble the review interface",
+      "logical_owner": "interface engineer",
+      "depends_on": [
+        "C10",
+        "C12",
+        "C13",
+        "C15",
+        "C16"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C10, C12, C13, C15, C16",
+      "status": "NOT_STARTED",
+      "specification": "Owner: interface engineer. Dependencies: C10, C12, C13, C15, C16. Implement import, timeline, board, actual/alternative replay, chat, evidence drawer, uncertainty, and export. Add local practice without online move submission. Output a usable local demo. Accept an end-to-end test from completed PGN import to a cited explanation and export, with keyboard access and stale-response cancellation.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C18",
+      "title": "Build static-image state recovery",
+      "logical_owner": "vision engineer",
+      "depends_on": [
+        "C05",
+        "C15"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C05, C15",
+      "status": "NOT_STARTED",
+      "specification": "Owner: vision engineer. Dependencies: C05, C15. Implement a simple image-parser baseline and a VLM extractor under identical observation conditions. Output recovered-state records with uncertainty, not unverified tactical prose. Accept clean held-out parsing tests, orientation checks, and explicit refusal to infer hidden history from a screenshot. Keep ground-truth sidecars evaluator-only.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C19",
+      "title": "Build temporal replay recovery",
+      "logical_owner": "vision engineer",
+      "depends_on": [
+        "C04",
+        "C15",
+        "C18"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C04, C15, C18",
+      "status": "NOT_STARTED",
+      "specification": "Owner: vision engineer. Dependencies: C04, C15, C18. Track legal state transitions from a known start across replay frames, using bounded hypotheses when frames are missing. Output move-sequence predictions and first-divergence logs. Accept dropped-frame, animation, occlusion, and ambiguous-transition tests without silently consulting the true move list.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C20",
+      "title": "Implement the evaluation runner",
+      "logical_owner": "independent evaluator",
+      "depends_on": [
+        "C05",
+        "C07",
+        "C08",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C16"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C05, C07, C08, C10, C11, C12, C13, C16",
+      "status": "NOT_STARTED",
+      "specification": "Owner: independent evaluator. Dependencies: C05, C07, C08, C10, C11, C12, C13, C16. Run identical cases through required conditions, retain all failures, validate references, and compute metrics with grouped uncertainty estimates. Output analysis scripts and NOT RUN result templates. Accept recomputation from raw receipts with no hand-entered performance numbers and no final-label access for builder agents.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C21",
+      "title": "Execute integration, reliability, and security tests",
+      "logical_owner": "QA reviewer",
+      "depends_on": [
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C17, C18, C19, C20",
+      "status": "NOT_STARTED",
+      "specification": "Owner: QA reviewer. Dependencies: C17, C18, C19, C20. Test malformed inputs, engine/model outages, stale IDs, cancellation, cache corruption, oversized PGNs, prompt injection, and path restrictions. Output a failure matrix and test receipts. Accept zero unresolved release-blocking data-integrity or unauthorized-access defects; performance weaknesses remain research results rather than hidden failures.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C22",
+      "title": "Validate, tune, and freeze the protocol",
+      "logical_owner": "coordinator and evaluator",
+      "depends_on": [
+        "C14",
+        "C20",
+        "C21"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C14, C20, C21",
+      "status": "NOT_STARTED",
+      "specification": "Owner: coordinator and evaluator. Dependencies: C14, C20, C21. Use development/validation only to settle budgets, prompts, thresholds, model choice, corpus, exclusions, and rubric. Freeze hashes and predeclare the primary contrast. Output signed-off protocol manifest. Accept when all required conditions can run, deviations are explained, and final data remains sealed.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C23",
+      "title": "Run the frozen held-out evaluation",
+      "logical_owner": "independent evaluator",
+      "depends_on": [
+        "C22"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C22",
+      "status": "NOT_STARTED",
+      "specification": "Owner: independent evaluator. Dependency: C22. Run required exact-state and visual conditions on the protected test through the approved evaluator path. Preserve raw outputs, failures, and hardware telemetry. Output results and immutable run receipts. Accept completeness and reproducibility, not a predetermined favorable outcome. Do not admit model improvement tasks using these answers.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C24",
+      "title": "Complete the Chess.com comparison sample",
+      "logical_owner": "data curator with owner-assisted browser review",
+      "depends_on": [
+        "C07",
+        "C22"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C07, C22",
+      "status": "NOT_STARTED",
+      "specification": "Owner: data curator with owner-assisted browser review. Dependencies: C07, C22. Review the preselected 30 cases through supported platform functionality, record visible settings and discrepancies, and flag unavailable premium features. Output comparison records, not copied coaching content. Accept a documented sample or explicit access-limited subset; the local benchmark must remain reproducible without platform access.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C25",
+      "title": "Conduct independent review and optional learner pilot",
+      "logical_owner": "evaluator with project owner",
+      "depends_on": [
+        "C17",
+        "C22",
+        "C23"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "Final-output review waits for C23. Reviewer protocol preparation can begin after C22; participant work requires the applicable institutional determination.",
+      "status": "NOT_STARTED",
+      "specification": "Owner: evaluator with project owner. Dependencies: C17, C22, C23 for final-output review, and required institutional determination for participant work. Run the blinded review and approved learner protocol. Output anonymized ratings, consent/approval references stored privately, and analysis. Accept actual observations only. If people are unavailable, record NOT RUN and exclude claims of human learning or coach effectiveness.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C26",
+      "title": "Analyze errors, uncertainty, and ablations",
+      "logical_owner": "evaluator",
+      "depends_on": [
+        "C23",
+        "C24"
+      ],
+      "optional_evidence_from": [
+        "C25"
+      ],
+      "dependency_note": "C23, C24; include C25 when available",
+      "status": "NOT_STARTED",
+      "specification": "Owner: evaluator. Dependencies: C23, C24; include C25 when available. Classify perception, history, reference, tool-use, language, citation, retrieval, and teaching failures. Compare A3/A2 and oracle/recovered-state conditions without cherry-picking. Output statistics, representative failures, and a claim-to-evidence map. Accept conclusions that match denominators, uncertainty, and reference types.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C27",
+      "title": "Package the application and reproduction bundle",
+      "logical_owner": "coordinator with QA",
+      "depends_on": [
+        "C17",
+        "C21",
+        "C23"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C17, C21, C23",
+      "status": "NOT_STARTED",
+      "specification": "Owner: coordinator with QA. Dependencies: C17, C21, C23. Create a clean-environment setup guide, lockfiles, minimal redistributable fixtures, source/license notices, saved demo, and one-command equivalents for tests and evaluation. No proprietary assets, secrets, or hidden participant identifiers. Accept installation and a smoke run by someone other than the primary builder.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C28",
+      "title": "Reconcile documents and agent mirrors",
+      "logical_owner": "documentation coordinator",
+      "depends_on": [
+        "C00",
+        "C26"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C00 and accepted work receipts as they arrive; final pass after C26",
+      "status": "NOT_STARTED",
+      "specification": "Owner: documentation coordinator. Dependencies: C00 and accepted work receipts as they arrive; final pass after C26. Update the private hub's actual progress, decisions, and blockers, then refresh mirrors and affected read acknowledgments. Preserve prior protocol versions. Accept revision-safe updates with evidence links and unchanged restricted sharing. Do not automatically edit the Archit update.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C29",
+      "title": "Write the final technical report",
+      "logical_owner": "documentation editor with evaluator",
+      "depends_on": [
+        "C26",
+        "C27"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C26, C27",
+      "status": "NOT_STARTED",
+      "specification": "Owner: documentation editor with evaluator. Dependencies: C26, C27. Follow the report outline below, cite primary work, include actual results and negative outcomes, and distinguish measurements from proposals. Output editable source plus a reviewable export. Accept independent reconciliation of every quantitative claim to a result artifact, and no unsupported novelty, exactness, or human-benefit claim.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C30",
+      "title": "Build the final presentation and demo",
+      "logical_owner": "presentation editor with coordinator",
+      "depends_on": [
+        "C27",
+        "C29"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C27, C29",
+      "status": "NOT_STARTED",
+      "specification": "Owner: presentation editor with coordinator. Dependencies: C27, C29. Create the slide sequence and demo described below, using actual charts, legal replay examples, and an offline fallback. Output editable slides, speaker notes, demo script, and recording. Accept a rehearsal from a clean starting state, with one success, one failure, and uncertainty explained.",
+      "execution_receipts": []
+    },
+    {
+      "id": "C31",
+      "title": "Conduct the chess-phase exit review",
+      "logical_owner": "project owner and independent evaluator",
+      "depends_on": [
+        "C28",
+        "C29",
+        "C30"
+      ],
+      "optional_evidence_from": [],
+      "dependency_note": "C28, C29, C30",
+      "status": "NOT_STARTED",
+      "specification": "Owner: project owner and independent evaluator. Dependencies: C28, C29, C30. Mark each acceptance gate passed, failed, or not run. Decide whether to refine chess, conclude the experiment, or start a separately scoped soccer simulation. Output exit decision and transferable-module list. Accept a complete research record even when some performance targets fail, without relabeling it a validated sports coach.",
+      "execution_receipts": []
+    }
+  ]
+}

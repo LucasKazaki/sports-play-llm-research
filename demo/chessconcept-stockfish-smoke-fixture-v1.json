@@ -1,0 +1,34 @@
+{
+  "commentary_evidence": [],
+  "engine_evidence": [
+    {
+      "id": "stockfish-19-multipv-1",
+      "move_uci": "e2e4",
+      "score_cp": 24
+    },
+    {
+      "id": "stockfish-19-multipv-2",
+      "move_uci": "d2d4",
+      "score_cp": 13
+    }
+  ],
+  "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "game_id": "synthetic-contract-fixture",
+  "legal_board_verified": true,
+  "legal_replay_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+  "limitations": [
+    "Synthetic contract fixture only; its candidate values are not an engine receipt.",
+    "Engine candidates are from Stockfish 19 receipt: ./artifacts/chessconcept-v1/stockfish-19-startpos-comparison.json",
+    "The input position remains synthetic; this is not calibration or training."
+  ],
+  "move_uci": "e2e4",
+  "position_id": "synthetic-contract-e2e4-v1-stockfish-19",
+  "schema_version": "position-evidence/v1",
+  "source": {
+    "game_ref": "not-a-recorded-game",
+    "license": "CC0-1.0",
+    "rights_status": "verified",
+    "source_id": "synthetic-contract-fixture"
+  },
+  "split": "dev"
+}

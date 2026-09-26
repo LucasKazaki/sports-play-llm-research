@@ -1,0 +1,59 @@
+{
+  "schema_version": "annotation-rubric-v1",
+  "answerability": [
+    "answerable",
+    "insufficient_visual_evidence",
+    "invalid_question"
+  ],
+  "pitch_regions": [
+    "left-defensive-third",
+    "central-defensive-third",
+    "right-defensive-third",
+    "left-middle-third",
+    "central-middle-third",
+    "right-middle-third",
+    "left-attacking-third",
+    "central-attacking-third",
+    "right-attacking-third",
+    "left-penalty-area",
+    "central-penalty-area",
+    "right-penalty-area",
+    "left-corner",
+    "right-corner",
+    "left-touchline",
+    "right-touchline",
+    "goal-area"
+  ],
+  "question_types": [
+    "restart-identification",
+    "progression-trajectory",
+    "temporal-order",
+    "player-role",
+    "causal-evidence",
+    "counterfactual-control"
+  ],
+  "unanswerable_reason_codes": [
+    "critical_event_outside_clip",
+    "occlusion",
+    "insufficient_resolution",
+    "ambiguous_entities",
+    "missing_view",
+    "question_premise_false",
+    "question_not_groundable_in_video"
+  ],
+  "evidence_entity_roles": [
+    "ball",
+    "possessor",
+    "receiver",
+    "defender",
+    "goalkeeper",
+    "referee",
+    "other"
+  ],
+  "temporal_interval_semantics": "half-open [start_s, end_s)",
+  "coordinate_system": "broadcast-image normalized coordinates: x left-to-right, y top-to-bottom",
+  "trajectory_required_for": [
+    "progression-trajectory"
+  ],
+  "warning": "Protocol vocabulary only; contains no annotations or measured results."
+}
