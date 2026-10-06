@@ -22,7 +22,7 @@ from chess_score_bounds import typed_score_bound
 SCHEMA = 'chess-arbitrary-move-contrast-evaluator/v1'
 ENGINE_NAME = 'Stockfish 19'
 ENGINE_OPTIONS = {'Threads': 1, 'Hash': 16, 'Skill Level': 20,
-                  'UCI_LimitStrength': False, 'UCI_Chess960': False}
+                  'UCI_LimitStrength': False}
 NODE_BUDGETS = (30_000, 100_000)
 INFERIOR_THRESHOLD_CP = 150
 MAX_BUDGET_DELTA_DRIFT_CP = 100
@@ -259,12 +259,8 @@ def evaluate(board: chess.Board, selected_uci: str, *,
     alternative_uci = next(root for root in discovery_roots if root != selected_uci)
     alternative = chess.Move.from_uci(alternative_uci)
     record['alternative_uci'] = alternative_uci
-    if any(item['score']['type'] != 'cp' or item['score']['bound'] != 'exact'
-           for item in observations):
-        record['comparison']['reason'] = 'discovery_mate_or_qualified_score'
-        for attempt in attempts[1:]:
-            attempt['reason'] = 'discovery_mate_or_qualified_score'
-        return record
+    # Discovery selects a legal alternative, not a numeric contrast. Preserve
+    # its typed scores in the receipt; only paired searches decide comparison.
     roots = (selected, alternative)
     paired = []
     for index, (phase, nodes) in enumerate(zip(PHASES[1:], NODE_BUDGETS), start=1):

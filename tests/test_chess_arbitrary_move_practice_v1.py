@@ -145,6 +145,68 @@ def test_run_fake_engine_create_only_and_offline_verify(tmp_path):
     assert len(launches) == 1
 
 
+@pytest.mark.parametrize('discovery_score', ['upper_bound_cp', 'mate'])
+def test_qualified_discovery_uses_exact_paired_scores(tmp_path, discovery_score):
+    pgn, binary, pins = fixture(tmp_path)
+    output = tmp_path / discovery_score
+
+    class QualifiedDiscoveryEngine(FakeEngine):
+        def analysis(self, board, limit, *, multipv, root_moves, options, game):
+            stream = super().analysis(board, limit, multipv=multipv,
+                                      root_moves=root_moves, options=options, game=game)
+            if len(self.calls) == 1:
+                events = list(stream.events)
+                if discovery_score == 'upper_bound_cp':
+                    events[0]['upperbound'] = True
+                else:
+                    events[0]['score'] = chess.engine.PovScore(chess.engine.Mate(3), board.turn)
+                return FakeStream(events)
+            return stream
+
+    fake = QualifiedDiscoveryEngine()
+    result = practice.run(pgn, binary, 'g1f3', output, pins=pins,
+                          engine_factory=lambda _: fake)
+    assert [attempt['status'] for attempt in result['evaluation']['attempts']] == [
+        'succeeded', 'succeeded', 'succeeded']
+    discovery_score_record = result['evaluation']['attempts'][0]['observations'][0]['score']
+    assert (discovery_score_record['bound'] == 'upper' if discovery_score == 'upper_bound_cp'
+            else discovery_score_record['type'] == 'mate')
+    assert result['evaluation']['comparison']['observed_loss_cp'] == 200
+    assert result['status'] == 'observed'
+    assert len(fake.calls) == 3
+    assert practice.verify(pgn, binary, output, pins=pins)['comparison_status'] == 'observed_inferior_in_pair'
+
+    changed = json.loads((output / 'result.json').read_bytes())
+    changed['evaluation']['comparison']['observed_loss_cp'] = 999
+    reseal_result(output, changed)
+    with pytest.raises(ValueError, match='evaluator_comparison_mismatch'):
+        practice.verify(pgn, binary, output, pins=pins)
+
+
+def test_qualified_paired_score_remains_unresolved(tmp_path):
+    pgn, binary, pins = fixture(tmp_path)
+    output = tmp_path / 'paired-bound'
+
+    class QualifiedPairEngine(FakeEngine):
+        def analysis(self, board, limit, *, multipv, root_moves, options, game):
+            stream = super().analysis(board, limit, multipv=multipv,
+                                      root_moves=root_moves, options=options, game=game)
+            if len(self.calls) == 2:
+                events = list(stream.events)
+                events[0]['upperbound'] = True
+                return FakeStream(events)
+            return stream
+
+    fake = QualifiedPairEngine()
+    result = practice.run(pgn, binary, 'g1f3', output, pins=pins,
+                          engine_factory=lambda _: fake)
+    assert len(fake.calls) == 3
+    assert result['status'] == 'unresolved'
+    assert result['reason'] == 'mate_or_qualified_score'
+    assert result['evaluation']['comparison']['observed_loss_cp'] is None
+    assert practice.verify(pgn, binary, output, pins=pins)['comparison_status'] == 'unresolved'
+
+
 @pytest.mark.parametrize('selected', ['g1f3', 'd2d4'])
 def test_selected_move_is_an_arbitrary_legal_root(tmp_path, selected):
     pgn, binary, pins = fixture(tmp_path)

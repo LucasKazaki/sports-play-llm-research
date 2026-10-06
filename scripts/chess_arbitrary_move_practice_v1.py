@@ -322,40 +322,32 @@ def _check_evaluation(record: object, prepared: Prepared, source_sha256: str) ->
             alternative = next(move for move in discovery_ucis if move != selected)
             if record['alternative_uci'] != alternative:
                 raise ValueError('discovery_alternative_mismatch')
-            if any(item['score']['type'] != 'cp' or item['score']['bound'] != 'exact'
-                   for item in found):
-                expected_comparison = {'status': 'unresolved',
-                                       'reason': 'discovery_mate_or_qualified_score',
-                                       'delta_cp_by_budget': None, 'observed_loss_cp': None}
-                if any(item['status'] != 'not_run' or
-                       item['reason'] != 'discovery_mate_or_qualified_score'
-                       for item in attempts[1:]):
-                    raise ValueError('qualified_discovery_followup_mismatch')
+            # Discovery chooses a legal alternative. Only the paired searches
+            # supply the scores used for a numeric comparison.
+            paired = []
+            for index, nodes in enumerate(contrast.NODE_BUDGETS, 1):
+                attempt = attempts[index]
+                if attempt['status'] == 'not_run':
+                    if index != 2 or attempts[1]['status'] != 'failed' or attempt['reason'] != 'earlier_stage':
+                        raise ValueError('missing_paired_attempt')
+                    break
+                roots = [selected, alternative]
+                if attempt['status'] == 'failed':
+                    _check_failed_attempt(attempt, prepared.board,
+                                          nodes=nodes, roots=roots)
+                    if index == 1 and (attempts[2]['status'] != 'not_run' or
+                                       attempts[2]['reason'] != 'earlier_stage'):
+                        raise ValueError('failed_low_followup_mismatch')
+                    break
+                paired.append(_check_success_attempt(attempt, prepared.board,
+                                                     nodes=nodes, roots=roots))
+            if len(paired) == 2:
+                expected_comparison = contrast._comparison(paired[0], paired[1],
+                                                            selected, alternative)
             else:
-                paired = []
-                for index, nodes in enumerate(contrast.NODE_BUDGETS, 1):
-                    attempt = attempts[index]
-                    if attempt['status'] == 'not_run':
-                        if index != 2 or attempts[1]['status'] != 'failed' or attempt['reason'] != 'earlier_stage':
-                            raise ValueError('missing_paired_attempt')
-                        break
-                    roots = [selected, alternative]
-                    if attempt['status'] == 'failed':
-                        _check_failed_attempt(attempt, prepared.board,
-                                              nodes=nodes, roots=roots)
-                        if index == 1 and (attempts[2]['status'] != 'not_run' or
-                                           attempts[2]['reason'] != 'earlier_stage'):
-                            raise ValueError('failed_low_followup_mismatch')
-                        break
-                    paired.append(_check_success_attempt(attempt, prepared.board,
-                                                         nodes=nodes, roots=roots))
-                if len(paired) == 2:
-                    expected_comparison = contrast._comparison(paired[0], paired[1],
-                                                                selected, alternative)
-                else:
-                    failed = attempts[1] if attempts[1]['status'] == 'failed' else attempts[2]
-                    expected_comparison = {'status': 'unresolved', 'reason': failed['reason'],
-                                           'delta_cp_by_budget': None, 'observed_loss_cp': None}
+                failed = attempts[1] if attempts[1]['status'] == 'failed' else attempts[2]
+                expected_comparison = {'status': 'unresolved', 'reason': failed['reason'],
+                                       'delta_cp_by_budget': None, 'observed_loss_cp': None}
     if comparison != expected_comparison:
         raise ValueError('evaluator_comparison_mismatch')
     failed_phase = any(item['status'] == 'failed' for item in attempts)

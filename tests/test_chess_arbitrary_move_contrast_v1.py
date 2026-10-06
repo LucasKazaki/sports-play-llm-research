@@ -118,6 +118,7 @@ def test_unrestricted_discovery_same_position_options_and_two_budget_contrast():
     assert [call['roots'] for call in engine.calls[1:]] == [['g1f3', 'e2e4']] * 2
     assert [call['fen'] for call in engine.calls] == [board.fen()] * 3
     assert [call['options'] for call in engine.calls] == [ENGINE_OPTIONS] * 3
+    assert 'UCI_Chess960' not in ENGINE_OPTIONS  # python-chess owns this option.
     assert [call['multipv'] for call in engine.calls] == [2] * 3
     assert result['source_receipt_sha256'] == SHA_SOURCE
     assert result['engine_sha256'] == SHA_ENGINE
@@ -189,17 +190,32 @@ def test_selected_move_not_observed_inferior_keeps_loss_empty():
     assert result['comparison']['observed_loss_cp'] is None
 
 
-def test_qualified_discovery_stops_before_paired_search():
+@pytest.mark.parametrize('qualification,score_type,bound,rank_index', [
+    ('upper', 'cp', 'upper', 1),  # Chosen root exact; other discovery root bounded.
+    ('lower', 'cp', 'lower', 0),
+    ('mate', 'mate', 'exact', 1),
+])
+def test_qualified_discovery_selects_root_but_paired_scores_decide_comparison(
+        qualification, score_type, bound, rank_index):
     board = chess.Board()
     scripts = list(normal_scripts(board))
-    scripts[0][0] = event(board, 1, 'e2e4', 40, upper=True)
+    kwargs = {qualification: True}
+    discovery_move = ('e2e4', 'd2d4')[rank_index]
+    scripts[0][rank_index] = event(
+        board, rank_index + 1, discovery_move,
+        3 if qualification == 'mate' else 40, **kwargs)
     engine = FakeEngine(*scripts)
     result = run(board, 'g1f3', engine)
-    assert [item['status'] for item in result['attempts']] == [
-        'succeeded', 'not_run', 'not_run']
-    assert result['comparison']['reason'] == 'discovery_mate_or_qualified_score'
-    assert result['comparison']['observed_loss_cp'] is None
-    assert len(engine.calls) == 1
+    assert [item['status'] for item in result['attempts']] == ['succeeded'] * 3
+    assert result['alternative_uci'] == 'e2e4'
+    assert [call['roots'] for call in engine.calls] == [
+        None, ['g1f3', 'e2e4'], ['g1f3', 'e2e4']]
+    discovery_score = result['attempts'][0]['observations'][rank_index]['score']
+    assert discovery_score['type'] == score_type
+    assert discovery_score['bound'] == bound
+    assert result['comparison'] == {
+        'status': 'observed_inferior_in_pair', 'reason': None,
+        'delta_cp_by_budget': [200, 210], 'observed_loss_cp': 210}
 
 
 def test_latest_raw_score_event_does_not_inherit_stale_bound():
