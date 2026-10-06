@@ -1,0 +1,45 @@
+{
+  "schema": "project-public-data-acquisition/v1",
+  "status": "fetched",
+  "fetched": true,
+  "source": "lichess-puzzle-prefix",
+  "target": "data/open/chess/lichess-harder-v2-prefix-20260929",
+  "synthetic": false,
+  "fullArchive": false,
+  "retrievedAt": "2026-09-29T05:54:06.314Z",
+  "timeoutMs": 60000,
+  "license": {
+    "spdx": "CC0-1.0",
+    "evidenceFile": "source-page.html",
+    "marker": "cc0"
+  },
+  "page": {
+    "url": "https://database.lichess.org/",
+    "file": "source-page.html",
+    "status": 200,
+    "bytes": 470282,
+    "sha256": "af8744cfbea38c1b571458796dbbeac9196845e3067fc172599fc86bb3021f08",
+    "headers": {
+      "etag": "\"6aa2a8fa-72d0a\"",
+      "lastModified": "Thu, 10 Sep 2026 12:56:26 GMT",
+      "contentType": "text/html",
+      "contentRange": null,
+      "contentLength": "470282"
+    }
+  },
+  "prefix": {
+    "url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+    "file": "puzzles.csv.zst.part",
+    "status": 206,
+    "bytes": 1048576,
+    "sha256": "3a2b73172f1cf3789f2ce7e260bd6be8208d9d815d46b8c11024fe672c7042bc",
+    "requestedMaxBytes": 1048576,
+    "headers": {
+      "etag": "\"6aa199fe-12253910\"",
+      "lastModified": "Wed, 09 Sep 2026 17:40:14 GMT",
+      "contentType": "application/octet-stream",
+      "contentRange": "bytes 0-1048575/304429328",
+      "contentLength": "1048576"
+    }
+  }
+}

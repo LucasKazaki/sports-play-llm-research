@@ -1,5 +1,57 @@
 # Run Log
 
+## 2026-10-05 — Offline chess review product slice
+
+Created `scripts/chess_real_evidence_interface.py` and
+`scripts/chess_review_completed_game.py`, their focused checks, a
+source-bound eight-case page, a synthetic finished-game demonstration and
+annotated-PGN export. A source-link variant caused the first gallery test
+failure; a bounded validator repair accepted exact Lichess `/black` and
+`/white` paths. The next native job passed 42 focused checks and built the
+page. Its optional source-print step failed only on Windows CP1252; a distinct
+UTF-8 bundle job repaired the review handoff without replaying the tests.
+The completed-game path passed five focused checks after a test-only Windows
+newline-restoration correction and a separate score-copy clarification.
+Full native regression job `824be469-98a1-4e58-9224-bf9618b5fc72`
+passed 1,481 tests with one existing symlink privilege skip.
+After that run, v2 of the completed-game receipt preserved every PGN header
+and bound source metadata, side-to-move and caution text. Native job
+`fcfb10f1-ccb2-48d9-821f-eae0385175b2` passed its five changed checks and
+built/verified the create-only v2 demonstration.
+Final native regression job `ddcb00b3-789e-4e44-a121-44ac5bd19633` then
+passed 1,481 tests with the same one Windows symlink privilege skip; copied
+receipt SHA-256 is
+`e998bcaacaad6a5517328d880260b782e6110567f21c64a8d28910dd93be0d94`.
+A separate read-only native audit `ea4c635b-18fc-45a0-8c81-b96a4b037af1`
+verified the retained CC0 prefix and legally replayed 19,824 complete rows;
+zero were malformed. It counted 3,368 and 2,224 eligible unique games in the
+two frozen rating bands, printed only aggregate theme counts, and selected no
+cohort cases. Its copied receipt SHA-256 is
+`b2f517c22cc41d8b15a066c3a545deda5168a0d9019c2d66f38d2af3fbfc60e5`.
+A versioned selector then used those retained bytes to make a 24-position
+8/8/8 game-disjoint cohort and evaluator-only sealed strata audit. Focused
+protocol checks passed 26/26 and source-row reconstruction verified the saved
+manifest in native job `8c44dcf0-bad2-4fe5-b246-1807140690fb`; copied
+receipt SHA-256 is
+`67c4b73b9da2c61911073793e6a031997bfec471c4369d335143282d05aa0f46`.
+No heldout outcome, model or engine call was made for this cohort.
+Final regression after the cohort selector passed 1,482 tests with one
+existing Windows symlink privilege skip in native job
+`be6fd869-d1b4-4b73-80f6-516b0f0f3e7b`; copied receipt SHA-256 is
+`13c8f1db4a7fd020e46bd3e6a20ae14cf61fda973e099528de939857d3332aa2`.
+The registered local v2 source-review callback
+`8950e3f0-54d0-4e2e-8bdf-78252f61379a` ran but returned no final text,
+so its function-level review remains unaccepted. A distinct, narrower exact
+7,956-byte function/test/log bundle was emitted in native job
+`89b65bd9-0e7e-412d-aef9-a596a15ceb92`; local callback
+`80e266ca-a012-41f1-b42e-194f2ad21667` is pending its inference lane.
+
+The first registered local source-review callback read the full bundle but
+returned no function-level verdict; it is retained as inadequate acceptance.
+A narrower function review remains pending. No professional commentary,
+heldout-quality or public-release claim follows. Exact paths, hashes and
+next requirements: `research/chess-product-readiness-2026-10-05.md`.
+
 ## 2026-09-22 20:29 UTC — No-forward input boundary
 
 Native implementation 0e757be8-e16c-4416-b683-558c9dee60cb passed 120 focused tests including 50 new cases. Full verification 4f81184f-d9a8-436a-bcd1-16150dafe1c6 passed 1375 tests with one existing host-permission skip. Eight source-bound real-development inputs were retained with zero model/engine calls. Review 0323eb3c-b0af-42d2-9fcf-05a705ab01ca read the full mandatory source/test bundle and passed; earlier summary-only review 69901eca-a97d-4605-ba3a-085213ee12df is not accepted source inspection. Current evidence and next requirement: research/chess-no-forward-input-2026-09-22.md.

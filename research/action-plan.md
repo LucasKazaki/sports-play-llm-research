@@ -1,5 +1,22 @@
 # Research Action Plan
 
+## Current chess product slice — October 5, 2026
+
+The [local readiness receipt](chess-product-readiness-2026-10-05.md) records a
+source-bound eight-position evidence page and a completed-game PGN review tool
+with legal replay, bounded local Stockfish observations, move list, alternative
+board and annotated-PGN export. The latest full repository suite passed 1,482 tests
+with one existing Windows symlink privilege skip. These are usable internal
+study tools; the saved model run admitted zero typed assertion sets and the
+no-forward commentary capability gate is still open. The next measured step
+is a versioned typed-output generation/evaluation protocol on the newly
+assembled, source-verified 24-position game-disjoint cohort from the retained
+1 MiB Lichess prefix, followed by qualified independent review. The cohort
+selection and sealed evaluator-only strata were verified without model or
+engine calls; its heldout outcomes remain unscored.
+The earlier September 22 runner and interface directions below are historical
+where the October 5 receipt documents completed software.
+
 ## Current finite repair — September 22, 20:29 UTC
 
 The strict no-forward input boundary is now implemented and source-reviewed. It has 50 new passing tests and eight retained real-development input packets, with no model calls or commentary quality result. Read [the current handoff](chess-no-forward-input-2026-09-22.md). Next implement the local generation runner and durable raw-output/failure retention using this boundary, with meaningful fake-transport tests before any live request. The broader frozen factuality experiment remains open. Earlier missing-boundary directions below describe prior state.

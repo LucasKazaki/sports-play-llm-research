@@ -1,5 +1,18 @@
 # Decision Log
 
+## 2026-10-05 — Keep the usable chess review distinct from commentary acceptance
+
+Build a local page over the eight real development positions and a separate
+post-game PGN review path. Both expose legal rule facts and typed, bounded
+Stockfish observations, while explicitly withholding unsupported strategic
+explanations. Preserve the frozen eight-call local-model capture and its zero
+admitted typed claims; the original transport supplied no typed-output
+instruction, so a corrected run must be newly versioned with fresh
+game-disjoint data. Do not turn the synthetic finished-game software demo or
+passing tests into chess-quality evidence. Exact implementation, verification
+and remaining promotion gates are in
+`chess-product-readiness-2026-10-05.md`.
+
 ## 2026-09-22 — Exact implementation after failed planner handoffs
 
 Preserve malformed/missing-source proposals and failed jobs; supply a bounded native implementation with meaningful tests rather than an unchanged planner retry. The new evaluator distinguishes legal asserted variations from exact retained engine PV attribution. Full typed receipts remain evaluator-only. Correct the old assisted-generation instructions to the current strict no-forward contract. Record local independent-review failure separately from code-test success; a bundle of exact source/log bytes repairs the finite read-packet mismatch without changing budgets or model routing.

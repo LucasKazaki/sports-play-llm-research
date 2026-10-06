@@ -11,6 +11,18 @@ The September 18 user correction makes chess the immediate research starting
 point. Follow [the current autonomous research program](research/chess-autonomous-research-program-2026-09-18.md)
 and `GOAL_WORK.json`; historical soccer/football results below remain intact.
 
+### Local chess review tools — October 5
+
+Start with the [chess evidence review guide](prototype/CHESS_EVIDENCE_REVIEW.md).
+The [offline real-development page](artifacts/chess-evidence-review-v1/index.html)
+lets you inspect eight source-linked positions and their checkable board and
+engine evidence. The separate post-game tool accepts one completed standard
+PGN, reviews a chosen move with local Stockfish, and exports an evidence page
+and annotated PGN. A [saved synthetic demonstration](artifacts/chess-completed-game-review-v2/synthetic-demo/index.html)
+shows that workflow. The model's saved development attempt admitted zero typed
+claim sets, so neither page presents a validated generated explanation or
+professional-commentary claim.
+
 There is now real data: 24 game-derived CC0 Lichess puzzles, 122 legally replayed
 plies and a source-bound 8/8/8 train/development/test split. Local Stockfish 19
 matched the published solution on all eight development puzzles at both 10,000
