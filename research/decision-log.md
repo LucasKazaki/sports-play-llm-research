@@ -4,6 +4,8 @@
 
 Use the user's open Chess.com Game Review as one post-game practice case. The first plausible pawn-loss explanation was incomplete: a legal queen trade reaches the same board after both Qc3 and Qe4. Preserve the failed verifier and the correction, then show the b7 threat and possible replies only on a separately checked evaluator-side page. A no-forward generator receives one move's source-bound pre-move facts and qualified score, never the saved continuation, alternative, annotations or post-move board. The v4 page and packets passed native checks, but there has been no model explanation of this game or independent teaching review. Keep the Archit Doc edit as a plain-language candidate until the actual Luna/Terra publication sequence is available. Save reviewable source to draft GitHub PR #4; keep raw PGN and generated evidence local under the mirror policy. The chess capability gate remains open.
 
+Pin the evaluator-side v4 page to the *approved* v3 receipt and page digests, not merely whatever matching files occupy the input folder. The first version had a coherent-replacement gap; the repaired page and negative test passed native checks. Preserve the original r5 output as history and use the pinned r6 output for current practice.
+
 ## 2026-10-05 — Keep the usable chess review distinct from commentary acceptance
 
 Build a local page over the eight real development positions and a separate

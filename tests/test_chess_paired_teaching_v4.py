@@ -95,6 +95,15 @@ def synthetic_v3(tmp_path, monkeypatch):
     return pgn_path, v3_dir, pgn_raw, v3_raw, v3_page_raw, record
 
 
+def _args(pgn_path, v3_dir, output, *, receipt_sha=None, page_sha=None):
+    return ['--pgn', str(pgn_path), '--v3-dir', str(v3_dir),
+            '--v3-receipt-sha256', receipt_sha or previous.digest(
+                (v3_dir / 'review.json').read_bytes()),
+            '--v3-page-sha256', page_sha or previous.digest(
+                (v3_dir / 'index.html').read_bytes()),
+            '--output-dir', str(output)]
+
+
 def test_short_line_replays_captures_material_and_final_position():
     board = chess.Board()
     board.push_san('e4')
@@ -240,6 +249,7 @@ def test_record_uses_exact_three_source_hashes_and_safe_page(synthetic_v3):
     assert "Side_To_Move's perspective" not in unescape(page)
     assert 'hypothetical pass' in page
     assert 'not a forced' in page
+    assert 'A threat and possible replies' in page
     assert '<script>White</script>' not in page
     assert '&lt;script&gt;White&lt;/script&gt;' in page
 
@@ -248,6 +258,8 @@ def test_record_uses_exact_three_source_hashes_and_safe_page(synthetic_v3):
 def test_v3_source_and_page_tampering_fail_before_creating_v4(
         synthetic_v3, tmp_path, changed):
     pgn_path, v3_dir, *_ = synthetic_v3
+    output = tmp_path / 'v4'
+    args = _args(pgn_path, v3_dir, output)
     if changed == 'pgn':
         pgn_path.write_text(PGN.replace('Synthetic teaching fixture',
                                         'Different synthetic fixture'), encoding='utf-8')
@@ -259,11 +271,52 @@ def test_v3_source_and_page_tampering_fail_before_creating_v4(
     else:
         (v3_dir / 'index.html').write_bytes(
             (v3_dir / 'index.html').read_bytes() + b'changed')
-    output = tmp_path / 'v4'
     with pytest.raises(ValueError):
-        teaching.main(['review', '--pgn', str(pgn_path), '--v3-dir', str(v3_dir),
-                       '--output-dir', str(output)])
+        teaching.main(['review', *args])
     assert not output.exists()
+
+
+def test_coherently_replaced_v3_receipt_and_page_fail_pinned_hashes(
+        synthetic_v3, tmp_path):
+    pgn_path, v3_dir, pgn_raw, *_ = synthetic_v3
+    output = tmp_path / 'v4'
+    receipt_path = v3_dir / 'review.json'
+    page_path = v3_dir / 'index.html'
+    pinned_receipt_sha = previous.digest(receipt_path.read_bytes())
+    pinned_page_sha = previous.digest(page_path.read_bytes())
+    pinned = _args(pgn_path, v3_dir, output,
+                   receipt_sha=pinned_receipt_sha, page_sha=pinned_page_sha)
+    record = json.loads(receipt_path.read_bytes())
+    record['engine']['paired_observations'][0]['score']['value'] = 900
+    played, alternative = record['engine']['paired_observations']
+    record['comparison'] = paired.compare_scores(played['score'], alternative['score'])
+    receipt_path.write_bytes(previous.canonical(record) + b'\n')
+    page_path.write_bytes(paired.render(record))
+    game, raw, moves = previous.load_completed_game(pgn_path)
+    assert raw == pgn_raw
+    paired.validate_record(record, game, raw, moves)
+    assert page_path.read_bytes() == paired.render(record)
+    with pytest.raises(ValueError, match='v3_receipt_sha256_changed'):
+        teaching.main(['review', *pinned])
+    assert not output.exists()
+    new_receipt_sha = previous.digest(receipt_path.read_bytes())
+    with pytest.raises(ValueError, match='v3_page_sha256_changed'):
+        teaching.main(['review', *_args(pgn_path, v3_dir, output,
+                                        receipt_sha=new_receipt_sha,
+                                        page_sha=pinned_page_sha)])
+    assert not output.exists()
+
+
+def test_invalid_pinned_digest_rejected(synthetic_v3):
+    pgn_path, v3_dir, _, v3_raw, v3_page_raw, _ = synthetic_v3
+    with pytest.raises(ValueError, match='invalid_v3_receipt_sha256'):
+        teaching.load_verified_v3(pgn_path, v3_dir,
+                                  v3_receipt_sha256='not-a-sha256',
+                                  v3_page_sha256=previous.digest(v3_page_raw))
+    with pytest.raises(ValueError, match='invalid_v3_page_sha256'):
+        teaching.load_verified_v3(pgn_path, v3_dir,
+                                  v3_receipt_sha256=previous.digest(v3_raw),
+                                  v3_page_sha256='A' * 64)
 
 
 def test_review_is_create_only_verify_is_byte_identical_and_offline(
@@ -275,8 +328,7 @@ def test_review_is_create_only_verify_is_byte_identical_and_offline(
 
     monkeypatch.setattr(chess.engine.SimpleEngine, 'popen_uci', forbidden_engine)
     output = tmp_path / 'v4'
-    args = ['--pgn', str(pgn_path), '--v3-dir', str(v3_dir),
-            '--output-dir', str(output)]
+    args = _args(pgn_path, v3_dir, output)
     assert teaching.main(['review', *args]) == 0
     review_status = json.loads(capsys.readouterr().out)
     assert review_status['engine_calls'] == review_status['model_calls'] == 0
@@ -295,8 +347,7 @@ def test_review_is_create_only_verify_is_byte_identical_and_offline(
 def test_verify_rejects_changed_v4_output(synthetic_v3, tmp_path, changed):
     pgn_path, v3_dir, *_ = synthetic_v3
     output = tmp_path / 'v4'
-    args = ['--pgn', str(pgn_path), '--v3-dir', str(v3_dir),
-            '--output-dir', str(output)]
+    args = _args(pgn_path, v3_dir, output)
     assert teaching.main(['review', *args]) == 0
     if changed == 'v4_receipt':
         path = output / 'review.json'

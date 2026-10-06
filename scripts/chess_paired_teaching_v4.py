@@ -29,6 +29,12 @@ LIMITATIONS = [
 ]
 
 
+def _require_sha256(value: str, name: str) -> None:
+    if (type(value) is not str or len(value) != 64 or
+            any(character not in '0123456789abcdef' for character in value)):
+        raise ValueError(f'invalid_{name}_sha256')
+
+
 def _validated_moves(board: chess.Board, pv_uci: object) -> list[chess.Move]:
     if not isinstance(pv_uci, list) or not 1 <= len(pv_uci) <= 128:
         raise ValueError('illegal_saved_line')
@@ -218,20 +224,28 @@ def derive_threat_contrast(board: chess.Board, played_pv_uci: object,
     return record
 
 
-def load_verified_v3(pgn_path: Path, v3_dir: Path) -> tuple[bytes, bytes, bytes, dict]:
-    """Validate the completed source and exact saved v3 page without new searches."""
+def load_verified_v3(pgn_path: Path, v3_dir: Path, *,
+                     v3_receipt_sha256: str, v3_page_sha256: str
+                     ) -> tuple[bytes, bytes, bytes, dict]:
+    """Validate pinned v3 bytes and legal source replay without new searches."""
+    _require_sha256(v3_receipt_sha256, 'v3_receipt')
+    _require_sha256(v3_page_sha256, 'v3_page')
     game, pgn_raw, moves = previous.load_completed_game(pgn_path)
     v3_path = v3_dir / 'review.json'
     with v3_path.open('rb') as stream:
         v3_raw = stream.read(paired.MAX_RECORD_BYTES + 1)
     if not v3_raw or len(v3_raw) > paired.MAX_RECORD_BYTES:
         raise ValueError('v3_receipt_empty_or_too_large')
+    if previous.digest(v3_raw) != v3_receipt_sha256:
+        raise ValueError('v3_receipt_sha256_changed')
     v3_record = json.loads(v3_raw)
     paired.validate_record(v3_record, game, pgn_raw, moves)
     with (v3_dir / 'index.html').open('rb') as stream:
         v3_page_raw = stream.read(MAX_RECORD_BYTES + 1)
     if len(v3_page_raw) > MAX_RECORD_BYTES:
         raise ValueError('v3_page_too_large')
+    if previous.digest(v3_page_raw) != v3_page_sha256:
+        raise ValueError('v3_page_sha256_changed')
     if v3_page_raw != paired.render(v3_record):
         raise ValueError('v3_page_differs_from_receipt')
     return pgn_raw, v3_raw, v3_page_raw, v3_record
@@ -383,7 +397,7 @@ legally replayed examples from a saved game and engine receipt, not a model expl
 <div class="panel"><p class="eyebrow">Saved line</p><h2>What happens in one continuation</h2>
 <p>{ui.safe(line['san_line'])}. This is one legal line from the saved search, not a forced reply.</p>
 <ul class="claims">{captures}</ul></div>
-<div class="panel"><p class="eyebrow">Alternative</p><h2>A threat and two possible replies</h2>
+<div class="panel"><p class="eyebrow">Alternative</p><h2>A threat and possible replies</h2>
 {threat}</div>
 <div class="panel"><p class="eyebrow">Engine context</p><h2>What the scores do and do not say</h2>
 <p>{ui.safe(score_text)}</p><p>The legal examples above do not prove why the engine
@@ -404,9 +418,15 @@ def main(argv: list[str] | None = None) -> int:
         current = sub.add_parser(command)
         current.add_argument('--pgn', type=Path, required=True)
         current.add_argument('--v3-dir', type=Path, required=True)
+        current.add_argument('--v3-receipt-sha256', required=True,
+                             help='Previously approved v3 receipt SHA-256')
+        current.add_argument('--v3-page-sha256', required=True,
+                             help='Previously approved v3 HTML SHA-256')
         current.add_argument('--output-dir', type=Path, required=True)
     args = parser.parse_args(argv)
-    pgn_raw, v3_raw, v3_page_raw, v3_record = load_verified_v3(args.pgn, args.v3_dir)
+    pgn_raw, v3_raw, v3_page_raw, v3_record = load_verified_v3(
+        args.pgn, args.v3_dir, v3_receipt_sha256=args.v3_receipt_sha256,
+        v3_page_sha256=args.v3_page_sha256)
     expected = build_record(pgn_raw, v3_raw, v3_page_raw, v3_record)
     record_bytes = previous.canonical(expected) + b'\n'
     page = render(expected)

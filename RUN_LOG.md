@@ -8,6 +8,8 @@ The offline v4 teaching page now replays the saved exchange and the Qe4 b7 threa
 
 The versioned typed-output development request is frozen, with zero model calls so far while the existing research worker occupies the shared local route. The live Archit Doc still needs the project-required actual Luna review and Terra director promotion; the effective runtime profiles do not provide them. The readable candidate is saved in `research/archit-overnight-update-candidate-2026-10-06.md`. No professional chess explanation, Chess.com parity, board-game transfer, or sports result is claimed. Exact practice and next-step evidence: `research/chesscom-game-review-practice-2026-10-06.md`, `research/chess-overnight-next-iteration-2026-10-06.md`.
 
+An independent source read then found that the v4 page accepted a coherently replaced v3 receipt and matching page. The repaired builder requires caller-pinned digests for both before creating or verifying output, and a negative test covers a coherent replacement. Native task `089d5fc3-538e-424c-80fe-5559f6cd2c2d` passed 33 focused checks and reverified the pinned r6 page with zero model/engine calls; authoritative receipt SHA-256 `985867a4af079f725d26705698a41f589605b6d1ff312d073ccc6c3ae79b6770`. The current page SHA-256 is `44d7c5d22dde811192f268d29a9f8e497b2aed890515757ccb6dcea30288b126`. This is a source-binding and wording repair, not a teaching-quality verdict.
+
 ## 2026-10-05 — Offline chess review product slice
 
 Created `scripts/chess_real_evidence_interface.py` and
