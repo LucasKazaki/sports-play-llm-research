@@ -1,6 +1,6 @@
 # A checkable conditional chess lesson, v3
 
-**Status: software candidate with one unsuccessful real-game model trial.** It
+**Status: software candidate with two unsuccessful real-game model trials.** It
 has no accepted teaching response, quality score or capability result. The
 existing no-forward input, typed v2 prompt and its receipts remain frozen.
 
@@ -50,13 +50,13 @@ checks that the fixed sentence says "promoted queen" instead.
 
 This is a one-reply option checker, not a full variation or move-quality
 grader. It cannot determine which reply is likely, whether an option is wise,
-or Stockfish's intention. The first live attempt below retains model identity,
-request, raw output, module hashes and its outcome, but yields no lesson. Any
+or Stockfish's intention. Both live attempts below retain model identity,
+request, raw output, module hashes and their outcomes, but yield no lesson. Any
 teaching-quality claim still needs the game-disjoint protocol and independent
 chess review in `research/chess-commentary-capability-gate-v1.md`. Board-game
 expansion remains gated there.
 
-## One real-game model trial
+## Two real-game model trials
 
 We tried the frozen v3 prompt once on the played 20.Qc3 from the exported
 Chess.com game. The local endpoint returned HTTP 200 and the
@@ -77,9 +77,23 @@ The retained run is
 Native evaluation and verification are bound by
 `C:/AI/projects/LucasAgentStudio/data/company-runtime/project-execution/35fc2d789ba6f2679b8923ca442f12f478109f37cdea1c0b5239b93972d1de6a/ba538a32e10dff7b846200ea6c89acbc8ed56ab5b7fb40196cb302cbcc3f03e6/receipt.json`.
 
-The next distinct trial can freeze a new versioned route and request with
-`max_tokens=1024` and a 60-second timeout. That tests whether the small answer
-budget caused the empty reply; it must use a new run rather than replay or
-overwrite this one. Even a
-valid JSON reply would still need the separate board-fact checks, fresh-game
-evaluation and independent chess review before a teaching claim.
+The second trial used a new route with a 1,024-token answer budget and a
+60-second timeout, preserving the same source-bound pre-move input. One call
+returned JSON within the limit. It proposed 20.Qc4 as the same-queen
+alternative, but gave `e5d7` as a common Black reply. That reply is illegal
+after the played move, so the checker rejected it as
+`reply_illegal_after_selected` and produced no teaching sentence. The offline
+readback passed integrity verification. The request SHA-256 is
+`0f400caadfdcdb574b4ccef52fe4cb694a85d8049d6db15091073af6d00af131`;
+the raw reply SHA-256 is
+`29ebd08481518c6b5b0bb3a98cee5b7a6251ce4b91ba0af5ea7ae4debb9acd3e`.
+The run is
+`artifacts/chess-no-forward-teaching-capture-v3/chesscom-184866057876/played-frozen-1024-20261006/`;
+native evaluation and verification are bound by
+`C:/AI/projects/LucasAgentStudio/data/company-runtime/project-execution/35fc2d789ba6f2679b8923ca442f12f478109f37cdea1c0b5239b93972d1de6a/c0442a3317249859de835a56da19948f2c9af1344bcd334c4f1b4abd9cf2ca93/receipt.json`.
+
+The larger budget solved the empty-answer problem for this one attempt, while
+the legality check found a different failure. Neither attempt demonstrates
+chess teaching quality. A next design should make reply legality easier to
+get right without providing the engine's future line, and still needs fresh-game
+evaluation and independent chess review before any teaching claim.
