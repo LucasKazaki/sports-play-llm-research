@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import copy
+import json
 from pathlib import Path
 import sys
 
@@ -127,7 +128,9 @@ def test_order_independent_pair_uses_only_accepted_witness(case):
     assert receipt['comparison']['relation'] == 'alternative_higher'
     assert receipt['comparison']['delta_cp'] == 45
     assert 'bounded 100,000-node Stockfish search' in receipt['comparison']['display_sentence']
+    assert "White's perspective" in receipt['comparison']['display_sentence']
     assert receipt['counts'] == {'model_calls_v10': 0, 'engine_calls_v10': 1,
+                                 'comparison_attempts_v10': 1,
                                  'automatic_retries': 0}
     assert receipt['engine']['settings']['root_moves_uci'] == ['a1c1', 'a1b1']
     assert [item['move_uci'] for item in receipt['engine']['paired_observations']] == ['a1b1', 'a1c1']
@@ -144,6 +147,12 @@ def test_score_sign_and_tie(case, played, alternative, relation):
     receipt = _evaluate(case, search)
     assert receipt['comparison']['relation'] == relation
     assert receipt['comparison']['delta_cp'] == alternative - played
+
+
+def test_black_perspective_is_named_in_fixed_sentence():
+    sentence = v10._display_sentence('played_higher', -23, 'black')
+    assert "Black's perspective" in sentence
+    assert '23 centipawns' in sentence
 
 
 @pytest.mark.parametrize(('decision', 'kind', 'reason'), [
@@ -175,6 +184,7 @@ def test_zero_call_abstention(case, decision, kind, reason):
     assert called == []
     assert receipt['comparison']['reason'] == reason
     assert receipt['counts']['engine_calls_v10'] == 0
+    assert receipt['counts']['comparison_attempts_v10'] == 0
 
 
 @pytest.mark.parametrize(('mutation', 'reason'), [
@@ -229,6 +239,18 @@ def test_engine_exception_is_retained_without_retry(case):
     assert receipt['comparison']['reason'] == 'engine_failure'
 
 
+def test_readiness_failure_counts_attempt_but_no_analyse_call(case, monkeypatch):
+    def not_ready():
+        raise RuntimeError('synthetic pinned engine unavailable')
+
+    monkeypatch.setattr(v10.previous, 'engine_ready', not_ready)
+    receipt = _evaluate(case, None)
+    assert receipt['comparison']['reason'] == 'engine_presearch_failure'
+    assert receipt['engine_error']['stage'] == 'presearch'
+    assert receipt['counts']['comparison_attempts_v10'] == 1
+    assert receipt['counts']['engine_calls_v10'] == 0
+
+
 @pytest.mark.parametrize('name', tuple(v10.UPSTREAM))
 def test_upstream_byte_tamper_rejected_before_search(case, name):
     path = (case['run_dir'] if name == 'plan' else case['case_dir']) / v10.UPSTREAM[name]
@@ -262,6 +284,91 @@ def test_cli_confines_protocol_write_to_project_artifacts(case, tmp_path):
     inside = tmp_path / 'artifacts' / 'protocol.json'
     assert v10.main(['freeze-protocol', '--output', str(inside)]) == 0
     assert inside.read_bytes() == case['protocol']
+
+
+def test_existing_output_blocks_comparison_before_evaluation(case, monkeypatch, tmp_path):
+    artifacts = tmp_path / 'artifacts'
+    protocol = artifacts / 'protocol.json'
+    input_file = artifacts / 'input.json'
+    occupied = artifacts / 'occupied.json'
+    protocol.write_bytes(case['protocol'])
+    input_file.write_bytes(v10._canonical_line(case['input']))
+    occupied.write_bytes(b'already owned\n')
+    called = []
+
+    def forbidden(*_):
+        called.append(1)
+        return {}
+
+    monkeypatch.setattr(v10, 'evaluate', forbidden)
+    with pytest.raises(FileExistsError):
+        v10.main(['compare', '--protocol', str(protocol), '--input',
+                  str(input_file), '--output', str(occupied)])
+    assert called == []
+    assert occupied.read_bytes() == b'already owned\n'
+
+
+def test_unexpected_exception_leaves_source_bound_failure(case, monkeypatch, tmp_path):
+    artifacts = tmp_path / 'artifacts'
+    protocol = artifacts / 'protocol.json'
+    input_file = artifacts / 'input.json'
+    output = artifacts / 'failed-comparison.json'
+    protocol.write_bytes(case['protocol'])
+    input_file.write_bytes(v10._canonical_line(case['input']))
+
+    def simulated_after_search(*_):
+        raise RuntimeError('synthetic unexpected error after analyse')
+
+    monkeypatch.setattr(v10, 'evaluate', simulated_after_search)
+    with pytest.raises(RuntimeError, match='synthetic unexpected error'):
+        v10.main(['compare', '--protocol', str(protocol), '--input',
+                  str(input_file), '--output', str(output)])
+    retained = json.loads(output.read_bytes())
+    assert retained['schema'] == v10.OUTPUT_STATE_SCHEMA
+    assert retained['state'] == 'failed'
+    assert retained['evaluator_source_sha256'] == cf.file_digest(Path(v10.__file__))
+    assert retained['protocol_sha256'] == cf.file_digest(protocol)
+    assert retained['input_sha256'] == cf.file_digest(input_file)
+    assert retained['engine_calls_v10'] is None
+    assert retained['search_outcome_if_interrupted'] == 'unknown'
+    assert retained['error']['type'] == 'RuntimeError'
+
+
+def test_replacement_failure_preserves_reservation(case, monkeypatch, tmp_path):
+    artifacts = tmp_path / 'artifacts'
+    protocol = artifacts / 'protocol.json'
+    input_file = artifacts / 'input.json'
+    output = artifacts / 'reserved-comparison.json'
+    protocol.write_bytes(case['protocol'])
+    input_file.write_bytes(v10._canonical_line(case['input']))
+    monkeypatch.setattr(v10, 'evaluate', lambda *_: {'status': 'synthetic'})
+
+    def cannot_replace(*_):
+        raise OSError('synthetic replacement failure')
+
+    monkeypatch.setattr(v10, '_atomic_replace', cannot_replace, raising=False)
+    with pytest.raises(OSError, match='synthetic replacement failure'):
+        v10.main(['compare', '--protocol', str(protocol), '--input',
+                  str(input_file), '--output', str(output)])
+    retained = json.loads(output.read_bytes())
+    assert retained['state'] == 'reserved'
+    assert retained['engine_calls_v10'] is None
+    assert retained['search_outcome_if_interrupted'] == 'unknown'
+
+
+def test_success_replaces_reservation_with_exact_receipt(case, monkeypatch, tmp_path):
+    artifacts = tmp_path / 'artifacts'
+    protocol = artifacts / 'protocol.json'
+    input_file = artifacts / 'input.json'
+    output = artifacts / 'comparison.json'
+    protocol.write_bytes(case['protocol'])
+    input_file.write_bytes(v10._canonical_line(case['input']))
+    expected = {'schema': 'synthetic-test-receipt', 'status': 'ranked'}
+    monkeypatch.setattr(v10, 'evaluate', lambda *_: expected)
+    assert v10.main(['compare', '--protocol', str(protocol), '--input',
+                     str(input_file), '--output', str(output)]) == 0
+    assert output.read_bytes() == v10._canonical_line(expected)
+    assert list(artifacts.glob('comparison.json.*.tmp')) == []
 
 
 def test_v9_identity_mismatch_rejected_before_search(case):

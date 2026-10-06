@@ -7,7 +7,9 @@ not a claim about why Stockfish chose a move or about teaching quality.
 from __future__ import annotations
 
 import argparse
+import os
 from pathlib import Path
+import uuid
 
 import chess
 import chess.engine
@@ -22,6 +24,7 @@ ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL_SCHEMA = 'chess-post-generation-comparison-protocol/v10'
 INPUT_SCHEMA = 'chess-post-generation-comparison-input/v10'
 RECEIPT_SCHEMA = 'chess-post-generation-comparison-receipt/v10'
+OUTPUT_STATE_SCHEMA = 'chess-post-generation-comparison-output-state/v10'
 ENGINE_NAME = 'Stockfish 19'
 NODES = 100_000
 THREADS = 1
@@ -68,6 +71,16 @@ def _read_metadata(path: Path) -> bytes:
     if len(raw) > capture.MAX_METADATA_BYTES:
         raise ValueError('v10_cli_metadata_too_large')
     return raw
+
+
+def _atomic_replace(output: Path, raw: bytes) -> None:
+    """Keep the reserved final path recoverable until the full result is ready."""
+    temporary = output.with_name(output.name + '.' + uuid.uuid4().hex + '.tmp')
+    with temporary.open('xb') as stream:
+        stream.write(raw)
+        stream.flush()
+        os.fsync(stream.fileno())
+    os.replace(temporary, output)
 
 
 def _strict(raw: bytes, fields: tuple[str, ...], schema: str) -> dict:
@@ -197,9 +210,8 @@ def freeze_input(run_dir: Path, ply: int, protocol_raw: bytes) -> bytes:
     return raw
 
 
-def _search_pair(board: chess.Board, roots: tuple[chess.Move, chess.Move],
-                 protocol: dict) -> list[dict]:
-    """Exactly one root-restricted search; no discovery or adaptive retry."""
+def _prepare_engine(protocol: dict):
+    """Check the binary, spawn and configure before counting an analyse call."""
     previous.engine_ready()
     engine = chess.engine.SimpleEngine.popen_uci(previous.ENGINE)
     try:
@@ -207,19 +219,26 @@ def _search_pair(board: chess.Board, roots: tuple[chess.Move, chess.Move],
             raise ValueError('v10_engine_name_mismatch')
         engine.configure({'Threads': protocol['threads'],
                           'Hash': protocol['hash_mb']})
-        infos = engine.analyse(
-            board, chess.engine.Limit(nodes=protocol['requested_nodes']),
-            root_moves=list(roots), multipv=protocol['multipv'])
-        if type(infos) is not list:
-            raise PairValidationError('missing_or_duplicate_root')
-        try:
-            return [previous.observation(board, info) for info in infos]
-        except ValueError as error:
-            reason = ('invalid_pv' if 'pv' in str(error) or 'root' in str(error)
-                      else 'invalid_search_observation')
-            raise PairValidationError(reason) from error
-    finally:
+    except Exception:
         engine.quit()
+        raise
+    return engine
+
+
+def _search_pair(board: chess.Board, roots: tuple[chess.Move, chess.Move],
+                 protocol: dict, engine) -> list[dict]:
+    """Exactly one root-restricted analyse call; no discovery or retry."""
+    infos = engine.analyse(
+        board, chess.engine.Limit(nodes=protocol['requested_nodes']),
+        root_moves=list(roots), multipv=protocol['multipv'])
+    if type(infos) is not list:
+        raise PairValidationError('missing_or_duplicate_root')
+    try:
+        return [previous.observation(board, info) for info in infos]
+    except ValueError as error:
+        reason = ('invalid_pv' if 'pv' in str(error) or 'root' in str(error)
+                  else 'invalid_search_observation')
+        raise PairValidationError(reason) from error
 
 
 def _validate_pair(board: chess.Board, roots: tuple[chess.Move, chess.Move],
@@ -276,6 +295,21 @@ def _abstain(reason: str) -> dict:
             'delta_cp': None, 'display_sentence': None}
 
 
+def _display_sentence(relation: str, delta: int, side: str) -> str:
+    """Keep the score perspective and bounded-search limit in fixed wording."""
+    if side not in ('white', 'black'):
+        raise ValueError('v10_invalid_display_perspective')
+    prefix = (f'In this bounded {NODES:,}-node Stockfish search, '
+              f'with scores from {side.title()}\'s perspective, ')
+    if relation == 'equal' and delta == 0:
+        return prefix + 'the two moves had equal centipawn scores.'
+    if relation == 'alternative_higher' and delta > 0:
+        return prefix + f'the named alternative scored higher by {delta} centipawns.'
+    if relation == 'played_higher' and delta < 0:
+        return prefix + f'the played move scored higher by {-delta} centipawns.'
+    raise ValueError('v10_invalid_display_relation')
+
+
 def evaluate(input_raw: bytes, protocol_raw: bytes, *, pair_search=None) -> dict:
     """Verify sealed v9 evidence, then optionally compare one witnessed pair."""
     protocol = _protocol(protocol_raw)
@@ -309,7 +343,8 @@ def evaluate(input_raw: bytes, protocol_raw: bytes, *, pair_search=None) -> dict
         },
         'engine': None, 'engine_error': None,
         'comparison': _abstain('no_model_named_alternative'),
-        'counts': {'model_calls_v10': 0, 'engine_calls_v10': 0,
+        'counts': {'model_calls_v10': 0, 'comparison_attempts_v10': 0,
+                   'engine_calls_v10': 0,
                    'automatic_retries': 0},
         'development_case': True, 'quality_evaluated': False,
         'commentary_capability_gate_passed': False,
@@ -335,9 +370,26 @@ def evaluate(input_raw: bytes, protocol_raw: bytes, *, pair_search=None) -> dict
         raise ValueError('v10_accepted_alternative_not_legal_or_distinct')
     source['alternative_uci'] = alternative.uci()
     roots = (selected, alternative)
-    receipt['counts']['engine_calls_v10'] = 1
+    receipt['counts']['comparison_attempts_v10'] = 1
     try:
-        observations = (pair_search or _search_pair)(board, roots, protocol)
+        if pair_search is None:
+            try:
+                engine = _prepare_engine(protocol)
+            except Exception as error:
+                receipt['engine_error'] = {
+                    'stage': 'presearch', 'type': type(error).__name__,
+                    'message': str(error)[:160]}
+                receipt['comparison'] = _abstain('engine_presearch_failure')
+                return receipt
+            try:
+                receipt['counts']['engine_calls_v10'] = 1
+                observations = _search_pair(board, roots, protocol, engine)
+            finally:
+                engine.quit()
+        else:
+            # The injected test seam represents an analyse call, not setup.
+            receipt['counts']['engine_calls_v10'] = 1
+            observations = pair_search(board, roots, protocol)
         observations, by_root = _validate_pair(board, roots, observations)
     except PairValidationError as error:
         receipt['engine_error'] = {
@@ -369,13 +421,7 @@ def evaluate(input_raw: bytes, protocol_raw: bytes, *, pair_search=None) -> dict
     delta = other['value'] - played['value']
     relation = ('alternative_higher' if delta > 0 else
                 'played_higher' if delta < 0 else 'equal')
-    subject = {'alternative_higher': 'the named alternative scored higher',
-               'played_higher': 'the played move scored higher',
-               'equal': 'the moves had equal scores'}[relation]
-    sentence = (f'In this bounded {NODES:,}-node Stockfish search, '
-                f'{subject} by {abs(delta)} centipawns.' if delta else
-                f'In this bounded {NODES:,}-node Stockfish search, '
-                'the two moves had equal centipawn scores.')
+    sentence = _display_sentence(relation, delta, source['side_to_move'])
     receipt['comparison'] = {
         'status': 'ranked', 'reason': None, 'relation': relation,
         'delta_cp': delta, 'display_sentence': sentence,
@@ -399,17 +445,44 @@ def main(argv: list[str] | None = None) -> int:
     compare.add_argument('--output', type=Path, required=True)
     args = parser.parse_args(argv)
     output = _artifact_path(args.output)
-    if args.command == 'freeze-protocol':
-        raw = freeze_protocol()
-    elif args.command == 'freeze-input':
-        raw = freeze_input(args.run_dir, args.ply,
-                           _read_metadata(args.protocol))
-    else:
-        raw = _canonical_line(evaluate(_read_metadata(args.input),
-                                       _read_metadata(args.protocol)))
+    protocol_raw = (_read_metadata(args.protocol)
+                    if args.command != 'freeze-protocol' else None)
+    input_raw = (_read_metadata(args.input)
+                 if args.command == 'compare' else None)
+    state = {
+        'schema': OUTPUT_STATE_SCHEMA, 'state': 'reserved',
+        'command': args.command, 'output_path': str(output),
+        'evaluator_source_sha256': cf.file_digest(Path(__file__)),
+        'protocol_sha256': (cf.digest(protocol_raw)
+                            if protocol_raw is not None else None),
+        'input_sha256': (cf.digest(input_raw)
+                         if input_raw is not None else None),
+        'engine_calls_v10': None,
+        'search_outcome_if_interrupted': (
+            'unknown' if args.command == 'compare' else 'not_applicable'),
+        'automatic_retries': 0, 'error': None,
+    }
     output.parent.mkdir(parents=True, exist_ok=True)
+    # Reserve the final path before evaluator work. If the process is
+    # interrupted, this source-bound marker warns that a search may have run.
     with output.open('xb') as stream:
-        stream.write(raw)
+        stream.write(_canonical_line(state))
+        stream.flush()
+        os.fsync(stream.fileno())
+    try:
+        if args.command == 'freeze-protocol':
+            raw = freeze_protocol()
+        elif args.command == 'freeze-input':
+            raw = freeze_input(args.run_dir, args.ply, protocol_raw)
+        else:
+            raw = _canonical_line(evaluate(input_raw, protocol_raw))
+        _atomic_replace(output, raw)
+    except Exception as error:
+        failed = {**state, 'state': 'failed',
+                  'error': {'type': type(error).__name__,
+                            'message': str(error)[:160]}}
+        _atomic_replace(output, _canonical_line(failed))
+        raise
     print(cf.digest(raw))
     return 0
 
