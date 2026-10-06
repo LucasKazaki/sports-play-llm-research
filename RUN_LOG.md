@@ -12,6 +12,8 @@ An independent source read then found that the v4 page accepted a coherently rep
 
 The next one-attempt user-game runner froze separate Qc3 and Qe4 requests without POST. A pre-call independent review found missing helper-source pins. The repaired version pins seven called helpers and the manifest, treats unverified model identity and oversized responses as failures, and retains their bounded raw evidence. Native task `34690c11-45c7-4b5f-b2bf-9054f2eef62a` passed 25 focused tests and verified both new frozen requests with zero attempts; authoritative receipt SHA-256 `8e5559c9600b07cb68046449a06be13d042fe4c836dadce32141e295c799daed`. Independent re-review closed the specific helper-pin blocker. The local route remains occupied by a healthy existing research run, so this is not a model-result claim. A separate offline tactical-claim checker passed 26 native synthetic checks; it is not yet connected to the frozen prompt or a chess-quality evaluation.
 
+The separately versioned user-game response checker then passed 43 combined runner/checker tests in native task `25c42945-8f9f-4b58-aba6-d73cd3b55737` (authoritative receipt SHA-256 `285438cfb7630b44fd1502892da7ab06aa0cc259d762781c2546fe0fcfc92800`). It counts every attempted call, rejects unverified identity and malformed/unsupported claims, and admits only exact typed facts or scores under the existing structural contract. Independent read found no blocking admission flaw, but structural admission cannot establish sound strategy or teaching quality. There is still no captured user-game response.
+
 ## 2026-10-05 — Offline chess review product slice
 
 Created `scripts/chess_real_evidence_interface.py` and

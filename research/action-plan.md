@@ -6,6 +6,8 @@ The open Chess.com review supplied a post-game practice question at 20.Qc3 versu
 
 The v4 teaching page now requires the approved v3 receipt and page hashes; a coherent-replacement test caught the original gap. The project-native runner passed 33 focused checks and verified the pinned page. This protects the saved example from source drift; it does not decide whether the explanation is good teaching.
 
+Separate one-move Qc3 and Qe4 model requests are frozen with zero attempts. A pre-call review found and repaired missing helper-source pins; the new runner passed 25 native tests and both requests verified offline. A separate response checker passed 43 combined native checks and will retain failures and unverified output in the denominator. The existing research worker still owns the shared local model slot. No model explanation of this practice game has been measured.
+
 Next: make one retained development model call when the route is free, validate its typed output, and then connect the completed-game packets through a separately frozen no-forward transport. Develop post-generation checks for precise tactical hypotheses before treating model prose as a lesson. The [quality protocol draft](chess-explanation-quality-protocol-draft-2026-10-06.md) proposes a broader game-disjoint blind set and qualified chess judgment; it is not frozen and has opened no sealed positions. Keep chess first. Board-game and sports work wait for their separate evidence gates.
 
 ## Current chess product slice — October 5, 2026
