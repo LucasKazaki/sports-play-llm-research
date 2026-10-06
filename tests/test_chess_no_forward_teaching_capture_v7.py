@@ -243,7 +243,8 @@ def test_length_truncated_complete_json_still_rejects_and_retains_raw(frozen):
     assert capture.verify_run(run_dir)['attempts_consumed'] == 1
 
 
-@pytest.mark.parametrize('constant', (b'NaN', b'Infinity', b'-Infinity'))
+@pytest.mark.parametrize('constant', (b'NaN', b'Infinity', b'-Infinity',
+                                      b'1e999', b'-1e999'))
 def test_nonfinite_model_envelope_is_retained_but_not_admitted(frozen, constant):
     run_dir, manifest, _ = frozen
     valid = cf.canonical({'model': manifest['route']['model_id'],
@@ -251,6 +252,11 @@ def test_nonfinite_model_envelope_is_retained_but_not_admitted(frozen, constant)
                                                    'content': cf.canonical(proposal()).decode()},
                                        'finish_reason': 'stop'}]})
     raw = valid[:-1] + b',"nonfinite":' + constant + b'}'
+    assert b'"role":"assistant"' in valid
+    nested = valid.replace(b'"role":"assistant"',
+                           b'"role":"assistant","nonfinite":' + constant, 1)
+    with pytest.raises(ValueError, match='invalid_teaching_model_envelope'):
+        capture._model_content(nested)
 
     class Opener:
         def open(self, request, timeout):
@@ -265,3 +271,26 @@ def test_nonfinite_model_envelope_is_retained_but_not_admitted(frozen, constant)
     with pytest.raises(ValueError, match='not_eligible_for_evaluation'):
         capture.evaluate_frozen_run(run_dir)
     assert capture.verify_run(run_dir)['attempts_consumed'] == 1
+
+
+def test_deeply_nested_envelope_retains_raw_and_verifies_invalid_identity(frozen):
+    run_dir, manifest, _ = frozen
+    valid = cf.canonical({'model': manifest['route']['model_id'],
+                          'choices': [{'message': {'role': 'assistant',
+                                                   'content': cf.canonical(proposal()).decode()},
+                                       'finish_reason': 'stop'}]})
+    raw = valid[:-1] + b',"deep":' + b'[' * 2000 + b'0' + b']' * 2000 + b'}'
+
+    class Opener:
+        def open(self, request, timeout):
+            return Response(raw)
+
+    result = capture.capture_frozen_run(run_dir, opener=Opener())
+    assert result['status'] == 'identity_unverified'
+    assert result['raw_sha256'] == cf.digest(raw)
+    assert (run_dir / capture.RAW_FILE).read_bytes() == raw
+    with pytest.raises(ValueError, match='invalid_teaching_model_envelope'):
+        capture._model_content(raw)
+    assert capture.verify_run(run_dir)['integrity_passed'] is True
+    with pytest.raises(ValueError, match='not_eligible_for_evaluation'):
+        capture.evaluate_frozen_run(run_dir)

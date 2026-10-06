@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 from pathlib import Path
 import time
 from urllib.error import HTTPError
@@ -348,8 +349,21 @@ def _strict_response_json(raw: bytes):
     def reject_constant(_value):
         raise ValueError('non_finite_response_number')
 
-    return json.loads(raw.decode('utf-8'), object_pairs_hook=unique_pairs,
-                      parse_constant=reject_constant)
+    def finite_float(value):
+        try:
+            number = float(value)
+        except (OverflowError, ValueError) as error:
+            raise ValueError('invalid_response_number') from error
+        if not math.isfinite(number):
+            raise ValueError('non_finite_response_number')
+        return number
+
+    try:
+        return json.loads(raw.decode('utf-8'), object_pairs_hook=unique_pairs,
+                          parse_constant=reject_constant,
+                          parse_float=finite_float)
+    except RecursionError as error:
+        raise ValueError('response_json_too_deep') from error
 
 
 class IncompleteModelResponse(ValueError):

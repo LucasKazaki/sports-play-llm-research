@@ -65,14 +65,20 @@ outcomes keep their raw response in a future capture receipt.
 ## Software evidence and limits
 
 The v7 checker test was written before its module existed and first failed
-at import. The final focused run of v5, v6, and v7 tests passed **48 tests**
+at import. The final focused run of v5, v6, and v7 tests passed **51 tests**
 with the project Python interpreter; both v7 sources also passed Python
 compilation. The v7 cases cover `Qc3 → Qe4` and `Qe4 → Qc3`, the exact
 `...Qxd4` defender-removal counterfactual, the false claim that `Qe4`
 prevents that reply, a different reply or capture, an extra bishop defender,
 abstention, bad output shape, prohibited future input fields, source binding,
 the fake one-call capture, interrupted attempts, incomplete envelopes, and
-no automatic retry. These are synthetic software checks around the real
+no automatic retry. A later fail-first check found that JSON exponent overflow
+such as `1e999` was admitted as infinity, while a deeply nested extra field
+could turn a retained response into a false transport failure. The repaired
+v7 parser rejects nonfinite numbers anywhere in the envelope and converts
+JSON recursion exhaustion into an invalid envelope. The fake transport tests
+confirm raw-byte retention, stable `identity_unverified` status, and readback
+for these cases. These are synthetic software checks around the real
 practice FEN, not a new model result, fresh holdout, or a teaching evaluation.
 The tests do not measure whether the local model can produce the strict v7
 format. The exact source hashes belong with the next native source-review
