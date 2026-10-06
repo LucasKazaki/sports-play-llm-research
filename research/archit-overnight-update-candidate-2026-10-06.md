@@ -1,6 +1,6 @@
 ﻿# Candidate update for Archit's project document
 
-Internal candidate only. The prose below has not passed the project's independent Luna review and later Terra promotion gate. It reports one Chess.com practice game and a repaired local review, not a measured commentary result.
+Internal candidate only. The prose below has not passed the project's independent Luna review and later Terra promotion gate. It reports one Chess.com practice game, a repaired local review, four more practice positions, and software checks. It is not a measured commentary-quality result.
 
 ## Suggested document edit
 
@@ -24,7 +24,9 @@ I started a repeatable comparison for any legal move, and the first runs exposed
 
 I also tested a local model without handing it future moves. Its first Qc3 answer made a claim I could not check, while the Qe4 answer only repeated the move and score. In two more Qc3 tries, one produced no answer and the other suggested a move Black could not legally play. I narrowed the question again to one alternative move. The model proposed one but used an answer format the checker could not accept, so this separate trial yielded no accepted lesson in one attempt. I've prepared a simpler version that asks for an alternative or an honest "I don't know," but have not tried it with the model. These are practice attempts on one saved game; I still cannot say the system teaches why a move is better.
 
-I'll work through quiet moves and mistakes as well as obvious tactics. The goal is to explain a chosen move and its alternatives in plain language, including why a tempting move is worse, while showing the board evidence behind the answer. I still need a language model that gives checkable reasons, fresh-game tests, and an independent chess reviewer to judge whether those reasons teach well. Only after those checks and the separate chess capability review would I try another board game. Sports will need their own video evidence and coach testing.
+I went back through four other moves in that same Chess.com game: a queen getting out of danger, a queen capture with check, a quiet rook move the review called a miss, and a rook trying to slow a passed pawn. I read the four Game Review cards, replayed each position, and saved separate Stockfish searches. Three move comparisons were too bounded for a numeric difference; the fourth was only one finite search. I built a checker for four narrow claims about the board. It passed 16 software tests and accepted four hand-written example answers, but the language model has not tried these four cases. I still have no evidence that our explanations match the review's quality, much less improve on it.
+
+Next I'll put that checker through an independent source review, then make one saved model attempt per practice move and count failures alongside successes. The longer goal is to explain a chosen move and its alternatives in plain language, including why a tempting move is worse, with the board evidence behind each claim. I still need fresh-game tests and an independent chess reviewer to judge whether those reasons teach well. Only after those checks and the separate chess capability review would I try another board game. Sports will need their own video evidence and coach testing.
 
 ## Evidence and review notes
 
