@@ -17,8 +17,10 @@ from urllib.error import HTTPError
 from urllib.request import ProxyHandler, Request, build_opener
 
 import chess_counterfactual_evidence as cf
+import chess_dev_projection as dev_projection
 import chess_local_route_attestation as route_capture
 import chess_no_forward_generation_runner as route_rules
+import chess_no_forward_output_validator as output_validator
 import chess_no_forward_teaching_capture_v7 as capture_v7
 import chess_no_forward_teaching_v3 as teaching_v3
 import chess_no_forward_teaching_v4 as teaching_v4
@@ -27,7 +29,10 @@ import chess_no_forward_teaching_v6 as teaching_v6
 import chess_no_forward_teaching_v7 as teaching_v7
 import chess_no_forward_teaching_v8 as teaching_v8
 import chess_no_forward_teaching_v9 as teaching
+import chess_real_data as real_data
+import chess_score_bounds as score_bounds
 import chess_tactical_hypothesis_v2 as tactical
+import chess_typed_position_evidence as typed_evidence
 import chess_user_game_no_forward_v1 as user_packet
 
 
@@ -79,6 +84,11 @@ SOURCE_MODULES = {
     'chess_user_game_no_forward_v1.py': user_packet,
     'chess_no_forward_packet.py': user_packet.no_forward,
     'chess_counterfactual_evidence.py': cf,
+    'chess_dev_projection.py': dev_projection,
+    'chess_score_bounds.py': score_bounds,
+    'chess_typed_position_evidence.py': typed_evidence,
+    'chess_no_forward_output_validator.py': output_validator,
+    'chess_real_data.py': real_data,
     'chess_local_route_attestation.py': route_capture,
     'chess_no_forward_generation_runner.py': route_rules,
     'chess_paired_review_v3.py': user_packet.paired,

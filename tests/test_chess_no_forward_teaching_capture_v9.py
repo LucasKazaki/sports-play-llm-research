@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 from datetime import datetime, timezone
+import hashlib
 import io
 import json
 from pathlib import Path
@@ -13,6 +14,7 @@ import pytest
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'scripts'))
 
 import chess_counterfactual_evidence as cf  # noqa: E402
+import chess_dev_projection as projection  # noqa: E402
 import chess_no_forward_teaching_capture_v9 as capture  # noqa: E402
 import chess_no_forward_teaching_v9 as teaching  # noqa: E402
 
@@ -161,6 +163,31 @@ def test_changed_source_prompt_implementation_and_cli_pins_block(frozen, monkeyp
     with pytest.raises(ValueError, match='cli_pins'):
         capture.capture_case(run_dir, 33, pins=changed_pins, opener=opener)
     assert opener.calls == []
+
+
+def test_transitive_helper_byte_change_blocks_before_fake_post(frozen, monkeypatch,
+                                                               tmp_path):
+    """Model helper-byte drift after freeze without changing shared source."""
+    run_dir, _ = frozen
+    helper = Path(projection.__file__).resolve()
+    changed_copy = tmp_path / helper.name
+    changed_copy.write_bytes(helper.read_bytes())
+    changed_copy.write_bytes(changed_copy.read_bytes() + b'\n# changed after freeze\n')
+    original_digest = cf.file_digest
+    changed_sha = hashlib.sha256(changed_copy.read_bytes()).hexdigest()
+    assert changed_sha != original_digest(helper)
+
+    def digest_with_changed_helper(path):
+        if Path(path).resolve() == helper:
+            return changed_sha
+        return original_digest(path)
+
+    monkeypatch.setattr(cf, 'file_digest', digest_with_changed_helper)
+    opener = FakeOpener()
+    with pytest.raises(ValueError, match='v9_capture_plan_binding_changed'):
+        capture.capture_case(run_dir, 33, pins=pins(frozen, 33), opener=opener)
+    assert opener.calls == []
+    assert not (run_dir / 'ply33' / capture.REQUEST_FILE).exists()
 
 
 @pytest.mark.parametrize('field,value', [
