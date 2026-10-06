@@ -1,0 +1,19 @@
+# Chess explanation work, October 6 overnight
+
+This is a working plan for the next experiment, not a frozen evaluation protocol or a claim that the chess capability gate has passed.
+
+## What the practice game taught us
+
+The completed Chess.com game gave us a useful question at move 20: why is Qc3 worse than Qe4? A paired Stockfish search in the local reviewer scored Qe4 higher at its stated budget. A legal line after Qc3 showed Black taking the d4 pawn and trading queens. That looked like an explanation until we replayed the same trade after Qe4 and reached the exact same board. The pawn capture alone does not distinguish the moves.
+
+The other legal option after Qe4 is more informative: after a hypothetical Qxd4, White can play Qxb7+; the 100,000-node evaluator probe found that checking capture, but its score was an upper bound. The saved alternative line instead begins with ...Nd5, which blocks the queen's path to b7. These are concrete, checkable parts of the position. They still do not prove every reason behind Stockfish's score or that a particular response is forced. The practice evidence and exact receipts are in [the Game Review note](chesscom-game-review-practice-2026-10-06.md).
+
+## The next cycle
+
+1. Finish one source-bound, typed-output local-model capture on an existing real Lichess development position. Keep its request, raw response or failure, latency, route, and validation result. The first eight-call run produced six loose prose replies and two transport failures; it admitted no typed claims. A valid JSON shape will be a plumbing result, not yet a good chess lesson.
+2. The separately versioned user-game packet is now built and verified for both Qc3 and Qe4, one move at a time. The next step is to connect it to a frozen, retained local-model run and check the output. The generator may see only the pre-move board, chosen move, deterministic transition and qualified engine observation; it must never see saved continuations, post-move positions, review annotations or the answer.
+3. The new evaluator-side teaching page now shows legal exchanges and the Qe4 threat in plain words, while labelling each line as one possibility. Let a model propose a precise tactical hypothesis in a future output version; check its move or sequence after generation before displaying it. A bare engine score or an unverified rationale cannot stand in for this check.
+4. Predeclare a fresh game-disjoint test with tactical, quiet, defensive and endgame positions, complete denominators and explicit error, abstention, latency and failure measures. The current 24-position Lichess puzzle cohort is useful development material but does not by itself cover quiet or defensive play. The official [Lichess open database](https://database.lichess.org/) identifies its exports as CC0 and offers standard-game PGNs that could supply broader positions; acquisition, exclusions and source hashes must be recorded before use. Keep the eight sealed positions unopened until the protocol and thresholds are fixed.
+5. Seek independent receipt-based review and qualified chess judgment before claiming Chess.com-level teaching quality. Only an accepted chess gate would permit a separate board-game packet. Human sports need their own evidence and coach tests.
+
+The saved [draft GitHub PR](https://github.com/LucasKazaki/sports-play-llm-research/pull/4) holds the source and reviewable notes. Raw user PGN, generated pages, local-model responses and the Stockfish binary stay in local ignored evidence directories. The Archit document text is a versioned candidate in this PR; its required Luna and Terra review route is not active, so the live Doc has not yet been changed.
