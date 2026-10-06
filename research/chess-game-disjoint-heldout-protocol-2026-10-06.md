@@ -18,6 +18,8 @@ Publish an immutable numbered protocol and its SHA-256 before acquiring or inspe
 
 The source broker must be separately versioned and approved for that exact URL and bound; the existing puzzle broker and proposed September development broker do not authorize a new holdout fetch. If the source or a reviewer cannot be obtained under the frozen terms, report the shortfall. Do not substitute a convenient existing set.
 
+Source metadata check, 6 October: the official [standard-game list](https://database.lichess.org/standard/list.txt) names `lichess_db_standard_rated_2025-10.pgn.zst`, the [published checksum list](https://database.lichess.org/standard/sha256sums.txt) gives its whole-archive SHA-256 as `3dff8f421c536fe805dbf0638eae7f031edcf66db1fadce9d2c134e07c82fade`, and the [database page](https://database.lichess.org/) says database exports are CC0. This checks the proposed source's listing and stated rights only. No archive bytes or games were opened, and the freeze-card snapshots, broker bounds, exclusion receipts and reviewer identities remain unfilled.
+
 ## Build a genuinely new set
 
 Target **200 primary cases from 200 distinct games**, with 40 each for strong tactical, inferior, quiet/positional, defensive and endgame moves. Add **40 insufficient-evidence controls from 40 further distinct games**. These 240 are proposed targets, not observed denominators. The set is deliberately balanced and cannot estimate real-world move frequencies. Assign exactly one primary stratum before model output; record all overlapping tags. Use the development design's assignment priority `inferior → endgame → defensive → tactical → quiet` unless the freeze card explicitly replaces it.

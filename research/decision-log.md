@@ -1,5 +1,13 @@
 # Decision Log
 
+## D-052 — 2026-10-06 — Stage the Hermes repair without disrupting active inference
+
+The live Studio checkout contains a narrow, tested semantic port of exact offered-tool grammar for ordinary Sports goal work. Preserve its concurrent supervisor route and the failed model session as evidence. Twenty-one transport and 63 adjacent checks pass, with independent read-only source review; this is on-disk source only. The current model call and native jobs retain their ownership. Activate through the documented lease-backed, zero-busy maintenance restart, then inspect one fresh non-replayed goal outcome. Do not report a working model path from static tests alone.
+
+## D-051 — 2026-10-06 — Keep the holdout freeze card structural until real gates exist
+
+Use the new offline freeze-card validator to reject missing or inconsistent prospective study fields before any source acquisition. Its 26 synthetic checks and native receipt prove only structural behavior; the output states `holdout_frozen=false`. The official Lichess catalog lists the proposed October 2025 standard file and checksum, but no archive game was opened and source rights/exclusion truth is not established by the synthetic card. The next bounded task is a count-only protected-exclusion oracle contract with synthetic negative controls; no sealed member details or heldout cases enter a model. Source, qualified reviewers, independent receipt review and a separate Chess.com paired study remain required for quality claims.
+
 ## D-050 — 2026-10-06 — Change the next goal input, retain the failed turns
 
 The Sports goal worker's two attempts yielded no chess answer: malformed `propose_project_edit` arguments, then a 1,800-second inactivity timeout. Preserve those task/run receipts and the new active task. Narrow only the future `GOAL_WORK.json` item to the already written heldout protocol candidate and five relevant read paths; do not rerun old captures or treat a planner packet as a model result. The root transport mismatch has a tested candidate in an isolated Studio worktree, but no activation or live proof. The exact boundary and hashes are in [the repair note](chess-goal-work-repair-2026-10-06.md).
