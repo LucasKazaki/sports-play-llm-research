@@ -1,5 +1,13 @@
 # Run Log
 
+## 2026-10-06 — Chess.com practice, repair, and next explanation cycle
+
+The completed game already open in Chess.com Game Review was exported for one local practice case. Its PGN replay identified ply 39 as 20.Qc3. The first v2 annotated-PGN verifier failed because it sorted headers that creation had kept in source order. A fail-first header-order regression reproduced the error; the bounded repair verified the original output and a fresh create-only run. The v3 paired search then scored Qc3 and Qe4 in one 10,000-node root-restricted MultiPV call. Its legal line showed ...Qxd4 taking a pawn, but a later check found that the same queen trade is possible after Qe4, so the capture alone was not an explanation of the difference.
+
+The offline v4 teaching page now replays the saved exchange and the Qe4 b7 threat with cautious examples. Separate no-forward packets for Qc3 and Qe4 bind the PGN and verified v3 receipt/page while excluding continuation and annotation data from a future generator. Native task `7d32440c-508a-42b7-ba05-a8a1113d514d` passed 31 focused tests and reverified the page and both packets; authoritative receipt SHA-256 `a35f3bf12a595de62db44b897708975ec1775c198b314b6526acb5352429fe0b`. Earlier native task `71a197d0-9a02-4768-8366-4fa209371157` passed 21 focused checks after a GitHub-mirror portability repair. A clean sync worktree passed 47 software checks and explicitly skipped five local-asset integrations. The draft GitHub PR is `https://github.com/LucasKazaki/sports-play-llm-research/pull/4`; branch head at this point is `bc1b3579c99dab8d3aff5920e18168e880b20274`.
+
+The versioned typed-output development request is frozen, with zero model calls so far while the existing research worker occupies the shared local route. The live Archit Doc still needs the project-required actual Luna review and Terra director promotion; the effective runtime profiles do not provide them. The readable candidate is saved in `research/archit-overnight-update-candidate-2026-10-06.md`. No professional chess explanation, Chess.com parity, board-game transfer, or sports result is claimed. Exact practice and next-step evidence: `research/chesscom-game-review-practice-2026-10-06.md`, `research/chess-overnight-next-iteration-2026-10-06.md`.
+
 ## 2026-10-05 — Offline chess review product slice
 
 Created `scripts/chess_real_evidence_interface.py` and

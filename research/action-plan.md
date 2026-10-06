@@ -1,5 +1,11 @@
 # Research Action Plan
 
+## Current chess explanation cycle — October 6, 2026
+
+The open Chess.com review supplied a post-game practice question at 20.Qc3 versus 20.Qe4. A repaired completed-game tool, paired v3 engine observation, and evaluator-only v4 teaching page now show legal examples without treating one continuation as Stockfish's complete reason. Source-bound, no-forward packets for both choices are verified; neither has gone to the local model. The versioned typed-output development run is frozen and waiting for the shared 131k model slot. See [the practice evidence](chesscom-game-review-practice-2026-10-06.md) and [the next cycle](chess-overnight-next-iteration-2026-10-06.md).
+
+Next: make one retained development model call when the route is free, validate its typed output, and then connect the completed-game packets through a separately frozen no-forward transport. Develop post-generation checks for precise tactical hypotheses before treating model prose as a lesson. The [quality protocol draft](chess-explanation-quality-protocol-draft-2026-10-06.md) proposes a broader game-disjoint blind set and qualified chess judgment; it is not frozen and has opened no sealed positions. Keep chess first. Board-game and sports work wait for their separate evidence gates.
+
 ## Current chess product slice — October 5, 2026
 
 The [local readiness receipt](chess-product-readiness-2026-10-05.md) records a
