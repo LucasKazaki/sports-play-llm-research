@@ -11,6 +11,10 @@ The September 18 user correction makes chess the immediate research starting
 point. Follow [the current autonomous research program](research/chess-autonomous-research-program-2026-09-18.md)
 and `GOAL_WORK.json`; historical soccer/football results below remain intact.
 
+### Where the October 6 chess work stands
+
+The [open Chess.com game practice](research/chesscom-breadth-practice-plan-2026-10-06.md) fixes four moves with different teaching problems. Its [Game Review observations](research/chesscom-review-breadth-observations-2026-10-06.md) are dated practice references, not an answer key or a blind test. In the first two saved local model attempts, the 20.Qc3 answer failed the factual checker; the 20.Qe4 answer passed its typed shape but gave no reason to choose it. The [v9 four-case capture](research/chess-no-forward-teaching-v9-2026-10-06.md) and [v10 after-answer comparison](research/chess-post-generation-comparison-v10.md) have passed offline software tests, but their independent source reviews and a four-case model trial remain pending. The [scoring worksheet](research/chesscom-four-case-scoring-worksheet-v1-2026-10-06.md) keeps move accuracy, the reason for an alternative, and teaching value separate. The no-forward capability gate remains open.
+
 ### Local chess review tools — October 5
 
 Start with the [chess evidence review guide](prototype/CHESS_EVIDENCE_REVIEW.md).
