@@ -47,8 +47,28 @@ The v4 capture runner retains one create-only request, raw response, exact
 route and source hashes, and an offline evaluation. An interrupted or malformed
 attempt still spends its place in the denominator; it is never retried in the
 same frozen folder. The two v3 attempts remain a separate 0/2 result. A future
-v4 practice call would start its own declared denominator, not rewrite v3.
-No v4 model call or teaching-quality rating is recorded by this note.
+v4 practice call starts its own declared denominator, not a rewrite of v3.
+
+One frozen v4 call has now run. It returned HTTP 200 from the matched local
+model with `finish_reason=stop`, one attempt, one model call, and zero automatic
+retries. Its request SHA-256 is
+`dbcb08291ade74836a1ef1245fe665488cb824d80562478ba6726ca85d22dea2`;
+the raw response SHA-256 is
+`3180c0051848a4c62c2f7d9f7b89d840bf773f6a79c336e88bd4aea565a699ce`.
+The model proposed `c2b3` as an alternative, but wrote a free-form value in
+the required `hypothesis` field. The offline checker rejected it with
+`unsupported_hypothesis` before searching for a witness. There is **no admitted
+v4 lesson in one attempted call (0/1)** and no teaching-quality rating. The
+raw response, request, and separate evaluation remain in
+`artifacts/chess-no-forward-teaching-capture-v4/chesscom-184866057876/played-frozen-20261006/`.
+The v3 attempts remain 0/2 under their earlier schema; the three calls are
+all visible but are not a single frozen quality experiment.
+Native evaluation task `882ac5ed-9d6d-4067-b98b-45bf2b72665d` checked the
+saved response and verified the run's integrity. Its authoritative receipt is
+`C:\AI\projects\LucasAgentStudio\data\company-runtime\project-execution\35fc2d789ba6f2679b8923ca442f12f478109f37cdea1c0b5239b93972d1de6a\b2e09a28cd769daa70fd3cf17a7784d3ce4948e2787a45e628fa7719a7eac927\receipt.json`
+(SHA-256 `b3bb18de80ad8f0d81f5261a630b80ea8ab713725418602367b793685314eb58`).
+The earlier native capture receipt has SHA-256
+`02124f17b40eee0724b739c8860c357fd8a9e178c9e434293f4f9b53c4710752`.
 
 The focused native check of the final v4 source passed **12 tests** and Python
 syntax compilation. It included a promoted-pawn wording case and a complete-looking
