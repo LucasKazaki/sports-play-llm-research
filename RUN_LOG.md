@@ -14,6 +14,10 @@ The next one-attempt user-game runner froze separate Qc3 and Qe4 requests withou
 
 The separately versioned user-game response checker then passed 43 combined runner/checker tests in native task `25c42945-8f9f-4b58-aba6-d73cd3b55737` (authoritative receipt SHA-256 `285438cfb7630b44fd1502892da7ab06aa0cc259d762781c2546fe0fcfc92800`). It counts every attempted call, rejects unverified identity and malformed/unsupported claims, and admits only exact typed facts or scores under the existing structural contract. Independent read found no blocking admission flaw, but structural admission cannot establish sound strategy or teaching quality. There is still no captured user-game response.
 
+The v2 tactical-hypothesis evaluator now checks an event on the chosen move or up to four legal replies, including the captured pawn's square for en passant. Its 26 native tests passed, and an independent source read found no concrete false acceptance. It verifies only one possible conditional line; geometric attacks can include pinned pieces and do not establish a legal capture or Stockfish's reason. The source and tests were saved to draft PR #4 at commit `0ff1116f37fbf544c87f9e382240e53fcc7771f7`.
+
+For ordinary, non-puzzle moves, a new offline standard-game PGN intake was built and repaired after independent adversarial probes showed silent acceptance of text after a result, skipped malformed tokens, and false check/mate notation. The final version consumes every visible mainline token and requires legal, canonical SAN. Native task `0d4a1c58-b194-4399-8a7c-86d5823403d2` passed 135 checks with one Windows symlink privilege skip; the authoritative receipt SHA-256 is `7644a6202a37d3f878673ca2ffc61198eb9409e1bf7ba6d7f49ccbef83e44bd0`. Independent re-review passed a 17-case adversarial matrix for this bounded parser. No standard PGN was downloaded, no source-archive binding or protected-game exclusion has occurred, and no quality gate is claimed. A separate owner-project broker plan names the exact acquisition change without touching the active runtime.
+
 ## 2026-10-05 — Offline chess review product slice
 
 Created `scripts/chess_real_evidence_interface.py` and

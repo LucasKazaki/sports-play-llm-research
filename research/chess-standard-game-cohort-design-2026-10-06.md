@@ -1,6 +1,6 @@
 # A small standard-game cohort for chess commentary
 
-**Status, 6 October 2026:** research and implementation plan only. No PGN was acquired, no game was selected, no engine or model was called, and no sealed holdout was opened for this note. This is a development cohort proposal, not acceptance of the [chess commentary capability gate](chess-commentary-capability-gate-v1.md).
+**Status, 6 October 2026:** design plus a tested offline parser for caller-pinned decompressed PGN bytes. No standard PGN was acquired, no game was selected, no engine or model was called, and no sealed holdout was opened for this note. The compressed-prefix broker and source binding are still pending. This is a development cohort proposal, not acceptance of the [chess commentary capability gate](chess-commentary-capability-gate-v1.md).
 
 ## Why use complete games
 
@@ -45,7 +45,7 @@ The offline intake report must form an auditable waterfall: bytes requested and 
 ## Next executable packet
 
 1. **Studio owner:** extend the existing scoped acquisition broker with the one exact standard PGN source, official-page/list/checksum proof, 1 MiB cap and immutable receipt. Test rejection of redirects, foreign URLs, oversized/short prefixes, wrong Content-Range, wrong license/link, and receipt tampering. Review this change in LucasAgentStudio before running it.
-2. **Sports owner:** ask that broker once for the fixed prefix in a new target. Save the acquisition receipt. Build the versioned offline PGN importer and sealed-safe exclusion verifier; keep v1/v2 files untouched. Test complete/incomplete PGNs, legal replay, variant rejection, game disjointness, deterministic ranking, each denominator and no-forward packet rejection. Run the project intake and no-forward focused tests together.
+2. **Sports owner:** ask that broker once for the fixed prefix in a new target and save its acquisition receipt. The separately versioned offline PGN parser now passes its focused checks for complete/incomplete records, strict legal mainline replay and variants; bind its decompressed input to the compressed receipt. Then build the sealed-safe exclusion verifier and selector, keeping v1/v2 files untouched. Test game disjointness, deterministic ranking, every denominator and no-forward packet rejection. Run the project intake and no-forward focused tests together.
 3. **Independent verification:** reproduce selected IDs, replayed FENs, engine labels and all counts from the retained prefix and pinned software; compare hashes with the emitted manifest. Freeze a separate experiment protocol before any future fresh holdout. The [capability gate](chess-commentary-capability-gate-v1.md) still needs its own preregistered sample size, thresholds, qualified review and independent acceptance.
 
 The CC0 source needs no new account, spending or license decision for this bounded pilot. The remaining work is the owner-side broker extension and its review, followed by an explicitly submitted acquisition and offline implementation. None of those steps occurred while writing this note.
