@@ -24,9 +24,19 @@ PGN = '''[Event "Example"]
 
 1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Ba4 Nf6 1-0
 '''
+FOOLS_MATE_PGN = '''[Event "Software checkmate fixture"]
+[Site "local"]
+[White "White"]
+[Black "Black"]
+[Result "0-1"]
+
+1. f3 e5 2. g4 Qh4# 0-1
+'''
 
 
 def test_local_postgame_review_and_offline_reverification(tmp_path):
+    if not review.ENGINE.is_file():
+        pytest.skip('pinned Stockfish binary is a local integration asset')
     pgn = tmp_path / 'one-game.pgn'
     pgn.write_text(PGN, encoding='utf-8')
     output = tmp_path / 'review'
@@ -81,6 +91,8 @@ def test_malformed_or_unfinished_pgn_is_rejected(tmp_path):
 
 
 def test_record_rejects_wrong_board_and_illegal_engine_line(tmp_path):
+    if not review.ENGINE.is_file():
+        pytest.skip('pinned Stockfish binary is a local integration asset')
     pgn = tmp_path / 'one-game.pgn'
     pgn.write_text(PGN, encoding='utf-8')
     game, raw, moves = review.load_completed_game(pgn)
@@ -122,9 +134,21 @@ def test_typed_engine_scores_keep_perspective_and_bounds():
         'Engine mate score -2, Black perspective · upper bound')
 
 
+def test_software_fixture_is_a_finished_legal_game(tmp_path):
+    pgn = tmp_path / 'fools-mate.pgn'
+    pgn.write_text(FOOLS_MATE_PGN, encoding='utf-8')
+    game, _, moves = review.load_completed_game(pgn)
+    assert len(moves) == 4
+    assert game.end().board().is_checkmate()
+    assert game.headers['Result'] == '0-1'
+
+
 def test_saved_demo_is_a_finished_legal_game():
+    path = ROOT / 'demo/chess-review-fools-mate-fixture.pgn'
+    if not path.is_file():
+        pytest.skip('saved demo PGN is a local integration asset')
     game, _, moves = review.load_completed_game(
-        ROOT / 'demo/chess-review-fools-mate-fixture.pgn')
+        path)
     assert len(moves) == 4
     assert game.end().board().is_checkmate()
     assert game.headers['Result'] == '0-1'

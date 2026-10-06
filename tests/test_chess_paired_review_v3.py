@@ -130,6 +130,8 @@ def test_one_discovery_then_one_paired_search_and_checked_roots(tmp_path, monkey
 
 
 def test_pinned_engine_page_and_offline_verification(tmp_path):
+    if not previous.ENGINE.is_file():
+        pytest.skip('pinned Stockfish binary is a local integration asset')
     pgn = tmp_path / 'fixture.pgn'
     pgn.write_text(PGN, encoding='utf-8')
     output = tmp_path / 'v3'
