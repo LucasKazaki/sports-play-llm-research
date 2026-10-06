@@ -1,5 +1,9 @@
 # Decision Log
 
+## D-049 — 2026-10-06 — Keep the lesson's legal examples separate from model quality
+
+Use the v5 step-by-step page for the Chess.com practice question only as evaluator-side teaching material. Its r7 source corrects generic labels that could name the wrong side, piece type or reply, or imply a unique option without proof. Final native task `4fa6a4c7-dae6-475e-8623-7ed590b316e7` passed 23 focused tests and reverified the saved page; independent source review closed the wording findings before a whitespace-only source normalization. The retained JSON's analogous-target flag is narrower than a full option-availability check. Keep this page away from the no-forward generator and keep model quality unclaimed. The separate game-disjoint holdout protocol remains a candidate with unfilled source and review pins; it authorizes no holdout acquisition or board-game expansion.
+
 ## D-048 — 2026-10-06 — Reject incomplete or silently skipped standard-game text
 
 For a broader chess development set, accept only caller-pinned decompressed PGN records with an observed complete boundary, a standard start, a supported time control and a fully consumed legal mainline. An independent review found that the general PGN parser could silently skip junk or extra moves after a result. The repaired intake lexes every visible mainline token, checks move numbering and canonical SAN, and rejects false check or mate marks. Native task `0d4a1c58-b194-4399-8a7c-86d5823403d2` passed 135 focused checks with one Windows symlink privilege skip; an independent 17-case adversarial recheck found no remaining false acceptance in this scope. The parser is evaluator-only and does not establish source provenance: the compressed-prefix broker, decompression binding, protected-game exclusions and cohort selection remain separate work. Preserve the failed reproductions and earlier test receipts as repair evidence.
