@@ -1,0 +1,69 @@
+{
+  "files": [
+    {
+      "file": "src/server/lmstudio-client.js",
+      "before_sha256": "d1dbb55c1fd16f8cbddde770b4b8497391ddd407cb55383fce5108b43ca551e1",
+      "after_sha256": "a8ea3a54b0ad671388c890c692a6373215f234b1c21c91bb99e1bfaf72d9e3cb",
+      "before_bytes": 208344,
+      "after_bytes": 208735,
+      "patch": "lmstudio-client.js.patch",
+      "patch_sha256": "26d7f166ebc7da546e44fdf9e96d622dc0113ced8d6b217d840a5a48e9cb4f1b",
+      "patch_bytes": 1797
+    },
+    {
+      "file": "tests/lmstudio-project-listing-path.test.js",
+      "before_sha256": "6e488998e1cd67f9341e90b82b72a66dafa6fbe600149cc3236c39b266f918cd",
+      "after_sha256": "3403ad90532bd9ae1058d918f4ce438bef3dae22d73dc11281116932a57a5005",
+      "before_bytes": 5848,
+      "after_bytes": 7561,
+      "patch": "lmstudio-project-listing-path.test.js.patch",
+      "patch_sha256": "47a8af9c229718758ace5fe410a9dabc1456c53ea1421cae4bbeba5c2cfcc56d",
+      "patch_bytes": 2263
+    },
+    {
+      "file": "src/server/goal-work-session.js",
+      "before_sha256": "415aae6ce8d807f11a6a72fa7174150a7066a1ae3f17cae214767600cee719b1",
+      "after_sha256": "9670b405154828f5250c2a1f456ff33cc4cc18944c7418a6a5a9820dc8eb8d41",
+      "before_bytes": 42063,
+      "after_bytes": 45190,
+      "patch": "goal-work-session.js.patch",
+      "patch_sha256": "d4c32fa19f79daded773a9ff392a44ad455ed63229f6953d15daa1db4fb9b660",
+      "patch_bytes": 5262
+    },
+    {
+      "file": "tests/goal-work-session.test.js",
+      "before_sha256": "e68e3351fabbeb4294627e69095854d40130b521462d3408a701f5c31e21a42a",
+      "after_sha256": "c01cebbefce750527bcfe19bc23ca46c39101531516131468b8ec8f8ef1e25cd",
+      "before_bytes": 43964,
+      "after_bytes": 52794,
+      "patch": "goal-work-session.test.js.patch",
+      "patch_sha256": "cb46a2bf7fb968beef58e0c0d61b03a345ed16792c88b9f33534f5a654cb0bc9",
+      "patch_bytes": 9570
+    },
+    {
+      "file": "src/server/company-hermes-structured-completion.js",
+      "before_sha256": "860500204763168aab0f41a0739011dfe1a6a7e4e9307f175d0dd6dde8f83bd2",
+      "after_sha256": "688772d2d84ff8ab05f47c667aca75450b102c346fe6be81812f672f47882db3",
+      "before_bytes": 51090,
+      "after_bytes": 51758,
+      "patch": "company-hermes-structured-completion.js.patch",
+      "patch_sha256": "5e014a80d73c93f35b4d4023d5fe53abe0e64108164c6b16dd8866830fb65f6d",
+      "patch_bytes": 1839
+    },
+    {
+      "file": "tests/company-hermes-transport-schema.test.js",
+      "before_sha256": "8ccea9f82f82435e323ba06894e038f1f08db0c586770042e4cee776a7444cce",
+      "after_sha256": "3d3a6ca37335b743c4441a166145225dfd1db2b7020d2e65c4b869a532ce800a",
+      "before_bytes": 31248,
+      "after_bytes": 34287,
+      "patch": "company-hermes-transport-schema.test.js.patch",
+      "patch_sha256": "e4b5f4731417b8d542d1e595bc8df78c6213aec6701489077104113a60a56810",
+      "patch_bytes": 3461
+    }
+  ],
+  "combined_patch": {
+    "name": "baseline-to-final.patch",
+    "sha256": "3b8ae64ea212e33a49ecf2e899bb7a12403b54512f4547898c8530d4e30fa9ad",
+    "bytes": 24192
+  }
+}
