@@ -23,6 +23,21 @@ An invented fact, false score attribution, unsupported forced claim or missing n
 
 Report `F-fail`, correct restraint on insufficient-evidence controls, full abstention on answerable cases, valid scores, latency and transport failures separately. Two blinded readers, including a qualified chess reviewer before a professional claim, should rate the same positions and learner question and retain initial ratings and adjudication. A Chess.com head-to-head test needs lawful source and review access, game-disjoint positions, randomized source-hidden paired answers and predeclared analysis including failures. Do not copy Chess.com coaching text into a dataset or use its labels as hidden answers. This one practice game cannot establish parity or superiority.
 
+## Comparative question outcome
+
+Record this outcome separately from the teaching score for each initial answer and each judge. Use the same question and evidence standard for both products. Do not infer the outcome from a teaching score or engine number.
+
+| Outcome | Required evidence |
+| --- | --- |
+| **Answered with verified contrast** | The answer explains the practical difference between the selected move and a named alternative or refutation. Its mechanism, conditional consequence and comparison survive legal replay and the separate evaluator checks. A finite score difference alone is insufficient. |
+| **Useful mechanism but ranking unresolved** | The answer teaches a checked mechanism or conditional choice, but the evidence does not establish why the selected move is stronger or weaker than the relevant alternative. |
+| **Unanswered** | The answer does not supply a usable comparative reason, including a full abstention, missing answer or transport failure. Keep the precise failure or abstention status separately. |
+| **Factual fail** | The answer fails the factual gate; retain its critical error or admission failure and count it in the original denominator. Do not reclassify rejection as a successful abstention. |
+
+Leave the outcome **unscored** until the exact initial answer and evaluator evidence have been inspected. An unscored record is pending, not a fifth outcome or a successful answer. Retain initial judgments and any adjudication. Report all four outcome counts over the original scheduled denominator, with unscored cases disclosed separately; never drop failed or unresolved cases.
+
+A teaching score of 2 or higher can include a useful mechanism with an unresolved ranking. The proposed 2+ teaching threshold does not establish why every inferior move was bad or Chess.com parity. No new comparative acceptance threshold is set here; any future decision rule must be frozen before holdout scoring. The [four-case worksheet](chesscom-four-case-scoring-worksheet-v1-2026-10-06.md) applies this distinction only to the known development game.
+
 ## Next discriminating experiment
 
 Keep the v9 generator's pre-move packet unchanged. After saving a one-attempt raw answer, replay the **model-named alternative** and run a separately versioned, fixed-budget paired Stockfish search restricted to that move and the played move. Pin source, engine, settings, root position, moves, command and full output; abstain on missing, bounded or mate scores. This post-generation result must never enter the same answer. Blind human ratings then ask whether the verified contrast teaches *why* the move was weaker or stronger. Fresh game-disjoint testing, independent source review and qualified chess judgment remain required before the chess gate or board-game expansion.
