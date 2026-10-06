@@ -1,5 +1,9 @@
 # Decision Log
 
+## D-050 — 2026-10-06 — Change the next goal input, retain the failed turns
+
+The Sports goal worker's two attempts yielded no chess answer: malformed `propose_project_edit` arguments, then a 1,800-second inactivity timeout. Preserve those task/run receipts and the new active task. Narrow only the future `GOAL_WORK.json` item to the already written heldout protocol candidate and five relevant read paths; do not rerun old captures or treat a planner packet as a model result. The root transport mismatch has a tested candidate in an isolated Studio worktree, but no activation or live proof. The exact boundary and hashes are in [the repair note](chess-goal-work-repair-2026-10-06.md).
+
 ## D-049 — 2026-10-06 — Keep the lesson's legal examples separate from model quality
 
 Use the v5 step-by-step page for the Chess.com practice question only as evaluator-side teaching material. Its r7 source corrects generic labels that could name the wrong side, piece type or reply, or imply a unique option without proof. Final native task `4fa6a4c7-dae6-475e-8623-7ed590b316e7` passed 23 focused tests and reverified the saved page; independent source review closed the wording findings before a whitespace-only source normalization. The retained JSON's analogous-target flag is narrower than a full option-availability check. Keep this page away from the no-forward generator and keep model quality unclaimed. The separate game-disjoint holdout protocol remains a candidate with unfilled source and review pins; it authorizes no holdout acquisition or board-game expansion.

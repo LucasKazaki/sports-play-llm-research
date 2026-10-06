@@ -22,6 +22,8 @@ The Chess.com practice lesson now has a v5 page with openable step boards for th
 
 A separate [game-disjoint holdout protocol candidate](research/chess-game-disjoint-heldout-protocol-2026-10-06.md) proposes 200 main positions plus 40 insufficient-evidence controls from distinct permitted games. Its freeze card leaves source, exclusions, sampling caps, engine/model settings, and qualified reviewer identities unfilled. No game was acquired or scored for it. The shared local route still belongs to the existing research run; the project's own Chess.com model requests remain frozen at zero attempts.
 
+The existing Sports research goal then failed twice without a usable model answer: run `0841d48b-7b36-48d5-8975-913c6ea0631d` emitted empty tool arguments against a required schema, and run `a178f736-a1bc-4209-a722-998f1278cee3` timed out after 1,800 seconds without durable progress. A new task started automatically and still owns the shared route. The [bounded goal-item repair](research/chess-goal-work-repair-2026-10-06.md) narrows future reads and names one development-only successor while preserving the history; native task `8e4c3a7a-8683-47d2-9e95-4d5afdb02d46` verified the new file hash, five paths and unique item IDs (receipt SHA-256 `f03fdeef5249c62bbe5b1da033bebf0e556ba2af695a804b1dc14b26c6cbf6f4`). A separate isolated Studio transport patch passed 83 focused and adjacent checks and independent static review; its exact diff is saved in the allowed JSON evidence file. It is neither deployed nor a live model success. Do not count any of these goal turns as the frozen Chess.com or typed development probe.
+
 ## 2026-10-05 — Offline chess review product slice
 
 Created `scripts/chess_real_evidence_interface.py` and
