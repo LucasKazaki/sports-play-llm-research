@@ -6,6 +6,10 @@ Use the user's open Chess.com Game Review as one post-game practice case. The fi
 
 Pin the evaluator-side v4 page to the *approved* v3 receipt and page digests, not merely whatever matching files occupy the input folder. The first version had a coherent-replacement gap; the repaired page and negative test passed native checks. Preserve the original r5 output as history and use the pinned r6 output for current practice.
 
+## D-047 — 2026-10-06 — Freeze one move per local-model attempt
+
+Keep Qc3 and Qe4 in separate frozen requests so the generator never sees the comparison answer. Bind the PGN, approved review, packet, prompt, route, every called local helper and request manifest before a POST. Preserve the first unused frozen version and its review finding; use only the new helper-pinned directories for a future call. Count a timeout or interrupted request as a spent attempt, and require a matching model identity before treating raw output as captured. The shared route's existing research owner finishes first. A valid typed response will still be development plumbing, not a chess teaching verdict.
+
 ## 2026-10-05 — Keep the usable chess review distinct from commentary acceptance
 
 Build a local page over the eight real development positions and a separate

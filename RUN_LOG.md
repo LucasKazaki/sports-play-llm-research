@@ -10,6 +10,8 @@ The versioned typed-output development request is frozen, with zero model calls 
 
 An independent source read then found that the v4 page accepted a coherently replaced v3 receipt and matching page. The repaired builder requires caller-pinned digests for both before creating or verifying output, and a negative test covers a coherent replacement. Native task `089d5fc3-538e-424c-80fe-5559f6cd2c2d` passed 33 focused checks and reverified the pinned r6 page with zero model/engine calls; authoritative receipt SHA-256 `985867a4af079f725d26705698a41f589605b6d1ff312d073ccc6c3ae79b6770`. The current page SHA-256 is `44d7c5d22dde811192f268d29a9f8e497b2aed890515757ccb6dcea30288b126`. This is a source-binding and wording repair, not a teaching-quality verdict.
 
+The next one-attempt user-game runner froze separate Qc3 and Qe4 requests without POST. A pre-call independent review found missing helper-source pins. The repaired version pins seven called helpers and the manifest, treats unverified model identity and oversized responses as failures, and retains their bounded raw evidence. Native task `34690c11-45c7-4b5f-b2bf-9054f2eef62a` passed 25 focused tests and verified both new frozen requests with zero attempts; authoritative receipt SHA-256 `8e5559c9600b07cb68046449a06be13d042fe4c836dadce32141e295c799daed`. Independent re-review closed the specific helper-pin blocker. The local route remains occupied by a healthy existing research run, so this is not a model-result claim. A separate offline tactical-claim checker passed 26 native synthetic checks; it is not yet connected to the frozen prompt or a chess-quality evaluation.
+
 ## 2026-10-05 — Offline chess review product slice
 
 Created `scripts/chess_real_evidence_interface.py` and
