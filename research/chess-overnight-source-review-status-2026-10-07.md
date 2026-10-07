@@ -56,3 +56,9 @@ The narrow V10 outside-artifacts reviewer also read its complete 1,376-byte bund
 
 A read-only check resolved a misleading configuration comparison. The **running** Studio worktree and live Sports developer profile both select `loops-cpu-gpt-oss-20b`, matching the model recorded in the failed source reviews. The earlier Qwen setting came from a different checkout; its endpoint was not serving, and that file does not satisfy the live one-model route policy. This explains the apparent model-name mismatch, not the reviewer's inaccurate prose. No model route or active review was changed.
 
+## Update at 05:19 UTC
+
+V8's narrow reply-choice reviewer read the complete source/test bundle, but its PASS gave line ranges without describing the `>1` legal-reply condition, the rejection reason, or the five-reply test assertions. The independent verdict is **changes required for the review result**; no source defect was identified in that slice. V9's revised `build_request` review is running.
+
+One changed-instruction V10 review is now queued. The previous V10 reviewer had copied its answer-shaped instructions almost verbatim; this request asks for observed values under plain labels. Its native command completed once and produced the exact audited 1,376-byte bundle, but the developer has not yet produced a signed read or source verdict. It remains an experiment in review wording, with the four-case practice still gated.
+
