@@ -86,3 +86,9 @@ A revised V9 `_source_packet` review packet passed an independent submission che
 
 The proposed Studio fix for the first-file-read timeout is isolated from the running service. Its targeted test failed before the edit and passed afterward; the focused module suite passed **60/60**, and static and contract checks passed. One additional schema test fails the same way against the copied baseline. The full Studio gate and a live read have not been verified, so the proposal has not been activated.
 
+## Update at 05:57 UTC
+
+An independent check found that the proposed low-reasoning first read needed a matching correction when it produced no answer. That exact case now has a failing-before, passing-after test, and the isolated Studio module suite passes **61/61**. The narrow patch and audits are saved on the companion Studio evidence branch as an **offline, unactivated** candidate. Full Studio verification and a live fenced read remain open.
+
+The next V10 path-guard review is prepared with the new 36-test file and a bounded source/test/result packet. Its original reviewer instruction still looked like a fill-in answer, so it was replaced with bare section headings before submission. The revised request passed a separate predispatch check but remains unsubmitted while the V9 child waits for the shared local model lane. Neither packet is a source verdict.
+
