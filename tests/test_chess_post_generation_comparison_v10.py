@@ -276,6 +276,19 @@ def test_protocol_and_path_tamper_rejected_before_search(case, tmp_path):
         _evaluate(case, search, input_value=bad)
 
 
+def test_relative_v9_run_dir_rejected_before_search(case):
+    search_calls = []
+
+    def search(*_):
+        search_calls.append(1)
+        raise AssertionError('engine_must_not_run')
+
+    bad = dict(case['input'], v9_run_dir='artifacts/v9-frozen-run')
+    with pytest.raises(ValueError, match='^v10_run_dir_must_be_absolute$'):
+        _evaluate(case, search, input_value=bad)
+    assert search_calls == []
+
+
 def test_cli_confines_protocol_write_to_project_artifacts(case, tmp_path):
     outside = tmp_path / 'outside-protocol.json'
     with pytest.raises(ValueError, match='v10_cli_path_outside_project_artifacts'):
