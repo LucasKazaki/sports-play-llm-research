@@ -80,3 +80,9 @@ After V10 R7 settled, I moved the already committed relative-path negative test 
 
 The R7 audit also identified an uncovered equality case: the V9 run directory must not be the `artifacts` directory itself. A direct negative test now supplies that exact directory, checks the literal rejection label, and confirms that no search callback runs. The V10 source did not change. The complete focused V10 file passes **36/36** in both the clean GitHub checkout and the local checkout with practice assets. These are fake-search software checks, not a live explanation result.
 
+## Update at 05:44 UTC
+
+A revised V9 `_source_packet` review packet passed an independent submission check and ran once through the project's native executor. Its server result contains the complete bounded guard function, the three direct negative cases, and a fresh **33/33** focused software result. The reviewer child is still queued, so this is transport and test evidence only; no V9 source verdict has been accepted.
+
+The proposed Studio fix for the first-file-read timeout is isolated from the running service. Its targeted test failed before the edit and passed afterward; the focused module suite passed **60/60**, and static and contract checks passed. One additional schema test fails the same way against the copied baseline. The full Studio gate and a live read have not been verified, so the proposal has not been activated.
+
