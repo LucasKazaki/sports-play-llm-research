@@ -58,6 +58,8 @@ def envelope(content: str, *, model='loops-cpu-gpt-oss-20b',
 
 @pytest.fixture
 def frozen(tmp_path, monkeypatch):
+    if not capture.PGN.is_file() or not capture.REVIEW_ROOT.is_dir():
+        pytest.skip('local source game or baseline absent')
     evidence_dir = tmp_path / 'attestation'
     evidence_dir.mkdir()
     current = datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z')
@@ -138,6 +140,36 @@ def test_changed_frozen_artifacts_block_before_post(frozen, case_name, mutate):
                              opener=opener)
     assert opener.calls == []
     assert not (run_dir / 'ply33' / capture.REQUEST_FILE).exists()
+
+
+@pytest.mark.parametrize('selected_ply,packet_pin,projection_pin,error,projection_calls', [
+    (34, cf.digest(b'packet'), cf.digest(b'projection'),
+     'v9_capture_case_packet_mismatch', 0),
+    (33, cf.digest(b'other_packet'), cf.digest(b'projection'),
+     'v9_capture_case_packet_mismatch', 0),
+    (33, cf.digest(b'packet'), cf.digest(b'other_projection'),
+     'v9_capture_case_projection_mismatch', 1),
+])
+def test_source_packet_rejects_wrong_ply_or_frozen_digest(
+        monkeypatch, selected_ply, packet_pin, projection_pin, error,
+        projection_calls):
+    monkeypatch.setattr(capture.user_packet, 'build_packet',
+                        lambda *_, **__: {'source': {'selected_ply': selected_ply}})
+    monkeypatch.setattr(capture.user_packet, 'encode_packet',
+                        lambda *_, **__: b'packet')
+    calls = []
+
+    def build_projection(*_, **__):
+        calls.append(1)
+        return b'projection'
+
+    monkeypatch.setattr(teaching, 'build_generator_input', build_projection)
+    monkeypatch.setattr(capture, 'CASE_PINS', {33: (packet_pin, projection_pin)})
+    binding = {'review_sha256': '0' * 64, 'page_sha256': '1' * 64}
+    with pytest.raises(ValueError, match=f'^{error}$'):
+        capture._source_packet(Path('unused.pgn'), Path('unused-review'),
+                               binding, 33)
+    assert len(calls) == projection_calls
 
 
 def test_changed_source_prompt_implementation_and_cli_pins_block(frozen, monkeypatch):
