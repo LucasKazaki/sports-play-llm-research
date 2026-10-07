@@ -62,3 +62,9 @@ V8's narrow reply-choice reviewer read the complete source/test bundle, but its 
 
 One changed-instruction V10 review is now queued. The previous V10 reviewer had copied its answer-shaped instructions almost verbatim; this request asks for observed values under plain labels. Its native command completed once and produced the exact audited 1,376-byte bundle, but the developer has not yet produced a signed read or source verdict. It remains an experiment in review wording, with the four-case practice still gated.
 
+## Update at 05:24 UTC
+
+The V9 `build_request` reviewer reached its 900-second deadline before making a source read. Its parent had already passed six inline software negatives; the child produced no source verdict. The changed-instruction V10 reviewer has started.
+
+After the V9 attempt settled, I copied the exact new V9 test file from the draft branch into the local asset-backed checkout. The V9 capture source bytes were unchanged. The focused capture test file now passes **33/33** with the local game and baseline present, so the three direct packet-pin negatives have been checked in the actual practice environment as well as the portable checkout. This does not resolve the reviewer timeout or authorize the four-case model run.
+
