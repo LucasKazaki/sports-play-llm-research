@@ -1,5 +1,40 @@
 # Research Action Plan
 
+## Current chess explanation cycle — October 6, 2026
+
+The open Chess.com review supplied a post-game practice question at 20.Qc3 versus 20.Qe4. A repaired completed-game tool, paired v3 engine observation, and evaluator-only v5 step-by-step page now show legal examples without treating one continuation as Stockfish's complete reason. Both source-bound, no-forward requests were run once. The 20.Qc3 answer failed the factual checker; the 20.Qe4 answer passed typed admission but offered no reason to choose it. The wider four-case development trial remains unrun. See [the practice evidence](chesscom-game-review-practice-2026-10-06.md) and [the next cycle](chess-overnight-next-iteration-2026-10-06.md).
+
+The v4 source pin still protects the approved v3 receipt and page hashes; a coherent-replacement test caught the original gap. The v5 page builds on that source and lets a learner inspect each resulting board. Independent review then caught four reusable wording problems in positions unlike the named Chess.com game. The r7 source has mirrored-side, non-queen, single-move and quiet-reply regressions; its native verification is in `RUN_LOG.md`. This protects the saved example and its generic labels; it does not decide whether a model explanation is good teaching.
+
+The separate Qc3 and Qe4 requests were each frozen, verified offline, and called once. A pre-call review repaired missing helper-source pins; the runner passed 25 native tests and the response checker passed 43 combined native checks. Both raw answers and their checker decisions remain in the original denominator. The v9 four-case capture runner and v10 after-answer comparison sidecar have passed offline software tests; independent source reviews and the four live model attempts remain pending.
+
+An earlier goal worker produced no accepted explanation in two retained failures: one malformed tool request and one 1,800-second inactivity timeout. A later goal run made eight model requests and seven tool calls, then its next provider step lost the stream and timed out without a new durable checkpoint. It admitted no Sports source edit. Its unchanged queued retry was cancelled on October 6 while the owning runtime failure is diagnosed. These goal-worker events are separate from the two saved Chess.com practice answers and the unrun v9 four-case trial. See the [focused GOAL_WORK repair](chess-goal-work-repair-2026-10-06.md).
+
+The [game-disjoint holdout protocol](chess-game-disjoint-heldout-protocol-2026-10-06.md) now has a [synthetic-tested structural freeze-card validator](chess-holdout-freeze-card-validator-2026-10-06.md). Its native run passed 26 checks and the output remains an unfrozen candidate. The next prerequisite is a count-only protected-overlap contract that can reject development and sealed games without revealing sealed details. Exact source, rights, reviewers and settings still need real receipts before a study can be frozen.
+
+The Studio transport and parser/schema repairs were activated in the running service earlier on October 6. A later long provider response still lost its stream, so runtime reliability remains open. The Studio owner must diagnose a bounded change, run focused checks, and use its managed activation path before treating a new outcome as recovery. The [earlier patch record](chess-goal-work-repair-2026-10-06.md) remains historical evidence.
+
+Next: finish the v9/v10 source reviews, then freeze one create-only model attempt for each of the four known-game practice moves. Check the model's actual named alternative after the response is sealed, and judge whether the result answers the learner's comparison question. A bounded evaluator example is not a complete strategic explanation. The [quality rubric draft](chess-explanation-quality-protocol-draft-2026-10-06.md) and [game-disjoint protocol candidate](chess-game-disjoint-heldout-protocol-2026-10-06.md) specify a broader blind test and qualified chess judgment. The protocol still lacks exact source, exclusion, settings and reviewer pins; no holdout has been acquired or scored. Keep chess first. Board-game and sports work wait for their separate evidence gates.
+
+For ordinary moves beyond puzzle tactics, the [standard-game cohort design](chess-standard-game-cohort-design-2026-10-06.md) proposes a small CC0 Lichess development prefix with quiet, defensive, endgame, tactical and inferior-move cases. A new offline parser now checks every mainline move token and legally replays complete standard games; adversarial review caught and repaired three ways malformed movetext could be accepted. The final native run passed 135 checks with one Windows symlink privilege skip. No standard PGN has been acquired. The [broker plan](chess-standard-pgn-broker-plan-2026-10-06.md) identifies the separate owner change needed to obtain a pinned compressed prefix, after which Sports must bind decompressed bytes to that receipt and apply game exclusions. Keep this development cohort separate from a future fresh holdout.
+
+## Current chess product slice — October 5, 2026
+
+The [local readiness receipt](chess-product-readiness-2026-10-05.md) records a
+source-bound eight-position evidence page and a completed-game PGN review tool
+with legal replay, bounded local Stockfish observations, move list, alternative
+board and annotated-PGN export. The latest full repository suite passed 1,482 tests
+with one existing Windows symlink privilege skip. These are usable internal
+study tools; the saved model run admitted zero typed assertion sets and the
+no-forward commentary capability gate is still open. The next measured step
+is a versioned typed-output generation/evaluation protocol on the newly
+assembled, source-verified 24-position game-disjoint cohort from the retained
+1 MiB Lichess prefix, followed by qualified independent review. The cohort
+selection and sealed evaluator-only strata were verified without model or
+engine calls; its heldout outcomes remain unscored.
+The earlier September 22 runner and interface directions below are historical
+where the October 5 receipt documents completed software.
+
 ## Current finite repair — September 22, 20:29 UTC
 
 The strict no-forward input boundary is now implemented and source-reviewed. It has 50 new passing tests and eight retained real-development input packets, with no model calls or commentary quality result. Read [the current handoff](chess-no-forward-input-2026-09-22.md). Next implement the local generation runner and durable raw-output/failure retention using this boundary, with meaningful fake-transport tests before any live request. The broader frozen factuality experiment remains open. Earlier missing-boundary directions below describe prior state.

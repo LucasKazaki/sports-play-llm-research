@@ -1,5 +1,9 @@
 # Paper Outline
 
+## 2026-10-06 chess explanation companion: current boundary
+
+The Chess.com game is a post-game practice case, not a model-quality or head-to-head result. The local review now has a source-pinned, legally replayed step-by-step teaching page and separate no-forward requests for the played move and one alternative. Those requests have not reached the local model. Offline checks can reject malformed typed claims and false events on a proposed legal line, but they do not establish a useful strategic explanation or a professional commentator. The [practice note](chesscom-game-review-practice-2026-10-06.md), [quality rubric draft](chess-explanation-quality-protocol-draft-2026-10-06.md), [game-disjoint holdout protocol candidate](chess-game-disjoint-heldout-protocol-2026-10-06.md), and [standard-game cohort design](chess-standard-game-cohort-design-2026-10-06.md) distinguish implemented software, proposed evaluation, and unacquired data. The holdout freeze card remains incomplete. None supplies sports evidence.
+
 ## 2026-09-22 internal software-control evidence
 
 The development claim experiment in research/chess-factuality-experiment-2026-09-22.md is a bounded software/provenance control using8 real boards and deliberately mutated claims. It is not a model benchmark, human explanation-quality result or sports-transfer evidence. The reference-only comparison is intentionally weak; no independent statistical-sample claim is justified. Preserve all broader evaluation gates.

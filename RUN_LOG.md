@@ -1,5 +1,85 @@
 # Run Log
 
+## 2026-10-06 — Chess.com practice, repair, and next explanation cycle
+
+The completed game already open in Chess.com Game Review was exported for one local practice case. Its PGN replay identified ply 39 as 20.Qc3. The first v2 annotated-PGN verifier failed because it sorted headers that creation had kept in source order. A fail-first header-order regression reproduced the error; the bounded repair verified the original output and a fresh create-only run. The v3 paired search then scored Qc3 and Qe4 in one 10,000-node root-restricted MultiPV call. Its legal line showed ...Qxd4 taking a pawn, but a later check found that the same queen trade is possible after Qe4, so the capture alone was not an explanation of the difference.
+
+The offline v4 teaching page now replays the saved exchange and the Qe4 b7 threat with cautious examples. Separate no-forward packets for Qc3 and Qe4 bind the PGN and verified v3 receipt/page while excluding continuation and annotation data from a future generator. Native task `7d32440c-508a-42b7-ba05-a8a1113d514d` passed 31 focused tests and reverified the page and both packets; authoritative receipt SHA-256 `a35f3bf12a595de62db44b897708975ec1775c198b314b6526acb5352429fe0b`. Earlier native task `71a197d0-9a02-4768-8366-4fa209371157` passed 21 focused checks after a GitHub-mirror portability repair. A clean sync worktree passed 47 software checks and explicitly skipped five local-asset integrations. The draft GitHub PR is `https://github.com/LucasKazaki/sports-play-llm-research/pull/4`; branch head at this point is `bc1b3579c99dab8d3aff5920e18168e880b20274`.
+
+The versioned typed-output development request is frozen, with zero model calls so far while the existing research worker occupies the shared local route. The live Archit Doc still needs the project-required actual Luna review and Terra director promotion; the effective runtime profiles do not provide them. The readable candidate is saved in `research/archit-overnight-update-candidate-2026-10-06.md`. No professional chess explanation, Chess.com parity, board-game transfer, or sports result is claimed. Exact practice and next-step evidence: `research/chesscom-game-review-practice-2026-10-06.md`, `research/chess-overnight-next-iteration-2026-10-06.md`.
+
+An independent source read then found that the v4 page accepted a coherently replaced v3 receipt and matching page. The repaired builder requires caller-pinned digests for both before creating or verifying output, and a negative test covers a coherent replacement. Native task `089d5fc3-538e-424c-80fe-5559f6cd2c2d` passed 33 focused checks and reverified the pinned r6 page with zero model/engine calls; authoritative receipt SHA-256 `985867a4af079f725d26705698a41f589605b6d1ff312d073ccc6c3ae79b6770`. The current page SHA-256 is `44d7c5d22dde811192f268d29a9f8e497b2aed890515757ccb6dcea30288b126`. This is a source-binding and wording repair, not a teaching-quality verdict.
+
+The next one-attempt user-game runner froze separate Qc3 and Qe4 requests without POST. A pre-call independent review found missing helper-source pins. The repaired version pins seven called helpers and the manifest, treats unverified model identity and oversized responses as failures, and retains their bounded raw evidence. Native task `34690c11-45c7-4b5f-b2bf-9054f2eef62a` passed 25 focused tests and verified both new frozen requests with zero attempts; authoritative receipt SHA-256 `8e5559c9600b07cb68046449a06be13d042fe4c836dadce32141e295c799daed`. Independent re-review closed the specific helper-pin blocker. The local route remains occupied by a healthy existing research run, so this is not a model-result claim. A separate offline tactical-claim checker passed 26 native synthetic checks; it is not yet connected to the frozen prompt or a chess-quality evaluation.
+
+The separately versioned user-game response checker then passed 43 combined runner/checker tests in native task `25c42945-8f9f-4b58-aba6-d73cd3b55737` (authoritative receipt SHA-256 `285438cfb7630b44fd1502892da7ab06aa0cc259d762781c2546fe0fcfc92800`). It counts every attempted call, rejects unverified identity and malformed/unsupported claims, and admits only exact typed facts or scores under the existing structural contract. Independent read found no blocking admission flaw, but structural admission cannot establish sound strategy or teaching quality. There is still no captured user-game response.
+
+The v2 tactical-hypothesis evaluator now checks an event on the chosen move or up to four legal replies, including the captured pawn's square for en passant. Its 26 native tests passed, and an independent source read found no concrete false acceptance. It verifies only one possible conditional line; geometric attacks can include pinned pieces and do not establish a legal capture or Stockfish's reason. The source and tests were saved to draft PR #4 at commit `0ff1116f37fbf544c87f9e382240e53fcc7771f7`.
+
+For ordinary, non-puzzle moves, a new offline standard-game PGN intake was built and repaired after independent adversarial probes showed silent acceptance of text after a result, skipped malformed tokens, and false check/mate notation. The final version consumes every visible mainline token and requires legal, canonical SAN. Native task `0d4a1c58-b194-4399-8a7c-86d5823403d2` passed 135 checks with one Windows symlink privilege skip; the authoritative receipt SHA-256 is `7644a6202a37d3f878673ca2ffc61198eb9409e1bf7ba6d7f49ccbef83e44bd0`. Independent re-review passed a 17-case adversarial matrix for this bounded parser. No standard PGN was downloaded, no source-archive binding or protected-game exclusion has occurred, and no quality gate is claimed. A separate owner-project broker plan names the exact acquisition change without touching the active runtime.
+
+The Chess.com practice lesson now has a v5 page with openable step boards for the saved line and separate legal illustrations. The first generic builder overclaimed on mirrored sides, non-queen and single-move cases, a quiet reply, and whether an option was *extra*. The r7 source/test repair passed 23 focused checks and verified the create-only page in native task `0c2c6e74-fb6c-4a47-bfd3-f1daae73a16d`; authoritative receipt SHA-256 `a76dce9e3dd87baaf5994c7099d5e58b27c348193ae5ed74dafe9ca67cd5b849`. After removing only extra blank lines at the end of the source and test files, final native task `4fa6a4c7-dae6-475e-8623-7ed590b316e7` again passed 23 checks and reverified the same page (receipt SHA-256 `1ac6687eb6af7ce9e0f70a370973c02f6045f05b6d1e9445e5448d040b12b552`). An independent read found the false labels closed. The r6 run and r5/r6 page outputs remain as history. R6 and r7 have the same named-game page SHA-256 `8937b7e193c428748ba6b8ca61893d8323e53b935e63c5b30807ce42a3e5fbf7`, because the final generic wording branch does not apply to this position. This evaluator-only page made zero engine or model calls and has not passed human teaching review.
+
+A separate [game-disjoint holdout protocol candidate](research/chess-game-disjoint-heldout-protocol-2026-10-06.md) proposes 200 main positions plus 40 insufficient-evidence controls from distinct permitted games. Its freeze card leaves source, exclusions, sampling caps, engine/model settings, and qualified reviewer identities unfilled. No game was acquired or scored for it. The shared local route still belongs to the existing research run; the project's own Chess.com model requests remain frozen at zero attempts.
+
+The [prospective freeze-card validator](research/chess-holdout-freeze-card-validator-2026-10-06.md) now checks that a proposed study card and its self-reported pins have the right structure. Two independent-review findings on metadata URL roles and engine-search budget were repaired before acceptance. Native task `1ef872e8-12b3-46d7-8f89-3aa55e19f779` passed 26 synthetic tests and reverified its create-only receipt; authoritative execution receipt SHA-256 `dffacb150bc06d9235d83d67cd06f7f1817554f67c356e25999fbe5a9c7f959b`. The output explicitly says `holdout_frozen=false`; no source, protected overlap or reviewer qualification has been checked. The future goal-work successor was narrowed to a distinct count-only exclusion-oracle contract, without opening holdout games.
+
+The existing Sports research goal then failed twice without a usable model answer: run `0841d48b-7b36-48d5-8975-913c6ea0631d` emitted empty tool arguments against a required schema, and run `a178f736-a1bc-4209-a722-998f1278cee3` timed out after 1,800 seconds without durable progress. A new task started automatically and still owns the shared route. The [bounded goal-item repair](research/chess-goal-work-repair-2026-10-06.md) narrows future reads and names one development-only successor while preserving the history; native task `8e4c3a7a-8683-47d2-9e95-4d5afdb02d46` verified the new file hash, five paths and unique item IDs (receipt SHA-256 `f03fdeef5249c62bbe5b1da033bebf0e556ba2af695a804b1dc14b26c6cbf6f4`). A separate isolated Studio transport patch passed 83 focused and adjacent checks and independent static review; its exact diff is saved in the allowed JSON evidence file. It is neither deployed nor a live model success. Do not count any of these goal turns as the frozen Chess.com or typed development probe.
+
+Later, an owner ported only that transport behavior into the dirty live Studio source while retaining supervisor routing. Its 21 transport and 63 adjacent checks passed; an independent read-only review and final comment-only spot-check passed. The exact two-file diff is [saved as JSON patch evidence](research/studio-hermes-live-port-patch-2026-10-06.json). The service still runs the pre-edit code until a managed restart after the shared inference drains. No new model output has verified this repair. The future Sports goal input was advanced again after the freeze-card validator completed, so the successor asks for a separate count-only exclusion-oracle contract instead of redoing the validator.
+
+## 2026-10-05 — Offline chess review product slice
+
+Created `scripts/chess_real_evidence_interface.py` and
+`scripts/chess_review_completed_game.py`, their focused checks, a
+source-bound eight-case page, a synthetic finished-game demonstration and
+annotated-PGN export. A source-link variant caused the first gallery test
+failure; a bounded validator repair accepted exact Lichess `/black` and
+`/white` paths. The next native job passed 42 focused checks and built the
+page. Its optional source-print step failed only on Windows CP1252; a distinct
+UTF-8 bundle job repaired the review handoff without replaying the tests.
+The completed-game path passed five focused checks after a test-only Windows
+newline-restoration correction and a separate score-copy clarification.
+Full native regression job `824be469-98a1-4e58-9224-bf9618b5fc72`
+passed 1,481 tests with one existing symlink privilege skip.
+After that run, v2 of the completed-game receipt preserved every PGN header
+and bound source metadata, side-to-move and caution text. Native job
+`fcfb10f1-ccb2-48d9-821f-eae0385175b2` passed its five changed checks and
+built/verified the create-only v2 demonstration.
+Final native regression job `ddcb00b3-789e-4e44-a121-44ac5bd19633` then
+passed 1,481 tests with the same one Windows symlink privilege skip; copied
+receipt SHA-256 is
+`e998bcaacaad6a5517328d880260b782e6110567f21c64a8d28910dd93be0d94`.
+A separate read-only native audit `ea4c635b-18fc-45a0-8c81-b96a4b037af1`
+verified the retained CC0 prefix and legally replayed 19,824 complete rows;
+zero were malformed. It counted 3,368 and 2,224 eligible unique games in the
+two frozen rating bands, printed only aggregate theme counts, and selected no
+cohort cases. Its copied receipt SHA-256 is
+`b2f517c22cc41d8b15a066c3a545deda5168a0d9019c2d66f38d2af3fbfc60e5`.
+A versioned selector then used those retained bytes to make a 24-position
+8/8/8 game-disjoint cohort and evaluator-only sealed strata audit. Focused
+protocol checks passed 26/26 and source-row reconstruction verified the saved
+manifest in native job `8c44dcf0-bad2-4fe5-b246-1807140690fb`; copied
+receipt SHA-256 is
+`67c4b73b9da2c61911073793e6a031997bfec471c4369d335143282d05aa0f46`.
+No heldout outcome, model or engine call was made for this cohort.
+Final regression after the cohort selector passed 1,482 tests with one
+existing Windows symlink privilege skip in native job
+`be6fd869-d1b4-4b73-80f6-516b0f0f3e7b`; copied receipt SHA-256 is
+`13c8f1db4a7fd020e46bd3e6a20ae14cf61fda973e099528de939857d3332aa2`.
+The registered local v2 source-review callback
+`8950e3f0-54d0-4e2e-8bdf-78252f61379a` ran but returned no final text,
+so its function-level review remains unaccepted. A distinct, narrower exact
+7,956-byte function/test/log bundle was emitted in native job
+`89b65bd9-0e7e-412d-aef9-a596a15ceb92`; local callback
+`80e266ca-a012-41f1-b42e-194f2ad21667` is pending its inference lane.
+
+The first registered local source-review callback read the full bundle but
+returned no function-level verdict; it is retained as inadequate acceptance.
+A narrower function review remains pending. No professional commentary,
+heldout-quality or public-release claim follows. Exact paths, hashes and
+next requirements: `research/chess-product-readiness-2026-10-05.md`.
+
 ## 2026-09-22 20:29 UTC — No-forward input boundary
 
 Native implementation 0e757be8-e16c-4416-b683-558c9dee60cb passed 120 focused tests including 50 new cases. Full verification 4f81184f-d9a8-436a-bcd1-16150dafe1c6 passed 1375 tests with one existing host-permission skip. Eight source-bound real-development inputs were retained with zero model/engine calls. Review 0323eb3c-b0af-42d2-9fcf-05a705ab01ca read the full mandatory source/test bundle and passed; earlier summary-only review 69901eca-a97d-4605-ba3a-085213ee12df is not accepted source inspection. Current evidence and next requirement: research/chess-no-forward-input-2026-09-22.md.

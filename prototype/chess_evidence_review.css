@@ -1,0 +1,66 @@
+:root{color-scheme:dark;--bg:#0b1015;--paper:#131b22;--line:#31404a;--text:#e9edf0;
+--muted:#a9b7c0;--accent:#a9d9c5;--gold:#edc889;--red:#f3ada9}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,Segoe UI,Arial,sans-serif}
+a{color:var(--accent)}
+.layout{display:grid;grid-template-columns:245px minmax(0,1fr);min-height:100vh}
+aside{position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid var(--line);
+padding:24px 16px;background:#0f171d}
+.brand{font-weight:800;font-size:1.12rem;letter-spacing:.02em}
+.brand-mark{color:var(--gold);margin-right:8px}
+.side-label{color:var(--muted);text-transform:uppercase;font-size:.72rem;letter-spacing:.11em;margin:32px 8px 10px}
+nav a{display:block;padding:9px 10px;text-decoration:none;border-radius:8px;color:var(--text)}
+nav a:hover,nav a:focus{background:#21313a}
+nav small{display:block;color:var(--muted);font-size:.72rem}
+main{min-width:0;max-width:1380px;width:100%;margin:auto;padding:42px clamp(20px,4vw,66px) 80px}
+.eyebrow{color:var(--accent);font-size:.74rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase;margin:0 0 10px}
+h1{font-size:clamp(2.2rem,5vw,4.6rem);line-height:1.06;letter-spacing:-.045em;margin:0 0 18px}
+h2{font-size:1.85rem;letter-spacing:-.025em;margin:0}
+h3{font-size:1.17rem;margin:0 0 10px}
+p{margin:0 0 12px}
+.hero{padding:22px 0 32px;border-bottom:1px solid var(--line)}
+.lead{font-size:1.16rem;max-width:760px;color:#cbd6dc}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0 0}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:14px 16px}
+.stat strong{display:block;font-size:1.7rem;color:var(--gold)}
+.stat span{font-size:.8rem;color:var(--muted)}
+.case{padding:46px 0;border-bottom:1px solid var(--line);scroll-margin-top:18px}
+.case-head{display:flex;justify-content:space-between;align-items:end;gap:15px;flex-wrap:wrap}
+.case-head>a{font-size:.9rem}
+.case-meta{display:flex;gap:8px;flex-wrap:wrap;margin:17px 0 24px}
+.case-meta span,.tag{border:1px solid #3d554c;background:#1b302b;border-radius:999px;padding:3px 10px;font-size:.76rem;color:#c3e3d5}
+.boards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-bottom:16px}
+figure{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px}
+figcaption{font-weight:750;margin-bottom:10px}
+figure svg{display:block;width:100%;height:auto;max-width:480px;margin:auto;border-radius:4px}
+.columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel,.notice{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:20px;margin-bottom:16px}
+.small,.muted{font-size:.83rem;color:var(--muted)}
+.muted{display:block}
+.claims{padding:0;margin:5px 0 14px;list-style:none}
+.claims li{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-top:1px solid var(--line);padding:10px 0}
+.claims a{margin-left:auto;font-size:.8rem}
+.table-wrap{overflow:auto}
+table{border-collapse:collapse;width:100%;text-align:left;font-size:.87rem}
+th,td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted)}
+td strong{display:block}
+details{margin-top:15px}
+summary{cursor:pointer;color:var(--accent)}
+code{display:block;white-space:pre-wrap;overflow-wrap:anywhere;background:#0c1418;padding:12px;border-radius:7px;margin-top:8px}
+.notice{border-left:4px solid var(--gold);background:#231e18}
+.notice p{margin:5px 0 0;color:#e7d6b8}
+.failure{border-left-color:var(--red);background:#291b1b}
+.failure p{color:#f2d3d0}
+footer{padding-top:28px;color:var(--muted);font-size:.8rem}
+footer code{background:none;padding:0;margin:0;display:inline}
+@media(max-width:850px){
+ .layout{display:block}
+ aside{position:relative;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+ nav{display:flex;overflow:auto;gap:5px}
+ nav a{white-space:nowrap}
+ main{padding:25px 18px 60px}
+ .stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:640px){.boards,.columns{grid-template-columns:1fr}}
