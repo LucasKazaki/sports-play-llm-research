@@ -68,3 +68,11 @@ The V9 `build_request` reviewer reached its 900-second deadline before making a 
 
 After the V9 attempt settled, I copied the exact new V9 test file from the draft branch into the local asset-backed checkout. The V9 capture source bytes were unchanged. The focused capture test file now passes **33/33** with the local game and baseline present, so the three direct packet-pin negatives have been checked in the actual practice environment as well as the portable checkout. This does not resolve the reviewer timeout or authorize the four-case model run.
 
+## Update at 05:32 UTC
+
+The changed-instruction V10 outside-artifacts reviewer completed a full signed read of its 1,376-byte bundle. It improved on the earlier instruction echo by naming the actual error and prior test count, but omitted the path predicate, the injected-search handoff and several exact test assertions. The independent result audit therefore marked **changes required for the reviewer artifact**. It found no defect in the bounded source slice. The four-case practice is still waiting for accepted source reviews.
+
+A read-only trace of the V9 timeout located the delay in the first required file-read model step: the local model was asked for high reasoning without an output cap, generated about 15,000 tokens and hit the 900-second deadline before calling the file tool. Two earlier reviewer timeouts showed the same pattern. A narrow Studio-side adjustment to that first read is being prepared offline; the trace supports a repair hypothesis, not a verified cure.
+
+After V10 R7 settled, I moved the already committed relative-path negative test into the local checkout that has the practice assets. The unchanged V10 source and updated focused test file now pass **35/35** there. This verifies the path guard in both checkouts; it does not establish model, engine or teaching performance.
+
