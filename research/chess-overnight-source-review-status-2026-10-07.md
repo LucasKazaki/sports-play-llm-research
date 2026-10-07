@@ -104,3 +104,9 @@ The V9 reviewer eventually read the entire signed 3,201-byte bundle, but its sum
 
 The prepared V10 path-guard review also ran once through the native executor. Its signed 8,074-byte bundle contains the current source/test slices and a fresh **36/36** fake-search result; its developer reviewer is queued behind the local model lane. Native transport and software tests do not open the four-case practice gate. The Chess.com comparison worksheet remains unscored.
 
+## Update at 07:42 UTC
+
+The verifier blocker now has an independently reviewed **offline Studio repair candidate**. The retained verifier had eight required reads, sixteen paired read calls, and eleven distinct receipts. Five later optional reads repeated required sources, so the model-context projection replaced those earlier required bodies with duplicate notes. The bounded candidate restores each required body only from its full, hash-checked durable receipt when the matching later read is present, and leaves optional bodies out of the one-use verifier prompt. Its new regressions failed before the edit; the focused suite passes **10/10**, with static and contract checks passing. A read-only shape check of the retained session found five duplicate notes, three complete required results, and no budget-clipped required result. The [Studio archive](https://github.com/LucasKazaki/lucas-agent-studio/tree/archive/sports-studio-repairs-20261007/docs/archive/studio-goal-verifier-optional-recovery-2026-10-07) preserves the patch and independent audit at commit `73715452d4a6c93826facdd92d622e7c5c51cc4c`.
+
+That patch is **not applied to the running Studio owner**. The original verifier remains blocked; no live recovery, source acceptance, model explanation, or chess capability gain is claimed. The V9 selected-ply and V10 path-guard developer reviewers remain queued, so the four-case Chess.com practice run stays gated.
+
