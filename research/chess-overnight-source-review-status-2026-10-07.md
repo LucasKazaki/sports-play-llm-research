@@ -44,3 +44,7 @@ The reviewer bottleneck is still real. V9 `build_request` r2 (`a70009da`), V9 ca
 
 The open Chess.com review was rechecked on 47.Rb8. It still displayed **best**, while its visible score changed from the 6 October note's −6.67 to −6.69. The [dated observation](chesscom-review-breadth-observations-2026-10-06.md) records this as interface evidence, separate from the frozen source game and any model answer.
 
+## Update at 04:50 UTC
+
+The V9 `_source_packet` review exposed a specific test gap: the existing capture test changed the whole helper but did not isolate its wrong-ply, packet-digest, and projection-digest guards. Three new direct negative cases now assert the exact errors and confirm that projection is never built after either early packet failure. They passed alone: **3 passed, 30 deselected**. The clean GitHub checkout intentionally lacks the local game PGN and baseline, so its first full-file attempt failed on those absent assets; the fixture now explicitly skips only when those files are absent. The changed full-file run was **3 passed, 30 skipped**. Those skips are not integration passes, and the canonical local asset-backed suite has not been rerun with this new test file.
+
