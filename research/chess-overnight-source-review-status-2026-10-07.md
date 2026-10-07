@@ -96,3 +96,11 @@ The next V10 path-guard review is prepared with the new 36-test file and a bound
 
 The V9 reviewer child is still waiting for the shared local model lane. A read-only check corrected a misleading top-level zero counter: the active Sports goal worker's durable session advanced to **9 model requests and 7 tool calls**, and the local model log showed continuing generation. It is making progress, so I left it running. When the V9 child gets the lane, its full signed read and exact source/test findings must be audited before the four-case practice can start. The V10 request remains staged behind it. The hourly overnight continuation has these task IDs and evidence paths.
 
+## Update at 07:16 UTC
+
+The earlier goal worker later hit its durable inactivity deadline. Its saved session resumed and finished with a proposal and an existing **36/36** V10 test run, but no new explanation or capability result. The following verifier is blocked by an exact recovery mismatch: eight required reads versus eleven retained reads, including optional reads. A bounded Studio-side repair is being tested offline; no live runtime change has been made.
+
+The V9 reviewer eventually read the entire signed 3,201-byte bundle, but its summary misplaced the selected-ply source line, called three direct cases “33 parameterized tests,” and omitted the test-line citations and key limits. Independent audit marked **changes required for the reviewer artifact**, with no source defect identified in the shown guard. I narrowed a new V9 review to one wrong-ply case; its request was independently checked and submitted once through the native executor. It has no reviewer verdict yet.
+
+The prepared V10 path-guard review also ran once through the native executor. Its signed 8,074-byte bundle contains the current source/test slices and a fresh **36/36** fake-search result; its developer reviewer is queued behind the local model lane. Native transport and software tests do not open the four-case practice gate. The Chess.com comparison worksheet remains unscored.
+
