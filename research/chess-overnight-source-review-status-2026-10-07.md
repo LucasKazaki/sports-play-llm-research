@@ -36,3 +36,11 @@ This work does not establish why every move was good or bad, Chess.com parity, p
 2. When source review is accepted and the serial local-model lane is free, recheck frozen hashes and vacant create-only paths, then run the staged four-case capture once. Inspect all raw attempts and failure rows before offline evaluation.
 3. Run v10 only after the v9 responses and checker records are sealed. Score factual claims and teaching value separately, retaining qualified human judgment and unresolved cases. A fresh, preregistered, game-disjoint study is still required for the commentary capability gate.
 
+## Update at 04:47 UTC
+
+The focused V10 suite now has **35 passing synthetic checks**. The new case sends a relative `v9_run_dir`, expects the exact `v10_run_dir_must_be_absolute` error, and confirms that search was never called. This closes one test-coverage gap without changing the V10 source or establishing model quality.
+
+The reviewer bottleneck is still real. V9 `build_request` r2 (`a70009da`), V9 capture-entry r3 (`cba23d82`), V9 `_source_packet` r3 (`43b8301d`), and V10 input-path r5 (`594cee2c`) each received a complete, task-bound source/test/result read, but their summaries used broad or mistaken citations and were independently marked **changes required for the reviewer result**. In the source slices inspected, those audits identified no new code defect. Narrower V8 reply-choice r8, V9 `build_request` r3b, and V10 outside-artifacts r6 reviews are queued or running. Their native command receipts prove only that the requested bundles were produced; they are not source verdicts. The four-case model practice remains on hold.
+
+The open Chess.com review was rechecked on 47.Rb8. It still displayed **best**, while its visible score changed from the 6 October note's −6.67 to −6.69. The [dated observation](chesscom-review-breadth-observations-2026-10-06.md) records this as interface evidence, separate from the frozen source game and any model answer.
+
