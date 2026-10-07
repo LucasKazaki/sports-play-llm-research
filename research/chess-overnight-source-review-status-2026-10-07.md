@@ -52,3 +52,7 @@ The V9 `_source_packet` review exposed a specific test gap: the existing capture
 
 The narrow V10 outside-artifacts reviewer also read its complete 1,376-byte bundle but returned an instruction echo instead of the actual error name and test result. Independent audit marked that **review result** changes required; it found no new defect in the shown source guard. A small offline checker now catches these missing or disconnected citations against a human-authored scope and a verified full-read receipt. Its 12 focused checks passed, including two misleading reviews rejected and one accurately scoped protocol review accepted as text. It does not judge chess correctness or replace independent source review. V8 reply-choice is running and V9 `build_request` remains queued; the four-case practice run is still waiting.
 
+## Route check at 05:02 UTC
+
+A read-only check resolved a misleading configuration comparison. The **running** Studio worktree and live Sports developer profile both select `loops-cpu-gpt-oss-20b`, matching the model recorded in the failed source reviews. The earlier Qwen setting came from a different checkout; its endpoint was not serving, and that file does not satisfy the live one-model route policy. This explains the apparent model-name mismatch, not the reviewer's inaccurate prose. No model route or active review was changed.
+
