@@ -76,3 +76,7 @@ A read-only trace of the V9 timeout located the delay in the first required file
 
 After V10 R7 settled, I moved the already committed relative-path negative test into the local checkout that has the practice assets. The unchanged V10 source and updated focused test file now pass **35/35** there. This verifies the path guard in both checkouts; it does not establish model, engine or teaching performance.
 
+## Update at 05:34 UTC
+
+The R7 audit also identified an uncovered equality case: the V9 run directory must not be the `artifacts` directory itself. A direct negative test now supplies that exact directory, checks the literal rejection label, and confirms that no search callback runs. The V10 source did not change. The complete focused V10 file passes **36/36** in both the clean GitHub checkout and the local checkout with practice assets. These are fake-search software checks, not a live explanation result.
+
