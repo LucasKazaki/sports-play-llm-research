@@ -1,0 +1,84 @@
+{
+  "schema": "sports-play-llm.chess.creator-discovery.v1",
+  "captured_at_utc": "2026-10-14T14:57:00Z",
+  "topic": "general-purpose frontier language models playing chess in recent GothamChess videos",
+  "source_policy": {
+    "classification": "discovery_only",
+    "reason": "Creator videos and transcripts are not an approved training corpus. Only identifiers, public metadata, short derived observations, and benchmark hypotheses are versioned.",
+    "media_committed": false,
+    "transcripts_committed": false,
+    "allowed_uses": [
+      "source_indexing",
+      "hypothesis_generation",
+      "benchmark_design",
+      "manual_private_review_when_lawfully_accessed"
+    ],
+    "disallowed_uses_without_recorded_permission_or_compatible_license": [
+      "training_corpus",
+      "transcript_commit",
+      "audio_commit",
+      "video_commit",
+      "redistribution"
+    ]
+  },
+  "collection": {
+    "initial_discovery_method": "vidIQ channel-video search and transcript inspection",
+    "reproducible_metadata_method": "scripts/collect_gothamchess_metadata.py",
+    "metadata_backend": "yt-dlp --skip-download --dump-single-json",
+    "notes": "The repository helper intentionally cannot download media or subtitles. Its normalized output is written under data/private/, which is ignored by git."
+  },
+  "videos": [
+    {
+      "youtube_id": "sskvj1_ehx4",
+      "title": "GPT-6, GPT-6.1, ORION 1 & KURO 4.7 FIGHT FOR THE TITLE!",
+      "published_date": "2026-10-14",
+      "watch_url": "https://www.youtube.com/watch?v=sskvj1_ehx4"
+    },
+    {
+      "youtube_id": "ulLBRyVrI1Y",
+      "title": "GPT-6.1 IS PROBABLY THE BEST CHESS AI EVER",
+      "published_date": "2026-10-11",
+      "watch_url": "https://www.youtube.com/watch?v=ulLBRyVrI1Y"
+    },
+    {
+      "youtube_id": "PVVA-_wvKks",
+      "title": "GPT-6.1 VS GPT-6 ASTRA: CHESS AI FIGHT FOR GLORY",
+      "published_date": "2026-10-07",
+      "watch_url": "https://www.youtube.com/watch?v=PVVA-_wvKks"
+    }
+  ],
+  "derived_observations": [
+    {
+      "id": "GOTHAM-OBS-001",
+      "observation": "The showcased agents can produce stretches of coherent legal and tactically relevant play despite not being presented as chess-specialized models.",
+      "evidence_scope": "three creator-edited showcase videos",
+      "status": "hypothesis_generating_only"
+    },
+    {
+      "id": "GOTHAM-OBS-002",
+      "observation": "The videos are not controlled model evaluations: model interfaces, prompts, legal-move handling, opening familiarity, time or token budgets, and repeat counts are not held constant.",
+      "evidence_scope": "format and procedures visible in the three videos",
+      "status": "benchmark_design_input"
+    },
+    {
+      "id": "GOTHAM-OBS-003",
+      "observation": "At least one showcased interaction includes an illegal or rejected move path, illustrating that board-state tracking and interface compliance must be measured separately from move quality.",
+      "evidence_scope": "creator-edited showcase",
+      "status": "benchmark_design_input"
+    },
+    {
+      "id": "GOTHAM-OBS-004",
+      "observation": "Informal strength estimates and single-game outcomes are insufficient for calibrated Elo or for claims about explanation faithfulness.",
+      "evidence_scope": "three showcase videos",
+      "status": "benchmark_design_input"
+    }
+  ],
+  "benchmark_implications": [
+    "Keep general-purpose frontier models only as observational controls, not the planned production route.",
+    "Compare chess-specialized models under identical representations, prompts, compute limits, and seeds.",
+    "Measure raw legality before applying a legality mask, then report masked move quality separately.",
+    "Score board-state understanding, move policy, and commentary factuality as separate capabilities.",
+    "Use clustered repeated positions and games; do not infer strength from a single exhibition game.",
+    "Retain the repository's no-forward-input commentary gate so engine answers cannot leak into generation."
+  ]
+}

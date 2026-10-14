@@ -1,0 +1,156 @@
+{
+  "schema": "sports-play-llm.chess-specialist-benchmark-plan.v1",
+  "created_at_utc": "2026-10-14T14:57:00Z",
+  "status": "PROPOSED_NOT_RUN",
+  "purpose": "Determine whether chess-specialized checkpoints provide a reproducible improvement over the existing general-purpose control without weakening factual commentary or operational reliability.",
+  "hypotheses": [
+    {
+      "id": "H1",
+      "claim": "At matched inference budgets, at least one chess-specialized candidate will improve board-state and move-policy metrics over loops-cpu-gpt-oss-20b.",
+      "direction": "specialist_better",
+      "status": "untested"
+    },
+    {
+      "id": "H2",
+      "claim": "Chess specialization alone will not guarantee faithful natural-language explanations; commentary factuality must be measured independently.",
+      "direction": "no_assumed_advantage",
+      "status": "untested"
+    },
+    {
+      "id": "H3",
+      "claim": "A verified hybrid route combining deterministic board tooling or engine evidence with a chess-language generator will outperform an unaided single-model route on coverage at a fixed factual-error ceiling.",
+      "direction": "hybrid_better",
+      "status": "untested"
+    }
+  ],
+  "controls": [
+    "loops-cpu-gpt-oss-20b"
+  ],
+  "priority_candidates": [
+    "rook-lm-124m",
+    "rook-clf-9m",
+    "rookworld-lm-124m",
+    "maia3-5m",
+    "chessgpt"
+  ],
+  "fixed_conditions": {
+    "position_identity": "same position IDs and source groups for every runnable model",
+    "representations": [
+      "fen",
+      "ascii",
+      "piece_list"
+    ],
+    "sampling": {
+      "temperature": 0,
+      "independent_repeats": 3,
+      "seed_policy": "fixed_and_recorded_when_backend_supports_seed"
+    },
+    "compute_reporting": [
+      "hardware",
+      "model_revision_or_hash",
+      "quantization",
+      "context_window",
+      "max_output_tokens",
+      "wall_clock_latency",
+      "peak_vram_or_ram"
+    ],
+    "information_boundary": "The existing no-forward-input packet remains mandatory for commentary generation. No principal variation, post-move state, answer move, future feature, or solution label may reach the generator."
+  },
+  "stages": [
+    {
+      "id": "S0",
+      "name": "provenance_and_runtime",
+      "required_outputs": [
+        "license review",
+        "weight hash or immutable revision",
+        "dependency lock",
+        "hardware receipt",
+        "local route attestation"
+      ],
+      "promotion_rule": "All required outputs exist and no unresolved redistribution or execution restriction blocks testing."
+    },
+    {
+      "id": "S1",
+      "name": "ChessQA_diagnostics",
+      "benchmark": "https://github.com/CSSLab/chessqa-benchmark",
+      "metrics": [
+        "item_micro_accuracy",
+        "task_macro_accuracy",
+        "category_macro_accuracy",
+        "protocol_compliance",
+        "content_accuracy",
+        "representation_delta"
+      ],
+      "categories": [
+        "structural",
+        "motifs",
+        "short_tactics",
+        "position_judgment",
+        "semantic"
+      ],
+      "promotion_rule": "Report all categories and representations. No aggregate-only promotion; structural and protocol failures remain visible."
+    },
+    {
+      "id": "S2",
+      "name": "raw_legality_and_state_tracking",
+      "metrics": [
+        "raw_illegal_move_rate",
+        "legal_masked_move_rate",
+        "fen_transition_accuracy",
+        "multi_ply_state_drift_rate",
+        "game_completion_rate"
+      ],
+      "promotion_rule": "Raw and legality-masked results are both reported. A legality mask cannot erase evidence of a model's own board-state failures."
+    },
+    {
+      "id": "S3",
+      "name": "move_quality",
+      "reference": "Stockfish with pinned version, binary hash, nodes, threads, hash, and score point of view",
+      "metrics": [
+        "top_1_reference_agreement",
+        "top_3_reference_coverage",
+        "average_centipawn_loss",
+        "blunder_rate",
+        "mate_conversion_rate"
+      ],
+      "promotion_rule": "Compare matched position families with cluster-aware intervals; do not convert a small sample to Elo."
+    },
+    {
+      "id": "S4",
+      "name": "no_forward_commentary",
+      "reference": "research/chess-commentary-capability-gate-v1.md",
+      "metrics": [
+        "user_visible_factual_assertion_error_rate",
+        "answer_coverage",
+        "idea_coverage",
+        "engine_reference_validity",
+        "evidence_coverage",
+        "abstention_quality",
+        "latency",
+        "failure_rate"
+      ],
+      "promotion_rule": "Use the repository's existing capability gate. A model that plays stronger chess but hallucinates board facts is not promoted as a commentator."
+    },
+    {
+      "id": "S5",
+      "name": "hybrid_ablation",
+      "conditions": [
+        "specialist_unaided",
+        "specialist_with_legal_state_tool",
+        "specialist_with_engine_evidence_and_verification",
+        "general_control_with_same_tools"
+      ],
+      "primary_contrast": [
+        "specialist_with_engine_evidence_and_verification",
+        "general_control_with_same_tools"
+      ],
+      "promotion_rule": "Prefer the least complex condition whose clustered confidence interval meets the factuality gate and materially improves coverage."
+    }
+  ],
+  "decision_rule": {
+    "pre_registration": "Freeze candidate revisions, prompts, position splits, engine settings, and promotion thresholds before running the held-out test split.",
+    "minimum_claim": "A candidate may be called better only for the measured capability whose paired, cluster-aware interval supports the improvement.",
+    "production_promotion": "Requires project-benchmarked evidence, resolved license status, reproducible runtime receipts, and passage of the no-forward commentary gate. Upstream claims alone never qualify.",
+    "current_result": "NO_GO_UNTIL_RUN"
+  }
+}
