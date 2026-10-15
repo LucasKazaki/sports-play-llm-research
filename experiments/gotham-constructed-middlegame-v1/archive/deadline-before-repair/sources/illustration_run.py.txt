@@ -1,0 +1,254 @@
+"""Bounded owned illustration process. No inference on import/prepare/evaluate.
+
+Actual run requires a future source-bound extension after completed native audit
+and explicit root execution GO. Resource and persistence helpers are unchanged
+reviewed snapshots; this supervisor/launch adapter is separately reviewable.
+"""
+from __future__ import annotations
+
+import argparse
+from dataclasses import asdict
+import json
+from pathlib import Path
+import shutil
+import subprocess
+import sys
+import time
+from urllib.request import urlopen
+
+import illustration_core as boundary
+import owned_native
+
+HERE = Path(__file__).resolve().parent
+SOURCES = ("illustration_core.py", "illustration_run.py", "local_backends.py", "owned_native.py",
+           "test_illustration_core.py", "test_owned_native.py", "test_illustration_run.py",
+           "identity_probe_worker.py", "reviewed-source-bindings.json")
+
+
+def source_names():
+    return (*SOURCES, *("reviewed/" + name for name in boundary.REVIEWED))
+
+
+def verify_extension(plan_path, extension_path, expected_extension_sha, repo, out):
+    """No live training outcomes, labels or selected record are opened here."""
+    plan = boundary.checked_json(plan_path, boundary.PLAN_SHA)
+    _, facts, _ = boundary.reviewed_modules()
+    if plan["fact_language_policy"]["instruction_exact"] != facts.INSTRUCTION or plan["fact_language_policy"]["schema"] != facts.SCHEMA:
+        raise ValueError("frozen fact instruction/schema differs from reviewed helper")
+    extension = boundary.checked_json(extension_path, expected_extension_sha)
+    if extension.get("status") != "FROZEN_AFTER_COMPLETED_NATIVE_AUDIT_BEFORE_ILLUSTRATION_CALLS" or extension.get("plan_sha256") != boundary.PLAN_SHA:
+        raise ValueError("future completed-audit execution extension required")
+    if set(extension["source_sha256"]) != set(source_names()):
+        raise ValueError("complete runner/helper/test source bindings required")
+    for name, digest in extension["source_sha256"].items():
+        if boundary.sha(boundary.confined(HERE, name)) != digest:
+            raise ValueError("reviewed runner/test source changed: " + name)
+    audit_binding = extension["completed_native_audit"]
+    if not audit_binding.get("passed") or not isinstance(audit_binding.get("sha256"), str) or len(audit_binding["sha256"]) != 64:
+        raise ValueError("completed independent native audit not bound")
+    audit = boundary.checked_json(audit_binding["path"], audit_binding["sha256"])
+    if audit.get("verdict") != "RETAINED_ARTIFACTS_MATCH_FROZEN_CANDIDATE_NO_PROMOTION" or audit.get("full_planned") != 1152 or audit["training"]["updates"] != 1024:
+        raise ValueError("completed independent native audit failed/incomplete")
+    selected = extension["native_selection"]
+    if type(selected.get("selected_step")) is not int or selected["selected_step"] not in (0, 128, 256, 512, 1024):
+        raise ValueError("native selection unresolved")
+    if not selected.get("selection_sha256") or not selected.get("checkpoint_manifest_sha256"):
+        raise ValueError("existing dev-only selection/manifest bindings required")
+    if selected["selected_step"] != audit["selected_step"] or selected["selection_sha256"] != audit["selection_sha256"] or selected["checkpoint_manifest_sha256"] != audit["checkpoint_manifest_sha256"][str(selected["selected_step"])]:
+        raise ValueError("selected native identity differs from completed audit")
+    native_run = Path(repo) / "data/private/chess-fact-sft-v1/native-run-v3"
+    if boundary.sha(native_run / "selection.json") != selected["selection_sha256"]:
+        raise ValueError("existing native selection record changed")
+    checkpoint = native_run / ("checkpoint-" + str(selected["selected_step"]))
+    manifest = boundary.checked_json(checkpoint / "manifest.json", selected["checkpoint_manifest_sha256"])
+    if boundary.confined(repo, selected["adapter_directory"]) != (checkpoint / "adapter").resolve():
+        raise ValueError("selected native adapter path differs from audited checkpoint")
+    if set(selected["files_sha256"]) != {"adapter_config.json", "adapter_model.safetensors", "README.md"}:
+        raise ValueError("complete native adapter package identities required")
+    for filename, digest in selected["files_sha256"].items():
+        if manifest["files_sha256"].get("adapter/" + filename) != digest:
+            raise ValueError("adapter file not bound by audited checkpoint manifest")
+    if extension["native_base_directory"] != "data/private/chess-fact-sft-v1/models/base":
+        raise ValueError("fixed native base required")
+    base = boundary.confined(repo, extension["native_base_directory"])
+    if len(plan["conditions"][boundary.FACTS[0]]["model_files_sha256"]) != 9:
+        raise ValueError("complete native base identities required")
+    from local_backends import check_files
+    for condition in boundary.MOVES:
+        info = plan["conditions"][condition]
+        directory = boundary.confined(repo, info["private_model_directory"])
+        check_files(directory, {"model.safetensors": info["weights_sha256"], **info["metadata_sha256"]})
+        if condition in boundary.MOVES[:2]:
+            boundary.reviewed_modules()[2].load_native_contract(directory)
+    check_files(base, plan["conditions"][boundary.FACTS[0]]["model_files_sha256"])
+    check_files(boundary.confined(repo, selected["adapter_directory"]), selected["files_sha256"])
+    if Path(out).resolve() != (Path(repo) / plan["retention"]["proposed_new_private_directory"]).resolve():
+        raise ValueError("fixed create-only illustration directory required")
+    return plan, extension
+
+
+def ensure_no_foreign_model():
+    with urlopen("http://127.0.0.1:11434/api/ps", timeout=5) as response:
+        if json.load(response).get("models") != []:
+            raise ValueError("Ollama resident model present")
+    result = subprocess.run(["powershell", "-NoProfile", "-Command",
+        "@(Get-Process -Name 'llama-server' -ErrorAction SilentlyContinue).Count"],
+        check=True, capture_output=True, text=True, timeout=10)
+    if result.stdout.strip() != "0":
+        raise ValueError("foreign llama-server present")
+
+
+def recover_interrupted(out):
+    """Do not turn a prepared-but-unreturned call into a proven actual attempt."""
+    out = Path(out)
+    rows = boundary.ledger(out)
+    if (out / "progress.json").exists():
+        progress = boundary.read(out / "progress.json")
+        for row in rows:
+            if row["condition"] == progress.get("condition") and row["status"] == "not_run":
+                row.update(status="error", attempted="unknown_after_worker_interruption",
+                    reason="Durable request preparation exists without durable return. Exact forward attempt is unresolved.")
+    boundary.store_rows(out, rows)
+
+
+def worker(out):
+    out = Path(out).resolve()
+    common = boundary.reviewed_modules()[0]
+    ownership, actual = owned_native.await_ownership(out / "ownership.json", boundary.read)
+    for name, digest in ownership["source_sha256"].items():
+        if boundary.sha(boundary.confined(out, name)) != digest:
+            raise ValueError("executed snapshot changed before torch import")
+    if boundary.sha(out / "plan.json") != ownership["plan_snapshot_sha256"] or boundary.sha(out / "execution-extension.json") != ownership["extension_snapshot_sha256"]:
+        raise ValueError("plan/extension snapshots changed")
+    common.save(out / "worker-identity.json", actual)
+    # Only after exact PID/env/source handshake may native libraries be imported.
+    import random
+    import torch
+    torch.set_num_threads(4)
+    random.seed(4082031)
+    torch.manual_seed(4082031)
+    torch.cuda.manual_seed_all(4082031)
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    from local_backends import Factory
+    cancel = lambda: (out / "cancel.json").exists()
+    factory = Factory(ownership["repo"], boundary.read(out / "plan.json"), boundary.read(out / "execution-extension.json"), cancel)
+    try:
+        boundary.run_generation(out, factory, cancel=cancel)
+        boundary.fresh_save(out / "worker-outcome.json", {"status": "completed_raw_accounting", "planned": 6,
+            "raw_results_sha256": boundary.sha(out / "raw-results.json")})
+    finally:
+        torch.cuda.empty_cache()
+
+
+def supervise(repo, plan_path, extension_path, extension_sha256, out, *,
+              sampler=None, foreign_check=ensure_no_foreign_model, clock=time.monotonic,
+              sleep=time.sleep, popen=subprocess.Popen):
+    repo, out = Path(repo).resolve(), Path(out).resolve()
+    if out.exists(): raise ValueError("create-only attempt; retained run cannot be replayed")
+    plan, extension = verify_extension(plan_path, extension_path, extension_sha256, repo, out)
+    executable, child_env, identity = owned_native.configuration(repo)
+    common = boundary.reviewed_modules()[0]
+    import chess_native_resources as resources
+    if Path(resources.__file__).resolve() != (HERE / "reviewed/chess_native_resources.py").resolve():
+        raise ValueError("resource helper resolved outside reviewed snapshot")
+    sampler = resources.windows_sample if sampler is None else sampler
+    bindings = {"sources/" + name: digest for name, digest in extension["source_sha256"].items()}
+    boundary.initialize(out, plan, extension, source_bindings=bindings)
+    for name in source_names():
+        target = boundary.confined(out / "sources", name)
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(boundary.confined(HERE, name), target)
+    policy = resources.Policy(maximum_owned_request_seconds=600.)
+    child, forced, cancelled_at = None, False, None
+    samples, issues, failure = [], [], None
+    started, last = clock(), clock()
+    try:
+        foreign_check()
+        for _ in range(10):
+            sample = sampler()
+            sample.validate()
+            samples.append(asdict(sample))
+            unhealthy = resources.reasons(sample, policy, "start")
+            if unhealthy: raise RuntimeError("resource preflight:" + repr(unhealthy))
+            sleep(1.)
+        common.save(out / "preflight.json", {"status": "passed", "samples": samples})
+        command = [executable, str(out / "sources/illustration_run.py"), "worker", "--out", str(out)]
+        with (out / "stdout.txt").open("xb") as stdout, (out / "stderr.txt").open("xb") as stderr, \
+             (out / "resources.jsonl").open("x", encoding="utf-8", buffering=1) as log:
+            started = last = clock()
+            child = popen(command, cwd=repo, env=child_env, stdout=stdout, stderr=stderr)
+            common.save(out / "ownership.json", {"pid": child.pid, "command": command, "repo": str(repo),
+                "native_launch_identity": identity, "started_monotonic": started, "policy": asdict(policy),
+                "source_sha256": bindings, "plan_snapshot_sha256": boundary.sha(out / "plan.json"),
+                "extension_snapshot_sha256": boundary.sha(out / "execution-extension.json")})
+            while child.poll() is None:
+                now, current = clock(), []
+                try:
+                    sample = sampler()
+                    sample.validate()
+                    log.write(json.dumps({"monotonic": now, **asdict(sample)}, allow_nan=False) + "\n")
+                    current.extend(resources.reasons(sample, policy, "running"))
+                    if now - last > 3 or now < last: current.append("monitor_sample_gap_or_reversal")
+                    last = now
+                except Exception as exc:
+                    current.append("resource_sample_failure:" + type(exc).__name__)
+                if now - started >= 600: current.append("owned_illustration_deadline")
+                if current and cancelled_at is None:
+                    issues, cancelled_at = current, now
+                    common.save(out / "cancel.json", {"issues": issues, "monotonic": now})
+                if cancelled_at is not None and now - cancelled_at >= 30:
+                    child.terminate()
+                    forced = True
+                    child.wait(timeout=10)
+                    break
+                sleep(1.)
+    except BaseException as exc:
+        failure = type(exc).__name__ + ":" + str(exc)[:1200]
+        if child is not None:
+            forced = owned_native.stop_owned(child, lambda: common.save(out / "cancel.json", {"issues": ["supervisor_exception"]})) or forced
+    finally:
+        if child is not None and child.poll() is None:
+            forced = owned_native.stop_owned(child, lambda: common.save(out / "cancel.json", {"issues": ["supervisor_finally"]})) or forced
+        if child is not None and child.poll() == 0 and not failure and not issues:
+            if not (out / "worker-outcome.json").is_file():
+                failure = "zero-exit worker omitted completed raw-accounting outcome"
+            else:
+                outcome = boundary.read(out / "worker-outcome.json")
+                if outcome != {"status": "completed_raw_accounting", "planned": 6, "raw_results_sha256": boundary.sha(out / "raw-results.json")}:
+                    failure = "worker completed outcome binding mismatch"
+        recover_interrupted(out)
+        common.save(out / "supervision.json", {"exit_code": child.poll() if child is not None else None,
+            "child_launched": child is not None, "forced_owned_termination": forced,
+            "issues": issues, "failure": failure, "elapsed_seconds": clock() - started,
+            "preflight_samples": len(samples), "no_global_configuration_changes": True})
+        if not (out / "preflight.json").exists():
+            common.save(out / "preflight.json", {"status": "failed", "samples": samples, "failure": failure})
+        extras = [name for name in ("preflight.json", "supervision.json", "resources.jsonl", "ownership.json", "worker-identity.json", "worker-outcome.json", "cancel.json", "stdout.txt", "stderr.txt") if (out / name).exists()]
+        boundary.seal_all(out, extra_files=extras)
+    if failure or issues or child is None or child.returncode:
+        raise RuntimeError("illustration stopped; original attempt retained, no replay")
+    return boundary.sha(out / "raw-seal.json")
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    sub = parser.add_subparsers(dest="phase", required=True)
+    run = sub.add_parser("run")
+    for name in ("repo", "plan-path", "extension-path", "extension-sha256", "out"):
+        run.add_argument("--" + name, required=True)
+    run.add_argument("--root-execution-go", action="store_true")
+    work = sub.add_parser("worker")
+    work.add_argument("--out", required=True)
+    score = sub.add_parser("evaluate")
+    score.add_argument("--out", required=True)
+    args = vars(parser.parse_args())
+    phase = args.pop("phase")
+    if phase == "run":
+        if not args.pop("root_execution_go"): parser.error("future root source review and execution GO required")
+        supervise(**args)
+    elif phase == "worker": worker(**args)
+    else: boundary.evaluate(**args)
+
+
+if __name__ == "__main__": main()

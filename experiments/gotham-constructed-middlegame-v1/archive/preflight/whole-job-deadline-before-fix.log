@@ -1,0 +1,19 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+____________ test_whole_job_deadline_includes_ten_second_preflight ____________
+
+harness = (WindowsPath('C:/Users/lucas/Documents/Codex/2026-10-15/go/work/gotham-constructed-deadline-before-fix/test_whole_job_...fix/test_whole_job_deadline_includ0'), 'plan_path': 'fake', 'extension_path': 'fake', 'extension_sha256': 'fake', ...})
+
+    def test_whole_job_deadline_includes_ten_second_preflight(harness):
+        out, good, clock, child, calls, options = harness
+        with pytest.raises(RuntimeError): subject.supervise(**options)
+        assert calls["spawn"] == 1 and child.terminate_count == 1
+>       assert clock.now == 630  #600whole-job +30seconds exact-owned cooperative grace.
+        ^^^^^^^^^^^^^^^^^^^^^^^
+E       assert 640.0 == 630
+E        +  where 640.0 = <test_illustration_run.harness.<locals>.Clock object at 0x000001740C9411F0>.now
+
+work\gotham-constructed-middlegame-runner-v1\test_illustration_run.py:133: AssertionError
+=========================== short test summary info ===========================
+FAILED work/gotham-constructed-middlegame-runner-v1/test_illustration_run.py::test_whole_job_deadline_includes_ten_second_preflight
+1 failed in 0.30s

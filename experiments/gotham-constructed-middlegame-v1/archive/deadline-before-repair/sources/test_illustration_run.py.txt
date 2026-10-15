@@ -1,0 +1,156 @@
+"""Controller failure/ownership/accounting checks with fake process and sampler."""
+from dataclasses import replace
+import json
+from pathlib import Path
+import subprocess
+
+import pytest
+
+import illustration_core as boundary
+import illustration_run as subject
+
+
+@pytest.fixture
+def harness(tmp_path, monkeypatch):
+    boundary.reviewed_modules()
+    from chess_native_resources import Sample, GIB
+    good = Sample(32*GIB, 16*GIB, 64*GIB, 32*GIB, 16*GIB, 14*GIB)
+    out = tmp_path / "attempt"
+    plan = {"conditions": {name: {} for name in boundary.CONDITIONS},
+        "planned_denominators": {"total_raw_condition_outcomes": 6}}
+    extension = {"source_sha256": {name: boundary.sha(subject.HERE/name) for name in subject.source_names()}}
+    monkeypatch.setattr(subject, "verify_extension", lambda *_: (plan, extension))
+    monkeypatch.setattr(subject.owned_native, "configuration", lambda _: ("fake-owned-python", {}, {"fake": True}))
+    class Clock:
+        now = 0
+        def __call__(self): return self.now
+        def sleep(self, duration): self.now += duration
+    clock = Clock()
+    calls = {"spawn": 0, "samples": 0}
+    class Child:
+        pid = 9001
+        returncode = None
+        polls = 0
+        terminate_count = 0
+        def poll(self): return self.returncode
+        def wait(self, timeout):
+            if self.returncode is None: raise subprocess.TimeoutExpired("fake", timeout)
+            return self.returncode
+        def terminate(self):
+            self.terminate_count += 1
+            self.returncode = 1
+    child = Child()
+    def spawn(*_, **__):
+        calls["spawn"] += 1
+        return child
+    def sample():
+        calls["samples"] += 1
+        return good
+    options = {"repo": tmp_path, "plan_path": "fake", "extension_path": "fake",
+        "extension_sha256": "fake", "out": out, "sampler": sample,
+        "foreign_check": lambda: None, "clock": clock, "sleep": clock.sleep, "popen": spawn}
+    return out, good, clock, child, calls, options
+
+
+def test_preflight_failure_zero_spawns_and_full_not_run_seal(harness):
+    out, good, clock, child, calls, options = harness
+    options["sampler"] = lambda: replace(good, commit_total_bytes=good.commit_limit_bytes)
+    with pytest.raises(RuntimeError, match="retained"):
+        subject.supervise(**options)
+    assert calls["spawn"] == 0
+    assert len(boundary.ledger(out)) == 6
+    assert all(row["status"] == "not_run" for row in boundary.ledger(out))
+    assert (out / "raw-seal.json").is_file()
+
+
+def test_exact_ten_healthy_samples_then_owned_resource_stop(harness):
+    out, good, clock, child, calls, options = harness
+    def sample():
+        calls["samples"] += 1
+        return good if calls["samples"] <= 10 else replace(good, gpu_free_bytes=0)
+    options["sampler"] = sample
+    with pytest.raises(RuntimeError, match="retained"):
+        subject.supervise(**options)
+    assert len(boundary.read(out / "preflight.json")["samples"]) == 10
+    assert calls["spawn"] == 1 and child.terminate_count == 1
+    assert clock.now >= 40 and clock.now <= 41
+    supervision = boundary.read(out / "supervision.json")
+    assert supervision["forced_owned_termination"] is True
+    assert supervision["issues"] == ["gpu_free_bytes_below_reserve"]
+
+
+def test_ownership_persist_failure_still_stops_exact_child(harness, monkeypatch):
+    out, good, clock, child, calls, options = harness
+    common = boundary.reviewed_modules()[0]
+    original = common.save
+    def denied(path, value):
+        if Path(path).name in ("ownership.json", "cancel.json"):
+            raise PermissionError("disk unavailable")
+        return original(path, value)
+    monkeypatch.setattr(common, "save", denied)
+    with pytest.raises(RuntimeError, match="retained"):
+        subject.supervise(**options)
+    assert calls["spawn"] == 1 and child.terminate_count == 1
+    assert len(boundary.ledger(out)) == 6 and (out / "raw-seal.json").is_file()
+
+
+def test_zero_exit_without_raw_accounting_is_failure(harness):
+    out, good, clock, child, calls, options = harness
+    child.returncode = 0
+    with pytest.raises(RuntimeError, match="retained"):
+        subject.supervise(**options)
+    assert "omitted" in boundary.read(out / "supervision.json")["failure"]
+    assert calls["spawn"] == 1
+
+
+def test_missing_counter_cancels_owned_worker(harness):
+    out, good, clock, child, calls, options = harness
+    def sample():
+        calls["samples"] += 1
+        return good if calls["samples"] <= 10 else replace(good, commit_total_bytes=None)
+    options["sampler"] = sample
+    with pytest.raises(RuntimeError): subject.supervise(**options)
+    assert child.terminate_count == 1
+    assert boundary.read(out / "supervision.json")["issues"] == ["resource_sample_failure:ValueError"]
+
+
+def test_monitor_sample_gap_latches_stop_without_threshold_relaxation(harness):
+    out, good, clock, child, calls, options = harness
+    def sample():
+        calls["samples"] += 1
+        if calls["samples"] == 12: clock.now += 4
+        return good
+    options["sampler"] = sample
+    with pytest.raises(RuntimeError): subject.supervise(**options)
+    assert child.terminate_count == 1
+    assert boundary.read(out / "supervision.json")["issues"] == ["monitor_sample_gap_or_reversal"]
+
+
+def test_prepared_interrupted_call_has_unknown_attempt_not_false_not_run(tmp_path):
+    plan = {"conditions": {name: {} for name in boundary.CONDITIONS},
+        "planned_denominators": {"total_raw_condition_outcomes": 6}}
+    out = tmp_path / "attempt"
+    boundary.initialize(out, plan, {}, source_bindings={})
+    boundary.fresh_save(out / "progress.json", {"condition": boundary.CONDITIONS[2], "attempted": False, "request_prepared": True})
+    subject.recover_interrupted(out)
+    rows = boundary.ledger(out)
+    assert rows[2]["status"] == "error" and rows[2]["attempted"] == "unknown_after_worker_interruption"
+    assert all(row["status"] == "not_run" for i, row in enumerate(rows) if i != 2)
+
+
+def test_existing_attempt_rejected_before_extension_or_spawn(harness):
+    out, _, _, _, calls, options = harness
+    out.mkdir()
+    (out / "retained").write_bytes(b"original")
+    with pytest.raises(ValueError, match="replayed"): subject.supervise(**options)
+    assert calls["spawn"] == 0 and (out / "retained").read_bytes() == b"original"
+
+
+def test_missing_reviewed_test_source_rejected_before_model_asset_access(tmp_path, monkeypatch):
+    plan_path = subject.HERE.parent / "gotham-constructed-middlegame-proposal-v1/frozen-constructed-middlegame-protocol-v2.json"
+    extension = {"status": "FROZEN_AFTER_COMPLETED_NATIVE_AUDIT_BEFORE_ILLUSTRATION_CALLS", "plan_sha256": boundary.PLAN_SHA,
+        "source_sha256": {name: boundary.sha(subject.HERE/name) for name in subject.source_names() if name != "test_illustration_run.py"}}
+    path = tmp_path / "extension.json"
+    path.write_text(json.dumps(extension))
+    with pytest.raises(ValueError, match="complete runner/helper/test"):
+        subject.verify_extension(plan_path, path, boundary.sha(path), tmp_path, tmp_path / "attempt")

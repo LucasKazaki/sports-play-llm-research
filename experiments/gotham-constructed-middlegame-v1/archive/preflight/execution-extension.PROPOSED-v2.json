@@ -1,0 +1,47 @@
+{
+  "status": "PROPOSED_NOT_FROZEN_NOT_EXECUTION_AUTHORIZATION",
+  "utc": "2026-10-15T09:48:07.245199+00:00",
+  "plan_sha256": "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75",
+  "completed_native_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-fact-sft-completed-independent-review.json",
+    "sha256": "afbadb547d1ba0e232fb79fccab35ae241a1b516002c8336852e0fb1a58e7587",
+    "passed": true
+  },
+  "publication_bindings_sha256": "426fa92ae82d7dacd7fa745b1224ff11f24d30b0502c06aa7692788c9e3db72c",
+  "native_base_directory": "data/private/chess-fact-sft-v1/models/base",
+  "native_selection": {
+    "selected_step": 512,
+    "selection_sha256": "2e60458dc28be2b9e3ddf812cb2d2105d01a0f81c0400edb33972db47666bd4c",
+    "checkpoint_manifest_sha256": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc",
+    "adapter_directory": "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/adapter",
+    "files_sha256": {
+      "adapter_config.json": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a",
+      "adapter_model.safetensors": "9d183cdd12024865e4d4c92864e70c32c6dccd605102a42e9ed8da018d947137",
+      "README.md": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    }
+  },
+  "source_sha256": {
+    "illustration_core.py": "31a075b37dc7c586a360aa9fb465949823e8dff4951665d68f8ab43e27af3cb9",
+    "illustration_run.py": "316c1ac4bf8ee10e7c79af5288d6d298b444bdc29c6281eafc53fb437752a8f1",
+    "local_backends.py": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505",
+    "owned_native.py": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0",
+    "test_illustration_core.py": "75a94a07912d5f71d8f4a75f900e15134333bdf216d434a2e4acf5532dbc4f96",
+    "test_owned_native.py": "53bddf9762165f607db1982e3c830d443b57423e16ed0bd05006067b5110b106",
+    "test_illustration_run.py": "3fb218672ece88b57ba3b8e1fe6c6c82d3220bf479e6c30639398be35e4fb3d6",
+    "identity_probe_worker.py": "580da8ea0a19b524fd6242df302a8145d3a08921346dbe36b8f5f6be4d91fe3b",
+    "reviewed-source-bindings.json": "a1a84081c3fb8d3e91ebe6bd94d32678b9a6eda447bfae9d148911f99202b178",
+    "reviewed/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "reviewed/chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "reviewed/chess_fact_sft_supervise.py": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c",
+    "reviewed/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "reviewed/chess_classifier_adapter.py": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+    "reviewed/chess_move_only_lm_v4.py": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118"
+  },
+  "software_checks": {
+    "passed": 45,
+    "log_sha256": "25b13c2fc2bf94f8acee9d30687d3ac3d07e37cc3da0a42b56292e17c5befa85",
+    "actual_cpu_identity_receipt_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-test-fixtures-v5\\test_actual_cpu_identity_and_e0\\receipt.json",
+    "actual_cpu_identity_receipt_sha256": "8a8ced5ec2f14f32f0d5da3ed79b5eea4cafb561d0dc4b61ee836a1484965261"
+  },
+  "required_next_gate": "Root and independent source review, then a distinct frozen execution extension and separate root GO. This proposed extension is rejected by the run entrypoint."
+}

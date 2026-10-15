@@ -1,0 +1,19 @@
+{
+  "schema": "gotham.constructed-illustration.whole-job-deadline-repair.v1",
+  "original_source_and_preflight_preserved": "before-whole-job-deadline-fix",
+  "old_controller_sha256": "6e52fb9edb171615cda7c4a6338154f692ec67fb4567f4573e960102b0f502e3",
+  "original_preflight_sha256": "9fdad83a67799e4c31050d36023ba7675c6ac045441a9f88dc135323048244a5",
+  "failing_regression_log_sha256": "2d0a97afd2d281190ccae9b1eff6fc8d68ef8fba2424407233f981ccf3df6e7a",
+  "original_observation": "Fake clock ended640seconds:600worker-only seconds+10preflight+30owned cleanup grace.",
+  "repaired_policy": "Whole-job clock begins on supervisor entry;600budget includes setup/preflight. Expired preflight cannot spawn.30second owned cancellation grace remains disclosed.",
+  "new_controller_sha256": "316c1ac4bf8ee10e7c79af5288d6d298b444bdc29c6281eafc53fb437752a8f1",
+  "new_test_sha256": "3fb218672ece88b57ba3b8e1fe6c6c82d3220bf479e6c30639398be35e4fb3d6",
+  "new_preflight_sha256": "001d2e8f7645892cee753a514badb9ac49eb7af720ec3bbeec99a05135be1472",
+  "new_proposed_extension_sha256": "f53abd24012f767078f2cb0ef918114f1a6f1a6def0f28db5659cf440a41b63d",
+  "finite_checks_passed": 45,
+  "log_sha256": "25b13c2fc2bf94f8acee9d30687d3ac3d07e37cc3da0a42b56292e17c5befa85",
+  "model_engine_generation_calls": 0,
+  "GPU_queries": 0,
+  "repo_runtime_edits": false,
+  "execution_authorized": false
+}

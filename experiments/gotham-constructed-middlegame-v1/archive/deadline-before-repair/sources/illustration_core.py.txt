@@ -1,0 +1,406 @@
+"""Six-outcome file boundary and raw-first accounting, without model imports.
+
+The four move outcomes close immutably before fact input is opened. A backend
+receives only the sanitized row appropriate to its task, never evaluator labels.
+"""
+from __future__ import annotations
+
+import ast
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import re
+import sys
+import time
+
+import chess
+
+HERE = Path(__file__).resolve().parent
+PLAN_SHA = "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75"
+MOVES = ("base_classifier_9m", "selected_classifier_9m_step512", "base_language_policy_124m",
+         "selected_language_policy_124m_v4_step2048")
+FACTS = ("base_fact_lm_0_6b_adapter_disabled", "selected_fact_lm_0_6b")
+CONDITIONS = MOVES + FACTS
+REVIEWED = {
+    "chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "chess_fact_sft_supervise.py": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c",
+    "chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "chess_classifier_adapter.py": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+    "chess_move_only_lm_v4.py": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118",
+}
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(65536), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def reviewed_modules():
+    for name, digest in REVIEWED.items():
+        if sha(HERE / "reviewed" / name) != digest:
+            raise ValueError("reviewed dependency changed: " + name)
+    # Use unchanged reviewed helper bytes. No trainer is imported or executed.
+    directory = str(HERE / "reviewed")
+    if directory not in sys.path:
+        sys.path.insert(0, directory)
+    import chess_fact_sft_common as common
+    import chess_board_fact_core as facts
+    import chess_classifier_adapter as classifier
+    for module in (common, facts, classifier):
+        if Path(module.__file__).resolve().parent != (HERE / "reviewed").resolve():
+            raise ValueError("reviewed helper import resolved outside snapshot")
+    return common, facts, classifier
+
+
+def first_m_parser():
+    """Compile only the exact reviewed pure function; no v4 training imports."""
+    path = HERE / "reviewed/chess_move_only_lm_v4.py"
+    if sha(path) != REVIEWED[path.name]:
+        raise ValueError("reviewed first-M source changed")
+    function = next(node for node in ast.parse(path.read_text(encoding="utf-8")).body
+                    if isinstance(node, ast.FunctionDef) and node.name == "parse_action")
+    namespace = {"re": re}
+    exec(compile(ast.Module(body=[function], type_ignores=[]), str(path), "exec"), namespace)
+    return namespace["parse_action"]
+
+
+def confined(directory, relative):
+    target = (Path(directory) / relative).resolve()
+    target.relative_to(Path(directory).resolve())
+    return target
+
+
+def checked_json(path, digest, reader=read):
+    if sha(path) != digest:
+        raise ValueError("frozen file hash mismatch: " + str(path))
+    return reader(path)
+
+
+def fresh_save(path, value):
+    if Path(path).exists() or Path(str(path) + ".tmp").exists():
+        raise ValueError("refusing to replace retained immutable artifact")
+    reviewed_modules()[0].save(path, value)
+
+
+def planned():
+    return [{"condition": condition, "status": "not_run", "attempted": False,
+             "reason": "no retained call outcome"} for condition in CONDITIONS]
+
+
+def initialize(out, plan, extension, *, source_bindings):
+    """CPU only; no payload/labels opened. Caller has verified extension identity."""
+    out = Path(out)
+    if out.exists():
+        raise ValueError("create-only attempt; no replay")
+    if tuple(plan["conditions"]) != CONDITIONS or plan["planned_denominators"]["total_raw_condition_outcomes"] != 6:
+        raise ValueError("six fixed conditions required")
+    out.mkdir(parents=True)
+    (out / "raw").mkdir()
+    fresh_save(out / "plan.json", plan)
+    fresh_save(out / "execution-extension.json", extension)
+    fresh_save(out / "source-bindings.json", source_bindings)
+    fresh_save(out / "planned-outcomes.json", {"conditions": list(CONDITIONS), "planned": 6})
+    reviewed_modules()[0].save(out / "outcome-ledger.json", {"rows": planned(), "planned": 6})
+
+
+def ledger(out):
+    result = read(Path(out) / "outcome-ledger.json")
+    if [row["condition"] for row in result["rows"]] != list(CONDITIONS) or result["planned"] != 6:
+        raise ValueError("full denominator changed")
+    return result["rows"]
+
+
+def store_rows(out, rows):
+    if [row["condition"] for row in rows] != list(CONDITIONS):
+        raise ValueError("all six outcomes required in exact order")
+    reviewed_modules()[0].save(Path(out) / "outcome-ledger.json", {"rows": rows, "planned": 6})
+
+
+def validate_move_input(payload):
+    if set(payload) != {"positions"} or len(payload["positions"]) != 1:
+        raise ValueError("one exact move input required")
+    row = payload["positions"][0]
+    if set(row) != {"case_id", "fen"} or not isinstance(row["case_id"], str):
+        raise ValueError("move input contains forbidden fields")
+    board = chess.Board(row["fen"])
+    if not board.is_valid() or board.is_game_over():
+        raise ValueError("invalid/terminal constructed board")
+    return dict(row)
+
+
+def validate_fact_input(payload, move_row):
+    if set(payload) != {"positions"} or len(payload["positions"]) != 1:
+        raise ValueError("one exact fact input required")
+    row = payload["positions"][0]
+    if set(row) != {"case_id", "fen", "selected_uci"}:
+        raise ValueError("fact input contains forbidden fields")
+    if {key: row[key] for key in ("case_id", "fen")} != move_row:
+        raise ValueError("task inputs differ in board/identity")
+    if chess.Move.from_uci(row["selected_uci"]) not in chess.Board(row["fen"]).legal_moves:
+        raise ValueError("selected fact move must be legal")
+    return dict(row)
+
+
+def close_moves(out, rows, move_row):
+    if any(row["condition"] != name for row, name in zip(rows[:4], MOVES, strict=True)):
+        raise ValueError("move order mismatch")
+    fresh_save(Path(out) / "move-raw-closed.json", {"rows": rows[:4], "move_input": move_row,
+        "fact_payload_opened": False, "forbid_further_move_calls": True})
+    fresh_save(Path(out) / "move-raw-seal.json", {"closed_sha256": sha(Path(out) / "move-raw-closed.json"),
+        "rows": 4, "conditions": list(MOVES), "fact_payload_opened": False})
+
+
+def verify_move_close(out):
+    seal = read(Path(out) / "move-raw-seal.json")
+    if seal["closed_sha256"] != sha(Path(out) / "move-raw-closed.json") or seal["conditions"] != list(MOVES) or seal["rows"] != 4:
+        raise ValueError("move closure changed before fact input access")
+    closed = read(Path(out) / "move-raw-closed.json")
+    if closed["fact_payload_opened"] is not False or closed["forbid_further_move_calls"] is not True:
+        raise ValueError("move/fact boundary invalid")
+    return closed
+
+
+def move_result(out, condition, prediction, fen):
+    common, _, adapter = reviewed_modules()
+    if condition in MOVES[:2]:
+        import numpy as np
+        vector = np.asarray(prediction["logits"])
+        path = Path(out) / "raw" / (condition + ".npy")
+        if path.exists():
+            raise ValueError("raw vector exists; no overwrite")
+        np.save(path, vector, allow_pickle=False)
+        artifact = {"path": path.relative_to(out).as_posix(), "sha256": sha(path),
+                    "shape": list(vector.shape), "dtype": str(vector.dtype)}
+        retained = {"logit_artifact": artifact}
+        if vector.shape != (1968,) or vector.dtype.kind != "f" or not np.isfinite(vector).all():
+            return {**retained, "status": "output_error", "error": "malformed/nonfinite classifier vector"}
+        mapping = prediction["id2label"]
+        try:
+            ranked = adapter.rank_logits(fen, vector.tolist(), mapping, top_k=5)
+        except Exception as exc:
+            return {**retained, "status": "output_error", "error": type(exc).__name__ + ":" + str(exc)[:300]}
+        return {**retained, "status": "completed", "raw": ranked,
+                "id2label": mapping}
+    ids, text = prediction["new_ids"], prediction["text"]
+    retained = {"new_ids": ids, "text": text, "eos_found": prediction.get("eos_found")}
+    if prediction.get("prefix_matches", True) is not True or prediction.get("token_ids_in_vocab", True) is not True or not isinstance(ids, list) or not all(type(item) is int and item >= 0 for item in ids) or len(ids) > 16 or not isinstance(text, str):
+        return {**retained, "status": "output_error", "error": "malformed/capped move-language output"}
+    uci = first_m_parser()(text)
+    legal = bool(uci and chess.Move.from_uci(uci) in chess.Board(fen).legal_moves)
+    return {**retained, "status": "completed", "raw_uci": uci, "parsed": uci is not None, "raw_legal": legal}
+
+
+def fact_result(prediction):
+    # Native EOS decoding is performed by unchanged decode_generated inside backend.
+    if prediction.get("status") not in ("completed", "truncated") or not isinstance(prediction.get("text"), str):
+        raise ValueError("native fact output status/text malformed")
+    if not isinstance(prediction.get("new_ids"), list) or not all(type(x) is int and x >= 0 for x in prediction["new_ids"]) or len(prediction["new_ids"]) > 128:
+        raise ValueError("native fact output IDs/cap malformed")
+    return dict(prediction)
+
+
+def error(row, exc, status="error"):
+    row.update(status=status, error={"type": type(exc).__name__, "message": str(exc)[:1200]})
+
+
+def run_generation(out, backend_factory, *, payload_reader=read, cancel=lambda: False, clock=time.monotonic):
+    """One attempt only. Models are injected; no input path reaches a backend.
+
+    backend_factory(task, condition) gets no plan, source ledger or payload path.
+    Its encode gets sanitized payload fields; predict gets only encoded tensors.
+    No move backend can be requested after the fact payload is opened.
+    """
+    out = Path(out)
+    if any((out / name).exists() for name in ("generation-intent.json", "move-raw-seal.json", "raw-results.json")):
+        raise ValueError("retained attempt cannot be replayed")
+    rows, plan = ledger(out), read(out / "plan.json")
+    fresh_save(out / "generation-intent.json", {"planned": 6, "conditions": list(CONDITIONS), "fact_payload_opened": False})
+    move_row = None
+    stop = False
+    try:
+        binding = plan["input_files"]["move_policy"]
+        move_row = validate_move_input(checked_json(Path(binding["path"]), binding["sha256"], payload_reader))
+        fresh_save(out / "move-input.json", {"positions": [move_row]})
+        for index, condition in enumerate(MOVES):
+            if cancel():
+                stop = True
+                break
+            backend = None
+            row = rows[index]
+            try:
+                backend = backend_factory("move", condition)
+                encoded = backend.encode(dict(move_row))
+                row.update(case_id=move_row["case_id"], encoded=encoded)
+                # Durable pre-call intent is not an actual-call claim.
+                reviewed_modules()[0].save(out / "progress.json", {"condition": condition, "request_prepared": True, "attempted": False})
+                if cancel():
+                    stop = True
+                    break
+                row["attempted"] = True
+                started = clock()
+                prediction = backend.predict(encoded)
+                row["elapsed_seconds"] = clock() - started
+                if condition in MOVES[2:]:
+                    row["returned_prediction"] = prediction
+                row.update(move_result(out, condition, prediction, move_row["fen"]))
+                row["cancelled_after_return"] = bool(cancel())
+            except Exception as exc:
+                error(row, exc)
+            finally:
+                if backend is not None:
+                    try: backend.close()
+                    except Exception as exc: row["close_error"] = type(exc).__name__ + ":" + str(exc)[:300]
+                store_rows(out, rows)
+        close_moves(out, rows, move_row)
+        # An immutable close is verified BEFORE even hashing/opening fact input.
+        closed = verify_move_close(out)
+        if not stop and not cancel():
+            binding = plan["input_files"]["immediate_facts"]
+            fact_row = validate_fact_input(checked_json(Path(binding["path"]), binding["sha256"], payload_reader), closed["move_input"])
+            fresh_save(out / "fact-input.json", {"positions": [fact_row]})
+            fresh_save(out / "fact-input-opened.json", {"move_seal_sha256": sha(out / "move-raw-seal.json"), "fact_sha256": binding["sha256"]})
+            backend = None
+            try:
+                backend = backend_factory("fact", "fact_family")
+                encoded = backend.encode(dict(fact_row))
+                for index, condition in enumerate(FACTS, start=4):
+                    if cancel():
+                        stop = True
+                        break
+                    row = rows[index]
+                    try:
+                        row.update(case_id=fact_row["case_id"], encoded=encoded)
+                        reviewed_modules()[0].save(out / "progress.json", {"condition": condition, "request_prepared": True, "attempted": False})
+                        if cancel():
+                            stop = True
+                            break
+                        row["attempted"] = True
+                        started = clock()
+                        prediction = backend.predict(encoded, disabled=condition == FACTS[0])
+                        row["elapsed_seconds"] = clock() - started
+                        row["returned_prediction"] = prediction
+                        row.update(fact_result(prediction))
+                        row["cancelled_after_return"] = bool(cancel())
+                    except Exception as exc:
+                        error(row, exc)
+                        stop = True
+                    finally:
+                        store_rows(out, rows)
+                    if stop:
+                        break
+            except Exception as exc:
+                for row in rows[4:]:
+                    if row["status"] == "not_run": error(row, exc, "model_load_error")
+            finally:
+                if backend is not None:
+                    try: backend.close()
+                    except Exception as exc:
+                        for row in rows[4:]: row["close_error"] = type(exc).__name__ + ":" + str(exc)[:300]
+    except Exception as exc:
+        for row in rows:
+            if row["status"] == "not_run" and row.get("attempted") is False:
+                row["reason"] = "stopped_before_call:" + type(exc).__name__ + ":" + str(exc)[:300]
+        raise
+    finally:
+        store_rows(out, rows)
+    fresh_save(out / "raw-results.json", {"rows": rows, "planned": 6, "fact_payload_opened": (out / "fact-input-opened.json").exists(), "accepted_holdout": False})
+    return rows
+
+
+def seal_all(out, *, extra_files=()):
+    """Caller invokes only once worker has exited and resource logs are closed."""
+    out = Path(out)
+    if (out / "raw-seal.json").exists():
+        raise ValueError("all-raw seal already exists")
+    rows = ledger(out)
+    if not (out / "raw-results.json").exists():
+        fresh_save(out / "raw-results.json", {"rows": rows, "planned": 6, "interrupted": True, "accepted_holdout": False})
+    paths = {"plan.json", "execution-extension.json", "source-bindings.json", "planned-outcomes.json", "outcome-ledger.json", "raw-results.json", *extra_files}
+    for name in ("generation-intent.json", "move-input.json", "move-raw-closed.json", "move-raw-seal.json", "fact-input.json", "fact-input-opened.json"):
+        if (out / name).exists(): paths.add(name)
+    for row in rows:
+        if "logit_artifact" in row: paths.add(row["logit_artifact"]["path"])
+    sources = read(out / "source-bindings.json")
+    paths.update(sources)
+    bindings = {name: sha(confined(out, name)) for name in sorted(paths)}
+    for name, expected in sources.items():
+        if bindings.get(name) != expected: raise ValueError("executed source changed")
+    fresh_save(out / "raw-seal.json", {"planned": 6, "conditions": list(CONDITIONS), "files_sha256": bindings, "evaluator_opened": False})
+    return sha(out / "raw-seal.json")
+
+
+def verified_raw(out):
+    out = Path(out)
+    seal = read(out / "raw-seal.json")
+    required = {"plan.json", "execution-extension.json", "source-bindings.json", "planned-outcomes.json", "outcome-ledger.json", "raw-results.json"}
+    if seal["planned"] != 6 or seal["conditions"] != list(CONDITIONS) or seal["evaluator_opened"] is not False or not required <= set(seal["files_sha256"]):
+        raise ValueError("incomplete raw seal")
+    for name, expected in seal["files_sha256"].items():
+        if sha(confined(out, name)) != expected: raise ValueError("raw artifact changed:" + name)
+    sources = read(out / "source-bindings.json")
+    if any(seal["files_sha256"].get(name) != digest for name, digest in sources.items()):
+        raise ValueError("raw seal omits source binding")
+    raw = read(out / "raw-results.json")
+    if [row["condition"] for row in raw["rows"]] != list(CONDITIONS) or raw["planned"] != 6:
+        raise ValueError("raw denominator differs")
+    for row in raw["rows"]:
+        if "logit_artifact" in row:
+            artifact = row["logit_artifact"]
+            if seal["files_sha256"].get(artifact["path"]) != artifact["sha256"]:
+                raise ValueError("row logit artifact not bound by raw seal")
+    return raw, read(out / "plan.json")
+
+
+def evaluate(out, *, evaluator_reader=read):
+    """Only this separate CPU phase may open evaluator-only targets."""
+    raw, plan = verified_raw(out)
+    target = plan["evaluator_separation"]
+    payload = checked_json(Path(target["path"]), target["sha256"], evaluator_reader)
+    if len(payload["positions"]) != 1: raise ValueError("single evaluator case required")
+    label = payload["positions"][0]
+    _, facts, _ = reviewed_modules()
+    move_binding = plan["input_files"]["move_policy"]
+    move_row = validate_move_input(checked_json(move_binding["path"], move_binding["sha256"]))
+    fact_binding = plan["input_files"]["immediate_facts"]
+    fact_row = validate_fact_input(checked_json(fact_binding["path"], fact_binding["sha256"]), move_row)
+    if label["case_id"] != move_row["case_id"] or label["next_displayed_move_uci"] != fact_row["selected_uci"]:
+        raise ValueError("evaluator/source move identity differs")
+    expected = facts.expected_facts(fact_row["fen"], fact_row["selected_uci"])
+    if expected != facts.independent_facts(fact_row["fen"], fact_row["selected_uci"]) or label["immediate_facts"] != expected:
+        raise ValueError("evaluator facts fail independent rule routes")
+    results = {}
+    for row in raw["rows"]:
+        condition = row["condition"]
+        if row.get("case_id", label["case_id"]) != label["case_id"]: raise ValueError("evaluator case differs")
+        if condition in MOVES:
+            if condition in MOVES[:2]:
+                move = row.get("raw", {}).get("raw_choice_uci")
+                legal = row.get("raw", {}).get("raw_choice_is_legal", False)
+            else:
+                move, legal = row.get("raw_uci"), row.get("raw_legal", False)
+            results[condition] = {"task": "move_policy", "planned": 1, "raw_uci": move,
+                "raw_legal": legal, "matches_displayed_move": bool(legal and move == label["next_displayed_move_uci"]), "raw_status": row["status"]}
+        else:
+            parsed = None
+            if row["status"] == "completed":
+                try: parsed = facts.parse_facts(row["text"])
+                except (ValueError, TypeError): pass
+            correct = {field: parsed is not None and type(parsed[field]) is type(truth) and parsed[field] == truth
+                       for field, truth in label["immediate_facts"].items()}
+            results[condition] = {"task": "given_move_immediate_facts", "planned": 1,
+                "strict_parse_completed": parsed is not None, "field_correct": correct,
+                "all_eight_correct": all(correct.values()), "raw_status": row["status"]}
+    result = {"raw_seal_sha256": sha(Path(out) / "raw-seal.json"), "evaluator_sha256": target["sha256"],
+              "planned": 6, "conditions": results, "accepted_holdout": False,
+              "claim_limit": "Constructed clocks, unresolved source game/mainline, one scene; separate tasks, no pooled accuracy or strategic-idea/strength claim."}
+    fresh_save(Path(out) / "evaluation.json", result)
+    return result

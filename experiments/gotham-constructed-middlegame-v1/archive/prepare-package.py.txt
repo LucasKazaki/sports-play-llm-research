@@ -1,0 +1,133 @@
+"""Freeze reviewed pre-call artifacts only; no illustration execution."""
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import shutil
+
+ROOT = Path(__file__).resolve().parent.parent
+REPO = ROOT / "work/repos/sports-play-llm-research"
+PROPOSAL = ROOT / "work/gotham-constructed-middlegame-proposal-v1"
+RUNNER = ROOT / "work/gotham-constructed-middlegame-runner-v1"
+PACKAGE = REPO / "experiments/gotham-constructed-middlegame-v1"
+REVIEW = ROOT / "outputs/gotham-constructed-middlegame-source-review.json"
+REVIEW_SHA = "bb9beefa054c433506f1c1860b3f227e54bfb0ac55ce5bf0514081dcf5424cc8"
+PLAN_SHA = "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75"
+PROPOSED_SHA = "f53abd24012f767078f2cb0ef918114f1a6f1a6def0f28db5659cf440a41b63d"
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(65536), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def create(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("x", encoding="utf-8", newline="\n") as stream:
+        json.dump(value, stream, indent=2, allow_nan=False)
+        stream.write("\n")
+
+
+def inert(relative):
+    relative = Path(relative)
+    return relative.with_suffix(".py.txt") if relative.suffix == ".py" else relative
+
+
+def main():
+    if PACKAGE.exists(): raise FileExistsError("create-only frozen candidate package")
+    plan_path = PROPOSAL / "frozen-constructed-middlegame-protocol-v2.json"
+    proposed_path = RUNNER / "execution-extension.PROPOSED-v2.json"
+    if sha(plan_path) != PLAN_SHA or sha(REVIEW) != REVIEW_SHA or sha(proposed_path) != PROPOSED_SHA:
+        raise ValueError("reviewed plan/proposal/source-review identity drift")
+    plan, proposed, review = read(plan_path), read(proposed_path), read(REVIEW)
+    if proposed["source_sha256"] != review["source_sha256"]:
+        raise ValueError("proposed and root-reviewed source bindings differ")
+    for name, digest in proposed["source_sha256"].items():
+        if sha(RUNNER / name) != digest: raise ValueError("reviewed workspace source changed:" + name)
+    if review["execution_authorized"] is not False or review["independent_actual_checks"]["passed"] != 45:
+        raise ValueError("expected pre-call practical source review")
+    final = dict(proposed)
+    final["status"] = "FROZEN_AFTER_COMPLETED_NATIVE_AUDIT_BEFORE_ILLUSTRATION_CALLS"
+    final["finalized_utc"] = datetime.now(timezone.utc).isoformat()
+    final["root_source_review_sha256"] = REVIEW_SHA
+    final["preserved_proposed_extension_sha256"] = PROPOSED_SHA
+    final["required_next_gate"] = "Root must verify this final extension and its first commit, then grant separate GPU execution GO. This freeze alone authorizes no model call."
+    if final["native_selection"] != proposed["native_selection"] or final["source_sha256"] != review["source_sha256"]:
+        raise ValueError("selection/source identities changed during finalization")
+    PACKAGE.mkdir()
+    copied = []
+    def copy(source, relative, role):
+        source, relative = Path(source).resolve(), Path(relative)
+        destination = PACKAGE / relative
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        if destination.exists(): raise FileExistsError("frozen copy already exists")
+        shutil.copyfile(source, destination)
+        if sha(source) != sha(destination): raise ValueError("copied evidence bytes changed")
+        copied.append({"path": relative.as_posix(), "sha256": sha(destination),
+                       "bytes": destination.stat().st_size, "source_path": str(source), "role": role})
+    copy(plan_path, "protocol.json", "frozen_six_condition_plan_before_runner_or_calls")
+    create(PACKAGE / "execution-extension.json", final)
+    copied.append({"path": "execution-extension.json", "sha256": sha(PACKAGE / "execution-extension.json"),
+        "bytes": (PACKAGE / "execution-extension.json").stat().st_size, "source_path": str(proposed_path),
+        "role": "finalized_pre_call_extension; status/freeze metadata changed only; selection/source15 identities unchanged"})
+    for original, relative in (("move-inputs.proposed.json", "move-inputs.json"),
+            ("fact-inputs.proposed.json", "fact-inputs.json"), ("evaluator-only.proposed.json", "evaluator-only.json")):
+        copy(PROPOSAL / original, relative, "frozen_input_or_evaluator_copy; runtime keeps original protocol-bound workspace path")
+    for name, digest in proposed["source_sha256"].items():
+        copy(RUNNER / name, Path("archive/reviewed-workspace-sources") / inert(name),
+             "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path")
+    copy(REVIEW, "reviews/root-source-review.json", "practical_source_review; not formal promotion or model execution")
+    for name in ("runner-preflight-v1.json", "runner-preflight-v2.json", "execution-extension.PROPOSED.json",
+                 "execution-extension.PROPOSED-v2.json", "whole-job-deadline-repair.json", "whole-job-deadline-before-fix.log",
+                 "finite-tests-v4.log", "finite-tests-v5.log"):
+        copy(RUNNER / name, Path("archive/preflight") / name, "preserved_pre_call_source_validation_or_superseded_proposal")
+    for name in ("proposed-constructed-middlegame-protocol-v1.json", "six-condition-freeze-binding.json", "cpu-encoder-inspection.json"):
+        copy(PROPOSAL / name, Path("archive/proposals") / name, "preserved_initial_proposal_or_CPU_metadata_only_inspection")
+    prior = RUNNER / "before-whole-job-deadline-fix"
+    for source in sorted(prior.rglob("*")):
+        if source.is_file():
+            copy(source, Path("archive/deadline-before-repair") / inert(source.relative_to(prior)),
+                "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt")
+    probe = Path(read(RUNNER / "runner-preflight-v2.json")["software_checks"]["actual_cpu_identity_receipt_path"])
+    copy(probe, "reviews/real-CPU-owned-identity.json", "stdlib_metadata_only_actual_PID_venv_environment_timeout_proof")
+    copy(ROOT / "outputs/chess-fact-sft-completed-independent-review.json", "reviews/native-completed-audit.json",
+         "existing_dev_selected_step512_provenance; no new model selection")
+    source_reference = {"private_ledger_path": plan["source_binding"]["private_ledger_path"],
+        "private_ledger_sha256": plan["source_binding"]["private_ledger_sha256"],
+        "media_sha256": plan["source_binding"]["media_sha256"], "source_url": plan["source_binding"]["source_url"],
+        "source_original_game_identity": None, "full_observed_FEN": None,
+        "constructed_FEN": plan["admission"]["constructed_full_FEN"],
+        "counters": "0/1 computational convention only; never claimed observed",
+        "accepted_holdout": False, "source_history_mainline_unresolved": True,
+        "source_media_frames_audio_transcript_copied": False}
+    create(PACKAGE / "source-reference.json", source_reference)
+    copied.append({"path": "source-reference.json", "sha256": sha(PACKAGE / "source-reference.json"),
+        "bytes": (PACKAGE / "source-reference.json").stat().st_size, "role": "hash_reference_only_no_private_media_or_ledger_content"})
+    create(PACKAGE / "freeze-manifest.json", {
+        "schema": "gotham.constructed-middlegame.pre-call-freeze.v1", "utc": final["finalized_utc"],
+        "status": "FROZEN_BEFORE_FIRST_ILLUSTRATION_MODEL_CALL_PENDING_ROOT_EXECUTION_GO",
+        "base_commit": "a532d22c091f1a6f35c89b5300a19dbb6aef7b67", "protocol_sha256": PLAN_SHA,
+        "final_extension_sha256": sha(PACKAGE / "execution-extension.json"), "root_source_review_sha256": REVIEW_SHA,
+        "files": copied, "source15_sha256": proposed["source_sha256"],
+        "actual_workspace_execution_entrypoint": str(RUNNER / "illustration_run.py"),
+        "archive_execution_status": "Inert .py.txt snapshots preserve reviewed bytes; no relocated runner or post-run path adaptation has executed.",
+        "planned": {"all_outcomes": 6, "move_policy_outcomes": 4, "given_move_fact_outcomes": 2, "family_pairs": 3},
+        "raw_first": "All4 move rows close before fact payload hashing/opening. All6 final raws seal before evaluator labels. No later moves after fact payload access.",
+        "source_status": "Four visible FEN fields with computational0/1 counters; original full clocks/game/mainline unresolved. Zero accepted holdout positions.",
+        "actual_illustration_model_calls": 0, "actual_illustration_engine_calls": 0,
+        "execution_authorized": False, "private_media_frames_transcripts_published": False,
+        "review_scope": "Practical engineering source/fake/CPU review; no formal Luna/runtime promotion receipt is claimed.",
+        "assistance": "Codex-assisted engineering; transparent attribution retained.",
+    })
+    print(json.dumps({"package": str(PACKAGE), "files_in_manifest": len(copied),
+        "extension_sha256": sha(PACKAGE / "execution-extension.json"), "manifest_sha256": sha(PACKAGE / "freeze-manifest.json")}))
+
+
+if __name__ == "__main__": main()

@@ -1,0 +1,22 @@
+{
+  "status": "WAITING_FOR_SEPARATE_ROOT_EXECUTION_GO_NOT_RUN",
+  "actual_workspace_entrypoint": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\illustration_run.py",
+  "argv": [
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "-B",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\illustration_run.py",
+    "run",
+    "--repo",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+    "--plan-path",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\gotham-constructed-middlegame-v1\\protocol.json",
+    "--extension-path",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\gotham-constructed-middlegame-v1\\execution-extension.json",
+    "--extension-sha256",
+    "9df1a3fe206f7c2b5d356d4fbf73815d10b7ec9c34fa619b897f56c05f5627bb",
+    "--out",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\gothamchess\\constructed-middlegame-eval-v1",
+    "--root-execution-go"
+  ],
+  "note": "The argv is recorded only. Root must independently verify this freeze and grant separate GPU execution GO before invoking it."
+}

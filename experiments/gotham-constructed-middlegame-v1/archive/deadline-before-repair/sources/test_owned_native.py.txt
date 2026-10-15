@@ -1,0 +1,87 @@
+"""Finite fake and actual CPU identity/timeout checks, with no torch import."""
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+import pytest
+
+import owned_native as owner
+
+REPO = Path(__file__).resolve().parents[1] / "repos/sports-play-llm-research"
+
+
+@pytest.mark.parametrize("name", owner.FORBIDDEN_ENV)
+def test_forbidden_override_rejected_without_parent_mutation(name):
+    before = dict(os.environ)
+    environment = dict(before)
+    environment[name] = "untrusted"
+    with pytest.raises(ValueError, match="conflicting"):
+        owner.configuration(REPO, environ=environment)
+    assert dict(os.environ) == before
+
+
+def test_exact_cleanup_survives_cancel_persistence_failure():
+    class Child:
+        def __init__(self): self.waits = []; self.terminated = False
+        def poll(self): return None
+        def wait(self, timeout):
+            self.waits.append(timeout)
+            if len(self.waits) == 1: raise subprocess.TimeoutExpired("owned", timeout)
+            return 1
+        def terminate(self): self.terminated = True
+    child = Child()
+    def denied(): raise PermissionError("disk unavailable")
+    assert owner.stop_owned(child, denied)
+    assert child.terminated and child.waits == [30.0, 10]
+
+
+def test_already_ended_child_is_not_signalled():
+    class Child:
+        def poll(self): return 0
+        def terminate(self): raise AssertionError("must not signal")
+    assert owner.stop_owned(Child(), lambda: pytest.fail("must not cancel")) is False
+
+
+def test_actual_cpu_identity_and_exact_handle_timeout(tmp_path):
+    """Regression against Windows venv redirector owning a different PID."""
+    parent_before = dict(os.environ)
+    executable, environment, identity = owner.configuration(REPO)
+    assert set(k for k in set(environment) | set(parent_before)
+               if environment.get(k) != parent_before.get(k)) == {"__PYVENV_LAUNCHER__"}
+    peer = subprocess.Popen([executable, "-c", "import time; time.sleep(20)"], env=environment)
+    worker = None
+    try:
+        command = [executable, str(Path(__file__).with_name("identity_probe_worker.py")),
+                   "--ownership", str(tmp_path / "ownership.json"),
+                   "--result", str(tmp_path / "actual.json"), "--sleep", "20"]
+        worker = subprocess.Popen(command, env=environment, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        (tmp_path / "ownership.json").write_text(json.dumps({"pid": worker.pid, "native_launch_identity": identity}), encoding="utf-8")
+        deadline = time.monotonic() + 5
+        while not (tmp_path / "actual.json").exists() and time.monotonic() < deadline:
+            if worker.poll() is not None:
+                _, stderr = worker.communicate(timeout=1)
+                pytest.fail(stderr.decode())
+            time.sleep(.01)
+        actual = json.loads((tmp_path / "actual.json").read_text(encoding="utf-8"))
+        assert actual["pid"] == worker.pid
+        assert actual["venv_prefix"] == identity["venv_prefix"]
+        assert actual["venv_executable"] == identity["venv_executable"]
+        assert actual["base_executable"] == identity["base_executable"]
+        assert actual["dependency_versions"] == identity["dependency_versions"]
+        assert actual["torch_imported"] is False
+        with pytest.raises(subprocess.TimeoutExpired): worker.wait(timeout=.03)
+        assert owner.stop_owned(worker, lambda: (_ for _ in ()).throw(PermissionError()), grace_seconds=.03)
+        assert worker.poll() is not None
+        assert peer.poll() is None
+        (tmp_path / "receipt.json").write_text(json.dumps({"popen_pid": worker.pid,
+            "worker": actual, "peer_remained_running": True, "parent_environment_unchanged": dict(os.environ) == parent_before,
+            "torch_imported_in_parent": "torch" in sys.modules}), encoding="utf-8")
+    finally:
+        for child in (worker, peer):
+            if child is not None and child.poll() is None:
+                child.terminate()
+                child.wait(timeout=5)
+        assert dict(os.environ) == parent_before
