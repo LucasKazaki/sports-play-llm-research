@@ -1,0 +1,31 @@
+{
+  "schema": "chess.move-only-v4.later-policy-check.v1",
+  "status": "passed_narrow_source_and_retained_smoke_check",
+  "frozen_receipt_sha256_unchanged": "16bc1cf5acb68e839854801201d5dbf3258738571131dbc097cf6454fa5ce9ca",
+  "policy_source_sha256": "9301a61599bd84255c4a916ce98a7021a6adafa2dd3b83edf4e74dfe3de85eac",
+  "policy_tests_source_sha256": "035d597df173799e16816b46fd0e2306142c1676c6bdc95416c0264d64c0cbd9",
+  "junit_sha256": "d5fa6e5843606db40ae10db56c14eb3cd5d6b52f885110f940a7a2094b7a76bf",
+  "focused_tests_passed": 3,
+  "smokes": {
+    "base": {
+      "receipt_sha256": "7896db226f2e2ea80446d2fc11bbf4fc064fd8f3847cb462751dd92087004934",
+      "model_weight_sha256": "ed72e5afabae85f9ff1848f116cb39d83287062b856b9fe2602befe4f45a6941",
+      "move_uci": "e2e4",
+      "fen_role": "standard initial board, outside retained evaluation",
+      "accepted": true
+    },
+    "selected": {
+      "receipt_sha256": "e3cb0b1a80bd3e71dcfe92fd2ea0aa8442fe7317bc1755d4c0dc039d6977988b",
+      "model_weight_sha256": "b67b013c95af6adb47eb50f7b5b8e191797f810bbb371cb3ef0ce9085718db41",
+      "move_uci": "e2e4",
+      "fen_role": "standard initial board, outside retained evaluation",
+      "accepted": true
+    }
+  },
+  "actual_model_inference_or_engine_gpu_calls_by_reviewer": 0,
+  "limits": [
+    "The two actual post-run model calls were performed by the parent; this check only inspected retained artifacts.",
+    "One initial-board accepted move does not demonstrate commentary, strength or general reliability.",
+    "Trailing candidate text remains retained; only the first action is accepted by the frozen task."
+  ]
+}

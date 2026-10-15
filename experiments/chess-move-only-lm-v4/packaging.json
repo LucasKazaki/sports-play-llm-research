@@ -1,0 +1,8 @@
+{
+  "primary_manifest_sha256": "16a7366c9946c0e4d67de92255e83a0b203aa005da79a9a9fc0eaf863e3b8cb4",
+  "primary_bound_files": 61,
+  "policy_supplement_sha256": "9a7e75c520b0aef25ce2b87bc9a4bf779377823791930677bf05089b14015ea2",
+  "supplement_bound_files": 6,
+  "original_receipt_sha256": "16bc1cf5acb68e839854801201d5dbf3258738571131dbc097cf6454fa5ce9ca",
+  "limitations": "Full manifests and data/weights remain private local evidence; this index is committed for review."
+}

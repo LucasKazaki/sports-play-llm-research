@@ -1,0 +1,129 @@
+{
+  "schema": "chess.move-only-lm.v4.independent-intake-audit.v1",
+  "created_at_utc": "2026-10-15T06:05:14.897781+00:00",
+  "scope": "Independent source-byte, exact selection and retained-label audit only; no model or engine generation",
+  "verdict": "Exact predeclared dataset reconstruction and all label/provenance checks pass; eligible to proceed to separately reviewed bounded training, not scientific promotion",
+  "protocol_commit": "5b9b413",
+  "protocol_unchanged": true,
+  "counts": {
+    "train": 8192,
+    "development": 128,
+    "holdout": 256
+  },
+  "unique_new_games": 8576,
+  "unique_new_source_before_setup_after_boards": 17152,
+  "prior_exclusions": {
+    "games": 13112,
+    "board_keys": 26322
+  },
+  "selection_rejections": {
+    "invalid": 0,
+    "duplicate_or_excluded": 13115,
+    "bucket_full": 1683
+  },
+  "source_rows_scanned_until_complete": 23374,
+  "exact_dataset_rows_and_order_match": true,
+  "cross_split_and_prior_game_and_both_role_board_overlap": 0,
+  "label_checks": {
+    "train": {
+      "legal_labels": 8192,
+      "cp_observations": 5542,
+      "lowerbound": 1684,
+      "upperbound": 154,
+      "bound_observations": 1838,
+      "below_requested_nodes": 2307,
+      "above_requested_nodes": 5810,
+      "mate_observations": 2650,
+      "score_event_pv_differs_final_bestmove": 0,
+      "score_event_node_range": [
+        980,
+        50116
+      ],
+      "score_event_depth_range": [
+        9,
+        245
+      ],
+      "different_score_pv_ids": []
+    },
+    "development": {
+      "legal_labels": 128,
+      "cp_observations": 90,
+      "lowerbound": 31,
+      "upperbound": 4,
+      "bound_observations": 35,
+      "below_requested_nodes": 31,
+      "above_requested_nodes": 95,
+      "mate_observations": 38,
+      "score_event_pv_differs_final_bestmove": 0,
+      "score_event_node_range": [
+        5404,
+        50079
+      ],
+      "score_event_depth_range": [
+        12,
+        245
+      ],
+      "different_score_pv_ids": []
+    },
+    "holdout": {
+      "legal_labels": 256,
+      "cp_observations": 169,
+      "lowerbound": 49,
+      "upperbound": 4,
+      "bound_observations": 53,
+      "below_requested_nodes": 75,
+      "above_requested_nodes": 179,
+      "mate_observations": 87,
+      "score_event_pv_differs_final_bestmove": 0,
+      "score_event_node_range": [
+        3922,
+        50095
+      ],
+      "score_event_depth_range": [
+        12,
+        245
+      ],
+      "different_score_pv_ids": []
+    }
+  },
+  "teacher_settings": {
+    "engine": "Stockfish19",
+    "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "workers": 8,
+    "threads_per_worker": 1,
+    "hash_mb_per_worker": 32,
+    "nodes": 50000,
+    "hash_clear_per_position": true,
+    "target": "actual legal UCI bestmove at completed search only; retained score-event bounds are observation metadata, never inputs or targets"
+  },
+  "teacher_elapsed_seconds": 50.071549699998286,
+  "teacher_function_ast_bindings": {
+    "chess_move_only_lm_v4.py:acquire": "f2b051e951e0d2d8cea476cd3dd2d78cb51233c36198655b7edfa0ae92d6b442",
+    "chess_move_only_lm_v4.py:label": "69ecadd8a48c73fa43e39f34b866ad127e08ece3c3b8b620b7689051c3c02fd7",
+    "chess_classifier_experiment_v3.py:label_batch": "1a1a80e0c582fbc7e454e9f8e7a0d0c4f2dcfaec1d8e8dc517daf20db3a217da"
+  },
+  "artifact_sha256": {
+    "research\\stockfish-move-only-lm-protocol-v4.json": "2d15588ce0ad7e97948a9899d619fae148f9b5088b7048c511c3d3c802c47954",
+    "data\\private\\chess-distill-v1\\source-prefix.csv.zst.part": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056",
+    "data\\open\\chess\\lichess-real-seed-v1\\manifest.json": "b515fbfc578dd7b00e2091e6c1a70e130b6e20177958234e4b6ec5042092758f",
+    "data\\private\\chess-distill-v1\\dataset.json": "8b191767fe56cf5abea4ff9123b25e6899753b23f9bc6eb9bff96be897dd46a9",
+    "data\\private\\chess-distill-v2\\dataset.json": "59bcdb731ac2e2ba2fd3f8aedabb928738145eaedaee350e3503d772e2debf82",
+    "data\\private\\chess-classifier-v3\\dataset.json": "7689124a85fac5181f17d6f5fb648840f8cff5e3f3d9f823870e4f2b77fc7256",
+    "data\\private\\chess-move-only-lm-v4\\dataset.json": "e9f58c898e225fb35684938a2c77ca474fb0317a5e9404b54a7fa3e801083541",
+    "data\\private\\chess-move-only-lm-v4\\labels.json": "2718c1721bf94c5dbfdae012146d9b19b331420ce2f789b32d9a2730c935dd62",
+    "data\\private\\chess-move-only-lm-v4\\before-teacher-calls.json": "c764bf9ddf491a66a61d70747b1e11219a20a84f2adeb6895c30971cc62c8bfe",
+    "data\\private\\chess-distill-v1\\tools\\stockfish\\stockfish-windows-x86-64-universal.exe": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "data\\private\\chess-move-only-lm-v4\\teacher-executed-chess_move_only_lm_v4.py": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118",
+    "data\\private\\chess-move-only-lm-v4\\teacher-executed-chess_stockfish_distill.py": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7",
+    "data\\private\\chess-move-only-lm-v4\\teacher-executed-chess_classifier_experiment_v3.py": "1d9f7f9378eb6d92251de0d8d144bd71a63b7ac95f6ab46b2b54892e760b3506"
+  },
+  "limitations": [
+    "Source is a reused4MiB puzzle prefix, not fresh acquisition or representative chess sampling",
+    "Teacher labels are completed bounded-search bestmoves, not mathematically exact/optimal moves",
+    "Retained score metadata is the last individual score-bearing UCI event with its own bounds; it is not an exact final move value",
+    "Raw UCI event streams were not retained; this audit verifies source semantics and retained metadata consistency without independently regenerating search",
+    "Node budgets may overshoot by engine polling or terminate early on mate; retained event node counts are reported as observed",
+    "No training result, model strength, Elo, commentary, language understanding or sports-transfer claim",
+    "Unknown upstream model pretraining overlap remains"
+  ]
+}
