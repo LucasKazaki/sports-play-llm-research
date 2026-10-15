@@ -1,0 +1,2 @@
+# Preserve the source-bound illustration report without changing the pre-call root attributes.
+gotham-constructed-middlegame-v1-2026-10-15.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -1,0 +1,13 @@
+{
+  "private_ledger_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\gothamchess\\middlegame-supplement-v1\\candidate-ledger.json",
+  "private_ledger_sha256": "6be315b055b4725b1390076795975be70b5a80a348d6b878db260cd5409723e5",
+  "media_sha256": "56e035edc9fc121f4b94d00bda71cc81d88ff8069f870ec8edd0d1fee81f8afe",
+  "source_url": "https://www.youtube.com/watch?v=sskvj1_ehx4&t=620s",
+  "source_original_game_identity": null,
+  "full_observed_FEN": null,
+  "constructed_FEN": "r2r2k1/pb2qppp/1p2p3/4P3/2B5/2R5/PP2QPPP/3R2K1 w - - 0 1",
+  "counters": "0/1 computational convention only; never claimed observed",
+  "accepted_holdout": false,
+  "source_history_mainline_unresolved": true,
+  "source_media_frames_audio_transcript_copied": false
+}

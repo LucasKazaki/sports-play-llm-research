@@ -1,0 +1,11 @@
+{
+  "conditions": [
+    "base_classifier_9m",
+    "selected_classifier_9m_step512",
+    "base_language_policy_124m",
+    "selected_language_policy_124m_v4_step2048",
+    "base_fact_lm_0_6b_adapter_disabled",
+    "selected_fact_lm_0_6b"
+  ],
+  "planned": 6
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "gotham.constructed-middlegame.root-retained-audit.v1",
+  "utc": "2026-10-15T10:10:44.792947+00:00",
+  "verdict": "SEALED_SIX_OUTCOMES_NATIVE_TOKENS_LOGITS_RULE_FACTS_AND_RECOUNT_MATCH",
+  "raw_seal_sha256": "25af8a8a8a0578935f1585b8040c3b27a75a2a03b9bf01c40bded3a0359f5cb9",
+  "evaluation_sha256": "b888293ce1a587346a6b34dd1195296f41d6492e79738befc612c07ea4a937ca",
+  "sealed_files": 37,
+  "planned": 6,
+  "completed_raw": 6,
+  "token_replays": [
+    {
+      "condition": "base_language_policy_124m",
+      "prompt_tokens": 84,
+      "new_tokens": 16
+    },
+    {
+      "condition": "selected_language_policy_124m_v4_step2048",
+      "prompt_tokens": 84,
+      "new_tokens": 16
+    },
+    {
+      "condition": "base_fact_lm_0_6b_adapter_disabled",
+      "prompt_tokens": 721,
+      "new_tokens": 112
+    },
+    {
+      "condition": "selected_fact_lm_0_6b",
+      "prompt_tokens": 721,
+      "new_tokens": 48
+    }
+  ],
+  "conditions": {
+    "base_classifier_9m": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "selected_classifier_9m_step512": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "d1d8",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "base_language_policy_124m": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "selected_language_policy_124m_v4_step2048": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "base_fact_lm_0_6b_adapter_disabled": {
+      "task": "given_move_immediate_facts",
+      "planned": 1,
+      "strict_parse_completed": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      },
+      "all_eight_correct": false,
+      "raw_status": "completed"
+    },
+    "selected_fact_lm_0_6b": {
+      "task": "given_move_immediate_facts",
+      "planned": 1,
+      "strict_parse_completed": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true,
+      "raw_status": "completed"
+    }
+  },
+  "resource_samples": 17,
+  "max_running_sample_gap": 1.0470000000059372,
+  "owned_pid": 30536,
+  "resource_and_cleanup_checks": "Exit0, no cancellation/forced termination,10preflight/17runtime samples above frozen reserves.",
+  "negative_parser_fixtures": 4,
+  "new_model_engine_calls": 0,
+  "limits": "CPU tokenizers and retained-file arithmetic only; no weights/forward/inference. Constructed clocks0/1, unknown original game/history/mainline. Four legal alternative moves do not prove incorrect play. Given-move facts are a distinct task. No accepted holdout, pooled accuracy, ideas, strength or commentary claim.",
+  "auditor_sha256": "62809b27a8c7d64b9934bf4bea0f8c968e5045dccb0fba9fe0c85673a6394bff"
+}

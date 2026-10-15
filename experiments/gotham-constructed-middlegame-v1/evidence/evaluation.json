@@ -1,0 +1,75 @@
+{
+  "raw_seal_sha256": "25af8a8a8a0578935f1585b8040c3b27a75a2a03b9bf01c40bded3a0359f5cb9",
+  "evaluator_sha256": "2e9a8f529f387bbde3341c5f26a3cf5d61d896a9598fe59400b054300e16d637",
+  "planned": 6,
+  "conditions": {
+    "base_classifier_9m": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "selected_classifier_9m_step512": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "d1d8",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "base_language_policy_124m": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "selected_language_policy_124m_v4_step2048": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "base_fact_lm_0_6b_adapter_disabled": {
+      "task": "given_move_immediate_facts",
+      "planned": 1,
+      "strict_parse_completed": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      },
+      "all_eight_correct": false,
+      "raw_status": "completed"
+    },
+    "selected_fact_lm_0_6b": {
+      "task": "given_move_immediate_facts",
+      "planned": 1,
+      "strict_parse_completed": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true,
+      "raw_status": "completed"
+    }
+  },
+  "accepted_holdout": false,
+  "claim_limit": "Constructed clocks, unresolved source game/mainline, one scene; separate tasks, no pooled accuracy or strategic-idea/strength claim."
+}

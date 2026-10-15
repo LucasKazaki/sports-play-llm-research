@@ -1,0 +1,55 @@
+{
+  "schema": "gotham.constructed-middlegame.six-condition-freeze-binding.v1",
+  "created_utc": "2026-10-15T09:07:48.325736+00:00",
+  "frozen_protocol_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\frozen-constructed-middlegame-protocol-v2.json",
+  "frozen_protocol_sha256": "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75",
+  "initial_five_condition_proposal_preserved_sha256": "c3b0d2d6debaf8683d70d3ab668c9eff0bf2df30c0eee354ec15304e4371005c",
+  "input_sha256": {
+    "move_policy": "9c07908144a51cb18e91354602a1ea5333da457edbee8bf4869eca66a42d1a0e",
+    "immediate_facts": "196150067f48c2fab77fcb6955bab5c0f4608511200111ee4e9720927d45d693"
+  },
+  "evaluator_only_sha256": "2e9a8f529f387bbde3341c5f26a3cf5d61d896a9598fe59400b054300e16d637",
+  "v4_manifest_sha256": "16a7366c9946c0e4d67de92255e83a0b203aa005da79a9a9fc0eaf863e3b8cb4",
+  "v4_selection_record_sha256": "de811b94e516826c1814fd5423c805331ac1c45fc4725cab3b438a0e0e38e2ef",
+  "v4_selected_identity": {
+    "step": 2048,
+    "files_verified_streaming": {
+      "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\config.json": {
+        "sha256": "a8cd5a37b2d78b0b7e0d901a19dfa91b1e85f45538a98c0446420f96d2e9d46f",
+        "bytes": 884
+      },
+      "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\generation_config.json": {
+        "sha256": "c9a2c0c6085f72d95b5bc56694c48881a2d832950ef4186be5d3e5a916429e52",
+        "bytes": 125
+      },
+      "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\model.safetensors": {
+        "sha256": "b67b013c95af6adb47eb50f7b5b8e191797f810bbb371cb3ef0ce9085718db41",
+        "bytes": 497774208
+      },
+      "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\tokenizer.json": {
+        "sha256": "df0cd5809511f1800f27b340802f09dc698fe8b57515abc11d3319261565e0f0",
+        "bytes": 3557846
+      },
+      "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\tokenizer_config.json": {
+        "sha256": "bd953e3e533d21fb73aa85133b6cbb7476299867b6e06786b443e1a41aff640e",
+        "bytes": 378
+      }
+    }
+  },
+  "conditions": [
+    "base_classifier_9m",
+    "selected_classifier_9m_step512",
+    "base_language_policy_124m",
+    "selected_language_policy_124m_v4_step2048",
+    "base_fact_lm_0_6b_adapter_disabled",
+    "selected_fact_lm_0_6b"
+  ],
+  "model_loads": 0,
+  "actual_forwards": 0,
+  "GPU_calls": 0,
+  "engine_calls": 0,
+  "new_checkpoint_selection": false,
+  "native_live_run_outputs_or_heldout_labels_accessed": false,
+  "runner_implemented": false,
+  "execution_authorized": false
+}

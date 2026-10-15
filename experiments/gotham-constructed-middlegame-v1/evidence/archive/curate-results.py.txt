@@ -1,0 +1,147 @@
+"""Publish audited retained files only, preserving all pre-call artifacts."""
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import subprocess
+
+ROOT = Path(__file__).resolve().parent.parent
+REPO = ROOT / "work/repos/sports-play-llm-research"
+PACKAGE = REPO / "experiments/gotham-constructed-middlegame-v1"
+PRIVATE = REPO / "data/private/gothamchess/constructed-middlegame-eval-v1"
+EVIDENCE = PACKAGE / "evidence"
+RESULTS = PACKAGE / "results"
+FREEZE_COMMIT = "55fc2901142cd84c8a59785b7f0526f529eb074a"
+AUDIT_SHA = "4bd2abd5ee1dea8e7a3c204ee7e6bc5512f193c24794bbf94578f4264fcd893d"
+RAW_SHA = "25af8a8a8a0578935f1585b8040c3b27a75a2a03b9bf01c40bded3a0359f5cb9"
+EVAL_SHA = "b888293ce1a587346a6b34dd1195296f41d6492e79738befc612c07ea4a937ca"
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(65536), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def create(path, value):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("x", encoding="utf-8", newline="\n") as stream:
+        json.dump(value, stream, indent=2, allow_nan=False)
+        stream.write("\n")
+
+
+def verify_freeze():
+    paths = subprocess.check_output(["git", "diff-tree", "--no-commit-id", "--name-only", "-r", FREEZE_COMMIT], cwd=REPO, text=True).splitlines()
+    if len(paths) != 60: raise ValueError("pre-call freeze file denominator changed")
+    for name in paths:
+        data = subprocess.check_output(["git", "show", FREEZE_COMMIT + ":" + name], cwd=REPO)
+        if hashlib.sha256(data).hexdigest() != sha(REPO / name):
+            raise ValueError("pre-call artifact changed: " + name)
+
+
+def main():
+    if EVIDENCE.exists() or RESULTS.exists(): raise FileExistsError("create-only audited result package")
+    verify_freeze()
+    audit_path = ROOT / "outputs/gotham-constructed-middlegame-independent-review.json"
+    if sha(audit_path) != AUDIT_SHA or sha(PRIVATE / "raw-seal.json") != RAW_SHA or sha(PRIVATE / "evaluation.json") != EVAL_SHA:
+        raise ValueError("independently reviewed result bindings changed")
+    audit, seal, evaluation = read(audit_path), read(PRIVATE / "raw-seal.json"), read(PRIVATE / "evaluation.json")
+    if audit["verdict"] != "SEALED_SIX_OUTCOMES_NATIVE_TOKENS_LOGITS_RULE_FACTS_AND_RECOUNT_MATCH" or audit["planned"] != 6 or audit["sealed_files"] != 37:
+        raise ValueError("completed independent audit required")
+    # Verify ALL37 raw files before reading scorer targets or summarizing outcomes.
+    for name, digest in seal["files_sha256"].items():
+        path = (PRIVATE / name).resolve()
+        path.relative_to(PRIVATE.resolve())
+        if sha(path) != digest: raise ValueError("sealed raw file changed: " + name)
+    if len(seal["files_sha256"]) != 37: raise ValueError("raw denominator changed")
+    if evaluation["conditions"] != audit["conditions"]: raise ValueError("evaluation differs from independent recount")
+    EVIDENCE.mkdir(); RESULTS.mkdir()
+    copied, mapping = [], []
+    def copy(source, relative, role):
+        source = Path(source).resolve()
+        target = EVIDENCE / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        if target.exists(): raise FileExistsError("public evidence already retained")
+        shutil.copyfile(source, target)
+        if sha(source) != sha(target): raise ValueError("copied evidence bytes differ")
+        copied.append({"path": Path(relative).as_posix(), "sha256": sha(target), "bytes": target.stat().st_size,
+            "source_path": str(source), "role": role})
+        return target
+    for name, digest in seal["files_sha256"].items():
+        alias = Path(name)
+        if alias.suffix == ".py": alias = alias.with_suffix(".py.txt")
+        relative = Path("sealed") / alias
+        target = copy(PRIVATE / name, relative, "exact raw-sealed file; Python source copies inert")
+        mapping.append({"original_relative_path": name, "published_relative_path": relative.as_posix(),
+                        "sha256": digest, "bytes": target.stat().st_size})
+    copy(PRIVATE / "raw-seal.json", "raw-seal.json", "original immutable seal; paths NOT rewritten")
+    copy(PRIVATE / "evaluation.json", "evaluation.json", "original separate CPU evaluator output")
+    copy(audit_path, "reviews/independent-retained-review.json", "independent token/logit/rule recount; no new model calls")
+    copy(ROOT / "outputs/gotham-constructed-middlegame-root-execution-go.json", "reviews/root-execution-go.json", "separate pre-call exact-commit execution authorization")
+    copy(ROOT / "outputs/gotham-constructed-middlegame-actual-progress.json", "reviews/actual-progress.json", "actual terminal/accounting/resource observations")
+    copy(ROOT / "work/audit_gotham_constructed_retained.py", "archive/independent-auditor.py.txt", "inert exact independently executed CPU auditor source")
+    if sha(EVIDENCE / "archive/independent-auditor.py.txt") != audit["auditor_sha256"]: raise ValueError("auditor source identity changed")
+    for source, relative in (("gotham-constructed-root-retained-audit-actual-v1.log", "independent-actual-CPU-audit.log"),
+            ("gotham-constructed-middlegame-actual-run-v1.log", "actual-parent-run.log"),
+            ("gotham-constructed-middlegame-evaluate-actual-v1.log", "actual-CPU-evaluate.log"),
+            ("gotham-constructed-root-review-tests-v1.txt", "independent-source-tests.txt")):
+        copy(ROOT / "work" / source, Path("logs") / relative, "retained actual log; tokenizer cleanup warning is not an error")
+    copy(__file__, "archive/curate-results.py.txt", "inert publication-only file copier; no model execution")
+    create(EVIDENCE / "publication-map.json", {"schema": "gotham.constructed-middlegame.raw-to-public-map.v1",
+        "original_raw_seal_sha256": RAW_SHA, "raw_sealed_files": 37, "mapping": mapping,
+        "path_adaptation": "Only inert Python source aliases gain .txt. All bytes/hash bindings unchanged. Original seal is copied verbatim, never rewritten.",
+        "actual_workspace_execution_entrypoint": str(ROOT / "work/gotham-constructed-middlegame-runner-v1/illustration_run.py"),
+        "relocated_execution": False, "private_media_frames_transcripts_source_ledger_weights_copied": False})
+    copied.append({"path": "publication-map.json", "sha256": sha(EVIDENCE / "publication-map.json"),
+                   "bytes": (EVIDENCE / "publication-map.json").stat().st_size, "role": "acyclic original-to-public path mapping"})
+    create(EVIDENCE / "manifest.json", {"schema": "gotham.constructed-middlegame.public-evidence.v1", "files": copied,
+        "freeze_commit": FREEZE_COMMIT, "original_raw_seal_sha256": RAW_SHA, "evaluation_sha256": EVAL_SHA,
+        "independent_review_sha256": AUDIT_SHA, "raw_sealed_files": 37,
+        "source_identity": "Actual original workspace sources and snapshotted worker bytes; no post-run path adaptation executed.",
+        "no_new_model_engine_calls_during_publication": True})
+    progress = read(ROOT / "outputs/gotham-constructed-middlegame-actual-progress.json")
+    primary = read(REPO / "experiments/chess-fact-sft-v1/summary.json")
+    summary = {"schema": "gotham.constructed-middlegame.result-summary.v1", "utc": datetime.now(timezone.utc).isoformat(),
+        "status": "one_audited_illustration_no_promotion", "freeze_commit": FREEZE_COMMIT,
+        "source": read(PACKAGE / "source-reference.json"),
+        "planned_outcomes": 6, "completed_raw": 6, "errors": 0, "not_run": 0,
+        "family_pairs": read(PACKAGE / "protocol.json")["paired_conditions"], "conditions": evaluation["conditions"],
+        "move_interpretation": "Each of four raw choices is legal and differs from displayedRh3. Displayed move agreement is observational; alternatives are not labelled incorrect play. No engine-quality or common accuracy score.",
+        "fact_interpretation": "GivenRh3 is a distinct task. Selected model returns the exact schema with all8 immediate facts correct on this one noncapture/noncheck/nonpromotion rook move. Base response fails exact schema; no partial repair. This does not measure strategic ideas.",
+        "primary_failures_remain": {"report": "reports/chess-fact-sft-v1-2026-10-15.md",
+            "selected_positive_check_correct": 0, "selected_positive_check_support": 13,
+            "selected_positive_promotion_correct": 0, "selected_positive_promotion_support": 1,
+            "summary_sha256": sha(REPO / "experiments/chess-fact-sft-v1/summary.json"),
+            "interpretation": "Easy negative-class illustration does not repair the existing primary heldout check/promotion failures. No re-selection/retraining or primary rerun occurred."},
+        "owned_execution": {"pid": progress["owned_worker_pid"], "terminal_exit_code": 0,
+            "elapsed_seconds": progress["supervision"]["elapsed_seconds"], "forced_termination": False, "resource_cancel": False},
+        "resources": progress["resources"], "raw_seal_sha256": RAW_SHA, "evaluation_sha256": EVAL_SHA,
+        "evidence_manifest_sha256": sha(EVIDENCE / "manifest.json"), "independent_retained_review_sha256": AUDIT_SHA,
+        "pre_call_package_manifest_sha256": sha(PACKAGE / "package-manifest.json"),
+        "limits": ["Constructed computational counters0/1; original game, full history and mainline unresolved.",
+            "Unknown source-game and upstream-pretraining overlap. Zero accepted holdout positions.",
+            "No pooled move-choice/given-move-fact accuracy, statistical generalization, best-play, ideas, strength, Elo or commentary claim.",
+            "The two124m generations reach the16-token cap; first-M parser still scores their first token under the frozen policy.",
+            "Resource figures are sampled observations, not instantaneous or sustained peaks."],
+        "assistance": "Codex-assisted research engineering; no human-only authorship or formal research promotion claimed."}
+    # Confirm the primary rare-positive statements against retained published fields.
+    fields = primary["holdout"]["holdout-selected"]["fields"]
+    if fields["gives_check"]["classes"]["true"] != {"support": 13, "correct": 0} or fields["promotion_piece"]["classes"]['"rook"'] != {"support": 1, "correct": 0}:
+        raise ValueError("primary support statement differs from retained summary")
+    create(RESULTS / "summary.json", summary)
+    create(ROOT / "outputs/gotham-constructed-middlegame-results.json", summary)
+    verify_freeze()
+    for name, digest in seal["files_sha256"].items():
+        if sha(PRIVATE / name) != digest: raise ValueError("primary raw changed during publication")
+    print(json.dumps({"copied_evidence_files": len(copied), "raw_mapped": len(mapping),
+        "evidence_manifest_sha256": sha(EVIDENCE / "manifest.json"), "summary_sha256": sha(RESULTS / "summary.json")}))
+
+
+if __name__ == "__main__": main()

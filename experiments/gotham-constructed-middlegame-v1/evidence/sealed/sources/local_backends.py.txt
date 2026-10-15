@@ -1,0 +1,199 @@
+"""Local-only stock loaders. Imported only after owned-worker identity gate.
+
+Nothing in this module performs inference on import. The future execution
+extension must resolve and bind the already dev-selected native checkpoint.
+"""
+from contextlib import nullcontext
+from pathlib import Path
+
+import illustration_core as boundary
+
+
+def check_files(directory, expected):
+    directory = Path(directory).resolve()
+    for relative, digest in expected.items():
+        if boundary.sha(boundary.confined(directory, relative)) != digest:
+            raise ValueError("model/checkpoint file changed: " + relative)
+
+
+class Factory:
+    def __init__(self, repo, plan, extension, cancel):
+        self.repo = Path(repo).resolve()
+        self.plan, self.extension, self.cancel = plan, extension, cancel
+        self.moves_finished = False
+        self.calls = []
+
+    def __call__(self, task, condition):
+        if task == "fact":
+            self.moves_finished = True
+            if condition != "fact_family": raise ValueError("unexpected fact family")
+            return FactBackend(self.repo, self.plan, self.extension, self.cancel)
+        if task != "move" or condition not in boundary.MOVES or self.moves_finished:
+            raise ValueError("move backend requested after fact family opened")
+        return MoveBackend(self.repo, self.plan, condition, self.cancel)
+
+
+def stopper(cancel):
+    from transformers import StoppingCriteria, StoppingCriteriaList
+    class StopOwned(StoppingCriteria):
+        def __call__(self, input_ids, scores, **kwargs): return bool(cancel())
+    return StoppingCriteriaList([StopOwned()])
+
+
+class MoveBackend:
+    def __init__(self, repo, plan, condition, cancel):
+        import torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForSequenceClassification
+        self.torch, self.cancel, self.condition = torch, cancel, condition
+        if cancel(): raise RuntimeError("owned cancellation before load")
+        info = plan["conditions"][condition]
+        directory = boundary.confined(repo, info["private_model_directory"])
+        check_files(directory, {"model.safetensors": info["weights_sha256"], **info["metadata_sha256"]})
+        self.classifier = condition in boundary.MOVES[:2]
+        self.model = None
+        try:
+            if self.classifier:
+                self.adapter = boundary.reviewed_modules()[2]
+                self.contract = self.adapter.load_native_contract(directory)
+                self.model = LlamaForSequenceClassification.from_pretrained(directory, local_files_only=True,
+                    trust_remote_code=False, use_safetensors=True, attn_implementation="sdpa").float().to("cuda:0").eval()
+            else:
+                self.tokenizer = AutoTokenizer.from_pretrained(directory, local_files_only=True, trust_remote_code=False)
+                self.tokenizer.padding_side = "left"
+                self.tokenizer.pad_token = self.tokenizer.eos_token
+                self.model = AutoModelForCausalLM.from_pretrained(directory, local_files_only=True,
+                    trust_remote_code=False, use_safetensors=True, attn_implementation="sdpa").float().to("cuda:0").eval()
+            if cancel(): raise RuntimeError("owned cancellation after load")
+        except BaseException:
+            self.close()
+            raise
+
+    def encode(self, row):
+        if set(row) != {"case_id", "fen"}: raise ValueError("move payload must be FEN only")
+        fen = row["fen"]
+        if self.classifier:
+            return self.adapter.encode_fen(fen, self.contract)
+        if len(fen) > 90: raise ValueError("unsupported FEN width")
+        prompt = f"P: {fen:90}M:"
+        packet = self.tokenizer(prompt, add_special_tokens=False)
+        return {"input_ids": packet["input_ids"], "attention_mask": packet["attention_mask"], "prompt": prompt}
+
+    def predict(self, encoded):
+        torch = self.torch
+        if self.cancel(): raise RuntimeError("owned cancellation before forward")
+        ids = torch.tensor([encoded["input_ids"]], dtype=torch.long, device="cuda:0")
+        mask = torch.tensor([encoded["attention_mask"]], dtype=torch.long, device="cuda:0")
+        with torch.inference_mode():
+            if self.classifier:
+                logits = self.model(input_ids=ids, attention_mask=mask).logits
+                # Return malformed shapes too; raw vector survives output validation.
+                array = logits.detach().float().cpu().numpy()
+                return {"logits": array[0] if array.ndim == 2 and array.shape[0] == 1 else array,
+                        "id2label": self.contract["id2label"]}
+            generated = self.model.generate(input_ids=ids, attention_mask=mask, max_new_tokens=16,
+                do_sample=False, pad_token_id=self.tokenizer.pad_token_id,
+                eos_token_id=self.tokenizer.eos_token_id, stopping_criteria=stopper(self.cancel))
+        torch.cuda.synchronize()
+        full = generated[0].detach().cpu().tolist()
+        tokens = full[len(encoded["input_ids"]):]
+        return {"new_ids": tokens, "text": self.tokenizer.decode(tokens, skip_special_tokens=True),
+                "eos_found": self.tokenizer.eos_token_id in tokens, "full_generated_ids": full,
+                "prefix_matches": full[:len(encoded["input_ids"])] == encoded["input_ids"],
+                "token_ids_in_vocab": all(type(t) is int and 0 <= t < self.model.config.vocab_size for t in tokens)}
+
+    def close(self):
+        if self.model is not None:
+            del self.model
+            self.model = None
+        self.torch.cuda.empty_cache()
+
+
+class FactBackend:
+    def __init__(self, repo, plan, extension, cancel):
+        import torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        from peft import LoraConfig, get_peft_model, get_peft_model_state_dict, set_peft_model_state_dict
+        from safetensors.torch import load_file
+        self.torch, self.cancel, self.model = torch, cancel, None
+        self.common = boundary.reviewed_modules()[0]
+        if cancel(): raise RuntimeError("owned cancellation before fact load")
+        identity = extension["native_selection"]
+        step = identity["selected_step"]
+        if type(step) is not int or step not in (0, 128, 256, 512, 1024): raise ValueError("unresolved selected step")
+        self.selected_disabled = step == 0
+        base = boundary.confined(repo, extension["native_base_directory"])
+        check_files(base, plan["conditions"][boundary.FACTS[0]]["model_files_sha256"])
+        adapter_dir = boundary.confined(repo, identity["adapter_directory"])
+        # Every adapter/config identity is future-extension bound. No selection or
+        # training/heldout outputs are opened by this illustration generator.
+        check_files(adapter_dir, identity["files_sha256"])
+        if set(identity["files_sha256"]) != {"adapter_config.json", "adapter_model.safetensors", "README.md"}:
+            raise ValueError("complete frozen adapter package required")
+        try:
+            self.tokenizer = AutoTokenizer.from_pretrained(base, local_files_only=True, trust_remote_code=False)
+            self.tokenizer.padding_side = "left"
+            if self.tokenizer.pad_token_id != 151643 or self.tokenizer.eos_token_id != 151645:
+                raise ValueError("native fact token identity changed")
+            model = AutoModelForCausalLM.from_pretrained(base, local_files_only=True, trust_remote_code=False,
+                use_safetensors=True, dtype=torch.bfloat16, attn_implementation="sdpa").to("cuda:0")
+            self.model = model
+            model.tie_weights()
+            if model.get_input_embeddings().weight is not model.get_output_embeddings().weight or sum(p.numel() for p in model.parameters()) != 596049920:
+                raise ValueError("native tied-base identity/count differs")
+            lora = plan["fact_language_policy"]["lora_config"]
+            self.model = get_peft_model(model, LoraConfig(r=8, lora_alpha=16, lora_dropout=0., bias="none",
+                task_type="CAUSAL_LM", target_modules=lora["target_modules"]))
+            params = [(name, p) for name, p in self.model.named_parameters() if p.requires_grad]
+            if len(params) != 392 or sum(p.numel() for _, p in params) != 5046272 or any("lora_" not in name or p.dtype != torch.float32 for name, p in params):
+                raise ValueError("native adapter target/count/dtype differs")
+            tensors = load_file(adapter_dir / "adapter_model.safetensors", device="cpu")
+            if len(tensors) != 392 or sum(t.numel() for t in tensors.values()) != 5046272 or any(t.dtype != torch.float32 or not torch.isfinite(t).all() for t in tensors.values()):
+                raise ValueError("native selected adapter payload invalid")
+            incompatible = set_peft_model_state_dict(self.model, tensors)
+            actual = get_peft_model_state_dict(self.model)
+            if incompatible.unexpected_keys or set(actual) != set(tensors) or any(not torch.equal(actual[key].detach().cpu(), value) for key, value in tensors.items()):
+                raise ValueError("native selected adapter did not load exactly")
+            if any(p.dtype != torch.bfloat16 for name, p in self.model.named_parameters() if "lora_" not in name):
+                raise ValueError("native frozen base dtype changed")
+            for parameter in self.model.parameters(): parameter.requires_grad_(False)
+            self.model.eval()
+            self.model.config.use_cache = True
+            if cancel(): raise RuntimeError("owned cancellation after fact load")
+        except BaseException:
+            self.close()
+            raise
+
+    def encode(self, row):
+        if set(row) != {"case_id", "fen", "selected_uci"}: raise ValueError("fact payload contains forbidden field")
+        ids = self.common.native_prompt(self.tokenizer, row)
+        return {"input_ids": ids, "attention_mask": [1] * len(ids)}
+
+    def predict(self, encoded, *, disabled):
+        torch = self.torch
+        if self.cancel(): raise RuntimeError("owned cancellation before fact forward")
+        ids = torch.tensor([encoded["input_ids"]], dtype=torch.long, device="cuda:0")
+        context = self.model.disable_adapter() if disabled or self.selected_disabled else nullcontext()
+        with context, torch.inference_mode():
+            generated = self.model.generate(input_ids=ids, attention_mask=torch.ones_like(ids), do_sample=False,
+                max_new_tokens=128, eos_token_id=151645, pad_token_id=151643, use_cache=True,
+                logits_to_keep=1, stopping_criteria=stopper(self.cancel))
+        torch.cuda.synchronize()
+        full = generated[0].detach().cpu().tolist()
+        tokens = full[len(encoded["input_ids"]):]
+        result = {"new_ids": tokens, "text": "", "full_generated_ids": full,
+                  "adapter_disabled": bool(disabled or self.selected_disabled)}
+        try:
+            if full[:len(encoded["input_ids"])] != encoded["input_ids"]:
+                raise ValueError("native generated prompt prefix changed")
+            if len(tokens) > 128 or any(type(t) is not int or not 0 <= t < self.model.config.vocab_size for t in tokens):
+                raise ValueError("native generated tokens outside model vocabulary/cap")
+            result.update(self.common.decode_generated(self.tokenizer, tokens))
+        except Exception as exc:
+            result.update(status="output_error", error=type(exc).__name__ + ":" + str(exc))
+        return result
+
+    def close(self):
+        if self.model is not None:
+            del self.model
+            self.model = None
+        self.torch.cuda.empty_cache()

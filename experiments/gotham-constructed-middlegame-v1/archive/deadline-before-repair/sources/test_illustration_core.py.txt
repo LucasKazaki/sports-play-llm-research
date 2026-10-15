@@ -1,0 +1,255 @@
+"""Finite fake outputs exercise task boundaries/accounting; no model imports."""
+import copy
+import json
+from pathlib import Path
+
+import chess
+import numpy as np
+import pytest
+
+import illustration_core as subject
+
+
+@pytest.fixture
+def fixture(tmp_path):
+    fen = chess.STARTING_FEN
+    move = {"case_id": "fixture", "fen": fen}
+    fact = {**move, "selected_uci": "e2e4"}
+    common, facts, adapter = subject.reviewed_modules()
+    truth = facts.expected_facts(fen, "e2e4")
+    assert truth == facts.independent_facts(fen, "e2e4")
+    paths = {}
+    for name, row in (("move", move), ("fact", fact), ("evaluator", {"case_id": "fixture",
+            "next_displayed_move_uci": "e2e4", "immediate_facts": truth})):
+        path = tmp_path / (name + ".json")
+        path.write_text(json.dumps({"positions": [row]}), encoding="utf-8")
+        paths[name] = {"path": str(path), "sha256": subject.sha(path)}
+    plan = {"conditions": {key: {} for key in subject.CONDITIONS},
+            "planned_denominators": {"total_raw_condition_outcomes": 6},
+            "input_files": {"move_policy": paths["move"], "immediate_facts": paths["fact"]},
+            "evaluator_separation": paths["evaluator"]}
+    out = tmp_path / "attempt"
+    subject.initialize(out, plan, {}, source_bindings={})
+    events = []
+    mapping = adapter.expected_action_space()
+    class FakeBackend:
+        def __init__(self, task, condition): self.task, self.condition = task, condition
+        def encode(self, row):
+            assert set(row) == ({"case_id", "fen"} if self.task == "move" else {"case_id", "fen", "selected_uci"})
+            events.append(("encode", self.task, self.condition, dict(row)))
+            return {"input_ids": [1, 2, 3], "attention_mask": [1, 1, 1]}
+        def predict(self, encoded, **kwargs):
+            events.append(("predict", self.task, self.condition))
+            if self.task == "fact":
+                return {"status": "completed", "text": json.dumps(truth), "new_ids": [10, 151645]}
+            if self.condition in subject.MOVES[:2]:
+                scores = np.zeros(1968, dtype=np.float32)
+                scores[mapping.index("e2e4")] = 1
+                return {"logits": scores, "id2label": mapping}
+            return {"new_ids": [10], "text": "e2e4", "eos_found": False}
+        def close(self): events.append(("close", self.task, self.condition))
+    return out, plan, events, FakeBackend, paths
+
+
+def test_move_outputs_immutably_close_before_fact_input_and_no_later_move(fixture):
+    out, plan, events, backend, paths = fixture
+    saw_fact = []
+    def reader(path):
+        if Path(path) == Path(paths["evaluator"]["path"]): pytest.fail("generator read evaluator")
+        if Path(path) == Path(paths["fact"]["path"]):
+            closed = subject.verify_move_close(out)
+            assert [row["condition"] for row in closed["rows"]] == list(subject.MOVES)
+            assert all(row["attempted"] for row in closed["rows"])
+            assert len([e for e in events if e[0] == "predict"]) == 4
+            saw_fact.append(True)
+        return subject.read(path)
+    def factory(task, condition):
+        if saw_fact: assert task == "fact"
+        return backend(task, condition)
+    rows = subject.run_generation(out, factory, payload_reader=reader)
+    assert saw_fact == [True]
+    assert len(rows) == 6 and all(row["attempted"] for row in rows)
+    assert sum(e[0] == "predict" for e in events) == 6
+    assert len([e for e in events if e[:2] == ("encode", "fact")]) == 1
+    subject.seal_all(out)
+    result = subject.evaluate(out)
+    assert result["planned"] == 6
+    assert sum(x["matches_displayed_move"] for x in result["conditions"].values() if x["task"] == "move_policy") == 4
+    assert sum(x["all_eight_correct"] for x in result["conditions"].values() if x["task"] == "given_move_immediate_facts") == 2
+    assert "accuracy" not in result
+
+
+def test_no_attempt_replay_or_raw_overwrite(fixture):
+    out, _, events, backend, _ = fixture
+    subject.run_generation(out, backend)
+    before = (out / "outcome-ledger.json").read_bytes()
+    with pytest.raises(ValueError, match="replayed"):
+        subject.run_generation(out, lambda *_: pytest.fail("loader reached"))
+    assert (out / "outcome-ledger.json").read_bytes() == before
+
+
+def test_partial_attempt_cannot_restart(fixture):
+    out, _, _, _, _ = fixture
+    (out / "generation-intent.json").write_text("{}")
+    with pytest.raises(ValueError, match="replayed"):
+        subject.run_generation(out, lambda *_: pytest.fail("loader reached"))
+
+
+def test_precall_persistence_failure_never_claims_model_call(fixture, monkeypatch):
+    out, _, events, backend, _ = fixture
+    common = subject.reviewed_modules()[0]
+    real = common.save
+    def denied(path, value):
+        if Path(path).name == "progress.json": raise PermissionError("simulated local artifact failure")
+        return real(path, value)
+    monkeypatch.setattr(common, "save", denied)
+    rows = subject.run_generation(out, backend)
+    assert len(rows) == 6 and not any(row["attempted"] for row in rows)
+    assert not any(e[0] == "predict" for e in events)
+
+
+def test_model_load_failures_retain_full_six_outcomes(fixture):
+    out, _, _, _, _ = fixture
+    def fail(*_): raise RuntimeError("loader unavailable")
+    rows = subject.run_generation(out, fail)
+    assert len(rows) == 6 and not any(row["attempted"] for row in rows)
+    assert [row["status"] for row in rows] == ["error"] * 4 + ["model_load_error"] * 2
+    subject.seal_all(out)
+    result = subject.evaluate(out)
+    assert all(x["planned"] == 1 for x in result["conditions"].values())
+
+
+def test_cancellation_retains_not_run_denominator_and_does_not_open_facts(fixture):
+    out, plan, events, backend, paths = fixture
+    def reader(path):
+        assert Path(path) != Path(paths["fact"]["path"])
+        assert Path(path) != Path(paths["evaluator"]["path"])
+        return subject.read(path)
+    rows = subject.run_generation(out, backend, payload_reader=reader, cancel=lambda: True)
+    assert len(rows) == 6 and not any(row["attempted"] for row in rows)
+    assert all(row["status"] == "not_run" for row in rows)
+    assert not (out / "fact-input-opened.json").exists()
+
+
+@pytest.mark.parametrize("extra", ["selected_uci", "expected", "next_displayed_move_uci"])
+def test_move_payload_rejects_target_or_answer_fields(fixture, extra):
+    out, plan, _, backend, paths = fixture
+    path = Path(paths["move"]["path"])
+    data = subject.read(path)
+    data["positions"][0][extra] = "e2e4"
+    path.write_text(json.dumps(data))
+    plan["input_files"]["move_policy"]["sha256"] = subject.sha(path)
+    subject.reviewed_modules()[0].save(out / "plan.json", plan)
+    with pytest.raises(ValueError, match="forbidden"):
+        subject.run_generation(out, lambda *_: pytest.fail("loader reached"))
+    assert len(subject.ledger(out)) == 6
+
+
+@pytest.mark.parametrize("text, expected", [("M: e2e4 B: d2d4", "e2e4"),
+    ("explanation e2e4", None), ("B: d2d4 M: e2e4", None), ("M: M: e2e4", None),
+    ("e7e8q", "e7e8q"), ("e2e4,", None)])
+def test_original_first_m_parser_only(text, expected):
+    assert subject.first_m_parser()(text) == expected
+
+
+def test_missing_logit_seal_binding_rejected_before_labels(fixture):
+    out, _, _, backend, _ = fixture
+    subject.run_generation(out, backend)
+    subject.seal_all(out)
+    seal = subject.read(out / "raw-seal.json")
+    del seal["files_sha256"]["raw/base_classifier_9m.npy"]
+    subject.reviewed_modules()[0].save(out / "raw-seal.json", seal)
+    with pytest.raises(ValueError, match="not bound"):
+        subject.evaluate(out, evaluator_reader=lambda _: pytest.fail("labels reached"))
+
+
+def test_changed_raw_rejected_before_evaluator(fixture):
+    out, _, _, backend, _ = fixture
+    subject.run_generation(out, backend)
+    subject.seal_all(out)
+    (out / "raw-results.json").write_text("{}")
+    with pytest.raises(ValueError, match="changed"):
+        subject.evaluate(out, evaluator_reader=lambda _: pytest.fail("labels reached"))
+
+
+def test_nonfinite_classifier_vector_retained_without_being_ranked(fixture):
+    out, _, _, _, _ = fixture
+    prediction = {"logits": np.full(1968, np.nan), "id2label": ["invalid"] * 1968}
+    row = subject.move_result(out, subject.MOVES[0], prediction, chess.STARTING_FEN)
+    assert row["status"] == "output_error"
+    assert subject.sha(out / row["logit_artifact"]["path"]) == row["logit_artifact"]["sha256"]
+
+
+def test_fact_decode_requires_native_eos_and_only_padding_after_it():
+    class Tokenizer:
+        eos_token_id, pad_token_id = 4, 0
+        def decode(self, ids, **_): return str(ids)
+    decode = subject.reviewed_modules()[0].decode_generated
+    assert decode(Tokenizer(), [1, 4, 0])["status"] == "completed"
+    assert decode(Tokenizer(), [1, 2])["status"] == "truncated"
+    with pytest.raises(ValueError, match="nonpadding"): decode(Tokenizer(), [1, 4, 2])
+
+
+def test_returned_native_tokens_survive_output_validation_failure(fixture):
+    out, _, _, backend, _ = fixture
+    class BadFact(backend):
+        def predict(self, encoded, **kwargs):
+            if self.task == "fact":
+                return {"status": "output_error", "text": "", "new_ids": [151935],
+                        "full_generated_ids": [1, 2, 3, 151935], "error": "synthetic EOS/prefix failure"}
+            return super().predict(encoded, **kwargs)
+    rows = subject.run_generation(out, BadFact)
+    assert rows[4]["attempted"] is True and rows[4]["status"] == "error"
+    assert rows[4]["returned_prediction"]["new_ids"] == [151935]
+    assert rows[4]["returned_prediction"]["full_generated_ids"] == [1, 2, 3, 151935]
+    assert rows[5]["status"] == "not_run" and rows[5]["attempted"] is False
+    subject.seal_all(out)
+    assert subject.evaluate(out)["conditions"][subject.FACTS[0]]["all_eight_correct"] is False
+
+
+def test_wrong_evaluator_facts_rejected_by_two_rule_routes(fixture):
+    out, plan, _, backend, paths = fixture
+    path = Path(paths["evaluator"]["path"])
+    data = subject.read(path)
+    data["positions"][0]["immediate_facts"]["gives_check"] = True
+    path.write_text(json.dumps(data))
+    plan["evaluator_separation"]["sha256"] = subject.sha(path)
+    subject.reviewed_modules()[0].save(out / "plan.json", plan)
+    subject.run_generation(out, backend)
+    subject.seal_all(out)
+    with pytest.raises(ValueError, match="independent rule"):
+        subject.evaluate(out)
+
+
+@pytest.mark.parametrize("flag", ["prefix_matches", "token_ids_in_vocab"])
+def test_move_prefix_or_vocabulary_failure_keeps_returned_tokens(fixture, flag):
+    out, _, _, backend, _ = fixture
+    class BadMove(backend):
+        def predict(self, encoded, **kwargs):
+            result = super().predict(encoded, **kwargs)
+            if self.condition == subject.MOVES[2]: result[flag] = False
+            return result
+    rows = subject.run_generation(out, BadMove)
+    assert rows[2]["status"] == "output_error"
+    assert rows[2]["returned_prediction"]["new_ids"] == [10]
+
+
+def test_backend_factory_latches_against_later_move_request(monkeypatch):
+    import local_backends
+    marker = object()
+    monkeypatch.setattr(local_backends, "FactBackend", lambda *_: marker)
+    monkeypatch.setattr(local_backends, "MoveBackend", lambda *_: marker)
+    factory = local_backends.Factory(Path.cwd(), {}, {}, lambda: False)
+    assert factory("move", subject.MOVES[0]) is marker
+    assert factory("fact", "fact_family") is marker
+    with pytest.raises(ValueError, match="after fact"):
+        factory("move", subject.MOVES[3])
+
+
+@pytest.mark.parametrize("mutation", [lambda x: {**x, "is_capture": 0},
+    lambda x: {**x, "extra": False}, lambda x: {**x, "moving_piece": "dragon"}])
+def test_fact_strict_typed_schema_has_no_repair(fixture, mutation):
+    _, _, _, _, paths = fixture
+    facts = subject.reviewed_modules()[1]
+    truth = subject.read(paths["evaluator"]["path"])["positions"][0]["immediate_facts"]
+    with pytest.raises(ValueError): facts.parse_facts(json.dumps(mutation(truth)))

@@ -1,0 +1,10 @@
+{
+  "exit_code": 0,
+  "child_launched": true,
+  "forced_owned_termination": false,
+  "issues": [],
+  "failure": null,
+  "elapsed_seconds": 29.797000000005937,
+  "preflight_samples": 10,
+  "no_global_configuration_changes": true
+}

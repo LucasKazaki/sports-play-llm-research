@@ -22,3 +22,6 @@ tests/test_chess_fact_sft_*.py -text whitespace=blank-at-eol,blank-at-eof,space-
 
 # Original pytest traceback spacing is evidence; preserve it byte-for-byte.
 experiments/chess-fact-sft-v1/evidence/reviews/chess-fact-sft-legacy-tests-v1.txt -text -whitespace
+
+# Pre-call constructed-clock illustration plans and exact inert workspace snapshots.
+experiments/gotham-constructed-middlegame-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

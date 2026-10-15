@@ -1,0 +1,421 @@
+{
+  "schema": "gotham.constructed-middlegame.pre-call-freeze.v1",
+  "utc": "2026-10-15T09:59:18.453268+00:00",
+  "status": "FROZEN_BEFORE_FIRST_ILLUSTRATION_MODEL_CALL_PENDING_ROOT_EXECUTION_GO",
+  "base_commit": "a532d22c091f1a6f35c89b5300a19dbb6aef7b67",
+  "protocol_sha256": "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75",
+  "final_extension_sha256": "9df1a3fe206f7c2b5d356d4fbf73815d10b7ec9c34fa619b897f56c05f5627bb",
+  "root_source_review_sha256": "bb9beefa054c433506f1c1860b3f227e54bfb0ac55ce5bf0514081dcf5424cc8",
+  "files": [
+    {
+      "path": "protocol.json",
+      "sha256": "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75",
+      "bytes": 27408,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\frozen-constructed-middlegame-protocol-v2.json",
+      "role": "frozen_six_condition_plan_before_runner_or_calls"
+    },
+    {
+      "path": "execution-extension.json",
+      "sha256": "9df1a3fe206f7c2b5d356d4fbf73815d10b7ec9c34fa619b897f56c05f5627bb",
+      "bytes": 3724,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\execution-extension.PROPOSED-v2.json",
+      "role": "finalized_pre_call_extension; status/freeze metadata changed only; selection/source15 identities unchanged"
+    },
+    {
+      "path": "move-inputs.json",
+      "sha256": "9c07908144a51cb18e91354602a1ea5333da457edbee8bf4869eca66a42d1a0e",
+      "bytes": 168,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\move-inputs.proposed.json",
+      "role": "frozen_input_or_evaluator_copy; runtime keeps original protocol-bound workspace path"
+    },
+    {
+      "path": "fact-inputs.json",
+      "sha256": "196150067f48c2fab77fcb6955bab5c0f4608511200111ee4e9720927d45d693",
+      "bytes": 198,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\fact-inputs.proposed.json",
+      "role": "frozen_input_or_evaluator_copy; runtime keeps original protocol-bound workspace path"
+    },
+    {
+      "path": "evaluator-only.json",
+      "sha256": "2e9a8f529f387bbde3341c5f26a3cf5d61d896a9598fe59400b054300e16d637",
+      "bytes": 606,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\evaluator-only.proposed.json",
+      "role": "frozen_input_or_evaluator_copy; runtime keeps original protocol-bound workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/illustration_core.py.txt",
+      "sha256": "31a075b37dc7c586a360aa9fb465949823e8dff4951665d68f8ab43e27af3cb9",
+      "bytes": 21010,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\illustration_core.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/illustration_run.py.txt",
+      "sha256": "316c1ac4bf8ee10e7c79af5288d6d298b444bdc29c6281eafc53fb437752a8f1",
+      "bytes": 15457,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\illustration_run.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/local_backends.py.txt",
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505",
+      "bytes": 11662,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\local_backends.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/owned_native.py.txt",
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0",
+      "bytes": 4797,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\owned_native.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/test_illustration_core.py.txt",
+      "sha256": "75a94a07912d5f71d8f4a75f900e15134333bdf216d434a2e4acf5532dbc4f96",
+      "bytes": 12003,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\test_illustration_core.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/test_owned_native.py.txt",
+      "sha256": "53bddf9762165f607db1982e3c830d443b57423e16ed0bd05006067b5110b106",
+      "bytes": 4077,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\test_owned_native.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/test_illustration_run.py.txt",
+      "sha256": "3fb218672ece88b57ba3b8e1fe6c6c82d3220bf479e6c30639398be35e4fb3d6",
+      "bytes": 7991,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\test_illustration_run.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/identity_probe_worker.py.txt",
+      "sha256": "580da8ea0a19b524fd6242df302a8145d3a08921346dbe36b8f5f6be4d91fe3b",
+      "bytes": 725,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\identity_probe_worker.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/reviewed-source-bindings.json",
+      "sha256": "a1a84081c3fb8d3e91ebe6bd94d32678b9a6eda447bfae9d148911f99202b178",
+      "bytes": 606,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\reviewed-source-bindings.json",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/reviewed/chess_native_resources.py.txt",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+      "bytes": 5573,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\reviewed\\chess_native_resources.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/reviewed/chess_fact_sft_common.py.txt",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+      "bytes": 10669,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\reviewed\\chess_fact_sft_common.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/reviewed/chess_fact_sft_supervise.py.txt",
+      "sha256": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c",
+      "bytes": 10446,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\reviewed\\chess_fact_sft_supervise.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/reviewed/chess_board_fact_core.py.txt",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+      "bytes": 5902,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\reviewed\\chess_board_fact_core.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/reviewed/chess_classifier_adapter.py.txt",
+      "sha256": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+      "bytes": 14539,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\reviewed\\chess_classifier_adapter.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "archive/reviewed-workspace-sources/reviewed/chess_move_only_lm_v4.py.txt",
+      "sha256": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118",
+      "bytes": 20059,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\reviewed\\chess_move_only_lm_v4.py",
+      "role": "inert_byte_exact_reviewed_source_or_test; actual execution uses original workspace path"
+    },
+    {
+      "path": "reviews/root-source-review.json",
+      "sha256": "bb9beefa054c433506f1c1860b3f227e54bfb0ac55ce5bf0514081dcf5424cc8",
+      "bytes": 3813,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\gotham-constructed-middlegame-source-review.json",
+      "role": "practical_source_review; not formal promotion or model execution"
+    },
+    {
+      "path": "archive/preflight/runner-preflight-v1.json",
+      "sha256": "9fdad83a67799e4c31050d36023ba7675c6ac045441a9f88dc135323048244a5",
+      "bytes": 4893,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\runner-preflight-v1.json",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/preflight/runner-preflight-v2.json",
+      "sha256": "001d2e8f7645892cee753a514badb9ac49eb7af720ec3bbeec99a05135be1472",
+      "bytes": 4893,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\runner-preflight-v2.json",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/preflight/execution-extension.PROPOSED.json",
+      "sha256": "b1f7c05c8de80df2fb6020a53227fc74ec6d3a5d9c5bab76fdd5c84531d82ac6",
+      "bytes": 3465,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\execution-extension.PROPOSED.json",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/preflight/execution-extension.PROPOSED-v2.json",
+      "sha256": "f53abd24012f767078f2cb0ef918114f1a6f1a6def0f28db5659cf440a41b63d",
+      "bytes": 3465,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\execution-extension.PROPOSED-v2.json",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/preflight/whole-job-deadline-repair.json",
+      "sha256": "21467c3c453f6ddee6a2313183b59fef5e20fca6e8877f1d78da4eff4e920d7a",
+      "bytes": 1372,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\whole-job-deadline-repair.json",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/preflight/whole-job-deadline-before-fix.log",
+      "sha256": "2d0a97afd2d281190ccae9b1eff6fc8d68ef8fba2424407233f981ccf3df6e7a",
+      "bytes": 1355,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\whole-job-deadline-before-fix.log",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/preflight/finite-tests-v4.log",
+      "sha256": "e75ca7007c9d70a7a855a99dbc334b5a38fb34f0c913ff2561988a30c31eb4a2",
+      "bytes": 101,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\finite-tests-v4.log",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/preflight/finite-tests-v5.log",
+      "sha256": "25b13c2fc2bf94f8acee9d30687d3ac3d07e37cc3da0a42b56292e17c5befa85",
+      "bytes": 101,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\finite-tests-v5.log",
+      "role": "preserved_pre_call_source_validation_or_superseded_proposal"
+    },
+    {
+      "path": "archive/proposals/proposed-constructed-middlegame-protocol-v1.json",
+      "sha256": "c3b0d2d6debaf8683d70d3ab668c9eff0bf2df30c0eee354ec15304e4371005c",
+      "bytes": 22441,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\proposed-constructed-middlegame-protocol-v1.json",
+      "role": "preserved_initial_proposal_or_CPU_metadata_only_inspection"
+    },
+    {
+      "path": "archive/proposals/six-condition-freeze-binding.json",
+      "sha256": "17844f5f64f4f7f503896b55c9bf551f326c99c059228492333dbbac4899b541",
+      "bytes": 2638,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\six-condition-freeze-binding.json",
+      "role": "preserved_initial_proposal_or_CPU_metadata_only_inspection"
+    },
+    {
+      "path": "archive/proposals/cpu-encoder-inspection.json",
+      "sha256": "ffb86e2df7bf66472a552f9bc7c8732f6d622607ef96a41b29577f025eac1c5f",
+      "bytes": 12876,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-proposal-v1\\cpu-encoder-inspection.json",
+      "role": "preserved_initial_proposal_or_CPU_metadata_only_inspection"
+    },
+    {
+      "path": "archive/deadline-before-repair/execution-extension.PROPOSED.json",
+      "sha256": "b1f7c05c8de80df2fb6020a53227fc74ec6d3a5d9c5bab76fdd5c84531d82ac6",
+      "bytes": 3465,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\execution-extension.PROPOSED.json",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/new-failing-deadline-regression.py.txt",
+      "sha256": "c51a4351cb4a211cee020d36f65b0aafa4b4ad0cad3a2f9bfa66e42526dad17f",
+      "bytes": 7481,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\new-failing-deadline-regression.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/runner-preflight-v1.json",
+      "sha256": "9fdad83a67799e4c31050d36023ba7675c6ac045441a9f88dc135323048244a5",
+      "bytes": 4893,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\runner-preflight-v1.json",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/identity_probe_worker.py.txt",
+      "sha256": "580da8ea0a19b524fd6242df302a8145d3a08921346dbe36b8f5f6be4d91fe3b",
+      "bytes": 725,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\identity_probe_worker.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/illustration_core.py.txt",
+      "sha256": "31a075b37dc7c586a360aa9fb465949823e8dff4951665d68f8ab43e27af3cb9",
+      "bytes": 21010,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\illustration_core.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/illustration_run.py.txt",
+      "sha256": "6e52fb9edb171615cda7c4a6338154f692ec67fb4567f4573e960102b0f502e3",
+      "bytes": 15133,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\illustration_run.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/local_backends.py.txt",
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505",
+      "bytes": 11662,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\local_backends.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/owned_native.py.txt",
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0",
+      "bytes": 4797,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\owned_native.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/reviewed/chess_board_fact_core.py.txt",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+      "bytes": 5902,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\reviewed\\chess_board_fact_core.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/reviewed/chess_classifier_adapter.py.txt",
+      "sha256": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+      "bytes": 14539,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\reviewed\\chess_classifier_adapter.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/reviewed/chess_fact_sft_common.py.txt",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+      "bytes": 10669,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\reviewed\\chess_fact_sft_common.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/reviewed/chess_fact_sft_supervise.py.txt",
+      "sha256": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c",
+      "bytes": 10446,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\reviewed\\chess_fact_sft_supervise.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/reviewed/chess_move_only_lm_v4.py.txt",
+      "sha256": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118",
+      "bytes": 20059,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\reviewed\\chess_move_only_lm_v4.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/reviewed/chess_native_resources.py.txt",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+      "bytes": 5573,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\reviewed\\chess_native_resources.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/reviewed-source-bindings.json",
+      "sha256": "a1a84081c3fb8d3e91ebe6bd94d32678b9a6eda447bfae9d148911f99202b178",
+      "bytes": 606,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\reviewed-source-bindings.json",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/test_illustration_core.py.txt",
+      "sha256": "75a94a07912d5f71d8f4a75f900e15134333bdf216d434a2e4acf5532dbc4f96",
+      "bytes": 12003,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\test_illustration_core.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/test_illustration_run.py.txt",
+      "sha256": "d869d6e8c9df9e7ba7f67114790797d4bb119fb8ce83dcf5f9158011b7f876ae",
+      "bytes": 7047,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\test_illustration_run.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/sources/test_owned_native.py.txt",
+      "sha256": "53bddf9762165f607db1982e3c830d443b57423e16ed0bd05006067b5110b106",
+      "bytes": 4077,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\sources\\test_owned_native.py",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "archive/deadline-before-repair/whole-job-deadline-before-fix.log",
+      "sha256": "2d0a97afd2d281190ccae9b1eff6fc8d68ef8fba2424407233f981ccf3df6e7a",
+      "bytes": 1355,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\before-whole-job-deadline-fix\\whole-job-deadline-before-fix.log",
+      "role": "preserved_original_source_preflight_and_actual_failing_fake_regression; no model attempt"
+    },
+    {
+      "path": "reviews/real-CPU-owned-identity.json",
+      "sha256": "8a8ced5ec2f14f32f0d5da3ed79b5eea4cafb561d0dc4b61ee836a1484965261",
+      "bytes": 684,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-test-fixtures-v5\\test_actual_cpu_identity_and_e0\\receipt.json",
+      "role": "stdlib_metadata_only_actual_PID_venv_environment_timeout_proof"
+    },
+    {
+      "path": "reviews/native-completed-audit.json",
+      "sha256": "afbadb547d1ba0e232fb79fccab35ae241a1b516002c8336852e0fb1a58e7587",
+      "bytes": 7235,
+      "source_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-fact-sft-completed-independent-review.json",
+      "role": "existing_dev_selected_step512_provenance; no new model selection"
+    },
+    {
+      "path": "source-reference.json",
+      "sha256": "747a528d8811c9b52eb61b96550ae15a9005bab8960e1b176f44ba49f50fbd40",
+      "bytes": 806,
+      "role": "hash_reference_only_no_private_media_or_ledger_content"
+    }
+  ],
+  "source15_sha256": {
+    "illustration_core.py": "31a075b37dc7c586a360aa9fb465949823e8dff4951665d68f8ab43e27af3cb9",
+    "illustration_run.py": "316c1ac4bf8ee10e7c79af5288d6d298b444bdc29c6281eafc53fb437752a8f1",
+    "local_backends.py": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505",
+    "owned_native.py": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0",
+    "test_illustration_core.py": "75a94a07912d5f71d8f4a75f900e15134333bdf216d434a2e4acf5532dbc4f96",
+    "test_owned_native.py": "53bddf9762165f607db1982e3c830d443b57423e16ed0bd05006067b5110b106",
+    "test_illustration_run.py": "3fb218672ece88b57ba3b8e1fe6c6c82d3220bf479e6c30639398be35e4fb3d6",
+    "identity_probe_worker.py": "580da8ea0a19b524fd6242df302a8145d3a08921346dbe36b8f5f6be4d91fe3b",
+    "reviewed-source-bindings.json": "a1a84081c3fb8d3e91ebe6bd94d32678b9a6eda447bfae9d148911f99202b178",
+    "reviewed/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "reviewed/chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "reviewed/chess_fact_sft_supervise.py": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c",
+    "reviewed/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "reviewed/chess_classifier_adapter.py": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+    "reviewed/chess_move_only_lm_v4.py": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118"
+  },
+  "actual_workspace_execution_entrypoint": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\gotham-constructed-middlegame-runner-v1\\illustration_run.py",
+  "archive_execution_status": "Inert .py.txt snapshots preserve reviewed bytes; no relocated runner or post-run path adaptation has executed.",
+  "planned": {
+    "all_outcomes": 6,
+    "move_policy_outcomes": 4,
+    "given_move_fact_outcomes": 2,
+    "family_pairs": 3
+  },
+  "raw_first": "All4 move rows close before fact payload hashing/opening. All6 final raws seal before evaluator labels. No later moves after fact payload access.",
+  "source_status": "Four visible FEN fields with computational0/1 counters; original full clocks/game/mainline unresolved. Zero accepted holdout positions.",
+  "actual_illustration_model_calls": 0,
+  "actual_illustration_engine_calls": 0,
+  "execution_authorized": false,
+  "private_media_frames_transcripts_published": false,
+  "review_scope": "Practical engineering source/fake/CPU review; no formal Luna/runtime promotion receipt is claimed.",
+  "assistance": "Codex-assisted engineering; transparent attribution retained."
+}

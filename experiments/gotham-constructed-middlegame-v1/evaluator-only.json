@@ -1,0 +1,19 @@
+{
+  "positions": [
+    {
+      "case_id": "constructed-middlegame-illustration-v1",
+      "next_displayed_move_uci": "c3h3",
+      "immediate_facts": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    }
+  ],
+  "limits": "Observed move is not a best-move label. Immediate facts refer only to the explicitly constructed-clock preboard and selected input move. No strategic rationale target."
+}
