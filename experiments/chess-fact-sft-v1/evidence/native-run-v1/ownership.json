@@ -1,0 +1,37 @@
+{
+  "pid": 29080,
+  "command": [
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_fact_sft_train.py",
+    "--repo",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+    "--cohort",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\cohort",
+    "--protocol",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-fact-sft-v1\\protocol.json",
+    "--out",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\native-run-v1"
+  ],
+  "source_sha256": {
+    "scripts/chess_fact_sft_common.py": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4",
+    "scripts/chess_fact_sft_evaluate.py": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99",
+    "scripts/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+    "scripts/chess_fact_sft_supervise.py": "d9cc7d8700e80dce4b5577635dfb288dffb2e600561d71d29b31112477ce3b12",
+    "scripts/chess_fact_sft_train.py": "cf7391e3ab4d8c94dbbda956f7c44042fece10b249e3182bcc8a27554fe0f5c5",
+    "scripts/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "scripts/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "experiments/chess-fact-sft-v1/protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+  },
+  "started_monotonic": 50772.843,
+  "policy": {
+    "start_physical_available_bytes": 10737418240,
+    "start_commit_headroom_bytes": 17179869184,
+    "start_gpu_free_bytes": 13958643712,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 8589934592,
+    "stop_gpu_free_bytes": 1073741824,
+    "maximum_owned_request_seconds": 5400.0,
+    "maximum_sample_gap_seconds": 3.0
+  },
+  "cohort_frozen_sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6"
+}

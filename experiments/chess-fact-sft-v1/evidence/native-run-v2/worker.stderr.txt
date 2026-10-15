@@ -1,0 +1,17 @@
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights: 100%|##########| 311/311 [00:00<00:00, 6281.65it/s]
+Traceback (most recent call last):
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_train.py", line 345, in <module>
+    run(**vars(parser.parse_args()))
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_train.py", line 244, in run
+    dev(0, binding)
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_train.py", line 237, in dev
+    generate_cohort(model, tokenizer, dev_inputs, raw, metadata, out, step == 0, torch)
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_train.py", line 102, in generate_cohort
+    raise error
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_train.py", line 76, in generate_cohort
+    save(out / 'progress.json', {'phase': metadata['phase'], 'checkpoint': metadata['step'],
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_common.py", line 25, in save
+    temp.replace(path)
+  File "C:\Users\lucas\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1376, in replace
+    os.replace(self, target)
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\native-run-v2\\progress.json.tmp' -> 'C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\native-run-v2\\progress.json'

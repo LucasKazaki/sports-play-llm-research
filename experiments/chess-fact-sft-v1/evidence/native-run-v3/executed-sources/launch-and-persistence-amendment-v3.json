@@ -1,0 +1,135 @@
+{
+  "schema": "chess.native-fact-sft.persistence-amendment.v3",
+  "status": "FROZEN_BEFORE_PERSISTENCE_REPAIR_IMPLEMENTATION_AND_NEW_ATTEMPT",
+  "frozen_at_utc": "2026-10-15T08:13:51.546776+00:00",
+  "base_protocol_sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+  "reason": "Native v2 correctly loaded model but stopped before optimizer updates because Windows status reader briefly denied deletion during atomic progress-file replace. Preserve all16 raw development responses and local artifact failure. No scored dev join, selection, heldout call or update occurred. Repair local persistence, not model policy.",
+  "previous_attempt": {
+    "path": "data/private/chess-fact-sft-v1/native-run-v1",
+    "files_sha256": {
+      "executed-sources/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+      "executed-sources/chess_fact_sft_common.py": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4",
+      "executed-sources/chess_fact_sft_evaluate.py": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99",
+      "executed-sources/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+      "executed-sources/chess_fact_sft_supervise.py": "d9cc7d8700e80dce4b5577635dfb288dffb2e600561d71d29b31112477ce3b12",
+      "executed-sources/chess_fact_sft_train.py": "cf7391e3ab4d8c94dbbda956f7c44042fece10b249e3182bcc8a27554fe0f5c5",
+      "executed-sources/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+      "executed-sources/protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+      "outcome-ledger.json": "2af2d4d38baf9246902287dcad0db65da64ac0ddf3e3ac63053debb4ce8968a9",
+      "ownership.json": "dee8d74ecb6235e15b1270f42b9c69459fca3f107f881e49c784c3f8e459bf80",
+      "planned-outcomes.json": "d11d6ceb054639b27dfb4076e077474c52922d4bfdf041f564088b2c0b78734c",
+      "preflight.json": "4b3e6dbf52c4fdfdf7403f6e494cc9eac5d8fb1a7c8a856add334e3f3d29b5bd",
+      "resources.jsonl": "59336db55e55f168d4fb335ab515c7515a9255ddef11d94985bcfd170bc14658",
+      "supervision.json": "8862b523e141b687efa14b86027593df275b973b4018ed40b99f94d8f5ae1dea",
+      "worker.stderr.txt": "c42024517f53abfc843c826fae71137aca4957a1f3509f205efd4e7e1660e357",
+      "worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "planned_outcomes": 1152,
+    "all_not_run": true,
+    "weights_loaded": 0,
+    "pretrained_forwards": 0,
+    "optimizer_updates": 0,
+    "preserve_unchanged": true
+  },
+  "cpu_research": {
+    "probe_sha256": "41177d7b4700ef9ae499df1e645d29bd9dae46688734d18c000a60be9183b20d",
+    "source_sha256": "5334cb91c0c377c422f32dfbffe5517a1e2a967ffbd3a8405a0824ce636ff473",
+    "observed_popen_pid": 39104,
+    "observed_worker_pid": 39104,
+    "same_venv_prefix_and_dependency_versions": true,
+    "torch_imports": 0,
+    "GPU_calls": 0
+  },
+  "launch": {
+    "platform": "win32",
+    "python_version": "3.12.2",
+    "base_executable_sha256": "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181",
+    "venv_redirector_sha256": "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5",
+    "command": "Use verified sys._base_executable directly as Popen executable, same fixed model-worker argv. The exact returned Popen handle now owns actual Python worker.",
+    "environment": "Copy environment for this child only and set __PYVENV_LAUNCHER__ to the verified sys.executable virtualenv path. Reject nonempty PYTHONHOME or PYTHONPATH. No global environment/config changes.",
+    "identity_gate": "Before any weights/torch work, retain parent ownership PID and require child os.getpid exact equality; verify child sys.prefix and sys.executable match expected venv identities. Hash executable/redirector and pyvenv.cfg, retain single changed env key only; never expose all inherited environment.",
+    "cleanup": "Same sampled resource thresholds, cooperative cancellation and30second exact-Popen-handle termination. No name-based or descendant enumeration kills."
+  },
+  "new_attempt": {
+    "path": "data/private/chess-fact-sft-v1/native-run-v3",
+    "count": 1,
+    "create_only": true,
+    "requires": "Independent source/Windows file-sharing/identity checks plus root review and new source commit before one new create-only v3 attempt",
+    "unchanged": [
+      "cohort and8576native-boundary audit",
+      "model/tokenizer/adapter settings",
+      "1024updates,batch8,tail128,LR andseed",
+      "all640dev/512holdoutplanned outcomes",
+      "dev-only checkpointselection beforeholdout",
+      "10/16/13GiBstart and4/8/1GiBstop reserves",
+      "3600training+dev/1800holdout phases",
+      "strict parsing,no response repair,nofallback orautomaticpromotion"
+    ]
+  },
+  "primary_sources": [
+    "https://docs.python.org/3.12/library/venv.html",
+    "https://raw.githubusercontent.com/python/cpython/v3.12.2/PC/launcher.c",
+    "https://raw.githubusercontent.com/python/cpython/v3.12.2/Modules/getpath.py"
+  ],
+  "limits": [
+    "CPU-only launch proof does not establish training/runtime success",
+    "No original attempt replay or outcome based model tuning",
+    "Preserve all original and amended source identities separately",
+    "Known interrupted development repetitions are disclosed; no claim of never-observed development prompts."
+  ],
+  "prior_launch_amendment_sha256": "e2dd94d0d47fbf59e90d3c678d41ce6f0e48d1ecb6adb43fae879767ced7d2a8",
+  "additional_previous_attempts": [
+    {
+      "path": "data/private/chess-fact-sft-v1/native-run-v2",
+      "files_sha256": {
+        "checkpoint-0/adapter/adapter_config.json": "ca1ba037b99a84b7442d4c8ff7a97a766fcf1298b0f86ecf607461b13cd55db9",
+        "checkpoint-0/adapter/adapter_model.safetensors": "d1ffa279ba3f63eac05f32c14e17595bab11ea784667cbfdfff1fb5ab89420bc",
+        "checkpoint-0/adapter/README.md": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f",
+        "checkpoint-0/manifest.json": "9cec842a381fe166135a271696db10a0ae24701a0275d8239f012f172247ae4a",
+        "checkpoint-0/training-state.pt": "3cc6b5faa18ba1c4b404a14b95d3c335f183376b29f2706fb2b4709031cd8b95",
+        "dev-0/raw.json": "f9f2dbe9017850bc66a7918e5f4f917b2133a8d656dd2c3058c1f27c8d0d7b5d",
+        "dev-0/seal.json": "80e3f38989fbfd180dd0dcdf937c437c35eae56903b09325657bd8ef6d03a897",
+        "dev-0.journal.jsonl": "733090727fb60f3019d559b0827e629cdaa0beb77ec9471e7cab6dd6bb3e3230",
+        "executed-sources/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+        "executed-sources/chess_fact_sft_common.py": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4",
+        "executed-sources/chess_fact_sft_evaluate.py": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99",
+        "executed-sources/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+        "executed-sources/chess_fact_sft_supervise.py": "b84e9a7c1f16857a6d538f7437bc331b890be1cab6083028941ba680cdf46212",
+        "executed-sources/chess_fact_sft_train.py": "35fcc46ade2e46b35911da4758bddb9431f3b0b1ad66134d684006c7f74d7404",
+        "executed-sources/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+        "executed-sources/launch-amendment-v2.json": "e2dd94d0d47fbf59e90d3c678d41ce6f0e48d1ecb6adb43fae879767ced7d2a8",
+        "executed-sources/protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+        "outcome-ledger.json": "b6785313b45590d12906bfca902bad5de2c8077b6fd592d787468c73cd7ad513",
+        "outcome.json": "bb5e983d72e0ea2e490fe8790cb62d71cf15c1940c9bd78809cba15001961115",
+        "ownership.json": "879a546de8e745c281ce3aeacaa51c46c8e521d2deed343096d610020bb4270b",
+        "permutation.json": "bb3ef5c68dab6fbb70e6c03329fd9cdc40f497780665ddcef9cb2d28b31bb75f",
+        "planned-outcomes.json": "d11d6ceb054639b27dfb4076e077474c52922d4bfdf041f564088b2c0b78734c",
+        "preflight.json": "147ee4ca2bb25be24065e0fb97c4041da9bb7ab9e1b5a2d9ac0466c51663cba6",
+        "progress.json": "ae1b0597eb8693e6ac2ecfff7695cfd9a353028cd33d515cec493a1e4aabe32c",
+        "progress.json.tmp": "7c2d3bcdb7e52428b3f5c6e91009f559a373d63bbcd48626fdba8f92877bc957",
+        "resources.jsonl": "370854d73750a3a23dec5c330153f359a99f3bdd0b2e48cf99b0040eebe46355",
+        "runtime-identity.json": "130d29474e3c9966909f922a5657f2b1020e36a9b8dbcdfedc8fa80f633bcc3a",
+        "supervision.json": "8e275965dda62556665731fe60ac990cb6bc99e33091f791e3324da17a7775e6",
+        "token-boundaries.json": "ffb875efeaa7671eacf0f67e768fb51c2101f7acfb9f6bc18afe3b434e582602",
+        "worker.stderr.txt": "9d86d8a0c8627c6e8d150a053cec3129c619cf3d7b0d5100a602475f7bf0b942",
+        "worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "full_ledger_counts": {
+        "completed": 16,
+        "error": 1,
+        "not_run": 1135
+      },
+      "optimizer_updates": 0,
+      "dev_label_joins": 0,
+      "heldout_calls": 0,
+      "preserve_unchanged": true
+    }
+  ],
+  "persistence": {
+    "scope": "Only local atomic metadata replacement; no generation, training, optimizer or response retry",
+    "policy": "After writing the same owned .tmp bytes once, attempt replace up to51times. Retry only OSError.winerror5/32/33 for Windows access/share/lock conflicts, sleeping0.020seconds between attempts; at most50sleeps=1.0seconds. Any other error raises immediately, exhausted conflict raises unchanged. Keep old destination until successful atomic replace; preserve temp on permanent failure.",
+    "validation": "Independent fake transient/permanent/error-code tests and real Windows read handle denying delete with delayed release; full existing source/identity/data tests before root execution GO.",
+    "accounting": "Resource monitoring continues independently during local write waits; same phase deadlines and stop reserves. Do not replay a model request when persisting a completed outcome fails."
+  },
+  "development_repeat_disclosure": "The16 interrupted baseline-development prompts may be generated again in the complete v3 baseline. Keep v2 outputs separately; never select/average among repetitions or pool their scores. No interrupted response quality or truth comparison was inspected to choose this repair. Model, cohort, fixed selector, seeds and all training/generation settings stay unchanged. Holdout was never called. This is an amended experiment after engineering failure, not an untouched original run."
+}

@@ -1,0 +1,15 @@
+{
+  "status": "PREPARED_CORRECTED_NOT_RUN_ON_ACTUAL_EXPERIMENT",
+  "tests_passed": 51,
+  "test_seconds": 0.14,
+  "actual_model_calls": 0,
+  "actual_run_outputs_opened": false,
+  "actual_heldout_labels_opened": false,
+  "files_sha256": {
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-fact-sft-review-v1\\audit_completed_native_run.py": "9c8f7aa9a647ebde2adca18d86165000a3a975c8578d2a36227edb580134c6da",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-fact-sft-review-v1\\test_completed_native_auditor.py": "a13bfdc629d0deb5bca4a138979fa01594b62c2cbf967cc409fe9ac3c0adb8ef"
+  },
+  "prior_sources_receipt": "before-vocab-review/manifest.json",
+  "regression_receipt_sha256": "3e37f96745bc1c0e58858cd055b30bdc3057297ae74fb5e494f2dc58cfbb224a",
+  "coverage_clarification_sha256": "431b47f6b2b0833f267b9751d4e9fb6d7846c8e3adf5d56ab8ef45fa292dd198"
+}

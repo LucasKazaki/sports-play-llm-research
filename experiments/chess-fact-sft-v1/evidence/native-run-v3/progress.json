@@ -1,0 +1,7 @@
+{
+  "phase": "holdout",
+  "checkpoint": 512,
+  "cohort": "holdout-selected",
+  "attempted_case": "fact-sft-0F91j",
+  "completed_rows": 255
+}

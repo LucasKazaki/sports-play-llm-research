@@ -1,0 +1,81 @@
+{
+  "GPU_calls": 0,
+  "audit_source_sha256": "649e963b21c96e4a3ec4191895ff94ab113be2d7489f1ddac0fe67556a11d8a4",
+  "dataset_sha256": "ae1cfa3ad6c4e7582fa233d6118f7a4baaaa7dc05d57ee9d6b5807c321bd983c",
+  "frozen_data_sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6",
+  "holdout_labels_scope": "Only independent intake/evaluator CPU audit; never supplied to generation or model prompt.",
+  "limitations": [
+    "Finite pinned convenience shard, no independence from unknown upstream pretraining claimed.",
+    "Natural special-move coverage may be zero; no substitution or rarity balancing.",
+    "Token audit is not learned factuality, commentary, chess strength or formal promotion evidence."
+  ],
+  "native_common_sha256": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4",
+  "native_token_results_sha256": "a1844785a22d0bb2f7d0a49883e44c009c268d0471aa5b919a572fd6c7a04724",
+  "pretrained_forwards": 0,
+  "pretrained_weight_loads": 0,
+  "protocol_sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+  "registry": {
+    "base": {
+      "board_keys": 43474,
+      "games": 21688
+    },
+    "prior_puzzles": 21664,
+    "rollout_plies": 4784,
+    "union": {
+      "board_keys": 45704,
+      "games": 21704
+    }
+  },
+  "rejections": {
+    "bucket_full": 1598,
+    "excluded_or_duplicate": 21711,
+    "invalid": 0
+  },
+  "schema": "chess.fact-sft.independent-intake-and-token-audit.v1",
+  "selected_counts": {
+    "dev": 128,
+    "holdout": 256,
+    "train": 8192
+  },
+  "source_rows_scanned": 31885,
+  "source_selection_results_sha256": "672334b65bb792618c0c4944bc89a5937a92bd8ef3c03107331acb29d7624838",
+  "source_selection_seconds": 10.067772100002912,
+  "tokenizer_metadata_sha256": {
+    "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "README.md": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9",
+    "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+    "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "tokens": {
+    "dev": {
+      "count": 128,
+      "prompt_max": 729,
+      "prompt_min": 699,
+      "sequence_max": 776,
+      "target_max": 49,
+      "target_min": 47
+    },
+    "holdout": {
+      "count": 256,
+      "prompt_max": 730,
+      "prompt_min": 703,
+      "sequence_max": 777,
+      "target_max": 49,
+      "target_min": 47
+    },
+    "train": {
+      "count": 8192,
+      "prompt_max": 735,
+      "prompt_min": 697,
+      "sequence_max": 783,
+      "target_max": 49,
+      "target_min": 47
+    }
+  },
+  "total_seconds": 33.701097400000435,
+  "verdict": "All frozen selected rows and all native target boundaries passed the file/CPU audit; no model evaluation occurred."
+}

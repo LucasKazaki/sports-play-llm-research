@@ -1,0 +1,13 @@
+{
+  "schema": "chess.fact-sft.coverage-clarification.v1",
+  "utc": "2026-10-15T08:45:49.532750+00:00",
+  "correction": "The frozen heldout cohort includes one rook-promotion case, with zero positive castling and en-passant cases. Prior zero-promotion wording was incorrect.",
+  "provenance": "Root frozen-cohort metadata correction; independent full label/transition verification remains deferred until explicit post-completion audit authorization.",
+  "prior_receipts_preserved": {
+    "chess-fact-sft-independent-source-review.json": "f35806894d250ebb78db2d4e12fa6994de64b4d7cb2773b9dcfa6b06c671dc83",
+    "chess-fact-sft-independent-source-review-final.json": "1b44e0dfa723958c0bde9c0d34afaece80e3823e59f334fadfaf9b00bc11ed6e"
+  },
+  "interpretation": "One rook promotion is sparse positive support; it cannot establish general promotion competence. Castling/en-passant positive classes remain unassessed.",
+  "runtime_or_data_changed": false,
+  "actual_heldout_results_or_labels_opened_for_this_correction": false
+}

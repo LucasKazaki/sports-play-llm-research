@@ -1,0 +1,456 @@
+"""Read-only retained-artifact audit. Never invokes a model, engine or backend.
+
+The actual-run entry point requires explicit post-completion authorization and
+completed worker/supervisor outcomes before opening any evaluator label file.
+Pure helpers are exercised against finite fixtures before a real run completes.
+"""
+from collections import Counter
+from datetime import datetime, timezone
+import argparse
+import hashlib
+import json
+import math
+from pathlib import Path
+
+FIELDS = ('moving_piece','moving_colour','is_capture','captured_piece','gives_check',
+          'is_castling','is_en_passant','promotion_piece')
+BOOLS = {'is_capture','gives_check','is_castling','is_en_passant'}
+STEPS = [0,128,256,512,1024]
+
+
+def require(condition, message):
+    if not condition: raise ValueError(message)
+
+
+def read(path): return json.loads(Path(path).read_text(encoding='utf-8'))
+
+
+def sha(path):
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for block in iter(lambda: stream.read(65536), b''): digest.update(block)
+    return digest.hexdigest()
+
+
+def finite(value): return type(value) in (int,float) and math.isfinite(value)
+
+
+def bound_file(root, relative):
+    result = (Path(root)/relative).resolve()
+    result.relative_to(Path(root).resolve())
+    return result
+
+
+def verify_files(root, mapping):
+    for name,digest in mapping.items():
+        require(sha(bound_file(root,name))==digest,'file hash mismatch: '+name)
+
+
+def check_updates(updates, permutation, target_counts, batch_size=8, expected_updates=1024):
+    n = batch_size*expected_updates
+    require(len(target_counts)==n,'training target count denominator')
+    require(len(permutation)==n and all(type(i) is int for i in permutation)
+            and sorted(permutation)==list(range(n)),'permutation must use every example once')
+    require(len(updates)==expected_updates,'all planned optimizer updates required')
+    for index,row in enumerate(updates):
+        step=index+1
+        require(type(row['step']) is int and row['step']==step,'optimizer step order/gap')
+        require(finite(row['loss']) and row['loss']>=0,'nonfinite/negative loss')
+        require(finite(row['gradient_norm_before_clip']) and row['gradient_norm_before_clip']>=0,'nonfinite gradient norm')
+        require(finite(row['lr']) and math.isclose(row['lr'],2e-4*min(1.,step/32),rel_tol=1e-14,abs_tol=1e-18),'LR schedule differs')
+        batch=permutation[index*batch_size:step*batch_size]
+        require(type(row['target_tokens']) is int and row['target_tokens']==sum(target_counts[i] for i in batch),'batch token count differs')
+        require(finite(row['elapsed_seconds']) and row['elapsed_seconds']>=0,'invalid update latency')
+        for name in ('cuda_allocated_peak','cuda_reserved_peak'):
+            require(type(row[name]) is int and row[name]>=0,'invalid CUDA peak counter')
+            if index: require(row[name]>=updates[index-1][name],'CUDA peak counter went backwards')
+        require(row['cuda_reserved_peak']>=row['cuda_allocated_peak'],'CUDA reserved peak below allocated peak')
+    return {'updates':len(updates),'examples_consumed_once':n,'target_tokens':sum(target_counts),
+        'loss_first':updates[0]['loss'],'loss_last':updates[-1]['loss'],
+        'loss_min':min(r['loss'] for r in updates),'loss_max':max(r['loss'] for r in updates)}
+
+
+def strict_parse(text, schema):
+    def pairs(items):
+        result={}
+        for key,value in items:
+            require(key not in result,'duplicate response key')
+            result[key]=value
+        return result
+    def bad_constant(value): raise ValueError('nonfinite JSON constant')
+    value=json.loads(text,object_pairs_hook=pairs,parse_constant=bad_constant)
+    require(type(value) is dict and set(value)==set(FIELDS),'response must have exact eight fields')
+    for field,item in value.items():
+        if field in BOOLS:
+            require(type(item) is bool or type(item) is str and item=='unknown','strict Boolean type')
+        else:
+            require(item is None or type(item) is str,'strict categorical type')
+            require(item in schema['properties'][field]['enum'],'categorical value outside schema')
+    return value
+
+
+def independent_score(rows,labels,schema):
+    require([r['case_id'] for r in rows]==[r['case_id'] for r in labels],'scoring case order differs')
+    fields={field:{'correct':0,'unknown':0,'classes':{},'confusion':{}} for field in FIELDS}
+    counts={'planned':len(rows),'all_eight_correct':0,'strict_parse_completed':0,
+        'parse_error':0,'truncated':0,'error':0,'not_run':0}
+    outcomes=[]
+    for row,label in zip(rows,labels,strict=True):
+        prediction=None
+        if row['status']=='completed':
+            try:
+                prediction=strict_parse(row['text'],schema)
+                counts['strict_parse_completed']+=1
+            except (ValueError,TypeError): counts['parse_error']+=1
+        else:
+            require(row['status'] in ('truncated','error','not_run'),'invalid raw status')
+            counts[row['status']]+=1
+        correct={}
+        for field in FIELDS:
+            expected=label['expected'][field]
+            actual=prediction[field] if prediction is not None else '__invalid__'
+            match=type(expected) is type(actual) and expected==actual and actual!='unknown'
+            correct[field]=match
+            item=fields[field]
+            item['correct']+=int(match)
+            item['unknown']+=int(actual=='unknown')
+            key=json.dumps(expected)
+            category=item['classes'].setdefault(key,{'support':0,'correct':0})
+            category['support']+=1
+            category['correct']+=int(match)
+            confusion=key+' -> '+json.dumps(actual)
+            item['confusion'][confusion]=item['confusion'].get(confusion,0)+1
+        complete=all(correct.values())
+        counts['all_eight_correct']+=int(complete)
+        outcomes.append({'case_id':row['case_id'],'all_eight_correct':complete,'field_correct':correct})
+    return {'counts':counts,'fields':fields,'outcomes':outcomes}
+
+
+def read_sealed_raw(directory,ids):
+    directory=Path(directory)
+    seal=read(directory/'seal.json')
+    require(sha(directory/'raw.json')==seal['raw_sha256'],'raw seal mismatch before label join')
+    raw=read(directory/'raw.json')
+    require(seal['planned']==len(ids) and seal['planned_ids']==ids,'raw seal planned denominator/order')
+    require(raw['planned']==len(ids) and [r['case_id'] for r in raw['rows']]==ids,'raw full denominator/order')
+    require(raw['metadata']==seal['metadata'],'raw/seal metadata differs')
+    return raw
+
+
+def verify_all_raw_before_labels(run,splits):
+    result={}
+    for step in STEPS:
+        name='dev-'+str(step)
+        result[name]=read_sealed_raw(Path(run)/name,[r['case_id'] for r in splits['dev']])
+    for condition in ('base','selected'):
+        name='holdout-'+condition
+        result[name]=read_sealed_raw(Path(run)/name,[r['case_id'] for r in splits['holdout']])
+    return result
+
+
+def check_raw_tokens(rows,inputs,tokenizer,core,model_vocab_size):
+    require(type(model_vocab_size) is int and model_vocab_size>0,'invalid pinned model vocabulary dimension')
+    require([r['case_id'] for r in rows]==[r['case_id'] for r in inputs],'raw/input identity order')
+    status=Counter()
+    for row,source in zip(rows,inputs,strict=True):
+        status[row['status']]+=1
+        if row['status'] in ('not_run','error'): continue
+        prompt=core.build_prompt(source,'fen_uci_piece_map')
+        ids=tokenizer.apply_chat_template([{'role':'user','content':prompt}],tokenize=True,
+            add_generation_prompt=True,enable_thinking=False,return_dict=False)
+        require(ids==row['prompt_ids'],'retained native prompt IDs differ')
+        require(hashlib.sha256(str(ids).encode('utf-8')).hexdigest()==row['prompt_sha256'],'prompt ID hash differs')
+        generated=row['new_ids']
+        require(type(generated) is list and 1<=len(generated)<=128 and
+            all(type(i) is int and 0<=i<model_vocab_size for i in generated),'invalid retained generated IDs')
+        require(finite(row['elapsed_seconds']) and row['elapsed_seconds']>=0,'invalid generation latency')
+        if tokenizer.eos_token_id in generated:
+            end=generated.index(tokenizer.eos_token_id)
+            require(row['status']=='completed','EOS/status mismatch')
+            require(all(i==tokenizer.pad_token_id for i in generated[end+1:]),'tokens after generated EOS')
+            text=tokenizer.decode(generated[:end],skip_special_tokens=False)
+        else:
+            require(row['status']=='truncated' and len(generated)==128,'non-EOS output must be cap truncation')
+            text=tokenizer.decode(generated,skip_special_tokens=False)
+        require(text==row['text'],'retained raw token/text decode differs')
+    return dict(status)
+
+
+def transition_truth(fen,uci):
+    import chess
+    board=chess.Board(fen)
+    move=chess.Move.from_uci(uci)
+    require(board.is_valid() and not board.chess960 and move in board.legal_moves,'invalid orthodox input/selected legal move')
+    actor=board.piece_at(move.from_square)
+    opponents={sq:piece for sq,piece in board.piece_map().items() if piece.color!=actor.color}
+    after=board.copy(stack=False)
+    after.push(move)
+    remaining={sq for sq,piece in after.piece_map().items() if piece.color!=actor.color}
+    removed=set(opponents)-remaining
+    require(len(removed)<=1,'invalid capture transition')
+    victim=opponents[next(iter(removed))] if removed else None
+    return {'moving_piece':chess.piece_name(actor.piece_type),'moving_colour':'white' if actor.color else 'black',
+        'is_capture':bool(removed),'captured_piece':chess.piece_name(victim.piece_type) if victim else None,
+        'gives_check':after.is_attacked_by(actor.color,after.king(not actor.color)),
+        'is_castling':actor.piece_type==chess.KING and abs(chess.square_file(move.to_square)-chess.square_file(move.from_square))==2,
+        'is_en_passant':actor.piece_type==chess.PAWN and chess.square_file(move.from_square)!=chess.square_file(move.to_square) and board.piece_at(move.to_square) is None,
+        'promotion_piece':chess.piece_name(after.piece_at(move.to_square).piece_type) if len(uci)==5 else None}
+
+
+def selected_step(scores):
+    require([r['step'] for r in scores]==STEPS,'all dev checkpoints required')
+    require(all(r['counts']['planned']==128 and r['counts']['error']==0 and r['counts']['not_run']==0 for r in scores),'incomplete dev cohort cannot select')
+    return min(scores,key=lambda r:(-r['counts']['all_eight_correct'],-r['counts']['strict_parse_completed'],r['step']))['step']
+
+
+def check_resource_sample(sample,stage):
+    names=['physical_total_bytes','physical_available_bytes','commit_limit_bytes','commit_total_bytes','gpu_total_bytes','gpu_free_bytes']
+    require(all(type(sample.get(n)) is int and sample[n]>=0 for n in names),'resource counter missing/noninteger')
+    require(0<sample['physical_total_bytes'] and sample['physical_available_bytes']<=sample['physical_total_bytes'],'physical counters invalid')
+    require(0<sample['commit_limit_bytes'] and sample['commit_total_bytes']<=sample['commit_limit_bytes'],'commit counters invalid')
+    require(0<sample['gpu_total_bytes'] and sample['gpu_free_bytes']<=sample['gpu_total_bytes'],'GPU counters invalid')
+    values=[sample['physical_available_bytes'],sample['commit_limit_bytes']-sample['commit_total_bytes'],sample['gpu_free_bytes']]
+    thresholds=[10,16,13] if stage=='start' else [4,8,1]
+    require(all(value>=threshold*1024**3 for value,threshold in zip(values,thresholds)),'resource reserve breached')
+    return values
+
+
+def check_resources(preflight,records,ownership,supervision,phase):
+    require(preflight['status']=='passed' and len(preflight['samples'])==10,'ten healthy preflight samples required')
+    for sample in preflight['samples']: check_resource_sample(sample,'start')
+    require(supervision['exit_code']==0 and not supervision['forced_owned_termination'] and not supervision['cancel_issues'],'owned run did not finish cleanly')
+    require(supervision['pid']==ownership['pid'],'owned process identity differs')
+    require(len(records)==supervision['sample_count'] and len(records)>0,'resource sample denominator')
+    expected_policy={'start_physical_available_bytes':10*1024**3,
+        'start_commit_headroom_bytes':16*1024**3,'start_gpu_free_bytes':13*1024**3,
+        'stop_physical_available_bytes':4*1024**3,'stop_commit_headroom_bytes':8*1024**3,
+        'stop_gpu_free_bytes':1024**3,'maximum_owned_request_seconds':5400.,
+        'maximum_sample_gap_seconds':3.}
+    require(ownership['policy']==expected_policy,'resource policy changed')
+    last=ownership['started_monotonic']
+    gaps=[]; values=[]
+    for sample in records:
+        stamp=sample['monotonic']
+        require(finite(stamp) and stamp>=last,'nonmonotonic resource sequence')
+        gaps.append(stamp-last)
+        require(stamp-last<=3.,'resource sample gap breached')
+        last=stamp
+        values.append(check_resource_sample(sample,'running'))
+    elapsed=supervision['elapsed_seconds']
+    require(finite(elapsed) and 0<=elapsed<=5430.,'combined phase/cleanup wall exceeded')
+    require(phase['phase']=='holdout' and finite(phase['started_monotonic']),'holdout phase boundary missing')
+    start=ownership['started_monotonic']
+    require(0<=phase['started_monotonic']-start<=3600,'training/dev phase exceeded')
+    require(start+elapsed-phase['started_monotonic']<=1830.,'holdout phase/cleanup exceeded')
+    return {'samples':len(records),'max_gap_seconds':max(gaps),
+        'minimum_physical_available_bytes':min(v[0] for v in values),
+        'minimum_commit_headroom_bytes':min(v[1] for v in values),
+        'minimum_GPU_free_bytes':min(v[2] for v in values),'elapsed_seconds':elapsed,
+        'recorded_training_dev_phase_seconds':phase['started_monotonic']-start,
+        'recorded_holdout_plus_parent_finalization_seconds':start+elapsed-phase['started_monotonic'],
+        'timing_limit':'Parent elapsed includes final file-only ledger/supervision writes; token/kernel stopping is cooperative and sampler-bounded, not instantaneous.'}
+
+
+def native_target_count(tokenizer,row,expected,core):
+    prompt=core.build_prompt(row,'fen_uci_piece_map')
+    target=json.dumps(expected,sort_keys=True,separators=(',',':'))
+    prefix=tokenizer.apply_chat_template([{'role':'user','content':prompt}],tokenize=True,
+        add_generation_prompt=True,enable_thinking=False,return_dict=False)
+    require(0<len(prefix)<=1408,'audit prompt length differs')
+    joint=tokenizer.apply_chat_template([{'role':'user','content':prompt},{'role':'assistant','content':target}],
+        tokenize=True,add_generation_prompt=False,enable_thinking=False,return_dict=False)
+    require(joint[:len(prefix)]==prefix,'audit native prefix differs')
+    count=joint.index(tokenizer.eos_token_id,len(prefix))+1-len(prefix)
+    require(0<count<=127 and len(prefix)+count<=1536,'audit native supervised window differs')
+    require(tokenizer.decode(joint[len(prefix):len(prefix)+count-1],skip_special_tokens=False)==target,'audit target roundtrip differs')
+    return count
+
+
+def adapter_shapes(config):
+    hidden=config['hidden_size']; head=config['head_dim']; q=config['num_attention_heads']*head
+    kv=config['num_key_value_heads']*head; intermediate=config['intermediate_size']
+    dimensions={'q_proj':(hidden,q),'k_proj':(hidden,kv),'v_proj':(hidden,kv),
+        'o_proj':(q,hidden),'gate_proj':(hidden,intermediate),'up_proj':(hidden,intermediate),
+        'down_proj':(intermediate,hidden)}
+    result={}
+    for layer in range(config['num_hidden_layers']):
+        for name,(in_dim,out_dim) in dimensions.items():
+            module='self_attn' if name in ('q_proj','k_proj','v_proj','o_proj') else 'mlp'
+            stem=f'base_model.model.model.layers.{layer}.{module}.{name}.'
+            result[stem+'lora_A.weight']=(8,in_dim)
+            result[stem+'lora_B.weight']=(out_dim,8)
+    return result
+
+
+def audit(repo,run,cohort,protocol,authorized=False):
+    require(authorized,'explicit root post-completion label-join authorization required')
+    repo,run,cohort,protocol=(Path(p).resolve() for p in (repo,run,cohort,protocol))
+    # Never open label files if the worker is still running or stopped early.
+    outcome=read(run/'outcome.json'); supervision=read(run/'supervision.json')
+    require(outcome['status']=='completed_candidate_not_promoted' and outcome['failure'] is None and
+        outcome['completed_updates']==1024 and supervision['exit_code']==0 and
+        not supervision['forced_owned_termination'] and not supervision['cancel_issues'],
+        'completed candidate required before label access')
+    require(not (run/'cancel.json').exists(),'completed candidate cannot have latched cancellation')
+    import sys
+    sys.path.insert(0,str(repo/'scripts'))
+    import chess_board_fact_core as core
+    from transformers import AutoTokenizer
+    import torch
+    from safetensors.torch import load_file
+    plan=read(protocol); frozen=read(cohort/'frozen-data.json'); ownership=read(run/'ownership.json')
+    require(sha(protocol)=='56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765','approved frozen protocol hash')
+    require(sha(protocol)==frozen['protocol_sha256'],'frozen protocol binding')
+    require(sha(cohort/'frozen-data.json')==ownership['cohort_frozen_sha256'],'cohort manifest ownership binding')
+    require(core.SCHEMA==plan['inputs']['schema'] and core.INSTRUCTION==plan['inputs']['instruction_exact'],'core schema/instruction drift')
+    require(sha(core.__file__)==plan['inputs']['core_source_sha256'],'core source identity')
+    for name,digest in ownership['source_sha256'].items():
+        require(sha(run/'executed-sources'/Path(name).name)==digest,'executed source snapshot mismatch')
+        require(sha(bound_file(repo,name))==digest,'current executed source mismatch')
+    require(ownership['source_sha256']==supervision['sources_sha256'],'parent source identity disagreement')
+    review_path=Path(__file__).resolve().parents[2]/'outputs/chess-native-persistence-v3-independent-review.json'
+    require(sha(review_path)=='228c0852b75ea268fa442365b45bb0a826ac21cdaaa0af80de87868d7880d0d0','approved independent source-review receipt hash')
+    reviewed=read(review_path)
+    require(all(reviewed['source_sha256'].get(name)==digest for name,digest in ownership['source_sha256'].items()),'execution source not independently approved')
+    amendment=read(run/'executed-sources/launch-and-persistence-amendment-v3.json')
+    require(sha(run/'executed-sources/launch-and-persistence-amendment-v3.json')=='265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e','approved frozen v3 amendment hash')
+    require(sha(run/'executed-sources/launch-and-persistence-amendment-v3.json')==ownership['native_launch_identity']['amendment_sha256'],'v3 launch amendment binding')
+    prior_bindings=[]
+    for prior in [amendment['previous_attempt'],*amendment['additional_previous_attempts']]:
+        verify_files(repo/prior['path'],prior['files_sha256'])
+        prior_bindings.append({'path':prior['path'],'verified_files':len(prior['files_sha256'])})
+    splits={split:read(cohort/(split+'-inputs.json'))['rows'] for split in ('train','dev','holdout')}
+    require({k:len(v) for k,v in splits.items()}=={'train':8192,'dev':128,'holdout':256},'frozen split counts')
+    verify_files(cohort,{name:digest for name,digest in frozen['files_sha256'].items()
+        if name in ('train-inputs.json','dev-inputs.json','holdout-inputs.json')})
+    verify_all_raw_before_labels(run,splits)
+    verify_files(cohort,frozen['files_sha256'])  # Label bytes only after all seven seals.
+    tokenizer=AutoTokenizer.from_pretrained(repo/plan['model']['local_path'],local_files_only=True,trust_remote_code=False)
+    verify_files(repo/plan['model']['local_path'],plan['model']['files_sha256'])
+    for path,digest in plan['evidence']['installed_source_sha256'].items(): require(sha(path)==digest,'installed Qwen/loss source hash')
+    require(tokenizer.pad_token_id==151643 and tokenizer.eos_token_id==151645,'native special token identity')
+    model_config=read(repo/plan['model']['local_path']/'config.json')
+    model_vocab_size=model_config['vocab_size']
+    labels={split:read(cohort/(split+'-labels.json'))['rows'] for split in splits}
+    for split in splits:
+        require([r['case_id'] for r in splits[split]]==[r['case_id'] for r in labels[split]],'input/label IDs')
+        for row,label in zip(splits[split],labels[split],strict=True):
+            require(transition_truth(row['fen'],row['selected_uci'])==label['expected'],'independent transition truth differs')
+    target_counts=[native_target_count(tokenizer,row,label['expected'],core)
+        for row,label in zip(splits['train'],labels['train'],strict=True)]
+    permutation=read(run/'permutation.json')
+    require(permutation==torch.randperm(8192,generator=torch.Generator(device='cpu').manual_seed(4082031)).tolist(),'seeded permutation differs')
+    updates=[json.loads(line) for line in (run/'training.jsonl').read_text(encoding='utf-8').splitlines()]
+    training=check_updates(updates,permutation,target_counts)
+    require(outcome['cuda_peak_allocated']>=max(r['cuda_allocated_peak'] for r in updates) and
+        outcome['cuda_peak_reserved']>=max(r['cuda_reserved_peak'] for r in updates),'final CUDA peak below update counter')
+    require(read(run/'training-progress.json')['completed_updates']==1024,'final update progress differs')
+    gradient=read(run/'first-gradients.json')
+    require(len(gradient)==196 and all(value is True for value in gradient.values()),'first B gradients invalid')
+    identity=read(run/'runtime-identity.json'); integrity=read(run/'base-integrity.json')
+    launch_identity=ownership['native_launch_identity']
+    require(ownership['command']==[launch_identity['base_executable'],str(repo/'scripts/chess_fact_sft_train.py'),
+        '--repo',str(repo),'--cohort',str(cohort),'--protocol',str(protocol),'--out',str(run)],'exact owned worker command differs')
+    require(sha(launch_identity['base_executable'])==launch_identity['base_executable_sha256']==amendment['launch']['base_executable_sha256'],'base executable identity')
+    require(sha(launch_identity['venv_executable'])==launch_identity['venv_executable_sha256']==amendment['launch']['venv_redirector_sha256'],'venv redirector identity')
+    require(sha(Path(launch_identity['venv_prefix'])/'pyvenv.cfg')==launch_identity['pyvenv_cfg_sha256'],'venv configuration identity')
+    require(launch_identity['changed_environment_keys']==['__PYVENV_LAUNCHER__'],'scoped environment identity')
+    require(all(identity[name]==launch_identity['dependency_versions'][name] for name in ('torch','transformers','peft')),'runtime dependency version identity')
+    require(identity['unique_base_parameters']==596049920 and identity['adapter_parameters']==5046272,'runtime parameter identity')
+    require(integrity['unchanged'] is True and integrity['before']==integrity['after']==identity['base_tensor_sha256'],'frozen base integrity')
+    require(identity['protocol_sha256']==sha(protocol) and identity['frozen_data_sha256']==sha(cohort/'frozen-data.json'),'runtime protocol/data identity')
+    shapes=adapter_shapes(model_config)
+    require(len(shapes)==392 and sum(math.prod(shape) for shape in shapes.values())==5046272,'expected LoRA dimensions')
+    require(set(identity['trainable_names'])=={key.replace('.weight','.default.weight') for key in shapes},'runtime trainable names differ')
+    require(set(gradient)=={name for name in identity['trainable_names'] if '.lora_B.' in name},'first gradient target names differ')
+    checkpoints={}; checkpoint_tensor_summary={}; initial_tensor_hashes=None
+    for step in STEPS:
+        folder=run/('checkpoint-'+str(step)); manifest=read(folder/'manifest.json')
+        require(manifest['step']==step and manifest['base_hash']==integrity['before'],'checkpoint metadata')
+        verify_files(folder,manifest['files_sha256'])
+        tensors=load_file(folder/'adapter/adapter_model.safetensors',device='cpu')
+        require(set(tensors)==set(shapes),'checkpoint LoRA key set')
+        for name,tensor in tensors.items():
+            require(tuple(tensor.shape)==shapes[name] and tensor.dtype==torch.float32 and bool(torch.isfinite(tensor).all()),'checkpoint LoRA shape/dtype/nonfinite')
+            if step==0 and '.lora_B.' in name: require(not bool(torch.count_nonzero(tensor)),'initial LoRA B not zero')
+        tensor_hashes={name:hashlib.sha256(tensor.contiguous().numpy().tobytes()).hexdigest() for name,tensor in tensors.items()}
+        if step==0: initial_tensor_hashes=tensor_hashes
+        changed=sum(digest!=initial_tensor_hashes[name] for name,digest in tensor_hashes.items())
+        require(step==0 or changed>0,'trained checkpoint has no changed adapter tensors')
+        checkpoint_tensor_summary[step]={'changed_tensors_from_step0':changed,
+            'nonzero_B_tensors':sum(bool(torch.count_nonzero(tensor)) for name,tensor in tensors.items() if '.lora_B.' in name)}
+        state=torch.load(folder/'training-state.pt',map_location='cpu',weights_only=True)
+        require(state['step']==step and state['permutation']==permutation and state['base_hash']==integrity['before'],'checkpoint optimizer/RNG metadata')
+        optimizer=state['optimizer']; groups=optimizer['param_groups']
+        require(len(groups)==1 and len(groups[0]['params'])==392,'optimizer parameter denominator')
+        require(groups[0]['betas']==(.9,.999) and groups[0]['eps']==1e-8 and groups[0]['weight_decay']==0. and groups[0]['foreach'] is False,'optimizer hyperparameters')
+        require(groups[0]['lr']==2e-4,'checkpoint optimizer LR differs')
+        require(len(optimizer['state'])==(0 if step==0 else 392),'optimizer state denominator')
+        for entry in optimizer['state'].values():
+            require(float(entry['step'])==step and all(bool(torch.isfinite(entry[key]).all()) for key in ('exp_avg','exp_avg_sq')),'optimizer moments/steps invalid')
+        checkpoints[step]=sha(folder/'manifest.json')
+        del tensors,state
+    dev=[]; raw_by_cohort={}; aggregate={}
+    for step in STEPS:
+        name='dev-'+str(step); raw=read_sealed_raw(run/name,[r['case_id'] for r in splits['dev']])
+        require(raw['metadata']['step']==step and raw['metadata']['adapter_disabled']==(step==0) and raw['metadata']['checkpoint_sha256']==checkpoints[step],'dev checkpoint binding')
+        require(raw['metadata']['inputs_sha256']==sha(cohort/'dev-inputs.json') and raw['metadata']['protocol_sha256']==sha(protocol),'dev input/protocol binding')
+        statuses=check_raw_tokens(raw['rows'],splits['dev'],tokenizer,core,model_vocab_size)
+        require(not statuses.get('error') and not statuses.get('not_run'),'incomplete dev generation')
+        computed=independent_score(raw['rows'],labels['dev'],plan['inputs']['schema'])
+        reported=read(run/(name+'-score.json'))
+        require(all(computed[key]==reported[key] for key in computed),'independent dev score differs')
+        require(reported['seal_sha256']==sha(run/name/'seal.json') and reported['labels_sha256']==frozen['files_sha256']['dev-labels.json'],'dev score provenance')
+        dev.append({'step':step,'counts':computed['counts'],'score_sha256':sha(run/(name+'-score.json')),'checkpoint_sha256':checkpoints[step]})
+        raw_by_cohort[name]=raw['rows']; aggregate[name]=computed['counts']
+    require(read(run/'dev-scores.json')==dev,'dev ranking source scores differ')
+    selection=read(run/'selection.json'); winner=selected_step(dev)
+    require(selection['selected_step']==winner,'dev-only selected checkpoint differs')
+    require(selection['ranking']==sorted(dev,key=lambda r:(-r['counts']['all_eight_correct'],-r['counts']['strict_parse_completed'],r['step'])),'complete selected ranking differs')
+    require(selection['checkpoint_bindings']=={str(k):v for k,v in checkpoints.items()} and selection['base_hash']==integrity['before'],'selection checkpoint bindings')
+    require(read(run/'phase.json')['selection_sha256']==sha(run/'selection.json'),'holdout phase selection binding')
+    for condition in ('base','selected'):
+        name='holdout-'+condition; raw=read_sealed_raw(run/name,[r['case_id'] for r in splits['holdout']])
+        disabled=condition=='base' or winner==0
+        require(raw['metadata']['selection_sha256']==sha(run/'selection.json') and raw['metadata']['inputs_sha256']==sha(cohort/'holdout-inputs.json'),'heldout selection/input binding')
+        require(raw['metadata']['step']==(0 if disabled else winner) and raw['metadata']['adapter_disabled']==disabled,'heldout condition identity')
+        statuses=check_raw_tokens(raw['rows'],splits['holdout'],tokenizer,core,model_vocab_size)
+        require(not statuses.get('error') and not statuses.get('not_run'),'incomplete heldout generation')
+        computed=independent_score(raw['rows'],labels['holdout'],plan['inputs']['schema'])
+        reported=read(run/(name+'-score.json'))
+        require(all(computed[key]==reported[key] for key in computed),'independent heldout score differs')
+        require(reported['seal_sha256']==sha(run/name/'seal.json') and reported['labels_sha256']==frozen['files_sha256']['holdout-labels.json'],'heldout score provenance')
+        raw_by_cohort[name]=raw['rows']; aggregate[name]=computed['counts']
+    ledger=read(run/'outcome-ledger.json'); declared=read(run/'planned-outcomes.json')
+    require(ledger['planned']==declared['planned']==1152 and ledger['cohorts']==raw_by_cohort,'full1152 outcome ledger differs from sealed raw')
+    require(set(declared['cohorts'])==set(raw_by_cohort) and all(declared['cohorts'][key]==[r['case_id'] for r in rows] for key,rows in raw_by_cohort.items()),'declared full denominator identity')
+    resources=check_resources(read(run/'preflight.json'),[json.loads(line) for line in (run/'resources.jsonl').read_text().splitlines()],ownership,supervision,read(run/'phase.json'))
+    return {'schema':'chess.native-fact-sft.independent-completed-run-audit.v1',
+        'utc':datetime.now(timezone.utc).isoformat(),'verdict':'RETAINED_ARTIFACTS_MATCH_FROZEN_CANDIDATE_NO_PROMOTION',
+        'training':training,'selected_step':winner,'counts':aggregate,'full_planned':1152,
+        'resources':resources,'preserved_prior_attempts':prior_bindings,
+        'protocol_sha256':sha(protocol),'frozen_data_sha256':sha(cohort/'frozen-data.json'),
+        'approved_source_review_sha256':sha(review_path),'model_files_sha256':plan['model']['files_sha256'],
+        'selection_sha256':sha(run/'selection.json'),'source_sha256':ownership['source_sha256'],
+        'checkpoint_manifest_sha256':checkpoints,
+        'checkpoint_tensor_summary':checkpoint_tensor_summary,
+        'development_repeat_disclosure':amendment['development_repeat_disclosure'],
+        'timestamp_observations':{
+            'selection_before_both_holdout_seal_mtimes':all((run/'selection.json').stat().st_mtime_ns<=(run/('holdout-'+condition)/'seal.json').stat().st_mtime_ns for condition in ('base','selected')),
+            'every_dev_seal_before_its_score_mtime':all((run/('dev-'+str(step))/'seal.json').stat().st_mtime_ns<=(run/('dev-'+str(step)+'-score.json')).stat().st_mtime_ns for step in STEPS)},
+        'chronology_evidence':'Reviewed executed source orders persisted selection before heldout generation; both heldout raw metadata and phase bind that selection hash. Ordinary file timestamps alone are not treated as cryptographic chronology.',
+        'limits':['No model/engine/generation rerun. File-only descriptive verification, not promotion/Elo/commentary competence.',
+            'Heldout support includes one rook promotion and no positive castling/en-passant examples; those sparse or absent classes cannot establish broad special-move skill.',
+            'Prior sixteen baseline-development outputs are preserved separately and never pooled into v3 metrics.']}
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser()
+    for key in ('repo','run','cohort','protocol','output'): parser.add_argument('--'+key,required=True)
+    parser.add_argument('--completed-run-audit-authorized',action='store_true')
+    args=parser.parse_args()
+    output=Path(args.output)
+    require(not output.exists(),'create-only audit report')
+    report=audit(args.repo,args.run,args.cohort,args.protocol,args.completed_run_audit_authorized)
+    with output.open('x',encoding='utf-8',newline='\n') as stream: stream.write(json.dumps(report,indent=2)+'\n')
+    print(json.dumps({'output':str(output),'sha256':sha(output),'verdict':report['verdict']}))

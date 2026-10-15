@@ -1,0 +1,99 @@
+"""Curate a completed, independently audited run. Never invokes a model."""
+import hashlib
+import json
+from pathlib import Path
+import shutil
+from fact_sft_publication_gate import BINDINGS, BINDINGS_SHA, verify_publication_inputs
+
+ROOT = Path(__file__).resolve().parent.parent
+REPO = ROOT/'work/repos/sports-play-llm-research'
+PRIVATE = REPO/'data/private/chess-fact-sft-v1'
+RUN = PRIVATE/'native-run-v3'
+PACKAGE = REPO/'experiments/chess-fact-sft-v1'
+AUDIT = ROOT/'outputs/chess-fact-sft-completed-independent-review.json'
+
+def read(path):
+    return json.loads(path.read_text(encoding='utf-8'))
+
+def sha(path):
+    digest = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(65536), b''):
+            digest.update(block)
+    return digest.hexdigest()
+
+def save(path, value):
+    with path.open('x', encoding='utf-8', newline='\n') as stream:
+        stream.write(json.dumps(value, indent=2, allow_nan=False)+'\n')
+
+def main():
+    # This guard precedes any dataset label or retained response access.
+    verify_publication_inputs()
+    outcome = read(RUN/'outcome.json')
+    supervisor = read(RUN/'supervision.json')
+    assert outcome['status'] == 'completed_candidate_not_promoted'
+    assert outcome['completed_updates'] == 1024 and outcome['failure'] is None
+    assert supervisor['exit_code'] == 0 and not supervisor['forced_owned_termination']
+    audit = read(AUDIT)
+    assert audit['verdict'] == 'RETAINED_ARTIFACTS_MATCH_FROZEN_CANDIDATE_NO_PROMOTION'
+    assert audit['training']['updates'] == 1024
+    assert audit['selected_step'] == read(RUN/'selection.json')['selected_step']
+    reviews = ('chess-fact-sft-intake-audit.json',
+               'chess-native-persistence-v3-independent-review.json',
+               'chess-native-v2-failure-attribution-clarification.json',
+               'chess-fact-sft-coverage-clarification.json')
+    assert all((ROOT/'outputs'/name).is_file() for name in reviews)
+    public = PACKAGE/'evidence'
+    assert not public.exists(), 'create-only public evidence package'
+    public.mkdir()
+    copied, private = [], []
+    def copy(source, relative):
+        target = public/relative
+        assert not target.exists()
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(source, target)
+        assert sha(source) == sha(target)
+        copied.append({'path':relative.as_posix(), 'bytes':target.stat().st_size,
+                       'sha256':sha(target)})
+    def inventory(directory, prefix):
+        for source in sorted(directory.rglob('*')):
+            if not source.is_file():
+                continue
+            relative = Path(prefix)/source.relative_to(directory)
+            # Keep all weights/optimizer/RNG states local. Only completed-v3
+            # journals duplicate sealed raws. Failed-attempt journals are public.
+            duplicate_journal = prefix == 'native-run-v3' and source.name.endswith('.journal.jsonl')
+            if source.suffix in ('.pt', '.safetensors') or duplicate_journal:
+                private.append({'source':relative.as_posix(), 'bytes':source.stat().st_size,
+                                'sha256':sha(source)})
+                continue
+            # Executed source snapshots are inert evidence, byte-exact.
+            if relative.suffix == '.py':
+                relative = relative.with_suffix('.py.txt')
+            copy(source, relative)
+    inventory(PRIVATE/'cohort', 'cohort')
+    inventory(RUN, 'native-run-v3')
+    for name in ('native-run-v1', 'native-run-v2'):
+        inventory(PRIVATE/name, name)
+    for name in ('acquisition.json', 'acquisition-v2.json'):
+        copy(PRIVATE/name, Path('acquisition')/name)
+    copy(AUDIT, Path('independent-completed-review.json'))
+    copy(BINDINGS, Path('reviews/chess-fact-sft-publication-bindings.json'))
+    for name in ('fact_sft_publication_gate.py', 'package_native_fact_sft.py', 'build_native_fact_summary.py'):
+        copy(ROOT/'work'/name, Path('publication-sources')/(name+'.txt'))
+    for name in reviews:
+        copy(ROOT/'outputs'/name, Path('reviews')/name)
+    copy(ROOT/'work/chess-fact-sft-legacy-tests-v1.txt', Path('reviews/chess-fact-sft-legacy-tests-v1.txt'))
+    save(public/'manifest.json', {'schema':'chess.fact-sft.public-evidence-manifest.v1',
+        'files':copied, 'private_hashed_artifacts':private,
+        'private_reason':'Model/adapter weights and optimizer/RNG states stay local; journals duplicate sealed complete raw records. No media or upstream source shard is redistributed.',
+        'base_and_source_identity':'Pinned protocol and acquisition receipts bind the private base weights and CC0 source shard.',
+        'completed_audit_sha256':sha(AUDIT), 'new_model_calls':0,
+        'publication_bindings_sha256':BINDINGS_SHA,
+        'assistance':'Codex-assisted engineering candidate; no formal research promotion.'})
+    verify_publication_inputs()
+    print(json.dumps({'public_files':len(copied), 'private_hashed':len(private),
+                      'manifest_sha256':sha(public/'manifest.json')}))
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,7 @@
+{
+  "status": "completed_candidate_not_promoted",
+  "failure": null,
+  "completed_updates": 1024,
+  "cuda_peak_allocated": 3843710976,
+  "cuda_peak_reserved": 4261412864
+}

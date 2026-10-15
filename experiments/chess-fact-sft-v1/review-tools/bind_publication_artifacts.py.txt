@@ -1,0 +1,162 @@
+"""One justified file-only re-audit between identical complete inventories.
+
+No model construction, forward, engine, inference or generation is invoked.
+The frozen retained-file auditor is executed byte-for-byte, unmodified.
+"""
+from __future__ import annotations
+
+from datetime import datetime, timezone
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+WORKSPACE = Path(__file__).resolve().parents[2]
+REPO = WORKSPACE / "work/repos/sports-play-llm-research"
+PRIVATE = REPO / "data/private/chess-fact-sft-v1"
+RUN = PRIVATE / "native-run-v3"
+COHORT = PRIVATE / "cohort"
+PROTOCOL = REPO / "experiments/chess-fact-sft-v1/protocol.json"
+AUDITOR = Path(__file__).with_name("audit_completed_native_run.py")
+ORIGINAL = WORKSPACE / "outputs/chess-fact-sft-completed-independent-review.json"
+AUDITOR_SHA = "9c8f7aa9a647ebde2adca18d86165000a3a975c8578d2a36227edb580134c6da"
+ORIGINAL_SHA = "afbadb547d1ba0e232fb79fccab35ae241a1b516002c8336852e0fb1a58e7587"
+OUTPUT = WORKSPACE / "outputs/chess-fact-sft-publication-bindings.json"
+REAUDIT = Path(__file__).with_name("publication-reaudit-v1.json")
+LOG = Path(__file__).with_name("publication-reaudit-actual-v1.log")
+BEFORE = Path(__file__).with_name("publication-inventory-before-v1.json")
+AFTER = Path(__file__).with_name("publication-inventory-after-v1.json")
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(65536), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def create(path, value):
+    with Path(path).open("x", encoding="utf-8", newline="\n") as stream:
+        json.dump(value, stream, indent=2, allow_nan=False)
+        stream.write("\n")
+
+
+def inventory():
+    roots = [COHORT, *(PRIVATE / name for name in ("native-run-v1", "native-run-v2", "native-run-v3"))]
+    paths, directories = set(), {}
+    for root in roots:
+        if not root.is_dir(): raise ValueError("required inventory directory absent")
+        found = sorted(path for path in root.rglob("*") if path.is_file())
+        directories[root.relative_to(REPO).as_posix()] = [p.relative_to(REPO).as_posix() for p in found]
+        paths.update(found)
+    # Existing committed plan/amendment files are inputs. The package directory
+    # is also the declared future output location, so additions there are not an
+    # input-directory mutation; every existing file is still individually bound.
+    paths.update(p for p in (REPO / "experiments/chess-fact-sft-v1").rglob("*") if p.is_file())
+    paths.update((PRIVATE / name for name in ("acquisition.json", "acquisition-v2.json")))
+    plan = read(PROTOCOL)
+    for name in plan["model"]["files_sha256"]:
+        paths.add(REPO / plan["model"]["local_path"] / name)
+    paths.update(Path(name) for name in plan["evidence"]["installed_source_sha256"])
+    ownership = read(RUN / "ownership.json")
+    paths.update(REPO / name for name in ownership["source_sha256"])
+    native = ownership["native_launch_identity"]
+    paths.update((Path(native["base_executable"]), Path(native["venv_executable"]), Path(native["venv_prefix"]) / "pyvenv.cfg"))
+    paths.update((AUDITOR, ORIGINAL, WORKSPACE / "work/chess-fact-sft-legacy-tests-v1.txt"))
+    for name in ("chess-fact-sft-intake-audit.json", "chess-native-persistence-v3-independent-review.json",
+                 "chess-native-v2-failure-attribution-clarification.json", "chess-fact-sft-coverage-clarification.json"):
+        paths.add(WORKSPACE / "outputs" / name)
+    groups = {"repo_files_sha256": {}, "workspace_files_sha256": {}, "external_files_sha256": {}}
+    sizes = {}
+    for path in sorted(paths):
+        path = path.resolve()
+        if path.is_relative_to(REPO.resolve()):
+            group, key = "repo_files_sha256", path.relative_to(REPO.resolve()).as_posix()
+        elif path.is_relative_to(WORKSPACE.resolve()):
+            group, key = "workspace_files_sha256", path.relative_to(WORKSPACE.resolve()).as_posix()
+        else:
+            group, key = "external_files_sha256", str(path)
+        groups[group][key] = sha(path)
+        sizes[group + ":" + key] = path.stat().st_size
+    return {**groups, "directory_inventory": directories, "file_bytes": sizes}
+
+
+def main():
+    for path in (OUTPUT, REAUDIT, LOG, BEFORE, AFTER):
+        if path.exists(): raise FileExistsError("create-only publication audit; preserve prior attempt")
+    if sha(AUDITOR) != AUDITOR_SHA or sha(ORIGINAL) != ORIGINAL_SHA:
+        raise ValueError("frozen auditor/original audit identity mismatch")
+    original = read(ORIGINAL)
+    before = inventory()
+    create(BEFORE, before)
+    child_env = os.environ.copy()
+    if any(child_env.get(name) for name in ("PYTHONHOME", "PYTHONPATH", "PYTHONEXECUTABLE", "__PYVENV_LAUNCHER__")):
+        raise ValueError("conflicting native CPU auditor launch environment")
+    child_env["__PYVENV_LAUNCHER__"] = str(Path(sys.executable).resolve())
+    command = [str(Path(sys._base_executable).resolve()), "-B", str(AUDITOR), "--repo", str(REPO),
+        "--run", str(RUN), "--cohort", str(COHORT), "--protocol", str(PROTOCOL),
+        "--output", str(REAUDIT), "--completed-run-audit-authorized"]
+    with LOG.open("xb") as stream:
+        result = subprocess.run(command, env=child_env, cwd=WORKSPACE, stdout=stream, stderr=subprocess.STDOUT, timeout=300)
+    if result.returncode != 0:
+        raise RuntimeError("publication re-audit failed; actual log retained")
+    after = inventory()
+    create(AFTER, after)
+    if before != after:
+        raise ValueError("publication inventory changed across re-audit")
+    repeated = read(REAUDIT)
+    if {key: value for key, value in original.items() if key != "utc"} != {key: value for key, value in repeated.items() if key != "utc"}:
+        raise ValueError("re-audit differs from original beyond UTC")
+    score_bindings = {}
+    for name, audited_counts in original["counts"].items():
+        path = RUN / (name + "-score.json")
+        score = read(path)
+        if score["counts"] != audited_counts or score["seal_sha256"] != sha(RUN / name / "seal.json"):
+            raise ValueError("score differs from original audited counts/seal")
+        score_bindings[name] = {"score_sha256": sha(path), "raw_seal_sha256": score["seal_sha256"],
+                               "labels_sha256": score["labels_sha256"], "counts": audited_counts}
+    selection = read(RUN / "selection.json")
+    integrity = read(RUN / "base-integrity.json")
+    if sha(RUN / "selection.json") != original["selection_sha256"] or selection["selected_step"] != original["selected_step"]:
+        raise ValueError("selection differs from completed audit")
+    if not integrity["unchanged"] or integrity["before"] != integrity["after"]:
+        raise ValueError("base integrity differs")
+    for step, digest in original["checkpoint_manifest_sha256"].items():
+        if sha(RUN / ("checkpoint-" + step) / "manifest.json") != digest:
+            raise ValueError("checkpoint manifest differs from audit")
+    binding = {
+        "schema": "chess.native-fact-sft.publication-bindings.v1",
+        "utc": datetime.now(timezone.utc).isoformat(),
+        "verdict": "STABLE_COMPLETE_INVENTORY_AND_IDENTICAL_FILE_ONLY_REAUDIT",
+        "repo_root": str(REPO.resolve()), "workspace_root": str(WORKSPACE.resolve()),
+        **after,
+        "original_completed_audit_sha256": ORIGINAL_SHA,
+        "frozen_auditor_sha256": AUDITOR_SHA,
+        "reaudit": {"path": str(REAUDIT), "sha256": sha(REAUDIT), "actual_log_path": str(LOG), "actual_log_sha256": sha(LOG),
+                    "exit_code": result.returncode, "identical_except_utc": True},
+        "inventory_before_sha256": sha(BEFORE), "inventory_after_sha256": sha(AFTER),
+        "directory_and_file_inventories_identical_before_after": True,
+        "audited_counts": original["counts"], "full_planned": original["full_planned"],
+        "scores": score_bindings, "selected_step": original["selected_step"],
+        "selection_sha256": original["selection_sha256"],
+        "checkpoint_manifest_sha256": original["checkpoint_manifest_sha256"],
+        "base_integrity": integrity, "base_integrity_sha256": sha(RUN / "base-integrity.json"),
+        "binding_builder_sha256": sha(__file__), "command": command,
+        "original_audit_unchanged": sha(ORIGINAL) == ORIGINAL_SHA,
+        "model_engine_generation_calls": 0,
+        "limits": ["Single justified file-only re-audit for publication binding; no new experiment or response generation.",
+                   "Consumers must reject any changed/missing inventoried file and any addition/removal under the inventoried directories before copying or deriving results.",
+                   "Base had zero strict-schema-valid responses; this does not establish absence of factual content or necessarily invalid JSON syntax.",
+                   "Selected 242/256 all-eight and256schema-valid results describe format and task conformance on the fixed cohort, not pure chess understanding."]}
+    create(OUTPUT, binding)
+    print(json.dumps({"output": str(OUTPUT), "sha256": sha(OUTPUT), "files": sum(len(after[key]) for key in ("repo_files_sha256", "workspace_files_sha256", "external_files_sha256")), "verdict": binding["verdict"]}))
+
+
+if __name__ == "__main__": main()

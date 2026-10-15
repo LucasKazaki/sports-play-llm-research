@@ -1,0 +1,26 @@
+{
+  "files_sha256": {
+    "before-selection.json": "decea38386533453835dafc17aa0f659637998a729883ba08aa3c5abf182298c",
+    "dataset.json": "ae1cfa3ad6c4e7582fa233d6118f7a4baaaa7dc05d57ee9d6b5807c321bd983c",
+    "dev-inputs.json": "68c02d2d947ee4324c0997eac3c45fbce878f0d33a1456c3a4504a342f7bfca2",
+    "dev-labels.json": "cf67b1d588f7cfaf2162e2515be0b5b7b021e681f420d16ab66bd9ce7c1c1354",
+    "exclusion-registry.json": "79ae0c7244f3d0bf525988c448dee1b419e35f1fb05845cbec0cccad047824f0",
+    "holdout-inputs.json": "3dda4139c4c6706f7db5c5cf0705a7c617cf2dc0b24f8be99e66819d540b146a",
+    "holdout-labels.json": "6eb9595d07ed23a56f8d43e95b5177ef5d62c4b45e6149460c762055d9d38e79",
+    "protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+    "selection-sources/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "selection-sources/chess_board_fact_diagnostic.py": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d",
+    "selection-sources/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+    "selection-trace.jsonl": "eb8c7d87706b4a35375a5990a06a680363970003cc097bcc6ac8bf6c45e49967",
+    "train-inputs.json": "a0392a16efe545f9a145ed9f465ed7b619259c1e3eb9225074b19d7e45e432fc",
+    "train-labels.json": "d35822e1251072081831abe92dc14b249fe118d7aaa0c862eca8cd3c7add0339"
+  },
+  "model_calls": 0,
+  "protocol_sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+  "schema": "chess.fact-sft.frozen-data.v1",
+  "split_counts": {
+    "dev": 128,
+    "holdout": 256,
+    "train": 8192
+  }
+}

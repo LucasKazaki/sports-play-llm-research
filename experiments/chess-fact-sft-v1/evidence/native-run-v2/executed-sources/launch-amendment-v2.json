@@ -1,0 +1,79 @@
+{
+  "schema": "chess.native-fact-sft.launch-amendment.v2",
+  "status": "FROZEN_BEFORE_LAUNCH_REPAIR_IMPLEMENTATION_AND_NEW_ATTEMPT",
+  "frozen_at_utc": "2026-10-15T07:59:48.192229+00:00",
+  "base_protocol_sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+  "reason": "Windows3.12 virtualenv redirector created a second process. Original Popen PID differed from model worker PID; exact-identity guard rejected before torch import/model load. No pretrained forward, training update or generated response occurred.",
+  "previous_attempt": {
+    "path": "data/private/chess-fact-sft-v1/native-run-v1",
+    "files_sha256": {
+      "executed-sources/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+      "executed-sources/chess_fact_sft_common.py": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4",
+      "executed-sources/chess_fact_sft_evaluate.py": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99",
+      "executed-sources/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+      "executed-sources/chess_fact_sft_supervise.py": "d9cc7d8700e80dce4b5577635dfb288dffb2e600561d71d29b31112477ce3b12",
+      "executed-sources/chess_fact_sft_train.py": "cf7391e3ab4d8c94dbbda956f7c44042fece10b249e3182bcc8a27554fe0f5c5",
+      "executed-sources/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+      "executed-sources/protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+      "outcome-ledger.json": "2af2d4d38baf9246902287dcad0db65da64ac0ddf3e3ac63053debb4ce8968a9",
+      "ownership.json": "dee8d74ecb6235e15b1270f42b9c69459fca3f107f881e49c784c3f8e459bf80",
+      "planned-outcomes.json": "d11d6ceb054639b27dfb4076e077474c52922d4bfdf041f564088b2c0b78734c",
+      "preflight.json": "4b3e6dbf52c4fdfdf7403f6e494cc9eac5d8fb1a7c8a856add334e3f3d29b5bd",
+      "resources.jsonl": "59336db55e55f168d4fb335ab515c7515a9255ddef11d94985bcfd170bc14658",
+      "supervision.json": "8862b523e141b687efa14b86027593df275b973b4018ed40b99f94d8f5ae1dea",
+      "worker.stderr.txt": "c42024517f53abfc843c826fae71137aca4957a1f3509f205efd4e7e1660e357",
+      "worker.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "planned_outcomes": 1152,
+    "all_not_run": true,
+    "weights_loaded": 0,
+    "pretrained_forwards": 0,
+    "optimizer_updates": 0,
+    "preserve_unchanged": true
+  },
+  "cpu_research": {
+    "probe_sha256": "41177d7b4700ef9ae499df1e645d29bd9dae46688734d18c000a60be9183b20d",
+    "source_sha256": "5334cb91c0c377c422f32dfbffe5517a1e2a967ffbd3a8405a0824ce636ff473",
+    "observed_popen_pid": 39104,
+    "observed_worker_pid": 39104,
+    "same_venv_prefix_and_dependency_versions": true,
+    "torch_imports": 0,
+    "GPU_calls": 0
+  },
+  "launch": {
+    "platform": "win32",
+    "python_version": "3.12.2",
+    "base_executable_sha256": "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181",
+    "venv_redirector_sha256": "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5",
+    "command": "Use verified sys._base_executable directly as Popen executable, same fixed model-worker argv. The exact returned Popen handle now owns actual Python worker.",
+    "environment": "Copy environment for this child only and set __PYVENV_LAUNCHER__ to the verified sys.executable virtualenv path. Reject nonempty PYTHONHOME or PYTHONPATH. No global environment/config changes.",
+    "identity_gate": "Before any weights/torch work, retain parent ownership PID and require child os.getpid exact equality; verify child sys.prefix and sys.executable match expected venv identities. Hash executable/redirector and pyvenv.cfg, retain single changed env key only; never expose all inherited environment.",
+    "cleanup": "Same sampled resource thresholds, cooperative cancellation and30second exact-Popen-handle termination. No name-based or descendant enumeration kills."
+  },
+  "new_attempt": {
+    "path": "data/private/chess-fact-sft-v1/native-run-v2",
+    "count": 1,
+    "create_only": true,
+    "requires": "Independent source/CPU identity+exact-handle tests and root review before launch",
+    "unchanged": [
+      "cohort and8576native-boundary audit",
+      "model/tokenizer/adapter settings",
+      "1024updates,batch8,tail128,LR andseed",
+      "all640dev/512holdoutplanned outcomes",
+      "dev-only checkpointselection beforeholdout",
+      "10/16/13GiBstart and4/8/1GiBstop reserves",
+      "3600training+dev/1800holdout phases",
+      "strict parsing,no response repair,nofallback orautomaticpromotion"
+    ]
+  },
+  "primary_sources": [
+    "https://docs.python.org/3.12/library/venv.html",
+    "https://raw.githubusercontent.com/python/cpython/v3.12.2/PC/launcher.c",
+    "https://raw.githubusercontent.com/python/cpython/v3.12.2/Modules/getpath.py"
+  ],
+  "limits": [
+    "CPU-only launch proof does not establish training/runtime success",
+    "No original attempt replay or outcome based model tuning",
+    "Preserve all original and amended source identities separately"
+  ]
+}

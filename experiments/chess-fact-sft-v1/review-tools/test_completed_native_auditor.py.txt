@@ -1,0 +1,245 @@
+"""Finite synthetic auditor tests; no real cohort/output/model/backend access."""
+import copy
+import json
+from pathlib import Path
+import pytest
+import audit_completed_native_run as audit
+from types import SimpleNamespace
+
+SCHEMA={'properties':{
+    'moving_piece':{'enum':['pawn','knight','bishop','rook','queen','king','unknown']},
+    'moving_colour':{'enum':['white','black','unknown']},
+    'captured_piece':{'enum':['pawn','knight','bishop','rook','queen','king',None,'unknown']},
+    'promotion_piece':{'enum':['queen','rook','bishop','knight',None,'unknown']}}}
+TRUTH={'moving_piece':'pawn','moving_colour':'white','is_capture':False,'captured_piece':None,
+    'gives_check':False,'is_castling':False,'is_en_passant':False,'promotion_piece':None}
+
+
+def test_authorization_precedes_every_file_open(monkeypatch):
+    monkeypatch.setattr(audit,'read',lambda p:pytest.fail('no file may be opened without post-completion authorization'))
+    with pytest.raises(ValueError,match='post-completion'):
+        audit.audit('repo','run','cohort','protocol',authorized=False)
+
+
+@pytest.mark.parametrize('mutation',[{'status':'aborted'},{'completed_updates':1023},{'failure':'local write error'}])
+def test_incomplete_run_never_reads_labels_or_imports_models(monkeypatch,mutation):
+    opened=[]
+    outcome={'status':'completed_candidate_not_promoted','completed_updates':1024,'failure':None,**mutation}
+    def read(path):
+        opened.append(Path(path).name)
+        if Path(path).name=='outcome.json':return outcome
+        if Path(path).name=='supervision.json':return {'exit_code':0,'forced_owned_termination':False,'cancel_issues':[]}
+        pytest.fail('no other artifact/label may be read for incomplete job')
+    monkeypatch.setattr(audit,'read',read)
+    with pytest.raises(ValueError,match='completed candidate'):
+        audit.audit('repo','run','cohort','protocol',authorized=True)
+    assert opened==['outcome.json','supervision.json']
+
+
+def update_fixture():
+    permutation=[7,0,6,1,5,2,4,3];targets=list(range(1,9))
+    rows=[{'step':i+1,'loss':2.5-i*.1,'gradient_norm_before_clip':i+.5,
+        'lr':2e-4*((i+1)/32),'target_tokens':sum(targets[p] for p in permutation[i*2:(i+1)*2]),
+        'elapsed_seconds':.1,'cuda_allocated_peak':1,'cuda_reserved_peak':2} for i in range(4)]
+    return rows,permutation,targets
+
+
+def test_all_updates_match_permutation_token_weighting_and_lr():
+    rows,permutation,targets=update_fixture()
+    result=audit.check_updates(rows,permutation,targets,batch_size=2,expected_updates=4)
+    assert result['updates']==4 and result['examples_consumed_once']==8 and result['target_tokens']==36
+
+
+@pytest.mark.parametrize('kind',['missing_update','duplicate_example','wrong_lr','nan_loss','inf_gradient','wrong_batch_tokens'])
+def test_update_accounting_failures_rejected(kind):
+    rows,permutation,targets=update_fixture()
+    if kind=='missing_update':rows.pop()
+    if kind=='duplicate_example':permutation[0]=permutation[1]
+    if kind=='wrong_lr':rows[1]['lr']=2e-4
+    if kind=='nan_loss':rows[0]['loss']=float('nan')
+    if kind=='inf_gradient':rows[3]['gradient_norm_before_clip']=float('inf')
+    if kind=='wrong_batch_tokens':rows[0]['target_tokens']+=1
+    with pytest.raises(ValueError):audit.check_updates(rows,permutation,targets,batch_size=2,expected_updates=4)
+
+
+@pytest.mark.parametrize('corruption',['duplicate','integer_boolean','fence','extra','nan','unknown_category'])
+def test_strict_parser_rejects_shape_type_and_format_corruption(corruption):
+    value=dict(TRUTH)
+    if corruption=='integer_boolean':value['is_capture']=0
+    if corruption=='extra':value['explanation']='not allowed'
+    if corruption=='nan':value['gives_check']=float('nan')
+    if corruption=='unknown_category':value['moving_piece']='dragon'
+    text=json.dumps(value)
+    if corruption=='duplicate':text=text[:-1]+',"moving_piece":"pawn"}'
+    if corruption=='fence':text='```json\n'+text+'\n```'
+    with pytest.raises((ValueError,TypeError)):audit.strict_parse(text,SCHEMA)
+
+
+def test_full_denominator_keeps_all_failure_classes_and_no_unknown_credit():
+    rows=[];labels=[]
+    for index,status in enumerate(['completed','completed','completed','truncated','error','not_run']):
+        text=json.dumps(TRUTH)
+        if index==1:text=json.dumps({**TRUTH,'moving_piece':'unknown'})
+        if index==2:text='```'+text+'```'
+        rows.append({'case_id':str(index),'status':status,'text':text})
+        labels.append({'case_id':str(index),'expected':TRUTH})
+    score=audit.independent_score(rows,labels,SCHEMA)
+    assert score['counts']=={'planned':6,'all_eight_correct':1,'strict_parse_completed':2,
+        'parse_error':1,'truncated':1,'error':1,'not_run':1}
+    assert score['fields']['moving_piece']['correct']==1 and score['fields']['moving_piece']['unknown']==1
+    assert score['fields']['is_capture']['classes']['false']=={'support':6,'correct':2}
+
+
+def create_raw(directory,case_id):
+    directory.mkdir()
+    raw={'rows':[{'case_id':case_id,'status':'completed','text':json.dumps(TRUTH)}],
+        'planned':1,'metadata':{'frozen_fixture':True}}
+    (directory/'raw.json').write_text(json.dumps(raw))
+    (directory/'seal.json').write_text(json.dumps({'raw_sha256':audit.sha(directory/'raw.json'),
+        'planned':1,'planned_ids':[case_id],'metadata':raw['metadata']}))
+
+
+def test_all_seven_raw_seals_required_before_join(tmp_path):
+    for step in audit.STEPS:create_raw(tmp_path/('dev-'+str(step)),'dev')
+    for condition in ('base','selected'):create_raw(tmp_path/('holdout-'+condition),'held')
+    splits={'dev':[{'case_id':'dev'}],'holdout':[{'case_id':'held'}]}
+    assert len(audit.verify_all_raw_before_labels(tmp_path,splits))==7
+    (tmp_path/'holdout-selected/raw.json').write_text('{"modified":true}')
+    with pytest.raises(ValueError,match='seal mismatch'):
+        audit.verify_all_raw_before_labels(tmp_path,splits)
+
+
+class TokenFixture:
+    eos_token_id=9
+    pad_token_id=0
+    def __len__(self):return 10
+    def apply_chat_template(self,*a,**k):return [1,2]
+    def decode(self,ids,**kwargs):return 'raw complete bytes'
+
+
+def token_fixture():
+    import hashlib
+    row={'case_id':'fixture','status':'completed','prompt_ids':[1,2],
+        'prompt_sha256':hashlib.sha256(str([1,2]).encode()).hexdigest(),
+        'new_ids':[7,9,0],'text':'raw complete bytes','elapsed_seconds':.2}
+    return row,[{'case_id':'fixture'}],TokenFixture(),SimpleNamespace(build_prompt=lambda *a:'pre-move-only fixture')
+
+
+def test_raw_native_prompt_and_generated_eos_recount():
+    row,inputs,tokenizer,core=token_fixture()
+    assert audit.check_raw_tokens([row],inputs,tokenizer,core,12)=={'completed':1}
+    row.update(status='truncated',new_ids=[7]*128)
+    assert audit.check_raw_tokens([row],inputs,tokenizer,core,12)=={'truncated':1}
+
+
+@pytest.mark.parametrize('kind',['prompt_ids','prompt_hash','decode','after_eos','bool_token','out_of_vocab','short_truncation','cap','latency'])
+def test_raw_tokens_cannot_hide_bad_prompt_truncation_or_decode(kind):
+    row,inputs,tokenizer,core=token_fixture()
+    if kind=='prompt_ids':row['prompt_ids']=[1,3]
+    if kind=='prompt_hash':row['prompt_sha256']='0'*64
+    if kind=='decode':row['text']='changed raw text'
+    if kind=='after_eos':row['new_ids']=[7,9,1]
+    if kind=='bool_token':row['new_ids']=[True,9]
+    if kind=='out_of_vocab':row['new_ids']=[12,9]
+    if kind=='short_truncation':row.update(status='truncated',new_ids=[7]*127)
+    if kind=='cap':row.update(status='truncated',new_ids=[7]*129)
+    if kind=='latency':row['elapsed_seconds']=-1
+    with pytest.raises(ValueError):audit.check_raw_tokens([row],inputs,tokenizer,core,12)
+
+
+def test_retained_ids_use_model_head_dimension_not_shorter_tokenizer_length():
+    row,inputs,tokenizer,core=token_fixture()
+    assert len(tokenizer)==10
+    row['new_ids']=[11,9]  # Valid model-head output beyond the tokenizer table.
+    assert audit.check_raw_tokens([row],inputs,tokenizer,core,12)=={'completed':1}
+    row['new_ids']=[12,9]
+    with pytest.raises(ValueError,match='generated IDs'):
+        audit.check_raw_tokens([row],inputs,tokenizer,core,12)
+
+
+def test_independent_dev_tie_break_and_incomplete_rejection():
+    scores=[{'step':step,'counts':{'planned':128,'all_eight_correct':4,'strict_parse_completed':127,'error':0,'not_run':0}}
+        for step in audit.STEPS]
+    assert audit.selected_step(scores)==0
+    scores[1]['counts']['strict_parse_completed']=128
+    assert audit.selected_step(scores)==128
+    scores[3]['counts']['all_eight_correct']=5
+    assert audit.selected_step(scores)==512
+    scores[4]['counts']['not_run']=1
+    with pytest.raises(ValueError,match='incomplete'):audit.selected_step(scores)
+
+
+@pytest.mark.parametrize('fen,move,fields',[
+    ('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1','e2e4',{'moving_piece':'pawn','is_capture':False,'gives_check':False}),
+    ('4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1','e5d6',{'is_capture':True,'captured_piece':'pawn','is_en_passant':True}),
+    ('r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1','e1g1',{'is_castling':True,'moving_piece':'king'}),
+    ('4k3/8/8/8/8/8/4p3/4K3 b - - 0 1','e2e1q',None),
+    ('4k3/P7/8/8/8/8/8/4K3 w - - 0 1','a7a8n',{'promotion_piece':'knight','is_capture':False}),
+    ('4k3/8/8/8/8/8/8/4K2R w - - 0 1','h1h8',{'gives_check':True,'moving_piece':'rook'})])
+def test_manual_transition_fixtures(fen,move,fields):
+    if fields is None:
+        with pytest.raises(ValueError):audit.transition_truth(fen,move)
+    else:
+        truth=audit.transition_truth(fen,move)
+        assert all(truth[key]==value and type(truth[key]) is type(value) for key,value in fields.items())
+
+
+def resources():
+    gib=1024**3
+    sample={'physical_total_bytes':32*gib,'physical_available_bytes':12*gib,
+        'commit_limit_bytes':48*gib,'commit_total_bytes':24*gib,'gpu_total_bytes':16*gib,'gpu_free_bytes':14*gib}
+    preflight={'status':'passed','samples':[sample]*10}
+    records=[{**sample,'monotonic':1.},{**sample,'monotonic':2.}]
+    policy={'start_physical_available_bytes':10*gib,'start_commit_headroom_bytes':16*gib,
+        'start_gpu_free_bytes':13*gib,'stop_physical_available_bytes':4*gib,
+        'stop_commit_headroom_bytes':8*gib,'stop_gpu_free_bytes':gib,
+        'maximum_owned_request_seconds':5400.,'maximum_sample_gap_seconds':3.}
+    owner={'pid':5,'policy':policy,'started_monotonic':0.}
+    supervision={'pid':5,'sample_count':2,'elapsed_seconds':2.,'exit_code':0,
+        'forced_owned_termination':False,'cancel_issues':[]}
+    phase={'phase':'holdout','started_monotonic':1.}
+    return preflight,records,owner,supervision,phase
+
+
+def test_resource_accounting_keeps_physical_commit_gpu_separate():
+    result=audit.check_resources(*resources())
+    assert result['samples']==2 and result['max_gap_seconds']==1.
+    assert result['minimum_commit_headroom_bytes']==24*1024**3
+
+
+@pytest.mark.parametrize('kind',['gap','missing_counter','gpu_reserve','commit_reserve','forced','pid','denominator','phase'])
+def test_resource_bad_run_cannot_look_completed(kind):
+    args=copy.deepcopy(resources());pre,rows,owner,supervision,phase=args
+    if kind=='gap':rows[1]['monotonic']=5.
+    if kind=='missing_counter':del rows[0]['commit_total_bytes']
+    if kind=='gpu_reserve':rows[1]['gpu_free_bytes']=1024**3-1
+    if kind=='commit_reserve':rows[0]['commit_total_bytes']=rows[0]['commit_limit_bytes']-8*1024**3+1
+    if kind=='forced':supervision['forced_owned_termination']=True
+    if kind=='pid':supervision['pid']=99
+    if kind=='denominator':supervision['sample_count']=3
+    if kind=='phase':phase['started_monotonic']=3601.
+    with pytest.raises(ValueError):audit.check_resources(*args)
+
+
+def test_adapter_shape_contract_covers_each_target_and_layer():
+    shapes=audit.adapter_shapes({'hidden_size':1024,'head_dim':128,'num_attention_heads':16,
+        'num_key_value_heads':8,'intermediate_size':3072,'num_hidden_layers':28})
+    assert len(shapes)==392 and sum(__import__('math').prod(shape) for shape in shapes.values())==5046272
+    assert shapes['base_model.model.model.layers.0.self_attn.q_proj.lora_B.weight']==(2048,8)
+    assert shapes['base_model.model.model.layers.27.mlp.down_proj.lora_A.weight']==(8,3072)
+
+
+@pytest.mark.parametrize('kind',['valid','prefix_mismatch','target_too_long','roundtrip'])
+def test_native_target_count_uses_assistant_eos_and_causal_window(kind):
+    class NativeFake:
+        eos_token_id=9
+        def apply_chat_template(self,messages,**kwargs):
+            if len(messages)==1:return [1,9,2,3]  # Earlier USER EOS must be ignored.
+            if kind=='prefix_mismatch':return [1,9,2,99,7,8,9]
+            return [1,9,2,3]+([7]*127 if kind=='target_too_long' else [7,8])+[9,0]
+        def decode(self,ids,**kwargs):
+            return 'wrong target' if kind=='roundtrip' else json.dumps(TRUTH,sort_keys=True,separators=(',',':'))
+    core=SimpleNamespace(build_prompt=lambda *args:'fixture pre-move-only')
+    if kind=='valid':assert audit.native_target_count(NativeFake(),{'case_id':'x'},TRUTH,core)==3
+    else:
+        with pytest.raises(ValueError):audit.native_target_count(NativeFake(),{'case_id':'x'},TRUTH,core)

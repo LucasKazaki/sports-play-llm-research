@@ -1,0 +1,13 @@
+{
+  "acquisition_sha256": "3e5dda5647ecfd1d2301b494d7221d615f10eb7db0f8e5a0031c768bbe04f895",
+  "exclusion_registry_sha256": "79ae0c7244f3d0bf525988c448dee1b419e35f1fb05845cbec0cccad047824f0",
+  "model_calls": 0,
+  "protocol_sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+  "schema": "chess.fact-sft.before-selection.v1",
+  "selection_source_sha256": {
+    "selection-sources/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "selection-sources/chess_board_fact_diagnostic.py": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d",
+    "selection-sources/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+  },
+  "source_sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87"
+}
