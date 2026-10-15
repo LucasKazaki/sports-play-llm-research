@@ -1,0 +1,1218 @@
+{
+  "schema": "chess.board-fact.evaluation.v1",
+  "raw_seal_sha256": "867040994c518ff99eef80792e22a2320e4855396afa88f7cea766ab3ce6d0ce",
+  "labels_sha256": "5f3c3e6ae6ed1bace366fda0d7c8174c69ddd78f02cf32e814ad80fc66396c6e",
+  "groups": {
+    "fen_uci": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 2,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 8,
+        "moving_colour": 15,
+        "is_capture": 3,
+        "captured_piece": 2,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "not_run_after_backend_failure": 1
+      }
+    },
+    "fen_uci_piece_map": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 5,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 14,
+        "moving_colour": 15,
+        "is_capture": 7,
+        "captured_piece": 7,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "backend_failure": 1
+      }
+    }
+  },
+  "rows": [
+    {
+      "case_id": "board-fact-087yf",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "captured_piece": "rook",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-087yf",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "captured_piece": null,
+        "promotion_piece": null,
+        "is_capture": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true
+    },
+    {
+      "case_id": "board-fact-097kR",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "bishop",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "white",
+        "is_capture": true,
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true
+    },
+    {
+      "case_id": "board-fact-097kR",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "bishop",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "white",
+        "is_capture": true,
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true
+    },
+    {
+      "case_id": "board-fact-099Yk",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "black",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "pawn",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-099Yk",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "black",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "pawn",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09BSh",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09BSh",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "captured_piece": "rook",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09Ghk",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "king",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09Ghk",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "king",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "king",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09Hsl",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "rook",
+        "moving_colour": "black",
+        "captured_piece": null,
+        "promotion_piece": null,
+        "is_capture": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true
+    },
+    {
+      "case_id": "board-fact-09Hsl",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "knight",
+        "moving_colour": "black",
+        "captured_piece": "rook",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09IHR",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "knight",
+        "moving_colour": "black",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09IHR",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "bishop",
+        "moving_colour": "black",
+        "captured_piece": "knight",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09JhC",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "white",
+        "is_capture": true,
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true
+    },
+    {
+      "case_id": "board-fact-09JhC",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "white",
+        "is_capture": true,
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true
+    },
+    {
+      "case_id": "board-fact-09Pcz",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09Pcz",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "captured_piece": null,
+        "promotion_piece": null,
+        "is_capture": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09QiO",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "bishop",
+        "moving_colour": "black",
+        "captured_piece": "queen",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09QiO",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "captured_piece": "queen",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09UvK",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09UvK",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "black",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09WaG",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "captured_piece": null,
+        "promotion_piece": null,
+        "is_capture": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09WaG",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09YeT",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "queen",
+        "moving_colour": "white",
+        "captured_piece": "queen",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09YeT",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "bishop",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "bishop",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09zNq",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "captured_piece": "rook",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09zNq",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "captured_piece": "king",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09zOx",
+      "condition": "fen_uci",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "pawn",
+        "moving_colour": "white",
+        "captured_piece": "pawn",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "king",
+        "moving_colour": "white",
+        "is_capture": true,
+        "captured_piece": "rook",
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": false,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-09zOx",
+      "condition": "fen_uci_piece_map",
+      "status": "completed",
+      "parsed": {
+        "moving_piece": "king",
+        "moving_colour": "white",
+        "captured_piece": "rook",
+        "promotion_piece": null,
+        "is_capture": true,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false
+      },
+      "expected_evaluator_only": {
+        "moving_piece": "king",
+        "moving_colour": "white",
+        "is_capture": true,
+        "captured_piece": "rook",
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true
+    },
+    {
+      "case_id": "board-fact-0A1AH",
+      "condition": "fen_uci_piece_map",
+      "status": "backend_failure",
+      "parsed": null,
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      },
+      "all_eight_correct": false
+    },
+    {
+      "case_id": "board-fact-0A1AH",
+      "condition": "fen_uci",
+      "status": "not_run_after_backend_failure",
+      "parsed": null,
+      "expected_evaluator_only": {
+        "moving_piece": "queen",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      },
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      },
+      "all_eight_correct": false
+    }
+  ],
+  "coverage_evaluator_only": {
+    "is_capture": 3,
+    "gives_check": 1,
+    "is_castling": 0,
+    "is_en_passant": 0,
+    "promotion": 0
+  },
+  "limits": [
+    "16convenience positions from a reused puzzle prefix; not a representative or accepted commentary benchmark",
+    "No strategic rationale, teaching/commentary quality, broad understanding, Elo or sports-transfer claim",
+    "Same installed quantized weights in both conditions; representation comparison only",
+    "Special moves may be absent; report observed coverage",
+    "Unknown upstream pretraining overlap and backend nondeterminism remain",
+    "Codex-assisted source and evaluation; practical review does not satisfy formal project promotion gates"
+  ]
+}

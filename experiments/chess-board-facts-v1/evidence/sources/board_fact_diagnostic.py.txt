@@ -1,0 +1,477 @@
+"""Freeze, generate and separately score the bounded board-fact diagnostic."""
+from __future__ import annotations
+import argparse
+import csv
+import hashlib
+import io
+import json
+from pathlib import Path
+import shutil
+import sys
+import time
+from urllib.error import HTTPError
+from urllib.request import Request, urlopen
+
+import chess
+import board_fact_core as core
+
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(1048576), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def save(path, data):
+    path = Path(path)
+    temp = path.with_name(path.name + ".tmp")
+    temp.write_text(json.dumps(data, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    temp.replace(path)
+
+
+def board_key(fen):
+    return " ".join(chess.Board(fen).fen().split()[:4])
+
+
+def verify_core_contract(protocol):
+    if protocol["output_schema"] != core.SCHEMA or protocol["prompt"]["instruction_exact"] != core.INSTRUCTION or protocol["conditions"] != list(core.CONDITIONS):
+        raise ValueError("core differs from frozen schema/prompt/conditions")
+
+
+def source_rows(path):
+    import zstandard
+    with path.open("rb") as raw:
+        with io.TextIOWrapper(zstandard.ZstdDecompressor().stream_reader(raw), encoding="utf-8") as stream:
+            yield from csv.DictReader(stream)
+
+
+def prior_exclusions(repo, source):
+    historical = repo / "data/open/chess/lichess-real-seed-v1/manifest.json"
+    paths = [repo / "data/private" / name / "dataset.json" for name in
+             ("chess-distill-v1", "chess-distill-v2", "chess-classifier-v3", "chess-move-only-lm-v4")]
+    games, boards, puzzle_rows = set(), set(), {}
+    for item in read(historical)["items"]:
+        games.add(item["game_id"])
+        boards.add(board_key(item["fen"]))
+        for ply in item.get("legal_replay", []):
+            boards.update((board_key(ply["before"]), board_key(ply["after"])))
+    for path in paths:
+        for rows in read(path)["splits"].values():
+            for row in rows:
+                if row["id"] in puzzle_rows:
+                    raise ValueError("prior duplicate puzzle identity")
+                puzzle_rows[row["id"]] = row
+                games.add(row["game_id"])
+                boards.add(board_key(row["fen"]))
+    missing = set(puzzle_rows)
+    for row in source_rows(source):
+        if row["PuzzleId"] not in missing:
+            continue
+        board = chess.Board(row["FEN"])
+        setup = chess.Move.from_uci(row["Moves"].split()[0])
+        if not board.is_valid() or setup not in board.legal_moves:
+            raise ValueError("invalid prior source setup")
+        boards.add(board_key(board.fen()))
+        board.push(setup)
+        if board.fen() != puzzle_rows[row["PuzzleId"]]["fen"]:
+            raise ValueError("prior setup-after role disagrees")
+        missing.remove(row["PuzzleId"])
+        if not missing:
+            break
+    if missing:
+        raise ValueError("prior source-before roles absent")
+    return games, boards, {p.relative_to(repo).as_posix(): sha(p) for p in [historical, *paths]}
+
+
+def freeze(repo, protocol_path, out):
+    repo, protocol_path, out = Path(repo), Path(protocol_path), Path(out)
+    if out.exists():
+        raise ValueError("refusing to replace frozen board-fact data")
+    protocol = read(protocol_path)
+    verify_core_contract(protocol)
+    if protocol["selection"]["seed"] != 4082030 or protocol["selection"]["count"] != 16:
+        raise ValueError("unexpected frozen selection")
+    source = repo / protocol["source"]["path"]
+    if source.stat().st_size != protocol["source"]["bytes"] or sha(source) != protocol["source"]["sha256"]:
+        raise ValueError("retained source identity mismatch")
+    games, boards, previous = prior_exclusions(repo, source)
+    excluded = {"games": len(games), "board_keys": len(boards)}
+    rows, inputs, labels, rejections = [], [], [], {"invalid": 0, "excluded_or_duplicate": 0, "not_development_bucket": 0}
+    scanned, seed = 0, protocol["selection"]["seed"]
+    for row in source_rows(source):
+        scanned += 1
+        try:
+            game_id = row["GameUrl"].split("lichess.org/", 1)[1].split("/", 1)[0].split("#", 1)[0]
+            if len(game_id) != 8 or not game_id.isascii() or not game_id.isalnum():
+                raise ValueError("invalid game identity")
+            board = chess.Board(row["FEN"])
+            setup = chess.Move.from_uci(row["Moves"].split()[0])
+            if not board.is_valid() or setup not in board.legal_moves:
+                raise ValueError("invalid source setup")
+            before = board.fen()
+            before_key = board_key(before)
+            board.push(setup)
+            after_key = board_key(board.fen())
+            if board.is_game_over():
+                raise ValueError("terminal setup-after board")
+        except (ValueError, KeyError, IndexError):
+            rejections["invalid"] += 1
+            continue
+        if game_id in games or before_key in boards or after_key in boards:
+            rejections["excluded_or_duplicate"] += 1
+            continue
+        number = int.from_bytes(hashlib.sha256(f"{seed}:{game_id}".encode()).digest(), "big")
+        if number % 10 != 1:
+            rejections["not_development_bucket"] += 1
+            continue
+        legal = sorted(m.uci() for m in board.legal_moves)
+        selected = legal[number % len(legal)]
+        case_id = "board-fact-" + row["PuzzleId"]
+        packet = {"case_id": case_id, "fen": board.fen(), "selected_uci": selected}
+        facts = core.expected_facts(board.fen(), selected)
+        if facts != core.independent_facts(board.fen(), selected):
+            raise ValueError("independent facts disagree")
+        inputs.append(packet)
+        labels.append({"case_id": case_id, "expected": facts})
+        rows.append({"case_id": case_id, "puzzle_id": row["PuzzleId"], "game_id": game_id,
+                     "source_url": "https://lichess.org/" + game_id, "source_before_fen": before,
+                     "setup_uci": setup.uci(), "fen": board.fen(), "selected_uci": selected,
+                     "legal_move_count": len(legal), "selected_index": number % len(legal),
+                     "selection_hash": hashlib.sha256(f"{seed}:{game_id}".encode()).hexdigest()})
+        games.add(game_id)
+        boards.update((before_key, after_key))
+        if len(rows) == 16:
+            break
+    if len(rows) != 16:
+        raise ValueError("retained prefix did not fill sixteen eligible cases")
+    out.mkdir(parents=True)
+    (out / "acquisition-sources").mkdir()
+    shutil.copyfile(protocol_path, out / "protocol.json")
+    source_hashes = {}
+    for path in (Path(__file__), Path(core.__file__)):
+        target = out / "acquisition-sources" / path.name
+        shutil.copyfile(path, target)
+        source_hashes[target.relative_to(out).as_posix()] = sha(target)
+    dataset = {"schema": "chess.board-fact.dataset.v1", "protocol_sha256": sha(out / "protocol.json"),
+               "source_sha256": sha(source), "previous_manifest_sha256": previous, "prior_exclusions": excluded,
+               "selection_rejections": rejections, "source_rows_scanned": scanned, "count": 16, "rows": rows}
+    save(out / "dataset.json", dataset)
+    save(out / "generator-inputs.json", {"schema": "chess.board-fact.inputs.v1", "count": 16, "rows": inputs})
+    coverage = {field: sum(r["expected"][field] is True for r in labels) for field in core.BOOL_FIELDS}
+    coverage["promotion"] = sum(r["expected"]["promotion_piece"] is not None for r in labels)
+    save(out / "evaluator-labels.json", {"schema": "chess.board-fact.labels.v1", "dataset_sha256": sha(out / "dataset.json"),
+         "count": 16, "rows": labels, "observed_special_move_coverage": coverage,
+         "oracle": "python-chess predicates checked independently by push/material/geometry/attack route", "python_chess": chess.__version__})
+    frozen = {"schema": "chess.board-fact.frozen-data.v1", "count": 16, "model_calls": 0,
+              "files_sha256": {name: sha(out / name) for name in
+                               ("protocol.json", "dataset.json", "generator-inputs.json", "evaluator-labels.json")},
+              "acquisition_source_sha256": source_hashes}
+    save(out / "frozen-data.json", frozen)
+    return frozen
+
+
+class BackendFailure(Exception):
+    def __init__(self, message, body=b"", status=None, truncated=False):
+        super().__init__(message)
+        self.body, self.status, self.truncated = body, status, truncated
+
+
+class OllamaClient:
+    def __init__(self, protocol):
+        self.base = protocol["backend"]["base_url"]
+        if self.base != "http://127.0.0.1:11434":
+            raise ValueError("only the frozen local backend is supported")
+        self.timeout = protocol["backend"]["request_timeout_seconds"]
+        self.limit = protocol["backend"]["response_body_limit_bytes"]
+
+    def request(self, route, payload=None):
+        request = Request(self.base + route, None if payload is None else json.dumps(payload).encode(),
+                          {"Content-Type": "application/json"})
+        body, status = b"", None
+        try:
+            with urlopen(request, timeout=self.timeout) as response:
+                status = response.status
+                while len(body) <= self.limit:
+                    block = response.read(min(65536, self.limit + 1 - len(body)))
+                    if not block:
+                        break
+                    body += block
+                if len(body) > self.limit:
+                    raise BackendFailure("backend response exceeds bound", body, status, True)
+        except HTTPError as error:
+            body = error.read(self.limit + 1)
+            raise BackendFailure("HTTP " + str(error.code), body, error.code, len(body) > self.limit) from error
+        except BackendFailure:
+            raise
+        except OSError as error:
+            raise BackendFailure(type(error).__name__ + ": " + str(error), body, status) from error
+        return body
+
+
+def checked_file(out, relative):
+    path = (out / relative).resolve()
+    if not path.is_relative_to(out.resolve()):
+        raise ValueError("artifact escapes attempt directory")
+    return path
+
+
+def identity(client, protocol, out):
+    raw = {}
+    for name, route, payload in (("version", "/api/version", None), ("tags", "/api/tags", None),
+                                 ("show", "/api/show", {"model": protocol["model"]["alias"]}),
+                                 ("running", "/api/ps", None)):
+        data = client.request(route, payload)
+        target = out / ("identity-" + name + ".body")
+        target.write_bytes(data)
+        raw[name] = json.loads(data)
+    model = next((m for m in raw["tags"]["models"] if m["name"] == protocol["model"]["alias"]), None)
+    if model is None or model["digest"] != protocol["model"]["expected_digest"]:
+        raise ValueError("installed alias/digest differs from frozen model")
+    if raw["show"]["details"]["family"] != protocol["model"]["expected_family"]:
+        raise ValueError("installed backend family differs from frozen model")
+    others = [m for m in raw["running"].get("models", []) if m.get("name") != protocol["model"]["alias"]]
+    if others:
+        raise ValueError("another Ollama model is loaded; GPU serialization precondition unmet")
+    return {"model": model, "details": raw["show"]["details"], "server": raw["version"],
+            "raw_sha256": {p.name: sha(p) for p in out.glob("identity-*.body")}}
+
+
+def planned(inputs):
+    result = []
+    for index, row in enumerate(inputs):
+        order = core.CONDITIONS if index % 2 == 0 else tuple(reversed(core.CONDITIONS))
+        for condition in order:
+            result.append({"condition": condition, **row, "status": "not_run", "attempted": False})
+    return result
+
+
+def seal(out, records, manifest):
+    if len(records) != 32 or len({(r["case_id"], r["condition"]) for r in records}) != 32:
+        raise ValueError("planned denominator changed")
+    save(out / "raw-results.json", {"schema": "chess.board-fact.raw.v1", "planned": 32, "accounted": 32,
+                                   "records": records, "evaluator_labels_read": False})
+    files = {p.relative_to(out).as_posix(): sha(p) for p in out.rglob("*")
+             if p.is_file() and p.name not in ("progress.json", "raw-seal.json")}
+    save(out / "raw-seal.json", {"schema": "chess.board-fact.raw-seal.v1", "files_sha256": files,
+         "source_sha256": manifest["source_sha256"], "planned": 32, "evaluator_labels_read": False})
+
+
+def generate(dataset_dir, out, frozen_sha256, client_factory=OllamaClient):
+    dataset_dir, out = Path(dataset_dir), Path(out)
+    if out.exists():
+        raise ValueError("refusing existing/partial board-fact attempt; no replay")
+    if sha(dataset_dir / "frozen-data.json") != frozen_sha256:
+        raise ValueError("frozen data identity mismatch")
+    frozen = read(dataset_dir / "frozen-data.json")
+    # Labels and dataset are intentionally not opened during generation.
+    for name in ("protocol.json", "generator-inputs.json"):
+        if sha(dataset_dir / name) != frozen["files_sha256"][name]:
+            raise ValueError("frozen generator file changed")
+    protocol, inputs = read(dataset_dir / "protocol.json"), read(dataset_dir / "generator-inputs.json")["rows"]
+    verify_core_contract(protocol)
+    if len(inputs) != 16 or len({r["case_id"] for r in inputs}) != 16:
+        raise ValueError("sixteen unique cases required")
+    for row in inputs:
+        if set(row) != {"case_id", "fen", "selected_uci"}:
+            raise ValueError("unexpected model input material")
+        core.board_and_move(row["fen"], row["selected_uci"])
+    source_paths = (Path(__file__), Path(core.__file__), Path(__file__).with_name("test_board_fact_diagnostic.py"))
+    if not all(path.is_file() for path in source_paths):
+        raise ValueError("all three reviewed source/test files are required")
+    out.mkdir(parents=True)
+    (out / "sources").mkdir()
+    (out / "raw").mkdir()
+    for name in ("protocol.json", "generator-inputs.json", "frozen-data.json"):
+        shutil.copyfile(dataset_dir / name, out / name)
+    source_hashes = {}
+    for path in source_paths:
+        copy = out / "sources" / path.name
+        shutil.copyfile(path, copy)
+        source_hashes[copy.relative_to(out).as_posix()] = sha(copy)
+    records = planned(inputs)
+    manifest = {"schema": "chess.board-fact.before-calls.v1", "dataset_directory": str(dataset_dir.resolve()),
+                "frozen_data_sha256": frozen_sha256, "source_sha256": source_hashes,
+                "planned": 32, "evaluator_labels_read": False, "python": sys.version, "python_chess": chess.__version__}
+    # Durable attempt marker precedes identity or backend access.
+    save(out / "before-calls.json", manifest)
+    save(out / "progress.json", {"records": records})
+    client, failure = None, None
+    try:
+        client = client_factory(protocol)
+        manifest["identity"] = identity(client, protocol, out)
+        save(out / "before-calls.json", manifest)
+    except Exception as error:
+        failure = {"type": type(error).__name__, "message": str(error)[:1000]}
+        for row in records:
+            row.update(status="not_run_identity_failure", error=failure)
+    try:
+        if failure is None:
+            for index, row in enumerate(records):
+                if failure is not None:
+                    row.update(status="not_run_after_backend_failure", error=failure)
+                    continue
+                prompt = core.build_prompt(row, row["condition"])
+                payload = {"model": protocol["model"]["alias"], "prompt": prompt, "stream": False,
+                           "think": False, "raw": False, "format": core.SCHEMA,
+                           "options": protocol["backend"]["options"], "keep_alive": "5m"}
+                row.update(prompt=prompt, request=payload, prompt_sha256=hashlib.sha256(prompt.encode()).hexdigest(), attempted=True)
+                # Preserve exact request before issuing its one generation call.
+                save(out / "progress.json", {"records": records})
+                started = time.perf_counter()
+                body = b""
+                try:
+                    body = client.request("/api/generate", payload)
+                    response = json.loads(body, parse_constant=lambda _: (_ for _ in ()).throw(ValueError("nonfinite backend JSON")))
+                    row["backend_response"] = response
+                    if type(response) is not dict or response.get("model") != protocol["model"]["alias"] or type(response.get("response")) is not str or response.get("done") is not True or response.get("done_reason") not in ("stop", "length"):
+                        raise BackendFailure("incomplete/malformed/backend identity response", body)
+                    row["raw_output"] = response["response"]
+                    row["status"] = "truncated" if response["done_reason"] == "length" else "completed"
+                    if row["status"] == "completed":
+                        try:
+                            core.parse_facts(response["response"])
+                        except (ValueError, TypeError) as error:
+                            row.update(status="parse_or_schema_failure", parse_error=str(error))
+                except Exception as error:
+                    body = getattr(error, "body", body)
+                    failure = {"type": type(error).__name__, "message": str(error)[:1000]}
+                    row.update(status="backend_failure", error=failure, http_status=getattr(error, "status", None),
+                               response_body_truncated=getattr(error, "truncated", False))
+                finally:
+                    target = out / "raw" / f"response-{index:03d}.body"
+                    target.write_bytes(body)
+                    row.update(raw_http_body={"path": target.relative_to(out).as_posix(), "sha256": sha(target), "bytes": len(body)},
+                               elapsed_seconds=time.perf_counter() - started)
+                    save(out / "progress.json", {"records": records})
+    finally:
+        cleanup = {"attempted": client is not None}
+        if client is not None:
+            try:
+                body = client.request("/api/generate", {"model": protocol["model"]["alias"], "keep_alive": 0})
+                (out / "unload.body").write_bytes(body)
+                response = json.loads(body)
+                if response.get("done") is not True or response.get("done_reason") != "unload":
+                    raise ValueError("backend did not confirm unload")
+                running = client.request("/api/ps")
+                (out / "after-unload-running.body").write_bytes(running)
+                if any(m.get("name") == protocol["model"]["alias"] for m in json.loads(running).get("models", [])):
+                    raise ValueError("model remains resident after unload")
+                cleanup.update(success=True, response_sha256=sha(out / "unload.body"), resident_after=False)
+            except Exception as error:
+                cleanup.update(success=False, error=type(error).__name__ + ": " + str(error)[:1000])
+        save(out / "cleanup.json", cleanup)
+    seal(out, records, manifest)
+    return records
+
+
+def verify_raw(out):
+    seal = read(out / "raw-seal.json")
+    required = {"before-calls.json", "raw-results.json", "protocol.json", "generator-inputs.json", "frozen-data.json", "cleanup.json"}
+    if not required.issubset(seal["files_sha256"]) or seal["evaluator_labels_read"] is not False:
+        raise ValueError("raw seal omits required bindings")
+    for name, expected in seal["files_sha256"].items():
+        if sha(checked_file(out, name)) != expected:
+            raise ValueError("sealed artifact changed: " + name)
+    before = read(out / "before-calls.json")
+    for name, expected in before["source_sha256"].items():
+        if seal["files_sha256"].get(name) != expected:
+            raise ValueError("missing source binding")
+    records = read(out / "raw-results.json")["records"]
+    inputs = read(out / "generator-inputs.json")["rows"]
+    if [(r["case_id"], r["condition"]) for r in records] != [(r["case_id"], r["condition"]) for r in planned(inputs)]:
+        raise ValueError("raw denominator/order changed")
+    for row in records:
+        if row["attempted"]:
+            artifact = row["raw_http_body"]
+            if seal["files_sha256"].get(artifact["path"]) != artifact["sha256"] or sha(checked_file(out, artifact["path"])) != artifact["sha256"]:
+                raise ValueError("missing row-referenced response binding")
+    return records, before
+
+
+def load_labels(out, before):
+    directory = Path(before["dataset_directory"])
+    frozen = read(out / "frozen-data.json")
+    path = directory / "evaluator-labels.json"
+    data = path.read_bytes()
+    if hashlib.sha256(data).hexdigest() != frozen["files_sha256"]["evaluator-labels.json"]:
+        raise ValueError("evaluator labels changed")
+    return json.loads(data)
+
+
+def evaluate(out, label_loader=load_labels):
+    out = Path(out)
+    if (out / "evaluation.json").exists():
+        raise ValueError("refusing to replace evaluator output")
+    records, before = verify_raw(out)
+    labels = label_loader(out, before)
+    truth = {r["case_id"]: r["expected"] for r in labels["rows"]}
+    if len(truth) != 16 or set(truth) != {r["case_id"] for r in records}:
+        raise ValueError("label identity/count mismatch")
+    groups = {c: {"planned": 16, "accounted": 0, "all_eight_correct": 0, "strict_completed": 0,
+                 "field_correct": {f: 0 for f in core.FIELDS}, "field_unknown": {f: 0 for f in core.FIELDS}, "statuses": {}}
+              for c in core.CONDITIONS}
+    joined = []
+    for row in records:
+        target = truth[row["case_id"]]
+        if target != core.expected_facts(row["fen"], row["selected_uci"]) or target != core.independent_facts(row["fen"], row["selected_uci"]):
+            raise ValueError("expected facts failed independent verification")
+        parsed = None
+        if row["status"] == "completed":
+            parsed = core.parse_facts(row["raw_output"])
+        correct = {f: bool(parsed is not None and type(parsed[f]) is type(target[f]) and parsed[f] == target[f]) for f in core.FIELDS}
+        unknown = {f: bool(parsed is not None and parsed[f] == "unknown") for f in core.FIELDS}
+        summary = groups[row["condition"]]
+        summary["accounted"] += 1
+        summary["strict_completed"] += parsed is not None
+        summary["all_eight_correct"] += all(correct.values())
+        summary["statuses"][row["status"]] = summary["statuses"].get(row["status"], 0) + 1
+        for field in core.FIELDS:
+            summary["field_correct"][field] += correct[field]
+            summary["field_unknown"][field] += unknown[field]
+        joined.append({"case_id": row["case_id"], "condition": row["condition"], "status": row["status"],
+                       "parsed": parsed, "expected_evaluator_only": target, "field_correct": correct, "all_eight_correct": all(correct.values())})
+    result = {"schema": "chess.board-fact.evaluation.v1", "raw_seal_sha256": sha(out / "raw-seal.json"),
+              "labels_sha256": read(out / "frozen-data.json")["files_sha256"]["evaluator-labels.json"],
+              "groups": groups, "rows": joined, "coverage_evaluator_only": labels["observed_special_move_coverage"],
+              "limits": read(out / "protocol.json")["limits"]}
+    save(out / "evaluation.json", result)
+    return result
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    commands = parser.add_subparsers(dest="phase", required=True)
+    select = commands.add_parser("freeze")
+    select.add_argument("--repo", type=Path, required=True)
+    select.add_argument("--protocol", type=Path, required=True)
+    select.add_argument("--out", type=Path, required=True)
+    gen = commands.add_parser("generate")
+    gen.add_argument("--dataset-dir", type=Path, required=True)
+    gen.add_argument("--out", type=Path, required=True)
+    gen.add_argument("--frozen-sha256", required=True)
+    gen.add_argument("--gpu-released", action="store_true")
+    score = commands.add_parser("evaluate")
+    score.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args(argv)
+    if args.phase == "freeze":
+        result = freeze(args.repo, args.protocol, args.out)
+        print(json.dumps({"phase": "frozen", "count": result["count"], "model_calls": 0}))
+    elif args.phase == "generate":
+        if not args.gpu_released:
+            parser.error("requires parent-reviewed GPU handoff --gpu-released")
+        result = generate(args.dataset_dir, args.out, args.frozen_sha256)
+        print(json.dumps({"phase": "raw_sealed", "accounted": len(result)}))
+    else:
+        result = evaluate(args.out)
+        print(json.dumps({"phase": "evaluated", "groups": result["groups"]}))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

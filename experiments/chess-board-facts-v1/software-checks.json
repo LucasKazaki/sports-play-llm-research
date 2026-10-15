@@ -1,0 +1,22 @@
+{
+  "schema": "chess.board-fact.postrun-software-checks.v1",
+  "original_preflight_cases": 36,
+  "postrun_cases": 39,
+  "root_passed": 39,
+  "root_elapsed_seconds": 2.52,
+  "independent_passed": 39,
+  "independent_elapsed_seconds": 2.57,
+  "fake_clients_only": true,
+  "additional_model_calls": 0,
+  "source_sha256": {
+    "scripts/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "scripts/chess_board_fact_diagnostic.py": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d",
+    "tests/test_chess_board_fact_diagnostic.py": "55438dec5e91b2c05a03da18657cf5f194fd15f034de528d2aea2858f0857779"
+  },
+  "independent_receipt_sha256": "65c56537a349c39eb8e540840ee7486a6c3e406a50be7b1332308060169d3c76",
+  "regressions": [
+    "post-response hash allocation failure",
+    "raw-body write failure",
+    "pre-call intent-save failure must not increment attempted calls"
+  ]
+}

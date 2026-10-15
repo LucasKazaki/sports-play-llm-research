@@ -1,0 +1,23 @@
+{
+  "schema": "chess.board-fact.independent-intake-audit.v1",
+  "source_sha256": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056",
+  "frozen_data_sha256": "ef219598d6d0d761cef52ea931cb09dde979496d5750b3c2977090092a0134d4",
+  "prior_exclusions": {
+    "games": 21688,
+    "board_keys": 43474
+  },
+  "prior_role_source_rows_scanned": 23374,
+  "selection_source_rows_scanned": 16074,
+  "exact_new_cases": 16,
+  "all_source_roles_games_moves_and_inputs_matched": true,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "coverage": {
+    "is_capture": 3,
+    "gives_check": 1,
+    "is_castling": 0,
+    "is_en_passant": 0,
+    "promotion": 0
+  },
+  "limits": "Source-order development diagnostic only; no upstream pretraining-overlap guarantee or representative benchmark claim."
+}

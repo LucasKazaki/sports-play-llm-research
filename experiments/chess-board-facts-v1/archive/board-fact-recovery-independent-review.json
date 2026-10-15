@@ -1,0 +1,93 @@
+{
+  "schema": "chess.board-fact.independent-file-recovery-review.v1",
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "new_model_or_engine_or_http_calls": 0,
+  "original_files_unchanged": 46,
+  "all_raw_seal_bindings_verified": 50,
+  "prompt_and_request_reconstructions": 31,
+  "completed_original_rows_unchanged": 30,
+  "attempted_generation_requests": 31,
+  "completed": 30,
+  "backend_failures": 1,
+  "not_run": 1,
+  "planned_and_accounted": 32,
+  "labels_independently_recomputed": 16,
+  "groups": {
+    "fen_uci": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 2,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 8,
+        "moving_colour": 15,
+        "is_capture": 3,
+        "captured_piece": 2,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "not_run_after_backend_failure": 1
+      }
+    },
+    "fen_uci_piece_map": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 5,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 14,
+        "moving_colour": 15,
+        "is_capture": 7,
+        "captured_piece": 7,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "backend_failure": 1
+      }
+    }
+  },
+  "model_digest": "7b0c2ef4e855aa2ea19d0a4d892311961e2710243ea624c300e6ccaa50ffeee2",
+  "hashes": {
+    "original_progress": "1d0e3dc37819cdbfc2c0c8bbab2cacd151289def16a72b0f784ce43d351921de",
+    "recovered_raw_seal": "867040994c518ff99eef80792e22a2320e4855396afa88f7cea766ab3ce6d0ce",
+    "recovered_evaluation": "93d5766a78144dbe9541db97f45d9b6e5ba14db823809cef32e36c0bd1135c8a",
+    "file_recovery": "9ad5754109e9191e6a8e3e697f0f343d4a41039830f949ef67224f54f1f71a07",
+    "frozen_data": "ef219598d6d0d761cef52ea931cb09dde979496d5750b3c2977090092a0134d4",
+    "independent_script": "058a319882a0e8eb259fccf16d2e10e8504c492daa36e54cc0c0193b1edbd801"
+  },
+  "limits": [
+    "Interrupted single model/16case convenience diagnostic; no significance, strength, training or commentary inference.",
+    "30 completed requests plus1incomplete backend response and1notrun; never claim32completed calls.",
+    "Last-call latency was lost and explicitly null; no reconstruction of unretained token IDs/logits.",
+    "Zero selected castling/enpassant/promotion examples; their high accuracy is absence detection only.",
+    "Underlying low-memory/backend failure cause is not fixed by post-run bounded hashing or recovery."
+  ]
+}

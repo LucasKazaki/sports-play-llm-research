@@ -1,0 +1,35 @@
+"""Fake-only adversarial probe of a failure while persisting request intent."""
+import importlib.util
+import json
+from pathlib import Path
+import sys
+import tempfile
+
+ROOT=Path(__file__).resolve().parent/'repos/sports-play-llm-research'
+sys.path.insert(0,str(ROOT/'scripts'))
+spec=importlib.util.spec_from_file_location('reviewed_fake_tests',ROOT/'tests/test_chess_board_fact_diagnostic.py')
+tests=importlib.util.module_from_spec(spec); spec.loader.exec_module(tests)
+runner=tests.runner
+with tempfile.TemporaryDirectory(prefix='board-fact-precall-probe-',dir=Path(__file__).resolve().parent) as tmp:
+    fixture=tests.fixture.__wrapped__(Path(tmp))
+    client=tests.FakeClient(fixture['protocol'])
+    original_save=runner.save
+    injected=[]
+    def save(path,data):
+        if Path(path).name=='progress.json' and len(client.calls)==2 and not injected and sum(r['attempted'] for r in data['records'])==3:
+            injected.append(True)
+            raise MemoryError('independent injected pre-call progress allocation failure')
+        return original_save(path,data)
+    runner.save=save
+    try:
+        rows=runner.generate(fixture['data'],fixture['out'],fixture['hash'],client_factory=lambda _:client)
+        runner.verify_raw(fixture['out'])
+    finally: runner.save=original_save
+    report={'actual_fake_generation_calls':len(client.calls),'unload_calls':client.unloads,
+            'recorded_attempted':sum(r['attempted'] for r in rows),
+            'third_row':rows[2],
+            'full_denominator':len(rows),'injection_count':len(injected),
+            'model_or_network_calls':0}
+Path(__file__).with_name('board-fact-precall-failure-probe.json').write_text(json.dumps(report,indent=2)+'\n')
+print(json.dumps({k:v for k,v in report.items() if k!='third_row'},indent=2))
+print('Third row:',report['third_row']['status'],'attempted=',report['third_row']['attempted'])

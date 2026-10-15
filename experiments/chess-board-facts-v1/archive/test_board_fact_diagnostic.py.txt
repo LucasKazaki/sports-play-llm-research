@@ -1,0 +1,217 @@
+"""Finite fixture oracles and fake transport; no real Ollama/model/engine calls."""
+import json
+from pathlib import Path
+import sys
+import pytest
+import chess
+
+sys.path.insert(0, str(Path(__file__).parent))
+import board_fact_core as core
+import board_fact_diagnostic as runner
+
+
+@pytest.mark.parametrize("fen,uci,piece,colour,captured,check,castle,ep,promotion", [
+    (chess.STARTING_FEN, "e2e4", "pawn", "white", None, False, False, False, None),
+    (chess.STARTING_FEN.replace(" w ", " b "), "e7e5", "pawn", "black", None, False, False, False, None),
+    ("r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1", "e1g1", "king", "white", None, False, True, False, None),
+    ("4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1", "e5d6", "pawn", "white", "pawn", False, False, True, None),
+    ("4k3/8/8/8/3Pp3/8/8/4K3 b - d3 0 1", "e4d3", "pawn", "black", "pawn", False, False, True, None),
+    ("4k3/P7/8/8/8/8/8/4K3 w - - 0 1", "a7a8q", "pawn", "white", None, True, False, False, "queen"),
+    ("1r2k3/P7/8/8/8/8/8/4K3 w - - 0 1", "a7b8n", "pawn", "white", "rook", False, False, False, "knight"),
+    ("4k3/8/8/8/8/8/p7/4K3 b - - 0 1", "a2a1q", "pawn", "black", None, True, False, False, "queen"),
+    ("4k3/8/8/8/8/8/4B3/4R1K1 w - - 0 1", "e2f3", "bishop", "white", None, True, False, False, None),
+    ("4k3/8/3p4/8/4N3/8/8/4K3 w - - 0 1", "e4d6", "knight", "white", "pawn", True, False, False, None),
+])
+def test_manually_specified_facts_match_two_independent_routes(fen, uci, piece, colour, captured, check, castle, ep, promotion):
+    expected = dict(zip(core.FIELDS, (piece, colour, captured is not None, captured, check, castle, ep, promotion)))
+    assert core.expected_facts(fen, uci) == expected
+    assert core.independent_facts(fen, uci) == expected
+
+
+def test_piece_map_is_wholly_pre_move_and_no_evaluator_fields_reach_prompt():
+    row = {"fen": chess.STARTING_FEN, "selected_uci": "e2e4", "expected": "LABEL_SENTINEL",
+           "post_move_fen": "FUTURE_SENTINEL", "theme": "THEME_SENTINEL"}
+    plain = core.build_prompt(row, "fen_uci")
+    mapped = core.build_prompt(row, "fen_uci_piece_map")
+    for prompt in (plain, mapped):
+        assert not any(s in prompt for s in ("LABEL_SENTINEL", "FUTURE_SENTINEL", "THEME_SENTINEL"))
+    packet = json.loads(mapped.rsplit("\nInput: ", 1)[1])
+    assert len(packet["pieces"]) == 64 and packet["pieces"]["e2"] == "P" and packet["pieces"]["e4"] is None
+    assert set(json.loads(plain.rsplit("\nInput: ", 1)[1])) == {"fen", "selected_uci"}
+
+
+@pytest.mark.parametrize("change", ["extra", "missing", "numeric_bool", "string_bool", "bad_piece", "duplicate", "fences", "prose", "nan"])
+def test_strict_parser_rejects_type_schema_and_text_repairs(change):
+    value = core.expected_facts(chess.STARTING_FEN, "e2e4")
+    if change == "extra": value["rationale"] = "no"
+    if change == "missing": del value["is_castling"]
+    if change == "numeric_bool": value["is_capture"] = 0
+    if change == "string_bool": value["gives_check"] = "false"
+    if change == "bad_piece": value["promotion_piece"] = "king"
+    text = json.dumps(value)
+    if change == "duplicate": text = text[:-1] + ',"is_capture":false}'
+    if change == "fences": text = '```json\n' + text + '\n```'
+    if change == "prose": text = 'Here is JSON: ' + text
+    if change == "nan": text = text.replace('false', 'NaN', 1)
+    with pytest.raises((ValueError, TypeError)):
+        core.parse_facts(text)
+
+
+def test_unknown_is_typed_abstention_and_null_is_known_absence():
+    unknown = {f: "unknown" for f in core.FIELDS}
+    assert core.parse_facts(json.dumps(unknown)) == unknown
+    known = core.expected_facts(chess.STARTING_FEN, "e2e4")
+    assert core.parse_facts(json.dumps(known))["captured_piece"] is None
+
+
+@pytest.fixture
+def fixture(tmp_path):
+    data = tmp_path / "frozen"
+    data.mkdir()
+    protocol = runner.read(Path(__file__).parent / "board-fact-protocol-v1.json")
+    runner.save(data / "protocol.json", protocol)
+    inputs = [{"case_id": "case" + str(i), "fen": chess.STARTING_FEN, "selected_uci": "e2e4"} for i in range(16)]
+    runner.save(data / "generator-inputs.json", {"rows": inputs, "count": 16})
+    runner.save(data / "dataset.json", {"fixture": "DO NOT LOAD DURING GENERATION"})
+    runner.save(data / "evaluator-labels.json", {"rows": [{"case_id": r["case_id"], "expected": core.expected_facts(r["fen"], r["selected_uci"])} for r in inputs],
+        "observed_special_move_coverage": {"is_capture": 0, "gives_check": 0, "is_castling": 0, "is_en_passant": 0, "promotion": 0}})
+    runner.save(data / "frozen-data.json", {"files_sha256": {n: runner.sha(data / n) for n in
+        ("protocol.json", "dataset.json", "generator-inputs.json", "evaluator-labels.json")}, "count": 16})
+    return {"data": data, "out": tmp_path / "run", "hash": runner.sha(data / "frozen-data.json"), "protocol": protocol}
+
+
+class FakeClient:
+    def __init__(self, protocol, mode="ok"):
+        self.protocol, self.mode, self.calls, self.unloads = protocol, mode, [], 0
+    def request(self, route, payload=None):
+        model = self.protocol["model"]
+        if route == "/api/version": return b'{"version":"FAKE"}'
+        if route == "/api/tags": return json.dumps({"models": [{"name": model["alias"], "digest": "WRONG" if self.mode == "identity_failure" else model["expected_digest"]}]}).encode()
+        if route == "/api/show": return json.dumps({"details": {"family": model["expected_family"]}}).encode()
+        if route == "/api/ps": return b'{"models":[]}'
+        assert route == "/api/generate"
+        if "prompt" not in payload:
+            self.unloads += 1
+            return b'{"done":true,"done_reason":"unload"}'
+        self.calls.append(payload)
+        if self.mode == "transport_failure" and len(self.calls) == 3:
+            raise runner.BackendFailure("injected transport failure", body=b'partial retained bytes')
+        packet = json.loads(payload["prompt"].rsplit("\nInput: ", 1)[1])
+        response = core.expected_facts(packet["fen"], packet["selected_uci"])
+        if self.mode == "unknown": response = {f: "unknown" for f in core.FIELDS}
+        text = 'BAD e2e4' if self.mode == "parse_failure" and len(self.calls) == 1 else json.dumps(response)
+        envelope = {"model": model["alias"], "response": text, "thinking": "", "done": True,
+                    "done_reason": "length" if self.mode == "truncation" and len(self.calls) == 1 else "stop", "eval_count": 100}
+        if self.mode == "incomplete" and len(self.calls) == 1: envelope["done"] = False
+        return json.dumps(envelope).encode()
+
+
+def execute(fixture, mode="ok"):
+    client = FakeClient(fixture["protocol"], mode)
+    rows = runner.generate(fixture["data"], fixture["out"], fixture["hash"], client_factory=lambda _: client)
+    return rows, client
+
+
+def test_no_label_or_dataset_read_before_all_raw_responses_are_saved_and_bound(fixture, monkeypatch):
+    original_open = Path.open
+    forbidden = {(fixture["data"] / n).resolve() for n in ("dataset.json", "evaluator-labels.json")}
+    def guarded_open(path, *args, **kwargs):
+        if path.resolve() in forbidden: raise AssertionError("evaluator material read during generation")
+        return original_open(path, *args, **kwargs)
+    with monkeypatch.context() as context:
+        context.setattr(Path, "open", guarded_open)
+        rows, client = execute(fixture)
+    assert len(rows) == len(client.calls) == 32 and client.unloads == 1
+    assert all(r["status"] == "completed" for r in rows)
+    assert [r["condition"] for r in rows[:4]] == ["fen_uci", "fen_uci_piece_map", "fen_uci_piece_map", "fen_uci"]
+    assert all(p["options"] == {"temperature": 0, "seed": 4082030, "num_ctx": 8192, "num_predict": 384} for p in client.calls)
+    opened = []
+    def labels_after_hashes(out, before):
+        assert len(runner.verify_raw(out)[0]) == 32
+        opened.append("sealed")
+        return runner.load_labels(out, before)
+    result = runner.evaluate(fixture["out"], label_loader=labels_after_hashes)
+    assert opened == ["sealed"]
+    assert all(g["planned"] == g["accounted"] == g["all_eight_correct"] == 16 for g in result["groups"].values())
+
+
+@pytest.mark.parametrize("mode,attempts,failures", [("transport_failure", 3, 30), ("incomplete", 1, 32), ("identity_failure", 0, 32)])
+def test_backend_failure_has_no_retry_and_keeps_full_denominators(fixture, mode, attempts, failures):
+    rows, client = execute(fixture, mode)
+    assert len(rows) == 32 and len(client.calls) == attempts and client.unloads == 1
+    assert sum(r["status"] != "completed" for r in rows) == failures
+    if mode == "transport_failure":
+        assert (fixture["out"] / rows[2]["raw_http_body"]["path"]).read_bytes() == b'partial retained bytes'
+    result = runner.evaluate(fixture["out"])
+    assert all(g["accounted"] == g["planned"] == 16 for g in result["groups"].values())
+
+
+@pytest.mark.parametrize("mode,status", [("parse_failure", "parse_or_schema_failure"), ("truncation", "truncated"), ("unknown", "completed")])
+def test_parse_truncation_and_abstention_are_retained_without_rescue(fixture, mode, status):
+    rows, client = execute(fixture, mode)
+    assert len(client.calls) == 32 and rows[0]["status"] == status
+    result = runner.evaluate(fixture["out"])
+    if mode == "unknown":
+        assert all(g["all_eight_correct"] == 0 and all(v == 16 for v in g["field_unknown"].values()) for g in result["groups"].values())
+    else:
+        assert result["groups"]["fen_uci"]["all_eight_correct"] == 15
+        assert all(v == 15 for v in result["groups"]["fen_uci"]["field_correct"].values())
+
+
+@pytest.mark.parametrize("mutation", ["body", "omitted_body", "omitted_source"])
+def test_all_raw_and_source_bindings_are_required_before_label_loader(fixture, mutation):
+    rows, _ = execute(fixture)
+    path = fixture["out"] / "raw-seal.json"
+    seal = runner.read(path)
+    body = rows[0]["raw_http_body"]["path"]
+    if mutation == "body": (fixture["out"] / body).write_bytes(b'tamper')
+    if mutation == "omitted_body": del seal["files_sha256"][body]
+    if mutation == "omitted_source": del seal["files_sha256"]["sources/board_fact_core.py"]
+    runner.save(path, seal)
+    reads = []
+    with pytest.raises(ValueError): runner.evaluate(fixture["out"], label_loader=lambda *a: reads.append("LEAK"))
+    assert reads == []
+
+
+def test_interrupted_attempt_is_not_replayed_and_bytes_are_preserved(fixture):
+    fixture["out"].mkdir()
+    (fixture["out"] / "before-calls.json").write_bytes(b'partial marker')
+    calls = []
+    with pytest.raises(ValueError, match="existing/partial"):
+        runner.generate(fixture["data"], fixture["out"], fixture["hash"], client_factory=lambda *a: calls.append(a))
+    assert calls == [] and (fixture["out"] / "before-calls.json").read_bytes() == b'partial marker'
+
+
+@pytest.mark.parametrize("part", ["schema", "instruction"])
+def test_protocol_core_mismatch_has_zero_backend_or_identity_calls(fixture, part):
+    protocol = fixture["protocol"]
+    if part == "schema": protocol["output_schema"]["required"] = ["different"]
+    else: protocol["prompt"]["instruction_exact"] += " changed"
+    runner.save(fixture["data"] / "protocol.json", protocol)
+    frozen = runner.read(fixture["data"] / "frozen-data.json")
+    frozen["files_sha256"]["protocol.json"] = runner.sha(fixture["data"] / "protocol.json")
+    runner.save(fixture["data"] / "frozen-data.json", frozen)
+    calls = []
+    with pytest.raises(ValueError, match="core differs"):
+        runner.generate(fixture["data"], fixture["out"], runner.sha(fixture["data"] / "frozen-data.json"),
+                        client_factory=lambda *a: calls.append("identity"))
+    assert calls == [] and not fixture["out"].exists()
+
+
+def test_missing_reviewed_tests_blocks_before_output_or_backend(fixture, monkeypatch):
+    original = Path.is_file
+    def missing(path):
+        return False if path.name == "test_board_fact_diagnostic.py" else original(path)
+    monkeypatch.setattr(Path, "is_file", missing)
+    calls = []
+    with pytest.raises(ValueError, match="three reviewed"):
+        runner.generate(fixture["data"], fixture["out"], fixture["hash"], client_factory=lambda *a: calls.append("identity"))
+    assert calls == [] and not fixture["out"].exists()
+
+
+def test_cli_blocks_real_calls_without_parent_gpu_handoff(tmp_path, monkeypatch):
+    calls = []
+    monkeypatch.setattr(runner, "generate", lambda *a: calls.append(a))
+    with pytest.raises(SystemExit) as error:
+        runner.main(["generate", "--dataset-dir", str(tmp_path), "--out", str(tmp_path / "new"), "--frozen-sha256", "X"])
+    assert error.value.code == 2 and calls == []

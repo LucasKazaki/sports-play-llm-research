@@ -1,0 +1,144 @@
+{
+  "schema": "chess.board-fact.independent-file-recovery-review.v1",
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "new_model_or_engine_or_http_calls": 0,
+  "original_files_unchanged": 46,
+  "all_raw_seal_bindings_verified": 50,
+  "prompt_and_request_reconstructions": 31,
+  "completed_original_rows_unchanged": 30,
+  "attempted_generation_requests": 31,
+  "completed": 30,
+  "backend_failures": 1,
+  "not_run": 1,
+  "planned_and_accounted": 32,
+  "labels_independently_recomputed": 16,
+  "groups": {
+    "fen_uci": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 2,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 8,
+        "moving_colour": 15,
+        "is_capture": 3,
+        "captured_piece": 2,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "not_run_after_backend_failure": 1
+      }
+    },
+    "fen_uci_piece_map": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 5,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 14,
+        "moving_colour": 15,
+        "is_capture": 7,
+        "captured_piece": 7,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "backend_failure": 1
+      }
+    }
+  },
+  "model_digest": "7b0c2ef4e855aa2ea19d0a4d892311961e2710243ea624c300e6ccaa50ffeee2",
+  "hashes": {
+    "original_progress": "1d0e3dc37819cdbfc2c0c8bbab2cacd151289def16a72b0f784ce43d351921de",
+    "recovered_raw_seal": "867040994c518ff99eef80792e22a2320e4855396afa88f7cea766ab3ce6d0ce",
+    "recovered_evaluation": "93d5766a78144dbe9541db97f45d9b6e5ba14db823809cef32e36c0bd1135c8a",
+    "file_recovery": "9ad5754109e9191e6a8e3e697f0f343d4a41039830f949ef67224f54f1f71a07",
+    "frozen_data": "ef219598d6d0d761cef52ea931cb09dde979496d5750b3c2977090092a0134d4",
+    "independent_script": "058a319882a0e8eb259fccf16d2e10e8504c492daa36e54cc0c0193b1edbd801"
+  },
+  "limits": [
+    "Interrupted single model/16case convenience diagnostic; no significance, strength, training or commentary inference.",
+    "30 completed requests plus1incomplete backend response and1notrun; never claim32completed calls.",
+    "Last-call latency was lost and explicitly null; no reconstruction of unretained token IDs/logits.",
+    "Zero selected castling/enpassant/promotion examples; their high accuracy is absence detection only.",
+    "Underlying low-memory/backend failure cause is not fixed by post-run bounded hashing or recovery."
+  ],
+  "created_at_utc": "2026-10-15T06:57:19.585334+00:00",
+  "review_kind": "Practical independent source/retained-byte/fake-backend review; not scientific promotion.",
+  "verdict": "Retained interrupted diagnostic and post-run wrapper can be published with the stated limitations. No rerun, learning, strength, significance or broad understanding claim is supported.",
+  "source_review": {
+    "executed_original_runner_sha256": "ace8c8df385c837a6be6352b49fff26d44ea64b9b41f725a88abaf453f718806",
+    "executed_original_core_sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "executed_original_tests_sha256": "1b3b9494fc582dffa419a4ecce769661cf402d4eadfc0e2587f71e6d281a9136",
+    "core_exactly_unchanged": true,
+    "portable_postrun_sha256": {
+      "scripts/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+      "scripts/chess_board_fact_diagnostic.py": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d",
+      "tests/test_chess_board_fact_diagnostic.py": "55438dec5e91b2c05a03da18657cf5f194fd15f034de528d2aea2858f0857779"
+    },
+    "note": "Portable wrapper is a distinct post-run implementation. Original snapshots, protocol and recovered response evidence remain unchanged."
+  },
+  "portable_wrapper_checks": {
+    "fake_tests_passed": 39,
+    "pytest_elapsed_seconds": 2.57,
+    "command": ".venv-soccernet/Scripts/python.exe -B -m pytest -q tests/test_chess_board_fact_diagnostic.py",
+    "network_model_engine_calls": 0,
+    "postrun_changes": "Repository path/import packaging, bounded64KiB hashing, outer artifact-failure stop/unload/recovery handling, and explicit request intent versus actual attempted-call accounting."
+  },
+  "independent_finding": {
+    "title": "Pre-call progress persistence failure was falsely counted as an attempted model request",
+    "function": "generate",
+    "status": "Independently reproduced, root repaired, independently rechecked",
+    "before": {
+      "fake_generation_calls": 2,
+      "recorded_attempted": 3,
+      "unloads": 1,
+      "denominator": 32
+    },
+    "repair": "Persist request_prepared intent first, set attempted immediately before client.request, classify failed pre-call persistence as not_run_local_artifact_failure with attemptedFalse and no fake response body.",
+    "after": {
+      "fake_generation_calls": 2,
+      "recorded_attempted": 2,
+      "unloads": 1,
+      "denominator": 32
+    },
+    "actual_retained_run_affected": false
+  },
+  "evidence_sha256": {
+    "work\\audit_board_fact_recovery_independent.py": "058a319882a0e8eb259fccf16d2e10e8504c492daa36e54cc0c0193b1edbd801",
+    "work\\board-fact-recovery-independent-review.json": "ab4ca37d071b252fe9ab2085dba617d9f7879a1205a05f2b8009aeb18a2cee39",
+    "work\\probe_board_fact_pre_call_failure.py": "95005ec38840b3d46040d57322fadb7c28a1ec036ce71ad92cb15a22ae018389",
+    "work\\board-fact-precall-failure-probe.json": "bd770cbfd19adf992d267b99149ed2b2c4eb274e4af4289aca0293db19f3e139",
+    "work\\probe_board_fact_pre_call_repaired.py": "da228c1c5fb34987ad380857610f9f5658454faa2ff69513bde29afdd9370717",
+    "work\\board-fact-precall-repaired-probe.json": "7e5fb144a7ad176609859b10ad32210cc17c7f575421397cb32dfa90e7c66dc1"
+  },
+  "branch_at_review": "research/chess-board-facts-v1-20261015",
+  "source_state": "Root-owned uncommitted publication candidate on stacked branch; reviewed exact hashes above. No repository source edits made by this reviewer."
+}

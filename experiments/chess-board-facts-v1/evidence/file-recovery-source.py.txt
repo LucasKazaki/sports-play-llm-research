@@ -1,0 +1,81 @@
+"""File-only recovery of the failed attempt; never calls any HTTP/model/engine."""
+import copy
+import hashlib
+import json
+from pathlib import Path
+import shutil
+import board_fact_core as core
+import board_fact_diagnostic as runner
+
+ROOT = Path(__file__).resolve().parent
+PRIVATE = ROOT / "repos/sports-play-llm-research/data/private"
+ORIGINAL = PRIVATE / "chess-board-facts-v1-run"
+RECOVERED = PRIVATE / "chess-board-facts-v1-file-recovery"
+
+def sha(path):
+    h = hashlib.sha256()
+    with path.open("rb") as stream:
+        while block := stream.read(65536):
+            h.update(block)
+    return h.hexdigest()
+
+def read(path):
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+def main():
+    assert not RECOVERED.exists(), "Do not replace an existing recovery"
+    assert not (ORIGINAL / "raw-seal.json").exists(), "Original attempt unexpectedly sealed"
+    before = read(ORIGINAL / "before-calls.json")
+    original_progress = read(ORIGINAL / "progress.json")
+    records = copy.deepcopy(original_progress["records"])
+    assert len(records) == 32
+    for relative, expected in before["source_sha256"].items():
+        assert sha(ORIGINAL / relative) == expected, relative
+    for index, row in enumerate(records[:30]):
+        assert row["status"] == "completed" and row["attempted"] is True
+        raw = ORIGINAL / "raw" / f"response-{index:03d}.body"
+        body = read(raw)
+        assert body["done"] is True and body["done_reason"] == "stop"
+        assert body["response"] == row["raw_output"]
+        assert sha(raw) == row["raw_http_body"]["sha256"]
+        core.parse_facts(body["response"])
+        assert row["prompt"] == core.build_prompt(row, row["condition"])
+    assert records[30]["attempted"] is True and records[30]["status"] == "not_run"
+    assert records[31]["attempted"] is False and records[31]["status"] == "not_run"
+    failed_body_path = ORIGINAL / "raw/response-030.body"
+    failed_body = read(failed_body_path)
+    assert failed_body["done"] is False
+    assert failed_body["model"] == read(ORIGINAL / "protocol.json")["model"]["alias"]
+    assert not (ORIGINAL / "raw/response-031.body").exists()
+    assert len(list((ORIGINAL / "raw").glob("response-*.body"))) == 31
+    original_hashes = {p.relative_to(ORIGINAL).as_posix(): sha(p) for p in ORIGINAL.rglob("*") if p.is_file()}
+    shutil.copytree(ORIGINAL, RECOVERED)
+    failure = {"type": "RetainedIncompleteBackendResponseAndLocalMemoryError",
+               "message": "31st call returned done=false; original Python then raised MemoryError while hashing its saved body. Windows event2004 and llama-server bad_alloc corroborate virtual-memory exhaustion; exact resource cause remains unresolved."}
+    records[30].update(status="backend_failure", error=failure,
+                       backend_response=failed_body, recovered_from_raw_body=True,
+                       raw_http_body={"path": "raw/response-030.body", "sha256": sha(failed_body_path), "bytes": failed_body_path.stat().st_size},
+                       elapsed_seconds=None, elapsed_seconds_note="Lost before progress persistence; not reconstructed")
+    records[31].update(status="not_run_after_backend_failure", error=failure)
+    for name in ("board-fact-windows-memory-event.json", "board-fact-ollama-failure.log"):
+        shutil.copyfile(ROOT / name, RECOVERED / name)
+    receipt = {"schema": "chess.board-fact.file-recovery.v1", "kind": "post-failure file-only reconstruction, not a rerun",
+               "original_directory": str(ORIGINAL), "original_files_sha256": original_hashes,
+               "original_progress_preserved": True, "completed_original_rows_preserved": 30,
+               "attempted_generation_requests": 31, "not_attempted": 1, "planned_denominator": 32,
+               "failure": failure, "lost_metadata": ["31st-call elapsed time and in-memory error object"],
+               "actions": ["copy original bytes", "verify30 completed raw envelopes/schema/prompts", "classify31st incomplete envelope as backend_failure", "classify32nd as not_run_after_backend_failure", "seal all retained evidence before separate label loading"],
+               "new_http_requests": 0, "new_model_calls": 0, "new_engine_calls": 0,
+               "generation_succeeded": False, "original_process_exit_code": 1,
+               "cleanup": read(ORIGINAL / "cleanup.json")}
+    runner.save(RECOVERED / "file-recovery.json", receipt)
+    shutil.copyfile(__file__, RECOVERED / "file-recovery-source.py")
+    runner.seal(RECOVERED, records, before)
+    # Ensure recovery itself left every original byte untouched.
+    assert {p.relative_to(ORIGINAL).as_posix(): sha(p) for p in ORIGINAL.rglob("*") if p.is_file()} == original_hashes
+    runner.verify_raw(RECOVERED)
+    print(json.dumps({"recovered": str(RECOVERED), "completed": 30, "backend_failure": 1,
+                      "not_run": 1, "raw_seal_sha256": sha(RECOVERED / "raw-seal.json"), "new_calls": 0}))
+
+if __name__ == "__main__":
+    main()

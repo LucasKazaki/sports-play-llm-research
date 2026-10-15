@@ -1,0 +1,111 @@
+"""Independent source-order reconstruction before any real diagnostic inference."""
+import csv
+import hashlib
+import io
+import json
+from pathlib import Path
+import chess
+import zstandard
+
+ROOT = Path(__file__).resolve().parent.parent
+REPO = ROOT / "work/repos/sports-play-llm-research"
+DATA = REPO / "data/private/chess-board-facts-v1"
+SOURCE = REPO / "data/private/chess-distill-v1/source-prefix.csv.zst.part"
+
+def read(path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def key(fen):
+    return " ".join(chess.Board(fen).fen().split()[:4])
+
+def source_rows():
+    with SOURCE.open("rb") as raw:
+        with io.TextIOWrapper(zstandard.ZstdDecompressor().stream_reader(raw), encoding="utf-8") as text:
+            yield from csv.DictReader(text)
+
+frozen = read(DATA / "frozen-data.json")
+for name, expected in frozen["files_sha256"].items():
+    assert digest(DATA / name) == expected, name
+assert SOURCE.stat().st_size == 4194304
+assert digest(SOURCE) == "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056"
+games, boards, puzzle_fens = set(), set(), {}
+historical = read(REPO / "data/open/chess/lichess-real-seed-v1/manifest.json")
+for item in historical["items"]:
+    games.add(item["game_id"])
+    boards.add(key(item["fen"]))
+    for ply in item.get("legal_replay", []):
+        boards.update([key(ply["before"]), key(ply["after"])])
+for name in ["chess-distill-v1", "chess-distill-v2", "chess-classifier-v3", "chess-move-only-lm-v4"]:
+    dataset = read(REPO / "data/private" / name / "dataset.json")
+    for rows in dataset["splits"].values():
+        for row in rows:
+            assert row["id"] not in puzzle_fens
+            puzzle_fens[row["id"]] = row["fen"]
+            games.add(row["game_id"])
+            boards.add(key(row["fen"]))
+remaining = set(puzzle_fens)
+prior_scan = 0
+for raw in source_rows():
+    prior_scan += 1
+    if raw["PuzzleId"] in remaining:
+        board = chess.Board(raw["FEN"])
+        assert board.is_valid()
+        boards.add(key(board.fen()))
+        move = chess.Move.from_uci(raw["Moves"].split()[0])
+        assert move in board.legal_moves
+        board.push(move)
+        assert board.fen() == puzzle_fens[raw["PuzzleId"]]
+        remaining.remove(raw["PuzzleId"])
+        if not remaining:
+            break
+assert not remaining
+original_counts = {"games": len(games), "board_keys": len(boards)}
+picked = []
+selection_scan = 0
+for raw in source_rows():
+    selection_scan += 1
+    game = raw["GameUrl"].split("lichess.org/", 1)[1].split("/", 1)[0].split("#", 1)[0]
+    if len(game) != 8 or not game.isascii() or not game.isalnum():
+        continue
+    board = chess.Board(raw["FEN"])
+    move = chess.Move.from_uci(raw["Moves"].split()[0])
+    if not board.is_valid() or move not in board.legal_moves:
+        continue
+    before = board.fen()
+    board.push(move)
+    if board.is_game_over() or game in games or key(before) in boards or key(board.fen()) in boards:
+        continue
+    hashed = hashlib.sha256(("4082030:"+game).encode()).hexdigest()
+    number = int(hashed, 16)
+    if number % 10 != 1:
+        continue
+    moves = sorted(m.uci() for m in board.legal_moves)
+    picked.append({"case_id": "board-fact-"+raw["PuzzleId"], "game_id": game,
+                   "source_before_fen": before, "setup_uci": move.uci(), "fen": board.fen(),
+                   "selected_uci": moves[number % len(moves)], "selection_hash": hashed})
+    games.add(game)
+    boards.update([key(before), key(board.fen())])
+    if len(picked) == 16:
+        break
+actual = read(DATA / "dataset.json")
+assert original_counts == actual["prior_exclusions"]
+assert selection_scan == actual["source_rows_scanned"]
+assert len(picked) == len(actual["rows"]) == 16
+for expected, actual_row in zip(picked, actual["rows"]):
+    assert all(actual_row[k] == v for k, v in expected.items())
+inputs = read(DATA / "generator-inputs.json")["rows"]
+assert inputs == [{k: r[k] for k in ["case_id", "fen", "selected_uci"]} for r in picked]
+labels = read(DATA / "evaluator-labels.json")
+assert {r["case_id"] for r in labels["rows"]} == {r["case_id"] for r in inputs}
+result = {"schema": "chess.board-fact.independent-intake-audit.v1", "source_sha256": digest(SOURCE),
+          "frozen_data_sha256": digest(DATA / "frozen-data.json"), "prior_exclusions": original_counts,
+          "prior_role_source_rows_scanned": prior_scan, "selection_source_rows_scanned": selection_scan,
+          "exact_new_cases": len(picked), "all_source_roles_games_moves_and_inputs_matched": True,
+          "model_calls": 0, "engine_calls": 0,
+          "coverage": labels["observed_special_move_coverage"],
+          "limits": "Source-order development diagnostic only; no upstream pretraining-overlap guarantee or representative benchmark claim."}
+(ROOT / "work/board-fact-independent-intake-audit.json").write_text(json.dumps(result, indent=2)+"\n", encoding="utf-8")
+print(json.dumps(result))

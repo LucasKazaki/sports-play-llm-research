@@ -1,0 +1,60 @@
+{
+  "schema": "chess.board-fact.before-calls.v1",
+  "dataset_directory": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-board-facts-v1",
+  "frozen_data_sha256": "ef219598d6d0d761cef52ea931cb09dde979496d5750b3c2977090092a0134d4",
+  "source_sha256": {
+    "sources/board_fact_diagnostic.py": "ace8c8df385c837a6be6352b49fff26d44ea64b9b41f725a88abaf453f718806",
+    "sources/board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "sources/test_board_fact_diagnostic.py": "1b3b9494fc582dffa419a4ecce769661cf402d4eadfc0e2587f71e6d281a9136"
+  },
+  "planned": 32,
+  "evaluator_labels_read": false,
+  "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+  "python_chess": "1.10.0",
+  "identity": {
+    "model": {
+      "name": "qwen3.8-27b-local-q2k:latest",
+      "model": "qwen3.8-27b-local-q2k:latest",
+      "modified_at": "2026-09-27T01:44:25.8802945-04:00",
+      "size": 11792211469,
+      "digest": "7b0c2ef4e855aa2ea19d0a4d892311961e2710243ea624c300e6ccaa50ffeee2",
+      "details": {
+        "parent_model": "",
+        "format": "gguf",
+        "family": "qwen35",
+        "families": [
+          "qwen35"
+        ],
+        "parameter_size": "27.3B",
+        "quantization_level": "Q2_K",
+        "context_length": 262144,
+        "embedding_length": 5120
+      },
+      "capabilities": [
+        "tools",
+        "thinking",
+        "completion",
+        "vision"
+      ]
+    },
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "27.3B",
+      "quantization_level": "Q2_K"
+    },
+    "server": {
+      "version": "0.34.4"
+    },
+    "raw_sha256": {
+      "identity-running.body": "a6fe9ec6e26a38d99fca418b69826e0238b7a2bb319ff05eb153a6fcfd1fa28d",
+      "identity-show.body": "2384777cd862af9476596db3960011785b8d2ef46014453e5575b45a8d22c20b",
+      "identity-tags.body": "cd01ffd28c2cf4b8facee68c0e72d1b77979f9bb7753af3c308366d618d1e803",
+      "identity-version.body": "d50831e451c3bd4476a56b6119d415288849bd959ccecc83d83489716d754598"
+    }
+  }
+}

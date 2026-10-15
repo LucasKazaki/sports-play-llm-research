@@ -1,0 +1,58 @@
+{
+  "schema": "board-fact.software-preflight.v1",
+  "status": "ready for independent parent source/data review; no actual model/engine calls",
+  "tests": {
+    "passed": 36,
+    "elapsed_seconds": 2.61,
+    "command": "repository-local Python -B -m pytest workspace work/test_board_fact_diagnostic.py -q",
+    "execution": "fake local client only; no HTTP/model/engine calls"
+  },
+  "source_sha256": {
+    "board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "board_fact_diagnostic.py": "ace8c8df385c837a6be6352b49fff26d44ea64b9b41f725a88abaf453f718806",
+    "test_board_fact_diagnostic.py": "1b3b9494fc582dffa419a4ecce769661cf402d4eadfc0e2587f71e6d281a9136",
+    "board-fact-protocol-v1.json": "1cb702fab0ba476bf2526bbcbd167acd85bc990abd50c647d2342d2658e50187"
+  },
+  "dataset_directory": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-board-facts-v1",
+  "frozen_data_sha256": "ef219598d6d0d761cef52ea931cb09dde979496d5750b3c2977090092a0134d4",
+  "frozen_files_sha256": {
+    "protocol.json": "1cb702fab0ba476bf2526bbcbd167acd85bc990abd50c647d2342d2658e50187",
+    "dataset.json": "30bfeeaa812b3c86e819405ebe9ee64a692575d43969139ae1d4fb99a821e51f",
+    "generator-inputs.json": "8fcd75f686d9a3f1742f03ad83e1be34f420b9372d1d0d7ddca3bae8c3bc44a3",
+    "evaluator-labels.json": "5f3c3e6ae6ed1bace366fda0d7c8174c69ddd78f02cf32e814ad80fc66396c6e"
+  },
+  "prior_exclusions": {
+    "games": 21688,
+    "board_keys": 43474
+  },
+  "selection_rejections": {
+    "invalid": 0,
+    "excluded_or_duplicate": 15866,
+    "not_development_bucket": 192
+  },
+  "source_rows_scanned": 16074,
+  "selected_games": 16,
+  "count": 16,
+  "label_fact_routes_agree": true,
+  "observed_coverage": {
+    "is_capture": 3,
+    "gives_check": 1,
+    "is_castling": 0,
+    "is_en_passant": 0,
+    "promotion": 0
+  },
+  "primary_sources": [
+    "https://docs.ollama.com/api/generate",
+    "https://docs.ollama.com/capabilities/structured-outputs",
+    "https://docs.ollama.com/modelfile",
+    "https://docs.ollama.com/api/tags",
+    "https://github.com/ollama/ollama/blob/main/docs/api.md#show-model-information",
+    "https://python-chess.readthedocs.io/en/latest/core.html"
+  ],
+  "limits": [
+    "Frozen reused-source development diagnostic, not an accepted commentary/strength benchmark",
+    "Special-move coverage reported as observed; no position substitutions",
+    "Parent review and GPU handoff required before actual32calls",
+    "Input file and evaluator labels are separate; raw/source seals precede evaluator access"
+  ]
+}
