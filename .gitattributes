@@ -1,0 +1,8 @@
+# Retained illustration bytes and post-run copies have explicit hash bindings.
+# Preserve them across Windows/Unix checkouts without line-ending normalization.
+.gitattributes text eol=lf
+# Treat retained CRLF bytes as line endings when checking whitespace.
+experiments/gotham-illustrative-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/gotham_illustrative_eval.py -text
+tests/test_gotham_illustrative_eval.py -text
+reports/gotham-illustrative-v1-2026-10-15.md -text

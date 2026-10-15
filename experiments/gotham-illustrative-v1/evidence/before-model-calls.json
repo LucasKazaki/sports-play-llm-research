@@ -1,0 +1,16 @@
+{
+  "prepared_sha256": "680c59bf351c8306008f9a9fd130eaf000ff97e7ca2108addb305bcf7b27522e",
+  "runtime": {
+    "python": "3.12.2",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "python_chess": "1.10.0",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "parameters": "float32",
+    "autocast": false,
+    "torch_cpu_threads": 4
+  },
+  "planned_outcomes": 9,
+  "evaluator_ledger_read": false
+}

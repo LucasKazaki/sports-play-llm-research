@@ -1,0 +1,21 @@
+{
+  "schema": "gothamchess.illustrative.fen-only-inputs.v1",
+  "status": "Illustrative only; not an accepted holdout",
+  "positions": [
+    {
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "pre_move_fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "side_to_move": "white"
+    },
+    {
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "pre_move_fen": "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "side_to_move": "white"
+    },
+    {
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "pre_move_fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "side_to_move": "white"
+    }
+  ]
+}

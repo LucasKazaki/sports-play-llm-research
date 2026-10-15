@@ -1,0 +1,30 @@
+{
+  "schema": "gotham.illustrative.runner.software-check.v1",
+  "tests": {
+    "command": "repository-local Python -B -m pytest workspace work/test_gotham_illustrative_eval.py -q",
+    "passed": 27,
+    "elapsed_seconds": 2.23,
+    "backends": "finite fake only; no torch/model/engine calls"
+  },
+  "actual_frozen_plan_preparation": {
+    "passed": true,
+    "planned_rows": 9,
+    "model_calls": 0,
+    "evaluator_ledger_read": false,
+    "temporary_directory_cleaned": true
+  },
+  "source_sha256": {
+    "gotham_illustrative_eval.py": "f43f6beaed6ec8770b15967db0d14ab30827605cdcbe0a7aa55fa3034294c8a8",
+    "test_gotham_illustrative_eval.py": "b504deeb1026b6298714d5de734f2577bede0ec0c3d63e1a7c89c58e3ffe8e57",
+    "gothamchess-illustrative-evaluation-plan-v1.json": "bbe7f80c5729ff124e8d6aab038b3208e2b572ffc6c590a2f11ce419f70d9523"
+  },
+  "limits": [
+    "Actual generation not run",
+    "Fake backends validate orchestration and failure accounting, not model behavior",
+    "Root review and GPU-release confirmation required before actual calls"
+  ],
+  "review_repairs": [
+    "A before-model-calls marker prevents replaying any partial generation attempt and preserves partial bytes",
+    "All prepared source bindings and every row-referenced raw logit path/row hash/seal hash/file hash are mandatory before evaluator ledger access"
+  ]
+}

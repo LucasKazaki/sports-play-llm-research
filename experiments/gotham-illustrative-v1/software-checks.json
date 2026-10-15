@@ -1,0 +1,25 @@
+{
+  "schema": "gotham.illustrative.packaging-software-checks.v1",
+  "scope": "Fake backends/weights and file preparation only; no model, Torch-generation path, GPU or engine calls",
+  "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_gotham_illustrative_eval.py -q",
+  "python": "3.12.2",
+  "pytest": "9.1.1",
+  "tests": 30,
+  "passed": 30,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "original_cases_preserved": 27,
+  "postrun_cli_portability_cases": 3,
+  "junit_sha256": "a1ee5f407b6cae758ff5c4f829d0ea449c776e88a0b4e0c4cde385f48055bbb4",
+  "active_runner_sha256": "60fd75d1f5799481e17d2a9264167809135b2763ea25d658f125257614fb229a",
+  "active_tests_sha256": "0f94fa2d4e221501889ca3811f73ed7fbbe47c4ee3154c98d51a55afb2deb280",
+  "executed_original_runner_sha256": "f43f6beaed6ec8770b15967db0d14ab30827605cdcbe0a7aa55fa3034294c8a8",
+  "active_ast_changed_functions_only": [
+    "prepare",
+    "main"
+  ],
+  "all_model_backend_and_accounting_ast_unchanged": true,
+  "prepare_help_from_nonrepo_cwd_exit_code": 0,
+  "current_source_was_not_used_for_original_nine_model_calls": true
+}

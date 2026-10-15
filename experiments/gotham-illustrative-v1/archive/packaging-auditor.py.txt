@@ -1,0 +1,155 @@
+"""Independently reaccount a retained nine-output candidate without inference."""
+from pathlib import Path
+import hashlib
+import json
+import re
+
+import chess
+import numpy as np
+from tokenizers import Tokenizer
+
+work = Path(__file__).parent
+repo = work / "repos/sports-play-llm-research"
+candidate = repo / "experiments/gotham-illustrative-v1"
+private = repo / "data/private/gothamchess/illustrative-eval-v1"
+
+
+def sha(path):
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+
+def read(path):
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def inside(root, name):
+    resolved = (root / name).resolve()
+    assert resolved.is_relative_to(root.resolve())
+    return resolved
+
+
+def checked(test, message):
+    assert test, message
+
+
+# Capture all original run artifacts; the audit never opens any for writing.
+before = {p.relative_to(private).as_posix(): sha(p) for p in private.rglob("*") if p.is_file()}
+mapping = read(candidate / "packaging-map.json")["sealed_artifact_to_candidate_path"]
+seal = read(candidate / "evidence/raw-seal.json")
+checked(set(mapping) == set(seal["files_sha256"]), "all 16 bindings must be packaged")
+for name, expected in seal["files_sha256"].items():
+    checked(sha(inside(candidate, mapping[name])) == expected == sha(inside(private, name)), name)
+checked(sha(candidate / "evidence/raw-seal.json") == sha(private / "raw-seal.json"), "seal exact copy")
+plan, inputs = read(candidate / "archive/frozen-plan.json"), read(candidate / "fen-inputs.json")
+raw, result = read(candidate / "evidence/raw-results.json"), read(candidate / "summary.json")
+ledger, prior_audit = read(candidate / "source-ledger.json"), read(candidate / "independent-results-audit.json")
+prepared = read(candidate / "evidence/prepared.json")
+checked(sha(candidate / "summary.json") == sha(private / "evaluation.json"), "evaluation exact copy")
+checked(sha(candidate / "source-ledger.json") == plan["source_binding"]["candidate_ledger_sha256"], "ledger identity")
+checked(ledger["counts"]["accepted_holdout_positions"] == result["accepted_holdout_positions"] == 0, "no accepted holdouts")
+checked(plan["status"] == "frozen_plan_before_scene_model_calls_not_executed", "retain pre-call status")
+checked(raw["planned_outcomes"] == raw["accounted"] == 9 and raw["evaluator_ledger_read"] is False, "denominator/separation")
+checked(seal["planned_outcomes"] == seal["accounted"] == 9 and seal["evaluator_ledger_read"] is False, "seal denominator/separation")
+for name, value in prepared["source_sha256"].items():
+    checked(seal["files_sha256"][name] == value, "prepared sources bound")
+scenes = {s["position_id"]: s for s in ledger["scenes"]}
+conditions = tuple(plan["conditions"])
+expected_order = [(condition, row["position_id"]) for condition in conditions for row in inputs["positions"]]
+checked([(r["condition"], r["position_id"]) for r in raw["records"]] == expected_order, "order/denominator")
+for row in inputs["positions"]:
+    checked(set(row) == {"position_id", "pre_move_fen", "side_to_move"}, "FEN-only fields")
+    checked(chess.Board(row["pre_move_fen"]).is_valid(), "valid board")
+models = {}
+for name, identity in plan["conditions"].items():
+    directory = inside(repo, identity["private_model_directory"])
+    checked(sha(directory / "model.safetensors") == identity["weights_sha256"], "weight identity")
+    checked({f: sha(inside(directory, f)) for f in identity["metadata_sha256"]} == identity["metadata_sha256"], "metadata identity")
+    checked(raw["models"][name]["load_count"] == 1 and raw["models"][name]["call_attempts"] == 3, "actual model counts")
+    models[name] = directory
+tokenizer = Tokenizer.from_file(str(models[conditions[-1]] / "tokenizer.json"))
+groups, details = {}, []
+logit_rows = language_rows = 0
+for row in raw["records"]:
+    name, fen, identifier = row["condition"], row["pre_move_fen"], row["position_id"]
+    checked(row["status"] == "ok" and row["model_call_attempted"], "all actual calls completed")
+    board = chess.Board(fen)
+    encoded = row["encoded_input"]
+    checked(set(encoded) <= {"input_ids", "attention_mask", "prompt"}, "native input fields")
+    checked(encoded["attention_mask"] == [1] * len(encoded["input_ids"]), "attention")
+    if name != conditions[-1]:
+        logits = row["raw_logit_artifact"]
+        checked(seal["files_sha256"][logits["path"]] == logits["sha256"], "NPY binding")
+        vector = np.load(inside(candidate, mapping[logits["path"]]), allow_pickle=False)
+        checked(vector.shape == (1968,) and np.issubdtype(vector.dtype, np.floating) and np.isfinite(vector).all(), "NPY values")
+        config, tok = read(models[name] / "config.json"), read(models[name] / "tokenizer.json")
+        labels = [config["id2label"][str(i)] for i in range(1968)]
+        # Python sorting independently implements descending score and lower-class-ID tie handling.
+        order = sorted(range(1968), key=lambda i: (-float(vector[i]), i))
+        legals = {move.uci() for move in board.legal_moves}
+        legal_order = [i for i in order if labels[i] in legals]
+        def ranked(indices):
+            return [{"class_id": i, "move_uci": labels[i], "logit": float(vector[i]), "legal": labels[i] in legals} for i in indices]
+        checked(row["raw_top5"] == ranked(order[:5]), "raw ranks")
+        checked(row["legal_mask_top5_diagnostic"] == ranked(legal_order[:5]), "diagnostic mask ranks")
+        move = labels[order[0]]
+        checked(row["legal_mask_choice_diagnostic"] == labels[legal_order[0]], "diagnostic choice")
+        checked(row["mask_would_intervene"] == (move != labels[legal_order[0]]), "mask intervention")
+        fields = fen.split()
+        squares = "".join("." * int(ch) if ch.isdigit() else ch for ch in fields[0] if ch != "/")
+        native = squares + fields[1] + fields[2].ljust(4, ".") + fields[3].ljust(2, ".") + fields[4].ljust(2, ".") + "." + fields[5].ljust(3, ".")
+        vocab = tok["model"]["vocab"] | {t["content"]: t["id"] for t in tok["added_tokens"]}
+        checked(len(native) == 77 and encoded["input_ids"] == [vocab[c] for c in native] + [vocab["[CLS]"]], "native classifier tokens")
+        logit_rows += 1
+    else:
+        prefix = "P: " + fen.ljust(90) + "M:"
+        checked(encoded["prompt"] == prefix, "native LM prefix")
+        checked(encoded["input_ids"] == tokenizer.encode(prefix, add_special_tokens=False).ids, "LM input tokens")
+        tokens = row["generated_token_ids"]
+        checked(len(tokens) <= 16 and all(type(t) is int and t >= 0 for t in tokens), "generation token budget")
+        text = tokenizer.decode(tokens, skip_special_tokens=True)
+        checked(text == row["raw_output"], "LM decoded completion")
+        text = text.strip()
+        if text.startswith("M:"):
+            text = text[2:].lstrip()
+        first = text.split(maxsplit=1)[0] if text else ""
+        move = first if re.fullmatch("[a-h][1-8][a-h][1-8][qrbn]?", first) else None
+        language_rows += 1
+    valid = move is not None and chess.Move.from_uci(move) in board.legal_moves
+    checked(row["move_uci"] == move and row["parsed"] == (move is not None) and row["raw_legal"] == valid, "raw action accounting")
+    scene = scenes[identifier]
+    checked(scene["pre_move_fen"] == fen and scene["side_to_move"] == row["side_to_move"], "scene join")
+    displayed = scene["next_displayed_move_evaluator_only"]["next_displayed_move_uci"]
+    checked(chess.Move.from_uci(displayed) in board.legal_moves, "displayed observation legal")
+    match = valid and move == displayed
+    group = groups.setdefault(name, {"planned": 3, "accounted": 0, "parsed": 0, "raw_legal": 0,
+                                      "matches_displayed_move": 0, "statuses": {"ok": 0}})
+    for key, increment in {"accounted": 1, "parsed": move is not None, "raw_legal": valid, "matches_displayed_move": match}.items():
+        group[key] += increment
+    group["statuses"]["ok"] += 1
+    details.append({"condition": name, "position_id": identifier, "raw_move": move, "displayed_move": displayed, "match": match})
+checked(groups == result["groups"] == prior_audit["groups"], "summaries")
+checked(details == prior_audit["records"], "independent result audit")
+rejoined = [{"condition": r["condition"], "position_id": r["position_id"], "status": "ok", "raw_move_uci": r["raw_move"],
+            "raw_legal": True, "next_displayed_move_evaluator_only": r["displayed_move"], "matches_displayed_move": r["match"]} for r in details]
+checked(rejoined == result["records"], "all nine published records")
+checked(result["raw_seal_sha256"] == sha(candidate / "evidence/raw-seal.json"), "result seal")
+checked(result["raw_results_sha256"] == sha(candidate / "evidence/raw-results.json"), "result raw hash")
+checked(before == {p.relative_to(private).as_posix(): sha(p) for p in private.rglob("*") if p.is_file()}, "original run untouched")
+checked(sha(work / "gotham_illustrative_eval.py") == "f43f6beaed6ec8770b15967db0d14ab30827605cdcbe0a7aa55fa3034294c8a8", "original runner untouched")
+checked(sha(work / "gothamchess-illustrative-evaluation-plan-v1.json") == "bbe7f80c5729ff124e8d6aab038b3208e2b572ffc6c590a2f11ce419f70d9523", "original plan untouched")
+audit = {"schema": "gotham.illustrative.packaging-results-audit.v1", "scope": "File, NumPy and tokenizers only; no Torch/model/Stockfish calls",
+         "auditor_source_sha256": sha(Path(__file__)), "sealed_bindings_verified": len(mapping),
+         "original_private_files_unchanged": len(before), "logit_rows_recomputed": logit_rows,
+         "language_rows_decoded": language_rows, "native_inputs_reconstructed": 9,
+         "planned_outcomes": 9, "accounted": 9, "accepted_holdout_positions": 0,
+         "groups": groups, "records": details, "evaluation_sha256": sha(candidate / "summary.json"),
+         "executed_runner_sha256": sha(candidate / "archive/sources/gotham_illustrative_eval.py.txt"),
+         "limitations": ["Local tokenizer/model metadata availability was used for the independent check; no weights are distributed",
+                         "Only three standard-opening illustrations; original games and mainlines remain unverified",
+                         "No research promotion or general chess/ideas/strength conclusion"]}
+destination = candidate / "packaging-results-audit.json"
+with destination.open("x", encoding="utf-8") as stream:
+    json.dump(audit, stream, indent=2)
+    stream.write("\n")
+print(json.dumps({"passed": True, "bindings": len(mapping), "groups": groups, "additional_model_calls": 0}))
