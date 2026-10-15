@@ -1,0 +1,431 @@
+"""Independent source-order/registry/token audit. No model or engine loading.
+
+Run only after root confirms a terminal CPU intake and grants this audit GO.
+Selection oracle is the separately written matched_check_reference module.
+"""
+from __future__ import annotations
+import argparse
+from collections import Counter
+import csv
+from datetime import datetime, timezone
+import hashlib
+from itertools import islice, combinations
+import io
+import json
+import os
+from pathlib import Path
+import re
+import sys
+import time
+
+import chess
+import chess.pgn
+
+import matched_check_reference as ref
+import auditor_skeleton as skeleton
+
+PROTOCOL_SHA = "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+FROZEN_SHA = "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+SOURCE_SHA = "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28"
+REGISTRY_SHA = "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb"
+
+
+def digest(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(65536), b""): h.update(block)
+    return h.hexdigest()
+
+
+def inside(root, name):
+    if type(name) is not str or Path(name).is_absolute() or re.match(r"^[A-Za-z]:", name):
+        raise ValueError("relative evidence path required")
+    target = (root / name).resolve()
+    if not target.is_relative_to(root.resolve()): raise ValueError("evidence escapes root")
+    return target
+
+
+class Reader:
+    def __init__(self): self.before = {}
+    def bind(self, path, sha=None, size=None):
+        path = Path(path).resolve()
+        item = {"bytes": path.stat().st_size, "sha256": digest(path)}
+        if sha is not None: assert item["sha256"] == sha, str(path)
+        if size is not None: assert item["bytes"] == size, str(path)
+        if str(path) in self.before: assert self.before[str(path)] == item, str(path)
+        self.before[str(path)] = item
+        return path
+    def read(self, path):
+        path = self.bind(path)
+        return json.loads(path.read_text(encoding="utf-8"))
+    def stable(self):
+        for name, item in self.before.items():
+            path = Path(name)
+            assert path.stat().st_size == item["bytes"] and digest(path) == item["sha256"], name
+
+
+def key(fen): return ref.board_key(fen)
+
+
+def add_manifest(manifest, games, boards):
+    for item in manifest["items"]:
+        games.add(ref.canonical_game(item["game_id"]))
+        boards.add(key(item["fen"]))
+        for ply in item.get("legal_replay", []):
+            before, after = chess.Board(ply["before"]), chess.Board(ply["after"])
+            assert before.is_valid() and after.is_valid()
+            # Independently verify that the retained transition is a legal ply,
+            # without trusting a source's annotation spelling/field naming.
+            legal_matches = 0
+            for move in before.legal_moves:
+                pushed = before.copy(stack=False); pushed.push(move)
+                legal_matches += pushed.fen() == after.fen()
+            assert legal_matches == 1
+            boards.update((key(before.fen()), key(after.fen())))
+
+
+def old_rows(path):
+    import zstandard
+    with path.open("rb") as raw:
+        with io.TextIOWrapper(zstandard.ZstdDecompressor().stream_reader(raw), encoding="utf-8") as stream:
+            yield from csv.DictReader(stream)
+
+
+def fact_roles(row, games, boards, successors=False):
+    before = chess.Board(row["source_before_fen"])
+    assert before.is_valid()
+    setup = chess.Move.from_uci(row["setup_uci"])
+    assert setup and setup in before.legal_moves
+    boards.add(key(before.fen())); before.push(setup)
+    assert before.fen() == row["fen"] and before.is_valid()
+    games.add(ref.canonical_game(row["game_id"]))
+    boards.add(key(before.fen()))
+    if successors:
+        move = chess.Move.from_uci(row["selected_uci"])
+        assert move in before.legal_moves
+        before.push(move); boards.add(key(before.fen()))
+
+
+def retained_successors(repo, rd):
+    import numpy as np
+    directory = repo / "data/private/gothamchess/constructed-middlegame-eval-v1"
+    seal = rd.read(directory / "raw-seal.json")
+    assert seal["planned"] == 6 and seal["evaluator_opened"] is False
+    for name, sha in seal["files_sha256"].items(): rd.bind(inside(directory, name), sha)
+    raw = rd.read(directory / "raw-results.json")["rows"][:4]
+    closed = rd.read(directory / "move-raw-closed.json")
+    assert closed["rows"] == raw and closed["forbid_further_move_calls"] is True
+    inputs = rd.read(directory / "move-input.json")["positions"]
+    assert len(inputs) == 1 and len(raw) == 4
+    board = chess.Board(inputs[0]["fen"])
+    assert board.is_valid()
+    legal = {m.uci() for m in board.legal_moves}
+    choices = set(); occurrences = 0
+    for row in raw:
+        assert row["status"] == "completed"
+        if "classifier" not in row["condition"]:
+            assert row["parsed"] is True and row["raw_legal"] is True
+            assert row["raw_uci"] in legal
+            choices.add(row["raw_uci"]); occurrences += 1
+            continue
+        artifact = row["logit_artifact"]
+        path = rd.bind(inside(directory, artifact["path"]), artifact["sha256"])
+        scores = np.load(path, allow_pickle=False)
+        labels = row["id2label"]
+        assert scores.dtype == np.float32 and scores.shape == (1968,) and np.isfinite(scores).all()
+        assert len(labels) == len(set(labels)) == 1968
+        ranked = sorted(range(1968), key=lambda i: (-float(scores[i]), i))
+        masked = [i for i in ranked if labels[i] in legal]
+        truth = row["raw"]
+        assert truth["raw_choice_uci"] == labels[ranked[0]]
+        assert truth["legal_choice_uci"] == labels[masked[0]]
+        assert truth["raw_choice_is_legal"] is (labels[ranked[0]] in legal)
+        assert truth["legal_move_count"] == len(legal)
+        for name, indices in (("raw_topk", ranked[:5]), ("legal_topk", masked[:5])):
+            assert len(truth[name]) == len(indices)
+            for item, index in zip(truth[name], indices, strict=True):
+                assert item == {"class_id": index, "move_uci": labels[index],
+                                "logit": float(scores[index]), "legal": labels[index] in legal}
+                choices.add(labels[index]); occurrences += 1
+        choices.update((labels[ranked[0]], labels[masked[0]])); occurrences += 2
+    result = set()
+    for uci in choices:
+        move = chess.Move.from_uci(uci)
+        if move in board.legal_moves:
+            after = board.copy(stack=False); after.push(move); result.add(key(after.fen()))
+    assert len(result) == 7 and occurrences == 26
+    return result, {"distinct_legal_moves": sorted(choices & legal), "top5_and_first_occurrences": occurrences}
+
+
+def reconstruct_registry(repo, rd):
+    games, boards, stages = set(), set(), {}
+    add_manifest(rd.read(repo / "data/open/chess/lichess-real-seed-v1/manifest.json"), games, boards)
+    stages["historical_seed"] = {"games": len(games), "board_keys": len(boards)}
+    prior = {}
+    for name in ("chess-distill-v1", "chess-distill-v2", "chess-classifier-v3", "chess-move-only-lm-v4"):
+        for rows in rd.read(repo / "data/private" / name / "dataset.json")["splits"].values():
+            for row in rows:
+                assert row["id"] not in prior
+                prior[row["id"]] = row
+                games.add(ref.canonical_game(row["game_id"])); boards.add(key(row["fen"]))
+    prefix = rd.bind(repo / "data/private/chess-distill-v1/source-prefix.csv.zst.part",
+        "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056", 4194304)
+    missing = set(prior); scanned = 0
+    for row in old_rows(prefix):
+        scanned += 1
+        if row["PuzzleId"] not in missing: continue
+        before = chess.Board(row["FEN"]); setup = chess.Move.from_uci(row["Moves"].split(maxsplit=1)[0])
+        assert before.is_valid() and setup and setup in before.legal_moves
+        boards.add(key(before.fen())); before.push(setup)
+        saved = prior[row["PuzzleId"]]
+        assert before.fen() == saved["fen"]
+        source_game = row["GameUrl"].split("lichess.org/", 1)[1].split("/", 1)[0].split("#", 1)[0]
+        assert ref.canonical_game(source_game) == saved["game_id"]
+        missing.remove(row["PuzzleId"])
+        if not missing: break
+    assert not missing and len(prior) == 21664 and scanned == 23374
+    stages["reconstructed_historical_and_v1_to_v4"] = {"games": len(games), "board_keys": len(boards)}
+    old_facts = rd.read(repo / "data/private/chess-board-facts-v1/dataset.json")["rows"]
+    assert len(old_facts) == 16
+    for row in old_facts: fact_roles(row, games, boards)
+    stages["with_spent_fact_panel"] = {"games": len(games), "board_keys": len(boards)}
+    pgn = rd.bind(repo / "experiments/chess-rollout-stress-v1/games.pgn")
+    pgn_games = plies = 0
+    with pgn.open(encoding="utf-8") as stream:
+        while (game := chess.pgn.read_game(stream)) is not None:
+            assert not game.errors
+            board = game.board(); boards.add(key(board.fen()))
+            for move in game.mainline_moves():
+                assert move in board.legal_moves
+                board.push(move); boards.add(key(board.fen())); plies += 1
+            pgn_games += 1
+    assert (pgn_games, plies) == (64, 4784)
+    for row in rd.read(repo / "experiments/gotham-illustrative-v1/fen-inputs.json")["positions"]:
+        boards.add(key(row["pre_move_fen"]))
+    stages["exact_primary_registry_reproduced"] = {"games": len(games), "board_keys": len(boards)}
+    add_manifest(rd.read(repo / "data/open/chess/autonomy-broker-derived-20260919-v1/manifest.json"), games, boards)
+    stages["legacy_derived_manifest_union"] = {"games": len(games), "board_keys": len(boards)}
+    primary = rd.read(repo / "data/private/chess-fact-sft-v1/cohort/dataset.json")["splits"]
+    all_facts = list(old_facts)
+    for split, count in (("train", 8192), ("dev", 128), ("holdout", 256)):
+        rows = primary[split]
+        assert len(rows) == count
+        saved_inputs = rd.read(repo / "data/private/chess-fact-sft-v1/cohort" / (split + "-inputs.json"))["rows"]
+        assert saved_inputs == [{k:r[k] for k in ("case_id", "fen", "selected_uci")} for r in rows]
+        for row in rows:
+            assert ref.canonical_game(row["native_game_id"]) == row["game_id"]
+            fact_roles(row, games, boards)
+        all_facts.extend(rows)
+    stages["with_all_primary_games_and_both_source_roles"] = {"games": len(games), "board_keys": len(boards)}
+    for row in all_facts: fact_roles(row, games, boards, successors=True)
+    assert len(all_facts) == 8592
+    stages["with_all_known_fact_selected_successors"] = {"games": len(games), "board_keys": len(boards)}
+    for scene in rd.read(repo / "experiments/gotham-illustrative-v1/source-ledger.json")["scenes"]:
+        board = chess.Board(); boards.add(key(board.fen()))
+        for san in scene["history_san"].split(): board.push_san(san); boards.add(key(board.fen()))
+        assert board.fen() == scene["pre_move_fen"]
+        move = chess.Move.from_uci(scene["next_displayed_move_evaluator_only"]["next_displayed_move_uci"])
+        assert move in board.legal_moves
+        board.push(move); boards.add(key(board.fen()))
+    stages["with_known_video_histories_and_displayed_successors"] = {"games": len(games), "board_keys": len(boards)}
+    directory = repo / "experiments/gotham-constructed-middlegame-v1"
+    for row in rd.read(directory / "move-inputs.json")["positions"]: boards.add(key(row["fen"]))
+    for row in rd.read(directory / "fact-inputs.json")["positions"]:
+        board = chess.Board(row["fen"]); move = chess.Move.from_uci(row["selected_uci"])
+        assert move in board.legal_moves
+        boards.add(key(board.fen())); board.push(move); boards.add(key(board.fen()))
+    stages["with_known_constructed_board_and_supplied_fact_successor"] = {"games": len(games), "board_keys": len(boards)}
+    successors, vector_info = retained_successors(repo, rd); boards.update(successors)
+    stages["completed_gotham_first_choices_and_raw_masked_top5_successors"] = {"games": len(games), "board_keys": len(boards)}
+    registry_path = rd.bind(repo / "experiments/chess-matched-check-v1/archive/v2/known-history-exclusions-v2.json", REGISTRY_SHA)
+    registry = rd.read(registry_path)
+    assert sorted(games) == registry["games"] and sorted(boards) == registry["board_keys"]
+    assert (len(games), len(boards)) == (30280, 71463)
+    return games, boards, {"stages": stages, "prefix_rows_replayed": scanned,
+        "registered_old_positions": len(prior), "rollout_games": pgn_games, "rollout_plies": plies,
+        "fact_roles_and_successors": len(all_facts), "illustrative_vector_replay": vector_info}
+
+
+def physical_rows(path):
+    import pyarrow.parquet as pq
+    parquet = pq.ParquetFile(path)
+    ordinal = 0
+    for group in range(parquet.num_row_groups):
+        offset = 0
+        for batch in parquet.iter_batches(batch_size=4096, row_groups=[group],
+                columns=["PuzzleId", "GameId", "FEN", "Moves"], use_threads=False):
+            for row in batch.to_pylist():
+                yield {"source_ordinal":ordinal, "row_group":group, "row_in_group":offset}, row
+                ordinal += 1; offset += 1
+
+
+def filter_counts(record, unavailable):
+    board = chess.Board(record["fen"]); kept = []; counts = Counter()
+    for move in board.legal_moves:
+        if move.promotion or board.is_castling(move) or board.is_en_passant(move): counts["special_move"] += 1; continue
+        successor = board.copy(stack=False); successor.push(move)
+        next_key = key(successor.fen())
+        if not successor.is_valid() or next_key in unavailable or next_key in (record["source_before_key"], record["setup_after_key"]):
+            counts["successor_overlap"] += 1; continue
+        facts = ref.predicate_facts(record["fen"], move.uci())
+        kept.append((move.from_square, facts, next_key))
+    for a, b in combinations(kept, 2):
+        matched = a[0] == b[0] and all(a[1][f] == b[1][f] for f in ("moving_piece", "moving_colour", "is_capture", "captured_piece"))
+        if not matched or a[1]["gives_check"] == b[1]["gives_check"]: counts["unmatched_pair"] += 1
+        elif a[2] == b[2]: counts["successor_pair_collision"] += 1
+    return counts
+
+
+def select_independently(path, known_games, known_keys):
+    locations, records = [], []
+    def rows():
+        for location, row in islice(physical_rows(path), 200000):
+            locations.append(location); records.append(row)
+            yield row
+    selected = ref.reconstruct_fixture_selection(rows(), known_games, known_keys, target=32, cap=200000)
+    assert selected["status"] == "complete" and len(selected["pairs"]) == 32
+    assert len(locations) == len(selected["trace"])
+    filters, games, keys = Counter(), set(known_games), set(known_keys)
+    trace = []
+    for index, (row, outcome) in enumerate(zip(records, selected["trace"], strict=True)):
+        assert outcome["source_ordinal"] == index
+        trace.append({**locations[index], "outcome":outcome["terminal"]})
+        if outcome["terminal"] in ("accepted", "no_legal_matched_pair_after_all_filters"):
+            record = ref.parse_row(row); filters.update(filter_counts(record, keys))
+        if outcome["terminal"] == "accepted":
+            pair = next(p for p in selected["pairs"] if p["source_ordinal"] == index)
+            games.add(pair["game_id"]); keys.update((pair["source_before_key"], pair["setup_after_key"], *pair["successor_keys"]))
+    for pair in selected["pairs"]: pair.update(locations[pair["source_ordinal"]])
+    return selected["pairs"], trace, dict(filters)
+
+
+def run(repo, workspace, cohort, out):
+    started = time.monotonic(); rd = Reader()
+    protocol = rd.read(rd.bind(repo / "experiments/chess-matched-check-v1/protocol.json", PROTOCOL_SHA))
+    for root, files in ((repo, protocol["evidence_before_new_work"]["all_frozen_existing_inputs_sha256"]),
+                        (workspace, protocol["evidence_before_new_work"]["additional_workspace_bindings"])):
+        for name, item in files.items(): rd.bind(inside(root, name), item["sha256"], item["bytes"])
+    supervision = cohort.with_name(cohort.name + "-supervision")
+    receipt, owned = rd.read(supervision / "receipt.json"), rd.read(supervision / "owned-process.json")
+    identity, intent = rd.read(supervision / "launch-identity.json"), rd.read(supervision / "intent.json")
+    assert receipt["status"] == "PASS" and receipt["exit_code"] == 0 and receipt["failure"] is None
+    assert receipt["timed_out"] is False and receipt["forced"] is False and receipt["model_calls"] == 0
+    assert receipt["pid"] == owned["pid"] and intent["parent_pid"] == owned["parent_pid"] == identity["parent_pid"]
+    assert receipt["elapsed_seconds"] < 600 and intent["budget_seconds"] == 600
+    for field in ("base_executable", "venv_executable"):
+        rd.bind(identity[field], identity[field + "_sha256"])
+    assert Path(identity["venv_prefix"]).resolve() == (repo / ".venv-soccernet").resolve()
+    frozen = rd.read(rd.bind(cohort / "frozen-data.json", FROZEN_SHA))
+    assert frozen["pairs"] == 32 and frozen["planned"] == 64 and frozen["model_calls"] == 0
+    assert frozen["protocol_sha256"] == PROTOCOL_SHA
+    assert not (cohort / "selection-failed.json").exists() and not (supervision / "cancel.json").exists()
+    actual_members = {p.relative_to(cohort).as_posix() for p in cohort.rglob("*") if p.is_file()}
+    assert actual_members == set(frozen["files_sha256"]) | {"frozen-data.json"}
+    for name, sha in frozen["files_sha256"].items(): rd.bind(inside(cohort, name), sha)
+    assert digest(cohort / "sources/chess_matched_check_intake.py") == SOURCE_SHA
+    before = rd.read(cohort / "before-selection.json")
+    assert before["pid"] == owned["pid"] and before["model_calls"] == 0
+    assert before["known_games"] == 30280 and before["known_board_keys"] == 71463
+    for name, sha in before["sources"].items(): rd.bind(cohort / "sources" / name, sha)
+    for name, item in before["bound_inputs"].items():
+        scope, relative = name.split("/", 1)
+        rd.bind(inside(repo if scope == "repo" else workspace, relative), item["sha256"], item["bytes"])
+    games, boards, registry_info = reconstruct_registry(repo, rd)
+    for stage, info in registry_info["stages"].items():
+        expected = protocol["known_history_exclusions"]["stages"][stage]
+        assert all(expected[k] == v for k, v in info.items()), stage
+    source = rd.bind(repo / protocol["source"]["source_path"],
+        "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87", 294920084)
+    pairs, trace, filters = select_independently(source, games, boards)
+    # Only now open the retained chosen rows, labels and trace for comparison.
+    actual = rd.read(cohort / "dataset.json")
+    inputs, labels = rd.read(cohort / "inputs.json")["rows"], rd.read(cohort / "labels.json")["rows"]
+    assert actual["source_rows_scanned"] == len(trace)
+    assert actual["terminal_outcomes"] == dict(Counter(r["outcome"] for r in trace))
+    assert actual["candidate_filters"] == filters
+    retained_trace = [json.loads(line) for line in (cohort / "selection-trace.jsonl").read_text().splitlines()]
+    assert retained_trace == trace and len(actual["pairs"]) == 32
+    for got, expected in zip(actual["pairs"], pairs, strict=True):
+        for field in ("pair_id", "game_id", "native_game_id", "puzzle_id", "source_before_fen", "setup_uci", "fen", "pair_sha256", "source_ordinal", "row_group", "row_in_group"):
+            assert got[field] == expected[field], field
+        assert tuple(got["moves"]) == expected["moves"] and tuple(got["successor_keys"]) == expected["successor_keys"]
+        assert got["case_ids"] == [got["pair_id"] + "-0", got["pair_id"] + "-1"]
+        assert got["source_url"] == "https://lichess.org/" + expected["game_id"]
+    unavailable = set(boards)
+    for got, pair in zip(actual["pairs"], pairs, strict=True):
+        eligible, _ = ref.enumerate_pairs(pair, unavailable)
+        assert got["eligible_pair_count"] == len(eligible)
+        assert got["legal_move_count"] == chess.Board(pair["fen"]).legal_moves.count()
+        move = chess.Move.from_uci(pair["moves"][0]); board = chess.Board(pair["fen"])
+        moving, victim = board.piece_at(move.from_square), board.piece_at(move.to_square)
+        assert got["matching_attributes"] == [move.from_square, moving.piece_type, moving.color,
+            board.is_capture(move), victim.piece_type if victim else None]
+        unavailable.update((pair["source_before_key"], pair["setup_after_key"], *pair["successor_keys"]))
+    denominator = skeleton.compare_rows(pairs, inputs, labels)
+    # Imported only after all source/registry/selection comparisons. Local
+    # tokenizer construction is CPU metadata work; never instantiate a model.
+    sys.path.insert(0, str(repo / "scripts"))
+    import chess_board_fact_core as core
+    import chess_fact_sft_common as common
+    from transformers import AutoTokenizer
+    runtime = rd.read(repo / "experiments/chess-matched-check-v1/archive/v1/source-and-exclusion-metadata.json")["runtime"]
+    assert chess.__version__ == runtime["chess"]
+    rd.bind(Path(chess.__file__), runtime["chess_source"]["sha256"])
+    rd.bind(Path(chess.pgn.__file__), runtime["pgn_source"]["sha256"])
+    base = repo / protocol["model_and_generation"]["base"]["local_path"]
+    for name, sha in protocol["model_and_generation"]["base"]["files_sha256"].items(): rd.bind(base / name, sha)
+    tokenizer = AutoTokenizer.from_pretrained(base, local_files_only=True, trust_remote_code=False)
+    assert tokenizer.eos_token_id == 151645 and tokenizer.pad_token_id == 151643
+    token_counts = []
+    for row, label in zip(inputs, labels, strict=True):
+        truth = label["expected"]
+        assert ref.predicate_facts(row["fen"], row["selected_uci"]) == truth
+        assert ref.transition_facts(row["fen"], row["selected_uci"]) == truth
+        assert core.expected_facts(row["fen"], row["selected_uci"]) == truth
+        assert core.independent_facts(row["fen"], row["selected_uci"]) == truth
+        assert core.parse_facts(json.dumps(truth)) == truth
+        one = skeleton.independent_native_boundary(tokenizer, row, truth, core.INSTRUCTION)
+        two = common.native_training_row(tokenizer, row, truth)
+        assert two["input_ids"] == one["prompt_ids"] + one["target_ids"]
+        assert two["labels"] == [-100] * one["prompt_count"] + one["target_ids"]
+        assert common.native_prompt(tokenizer, row) == one["prompt_ids"]
+        token_counts.append({k: one[k] for k in ("prompt_count", "target_count", "sequence_count")})
+    rd.bind(Path(core.__file__)); rd.bind(Path(common.__file__))
+    rd.bind(Path(chess.__file__)); rd.bind(Path(chess.pgn.__file__))
+    rd.bind(Path(__file__)); rd.bind(Path(ref.__file__)); rd.bind(Path(skeleton.__file__))
+    rd.stable()
+    result = {"schema":"chess.matched-check.independent-actual-intake-audit.v1",
+        "utc":datetime.now(timezone.utc).isoformat(), "status":"PASS_PRACTICAL_INTAKE_TOKEN_AUDIT_NO_MODEL_CALLS",
+        "frozen_data_sha256":FROZEN_SHA, "protocol_sha256":PROTOCOL_SHA,
+        "author_source_sha256":SOURCE_SHA, "registry":registry_info,
+        "known_games":len(games), "known_board_keys":len(boards), "denominator":denominator,
+        "source_rows_scanned":len(trace), "terminal_outcomes":dict(Counter(r["outcome"] for r in trace)),
+        "candidate_filters":filters, "all_exact_pair_membership_rank_keys_locations_order_labels_matched":True,
+        "native_token_counts":token_counts,
+        "native_token_ranges":{k:{"min":min(r[k] for r in token_counts),"max":max(r[k] for r in token_counts)} for k in token_counts[0]},
+        "owned_CPU":receipt, "bound_files_stable_before_after":rd.before,
+        "elapsed_seconds":time.monotonic()-started, "model_calls":0,"engine_calls":0,"GPU_queries":0,
+        "limits":["Exploratory rule-selected matched checking diagnostic of a known failure; no random-population, strength or promotion claim.",
+                  "Disjoint only from the exact known games/canonical roles. Unknown video identities/history and upstream pretraining remain unresolved.",
+                  "Independent selection/oracles are algorithmically separate but share pinned python-chess; tokenizer checks are CPU-only and do not establish native CUDA inference behavior."]}
+    with out.open("x", encoding="utf-8", newline="\n") as stream:
+        stream.write(json.dumps(result, indent=2, sort_keys=True, allow_nan=False) + "\n")
+    print(json.dumps({"path":str(out),"sha256":digest(out),"status":result["status"],
+        "rows":64,"source_rows_scanned":len(trace),"token_ranges":result["native_token_ranges"],
+        "bound_files":len(rd.before),"elapsed_seconds":result["elapsed_seconds"]}))
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--completed-intake-audit-authorized", action="store_true")
+    args = parser.parse_args()
+    if not args.completed_intake_audit_authorized: parser.error("explicit root completed-intake audit GO required")
+    workspace = Path(__file__).resolve().parents[2]
+    repo = workspace / "work/repos/sports-play-llm-research"
+    cohort = repo / "data/private/chess-matched-check-diagnostic-v1/cohort"
+    out = workspace / "outputs/chess-matched-check-intake-independent-audit.json"
+    if out.exists(): parser.error("refusing existing independent audit output")
+    run(repo, workspace, cohort, out)
+
+
+if __name__ == "__main__": main()

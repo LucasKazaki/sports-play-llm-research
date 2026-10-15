@@ -1,0 +1,8 @@
+{
+  "test_sha256": "113fd7ded8f79eeef0e415f0d30a9b76102a7091e99016107625932160c77d8d",
+  "runtime_sha256": "43eb473f5446dc098059212d357734a3fa6a8c19eb0ecab1aff44cc9e7644997",
+  "junit_sha256": "cc1a0df1ca3ac64d8bc817819ad51dce291c7bfe5597947c4895fa3812a65711",
+  "result": "1failed40passed1.50s",
+  "reason": "Synthetic valid-output fixture lived underneath the real protected runner source folder. Guard correctly refused it; fixture must isolate HERE to sibling source root.",
+  "model_calls": 0
+}

@@ -1,0 +1,16 @@
+{
+  "actual_intake_authorized": false,
+  "authority_note": "This companion freezes the exact reviewed FINAL V2 PROPOSAL bytes as the implementation contract. Its original proposal lifecycle wording remains archival; root review grants only protocol-first branch/intake implementation. A separate full source/test review and explicit actual-intake GO are required.",
+  "base_commit": "ff720e8f918818ce7b227a6861018669a84b4103",
+  "exact_reviewed_proposal_bytes_preserved": true,
+  "known_board_keys": 71463,
+  "known_games": 30280,
+  "known_registry_path": "archive/v2/known-history-exclusions-v2.json",
+  "known_registry_sha256": "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb",
+  "model_engine_GPU_calls_authorized": 0,
+  "protocol_sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+  "root_review_sha256": "887fb3977fd14148c5b6c0cf0610446df31c6819f8994b702918b7e1c116b171",
+  "schema": "chess.matched-check.protocol-freeze.v1",
+  "status": "FROZEN_BEFORE_INTAKE_IMPLEMENTATION_ONLY",
+  "utc": "2026-10-15T10:28:29.653237+00:00"
+}

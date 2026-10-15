@@ -1,0 +1,21 @@
+{
+  "files_sha256": {
+    "before-selection.json": "bc282c687c88c4579711d67d2aa254733a743dfb01c639cb3528ae2a21fd2e03",
+    "dataset.json": "ae305d86cf415f2b48bd3cde7a36bd022cf43da567c019a4f8d8bb17b8c34a18",
+    "inputs.json": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7",
+    "labels.json": "997c3834b4e038a2c363e9b375908761a3b34efd7fca6334fc836f871a784ad2",
+    "protocol.json": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+    "selection-trace.jsonl": "0de1eafbe538e24856b869e5a6d702d9466866e6c2f5c87f6d271dcc1afb8dce",
+    "sources/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "sources/chess_board_fact_diagnostic.py": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d",
+    "sources/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+    "sources/chess_matched_check_intake.py": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28",
+    "sources/test_chess_matched_check_exclusions.py": "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1",
+    "sources/test_chess_matched_check_intake.py": "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb"
+  },
+  "model_calls": 0,
+  "pairs": 32,
+  "planned": 64,
+  "protocol_sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+  "schema": "chess.matched-check.frozen-data.v1"
+}

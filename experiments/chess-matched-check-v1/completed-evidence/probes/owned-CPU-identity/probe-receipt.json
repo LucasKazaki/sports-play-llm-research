@@ -1,0 +1,8 @@
+{
+  "actual_popen_pid": 45008,
+  "actual_worker_pid": 45008,
+  "child_exit_code": 0,
+  "unrelated_control_survived": true,
+  "model_imported": false,
+  "model_calls": 0
+}

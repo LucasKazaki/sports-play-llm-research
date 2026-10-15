@@ -1,0 +1,11 @@
+{
+  "elapsed_seconds": 13.062999999994645,
+  "exit_code": 0,
+  "failure": null,
+  "forced": false,
+  "model_calls": 0,
+  "pid": 21608,
+  "schema": "chess.matched-check.owned-CPU.v1",
+  "status": "PASS",
+  "timed_out": false
+}

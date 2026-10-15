@@ -1,0 +1,170 @@
+"""Selected-only input worker. It never opens a label or cohort dataset file."""
+from __future__ import annotations
+import argparse
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import time
+import illustration_core as boundary
+import owned_native
+
+BASE_DIGEST = "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008"
+
+
+def planned_ids():
+    def rank(case):
+        data=json.dumps({"seed":4082032,"case_id":case},sort_keys=True,
+                        separators=(",",":"),ensure_ascii=True).encode()
+        return hashlib.sha256(b"matched-check-order-v1\n"+data).hexdigest(),case
+    return sorted((f"mc-pair-{index:02d}-{side}" for index in range(32) for side in range(2)),key=rank)
+
+
+def inputs(payload):
+    if set(payload) != {"schema", "rows"} or payload["schema"] != "chess.matched-check.inputs.v1":
+        raise ValueError("input-only envelope required")
+    rows = payload["rows"]
+    if len(rows) != 64 or any(set(row) != {"case_id", "fen", "selected_uci"} for row in rows):
+        raise ValueError("64 exact input-only records required")
+    if [row["case_id"] for row in rows] != planned_ids():
+        raise ValueError("opaque planned identifiers changed")
+    for row in rows:
+        if not isinstance(row["fen"], str) or not isinstance(row["selected_uci"], str):
+            raise ValueError("input strings required")
+        if re.fullmatch(r"[a-h][1-8][a-h][1-8]", row["selected_uci"]) is None:
+            raise ValueError("nonpromotion UCI required")
+    return rows
+
+
+def state_digest(model, torch, *, adapter=False, check=lambda:None):
+    """Primary names/order, explicit LoRA exclusion; at most 1 MiB CPU transfer."""
+    digest, count, scalars = hashlib.sha256(), 0, 0
+    for name, parameter in model.named_parameters():
+        if ("lora_" in name) != adapter:
+            continue
+        check()
+        count += 1
+        scalars += parameter.numel()
+        digest.update(name.encode())
+        raw = parameter.detach().contiguous().view(torch.uint8).reshape(-1)
+        for start in range(0, raw.numel(), 1048576):
+            check()
+            digest.update(raw[start:start+1048576].cpu().numpy().tobytes())
+    return {"sha256":digest.hexdigest(),"tensors":count,"scalars":scalars}
+
+
+def model_identity(backend, check):
+    torch, model = backend.torch, backend.model
+    if model.get_input_embeddings().weight is not model.get_output_embeddings().weight:
+        raise ValueError("loaded embedding/head tie changed")
+    if any(p.requires_grad for p in model.parameters()) or model.training:
+        raise ValueError("inference model must be frozen and in evaluation mode")
+    for name, parameter in model.named_parameters():
+        expected = torch.float32 if "lora_" in name else torch.bfloat16
+        if parameter.dtype != expected:
+            raise ValueError("loaded dtype differs")
+    base = state_digest(model,torch,check=check)
+    adapter = state_digest(model,torch,adapter=True,check=check)
+    if base["sha256"] != BASE_DIGEST or base["scalars"] != 596049920:
+        raise ValueError("loaded primary frozen base digest/count differs")
+    if adapter["tensors"] != 392 or adapter["scalars"] != 5046272:
+        raise ValueError("loaded adapter count differs")
+    return {"base":base,"adapter":adapter,"tied":True,"all_parameters_frozen":True,
+            "base_dtype":"bfloat16","adapter_dtype":"float32"}
+
+
+def generate(rows, backend, out, check):
+    """One call per input, journal before continuing; failure stops all later calls."""
+    out = Path(out)
+    results, failure = [], None
+    with (out/"journal.jsonl").open("x",encoding="utf-8",buffering=1) as log:
+        for index,row in enumerate(rows):
+            result = {"case_id":row["case_id"],"status":"error","text":""}
+            try:
+                check()
+                encoded = backend.encode(dict(row))
+                boundary.fresh(out/(f"prepared-{index:02d}.json"),{
+                    "case_id":row["case_id"],"input_ids":encoded["input_ids"],
+                    "attention_mask":encoded["attention_mask"]})
+                started = time.monotonic()
+                result.update(backend.predict(encoded,disabled=False))
+                result["elapsed_seconds"] = time.monotonic()-started
+                if result["status"] not in ("completed","truncated"):
+                    raise ValueError("native output validation failed")
+                if result.get("adapter_disabled") is not False:
+                    raise ValueError("selected adapter was not enabled")
+                check()
+            except Exception as error:
+                failure = type(error).__name__+":"+str(error)
+                result.update(status="error",error=failure)
+            results.append(result)
+            log.write(json.dumps(result,allow_nan=False)+"\n")
+            log.flush()
+            os.fsync(log.fileno())
+            if failure is not None:
+                results.extend({"case_id":later["case_id"],"status":"not_run","text":"",
+                    "reason":"stopped after owned failure"} for later in rows[index+1:])
+                break
+    return results,failure
+
+
+def worker(out):
+    out = Path(out).resolve()
+    ownership,actual = owned_native.await_ownership(out/"ownership.json",boundary.read)
+    if set(ownership) != {"pid","native_launch_identity","source_sha256","inputs_sha256",
+                          "model_sha256","repo","deadline_monotonic"}:
+        raise ValueError("worker ownership contains unapproved metadata")
+    for name,digest in ownership["source_sha256"].items():
+        if boundary.sha(boundary.confined(out/"sources",name)) != digest:
+            raise ValueError("worker source snapshot changed")
+    if boundary.sha(out/"inputs.json") != ownership["inputs_sha256"] or boundary.sha(out/"model.json") != ownership["model_sha256"]:
+        raise ValueError("worker input/model metadata changed")
+    rows = inputs(boundary.read(out/"inputs.json"))
+    model_info = boundary.read(out/"model.json")
+    boundary.fresh(out/"worker-identity.json",actual)
+    def check():
+        if (out/"cancel.json").exists() or time.monotonic() >= ownership["deadline_monotonic"]:
+            raise RuntimeError("owned stop latched")
+    check()
+    import random
+    import torch
+    random.seed(4082032)
+    torch.set_num_threads(4)
+    torch.manual_seed(4082032)
+    torch.cuda.manual_seed_all(4082032)
+    torch.backends.cuda.matmul.allow_tf32 = False
+    torch.backends.cudnn.allow_tf32 = False
+    from local_backends import FactBackend
+    backend = None
+    try:
+        backend = FactBackend(ownership["repo"],model_info["plan"],model_info["extension"],
+                              lambda:(out/"cancel.json").exists() or time.monotonic()>=ownership["deadline_monotonic"])
+        if backend.selected_disabled:
+            raise ValueError("selected-only step512 required")
+        before = model_identity(backend,check)
+        boundary.fresh(out/"model-before.json",before)
+        results,failure = generate(rows,backend,out,check)
+        after = model_identity(backend,check)
+        boundary.fresh(out/"model-after.json",after)
+        if after != before:
+            raise ValueError("inference changed loaded parameter content")
+        if boundary.sha(out/"inputs.json") != ownership["inputs_sha256"]:
+            raise ValueError("input changed during inference")
+        boundary.reviewed_modules()[0].seal_raw(out/"raw",results,[row["case_id"] for row in rows],
+            {"inputs_sha256":ownership["inputs_sha256"],"selected_step":512,
+             "source_sha256":ownership["source_sha256"],"base_content_unchanged":True})
+        if failure is not None:
+            raise RuntimeError(failure)
+        boundary.fresh(out/"worker-outcome.json",{"planned":64,"status":"completed_raw_accounting",
+            "seal_sha256":boundary.sha(out/"raw/seal.json")})
+    finally:
+        if backend is not None:
+            backend.close()
+        torch.cuda.empty_cache()
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--out",type=Path,required=True)
+    worker(parser.parse_args().out)

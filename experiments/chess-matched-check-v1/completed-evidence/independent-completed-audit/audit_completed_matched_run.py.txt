@@ -1,0 +1,236 @@
+"""Completed matched-check run: retained-file/token/score audit, no model calls."""
+import argparse
+from datetime import datetime, timezone
+import json
+import math
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+import chess
+import matched_check_reference as facts
+from audit_actual_intake import Reader, digest, inside
+import postrun_reference as independent
+
+EXTENSION_SHA = "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45"
+ROOT_REVIEW_SHA = "6a9cc80d702cc3f1bdab131b426781cb8f9d859ebde83a8c7b912552d2e99b63"
+BASE_DIGEST = "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008"
+
+
+def resource_counts(records, stage):
+    results = {"samples":len(records), "minimum_physical_available_bytes":None,
+        "minimum_commit_headroom_bytes":None, "minimum_gpu_free_bytes":None,"max_recorded_monotonic_gap_seconds":0.}
+    previous=None
+    for sample in records:
+        keys=("physical_total_bytes","physical_available_bytes","commit_limit_bytes","commit_total_bytes","gpu_total_bytes","gpu_free_bytes")
+        assert all(type(sample[k]) is int and sample[k]>=0 for k in keys)
+        assert 0 < sample["physical_total_bytes"] >= sample["physical_available_bytes"]
+        assert 0 < sample["commit_limit_bytes"] >= sample["commit_total_bytes"]
+        assert 0 < sample["gpu_total_bytes"] >= sample["gpu_free_bytes"]
+        values=(sample["physical_available_bytes"], sample["commit_limit_bytes"]-sample["commit_total_bytes"], sample["gpu_free_bytes"])
+        for value, threshold, key in zip(values, (10,16,13) if stage=="start" else (4,8,1),
+                ("minimum_physical_available_bytes","minimum_commit_headroom_bytes","minimum_gpu_free_bytes"), strict=True):
+            assert value >= threshold*1024**3
+            results[key]=value if results[key] is None else min(results[key],value)
+        if "monotonic" in sample:
+            now=sample["monotonic"]
+            assert type(now) in (int,float) and math.isfinite(now)
+            if previous is not None:
+                gap=now-previous; assert 0<=gap<=3
+                results["max_recorded_monotonic_gap_seconds"]=max(results["max_recorded_monotonic_gap_seconds"],gap)
+            previous=now
+    return results
+
+
+def inventory(root, reader):
+    return {p.relative_to(root).as_posix():{"bytes":p.stat().st_size,"sha256":digest(reader.bind(p))}
+            for p in sorted(root.rglob("*")) if p.is_file()}
+
+
+def run(workspace, out):
+    started=time.monotonic(); reader=Reader()
+    repo=workspace/"work/repos/sports-play-llm-research"
+    directory=repo/"data/private/chess-matched-check-diagnostic-v1/selected-run-v1"
+    generation=directory/"generation"
+    # Verify terminal accounting and all raw integrity BEFORE any evaluator truth.
+    supervision=reader.read(directory/"supervision.json")
+    assert supervision["status"]=="PASS" and supervision["failure"] is None
+    assert supervision["last_exit_code"]==0 and supervision["forced_owned_termination"] is False
+    assert supervision["planned"]==64 and supervision["no_response_retries"] is True
+    assert supervision["elapsed_seconds"]<600 and supervision["failed_outcome_ledger_sha256"] is None
+    assert not (generation/"cancel.json").exists() and not (directory/"failed-outcome-ledger.json").exists()
+    completion=reader.read(directory/"completion.json")
+    seal=reader.read(generation/"raw/seal.json")
+    reader.bind(generation/"raw/raw.json",seal["raw_sha256"])
+    assert completion["raw_seal_sha256"]==digest(generation/"raw/seal.json")
+    worker_outcome=reader.read(generation/"worker-outcome.json")
+    assert worker_outcome=={"planned":64,"status":"completed_raw_accounting","seal_sha256":completion["raw_seal_sha256"]}
+    planned=facts.generation_order([f"mc-pair-{i:02d}-{s}" for i in range(32) for s in range(2)])
+    assert seal["planned"]==64 and seal["planned_ids"]==planned
+    raw=reader.read(generation/"raw/raw.json")
+    assert raw["planned"]==64 and raw["metadata"]==seal["metadata"]
+    rows=raw["rows"]
+    assert [r["case_id"] for r in rows]==planned
+    assert all(r["status"] in ("completed","truncated") for r in rows)
+    journal=reader.bind(generation/"journal.jsonl")
+    journal_rows=[json.loads(line) for line in journal.read_text().splitlines()]
+    assert journal_rows==rows
+    assert all(math.isfinite(r["elapsed_seconds"]) and r["elapsed_seconds"]>=0 for r in rows)
+    cohort=repo/"data/private/chess-matched-check-diagnostic-v1/cohort"
+    # Inventory labels only after independently verified all64 raw seal. This
+    # start/end inventory also checks every retained file's exact membership.
+    inventories_before={"cohort":inventory(cohort,reader),"run":inventory(directory,reader)}
+    extension=reader.read(reader.bind(directory/"execution-extension.json",EXTENSION_SHA))
+    protocol_path=repo/"experiments/chess-matched-check-v1/protocol.json"
+    protocol=reader.read(reader.bind(protocol_path,extension["protocol_sha256"]))
+    root_review=reader.read(reader.bind(workspace/"outputs/chess-matched-check-root-runtime-execution-review.json",ROOT_REVIEW_SHA))
+    audit_info=extension["intake_audit"]
+    intake=reader.read(reader.bind(audit_info["path"],audit_info["sha256"]))
+    assert intake["status"]=="PASS_PRACTICAL_INTAKE_TOKEN_AUDIT_NO_MODEL_CALLS" and intake["denominator"]["rows"]==64
+    assert extension["status"]=="FROZEN_AFTER_INTAKE_AND_SOURCE_REVIEW_BEFORE_CALLS"
+    for name, sha in extension["source_sha256"].items():
+        reader.bind(inside(generation/"sources",name),sha)
+        reader.bind(inside(workspace/"work/chess-matched-check-runner-v1",name),sha)
+        # Bind the inert pre-call committed snapshot as a separate identity.
+        published_name=name+".txt" if name.endswith(".py") else name
+        published=repo/"experiments/chess-matched-check-v1/pre-call-runtime-v1/sources"/published_name
+        reader.bind(published,sha)
+    precall=repo/"experiments/chess-matched-check-v1/pre-call-runtime-v1"
+    public_manifest=reader.read(precall/"manifest.json")
+    assert {p.relative_to(precall).as_posix() for p in precall.rglob("*") if p.is_file()}==set(public_manifest["files"])|{"manifest.json"}
+    for name,expected in public_manifest["files"].items(): reader.bind(inside(precall,name),expected["sha256"],expected["bytes"])
+    for path in [*(precall/name for name in public_manifest["files"]),precall/"manifest.json",
+                 repo/"experiments/chess-matched-check-v1/.gitattributes"]:
+        blob=subprocess.check_output(["git","show","2739917c014aa0294d80a55186b174acabf9be00:"+path.relative_to(repo).as_posix()],cwd=repo)
+        import hashlib
+        assert hashlib.sha256(blob).hexdigest()==digest(reader.bind(path))
+    assert seal["metadata"]["source_sha256"]==extension["source_sha256"]
+    assert seal["metadata"]["selected_step"]==completion["selected_step"]==512
+    assert seal["metadata"]["base_content_unchanged"] is True
+    ownership=reader.read(generation/"ownership.json")
+    worker_identity=reader.read(generation/"worker-identity.json")
+    evaluator_ownership=reader.read(directory/"evaluator-ownership.json")
+    assert ownership["pid"]==worker_identity["pid"]
+    assert evaluator_ownership["pid"]==supervision["last_owned_pid"]
+    assert evaluator_ownership["pid"]!=worker_identity["pid"]
+    assert evaluator_ownership["raw_seal_sha256"]==completion["raw_seal_sha256"]
+    assert ownership["source_sha256"]==extension["source_sha256"]
+    assert worker_identity["torch_imported"] is False
+    identity=ownership["native_launch_identity"]
+    for key in ("base_executable","venv_executable","venv_prefix"):
+        assert worker_identity[key]==identity[key]
+    assert Path(identity["venv_prefix"]).resolve()==(repo/".venv-soccernet").resolve()
+    for key in ("base_executable","venv_executable"): reader.bind(identity[key],identity[key+"_sha256"])
+    reader.bind(Path(identity["venv_prefix"])/"pyvenv.cfg",identity["pyvenv_cfg_sha256"])
+    assert worker_identity["dependency_versions"]==identity["dependency_versions"]
+    assert identity["dependency_versions"]=={"torch":"2.8.0+cu128","transformers":"5.19.0","peft":"0.21.2","accelerate":"1.15.0","pyarrow":"26.0.0"}
+    model=reader.read(reader.bind(generation/"model.json",ownership["model_sha256"]))
+    assert "labels" not in json.dumps({"model":model,"ownership":ownership})
+    assert model["extension"]["native_selection"]["selected_step"]==512
+    info=protocol["model_and_generation"]
+    assert model["extension"]["native_selection"]["files_sha256"]==info["adapter_files_sha256"]
+    base=repo/info["base"]["local_path"]; adapter=repo/info["adapter_directory"]
+    for name,sha in info["base"]["files_sha256"].items(): reader.bind(base/name,sha)
+    for name,sha in info["adapter_files_sha256"].items(): reader.bind(adapter/name,sha)
+    config=reader.read(base/"config.json")
+    assert config["num_hidden_layers"]==28 and config["tie_word_embeddings"] is True
+    assert not config.get("attention_bias",False)
+    # Reconstruct loaded parameter-name/order byte digests from inert weight
+    # files, without constructing torch tensors, a model or a CUDA context.
+    base_bytes=independent.SafeBytes(base/"model.safetensors")
+    adapter_bytes=independent.SafeBytes(adapter/"adapter_model.safetensors")
+    base_order,adapter_order=independent.parameter_order(28)
+    assert set(base_bytes.tensors)=={name for name,_ in base_order}|{"lm_head.weight"}
+    assert set(adapter_bytes.tensors)=={name for name,_ in adapter_order}
+    byte_base=base_bytes.digest_named(base_order,"BF16")
+    byte_adapter=adapter_bytes.digest_named(adapter_order,"F32",finite=True)
+    assert byte_base["sha256"]==BASE_DIGEST and byte_base["scalars"]==596049920
+    assert byte_adapter["tensors"]==392 and byte_adapter["scalars"]==5046272
+    expected_identity={"base":byte_base,"adapter":byte_adapter,"tied":True,"all_parameters_frozen":True,
+                       "base_dtype":"bfloat16","adapter_dtype":"float32"}
+    assert reader.read(generation/"model-before.json")==expected_identity
+    assert reader.read(generation/"model-after.json")==expected_identity
+    frozen=reader.read(reader.bind(cohort/"frozen-data.json",extension["frozen_data_sha256"]))
+    payload=reader.read(reader.bind(generation/"inputs.json",ownership["inputs_sha256"]))
+    assert seal["metadata"]["inputs_sha256"]==ownership["inputs_sha256"]==frozen["files_sha256"]["inputs.json"]
+    assert reader.read(reader.bind(cohort/"inputs.json",ownership["inputs_sha256"]))==payload
+    assert set(payload)=={"schema","rows"} and len(payload["rows"])==64
+    assert [r["case_id"] for r in payload["rows"]]==planned
+    assert all(set(r)=={"case_id","fen","selected_uci"} for r in payload["rows"])
+    # The raw seal and every raw row are now verified; only here open truth.
+    labels_path=reader.bind(cohort/"labels.json",frozen["files_sha256"]["labels.json"])
+    labels=reader.read(labels_path)["rows"]
+    assert [r["case_id"] for r in labels]==planned
+    assert evaluator_ownership["command"][-1]==str(directory/"score.json")
+    assert str(labels_path) in evaluator_ownership["command"]
+    assert str(generation/"raw") in evaluator_ownership["command"]
+    from transformers import AutoTokenizer
+    tokenizer=AutoTokenizer.from_pretrained(base,local_files_only=True,trust_remote_code=False)
+    assert tokenizer.eos_token_id==151645 and tokenizer.pad_token_id==151643
+    sys.path.insert(0,str(generation/"sources/reviewed"))
+    import chess_board_fact_core as core
+    import chess_fact_sft_common as common
+    from auditor_skeleton import independent_native_boundary
+    token_counts=[]
+    for index,(given,truth,row) in enumerate(zip(payload["rows"],labels,rows,strict=True)):
+        assert facts.predicate_facts(given["fen"],given["selected_uci"])==truth["expected"]
+        assert facts.transition_facts(given["fen"],given["selected_uci"])==truth["expected"]
+        assert core.expected_facts(given["fen"],given["selected_uci"])==truth["expected"]
+        assert core.independent_facts(given["fen"],given["selected_uci"])==truth["expected"]
+        native=independent_native_boundary(tokenizer,given,truth["expected"],core.INSTRUCTION)
+        prepared=reader.read(generation/f"prepared-{index:02d}.json")
+        assert prepared=={"case_id":given["case_id"],"input_ids":native["prompt_ids"],"attention_mask":[1]*native["prompt_count"]}
+        token_counts.append(independent.validate_generated(tokenizer,native["prompt_ids"],row,config["vocab_size"]))
+    assert len(list(generation.glob("prepared-*.json")))==64
+    recount=independent.score(rows,labels)
+    score=reader.read(reader.bind(directory/"score.json",completion["score_sha256"]))
+    assert score["seal_sha256"]==completion["raw_seal_sha256"]
+    assert score["labels_sha256"]==frozen["files_sha256"]["labels.json"]
+    assert score["schema"]=="chess.matched-check.score.v1"
+    for name,expected in recount.items(): assert score[name]==expected,name
+    preflight=reader.read(directory/"preflight.json")
+    assert preflight["status"]=="passed" and len(preflight["samples"])==10
+    resources={"preflight":resource_counts(preflight["samples"],"start")}
+    for stage in ("generation","evaluation"):
+        path=reader.bind(directory/(stage+"-resources.jsonl"))
+        samples=[json.loads(line) for line in path.read_text().splitlines()]
+        resources[stage]=resource_counts(samples,"running")
+    for name in ("intent.json","worker-stdout.txt","worker-stderr.txt","evaluator-stdout.txt","evaluator-stderr.txt"):
+        reader.bind(directory/name)
+    assert reader.read(directory/"intent.json")["budget_seconds"]==600
+    reader.bind(Path(__file__)); reader.bind(Path(independent.__file__))
+    reader.bind(Path(facts.__file__)); reader.bind(Path(core.__file__)); reader.bind(Path(common.__file__))
+    reader.bind(repo/".venv-soccernet/Lib/site-packages/transformers/models/qwen3/modeling_qwen3.py")
+    reader.stable()
+    inventories_after={"cohort":inventory(cohort,reader),"run":inventory(directory,reader)}
+    assert inventories_before==inventories_after
+    result={"schema":"chess.matched-check.completed-independent-audit.v1","utc":datetime.now(timezone.utc).isoformat(),
+        "status":"PASS_RETAINED_FILE_TOKEN_BYTE_IDENTITY_AND_SCORE_RECOUNT",
+        "raw_verified_before_evaluator_labels":True,"raw_seal_sha256":completion["raw_seal_sha256"],
+        "extension_sha256":EXTENSION_SHA,"source_and_artifact_bindings":reader.before,
+        "protected_inventories_before_and_after_identical":True,"protected_inventories":inventories_before,
+        "outcomes":recount,"model_byte_digests":{"base":byte_base,"adapter":byte_adapter},
+        "resources":resources,"supervision":supervision,"raw_token_counts":token_counts,
+        "elapsed_seconds":time.monotonic()-started,"new_model_calls":0,"engine_calls":0,"GPU_queries":0,
+        "limits":["Exploratory selected-only balanced diagnostic of an already observed class failure; no baseline comparison, strength, natural-prevalence, significance or promotion claim.",
+                  "Known-history-disjoint only; unknown original video games/history and upstream pretraining remain unresolved.",
+                  "Loaded identity is bound by reviewed execution receipts and independently reconstructed inert tensor-byte digests, without instantiating/rerunning a model.",
+                  "Recorded samples support observed reserves/gaps only and cannot establish absence of shorter unobserved resource peaks."]}
+    with out.open("x",encoding="utf-8",newline="\n") as stream: stream.write(json.dumps(result,indent=2,sort_keys=True,allow_nan=False)+"\n")
+    print(json.dumps({"path":str(out),"sha256":digest(out),"status":result["status"],
+        "counts":recount["counts"],"check_classes":recount["check_classes"],"paired":recount["paired"],"bound_files":len(reader.before)}))
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--completed-run-audit-authorized",action="store_true")
+    args=parser.parse_args()
+    if not args.completed_run_audit_authorized: parser.error("wait for terminal run and explicit root audit GO")
+    workspace=Path(__file__).resolve().parents[2]
+    out=workspace/"outputs/chess-matched-check-completed-independent-audit.json"
+    if out.exists(): parser.error("refusing existing audit output")
+    run(workspace,out)
+
+
+if __name__=="__main__": main()

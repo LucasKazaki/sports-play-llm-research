@@ -1,0 +1,144 @@
+"""Manual fixture and adversarial checks only; no actual source adapter."""
+import copy
+import hashlib
+import json
+from pathlib import Path
+
+import chess
+import pytest
+
+import matched_check_reference as ref
+
+FIXTURES = json.loads(Path(__file__).with_name("constructed-fixtures.json").read_text())
+
+
+@pytest.mark.parametrize("fixture", FIXTURES["fixtures"], ids=lambda item: item["name"])
+def test_every_manual_source_and_setup_board_is_legal(fixture):
+    record = ref.parse_row(fixture["row"])
+    assert record["fen"] == fixture["expected_after_fen"]
+    assert chess.Board(record["source_before_fen"]).is_valid()
+    assert chess.Board(record["fen"]).is_valid()
+    assert not chess.Board(record["fen"]).is_game_over()
+    assert record["source_before_key"] != record["setup_after_key"]
+    pairs, _ = ref.enumerate_pairs(record)
+    if "manually_expected_pair" in fixture:
+        expected = tuple(sorted(fixture["manually_expected_pair"]))
+        assert any(pair["moves"] == expected for pair in pairs)
+    for uci, expected in fixture.get("manual_checks", {}).items():
+        one, two = ref.predicate_facts(record["fen"], uci), ref.transition_facts(record["fen"], uci)
+        assert one == two and one["gives_check"] is expected
+    if "expected_matched_pairs" in fixture: assert len(pairs) == fixture["expected_matched_pairs"]
+    if "must_not_be_legal" in fixture: assert chess.Move.from_uci(fixture["must_not_be_legal"]) not in chess.Board(record["fen"]).legal_moves
+    for uci in fixture.get("legal_but_excluded_candidates", []):
+        assert chess.Move.from_uci(uci) in chess.Board(record["fen"]).legal_moves
+        assert all(uci not in pair["moves"] for pair in pairs)
+
+
+def test_capture_victim_type_matters_not_only_capture_flag():
+    fixture = FIXTURES["fixtures"][1];record = ref.parse_row(fixture["row"])
+    pairs, _ = ref.enumerate_pairs(record)
+    assert all(set(pair["moves"]) != {"d4g7", "d4e3"} for pair in pairs)
+    assert ref.predicate_facts(record["fen"], "d4e3")["captured_piece"] == "rook"
+    assert ref.predicate_facts(record["fen"], "d4g7")["captured_piece"] == "knight"
+
+
+@pytest.mark.parametrize("native,expected", [("AbCd0001", "AbCd0001"), ("AbCd0001#38", "AbCd0001"),
+    ("AbCd0001/black#38", "AbCd0001"), ("AbCd0001/white", "AbCd0001")])
+def test_native_game_id_suffixes_preserve_case(native, expected): assert ref.canonical_game(native) == expected
+
+
+@pytest.mark.parametrize("native", [None, "AbCd000", "AbCd00011", " AbCd0001", "AbCd0001/red#2", "AbCd0001#-1", "AbCd0001/BLACK", "ＡbCd0001"])
+def test_malformed_game_ids_rejected(native):
+    with pytest.raises(ValueError): ref.canonical_game(native)
+
+
+def test_clock_and_nonlegal_ep_normalization_does_not_change_full_prompt_fen():
+    row = FIXTURES["canonical_key_fixture"]
+    assert ref.board_key(row["fen_with_illegal_ep_due_to_pin"]) == ref.board_key(row["same_key_with_other_clocks_and_no_ep"])
+    assert chess.Board(row["fen_with_illegal_ep_due_to_pin"]).fen() != chess.Board(row["same_key_with_other_clocks_and_no_ep"]).fen()
+
+
+def test_source_answer_tail_and_extra_quality_fields_are_never_used():
+    row = FIXTURES["fixtures"][0]["row"]
+    class Spy(dict):
+        def __getitem__(self, key):
+            assert key in ("PuzzleId", "GameId", "FEN", "Moves")
+            return super().__getitem__(key)
+    one = ref.parse_row(Spy(row))
+    poisoned = {**row, "Moves": row["Moves"] + " THIS IS NOT CHESS OR JSON", "Themes": object(), "Rating": object()}
+    two = ref.parse_row(Spy(poisoned))
+    assert one == two
+    assert ref.enumerate_pairs(one) == ref.enumerate_pairs(two)
+
+
+def test_pair_digest_uses_literal_frozen_prefix_and_canonical_json():
+    record = ref.parse_row(FIXTURES["fixtures"][0]["row"])
+    moves = ["e2e8", "e2e3"]
+    payload = '{"fen":"5k2/8/8/8/8/8/4R3/K7 w - - 1 2","game_id":"AbCd0001","moves":["e2e3","e2e8"],"puzzle_id":"Fixture1","seed":4082032}'
+    assert ref.pair_digest(record, moves) == hashlib.sha256(b"matched-check-pair-v1\n" + payload.encode()).hexdigest()
+
+
+def test_pair_choice_is_after_successor_exclusion_and_lexical_tiebreak():
+    record = ref.parse_row(FIXTURES["fixtures"][0]["row"])
+    pairs, _ = ref.enumerate_pairs(record)
+    assert len(pairs) > 1
+    blocked = pairs[0]["successor_keys"][0]
+    remaining, _ = ref.enumerate_pairs(record, {blocked})
+    assert remaining and all(blocked not in pair["successor_keys"] for pair in remaining)
+    assert remaining == [pair for pair in pairs if blocked not in pair["successor_keys"]]
+    tied, _ = ref.enumerate_pairs(record, digest=lambda *_: "0"*64)
+    assert [pair["moves"] for pair in tied] == sorted(pair["moves"] for pair in tied)
+
+
+def test_generation_order_independent_literal_payload_and_no_label_names():
+    ids = ["mc-pair-00-0", "mc-pair-00-1", "mc-pair-01-0", "mc-pair-01-1"]
+    def independent(case_id):
+        payload = '{"case_id":"' + case_id + '","seed":4082032}'
+        return hashlib.sha256(b"matched-check-order-v1\n" + payload.encode()).hexdigest(), case_id
+    assert ref.generation_order(ids) == sorted(ids, key=independent)
+    assert all("check" not in name and "true" not in name for name in ids)
+
+
+def test_source_cap_does_not_consume_cap_plus_one_and_shortfall_is_visible():
+    def finite():
+        for _ in range(3): yield {"PuzzleId": "bad"}
+        raise AssertionError("cap-plus-one was consumed")
+    result = ref.reconstruct_fixture_selection(finite(), target=32, cap=3)
+    assert result["status"] == "shortfall" and len(result["trace"]) == 3 and not result["pairs"]
+
+
+def test_row_precedence_invalid_then_game_then_source_roles():
+    row = FIXTURES["fixtures"][0]["row"]; record = ref.parse_row(row)
+    invalid = {**row, "Moves": "0000"}
+    both = ref.reconstruct_fixture_selection([invalid, row], {record["game_id"]}, {record["source_before_key"]}, cap=2)
+    assert [note["terminal"] for note in both["trace"]] == ["invalid", "known_or_new_game_overlap"]
+    for key in (record["source_before_key"], record["setup_after_key"]):
+        result = ref.reconstruct_fixture_selection([row], known_keys={key}, cap=1)
+        assert result["trace"][0]["terminal"] == "source_role_board_overlap"
+
+
+def test_first_eligible_board_stops_without_reading_later_row():
+    row = FIXTURES["fixtures"][0]["row"]
+    def rows():
+        yield {"PuzzleId": "bad"}
+        yield row
+        raise AssertionError("read after target acceptance")
+    result = ref.reconstruct_fixture_selection(rows(), target=1)
+    assert result["status"] == "complete"
+    assert result["pairs"][0]["source_ordinal"] == 1 and result["pairs"][0]["pair_id"] == "mc-pair-00"
+
+
+def test_accepted_pair_adds_game_and_four_roles_to_new_exclusions():
+    row = FIXTURES["fixtures"][0]["row"]
+    duplicate_game = {**row, "PuzzleId": "Other1"}
+    new_game_same_board = {**row, "PuzzleId": "Other2", "GameId": "ZzZz0001", "FEN": row["FEN"].replace("0 1", "40 50")}
+    result = ref.reconstruct_fixture_selection([row, duplicate_game, new_game_same_board], target=2)
+    assert [note["terminal"] for note in result["trace"]] == ["accepted", "known_or_new_game_overlap", "source_role_board_overlap"]
+
+
+def test_repeated_puzzle_is_fatal_only_after_earlier_overlap_filters():
+    one = FIXTURES["fixtures"][0]["row"]
+    two = {**FIXTURES["fixtures"][1]["row"], "PuzzleId": one["PuzzleId"]}
+    with pytest.raises(ref.RepeatedPuzzle) as caught:
+        ref.reconstruct_fixture_selection([one, two], target=2)
+    assert caught.value.trace[-1]["terminal"] == "repeated_accepted_puzzle_identity"

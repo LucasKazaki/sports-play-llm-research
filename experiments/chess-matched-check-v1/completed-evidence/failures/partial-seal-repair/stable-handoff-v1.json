@@ -1,0 +1,132 @@
+{
+  "schema": "chess.matched-check.runner-source-review.v1",
+  "utc": "2026-10-15T10:56:31.745051+00:00",
+  "status": "WORKSPACE_ONLY_SOURCE_TEST_REVIEW_CANDIDATE_NO_EXECUTION_GO",
+  "source_files": {
+    "illustration_core.py": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "matched_worker.py": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "matched_evaluate.py": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "matched_run.py": {
+      "bytes": 16303,
+      "sha256": "43eb473f5446dc098059212d357734a3fa6a8c19eb0ecab1aff44cc9e7644997"
+    },
+    "local_backends.py": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "owned_native.py": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "inherited-source-bindings.json": {
+      "bytes": 600,
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "test_matched_runner.py": {
+      "bytes": 20698,
+      "sha256": "74b7f8a3826fa6aa69d6b40c73ba30c40f1613df15e27081dd7199737912111f"
+    },
+    "identity_probe_worker.py": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "reviewed/chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "reviewed/chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "reviewed/chess_native_resources.py": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "protocol.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    }
+  },
+  "software_checks": {
+    "passed": 41,
+    "failed": 0,
+    "seconds": 1.39,
+    "junit_sha256": "f6e54ca6fe72fd4123dab4881b27ee3df375501dcdd1b01e85a46738979fdfcd",
+    "actual_cpu_probes": {
+      "test_actual_owned_cpu_identity0/probe-receipt.json": {
+        "sha256": "37e7ae0ccd8555e1e706ff12081a9539d715e41a1624e435319a2a7e26c37f53",
+        "receipt": {
+          "actual_popen_pid": 6944,
+          "actual_worker_pid": 6944,
+          "child_exit_code": 0,
+          "unrelated_control_survived": true,
+          "model_imported": false,
+          "model_calls": 0
+        }
+      },
+      "test_actual_separate_cpu_evalu0/evaluator-probe-receipt.json": {
+        "sha256": "76e4e684812aad1cf6c5f22214131fe6086fd7400f9f28ff504ba1fb3969f855",
+        "receipt": {
+          "command": [
+            "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "-B",
+            "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_evaluate.py",
+            "--raw",
+            "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-attempt4\\test_actual_separate_cpu_evalu0\\raw",
+            "--labels",
+            "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-attempt4\\test_actual_separate_cpu_evalu0\\labels.json",
+            "--expected-label-sha256",
+            "a1b3038e39d88f40dc2ef7823fe9bd02ad2e8c41e554f3b6a38f8f59d50d8080",
+            "--out",
+            "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-attempt4\\test_actual_separate_cpu_evalu0\\score.json"
+          ],
+          "exit_code": 0,
+          "score_sha256": "2d9ac0188b3a74f29b5eb6aeefe432d58b07e2ccf24e7ed932c8a5ac55f334e3",
+          "software_fixture_only": true,
+          "model_calls": 0
+        }
+      }
+    }
+  },
+  "retained_failed_fixture_attempts": [
+    "before-first-software-repair/receipt.json",
+    "before-output-fixture-repair/receipt.json"
+  ],
+  "retained_root_guard_review_before_repair": "before-root-boundary-repair/receipt.json",
+  "actual_data_access": "No actual new cohort labels/dataset read for runtime preparation. Only public frozen protocol/model metadata and inherited source bytes. No actual model/GPU/engine calls.",
+  "runtime_entrypoint": "matched_run.py --repo <repo> --cohort <private/cohort> --extension-path <future frozen execution extension> --expected-extension-sha <exactsha> --out <new sibling selected-run-v1> --root-execution-go",
+  "extension_contract": {
+    "status": "FROZEN_AFTER_INTAKE_AND_SOURCE_REVIEW_BEFORE_CALLS",
+    "protocol_sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+    "source_sha256": "all exact SOURCES names to SHA256 strings",
+    "frozen_data_sha256": "actual frozen-data.json SHA after intake",
+    "intake_audit": {
+      "path": "actual independent all-row audit",
+      "sha256": "root-approved audit exact bytes",
+      "passed": true,
+      "planned": 64,
+      "native_token_boundaries_passed": true
+    }
+  },
+  "important_boundaries": [
+    "Only unchanged FactBackend is invoked, selected512 and disabled=False; no training entrypoint/optimizer/baseline.",
+    "Worker input/model/ownership metadata exclude labels/dataset bytes, paths and hashes.",
+    "Separate owned CPU evaluator receives labels only after raw64 seal and successful generation closure.",
+    "600s timer starts before preflight; ten healthy1s samples; preflight/running gap<=3s, resource counters/reserves; both phases and final checks share timer.",
+    "At most30s exact-handle cleanup; cancellation write errors do not prevent termination. No name kills.",
+    "Setup failure recovers all64 opaque planned outcomes, no quality conclusion.",
+    "Output is new direct sibling of cohort, protected alias/ancestor/source/model/evidence overlap rejection.",
+    "Primary base digest explicit lora_ exclusion in named-parameter order,1MiB transfer chunks; e3af before/after; tied596049920BF16,392tensors5046272F32 adapter before/after."
+  ],
+  "planned_actual_calls": 64,
+  "actual_calls": 0
+}

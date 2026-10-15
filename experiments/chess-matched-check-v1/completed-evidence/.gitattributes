@@ -1,0 +1,2 @@
+# Preserve exact test traceback and source snapshot bytes.
+* -text -whitespace

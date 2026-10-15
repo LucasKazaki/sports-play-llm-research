@@ -1,0 +1,32 @@
+{
+  "frozen_data_sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0",
+  "intake_audit": {
+    "native_token_boundaries_passed": true,
+    "passed": true,
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-matched-check-intake-independent-audit.json",
+    "planned": 64,
+    "sha256": "5d3decb29d660f51b55ea4ce3068428d998816809d40e5608299b9fb57ffb01d"
+  },
+  "protocol_sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+  "runtime_independent_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-matched-check-runtime-independent-review.json",
+    "sha256": "8461d24a826f42d7633875935d68f6029d3bd60ffa7d62ffe4b3c0d87cf00e9f"
+  },
+  "schema": "chess.matched-check.execution-extension.v1",
+  "source_sha256": {
+    "identity_probe_worker.py": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed",
+    "illustration_core.py": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb",
+    "inherited-source-bindings.json": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2",
+    "local_backends.py": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505",
+    "matched_evaluate.py": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2",
+    "matched_run.py": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7",
+    "matched_worker.py": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed",
+    "owned_native.py": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0",
+    "reviewed/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "reviewed/chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "reviewed/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "test_matched_runner.py": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+  },
+  "status": "FROZEN_AFTER_INTAKE_AND_SOURCE_REVIEW_BEFORE_CALLS",
+  "utc": "2026-10-15T11:04:46.149687+00:00"
+}

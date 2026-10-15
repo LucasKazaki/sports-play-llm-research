@@ -1,0 +1,21 @@
+{
+  "pid": 45008,
+  "native_launch_identity": {
+    "base_executable": "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "base_executable_sha256": "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181",
+    "venv_executable": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "venv_executable_sha256": "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5",
+    "venv_prefix": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet",
+    "pyvenv_cfg_sha256": "115d62f8b05b80befb8aabe8ef3106697bae48f40694c95ff94014b29690a4d9",
+    "dependency_versions": {
+      "torch": "2.8.0+cu128",
+      "transformers": "5.19.0",
+      "peft": "0.21.2",
+      "accelerate": "1.15.0",
+      "pyarrow": "26.0.0"
+    },
+    "changed_environment_keys": [
+      "__PYVENV_LAUNCHER__"
+    ]
+  }
+}

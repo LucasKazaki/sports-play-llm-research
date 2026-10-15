@@ -1,0 +1,14 @@
+{
+  "pid": 20040,
+  "base_executable": "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "venv_executable": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+  "venv_prefix": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet",
+  "dependency_versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "pyarrow": "26.0.0"
+  },
+  "torch_imported": false
+}

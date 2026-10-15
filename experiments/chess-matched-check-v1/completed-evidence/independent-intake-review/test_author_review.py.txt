@@ -1,0 +1,137 @@
+"""Read-only author comparison on constructed fixtures; never open Parquet."""
+import importlib.metadata
+import json
+import os
+from pathlib import Path
+import random
+import subprocess
+import sys
+
+import chess
+import pytest
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parent / "repos/sports-play-llm-research"
+sys.path.insert(0, str(REPO / "scripts"))
+import chess_matched_check_intake as author
+import matched_check_reference as ref
+
+FIXTURES = json.loads((HERE / "constructed-fixtures.json").read_text())["fixtures"]
+
+
+def assert_same_pairs(row, blocked=()):
+    record = ref.parse_row(row)
+    expected, _ = ref.enumerate_pairs(record, blocked)
+    actual, _ = author.candidate_pairs(chess.Board(record["fen"]), record["game_id"],
+        record["puzzle_id"], ref.SEED, set(blocked), record["source_before_key"])
+    one = [(tuple(p["moves"]), p["sha256"], tuple(p["successor_keys"])) for p in expected]
+    two = [(tuple(p["moves"]), p["pair_sha256"], tuple(p["successor_keys"])) for p in actual]
+    assert one == two
+    return record, expected
+
+
+@pytest.mark.parametrize("fixture", FIXTURES, ids=lambda f: f["name"])
+def test_complete_manual_pair_sets_and_blocked_successor(fixture):
+    _, pairs = assert_same_pairs(fixture["row"])
+    if pairs:
+        assert_same_pairs(fixture["row"], [pairs[0]["successor_keys"][0]])
+
+
+def test_deterministic_constructed_legal_trajectories_complete_pair_sets():
+    rng = random.Random(4082032)
+    boards, compared = [], 0
+    for game in range(12):
+        board = chess.Board()
+        for _ in range(14 + game * 2):
+            if board.is_game_over(): break
+            board.push(rng.choice(sorted(board.legal_moves, key=lambda m: m.uci())))
+        if board.is_game_over(): continue
+        setup = rng.choice(sorted(board.legal_moves, key=lambda m: m.uci()))
+        row = {"PuzzleId": "Synthetic" + str(game), "GameId": "S" + format(game, "07d"),
+               "FEN": board.fen(), "Moves": setup.uci() + " IGNORE_INVALID_ANSWER_TAIL"}
+        after = board.copy(); after.push(setup)
+        if after.is_game_over(): continue
+        assert_same_pairs(row)
+        compared += 1
+    assert compared >= 10
+
+
+def test_independent_selection_winners_order_labels_and_trace():
+    rows = [fixture["row"] for fixture in FIXTURES]
+    expected = ref.reconstruct_fixture_selection(rows, target=3)
+    assert expected["status"] == "complete"
+    events = []
+    actual = author.select_rows((({"source_ordinal": i, "row_group": 0, "row_in_group": i}, r)
+                                for i, r in enumerate(rows)), set(), set(), count=3, trace=events.append)
+    assert [(p["pair_id"], p["game_id"], p["fen"], tuple(p["moves"]), p["pair_sha256"],
+             tuple(p["successor_keys"]), p["source_ordinal"]) for p in actual["pairs"]] == [
+           (p["pair_id"], p["game_id"], p["fen"], p["moves"], p["pair_sha256"],
+             p["successor_keys"], p["source_ordinal"]) for p in expected["pairs"]]
+    assert [e["outcome"] for e in events] == [e["terminal"] for e in expected["trace"]]
+    expected_inputs, expected_labels = {}, {}
+    for pair in expected["pairs"]:
+        for n, uci in enumerate(pair["moves"]):
+            case = pair["pair_id"] + "-" + str(n)
+            expected_inputs[case] = {"case_id": case, "fen": pair["fen"], "selected_uci": uci}
+            facts = ref.predicate_facts(pair["fen"], uci)
+            assert facts == ref.transition_facts(pair["fen"], uci)
+            expected_labels[case] = {"case_id": case, "expected": facts}
+    order = ref.generation_order(list(expected_inputs))
+    assert actual["inputs"] == [expected_inputs[c] for c in order]
+    assert actual["labels"] == [expected_labels[c] for c in order]
+
+
+@pytest.mark.parametrize("name", author.FORBIDDEN_ENV)
+def test_each_forbidden_override_rejected_without_parent_environment_change(monkeypatch, name):
+    for key in author.FORBIDDEN_ENV: monkeypatch.delenv(key, raising=False)
+    monkeypatch.setenv(name, "independent-conflicting-value")
+    before = dict(os.environ)
+    with pytest.raises(ValueError, match="conflicting"): author.launch_identity()
+    assert dict(os.environ) == before
+
+
+def test_real_CPU_child_identity_dependency_metadata_and_scoped_environment(tmp_path):
+    original = dict(os.environ)
+    exe, env, identity = author.launch_identity()
+    marker = tmp_path / "identity.json"
+    code = ("import sys,os,json,pathlib,importlib.metadata as m;"
+            "pathlib.Path(sys.argv[1]).write_text(json.dumps({'pid':os.getpid(),'ppid':os.getppid(),"
+            "'prefix':sys.prefix,'base':sys._base_executable,'exe':sys.executable,"
+            "'versions':{k:m.version(k) for k in ['chess','pyarrow','numpy']},"
+            "'torch_imported':'torch' in sys.modules}))")
+    receipt = author.run_owned([exe, "-B", "-c", code, str(marker)], tmp_path / "owned",
+                                environment=env, seconds=5)
+    actual = json.loads(marker.read_text())
+    assert actual["pid"] == receipt["pid"] and actual["ppid"] == os.getpid()
+    assert Path(actual["prefix"]).resolve() == Path(identity["venv_prefix"])
+    assert Path(actual["base"]).resolve() == Path(identity["base_executable"])
+    assert Path(actual["exe"]).resolve() == Path(identity["venv_executable"])
+    assert actual["versions"] == {k: importlib.metadata.version(k) for k in actual["versions"]}
+    assert actual["torch_imported"] is False and dict(os.environ) == original
+
+
+@pytest.mark.parametrize("failure_name", ["owned-process.json", "cancel.json"])
+def test_durable_owned_metadata_failure_still_terminates_only_owned_child(tmp_path, monkeypatch, failure_name):
+    exe, env, _ = author.launch_identity()
+    control = subprocess.Popen([exe, "-c", "import time; time.sleep(10)"], env=env,
+                               stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    children = []
+    real_popen, real_save = author.subprocess.Popen, author.save_new
+    def capture(*args, **kwargs):
+        child = real_popen(*args, **kwargs); children.append(child); return child
+    def fail(path, value):
+        if Path(path).name == failure_name: raise OSError("independent injected persistence failure")
+        return real_save(path, value)
+    monkeypatch.setattr(author.subprocess, "Popen", capture)
+    monkeypatch.setattr(author, "save_new", fail)
+    try:
+        with pytest.raises(OSError, match="injected"):
+            author.run_owned([exe, "-c", "import time; time.sleep(10)"], tmp_path / "attempt",
+                             environment=env, seconds=.15, grace=.05)
+        assert len(children) == 1 and children[0].poll() is not None
+        assert control.poll() is None
+        receipt = json.loads((tmp_path / "attempt/receipt.json").read_text())
+        assert receipt["status"] == "FAILED" and receipt["forced"]
+        assert receipt["failure"]["type"] == "OSError" and receipt["model_calls"] == 0
+    finally:
+        control.terminate(); control.wait(timeout=5)

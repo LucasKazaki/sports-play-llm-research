@@ -1,0 +1,27 @@
+{
+  "schema": "chess.matched-check.root-intake-source-review.v1",
+  "status": "GO_one_actual_CPU_intake_only",
+  "reviewed_commit": "00a9837e5c95871b479285fb039a961ed8a75919",
+  "protocol_first_commit": "1126b00dd210f75f14c4f8788a864d4c0b270483",
+  "protocol_sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+  "source_sha256": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28",
+  "tests_sha256": [
+    "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb",
+    "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1"
+  ],
+  "review": [
+    "Root read full intake and both tests, checked source/pair enumeration/hash/rank/order/exclusion/answer-tail isolation, create-only artifacts and bounded CPU ownership.",
+    "Root reran46focused checks PASS1.26s.",
+    "Separate reviewer full source read and104finitechecks PASS2.10s reported; archival report follows.",
+    "No additional actual spent cohort appeared since known-registry amendment: new matched private directory absent; all existing completed illustration states included."
+  ],
+  "mandatory_legacy": {
+    "failed": 9,
+    "passed": 5,
+    "errors": 89,
+    "reason": "Missing retained historical fixtures; unchanged and explicitly not full-suite green."
+  },
+  "authority": "One600s total owned CPU intake, exact32pairs/64rows/200000sourcecap, create-only cohort and supervision directories. Shortfall, any binding/oracle/identity/deadline/artifact failure retained; no retry/resume/quota relaxation.",
+  "model_engine_GPU_calls_authorized": 0,
+  "next_gate": "Independent complete source-order, known/new exclusions, exact pair ranking/rule labels and all64native token boundaries audit; separately reviewed inference wrapper and explicit root GPU GO."
+}

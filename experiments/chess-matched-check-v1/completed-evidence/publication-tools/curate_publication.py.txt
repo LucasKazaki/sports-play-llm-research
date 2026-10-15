@@ -1,0 +1,145 @@
+"""Post-run exact-byte curation, after explicit root publication review.
+
+No model, engine, GPU, source selection or experiment execution is imported.
+"""
+from pathlib import Path
+import hashlib
+import json
+import shutil
+
+W=Path(__file__).resolve().parents[2]
+HERE=Path(__file__).resolve().parent
+REPO=W/"work/repos/sports-play-llm-research"
+EXP="experiments/chess-matched-check-v1"
+
+
+def sha(path):
+    digest=hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda:stream.read(65536),b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def tree(path):
+    return {p.relative_to(path).as_posix():{"bytes":p.stat().st_size,"sha256":sha(p)}
+            for p in sorted(path.rglob("*")) if p.is_file()}
+
+
+def save(path,value):
+    path=Path(path)
+    path.parent.mkdir(parents=True,exist_ok=True)
+    with path.open("x",encoding="utf-8",newline="\n") as stream:
+        stream.write(json.dumps(value,indent=2)+"\n")
+
+
+def main():
+    go=W/"outputs/chess-matched-check-root-completed-publication-review.json"
+    if sha(go)!="e1472e216061eaa9701bcd96454db3d2e394015330946f978788416038ac3898":
+        raise ValueError("exact publication GO required")
+    proposed=read(HERE/"positive-alias-inventory.PROPOSED.json")
+    aliases=list(proposed["new_public_aliases"])
+    seen={item["planned_public_repo_path"] for item in aliases}
+    def add(path,destination,role,expected=None):
+        path=Path(path).resolve()
+        path.relative_to(W)
+        if path.suffix.lower() not in (".json",".jsonl",".txt",".py",".xml",".md",".diff",".log"):
+            raise ValueError("artifact extension outside positive curation scope")
+        if path.stat().st_size>16*1024*1024:
+            raise ValueError("unexpected large artifact")
+        digest=sha(path)
+        if expected is not None and digest!=expected:
+            raise ValueError("review evidence changed:"+str(path))
+        relative=Path(destination)
+        if relative.is_absolute() or ".." in relative.parts:
+            raise ValueError("unsafe public alias")
+        if destination in seen:
+            previous=next(item for item in aliases if item["planned_public_repo_path"]==destination)
+            if previous["sha256"]!=digest:
+                raise ValueError("public alias collision")
+            return
+        seen.add(destination)
+        aliases.append({"original_workspace_path":path.relative_to(W).as_posix(),
+            "planned_public_repo_path":destination,"bytes":path.stat().st_size,
+            "sha256":digest,"role":role})
+    def reviewed_set(filename,keys,folder):
+        receipt=W/"outputs"/filename
+        data=read(receipt)
+        add(receipt,f"{EXP}/completed-evidence/reviews/{filename}","Exact review receipt")
+        for key in keys:
+            for name,binding in data[key].items():
+                alias=f"{EXP}/completed-evidence/{folder}/{name}"
+                if Path(name).suffix==".py":alias+=".txt"
+                add(binding["path"],alias,"Bound independent audit/test source or result",binding["sha256"])
+    reviewed_set("chess-matched-check-completed-audit-evidence.json",("source_dependencies","evidence"),"independent-completed-audit")
+    reviewed_set("chess-matched-check-runtime-independent-review.json",("evidence",),"independent-runtime-review")
+    reviewed_set("chess-matched-check-intake-independent-source-review.json",("evidence",),"independent-intake-review")
+    for name in ("chess-matched-check-completed-independent-audit.json",
+                 "chess-matched-check-root-completed-publication-review.json",
+                 "chess-matched-check-root-runtime-execution-review.json"):
+        add(W/"outputs"/name,f"{EXP}/completed-evidence/reviews/{name}","Exact completed/root audit")
+    folders=(
+        (W/"work/chess-matched-check-independent-v1/before-distribution-name-fixture-repair","failures/distribution-name-fixture"),
+        (W/"work/chess-matched-check-independent-v1/runtime-partial-seal-failure-v1/test_interrupted_raw_sealing_r0","failures/partial-seal-original/actual-fixture"),
+        (W/"work/chess-matched-check-runner-v1/software-partial-seal-repair-v1/fixtures/test_actual_owned_cpu_identity0","probes/owned-CPU-identity"),
+        (W/"work/chess-matched-check-runner-v1/software-partial-seal-repair-v1/fixtures/test_actual_separate_cpu_evalu0","probes/separate-CPU-evaluator"),
+    )
+    for folder,destination in folders:
+        for path in sorted(folder.rglob("*")):
+            if path.is_file():
+                alias=f"{EXP}/completed-evidence/{destination}/{path.relative_to(folder).as_posix()}"
+                if path.suffix==".py":alias+=".txt"
+                add(path,alias,"Exact retained finite fixture/probe; no model calls")
+    add(Path(__file__),f"{EXP}/completed-evidence/publication-tools/curate_publication.py.txt",
+        "Post-run curation utility, not experiment execution source")
+    protected={}
+    private=REPO/"data/private/chess-matched-check-diagnostic-v1"
+    for name,inventory in proposed["complete_actual_tree_inventories"].items():
+        current=tree(private/name)
+        if current!=inventory:
+            raise ValueError("original cohort/run membership/bytes changed")
+        protected[name]=current
+    for name,binding in proposed["existing_pre_call_capsule_unchanged"].items():
+        if sha(REPO/name)!=binding["sha256"]:
+            raise ValueError("pre-call capsule changed")
+    original_protocol=read(REPO/EXP/"manifest.json")
+    for name,binding in original_protocol["files"].items():
+        if sha(REPO/EXP/name)!=binding["sha256"]:
+            raise ValueError("protocol-first file changed")
+    for item in aliases:
+        source=W/item["original_workspace_path"]
+        target=REPO/item["planned_public_repo_path"]
+        target.resolve().relative_to(REPO.resolve())
+        if sha(source)!=item["sha256"] or source.stat().st_size!=item["bytes"]:
+            raise ValueError("source alias drift")
+        if target.exists():
+            raise ValueError("refusing existing public alias:"+str(target))
+        target.parent.mkdir(parents=True,exist_ok=True)
+        shutil.copyfile(source,target)
+        if sha(target)!=item["sha256"]:
+            raise ValueError("copy mismatch")
+    for name,inventory in protected.items():
+        if tree(private/name)!=inventory:
+            raise ValueError("original changed during curation")
+    manifest={"schema":"chess.matched-check.public-manifest.v1",
+        "root_publication_GO_sha256":sha(go),"pre_call_commit":proposed["pre_call_commit"],
+        "base_commit":proposed["base_commit"],"exact_original_to_public_aliases":aliases,
+        "complete_actual_tree_inventories_before_after":protected,
+        "existing_pre_call_capsule_unchanged":proposed["existing_pre_call_capsule_unchanged"],
+        "protocol_first_manifest_sha256":sha(REPO/EXP/"manifest.json"),
+        "new_model_engine_GPU_calls":0,
+        "limits":["Exact host paths are archival provenance, not relocated execution claims.",
+                  "Private weights/optimizer/Parquet/media are not copied.",
+                  "Manifest excludes itself; final Git/output binding authenticates these bytes."]}
+    save(REPO/EXP/"public-manifest.json",manifest)
+    save(HERE/"curation-receipt.json",{"aliases":len(aliases),"alias_bytes":sum(x["bytes"] for x in aliases),
+        "manifest_sha256":sha(REPO/EXP/"public-manifest.json"),"protected_actual_files":sum(len(v) for v in protected.values()),
+        "pre_call_files":len(proposed["existing_pre_call_capsule_unchanged"]),"new_model_engine_GPU_calls":0})
+    print(json.dumps(read(HERE/"curation-receipt.json"),indent=2))
+
+
+if __name__=="__main__":main()

@@ -1,0 +1,1 @@
+{"pairs": 32, "planned": 64, "frozen_sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0", "model_calls": 0}

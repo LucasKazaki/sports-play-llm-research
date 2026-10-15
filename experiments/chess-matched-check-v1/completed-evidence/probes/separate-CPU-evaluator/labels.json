@@ -1,0 +1,836 @@
+{
+  "rows": [
+    {
+      "case_id": "mc-pair-22-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-23-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-16-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-17-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-20-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-23-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-16-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-03-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-30-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-04-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-08-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-28-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-29-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-06-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-14-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-01-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-29-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-04-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-02-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-26-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-19-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-06-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-12-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-27-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-07-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-14-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-24-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-31-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-09-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-00-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-12-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-13-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-07-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-05-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-11-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-15-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-15-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-22-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-10-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-25-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-26-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-18-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-02-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-11-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-21-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-10-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-09-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-20-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-01-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-19-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-28-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-17-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-18-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-25-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-24-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-31-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-21-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-30-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-27-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-13-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-08-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-03-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-05-0",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "mc-pair-00-1",
+      "expected": {
+        "moving_piece": "rook",
+        "moving_colour": "white",
+        "is_capture": false,
+        "captured_piece": null,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": null
+      }
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "chess.matched-check.publication-check-supplement.v1",
+  "files": {
+    "failed-validator.py.txt": {
+      "original_workspace_path": "work/chess-matched-check-publication-v1/before-intentional-malformed-check-repair/verify_publication.py",
+      "bytes": 4747,
+      "sha256": "872b1a8ebcc58b09b0f441307461a77298f938908b1507cb5702f0730c6fd76e"
+    },
+    "failed-checker-receipt.json": {
+      "original_workspace_path": "work/chess-matched-check-publication-v1/before-intentional-malformed-check-repair/receipt.json",
+      "bytes": 1031,
+      "sha256": "95309f89df46173e80a4e46d2ef2869d0b4729b793fdd6273d588a25d70003f9"
+    },
+    "corrected-validator.py.txt": {
+      "original_workspace_path": "work/chess-matched-check-publication-v1/verify_publication.py",
+      "bytes": 5284,
+      "sha256": "2bc2bda23a22db8bd90456176861e557e350f779259d7672b1a0e819f7ed147b"
+    },
+    "checks.json": {
+      "original_workspace_path": "work/chess-matched-check-publication-v1/packaging-checks.json",
+      "bytes": 4346,
+      "sha256": "409e925d295f29342815ade94d37bf5c649754a72f267d429ca9245af59b983d"
+    },
+    "lf-checkout-proof.json": {
+      "original_workspace_path": "work/chess-matched-check-publication-v1/lf-checkout-proof.json",
+      "bytes": 1592,
+      "sha256": "c09f2024776b44cc447058aaf47973972e3b666968a05bbaa760c68d42fdd39e"
+    }
+  },
+  "scope": "Post-run publication verification only; separate from original199 experiment/review aliases. Original checker incorrectly tried to parse the deliberately malformed failure fixture JSON. The corrected checker exempts only that exact path/hash while retaining all byte checks. No experiment/source/input/output was repaired or regenerated.",
+  "new_model_engine_GPU_calls": 0
+}

@@ -1,0 +1,17 @@
+{
+  "pid": 43312,
+  "command": [
+    "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\matched_evaluate.py",
+    "--raw",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\raw",
+    "--labels",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\labels.json",
+    "--expected-label-sha256",
+    "997c3834b4e038a2c363e9b375908761a3b34efd7fca6334fc836f871a784ad2",
+    "--out",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\score.json"
+  ],
+  "raw_seal_sha256": "3baf918c02223f2ef82de5014fb798ac564c755fcc1849392deee77e8c1cfa3f"
+}

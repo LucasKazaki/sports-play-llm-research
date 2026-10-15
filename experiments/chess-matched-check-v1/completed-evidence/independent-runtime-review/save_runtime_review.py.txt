@@ -1,0 +1,80 @@
+"""Create-only source-bound runtime review receipt; no inference imports."""
+import ast
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import xml.etree.ElementTree as ET
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parents[1]
+RUNTIME = HERE.parent / "chess-matched-check-runner-v1"
+OUT = ROOT / "outputs/chess-matched-check-runtime-independent-review.json"
+
+def sha(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def item(path):
+    path = Path(path)
+    return {"path":str(path),"bytes":path.stat().st_size,"sha256":sha(path)}
+def functions(path):
+    tree = ast.parse(Path(path).read_text(encoding="utf-8"))
+    return {n.name:ast.dump(n, include_attributes=False) for n in tree.body if isinstance(n,(ast.FunctionDef,ast.AsyncFunctionDef,ast.ClassDef))}
+
+handoff = RUNTIME / "stable-handoff-v2.json"
+assert sha(handoff) == "9bc26370d33034cc0afb04259dbec1ebd9139e97e177138ab63949d04bdbca7d"
+bindings = json.loads(handoff.read_text())["source_files"]
+for name, expected in bindings.items():
+    actual = item(RUNTIME / name)
+    assert actual["sha256"] == expected["sha256"] and actual["bytes"] == expected["bytes"], name
+old = HERE / "runtime-partial-seal-failure-v1/matched_run.py"
+before, after = functions(old), functions(RUNTIME / "matched_run.py")
+changed = sorted(k for k in set(before) | set(after) if before.get(k) != after.get(k))
+assert changed == ["failed_outcome_ledger", "supervise"]
+cases = list(ET.parse(HERE / "runtime-review-junit-v2.xml").getroot().iter("testcase"))
+assert len(cases) == 51
+assert not any(list(case) for case in cases)
+result = {
+    "schema":"chess.matched-check.independent-runtime-source-review.v1",
+    "utc":datetime.now(timezone.utc).isoformat(),
+    "status":"PRACTICAL_SOURCE_REVIEW_CLEAR_PENDING_FROZEN_EXTENSION_AND_SEPARATE_ROOT_EXECUTION_GO",
+    "source_handoff":item(handoff),
+    "source_files":{name:item(RUNTIME/name) for name in bindings},
+    "completed_intake_audit":item(ROOT / "outputs/chess-matched-check-intake-independent-audit.json"),
+    "checks":{"passed":51,"failed":0,"duration_seconds_pytest":1.61,"author_checks":46,"independent_checks":5,
+        "actual_CPU_only_probes":"Native PID/venv/dependency identity and exact owned cleanup/control-process survival; separate actual CPU evaluator invocation over synthetic64 rows.",
+        "independent_failure_probes":[
+            "Cancellation after returned prediction preserves exact generated IDs/full IDs/text, stops later63 calls.",
+            "Prepared-artifact write failure makes zero predict calls and retains full64 outcomes.",
+            "Original partial raw bytes remain untouched; a separate explicitly FAILED64 ledger retains completed, prepared-only unknown and not-run rows.",
+            "Whole-parent zero-exit/missing-outcome partial raw failure launches only generation and never evaluator.",
+            "Whole-parent exit1 partial raw failure launches only generation and never evaluator."]},
+    "findings":[{"id":"partial-raw-seal-accounting","disposition":"REPAIRED_BEFORE_EXECUTION",
+        "trigger":"Interrupt worker raw sealing after creating raw/ but before seal.json.",
+        "original_behavior":"recover_raw refused the retained partial directory; no full64 failed ledger resulted.",
+        "initial_checks":"43 passed / 1 failed in1.50s; original source/test/log/actual synthetic artifacts retained unchanged.",
+        "preserved":str(HERE / "runtime-partial-seal-failure-v1"),
+        "repair":"Separate create-only failed-outcome-ledger.json; partial raw/journal bytes remain preserved and hashed. Explicit FAILED/quality_completionFalse, no raw seal, no label join or replay authority.",
+        "independent_probe_adaptation":"Original expected separate raw seal was changed only to assert the selected equivalent failed-ledger artifact and its no-quality boundary; original test is preserved.",
+        "changed_parent_AST_functions":changed}],
+    "review_conclusions":[
+        "Full new parent, worker, evaluator, compatibility shim, tests, CPU probe and inherited backend/ownership/resource/core/common sources read and exact bindings verified.",
+        "Parent verifies frozen input manifest/extension/model packages; worker receives only64 FEN/UCI inputs, minimal model/ownership/source metadata. No actual labels or cohort dataset bytes/path/hash enter worker inputs or generation code.",
+        "Worker identity and snapshot hashes precede torch import. Only selected512 FactBackend loads, all parameters frozen/eval, native SDPA/BF16 base and F32 LoRA. No optimizer, alternate checkpoint or response retry.",
+        "Loaded base embedding/head tie,596049920 scalars and primary parameter-name/order hash explicitly excluding lora_ checked before+after;392 LoRA tensors/5046272 scalars verified and selected payload loads exactly.",
+        "Generated native token IDs/raw text retained; strict first-EOS decode/cap/model-vocabulary validation unchanged. Journal is flushed/fsynced before proceeding.",
+        "Raw64 must seal and worker completion receipt must match before any separate CPU evaluator receives labels. Balanced32/32 and paired32 denominators remain explicit; unknown/schema/truncated/error/not-run separated.",
+        "One600s clock begins before verification/preflight and spans load/generation/CPU evaluation/final checks. Ten healthy1s samples, unchanged reserves, max3s gap and exact-handle cleanup<=30s reviewed.",
+        "No remaining concrete blocking defect found within the frozen supported single-owner execution path."],
+    "limits":[
+        "CPU fixtures and source review do not establish actual CUDA integration or a completed64-call result. A separately frozen exact extension and root execution GO remain required.",
+        "Finite one-second monitoring cannot guarantee transient memory peaks; shared process/host behavior remains operational evidence, not a mathematical resource bound.",
+        "On permanent inability to write any artifact, machine-readable failure evidence can itself fail; partial files/errors are retained rather than replayed.",
+        "Exploratory selected-only checking diagnostic of a known failure, with known-history disjointness only; no strength, population prevalence, causal understanding, training improvement or promotion claim."],
+    "actual_calls_during_review":{"model":0,"pretrained_forward":0,"engine":0,"GPU_queries":0},
+    "evidence":{name:item(HERE/name) for name in (
+        "test_runtime_review.py","runtime-review-tests-v2.txt","runtime-review-junit-v2.xml",
+        "runtime-review-tests-v1.txt","runtime-review-junit-v1.xml","save_runtime_review.py")},
+}
+assert result["completed_intake_audit"]["sha256"] == "5d3decb29d660f51b55ea4ce3068428d998816809d40e5608299b9fb57ffb01d"
+with OUT.open("x",encoding="utf-8",newline="\n") as stream:
+    stream.write(json.dumps(result,indent=2,sort_keys=True,allow_nan=False)+"\n")
+print(json.dumps(item(OUT)))

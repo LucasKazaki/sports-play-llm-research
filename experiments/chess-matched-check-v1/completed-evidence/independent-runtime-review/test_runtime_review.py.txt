@@ -1,0 +1,125 @@
+"""Independent failure probes; only tiny fake outputs, no model imports."""
+import json
+from pathlib import Path
+import sys
+
+import pytest
+
+HERE = Path(__file__).resolve().parent
+RUNTIME = HERE.parent / "chess-matched-check-runner-v1"
+sys.path.insert(0, str(RUNTIME))
+import illustration_core as boundary
+import matched_worker as worker
+import matched_run as runner
+common, core, _ = boundary.reviewed_modules()
+
+
+def rows():
+    return [{"case_id":case,"fen":"7k/8/8/8/8/8/8/K1R5 w - - 0 1",
+             "selected_uci":"c1c8"} for case in worker.planned_ids()]
+
+
+def test_cancel_after_return_keeps_full_returned_token_bytes(tmp_path):
+    checks = []
+    class Backend:
+        def encode(self, row): return {"input_ids":[1,2], "attention_mask":[1,1]}
+        def predict(self, encoded, *, disabled):
+            assert disabled is False
+            return {"status":"completed","text":"retained exact output", "new_ids":[4,151645],
+                    "full_generated_ids":[1,2,4,151645],"adapter_disabled":False}
+    def check():
+        checks.append(1)
+        if len(checks) == 2: raise RuntimeError("independent cancellation after return")
+    results, failure = worker.generate(rows(), Backend(), tmp_path, check)
+    assert failure and len(results) == 64
+    first = results[0]
+    assert first["status"] == "error" and first["new_ids"] == [4,151645]
+    assert first["full_generated_ids"] == [1,2,4,151645] and first["text"] == "retained exact output"
+    assert sum(r["status"] == "not_run" for r in results) == 63
+    assert json.loads((tmp_path / "journal.jsonl").read_text()) == first
+
+
+def test_prepared_persistence_failure_performs_zero_predictions(tmp_path, monkeypatch):
+    predictions = []
+    class Backend:
+        def encode(self, row): return {"input_ids":[1], "attention_mask":[1]}
+        def predict(self, *args, **kwargs): predictions.append(1); raise AssertionError("no call allowed")
+    monkeypatch.setattr(boundary, "fresh", lambda *_: (_ for _ in ()).throw(OSError("independent write failure")))
+    result, failure = worker.generate(rows(), Backend(), tmp_path, lambda:None)
+    assert failure and len(result) == 64 and predictions == []
+    assert result[0]["status"] == "error" and all(r["status"] == "not_run" for r in result[1:])
+
+
+def test_interrupted_raw_sealing_retains_full_failed_denominator_separately(tmp_path):
+    planned = rows()
+    completed = {"case_id":planned[0]["case_id"],"status":"completed","text":"{}", "new_ids":[151645]}
+    (tmp_path / "journal.jsonl").write_text(json.dumps(completed) + "\n")
+    boundary.fresh(tmp_path / "prepared-01.json", {"case_id":planned[1]["case_id"]})
+    # A worker can stop after seal_raw mkdir/raw write and before seal write.
+    partial = tmp_path / "raw"; partial.mkdir()
+    (partial / "raw.json").write_bytes(b'{"partial retained raw":')
+    original = (partial / "raw.json").read_bytes()
+    with pytest.raises(ValueError, match="partial raw seal"):
+        runner.recover_raw(tmp_path, planned, {"recovered_after_failure":True})
+    failure_hash = runner.failed_outcome_ledger(tmp_path, "independent partial seal reproduction")
+    assert (partial / "raw.json").read_bytes() == original
+    # The repair chooses an explicitly FAILED ledger, rather than another raw
+    # seal. It supplies accounting only and never permits label evaluation.
+    ledger_path = tmp_path.parent / "failed-outcome-ledger.json"
+    assert boundary.sha(ledger_path) == failure_hash
+    ledger = common.read(ledger_path)
+    assert ledger["status"] == "FAILED" and ledger["quality_completion"] is False
+    assert not list(tmp_path.rglob("seal.json"))
+    raw = ledger["rows"]
+    assert len(raw) == 64 and raw[0] == completed
+    assert raw[1]["actual_call_status"] == "unknown_after_worker_interruption"
+    assert all(r["status"] == "not_run" for r in raw[2:])
+
+
+@pytest.mark.parametrize("exit_code", [0, 1])
+def test_parent_partial_raw_accounts_all_without_evaluator_launch(tmp_path, monkeypatch, exit_code):
+    source_rows = rows()
+    cohort = tmp_path / "cohort"; cohort.mkdir()
+    payload = {"schema":"chess.matched-check.inputs.v1", "rows":source_rows}
+    manifest = {"files_sha256":{"inputs.json":"input-fixture-binding", "labels.json":"never-open-this-label"}}
+    extension = {"source_sha256":{name:boundary.sha(RUNTIME/name) for name in runner.SOURCES}}
+    monkeypatch.setattr(runner, "protected_output", lambda _r,_c,out:Path(out))
+    monkeypatch.setattr(runner, "verify", lambda *_:(extension,manifest,payload,{}))
+    monkeypatch.setattr(runner.owned_native, "configuration", lambda _: ("fake.exe", {}, {}))
+    resources = sys.modules["chess_native_resources"]
+    sample = resources.Sample(32*resources.GIB,12*resources.GIB,60*resources.GIB,
+                             30*resources.GIB,16*resources.GIB,14*resources.GIB)
+    class Clock:
+        now = 0.
+        def __call__(self): return self.now
+        def sleep(self, seconds): self.now += seconds
+    clock, launches = Clock(), []
+    class Child:
+        pid = 876543
+        def poll(self): return exit_code
+    completed = {"case_id":source_rows[0]["case_id"], "status":"completed", "text":"{}", "new_ids":[151645]}
+    def popen(command, **kwargs):
+        launches.append(command)
+        assert len(launches) == 1, "No evaluator may be launched after partial raw failure"
+        assert str(cohort / "labels.json") not in command
+        generation = tmp_path / "attempt/generation"
+        (generation / "journal.jsonl").write_text(json.dumps(completed) + "\n")
+        boundary.fresh(generation / "prepared-01.json", {"case_id":source_rows[1]["case_id"]})
+        partial = generation / "raw"; partial.mkdir()
+        (partial / "raw.json").write_bytes(b'{"untouched original partial":')
+        return Child()
+    with pytest.raises(RuntimeError, match="attempt failed and retained"):
+        runner.supervise(RUNTIME.parent / "repos/sports-play-llm-research", cohort,
+            tmp_path / "unopened-extension", "fixture", tmp_path / "attempt", sampler=lambda:sample,
+            foreign=lambda:None, clock=clock, sleep=clock.sleep, popen=popen)
+    out = tmp_path / "attempt"
+    assert len(launches) == 1 and not (out / "score.json").exists()
+    assert (out / "generation/raw/raw.json").read_bytes() == b'{"untouched original partial":'
+    ledger = common.read(out / "failed-outcome-ledger.json")
+    assert len(ledger["rows"]) == 64 and ledger["rows"][0] == completed
+    assert ledger["rows"][1]["actual_call_status"] == "unknown_after_worker_interruption"
+    assert all(r["status"] == "not_run" for r in ledger["rows"][2:])
+    assert ledger["quality_completion"] is False
+    supervision = common.read(out / "supervision.json")
+    assert supervision["status"] == "FAILED"
+    assert supervision["failed_outcome_ledger_sha256"] == boundary.sha(out / "failed-outcome-ledger.json")

@@ -1,0 +1,94 @@
+{
+  "schema": "chess.matched-check.runner-source-review.v2",
+  "utc": "2026-10-15T11:01:23.230626+00:00",
+  "prior_handoff_sha256": "3093932a377b32952e627b036f76e0e624334e0dee6af4ed4589449f4ae82e89",
+  "independent_confirmed_finding": {
+    "log_path": "work/chess-matched-check-independent-v1/runtime-partial-seal-failure-v1/",
+    "log_sha256": "24c12fce24bfab8928f430f6021057c416e3a4fe5926be66b91d661857ed1e44",
+    "test_source_sha256": "ed0ece6956cfbfa5831e21c9e2b78a15b179435d65c60006aa6fe04171b15b08"
+  },
+  "source_files": {
+    "illustration_core.py": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "matched_worker.py": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "matched_evaluate.py": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "matched_run.py": {
+      "bytes": 19005,
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "local_backends.py": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "owned_native.py": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "inherited-source-bindings.json": {
+      "bytes": 600,
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "test_matched_runner.py": {
+      "bytes": 24460,
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    },
+    "identity_probe_worker.py": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "reviewed/chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "reviewed/chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "reviewed/chess_native_resources.py": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "protocol.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    }
+  },
+  "parent_AST_changed": {
+    "failed_outcome_ledger": {
+      "before": null,
+      "after": "767bbceada0ddc44d5322290908bb56d62f2218af778b24cd496eb68b7cc1857"
+    },
+    "supervise": {
+      "before": "007436d464c4c094d211eacc2b0faa69bd0e47cd66594b4ff6436dc5159f1184",
+      "after": "19752030e08d70c8f05c0ffc114e71440bb7e3b8ce70119b4143079dac478feb"
+    }
+  },
+  "all_other_parent_functions_unchanged": [
+    "bound_file",
+    "check_deadline",
+    "foreign_check",
+    "protected_output",
+    "recover_raw",
+    "stop",
+    "verify",
+    "wait_owned"
+  ],
+  "software": {
+    "passed": 46,
+    "seconds": 1.6,
+    "receipt_path": "software-partial-seal-repair-v1/receipt.json",
+    "receipt_sha256": "5192abbbf929ae73305a783b8699fafa26d2d9d4bb8ac16b4f0fa51c6c455235"
+  },
+  "scope": "Only add separate create-only failure ledger when raw recovery fails, and bind its hash to FAILED supervision. No partial raw bytes overwritten/resealed; no evaluator/labels on failure. Worker/backend/helper/decode/protocol unchanged. Five new regression cases cover empty/raw-only/malformed partial trees, parent zero evaluator launches and conflicting journals.",
+  "actual_model_GPU_engine_calls": 0,
+  "actual_cohort_labels_read": false,
+  "status": "STABLE_WORKSPACE_SOURCE_REVIEW_CANDIDATE_NO_EXECUTION_GO"
+}

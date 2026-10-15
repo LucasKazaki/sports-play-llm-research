@@ -1,0 +1,19 @@
+{
+  "command": [
+    "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_evaluate.py",
+    "--raw",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-partial-seal-repair-v1\\fixtures\\test_actual_separate_cpu_evalu0\\raw",
+    "--labels",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-partial-seal-repair-v1\\fixtures\\test_actual_separate_cpu_evalu0\\labels.json",
+    "--expected-label-sha256",
+    "a1b3038e39d88f40dc2ef7823fe9bd02ad2e8c41e554f3b6a38f8f59d50d8080",
+    "--out",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-partial-seal-repair-v1\\fixtures\\test_actual_separate_cpu_evalu0\\score.json"
+  ],
+  "exit_code": 0,
+  "score_sha256": "2d9ac0188b3a74f29b5eb6aeefe432d58b07e2ccf24e7ed932c8a5ac55f334e3",
+  "software_fixture_only": true,
+  "model_calls": 0
+}

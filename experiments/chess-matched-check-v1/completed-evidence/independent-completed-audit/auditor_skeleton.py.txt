@@ -1,0 +1,97 @@
+"""Independent in-memory record/token audit skeleton. Real source IO disabled.
+
+No Parquet adapter or real-cohort command is implemented before the intake
+source review and root's explicit completed-intake audit authorization.
+"""
+from __future__ import annotations
+
+import argparse
+import json
+
+import chess
+
+import matched_check_reference as reference
+
+FIELDS = ("moving_piece", "moving_colour", "is_capture", "captured_piece", "gives_check",
+          "is_castling", "is_en_passant", "promotion_piece")
+
+
+def expected_rows(reference_pairs):
+    inputs, labels = {}, {}
+    for index, pair in enumerate(reference_pairs):
+        pair_id = "mc-pair-" + format(index, "02d")
+        if pair["pair_id"] != pair_id or len(pair["moves"]) != 2 or tuple(sorted(pair["moves"])) != pair["moves"]:
+            raise ValueError("pair identity/lexical order mismatch")
+        for lexical, uci in enumerate(pair["moves"]):
+            case = pair_id + "-" + str(lexical)
+            one = reference.predicate_facts(pair["fen"], uci)
+            if one != reference.transition_facts(pair["fen"], uci):
+                raise ValueError("independent rule routes disagree")
+            inputs[case] = {"case_id": case, "fen": pair["fen"], "selected_uci": uci}
+            labels[case] = {"case_id": case, "expected": one}
+    order = reference.generation_order(list(inputs))
+    return [inputs[case] for case in order], [labels[case] for case in order]
+
+
+def compare_rows(reference_pairs, input_rows, label_rows, *, planned_pairs=32):
+    if len(reference_pairs) != planned_pairs or len(input_rows) != planned_pairs*2 or len(label_rows) != planned_pairs*2:
+        raise ValueError("full pair/input/label denominator required")
+    expected_inputs, expected_labels = expected_rows(reference_pairs)
+    for actual, expected in zip(input_rows, expected_inputs, strict=True):
+        if set(actual) != {"case_id", "fen", "selected_uci"} or actual != expected:
+            raise ValueError("input contains wrong order/value/extra evaluator material")
+    for actual, expected in zip(label_rows, expected_labels, strict=True):
+        if set(actual) != {"case_id", "expected"} or actual["case_id"] != expected["case_id"] or set(actual["expected"]) != set(FIELDS):
+            raise ValueError("label identity/schema/order differs")
+        for field, truth in expected["expected"].items():
+            value = actual["expected"][field]
+            if type(value) is not type(truth) or value != truth:
+                raise ValueError("typed rule label differs:" + field)
+    positives = sum(item["expected"]["gives_check"] is True for item in expected_labels)
+    if positives != planned_pairs:
+        raise ValueError("one checking and one nonchecking case per pair required")
+    return {"pairs": planned_pairs, "rows": planned_pairs*2, "checking": positives,
+            "nonchecking": planned_pairs*2-positives, "input_extra_fields": 0}
+
+
+def independent_native_boundary(tokenizer, row, truth, instruction):
+    """Future CPU tokenizer gate, independent of author's build/native helpers."""
+    board = chess.Board(row["fen"])
+    move = chess.Move.from_uci(row["selected_uci"])
+    if not board.is_valid() or move not in board.legal_moves:
+        raise ValueError("native audit input must be valid/legal")
+    packet = {"fen": row["fen"], "selected_uci": row["selected_uci"],
+              "pieces": {chess.square_name(square): board.piece_at(square).symbol() if board.piece_at(square) else None for square in range(64)}}
+    prompt = instruction + json.dumps(packet, sort_keys=True, separators=(",", ":"))
+    prefix = tokenizer.apply_chat_template([{"role": "user", "content": prompt}],
+        tokenize=True, add_generation_prompt=True, enable_thinking=False, return_dict=False)
+    if not 0 < len(prefix) <= 1408:
+        raise ValueError("native prompt exceeds frozen bound")
+    target = json.dumps(truth, sort_keys=True, separators=(",", ":"))
+    joint = tokenizer.apply_chat_template([{"role": "user", "content": prompt}, {"role": "assistant", "content": target}],
+        tokenize=True, add_generation_prompt=False, enable_thinking=False, return_dict=False)
+    if joint[:len(prefix)] != prefix:
+        raise ValueError("native joint token prefix differs")
+    try:
+        end = joint.index(tokenizer.eos_token_id, len(prefix)) + 1
+    except ValueError as exc:
+        raise ValueError("native assistant EOS missing") from exc
+    if not 0 < end-len(prefix) <= 127 or end > 1536:
+        raise ValueError("native target/full-sequence bound exceeded")
+    if tokenizer.decode(joint[len(prefix):end-1], skip_special_tokens=False) != target:
+        raise ValueError("native compact target round trip differs")
+    return {"prompt_count": len(prefix), "target_count": end-len(prefix), "sequence_count": end,
+            "prompt_ids": prefix, "target_ids": joint[len(prefix):end]}
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--cohort")
+    parser.add_argument("--completed-intake-audit-authorized", action="store_true")
+    parser.parse_args(argv)
+    # Fail before ANY actual source/cohort/registry open, even if a caller sets
+    # the authorization flag: this adapter intentionally does not exist yet.
+    parser.error("Real-cohort adapter not implemented. Await stable source review, completed intake and separate root audit GO.")
+
+
+if __name__ == "__main__": main()

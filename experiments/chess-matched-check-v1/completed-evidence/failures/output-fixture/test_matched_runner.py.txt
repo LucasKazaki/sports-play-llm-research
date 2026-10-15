@@ -1,0 +1,415 @@
+"""Finite software evidence. Real weights/Parquet/engines are never used."""
+from dataclasses import asdict
+import hashlib
+import json
+from pathlib import Path
+import subprocess
+import sys
+import time
+import types
+import pytest
+import illustration_core as boundary
+import matched_worker as worker
+import matched_evaluate as evaluator
+import matched_run as runner
+import owned_native
+
+HERE=Path(__file__).resolve().parent
+REPO=HERE.parent/"repos/sports-play-llm-research"
+common,core,_=boundary.reviewed_modules()
+import chess_native_resources as resources
+
+
+def packet():
+    rows=[{"case_id":f"mc-pair-{index:02d}-{side}","fen":"7k/8/8/8/8/8/8/K1R5 w - - 0 1",
+           "selected_uci":"c1c8" if side==0 else "c1c2"} for index in range(32) for side in range(2)]
+    def rank(row):
+        data=json.dumps({"seed":4082032,"case_id":row["case_id"]},sort_keys=True,separators=(",",":"),ensure_ascii=True).encode()
+        return hashlib.sha256(b"matched-check-order-v1\n"+data).hexdigest(),row["case_id"]
+    return {"schema":"chess.matched-check.inputs.v1","rows":sorted(rows,key=rank)}
+
+
+def labels_for(rows):
+    return [{"case_id":row["case_id"],"expected":core.expected_facts(row["fen"],row["selected_uci"])} for row in rows]
+
+
+def seal_fixture(tmp_path,status=None):
+    rows=packet()["rows"]
+    labels=labels_for(rows)
+    raw=[{"case_id":row["case_id"],"status":"completed","text":json.dumps(label["expected"])}
+         for row,label in zip(rows,labels,strict=True)]
+    if status:
+        status(raw,labels)
+    path=tmp_path/"labels.json"
+    boundary.fresh(path,{"rows":labels})
+    common.seal_raw(tmp_path/"raw",raw,[row["case_id"] for row in rows],{})
+    return path,raw
+
+
+def healthy():
+    return resources.Sample(32*resources.GIB,12*resources.GIB,60*resources.GIB,
+        30*resources.GIB,16*resources.GIB,14*resources.GIB)
+
+
+def test_exact64_input_contract_and_order():
+    payload=packet()
+    assert len(worker.inputs(payload))==64
+    assert {key for row in payload["rows"] for key in row}=={"case_id","fen","selected_uci"}
+
+
+@pytest.mark.parametrize("mutation",[
+    lambda p:p.update(labels=[]),lambda p:p["rows"].pop(),
+    lambda p:p["rows"][0].update(expected={}),lambda p:p["rows"][0].update(game_id="abcdefgh"),
+    lambda p:p["rows"][0].update(case_id="checking-00"),
+    lambda p:p["rows"][0].update(selected_uci="a7a8q"),
+    lambda p:p["rows"].reverse(),lambda p:p["rows"][0].update(fen=None)])
+def test_forbidden_payload_rejected(mutation):
+    payload=packet(); mutation(payload)
+    with pytest.raises(ValueError):worker.inputs(payload)
+
+
+def test_evaluator_balanced_full_denominators(tmp_path):
+    path,_=seal_fixture(tmp_path)
+    score=evaluator.evaluate(tmp_path/"raw",path,boundary.sha(path))
+    assert score["counts"]["all_eight_correct"]==64
+    assert score["check_classes"]["true"]["correct"]==32
+    assert score["check_classes"]["false"]["correct"]==32
+    assert score["paired"]=={"planned":32,"both_check_labels_correct":32}
+    assert score["predicted_check_true"]==32
+
+
+def test_raw_first_rejects_tamper_before_labels_are_touched(tmp_path,monkeypatch):
+    path,_=seal_fixture(tmp_path)
+    (tmp_path/"raw/raw.json").write_text("{}")
+    real_sha=common.sha
+    def sha(p):
+        assert Path(p)!=path,"label bytes must remain unopened"
+        return real_sha(p)
+    monkeypatch.setattr(common,"sha",sha)
+    with pytest.raises(ValueError,match="raw seal mismatch"):
+        evaluator.evaluate(tmp_path/"raw",path,"0"*64)
+
+
+def test_invalid_unknown_missing_are_not_false_predictions(tmp_path):
+    def mutate(rows,labels):
+        true=[i for i,label in enumerate(labels) if label["expected"]["gives_check"]]
+        for index,status in zip(true[:5],["truncated","error","not_run","completed","completed"]):
+            rows[index].update(status=status,text="{}")
+        labels[true[4]]["expected"]["gives_check"]=True
+        output=dict(labels[true[4]]["expected"],gives_check="unknown")
+        rows[true[4]]["text"]=json.dumps(output)
+    path,_=seal_fixture(tmp_path,mutate)
+    score=evaluator.evaluate(tmp_path/"raw",path,boundary.sha(path))
+    item=score["check_classes"]["true"]
+    assert item=={"support":32,"correct":27,"true":27,"false":0,"unknown":1,
+        "schema_failure":1,"truncated":1,"error":1,"not_run":1}
+    assert score["counts"]["planned"]==64
+    assert score["paired"]["both_check_labels_correct"]==27
+
+
+def test_all_false_collapse_visible(tmp_path):
+    def mutate(rows,labels):
+        for row,label in zip(rows,labels,strict=True):
+            row["text"]=json.dumps(dict(label["expected"],gives_check=False))
+    path,_=seal_fixture(tmp_path,mutate)
+    score=evaluator.evaluate(tmp_path/"raw",path,boundary.sha(path))
+    assert score["check_classes"]["true"]["false"]==32
+    assert score["check_classes"]["true"]["correct"]==0
+    assert score["check_classes"]["false"]["correct"]==32
+    assert score["paired"]["both_check_labels_correct"]==0
+
+
+def test_generation_passes_only_input_and_never_disables_adapter(tmp_path):
+    calls=[]
+    class Backend:
+        def encode(self,row):
+            assert set(row)=={"case_id","fen","selected_uci"}
+            calls.append(row["case_id"])
+            return {"input_ids":[1],"attention_mask":[1]}
+        def predict(self,encoded,*,disabled):
+            assert disabled is False
+            return {"status":"completed","text":"{}","adapter_disabled":False,"new_ids":[151645]}
+    rows=packet()["rows"]
+    results,failure=worker.generate(rows,Backend(),tmp_path,lambda:None)
+    assert failure is None and len(calls)==len(results)==64
+    assert len(list(tmp_path.glob("prepared-*.json")))==64
+    assert len((tmp_path/"journal.jsonl").read_text().splitlines())==64
+
+
+@pytest.mark.parametrize("stage",["encode","predict","write"])
+def test_failure_never_retries_generation(tmp_path,monkeypatch,stage):
+    calls=[]
+    class Backend:
+        def encode(self,row):
+            calls.append("encode")
+            if stage=="encode":raise OSError("fixture")
+            return {"input_ids":[1],"attention_mask":[1]}
+        def predict(self,encoded,*,disabled):
+            calls.append("predict")
+            raise OSError("fixture")
+    if stage=="write":
+        monkeypatch.setattr(boundary,"fresh",lambda *args:(_ for _ in ()).throw(OSError("fixture")))
+    results,failure=worker.generate(packet()["rows"],Backend(),tmp_path,lambda:None)
+    assert failure and results[0]["status"]=="error"
+    assert sum(row["status"]=="not_run" for row in results)==63
+    assert calls.count("predict")<=1
+
+
+def test_raw_recovery_preserves_completed_unknown_and_notrun(tmp_path):
+    rows=packet()["rows"]
+    (tmp_path/"journal.jsonl").write_text(json.dumps({"case_id":rows[0]["case_id"],"status":"completed","text":"{}"})+'\n{"partial":')
+    boundary.fresh(tmp_path/"prepared-01.json",{"case_id":rows[1]["case_id"]})
+    runner.recover_raw(tmp_path,rows,{"failure":True})
+    raw=boundary.read(tmp_path/"raw/raw.json")["rows"]
+    assert [row["status"] for row in raw[:3]]==["completed","error","not_run"]
+    assert raw[1]["actual_call_status"]=="unknown_after_worker_interruption"
+    assert len(raw)==64
+    runner.recover_raw(tmp_path,rows,{})
+
+
+def test_explicit_lora_exclusion_and_original_byte_order():
+    import numpy as np
+    class Tensor:
+        def __init__(self,a):self.a=a
+        def numel(self):return self.a.size
+        def detach(self):return self
+        def contiguous(self):return self
+        def view(self,dtype):return Tensor(self.a.view(dtype))
+        def reshape(self,*shape):return Tensor(self.a.reshape(*shape))
+        def __getitem__(self,key):return Tensor(self.a[key])
+        def cpu(self):
+            assert self.a.nbytes<=1048576
+            return self
+        def numpy(self):return self.a
+    values=[("base.z",Tensor(np.arange(600000,dtype=np.uint32))),
+            ("base.lora_A.default.weight",Tensor(np.array([7],dtype=np.uint32))),
+            ("base.a",Tensor(np.array([42],dtype=np.uint32)))]
+    model=types.SimpleNamespace(named_parameters=lambda:iter(values))
+    torch=types.SimpleNamespace(uint8=np.uint8)
+    result=worker.state_digest(model,torch)
+    expected=hashlib.sha256()
+    for name,tensor in (values[0],values[2]):
+        expected.update(name.encode());expected.update(tensor.a.tobytes())
+    assert result=={"sha256":expected.hexdigest(),"tensors":2,"scalars":600001}
+    assert worker.state_digest(model,torch,adapter=True)["scalars"]==1
+
+
+def test_actual_owned_cpu_identity_and_target_only_cleanup(tmp_path):
+    executable,environment,identity=owned_native.configuration(REPO)
+    control=subprocess.Popen([executable,"-B","-c","import time;time.sleep(30)"],env=environment)
+    child=None
+    try:
+        child=subprocess.Popen([executable,"-B",str(HERE/"identity_probe_worker.py"),"--out",str(tmp_path),"--sleep","30"],env=environment)
+        boundary.fresh(tmp_path/"ownership.json",{"pid":child.pid,"native_launch_identity":identity})
+        deadline=time.monotonic()+5
+        while not (tmp_path/"identity.json").exists() and time.monotonic()<deadline:time.sleep(.01)
+        actual=boundary.read(tmp_path/"identity.json")
+        assert actual["pid"]==child.pid and actual["torch_imported"] is False
+        with pytest.raises(RuntimeError,match="deadline"):
+            runner.wait_owned(child,tmp_path,"cpu",time.monotonic()-600,healthy,resources)
+        assert runner.stop(child,lambda:boundary.fresh(tmp_path/"cancel.json",{"fixture":True})) is False
+        assert child.poll()==0 and control.poll() is None
+        boundary.fresh(tmp_path/"probe-receipt.json",{"actual_popen_pid":child.pid,
+            "actual_worker_pid":actual["pid"],"child_exit_code":child.poll(),
+            "unrelated_control_survived":True,"model_imported":False,"model_calls":0})
+    finally:
+        for process in (child,control):
+            if process is not None and process.poll() is None:
+                process.terminate();process.wait(timeout=5)
+
+
+def test_forced_cleanup_uses_exact_handle_even_cancel_write_fails():
+    class Child:
+        def __init__(self):self.terminated=0;self.waits=[]
+        def poll(self):return None
+        def wait(self,timeout):
+            self.waits.append(timeout)
+            if len(self.waits)==1:raise subprocess.TimeoutExpired("fixture",timeout)
+            return 1
+        def terminate(self):self.terminated+=1
+    child=Child()
+    assert runner.stop(child,lambda:(_ for _ in ()).throw(OSError("fixture"))) is True
+    assert child.terminated==1 and child.waits[0]<=20 and child.waits[1]<=30
+
+
+@pytest.mark.parametrize("fault",["missing","low","gap","reverse"])
+def test_monitor_latches_unhealthy_counters_and_clock(tmp_path,fault):
+    class Child:
+        def poll(self):return None
+    sample=healthy()
+    if fault=="low":sample=resources.Sample(32*resources.GIB,0,60*resources.GIB,30*resources.GIB,16*resources.GIB,14*resources.GIB)
+    def sampler():
+        if fault=="missing":raise OSError("fixture")
+        return sample
+    times=iter([5,9] if fault=="gap" else [5,4] if fault=="reverse" else [5,5])
+    with pytest.raises(RuntimeError,match="owned stop"):
+        runner.wait_owned(Child(),tmp_path,"fixture",0,sampler,resources,clock=lambda:next(times),sleep=lambda _:None)
+
+
+def test_preflight_failure_is_preserved_with_zero_children(tmp_path,monkeypatch):
+    monkeypatch.setattr(runner,"protected_output",lambda repo,cohort,out:Path(out))
+    monkeypatch.setattr(runner,"verify",lambda *args:(_ for _ in ()).throw(ValueError("fixture byte drift")))
+    def no_spawn(*args,**kwargs):raise AssertionError("must not spawn")
+    with pytest.raises(RuntimeError,match="fixture byte drift"):
+        runner.supervise(REPO,tmp_path/"cohort",tmp_path/"extension.json","0"*64,tmp_path/"attempt",popen=no_spawn)
+    result=boundary.read(tmp_path/"attempt/supervision.json")
+    assert result["status"]=="FAILED" and result["last_owned_pid"] is None
+    raw=boundary.read(tmp_path/"attempt/generation/raw/raw.json")["rows"]
+    assert len(raw)==64 and all(row["status"]=="not_run" for row in raw)
+    assert [row["case_id"] for row in raw]==worker.planned_ids()
+    with pytest.raises(FileExistsError):
+        runner.supervise(REPO,tmp_path/"cohort",tmp_path/"extension.json","0"*64,tmp_path/"attempt",popen=no_spawn)
+
+
+def test_deadline_is_not_reset_between_phases():
+    for now in (600,601,700):
+        with pytest.raises(RuntimeError,match="whole-job600s"):
+            runner.check_deadline(0,lambda:now)
+
+
+def test_inherited_sources_exact_and_no_model_module_imports():
+    bindings=boundary.read(HERE/"inherited-source-bindings.json")
+    for name,digest in bindings.items():assert boundary.sha(HERE/name)==digest
+    assert "torch" not in sys.modules and "transformers" not in sys.modules
+
+
+def test_ownership_mismatch_fails_before_any_model_import(tmp_path,monkeypatch):
+    boundary.fresh(tmp_path/"ownership.json",{"pid":-1,"native_launch_identity":{}})
+    with pytest.raises(ValueError,match="Popen PID"):
+        worker.worker(tmp_path)
+    assert "torch" not in sys.modules
+
+
+class Clock:
+    def __init__(self):self.now=0.
+    def __call__(self):return self.now
+    def sleep(self,seconds):self.now+=seconds
+
+
+def parent_fixture(tmp_path,monkeypatch,*,mode="pass",clock=None):
+    monkeypatch.setattr(runner,"protected_output",lambda repo,cohort,out:Path(out))
+    cohort=tmp_path/"cohort";cohort.mkdir()
+    payload=packet(); rows=payload["rows"]
+    boundary.fresh(cohort/"inputs.json",payload)
+    boundary.fresh(cohort/"labels.json",{"rows":labels_for(rows)})
+    manifest={"files_sha256":{"inputs.json":boundary.sha(cohort/"inputs.json"),
+                             "labels.json":boundary.sha(cohort/"labels.json")}}
+    boundary.fresh(cohort/"frozen-data.json",manifest)
+    extension={"source_sha256":{name:boundary.sha(HERE/name) for name in runner.SOURCES},
+               "frozen_data_sha256":boundary.sha(cohort/"frozen-data.json")}
+    monkeypatch.setattr(runner,"verify",lambda *args:(extension,manifest,payload,{}))
+    monkeypatch.setattr(owned_native,"configuration",lambda repo:("fixture.exe",{},{}))
+    launched=[]
+    class Child:
+        pid=987654
+        def poll(self):return 0
+    def popen(command,**kwargs):
+        launched.append(command)
+        out=tmp_path/"attempt";generation=out/"generation"
+        if len(launched)==1:
+            raw=[{"case_id":row["case_id"],"status":"completed","text":json.dumps(label["expected"])}
+                 for row,label in zip(rows,labels_for(rows),strict=True)]
+            common.seal_raw(generation/"raw",raw,[row["case_id"] for row in rows],{})
+            if mode!="missing_outcome":
+                boundary.fresh(generation/"worker-outcome.json",{"planned":64,"status":"completed_raw_accounting",
+                    "seal_sha256":boundary.sha(generation/"raw/seal.json")})
+            if mode=="generation_deadline":clock.now=601
+        else:
+            assert (generation/"raw/seal.json").exists()
+            assert str(cohort/"labels.json") in command
+            boundary.fresh(out/"score.json",evaluator.evaluate(generation/"raw",cohort/"labels.json",manifest["files_sha256"]["labels.json"]))
+            if mode=="evaluator_deadline":clock.now=601
+        return Child()
+    return cohort,popen,launched
+
+
+def test_whole_parent_sequence_and_worker_metadata_separation(tmp_path,monkeypatch):
+    clock=Clock();cohort,popen,launched=parent_fixture(tmp_path,monkeypatch,clock=clock)
+    runner.supervise(REPO,cohort,tmp_path/"extension","fixture",tmp_path/"attempt",
+        sampler=healthy,foreign=lambda:None,clock=clock,sleep=clock.sleep,popen=popen)
+    assert len(launched)==2 and clock.now==10
+    worker_ownership=boundary.read(tmp_path/"attempt/generation/ownership.json")
+    assert set(worker_ownership)=={"pid","native_launch_identity","source_sha256","inputs_sha256",
+                                   "model_sha256","repo","deadline_monotonic"}
+    assert "labels" not in json.dumps(worker_ownership) and "dataset" not in json.dumps(worker_ownership)
+    assert boundary.read(tmp_path/"attempt/supervision.json")["status"]=="PASS"
+    assert boundary.read(tmp_path/"attempt/score.json")["counts"]["planned"]==64
+
+
+@pytest.mark.parametrize("mode,launches",[("generation_deadline",1),("evaluator_deadline",2),("missing_outcome",1)])
+def test_whole_job_deadline_includes_both_phases_and_rejects_zero_exit_omission(tmp_path,monkeypatch,mode,launches):
+    clock=Clock();cohort,popen,launched=parent_fixture(tmp_path,monkeypatch,mode=mode,clock=clock)
+    with pytest.raises(RuntimeError,match="attempt failed and retained"):
+        runner.supervise(REPO,cohort,tmp_path/"extension","fixture",tmp_path/"attempt",
+            sampler=healthy,foreign=lambda:None,clock=clock,sleep=clock.sleep,popen=popen)
+    assert len(launched)==launches
+    assert boundary.read(tmp_path/"attempt/supervision.json")["status"]=="FAILED"
+    assert not (tmp_path/"attempt/completion.json").exists()
+
+
+@pytest.mark.parametrize("kind",["gap","reversal","reserve"])
+def test_preflight_rejects_stale_samples_before_launch(tmp_path,monkeypatch,kind):
+    clock=Clock();cohort,popen,launched=parent_fixture(tmp_path,monkeypatch,clock=clock)
+    def sample():
+        if kind=="gap":clock.now+=4
+        elif kind=="reversal":clock.now-=1
+        if kind=="reserve":
+            return resources.Sample(32*resources.GIB,9*resources.GIB,60*resources.GIB,
+                30*resources.GIB,16*resources.GIB,14*resources.GIB)
+        return healthy()
+    with pytest.raises(RuntimeError,match="attempt failed and retained"):
+        runner.supervise(REPO,cohort,tmp_path/"extension","fixture",tmp_path/"attempt",
+            sampler=sample,foreign=lambda:None,clock=clock,sleep=clock.sleep,popen=popen)
+    assert launched==[]
+    assert len(boundary.read(tmp_path/"attempt/generation/raw/raw.json")["rows"])==64
+
+
+def test_actual_separate_cpu_evaluator_cli(tmp_path):
+    path,_=seal_fixture(tmp_path)
+    executable,environment,identity=owned_native.configuration(REPO)
+    command=[executable,"-B",str(HERE/"matched_evaluate.py"),"--raw",str(tmp_path/"raw"),
+        "--labels",str(path),"--expected-label-sha256",boundary.sha(path),"--out",str(tmp_path/"score.json")]
+    completed=subprocess.run(command,env=environment,capture_output=True,timeout=5)
+    assert completed.returncode==0,completed.stderr
+    assert boundary.read(tmp_path/"score.json")["counts"]["all_eight_correct"]==64
+    boundary.fresh(tmp_path/"evaluator-probe-receipt.json",{"command":command,"exit_code":completed.returncode,
+        "score_sha256":boundary.sha(tmp_path/"score.json"),"software_fixture_only":True,"model_calls":0})
+
+
+def test_new_output_is_create_only_and_separate_from_retained_trees(tmp_path):
+    repo=tmp_path/"repo"
+    family=repo/"data/private/chess-matched-check-diagnostic-v1"
+    family.mkdir(parents=True)
+    cohort=family/"cohort";cohort.mkdir()
+    target=family/"selected-run-v1"
+    assert runner.protected_output(repo,cohort,target)==target.resolve()
+    targets=[repo,tmp_path,family,cohort,cohort/"child",family/"cohort-supervision",
+             repo/"data/private/chess-fact-sft-v1/models/base",HERE,
+             repo/"experiments/chess-matched-check-v1",family/".."/"escape"]
+    for path in targets:
+        with pytest.raises(ValueError):runner.protected_output(repo,cohort,path)
+    target.write_text("retained")
+    with pytest.raises(ValueError):runner.protected_output(repo,cohort,target)
+    assert target.read_text()=="retained"
+
+
+@pytest.mark.parametrize("broken",[False,True])
+def test_output_alias_even_broken_is_refused_before_resolving(tmp_path,monkeypatch,broken):
+    repo=tmp_path/"repo";family=repo/"data/private/chess-matched-check-diagnostic-v1"
+    family.mkdir(parents=True);cohort=family/"cohort";cohort.mkdir()
+    target=family/"alias"
+    # Exercise Windows alias guard without requiring symlink privilege in CI.
+    original=Path.is_symlink
+    monkeypatch.setattr(Path,"is_symlink",lambda self:self==target or original(self))
+    assert not target.exists()
+    with pytest.raises(ValueError,match="nonalias"):
+        runner.protected_output(repo,cohort,target)
+
+
+def test_output_ancestor_junction_is_refused(tmp_path,monkeypatch):
+    repo=tmp_path/"repo";family=repo/"data/private/chess-matched-check-diagnostic-v1"
+    family.mkdir(parents=True);cohort=family/"cohort";cohort.mkdir()
+    original=Path.is_junction
+    monkeypatch.setattr(Path,"is_junction",lambda self:self==family or original(self))
+    with pytest.raises(ValueError,match="traverses alias"):
+        runner.protected_output(repo,cohort,family/"new-run")

@@ -1,0 +1,25 @@
+{
+  "schema": "chess.matched-check.root-protocol-review.v1",
+  "utc": "2026-10-15T10:25:57.201416+00:00",
+  "verdict": "FULL_V1_AND_ADDITIVE_V2_REVIEW_CLEAR_FOR_PROTOCOL_FIRST_INTAKE_IMPLEMENTATION_ONLY",
+  "v2_proposal_sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+  "registry_sha256": "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb",
+  "known_games": 30280,
+  "known_boards": 71463,
+  "new_spent_moves": [
+    "c3d3",
+    "c3g3",
+    "c3h3",
+    "c4d3",
+    "d1c1",
+    "d1d8",
+    "h2h3"
+  ],
+  "new_keys": 6,
+  "scientific_sections_unchanged": true,
+  "base_commit": "ff720e8f918818ce7b227a6861018669a84b4103",
+  "implementation_scope": "Fresh branch; final protocol first, then additive intake/tests only. Source/exclusion/intake/hash/token review before one actual CPU intake. Separate reviewed inference wrapper and explicit GPU GO later.",
+  "model_engine_calls_authorized": 0,
+  "actual_intake_authorized": false,
+  "new_source_rows_read": 0
+}

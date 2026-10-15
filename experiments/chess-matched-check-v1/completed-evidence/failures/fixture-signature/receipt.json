@@ -1,0 +1,33 @@
+{
+  "sources": {
+    "illustration_core.py": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "matched_worker.py": {
+      "bytes": 8268,
+      "sha256": "e37b060291c9d8a77515a1b2455a7d7c5dfe1b4beaa0970f2c9837a76c0121fa"
+    },
+    "matched_evaluate.py": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "matched_run.py": {
+      "bytes": 14569,
+      "sha256": "100b32e3f11e2fba1c6f69587fe57a67c0b48dd58be46da35b467de6d99cd259"
+    },
+    "identity_probe_worker.py": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "test_matched_runner.py": {
+      "bytes": 12742,
+      "sha256": "23202e57b8ddb0e364079c5300b19699429b2770e8172d8b4f86dfe055f02b54"
+    },
+    "software-attempt1-junit.xml": {
+      "sha256": "cf2ff91d545e01d50f244df0e0f2aeb08dd9f8dd2c7e5d36943e37fc0b8babef"
+    }
+  },
+  "result": "4failed25passed0.86s",
+  "reason": "Four synthetic evaluator fixtures passed one row object to existing expected_facts(fen,uci); actual CPU identity/cleanup and other25 tests passed. No models or actual cohort data used."
+}

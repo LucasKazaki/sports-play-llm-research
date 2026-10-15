@@ -1,0 +1,64 @@
+"""Separate CPU label join, permitted only after the 64-outcome raw seal."""
+import argparse
+from pathlib import Path
+import json
+import illustration_core as boundary
+
+
+def evaluate(raw, labels, expected_label_sha256):
+    common,core,_ = boundary.reviewed_modules()
+    # This reviewed function checks raw/seal integrity BEFORE label hashing/access.
+    score = common.score_sealed(raw,labels,expected_label_sha256)
+    if score["counts"]["planned"] != 64:
+        raise ValueError("fixed64 denominator required")
+    truth = common.read(labels)["rows"]
+    rows = common.read(Path(raw)/"raw.json")["rows"]
+    classes = {"true":{"support":0,"correct":0,"true":0,"false":0,"unknown":0,
+                        "schema_failure":0,"truncated":0,"error":0,"not_run":0},
+               "false":{"support":0,"correct":0,"true":0,"false":0,"unknown":0,
+                        "schema_failure":0,"truncated":0,"error":0,"not_run":0}}
+    pairs, predicted_true = {},0
+    for row,label in zip(rows,truth,strict=True):
+        expected = label["expected"]["gives_check"]
+        if type(expected) is not bool:
+            raise ValueError("matched check truth must be boolean")
+        item = classes[str(expected).lower()]
+        item["support"] += 1
+        parsed = None
+        if row["status"] == "completed":
+            try:
+                parsed = core.parse_facts(row["text"])
+            except (ValueError,TypeError):
+                item["schema_failure"] += 1
+        else:
+            item[row["status"]] += 1
+        prediction = parsed["gives_check"] if parsed is not None else None
+        if parsed is not None:
+            item[str(prediction).lower()] += 1
+            predicted_true += int(prediction is True)
+        correct = type(prediction) is bool and prediction is expected
+        item["correct"] += int(correct)
+        case = row["case_id"]
+        pair,side = case.rsplit("-",1)
+        if pair not in {f"mc-pair-{index:02d}" for index in range(32)} or side not in ("0","1"):
+            raise ValueError("unexpected pair identifier")
+        pairs.setdefault(pair,[]).append({"case_id":case,"truth":expected,"correct":correct})
+    if len(pairs)!=32 or any(len(pair)!=2 or {item["truth"] for item in pair}!={True,False} for pair in pairs.values()):
+        raise ValueError("exact32 matched pairs required")
+    if any(item["support"] !=32 for item in classes.values()):
+        raise ValueError("fixed32 class denominators required")
+    score.update(schema="chess.matched-check.score.v1",check_classes=classes,
+        paired={"planned":32,"both_check_labels_correct":sum(all(item["correct"] for item in pair) for pair in pairs.values())},
+        predicted_check_true=predicted_true,
+        limits=["Balanced rule-selected known-history-disjoint panel; upstream pretraining and original video histories unknown.",
+                "No natural-prevalence, playing-strength, promotion/castling/en-passant or causal-mechanism claim."])
+    return score
+
+
+if __name__ == "__main__":
+    parser=argparse.ArgumentParser(description=__doc__)
+    for name in ("raw","labels","expected-label-sha256","out"):
+        parser.add_argument("--"+name,required=True)
+    args=vars(parser.parse_args())
+    target=args.pop("out")
+    boundary.fresh(target,evaluate(**args))

@@ -1,0 +1,167 @@
+{
+  "actual_calls_during_review": {
+    "GPU_queries": 0,
+    "engine": 0,
+    "model": 0,
+    "pretrained_forward": 0
+  },
+  "checks": {
+    "actual_CPU_only_probes": "Native PID/venv/dependency identity and exact owned cleanup/control-process survival; separate actual CPU evaluator invocation over synthetic64 rows.",
+    "author_checks": 46,
+    "duration_seconds_pytest": 1.61,
+    "failed": 0,
+    "independent_checks": 5,
+    "independent_failure_probes": [
+      "Cancellation after returned prediction preserves exact generated IDs/full IDs/text, stops later63 calls.",
+      "Prepared-artifact write failure makes zero predict calls and retains full64 outcomes.",
+      "Original partial raw bytes remain untouched; a separate explicitly FAILED64 ledger retains completed, prepared-only unknown and not-run rows.",
+      "Whole-parent zero-exit/missing-outcome partial raw failure launches only generation and never evaluator.",
+      "Whole-parent exit1 partial raw failure launches only generation and never evaluator."
+    ],
+    "passed": 51
+  },
+  "completed_intake_audit": {
+    "bytes": 41658,
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-matched-check-intake-independent-audit.json",
+    "sha256": "5d3decb29d660f51b55ea4ce3068428d998816809d40e5608299b9fb57ffb01d"
+  },
+  "evidence": {
+    "runtime-review-junit-v1.xml": {
+      "bytes": 9262,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\runtime-review-junit-v1.xml",
+      "sha256": "e69205dc6478deb3090113ac2de4617e9535315fdb19800d5db77d8a9dbd9dfa"
+    },
+    "runtime-review-junit-v2.xml": {
+      "bytes": 8259,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\runtime-review-junit-v2.xml",
+      "sha256": "0e5b4ddf58b4428feb5279ca5ce12b9a4af70f027482c402ae8005dde72640eb"
+    },
+    "runtime-review-tests-v1.txt": {
+      "bytes": 2575,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\runtime-review-tests-v1.txt",
+      "sha256": "24c12fce24bfab8928f430f6021057c416e3a4fe5926be66b91d661857ed1e44"
+    },
+    "runtime-review-tests-v2.txt": {
+      "bytes": 101,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\runtime-review-tests-v2.txt",
+      "sha256": "38ca5fb834a5e3d788f0631543573d5da7f3a5a725fc05866bbe40191f0c6618"
+    },
+    "save_runtime_review.py": {
+      "bytes": 6982,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\save_runtime_review.py",
+      "sha256": "8a40133462df59f51b3077f98797083462bf7baec9a356b618040b546dc7bc3b"
+    },
+    "test_runtime_review.py": {
+      "bytes": 6856,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\test_runtime_review.py",
+      "sha256": "712eb45dd23ba9443d73897bae528c54024afe967a18a88fc4af714504bb17f6"
+    }
+  },
+  "findings": [
+    {
+      "changed_parent_AST_functions": [
+        "failed_outcome_ledger",
+        "supervise"
+      ],
+      "disposition": "REPAIRED_BEFORE_EXECUTION",
+      "id": "partial-raw-seal-accounting",
+      "independent_probe_adaptation": "Original expected separate raw seal was changed only to assert the selected equivalent failed-ledger artifact and its no-quality boundary; original test is preserved.",
+      "initial_checks": "43 passed / 1 failed in1.50s; original source/test/log/actual synthetic artifacts retained unchanged.",
+      "original_behavior": "recover_raw refused the retained partial directory; no full64 failed ledger resulted.",
+      "preserved": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\runtime-partial-seal-failure-v1",
+      "repair": "Separate create-only failed-outcome-ledger.json; partial raw/journal bytes remain preserved and hashed. Explicit FAILED/quality_completionFalse, no raw seal, no label join or replay authority.",
+      "trigger": "Interrupt worker raw sealing after creating raw/ but before seal.json."
+    }
+  ],
+  "limits": [
+    "CPU fixtures and source review do not establish actual CUDA integration or a completed64-call result. A separately frozen exact extension and root execution GO remain required.",
+    "Finite one-second monitoring cannot guarantee transient memory peaks; shared process/host behavior remains operational evidence, not a mathematical resource bound.",
+    "On permanent inability to write any artifact, machine-readable failure evidence can itself fail; partial files/errors are retained rather than replayed.",
+    "Exploratory selected-only checking diagnostic of a known failure, with known-history disjointness only; no strength, population prevalence, causal understanding, training improvement or promotion claim."
+  ],
+  "review_conclusions": [
+    "Full new parent, worker, evaluator, compatibility shim, tests, CPU probe and inherited backend/ownership/resource/core/common sources read and exact bindings verified.",
+    "Parent verifies frozen input manifest/extension/model packages; worker receives only64 FEN/UCI inputs, minimal model/ownership/source metadata. No actual labels or cohort dataset bytes/path/hash enter worker inputs or generation code.",
+    "Worker identity and snapshot hashes precede torch import. Only selected512 FactBackend loads, all parameters frozen/eval, native SDPA/BF16 base and F32 LoRA. No optimizer, alternate checkpoint or response retry.",
+    "Loaded base embedding/head tie,596049920 scalars and primary parameter-name/order hash explicitly excluding lora_ checked before+after;392 LoRA tensors/5046272 scalars verified and selected payload loads exactly.",
+    "Generated native token IDs/raw text retained; strict first-EOS decode/cap/model-vocabulary validation unchanged. Journal is flushed/fsynced before proceeding.",
+    "Raw64 must seal and worker completion receipt must match before any separate CPU evaluator receives labels. Balanced32/32 and paired32 denominators remain explicit; unknown/schema/truncated/error/not-run separated.",
+    "One600s clock begins before verification/preflight and spans load/generation/CPU evaluation/final checks. Ten healthy1s samples, unchanged reserves, max3s gap and exact-handle cleanup<=30s reviewed.",
+    "No remaining concrete blocking defect found within the frozen supported single-owner execution path."
+  ],
+  "schema": "chess.matched-check.independent-runtime-source-review.v1",
+  "source_files": {
+    "identity_probe_worker.py": {
+      "bytes": 614,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\identity_probe_worker.py",
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "illustration_core.py": {
+      "bytes": 2278,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\illustration_core.py",
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "inherited-source-bindings.json": {
+      "bytes": 600,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\inherited-source-bindings.json",
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "local_backends.py": {
+      "bytes": 11662,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\local_backends.py",
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "matched_evaluate.py": {
+      "bytes": 3288,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_evaluate.py",
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "matched_run.py": {
+      "bytes": 19005,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_run.py",
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "matched_worker.py": {
+      "bytes": 8174,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_worker.py",
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "owned_native.py": {
+      "bytes": 4797,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\owned_native.py",
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "protocol.json": {
+      "bytes": 42855,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\protocol.json",
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    },
+    "reviewed/chess_board_fact_core.py": {
+      "bytes": 5902,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\reviewed\\chess_board_fact_core.py",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "reviewed/chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\reviewed\\chess_fact_sft_common.py",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "reviewed/chess_native_resources.py": {
+      "bytes": 5573,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\reviewed\\chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "test_matched_runner.py": {
+      "bytes": 24460,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\test_matched_runner.py",
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    }
+  },
+  "source_handoff": {
+    "bytes": 3801,
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\stable-handoff-v2.json",
+    "sha256": "9bc26370d33034cc0afb04259dbec1ebd9139e97e177138ab63949d04bdbca7d"
+  },
+  "status": "PRACTICAL_SOURCE_REVIEW_CLEAR_PENDING_FROZEN_EXTENSION_AND_SEPARATE_ROOT_EXECUTION_GO",
+  "utc": "2026-10-15T11:03:29.107828+00:00"
+}

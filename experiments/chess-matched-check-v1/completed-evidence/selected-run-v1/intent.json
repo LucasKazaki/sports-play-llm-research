@@ -1,0 +1,7 @@
+{
+  "planned": 64,
+  "selected_step": 512,
+  "budget_seconds": 600,
+  "cleanup_seconds": 30,
+  "extension_sha256": "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45"
+}

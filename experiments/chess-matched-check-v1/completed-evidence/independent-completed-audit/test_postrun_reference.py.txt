@@ -1,0 +1,96 @@
+"""Finite fake-only postrun audit checks; no retained run/cohort IO."""
+import hashlib
+import json
+import struct
+from pathlib import Path
+
+import pytest
+import matched_check_reference as truth
+import postrun_reference as post
+
+
+def packet():
+    fen="7k/8/8/8/8/8/8/K1R5 w - - 0 1"
+    labels=[]
+    for index in range(32):
+        for side,uci in enumerate(("c1c8","c1c2")):
+            labels.append({"case_id":f"mc-pair-{index:02d}-{side}","expected":truth.predicate_facts(fen,uci)})
+    rows=[{"case_id":label["case_id"],"status":"completed","text":json.dumps(label["expected"])} for label in labels]
+    return rows,labels
+
+
+def test_correct_and_always_false_full_denominator():
+    rows,labels=packet()
+    correct=post.score(rows,labels)
+    assert correct["counts"]["all_eight_correct"]==64 and correct["paired"]["both_check_labels_correct"]==32
+    for row,label in zip(rows,labels): row["text"]=json.dumps({**label["expected"],"gives_check":False})
+    collapse=post.score(rows,labels)
+    assert collapse["counts"]["all_eight_correct"]==32 and collapse["paired"]["both_check_labels_correct"]==0
+    assert collapse["check_classes"]["true"]["false"]==32
+    assert collapse["check_classes"]["false"]["correct"]==32 and collapse["predicted_check_true"]==0
+
+
+def test_unknown_bad_schema_and_runtime_failures_are_not_false_predictions():
+    rows,labels=packet()
+    cases=[i for i,l in enumerate(labels) if l["expected"]["gives_check"] is True]
+    for index,status in zip(cases[:5],("truncated","error","not_run","completed","completed")):
+        rows[index].update(status=status,text="{}")
+    index=cases[4];rows[index]["text"]=json.dumps({**labels[index]["expected"],"gives_check":"unknown"})
+    result=post.score(rows,labels)
+    assert result["check_classes"]["true"]=={"support":32,"correct":27,"true":27,"false":0,
+        "unknown":1,"schema_failure":1,"truncated":1,"error":1,"not_run":1}
+    assert result["counts"]["planned"]==64 and result["paired"]["both_check_labels_correct"]==27
+
+
+@pytest.mark.parametrize("raw",["{}","```json\n{}\n```","{} {}","NaN",
+    '{"moving_piece":"rook","moving_piece":"queen"}',
+    json.dumps({**packet()[1][0]["expected"],"gives_check":1})])
+def test_strict_parser_rejects_repairs_or_bool_integer_alias(raw):
+    with pytest.raises((ValueError,TypeError)): post.strict_parse(raw)
+
+
+def test_native_decode_accepts_model_padded_vocab_and_rejects_overrange():
+    class Tokenizer:
+        eos_token_id=151645;pad_token_id=151643
+        def __len__(self): return 151669
+        def decode(self, ids, **kwargs): return ":".join(map(str,ids))
+    tokenizer=Tokenizer()
+    row={"new_ids":[151900,151645],"full_generated_ids":[1,2,151900,151645],
+         "status":"completed","text":"151900","adapter_disabled":False}
+    assert post.validate_generated(tokenizer,[1,2],row,151936)["native_status"]=="completed"
+    with pytest.raises(ValueError,match="vocabulary"):
+        post.validate_generated(tokenizer,[1,2],row,151900)
+    with pytest.raises(ValueError,match="nonpad"):
+        post.validate_generated(tokenizer,[1,2],{**row,"new_ids":[151900,151645,7],
+            "full_generated_ids":[1,2,151900,151645,7]},151936)
+
+
+def make_safe(path, tensors):
+    metadata,content,cursor={},b"",0
+    for name,(dtype,shape,data) in tensors.items():
+        metadata[name]={"dtype":dtype,"shape":shape,"data_offsets":[cursor,cursor+len(data)]}
+        cursor+=len(data);content+=data
+    header=json.dumps(metadata,separators=(",",":")).encode()
+    path.write_bytes(struct.pack("<Q",len(header))+header+content)
+
+
+def test_streamed_tensor_digest_name_order_dtype_count_and_finiteness(tmp_path):
+    path=tmp_path/"weights.safetensors"
+    first,second=struct.pack("<ff",1.,2.),struct.pack("<f",3.)
+    make_safe(path,{"z":("F32",[2],first),"a":("F32",[1],second)})
+    obj=post.SafeBytes(path)
+    expected=hashlib.sha256(b"loaded.a"+second+b"loaded.z"+first).hexdigest()
+    assert obj.digest_named([("a","loaded.a"),("z","loaded.z")],"F32",finite=True)=={
+        "sha256":expected,"tensors":2,"scalars":3}
+    with pytest.raises(ValueError,match="dtype"): obj.digest_named([("a","x")],"BF16")
+    make_safe(path,{"n":("F32",[1],struct.pack("<f",float("nan")))})
+    with pytest.raises(ValueError,match="nonfinite"): post.SafeBytes(path).digest_named([("n","x")],"F32",finite=True)
+
+
+def test_parameter_order_matches_pinned_constructor_and_seven_targets_per_layer():
+    base,adapter=post.parameter_order(28)
+    assert len(base)==310 and len(adapter)==392
+    assert base[0][0]=="model.embed_tokens.weight" and base[-1][0]=="model.norm.weight"
+    assert [name.split(".")[-2] for name,_ in base[1:7]]==["q_proj","k_proj","v_proj","o_proj","q_norm","k_norm"]
+    assert adapter[0]==("base_model.model.model.layers.0.self_attn.q_proj.lora_A.weight",
+                        "base_model.model.model.layers.0.self_attn.q_proj.lora_A.default.weight")
