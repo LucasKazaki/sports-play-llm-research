@@ -16,3 +16,6 @@ reports/chess-board-facts-v1-2026-10-15.md -text whitespace=blank-at-eol,blank-a
 
 # Bind pre-execution native fact-SFT plans and later evidence byte-for-byte.
 experiments/chess-fact-sft-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_fact_sft_*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_native_resources.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_fact_sft_*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
