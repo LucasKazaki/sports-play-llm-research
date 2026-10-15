@@ -1,0 +1,64 @@
+"""Small explicit compatibility surface for the unchanged FactBackend.
+
+The inherited module is copied byte-for-byte. Only its FactBackend is used;
+this surface resolves the three reviewed CPU helpers without any trainer.
+"""
+from pathlib import Path
+import hashlib
+import importlib
+import json
+import sys
+
+HERE = Path(__file__).resolve().parent
+FACTS = ("base_fact_lm_0_6b_adapter_disabled", "selected_fact_lm_0_6b")
+MOVES = ()
+REVIEWED = {
+    "chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+}
+
+
+def sha(path):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(65536), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def confined(root, relative):
+    if not isinstance(relative, str) or not relative or "\x00" in relative:
+        raise ValueError("invalid relative path")
+    path = Path(relative)
+    if path.is_absolute() or path.drive or ".." in path.parts:
+        raise ValueError("unsafe relative path")
+    target = (Path(root) / path).resolve()
+    target.relative_to(Path(root).resolve())
+    return target
+
+
+def reviewed_modules():
+    directory = (HERE / "reviewed").resolve()
+    for name, digest in REVIEWED.items():
+        if sha(directory / name) != digest:
+            raise ValueError("reviewed dependency changed: " + name)
+    if str(directory) not in sys.path:
+        sys.path.insert(0, str(directory))
+    common = importlib.import_module("chess_fact_sft_common")
+    core = importlib.import_module("chess_board_fact_core")
+    for module in (common, core):
+        if Path(module.__file__).resolve().parent != directory:
+            raise ValueError("reviewed module resolved outside snapshot")
+    return common, core, None
+
+
+def fresh(path, value):
+    path = Path(path)
+    if path.exists() or Path(str(path) + ".tmp").exists():
+        raise ValueError("refusing retained artifact")
+    reviewed_modules()[0].save(path, value)

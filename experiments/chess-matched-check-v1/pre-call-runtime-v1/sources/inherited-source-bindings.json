@@ -1,0 +1,8 @@
+{
+  "local_backends.py": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505",
+  "owned_native.py": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0",
+  "reviewed/chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+  "reviewed/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+  "reviewed/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+  "protocol.json": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+}
