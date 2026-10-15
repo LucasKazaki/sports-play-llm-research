@@ -1,0 +1,119 @@
+"""Independent file-only recount of all planned rows after explicit recovery."""
+import collections
+import hashlib
+import json
+from pathlib import Path
+import chess
+
+ROOT = Path(__file__).resolve().parent.parent
+PRIVATE = ROOT / "work/repos/sports-play-llm-research/data/private"
+RUN = PRIVATE / "chess-board-facts-v1-file-recovery"
+DATA = PRIVATE / "chess-board-facts-v1"
+FIELDS = ("moving_piece", "moving_colour", "is_capture", "captured_piece", "gives_check", "is_castling", "is_en_passant", "promotion_piece")
+CONDITIONS = ("fen_uci", "fen_uci_piece_map")
+
+def digest(path):
+    h = hashlib.sha256()
+    with path.open("rb") as f:
+        while block := f.read(65536):
+            h.update(block)
+    return h.hexdigest()
+
+def read(path):
+    return json.loads(path.read_text(encoding="utf-8-sig"))
+
+def immediate(fen, uci):
+    board, move = chess.Board(fen), chess.Move.from_uci(uci)
+    assert board.is_valid() and move in board.legal_moves
+    moving = board.piece_at(move.from_square)
+    enemies = {sq: p for sq, p in board.piece_map().items() if p.color != moving.color}
+    after = board.copy(stack=False)
+    after.push(move)
+    survivors = {sq for sq, p in after.piece_map().items() if p.color != moving.color}
+    removed = set(enemies)-survivors
+    assert len(removed) <= 1
+    victim = enemies[next(iter(removed))] if removed else None
+    return dict(zip(FIELDS, (
+        chess.piece_name(moving.piece_type), "white" if moving.color else "black", bool(removed),
+        chess.piece_name(victim.piece_type) if victim else None,
+        after.is_attacked_by(moving.color, after.king(not moving.color)),
+        moving.piece_type == chess.KING and abs(chess.square_file(move.from_square)-chess.square_file(move.to_square)) == 2,
+        moving.piece_type == chess.PAWN and bool(removed) and move.to_square not in enemies,
+        chess.piece_name(after.piece_at(move.to_square).piece_type) if len(uci) == 5 else None)))
+
+seal, frozen, before = read(RUN / "raw-seal.json"), read(RUN / "frozen-data.json"), read(RUN / "before-calls.json")
+assert digest(DATA / "frozen-data.json") == before["frozen_data_sha256"]
+for relative, expected in seal["files_sha256"].items():
+    path = (RUN / relative).resolve()
+    assert path.is_relative_to(RUN.resolve()) and digest(path) == expected, relative
+for relative, expected in frozen["files_sha256"].items():
+    assert digest(DATA / relative) == expected, relative
+inputs = read(RUN / "generator-inputs.json")["rows"]
+raw = read(RUN / "raw-results.json")["records"]
+evaluation = read(RUN / "evaluation.json")
+protocol = read(RUN / "protocol.json")
+labels = {r["case_id"]: r["expected"] for r in read(DATA / "evaluator-labels.json")["rows"]}
+assert len(inputs) == len(labels) == 16 and len(raw) == len(evaluation["rows"]) == 32
+groups = {c: {"planned":16,"accounted":0,"all_eight_correct":0,"strict_completed":0,
+              "field_correct":dict.fromkeys(FIELDS,0),"field_unknown":dict.fromkeys(FIELDS,0),"statuses":{}} for c in CONDITIONS}
+case_correct, inference_seconds, new_tokens, prompt_tokens = {}, [], [], []
+for i, row in enumerate(raw):
+    case = inputs[i//2]
+    order = CONDITIONS if (i//2)%2 == 0 else CONDITIONS[::-1]
+    assert row["case_id"] == case["case_id"] and row["condition"] == order[i%2]
+    assert row["fen"] == case["fen"] and row["selected_uci"] == case["selected_uci"]
+    facts = immediate(case["fen"],case["selected_uci"])
+    assert labels[case["case_id"]] == facts
+    prediction = None
+    if row["attempted"]:
+        packet = {"fen":case["fen"],"selected_uci":case["selected_uci"]}
+        if row["condition"] == "fen_uci_piece_map":
+            board = chess.Board(case["fen"])
+            packet["pieces"] = {chess.square_name(sq):board.piece_at(sq).symbol() if board.piece_at(sq) else None for sq in chess.SQUARES}
+        prompt = protocol["prompt"]["instruction_exact"]+json.dumps(packet,sort_keys=True,separators=(",",":"))
+        assert prompt == row["prompt"] == row["request"]["prompt"]
+        assert hashlib.sha256(prompt.encode()).hexdigest() == row["prompt_sha256"]
+        assert row["request"]["options"] == protocol["backend"]["options"]
+        assert row["request"]["format"] == protocol["output_schema"]
+        bodypath = RUN / row["raw_http_body"]["path"]
+        assert digest(bodypath) == row["raw_http_body"]["sha256"]
+        body = read(bodypath)
+        if row["status"] == "completed":
+            assert body["done"] is True and body["done_reason"] == "stop"
+            assert body["response"] == row["raw_output"]
+            prediction = json.loads(body["response"])
+            assert set(prediction) == set(FIELDS)
+            assert prediction == evaluation["rows"][i]["parsed"]
+            inference_seconds.append(row["elapsed_seconds"])
+            new_tokens.append(body.get("eval_count",0))
+            prompt_tokens.append(body.get("prompt_eval_count",0))
+        else:
+            assert i == 30 and body["done"] is False
+    else:
+        assert i == 31 and row["status"] == "not_run_after_backend_failure"
+    correct = {f: prediction is not None and type(prediction[f]) is type(facts[f]) and prediction[f] == facts[f] for f in FIELDS}
+    all_correct = all(correct.values())
+    assert evaluation["rows"][i]["field_correct"] == correct
+    assert evaluation["rows"][i]["all_eight_correct"] == all_correct
+    case_correct.setdefault(row["case_id"],{})[row["condition"]] = all_correct
+    g = groups[row["condition"]]
+    g["accounted"] += 1
+    g["strict_completed"] += prediction is not None
+    g["all_eight_correct"] += all_correct
+    g["statuses"][row["status"]] = g["statuses"].get(row["status"],0)+1
+    for f in FIELDS:
+        g["field_correct"][f] += correct[f]
+        g["field_unknown"][f] += prediction is not None and prediction[f] == "unknown"
+assert groups == evaluation["groups"]
+paired = collections.Counter((r[CONDITIONS[0]],r[CONDITIONS[1]]) for r in case_correct.values())
+result = {"schema":"chess.board-fact.independent-output-audit.v1","raw_seal_sha256":digest(RUN/"raw-seal.json"),
+          "evaluation_sha256":digest(RUN/"evaluation.json"),"bindings_checked":len(seal["files_sha256"]),
+          "all_planned_rows_recounted":32,"completed_original_predictions":30,"backend_failure":1,"not_run":1,
+          "all_attempted_prompts_and_native_requests_reconstructed":31,"groups":groups,
+          "paired_all_eight_counts":{"both_correct":paired[True,True],"fen_only_correct":paired[True,False],
+                                      "map_only_correct":paired[False,True],"neither_correct":paired[False,False]},
+          "completed_call_observations":{"elapsed_seconds_sum":sum(inference_seconds),"new_tokens_sum":sum(new_tokens),"prompt_tokens_sum":sum(prompt_tokens)},
+          "additional_http_model_engine_calls":0,"original_attempt_was_successful":False,
+          "limits":"One interrupted32-outcome development diagnostic. Counts include one backend failure and one not-run case. No retries, repaired text, move-strength or commentary claim."}
+(ROOT/"work/board-fact-independent-output-audit.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf-8")
+print(json.dumps(result))

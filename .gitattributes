@@ -6,3 +6,10 @@ experiments/gotham-illustrative-v1/** -text whitespace=blank-at-eol,blank-at-eof
 scripts/gotham_illustrative_eval.py -text
 tests/test_gotham_illustrative_eval.py -text
 reports/gotham-illustrative-v1-2026-10-15.md -text
+
+# Preserve original board-fact receipts and separately identified post-run code.
+experiments/chess-board-facts-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_board_fact_core.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_board_fact_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_board_fact_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+reports/chess-board-facts-v1-2026-10-15.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

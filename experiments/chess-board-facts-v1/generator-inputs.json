@@ -1,0 +1,86 @@
+{
+  "schema": "chess.board-fact.inputs.v1",
+  "count": 16,
+  "rows": [
+    {
+      "case_id": "board-fact-087yf",
+      "fen": "1r3rk1/4ppbb/p2p2pp/1q1P4/3QP1n1/2N1BP1P/PPR3P1/2R3K1 w - - 3 28",
+      "selected_uci": "c1f1"
+    },
+    {
+      "case_id": "board-fact-097kR",
+      "fen": "r2qk1nr/p1p2ppp/1p1pp3/n7/2bP1B2/2P1PN2/P3BPPP/R2QR1K1 w kq - 0 11",
+      "selected_uci": "f4d6"
+    },
+    {
+      "case_id": "board-fact-099Yk",
+      "fen": "r1b1k1nr/pp1p1ppp/8/4P3/1Q6/8/P1p1PPPP/1N2KB1R b Kkq - 0 13",
+      "selected_uci": "f7f5"
+    },
+    {
+      "case_id": "board-fact-09BSh",
+      "fen": "8/p2q1k1p/Qp2R1p1/5p2/2P5/1P6/5PPP/6K1 b - - 0 32",
+      "selected_uci": "d7a4"
+    },
+    {
+      "case_id": "board-fact-09Ghk",
+      "fen": "4k3/6b1/p2BP3/1p1K2pp/1P6/P7/2P5/8 w - - 0 39",
+      "selected_uci": "d5e4"
+    },
+    {
+      "case_id": "board-fact-09Hsl",
+      "fen": "8/ppkr3p/2pN4/2P1P2p/7P/5P2/PPPR1Pr1/1K6 b - - 0 24",
+      "selected_uci": "d7e7"
+    },
+    {
+      "case_id": "board-fact-09IHR",
+      "fen": "8/1k6/pn1p4/Kb1PpN2/1N5P/P5P1/8/8 b - - 0 43",
+      "selected_uci": "b5c4"
+    },
+    {
+      "case_id": "board-fact-09JhC",
+      "fen": "r4rk1/3p1ppp/pp6/1p1QP3/8/2P2KP1/1q6/RN2R3 w - - 0 21",
+      "selected_uci": "d5b5"
+    },
+    {
+      "case_id": "board-fact-09Pcz",
+      "fen": "3k4/3P4/2P1K3/5p2/7p/7P/6p1/8 w - - 0 50",
+      "selected_uci": "c6c7"
+    },
+    {
+      "case_id": "board-fact-09QiO",
+      "fen": "8/2p1qkp1/1bQ4p/3p4/1P6/8/7B/5N1K b - - 0 37",
+      "selected_uci": "b6e3"
+    },
+    {
+      "case_id": "board-fact-09UvK",
+      "fen": "rn2k2r/pp3pp1/2p4p/2bpPq2/4n3/2PB1P2/PP4PP/RNBQ1R1K b kq - 2 12",
+      "selected_uci": "f5g5"
+    },
+    {
+      "case_id": "board-fact-09WaG",
+      "fen": "r1b5/5pkp/pr1p1qp1/2pP3P/4PQ2/3P4/RP2B1P1/R5K1 w - - 1 26",
+      "selected_uci": "a2a4"
+    },
+    {
+      "case_id": "board-fact-09YeT",
+      "fen": "rnb1k2r/p2pppbp/6p1/1q2P3/3P4/2Q2N2/PP3PPP/R1B1K2R w KQkq - 0 11",
+      "selected_uci": "c1e3"
+    },
+    {
+      "case_id": "board-fact-09zNq",
+      "fen": "5r2/5n1p/3p2pk/2p5/R4NP1/6K1/8/8 w - - 7 51",
+      "selected_uci": "a4a7"
+    },
+    {
+      "case_id": "board-fact-09zOx",
+      "fen": "8/8/3K4/1k1pr3/p1pP4/2P5/8/8 w - - 0 63",
+      "selected_uci": "d6e5"
+    },
+    {
+      "case_id": "board-fact-0A1AH",
+      "fen": "2r4k/p5p1/7p/3P3b/2P2Q2/PP2R1K1/1q4PP/8 w - - 4 34",
+      "selected_uci": "f4f2"
+    }
+  ]
+}

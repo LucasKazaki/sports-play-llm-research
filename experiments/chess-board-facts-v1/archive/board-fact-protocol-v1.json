@@ -1,0 +1,249 @@
+{
+  "schema": "chess.board-fact.protocol.v1",
+  "status": "frozen_before_selection_and_model_calls",
+  "frozen_at_utc": "2026-10-15T06:35:55.911234+00:00",
+  "purpose": "Paired input-representation diagnostic of immediate move facts; no move choice, commentary, training, model selection or strength claim",
+  "source": {
+    "path": "data/private/chess-distill-v1/source-prefix.csv.zst.part",
+    "bytes": 4194304,
+    "sha256": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056",
+    "rights": "Retained Lichess puzzle database prefix, CC0 declared by upstream; reused source, not new acquisition",
+    "url": "https://database.lichess.org/"
+  },
+  "selection": {
+    "seed": 4082030,
+    "count": 16,
+    "bucket": "sha256(str(seed)+\":\"+game_id) integer modulo10 must equal1 (development only)",
+    "order": "First16 eligible distinct games/boards in exact CSV source order; no sorting or outcome-based balancing",
+    "exclusions": "Every historical seed and v1/v2/v3/v4 game plus source-before/setup-after board keys for every prior selected puzzle; new before/after board roles disjoint too",
+    "position": "Replay ONLY first source puzzle setup move to obtain pre-move FEN; source answer tails/annotations are never model inputs",
+    "selected_move": "Sort legal UCI strings lexicographically; index=int(sha256(str(seed)+\":\"+game_id),16) modulo legal_move_count. Do not use Stockfish/teacher/annotated bestmove",
+    "special_move_coverage": "Report actual selected capture/check/castle/en-passant/promotion counts; never replace cases to improve coverage"
+  },
+  "model": {
+    "alias": "qwen3.8-27b-local-q2k:latest",
+    "expected_digest": "7b0c2ef4e855aa2ea19d0a4d892311961e2710243ea624c300e6ccaa50ffeee2",
+    "expected_family": "qwen35",
+    "declared_parameter_size": "27.3B",
+    "declared_quantization": "Q2_K",
+    "identity": "Capture fresh /api/version,/api/tags,/api/show before generation; reject changed digest/family or missing alias. Preserve raw metadata, template/parameters and source hashes. Alias is not architecture/version evidence.",
+    "weights_updated": false
+  },
+  "conditions": [
+    "fen_uci",
+    "fen_uci_piece_map"
+  ],
+  "inputs": {
+    "fen_uci": [
+      "fen",
+      "selected_uci"
+    ],
+    "fen_uci_piece_map": [
+      "fen",
+      "selected_uci",
+      "64-square map of pre-move piece symbols or null empty squares"
+    ],
+    "forbidden": [
+      "expected facts",
+      "post-move FEN",
+      "transition facts",
+      "source puzzle answer tails",
+      "teacher moves/scores/PVs",
+      "themes/annotations",
+      "video outputs",
+      "strategic rationales"
+    ],
+    "map_definition": "Every a1..h8 square maps to the original board piece symbol or null; uppercase White/lowercase Black; no moved-square or capture/check hints",
+    "case_id": "Bookkeeping only; not inserted in prompt"
+  },
+  "output_schema": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+      "moving_piece",
+      "moving_colour",
+      "is_capture",
+      "captured_piece",
+      "gives_check",
+      "is_castling",
+      "is_en_passant",
+      "promotion_piece"
+    ],
+    "properties": {
+      "moving_piece": {
+        "enum": [
+          "pawn",
+          "knight",
+          "bishop",
+          "rook",
+          "queen",
+          "king",
+          "unknown"
+        ]
+      },
+      "moving_colour": {
+        "enum": [
+          "white",
+          "black",
+          "unknown"
+        ]
+      },
+      "captured_piece": {
+        "enum": [
+          "pawn",
+          "knight",
+          "bishop",
+          "rook",
+          "queen",
+          "king",
+          null,
+          "unknown"
+        ]
+      },
+      "promotion_piece": {
+        "enum": [
+          "queen",
+          "rook",
+          "bishop",
+          "knight",
+          null,
+          "unknown"
+        ]
+      },
+      "is_capture": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "const": "unknown"
+          }
+        ]
+      },
+      "gives_check": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "const": "unknown"
+          }
+        ]
+      },
+      "is_castling": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "const": "unknown"
+          }
+        ]
+      },
+      "is_en_passant": {
+        "anyOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "const": "unknown"
+          }
+        ]
+      }
+    }
+  },
+  "facts": {
+    "moving_piece": "Piece before selected legal move",
+    "moving_colour": "Colour of moving piece before move",
+    "is_capture": "Includes en passant",
+    "captured_piece": "Captured original piece type; null for no capture",
+    "gives_check": "Opponent in check immediately after selected move",
+    "is_castling": "Orthodox castling move",
+    "is_en_passant": "Selected move captures en passant",
+    "promotion_piece": "Promoted piece name or null for no promotion",
+    "abstention": "String unknown permitted per field; null is a known no-capture/no-promotion claim, not abstention"
+  },
+  "prompt": {
+    "instruction_exact": "For the selected legal chess move, infer only its immediate board facts from the given pre-move position. Return one JSON object with exactly the eight schema fields. No explanation or strategic evaluation. moving_piece and moving_colour describe the piece before it moves; is_capture includes en passant; captured_piece is null when there is no capture; gives_check concerns the opponent immediately after the move; promotion_piece is the promoted piece name or null if there is no promotion. Use the string unknown for any field you cannot determine. Boolean fields must be true, false or unknown. Capital board symbols are White, lowercase Black; a null map entry is an empty square.\nResponse schema: {\"additionalProperties\":false,\"properties\":{\"captured_piece\":{\"enum\":[\"pawn\",\"knight\",\"bishop\",\"rook\",\"queen\",\"king\",null,\"unknown\"]},\"gives_check\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_capture\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_castling\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_en_passant\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"moving_colour\":{\"enum\":[\"white\",\"black\",\"unknown\"]},\"moving_piece\":{\"enum\":[\"pawn\",\"knight\",\"bishop\",\"rook\",\"queen\",\"king\",\"unknown\"]},\"promotion_piece\":{\"enum\":[\"queen\",\"rook\",\"bishop\",\"knight\",null,\"unknown\"]}},\"required\":[\"moving_piece\",\"moving_colour\",\"is_capture\",\"captured_piece\",\"gives_check\",\"is_castling\",\"is_en_passant\",\"promotion_piece\"],\"type\":\"object\"}\nInput: ",
+    "packet": "Compact sorted-key JSON containing only the allowed representation; no conversation/context reuse"
+  },
+  "backend": {
+    "base_url": "http://127.0.0.1:11434",
+    "endpoint": "/api/generate",
+    "stream": false,
+    "think": false,
+    "raw": false,
+    "format": "Exact output_schema object",
+    "options": {
+      "temperature": 0,
+      "seed": 4082030,
+      "num_ctx": 8192,
+      "num_predict": 384
+    },
+    "keep_alive": "5m",
+    "request_timeout_seconds": 180,
+    "response_body_limit_bytes": 1048576,
+    "order": "Case indices0..15, paired calls; even case fen_uci then map, odd case map then fen_uci.8cases per condition first.",
+    "calls": "Exactly one attempted generation per planned case/condition, no retry or repair prompt.32 planned outcomes.",
+    "failure": "Transport/HTTP/backend-envelope failure stops all later generation requests as not_run_after_backend_failure; parse/truncation failures retain that case and continue. Keep every planned row in denominator.",
+    "unload": "Finally send empty /api/generate with model and keep_alive0 once; retain unload success/failure without overwriting generation failures",
+    "no_replay": "Refuse existing generation-attempt marker even after interruption; preserve raw/partial bytes"
+  },
+  "evaluator": {
+    "labels": "Separate evaluator-only file; never opened by generation. Generate all raw outputs/failures, save and hash seal first; separate evaluator verifies every raw/source binding before reading labels.",
+    "expected_facts": "python-chess move predicates; independently verified by separate board-push/material-difference/king-attack/geometry route and manually specified finite special-move fixtures",
+    "parse": "One complete JSON object only; exactly8keys, no duplicates/extras, no fences/prose/nonfinite constants, strict ordinary Boolean/categorical types. No text repair or later-object rescue.",
+    "completed": "Backend done exactlytrue and done_reason=stop, valid schema. done_reason=length is truncation; missing/other completion state is incomplete/backend failure.",
+    "primary": "All8 facts correct with no unknown and completed strict response, out of full16 per condition. No credit for failed/truncated/unknown cases.",
+    "field_metrics": "For each field exact correct count out of all16 plus explicit unknown counts; malformed/truncated/incomplete/not-run responses receive zero correctness for every field. No partial field recovery from malformed object.",
+    "case_comparison": "Paired descriptive counts only; no significance/generalization/strength/weight-learning conclusion"
+  },
+  "resources": {
+    "serialize_gpu": true,
+    "actual_calls_require": "Parent source/test/data review GO and available GPU",
+    "no_engine_calls": true,
+    "unload_after": true
+  },
+  "retention": [
+    "Frozen protocol/data/input-only file/evaluator-label hashes",
+    "All source snapshots and meaningful test result hashes",
+    "All32 outcome rows, exact requests/prompt hashes and raw HTTP response bodies",
+    "Complete response/thinking/backend timing/eval-count/done-reason metadata where returned",
+    "Errors/not_run/truncation/abstention/latency and fresh actual model identity/digest",
+    "Raw-result seal before separate evaluator-label read; preserve interrupted attempts"
+  ],
+  "limits": [
+    "16convenience positions from a reused puzzle prefix; not a representative or accepted commentary benchmark",
+    "No strategic rationale, teaching/commentary quality, broad understanding, Elo or sports-transfer claim",
+    "Same installed quantized weights in both conditions; representation comparison only",
+    "Special moves may be absent; report observed coverage",
+    "Unknown upstream pretraining overlap and backend nondeterminism remain",
+    "Codex-assisted source and evaluation; practical review does not satisfy formal project promotion gates"
+  ],
+  "primary_sources": [
+    {
+      "url": "https://docs.ollama.com/api/generate",
+      "supports": "Schema format, response and done/timing fields, think option, keep_alive unload behavior"
+    },
+    {
+      "url": "https://docs.ollama.com/capabilities/structured-outputs",
+      "supports": "Local JSON-schema output and temperature0; application still validates response strictly"
+    },
+    {
+      "url": "https://docs.ollama.com/modelfile",
+      "supports": "num_ctx/seed/num_predict generation controls"
+    },
+    {
+      "url": "https://docs.ollama.com/api/tags",
+      "supports": "Installed model identity list"
+    },
+    {
+      "url": "https://github.com/ollama/ollama/blob/main/docs/api.md#show-model-information",
+      "supports": "api/show details/template/parameters/model_info"
+    },
+    {
+      "url": "https://python-chess.readthedocs.io/en/latest/core.html",
+      "supports": "Legal moves, is_capture/is_castling/is_en_passant/gives_check; validate board before use"
+    }
+  ]
+}

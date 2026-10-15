@@ -1,0 +1,3 @@
+slot      iterate: id  0 | task 1580 | got exception: std::bad_alloc
+srv    send_error: task id = 1580, error: got exception: std::bad_alloc
+time=2026-10-15T02:45:10.225-04:00 level=ERROR source=llama_server.go:1029 msg="llama-server terminated" error="exit status 1" exit=1

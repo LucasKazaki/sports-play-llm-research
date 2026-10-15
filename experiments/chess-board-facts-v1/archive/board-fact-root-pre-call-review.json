@@ -1,0 +1,14 @@
+{
+  "source_sha256": {
+    "board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "board_fact_diagnostic.py": "ace8c8df385c837a6be6352b49fff26d44ea64b9b41f725a88abaf453f718806",
+    "test_board_fact_diagnostic.py": "1b3b9494fc582dffa419a4ecce769661cf402d4eadfc0e2587f71e6d281a9136",
+    "board-fact-protocol-v1.json": "1cb702fab0ba476bf2526bbcbd167acd85bc990abd50c647d2342d2658e50187"
+  },
+  "independent_tests_passed": 36,
+  "independent_test_elapsed_seconds": 2.62,
+  "independent_intake_audit_sha256": "bb39ba9d99aabf15337bfa4c9c0c9451201d1c6b6d1abb417f14aab6b740b872",
+  "gpu_handoff": "Root reviewed actual idle RTX5080; no other GPU job authorized",
+  "purpose": "32 fixed input-representation calls only; no training or commentary promotion",
+  "status": "source/data practical review passed before real model requests"
+}

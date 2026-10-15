@@ -1,0 +1,133 @@
+{
+  "actual_fake_generation_calls": 2,
+  "unload_calls": 1,
+  "recorded_attempted": 2,
+  "third_row": {
+    "condition": "fen_uci_piece_map",
+    "case_id": "case1",
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "selected_uci": "e2e4",
+    "status": "not_run_local_artifact_failure",
+    "attempted": false,
+    "prompt": "For the selected legal chess move, infer only its immediate board facts from the given pre-move position. Return one JSON object with exactly the eight schema fields. No explanation or strategic evaluation. moving_piece and moving_colour describe the piece before it moves; is_capture includes en passant; captured_piece is null when there is no capture; gives_check concerns the opponent immediately after the move; promotion_piece is the promoted piece name or null if there is no promotion. Use the string unknown for any field you cannot determine. Boolean fields must be true, false or unknown. Capital board symbols are White, lowercase Black; a null map entry is an empty square.\nResponse schema: {\"additionalProperties\":false,\"properties\":{\"captured_piece\":{\"enum\":[\"pawn\",\"knight\",\"bishop\",\"rook\",\"queen\",\"king\",null,\"unknown\"]},\"gives_check\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_capture\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_castling\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_en_passant\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"moving_colour\":{\"enum\":[\"white\",\"black\",\"unknown\"]},\"moving_piece\":{\"enum\":[\"pawn\",\"knight\",\"bishop\",\"rook\",\"queen\",\"king\",\"unknown\"]},\"promotion_piece\":{\"enum\":[\"queen\",\"rook\",\"bishop\",\"knight\",null,\"unknown\"]}},\"required\":[\"moving_piece\",\"moving_colour\",\"is_capture\",\"captured_piece\",\"gives_check\",\"is_castling\",\"is_en_passant\",\"promotion_piece\"],\"type\":\"object\"}\nInput: {\"fen\":\"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\",\"pieces\":{\"a1\":\"R\",\"a2\":\"P\",\"a3\":null,\"a4\":null,\"a5\":null,\"a6\":null,\"a7\":\"p\",\"a8\":\"r\",\"b1\":\"N\",\"b2\":\"P\",\"b3\":null,\"b4\":null,\"b5\":null,\"b6\":null,\"b7\":\"p\",\"b8\":\"n\",\"c1\":\"B\",\"c2\":\"P\",\"c3\":null,\"c4\":null,\"c5\":null,\"c6\":null,\"c7\":\"p\",\"c8\":\"b\",\"d1\":\"Q\",\"d2\":\"P\",\"d3\":null,\"d4\":null,\"d5\":null,\"d6\":null,\"d7\":\"p\",\"d8\":\"q\",\"e1\":\"K\",\"e2\":\"P\",\"e3\":null,\"e4\":null,\"e5\":null,\"e6\":null,\"e7\":\"p\",\"e8\":\"k\",\"f1\":\"B\",\"f2\":\"P\",\"f3\":null,\"f4\":null,\"f5\":null,\"f6\":null,\"f7\":\"p\",\"f8\":\"b\",\"g1\":\"N\",\"g2\":\"P\",\"g3\":null,\"g4\":null,\"g5\":null,\"g6\":null,\"g7\":\"p\",\"g8\":\"n\",\"h1\":\"R\",\"h2\":\"P\",\"h3\":null,\"h4\":null,\"h5\":null,\"h6\":null,\"h7\":\"p\",\"h8\":\"r\"},\"selected_uci\":\"e2e4\"}",
+    "request": {
+      "model": "qwen3.8-27b-local-q2k:latest",
+      "prompt": "For the selected legal chess move, infer only its immediate board facts from the given pre-move position. Return one JSON object with exactly the eight schema fields. No explanation or strategic evaluation. moving_piece and moving_colour describe the piece before it moves; is_capture includes en passant; captured_piece is null when there is no capture; gives_check concerns the opponent immediately after the move; promotion_piece is the promoted piece name or null if there is no promotion. Use the string unknown for any field you cannot determine. Boolean fields must be true, false or unknown. Capital board symbols are White, lowercase Black; a null map entry is an empty square.\nResponse schema: {\"additionalProperties\":false,\"properties\":{\"captured_piece\":{\"enum\":[\"pawn\",\"knight\",\"bishop\",\"rook\",\"queen\",\"king\",null,\"unknown\"]},\"gives_check\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_capture\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_castling\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"is_en_passant\":{\"anyOf\":[{\"type\":\"boolean\"},{\"const\":\"unknown\"}]},\"moving_colour\":{\"enum\":[\"white\",\"black\",\"unknown\"]},\"moving_piece\":{\"enum\":[\"pawn\",\"knight\",\"bishop\",\"rook\",\"queen\",\"king\",\"unknown\"]},\"promotion_piece\":{\"enum\":[\"queen\",\"rook\",\"bishop\",\"knight\",null,\"unknown\"]}},\"required\":[\"moving_piece\",\"moving_colour\",\"is_capture\",\"captured_piece\",\"gives_check\",\"is_castling\",\"is_en_passant\",\"promotion_piece\"],\"type\":\"object\"}\nInput: {\"fen\":\"rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1\",\"pieces\":{\"a1\":\"R\",\"a2\":\"P\",\"a3\":null,\"a4\":null,\"a5\":null,\"a6\":null,\"a7\":\"p\",\"a8\":\"r\",\"b1\":\"N\",\"b2\":\"P\",\"b3\":null,\"b4\":null,\"b5\":null,\"b6\":null,\"b7\":\"p\",\"b8\":\"n\",\"c1\":\"B\",\"c2\":\"P\",\"c3\":null,\"c4\":null,\"c5\":null,\"c6\":null,\"c7\":\"p\",\"c8\":\"b\",\"d1\":\"Q\",\"d2\":\"P\",\"d3\":null,\"d4\":null,\"d5\":null,\"d6\":null,\"d7\":\"p\",\"d8\":\"q\",\"e1\":\"K\",\"e2\":\"P\",\"e3\":null,\"e4\":null,\"e5\":null,\"e6\":null,\"e7\":\"p\",\"e8\":\"k\",\"f1\":\"B\",\"f2\":\"P\",\"f3\":null,\"f4\":null,\"f5\":null,\"f6\":null,\"f7\":\"p\",\"f8\":\"b\",\"g1\":\"N\",\"g2\":\"P\",\"g3\":null,\"g4\":null,\"g5\":null,\"g6\":null,\"g7\":\"p\",\"g8\":\"n\",\"h1\":\"R\",\"h2\":\"P\",\"h3\":null,\"h4\":null,\"h5\":null,\"h6\":null,\"h7\":\"p\",\"h8\":\"r\"},\"selected_uci\":\"e2e4\"}",
+      "stream": false,
+      "think": false,
+      "raw": false,
+      "format": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "moving_piece",
+          "moving_colour",
+          "is_capture",
+          "captured_piece",
+          "gives_check",
+          "is_castling",
+          "is_en_passant",
+          "promotion_piece"
+        ],
+        "properties": {
+          "moving_piece": {
+            "enum": [
+              "pawn",
+              "knight",
+              "bishop",
+              "rook",
+              "queen",
+              "king",
+              "unknown"
+            ]
+          },
+          "moving_colour": {
+            "enum": [
+              "white",
+              "black",
+              "unknown"
+            ]
+          },
+          "captured_piece": {
+            "enum": [
+              "pawn",
+              "knight",
+              "bishop",
+              "rook",
+              "queen",
+              "king",
+              null,
+              "unknown"
+            ]
+          },
+          "promotion_piece": {
+            "enum": [
+              "queen",
+              "rook",
+              "bishop",
+              "knight",
+              null,
+              "unknown"
+            ]
+          },
+          "is_capture": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown"
+              }
+            ]
+          },
+          "gives_check": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown"
+              }
+            ]
+          },
+          "is_castling": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown"
+              }
+            ]
+          },
+          "is_en_passant": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "const": "unknown"
+              }
+            ]
+          }
+        }
+      },
+      "options": {
+        "temperature": 0,
+        "seed": 4082030,
+        "num_ctx": 8192,
+        "num_predict": 384
+      },
+      "keep_alive": "5m"
+    },
+    "prompt_sha256": "4660f930a93fd07a2b6ee45c5271f0686058de3938f1129620a4667b71021598",
+    "request_prepared": true,
+    "error": {
+      "type": "MemoryError",
+      "message": "independent injected pre-call progress allocation failure"
+    }
+  },
+  "full_denominator": 32,
+  "injection_count": 1,
+  "model_or_network_calls": 0
+}

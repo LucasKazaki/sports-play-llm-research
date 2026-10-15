@@ -1,0 +1,128 @@
+{
+  "schema": "chess.board-fact.review-summary.v1",
+  "execution_status": "interrupted_by_confirmed_virtual_memory_exhaustion",
+  "generation_succeeded": false,
+  "planned_outcomes": 32,
+  "attempted_generation_requests": 31,
+  "strict_completed_responses": 30,
+  "incomplete_backend_response": 1,
+  "not_attempted": 1,
+  "retries": 0,
+  "new_calls_during_recovery": 0,
+  "selected_games": 16,
+  "conditions": [
+    "fen_uci",
+    "fen_uci_piece_map"
+  ],
+  "groups": {
+    "fen_uci": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 2,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 8,
+        "moving_colour": 15,
+        "is_capture": 3,
+        "captured_piece": 2,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "not_run_after_backend_failure": 1
+      }
+    },
+    "fen_uci_piece_map": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 5,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 14,
+        "moving_colour": 15,
+        "is_capture": 7,
+        "captured_piece": 7,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "backend_failure": 1
+      }
+    }
+  },
+  "paired_all_eight_counts": {
+    "both_correct": 2,
+    "fen_only_correct": 0,
+    "map_only_correct": 3,
+    "neither_correct": 11
+  },
+  "coverage": {
+    "is_capture": 3,
+    "gives_check": 1,
+    "is_castling": 0,
+    "is_en_passant": 0,
+    "promotion": 0
+  },
+  "original_source_sha256": {
+    "board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "board_fact_diagnostic.py": "ace8c8df385c837a6be6352b49fff26d44ea64b9b41f725a88abaf453f718806",
+    "test_board_fact_diagnostic.py": "1b3b9494fc582dffa419a4ecce769661cf402d4eadfc0e2587f71e6d281a9136",
+    "board-fact-protocol-v1.json": "1cb702fab0ba476bf2526bbcbd167acd85bc990abd50c647d2342d2658e50187"
+  },
+  "raw_seal_sha256": "867040994c518ff99eef80792e22a2320e4855396afa88f7cea766ab3ce6d0ce",
+  "evaluation_sha256": "93d5766a78144dbe9541db97f45d9b6e5ba14db823809cef32e36c0bd1135c8a",
+  "failure_observation": {
+    "windows_system_event_id": 2004,
+    "observed_at_utc": "2026-10-15T06:45:10Z",
+    "backend": "llama-server std::bad_alloc, exit1",
+    "local": "MemoryError during saved-response hashing",
+    "cause_limit": "Virtual-memory exhaustion confirmed; exact resource attribution unresolved",
+    "cleanup": "Unload confirmed, selected model absent from after-unload resident list"
+  },
+  "model": {
+    "alias": "qwen3.8-27b-local-q2k:latest",
+    "actual_family": "qwen35",
+    "parameter_size": "27.3B",
+    "quantization": "Q2_K",
+    "digest": "7b0c2ef4e855aa2ea19d0a4d892311961e2710243ea624c300e6ccaa50ffeee2",
+    "weights_updated": false
+  },
+  "primary_denominator": "Full16 per condition, including backend/not-run failures; no denominator reduction",
+  "interpretation": "The piece map helped some immediate facts in this small diagnostic, while both representations remained unreliable. It does not establish strategic understanding, commentary quality or playing strength.",
+  "limits": [
+    "16convenience positions from a reused puzzle prefix; not a representative or accepted commentary benchmark",
+    "No strategic rationale, teaching/commentary quality, broad understanding, Elo or sports-transfer claim",
+    "Same installed quantized weights in both conditions; representation comparison only",
+    "Special moves may be absent; report observed coverage",
+    "Unknown upstream pretraining overlap and backend nondeterminism remain",
+    "Codex-assisted source and evaluation; practical review does not satisfy formal project promotion gates"
+  ],
+  "assistance": "Codex-assisted code, data selection, recovery and practical checks; no formal research promotion",
+  "future_exclusion": "All16panelgames and both source/setup board roles are spent development evidence."
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "chess.board-fact.independent-output-audit.v1",
+  "raw_seal_sha256": "867040994c518ff99eef80792e22a2320e4855396afa88f7cea766ab3ce6d0ce",
+  "evaluation_sha256": "93d5766a78144dbe9541db97f45d9b6e5ba14db823809cef32e36c0bd1135c8a",
+  "bindings_checked": 50,
+  "all_planned_rows_recounted": 32,
+  "completed_original_predictions": 30,
+  "backend_failure": 1,
+  "not_run": 1,
+  "all_attempted_prompts_and_native_requests_reconstructed": 31,
+  "groups": {
+    "fen_uci": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 2,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 8,
+        "moving_colour": 15,
+        "is_capture": 3,
+        "captured_piece": 2,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "not_run_after_backend_failure": 1
+      }
+    },
+    "fen_uci_piece_map": {
+      "planned": 16,
+      "accounted": 16,
+      "all_eight_correct": 5,
+      "strict_completed": 15,
+      "field_correct": {
+        "moving_piece": 14,
+        "moving_colour": 15,
+        "is_capture": 7,
+        "captured_piece": 7,
+        "gives_check": 13,
+        "is_castling": 15,
+        "is_en_passant": 15,
+        "promotion_piece": 15
+      },
+      "field_unknown": {
+        "moving_piece": 0,
+        "moving_colour": 0,
+        "is_capture": 0,
+        "captured_piece": 0,
+        "gives_check": 0,
+        "is_castling": 0,
+        "is_en_passant": 0,
+        "promotion_piece": 0
+      },
+      "statuses": {
+        "completed": 15,
+        "backend_failure": 1
+      }
+    }
+  },
+  "paired_all_eight_counts": {
+    "both_correct": 2,
+    "fen_only_correct": 0,
+    "map_only_correct": 3,
+    "neither_correct": 11
+  },
+  "completed_call_observations": {
+    "elapsed_seconds_sum": 46.09639699998661,
+    "new_tokens_sum": 1519,
+    "prompt_tokens_sum": 16700
+  },
+  "additional_http_model_engine_calls": 0,
+  "original_attempt_was_successful": false,
+  "limits": "One interrupted32-outcome development diagnostic. Counts include one backend failure and one not-run case. No retries, repaired text, move-strength or commentary claim."
+}

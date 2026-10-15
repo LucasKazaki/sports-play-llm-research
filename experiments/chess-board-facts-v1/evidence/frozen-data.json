@@ -1,0 +1,15 @@
+{
+  "schema": "chess.board-fact.frozen-data.v1",
+  "count": 16,
+  "model_calls": 0,
+  "files_sha256": {
+    "protocol.json": "1cb702fab0ba476bf2526bbcbd167acd85bc990abd50c647d2342d2658e50187",
+    "dataset.json": "30bfeeaa812b3c86e819405ebe9ee64a692575d43969139ae1d4fb99a821e51f",
+    "generator-inputs.json": "8fcd75f686d9a3f1742f03ad83e1be34f420b9372d1d0d7ddca3bae8c3bc44a3",
+    "evaluator-labels.json": "5f3c3e6ae6ed1bace366fda0d7c8174c69ddd78f02cf32e814ad80fc66396c6e"
+  },
+  "acquisition_source_sha256": {
+    "acquisition-sources/board_fact_diagnostic.py": "ace8c8df385c837a6be6352b49fff26d44ea64b9b41f725a88abaf453f718806",
+    "acquisition-sources/board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+  }
+}
