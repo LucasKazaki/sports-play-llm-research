@@ -1,0 +1,50 @@
+{
+  "schema": "chess.fact-sft.random-cpu-contract-checks.v1",
+  "scope": "Random tiny CPU Qwen models only; no pretrained weights, GPU or selected data.",
+  "loss_absolute_tolerance": 2e-06,
+  "gradient_absolute_tolerance": 2e-06,
+  "gradient_relative_tolerance": 0.0001,
+  "results": [
+    {
+      "dtype": "torch.float32",
+      "target_token_counts": [
+        1,
+        31,
+        127
+      ],
+      "total_targets": 159,
+      "full_loss": 4.574409008026123,
+      "cropped_loss": 4.574409008026123,
+      "manual_nll": 4.574408899447579,
+      "maximum_adapter_gradient_difference": 0.0,
+      "all14_adapter_gradients_finite_and_compared": true,
+      "all7_first_B_gradients_nonzero": true,
+      "all7_second_A_gradients_nonzero": true,
+      "frozen_base_unchanged": true,
+      "zero_B_base_equivalence": true,
+      "pretrained_forwards": 0,
+      "GPU_calls": 0
+    },
+    {
+      "dtype": "torch.bfloat16",
+      "target_token_counts": [
+        1,
+        31,
+        127
+      ],
+      "total_targets": 159,
+      "full_loss": 4.574370384216309,
+      "cropped_loss": 4.57436990737915,
+      "manual_nll": 4.574369984002083,
+      "maximum_adapter_gradient_difference": 0.0,
+      "all14_adapter_gradients_finite_and_compared": true,
+      "all7_first_B_gradients_nonzero": true,
+      "all7_second_A_gradients_nonzero": true,
+      "frozen_base_unchanged": true,
+      "zero_B_base_equivalence": true,
+      "pretrained_forwards": 0,
+      "GPU_calls": 0
+    }
+  ],
+  "negative_boundary_target128_rejected": true
+}

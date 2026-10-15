@@ -13,3 +13,6 @@ scripts/chess_board_fact_core.py -text whitespace=blank-at-eol,blank-at-eof,spac
 scripts/chess_board_fact_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_board_fact_diagnostic.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 reports/chess-board-facts-v1-2026-10-15.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Bind pre-execution native fact-SFT plans and later evidence byte-for-byte.
+experiments/chess-fact-sft-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -1,0 +1,209 @@
+{
+  "schema": "chess.fact-sft.cpu-metadata-inspection.v1",
+  "pretrained_weight_loads": 0,
+  "pretrained_forwards": 0,
+  "GPU_calls": 0,
+  "cohort_rows_selected": 0,
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "pyarrow": "26.0.0",
+    "tokenizers": "0.23.3"
+  },
+  "model_card_stored_BF16_scalar_count": 751632384,
+  "meta_before_explicit_tie": {
+    "unique_meta_parameters": 751632384,
+    "input_output_tied_identity": false
+  },
+  "meta_after_explicit_tie": {
+    "unique_meta_parameters": 596049920,
+    "input_output_tied_identity": true
+  },
+  "runtime_caveat": "Meta inspection is not actual loaded-model verification. Training must verify tied identity and unique count after from_pretrained before any forward.",
+  "target_linear_modules": 196,
+  "target_modules_sha256": "3afeb9c818dfa813d7a3412d36e51dd881f24ae7319e226cc6b9e7857d4df68a",
+  "first_layer_shapes": {
+    "model.layers.0.self_attn.q_proj": [
+      1024,
+      2048
+    ],
+    "model.layers.0.self_attn.k_proj": [
+      1024,
+      1024
+    ],
+    "model.layers.0.self_attn.v_proj": [
+      1024,
+      1024
+    ],
+    "model.layers.0.self_attn.o_proj": [
+      2048,
+      1024
+    ],
+    "model.layers.0.mlp.gate_proj": [
+      1024,
+      3072
+    ],
+    "model.layers.0.mlp.up_proj": [
+      1024,
+      3072
+    ],
+    "model.layers.0.mlp.down_proj": [
+      3072,
+      1024
+    ]
+  },
+  "rank8_adapter_parameters": 5046272,
+  "trainable_meta_dtypes": [
+    "torch.float32"
+  ],
+  "tokenizer": {
+    "class": "Qwen2Tokenizer",
+    "pad_token_id": 151643,
+    "eos_token_id": 151645,
+    "padding_side_for_proposal": "left"
+  },
+  "hand_fixture_native_token_checks": [
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "move": "e2e4",
+      "prompt_tokens": 712,
+      "full_native_joint_tokens": 760,
+      "training_joint_tokens_through_assistant_EOS": 759,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1",
+      "move": "e7e5",
+      "prompt_tokens": 712,
+      "full_native_joint_tokens": 760,
+      "training_joint_tokens_through_assistant_EOS": 759,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1",
+      "move": "e1g1",
+      "prompt_tokens": 705,
+      "full_native_joint_tokens": 753,
+      "training_joint_tokens_through_assistant_EOS": 752,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1",
+      "move": "e5d6",
+      "prompt_tokens": 703,
+      "full_native_joint_tokens": 751,
+      "training_joint_tokens_through_assistant_EOS": 750,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "4k3/8/8/8/3Pp3/8/8/4K3 b - d3 0 1",
+      "move": "e4d3",
+      "prompt_tokens": 703,
+      "full_native_joint_tokens": 751,
+      "training_joint_tokens_through_assistant_EOS": 750,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "4k3/P7/8/8/8/8/8/4K3 w - - 0 1",
+      "move": "a7a8q",
+      "prompt_tokens": 700,
+      "full_native_joint_tokens": 748,
+      "training_joint_tokens_through_assistant_EOS": 747,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "1r2k3/P7/8/8/8/8/8/4K3 w - - 0 1",
+      "move": "a7b8n",
+      "prompt_tokens": 702,
+      "full_native_joint_tokens": 752,
+      "training_joint_tokens_through_assistant_EOS": 751,
+      "supervised_JSON_plus_EOS_tokens": 49,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "4k3/8/8/8/8/8/p7/4K3 b - - 0 1",
+      "move": "a2a1q",
+      "prompt_tokens": 700,
+      "full_native_joint_tokens": 748,
+      "training_joint_tokens_through_assistant_EOS": 747,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "4k3/8/8/8/8/8/4B3/4R1K1 w - - 0 1",
+      "move": "e2f3",
+      "prompt_tokens": 703,
+      "full_native_joint_tokens": 751,
+      "training_joint_tokens_through_assistant_EOS": 750,
+      "supervised_JSON_plus_EOS_tokens": 47,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    },
+    {
+      "fen": "4k3/8/3p4/8/4N3/8/8/4K3 w - - 0 1",
+      "move": "e4d6",
+      "prompt_tokens": 703,
+      "full_native_joint_tokens": 752,
+      "training_joint_tokens_through_assistant_EOS": 751,
+      "supervised_JSON_plus_EOS_tokens": 48,
+      "native_prefix_match": true,
+      "post_EOS_newline_omitted": true
+    }
+  ],
+  "minimum_prompt_tokens": 700,
+  "maximum_prompt_tokens": 712,
+  "minimum_target_tokens": 47,
+  "maximum_target_tokens": 49,
+  "parquet_metadata_only": {
+    "rows": 2052447,
+    "row_groups": 5,
+    "columns": [
+      "PuzzleId",
+      "GameId",
+      "FEN",
+      "Moves",
+      "Rating",
+      "RatingDeviation",
+      "Popularity",
+      "NbPlays",
+      "element",
+      "element"
+    ],
+    "selected_rows": 0
+  },
+  "local_model_source_sha256": {
+    "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+    "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+    "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+    "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+    "README.md": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9",
+    "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+    "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+    "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+  },
+  "installed_source_sha256": {
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\models\\qwen3\\modeling_qwen3.py": "ca9535e36ea4e689c76d7d753b91aec9ea00da837fbf223c8ea4c01a3b50cac0",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\loss\\loss_utils.py": "83db16b24ce5c3a0642097624aa9a0ae7eb72445c41d8b4d5059a129862fdbbe"
+  },
+  "reviewed_source_extract_sha256": {
+    "qwen3-forward.py.txt": "d5781edee060e88c9200830aa7429ce225de1b4999fa0e79fe5eaef2eebcb9c6",
+    "causal-lm-loss.py.txt": "29d4d2e248676464b20538093111677703fa0fbecb557b30a4b055a66fb92b46"
+  },
+  "inspection_source_sha256": "94dfc67b1b37b31b5a3c921444c40430108a7f5f6209e6c6e5fd03b648ffdc0f"
+}
