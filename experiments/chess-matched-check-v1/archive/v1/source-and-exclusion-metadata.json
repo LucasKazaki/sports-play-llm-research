@@ -1,0 +1,460 @@
+{
+  "calls": {
+    "GPU": 0,
+    "engine": 0,
+    "network": 0,
+    "new_cohort_selection": 0,
+    "new_pair_enumerations": 0,
+    "new_source_data_row_reads": 0,
+    "pretrained_forwards": 0,
+    "pretrained_weight_loads": 0
+  },
+  "created_utc": "2026-10-15T10:08:50.167272+00:00",
+  "file_bindings_after": {
+    "data/open/chess/autonomy-broker-20260919-v1/acquisition-receipt.json": {
+      "bytes": 1402,
+      "sha256": "a4689d5f2e018d79b3b6e9a9f148d91ad3e6ebb2d305486605b718b5d6b3d839"
+    },
+    "data/open/chess/autonomy-broker-derived-20260919-v1/broker-receipt.json": {
+      "bytes": 1402,
+      "sha256": "a4689d5f2e018d79b3b6e9a9f148d91ad3e6ebb2d305486605b718b5d6b3d839"
+    },
+    "data/open/chess/autonomy-broker-derived-20260919-v1/manifest.json": {
+      "bytes": 52296,
+      "sha256": "3c2cd1adc263a7325294faca409aae3177764990eba1695cec8b8ce53a8f5828"
+    },
+    "data/open/chess/lichess-real-seed-v1/manifest.json": {
+      "bytes": 51523,
+      "sha256": "b515fbfc578dd7b00e2091e6c1a70e130b6e20177958234e4b6ec5042092758f"
+    },
+    "data/private/chess-board-facts-v1/dataset.json": {
+      "bytes": 9621,
+      "sha256": "30bfeeaa812b3c86e819405ebe9ee64a692575d43969139ae1d4fb99a821e51f"
+    },
+    "data/private/chess-classifier-v3/dataset.json": {
+      "bytes": 1972761,
+      "sha256": "7689124a85fac5181f17d6f5fb648840f8cff5e3f3d9f823870e4f2b77fc7256"
+    },
+    "data/private/chess-distill-v1/dataset.json": {
+      "bytes": 210973,
+      "sha256": "8b191767fe56cf5abea4ff9123b25e6899753b23f9bc6eb9bff96be897dd46a9"
+    },
+    "data/private/chess-distill-v1/source-prefix.csv.zst.part": {
+      "bytes": 4194304,
+      "sha256": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056"
+    },
+    "data/private/chess-distill-v2/dataset.json": {
+      "bytes": 784193,
+      "sha256": "59bcdb731ac2e2ba2fd3f8aedabb928738145eaedaee350e3503d772e2debf82"
+    },
+    "data/private/chess-fact-sft-v1/acquisition-v2.json": {
+      "bytes": 3593,
+      "sha256": "3e5dda5647ecfd1d2301b494d7221d615f10eb7db0f8e5a0031c768bbe04f895"
+    },
+    "data/private/chess-fact-sft-v1/cohort/dataset.json": {
+      "bytes": 5855183,
+      "sha256": "ae1cfa3ad6c4e7582fa233d6118f7a4baaaa7dc05d57ee9d6b5807c321bd983c"
+    },
+    "data/private/chess-fact-sft-v1/cohort/dev-inputs.json": {
+      "bytes": 18870,
+      "sha256": "68c02d2d947ee4324c0997eac3c45fbce878f0d33a1456c3a4504a342f7bfca2"
+    },
+    "data/private/chess-fact-sft-v1/cohort/exclusion-registry.json": {
+      "bytes": 2913427,
+      "sha256": "79ae0c7244f3d0bf525988c448dee1b419e35f1fb05845cbec0cccad047824f0"
+    },
+    "data/private/chess-fact-sft-v1/cohort/frozen-data.json": {
+      "bytes": 1648,
+      "sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6"
+    },
+    "data/private/chess-fact-sft-v1/cohort/holdout-inputs.json": {
+      "bytes": 37686,
+      "sha256": "3dda4139c4c6706f7db5c5cf0705a7c617cf2dc0b24f8be99e66819d540b146a"
+    },
+    "data/private/chess-fact-sft-v1/cohort/train-inputs.json": {
+      "bytes": 1204078,
+      "sha256": "a0392a16efe545f9a145ed9f465ed7b619259c1e3eb9225074b19d7e45e432fc"
+    },
+    "data/private/chess-fact-sft-v1/models/base/config.json": {
+      "bytes": 726,
+      "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd"
+    },
+    "data/private/chess-fact-sft-v1/models/base/generation_config.json": {
+      "bytes": 239,
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+    },
+    "data/private/chess-fact-sft-v1/models/base/merges.txt": {
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "data/private/chess-fact-sft-v1/models/base/tokenizer.json": {
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "data/private/chess-fact-sft-v1/models/base/tokenizer_config.json": {
+      "bytes": 9732,
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+    },
+    "data/private/chess-fact-sft-v1/models/base/vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/adapter/adapter_config.json": {
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/manifest.json": {
+      "bytes": 523,
+      "sha256": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc"
+    },
+    "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet": {
+      "bytes": 294920084,
+      "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87"
+    },
+    "data/private/chess-move-only-lm-v4/dataset.json": {
+      "bytes": 1943768,
+      "sha256": "e9f58c898e225fb35684938a2c77ca474fb0317a5e9404b54a7fa3e801083541"
+    },
+    "experiments/chess-fact-sft-v1/protocol.json": {
+      "bytes": 29104,
+      "sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+    },
+    "experiments/chess-rollout-stress-v1/games.pgn": {
+      "bytes": 47501,
+      "sha256": "b7a1c21136073e7a85caa380701c406db6f334dc2b39b131dfa9658e1063dd78"
+    },
+    "experiments/gotham-constructed-middlegame-v1/fact-inputs.json": {
+      "bytes": 198,
+      "sha256": "196150067f48c2fab77fcb6955bab5c0f4608511200111ee4e9720927d45d693"
+    },
+    "experiments/gotham-constructed-middlegame-v1/freeze-manifest.json": {
+      "bytes": 27593,
+      "sha256": "30bd14085aa5966ceb4f3d17bd5c3df6b8f01af43c4b60dd067b4904f085a2b7"
+    },
+    "experiments/gotham-constructed-middlegame-v1/move-inputs.json": {
+      "bytes": 168,
+      "sha256": "9c07908144a51cb18e91354602a1ea5333da457edbee8bf4869eca66a42d1a0e"
+    },
+    "experiments/gotham-constructed-middlegame-v1/protocol.json": {
+      "bytes": 27408,
+      "sha256": "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75"
+    },
+    "experiments/gotham-constructed-middlegame-v1/source-reference.json": {
+      "bytes": 806,
+      "sha256": "747a528d8811c9b52eb61b96550ae15a9005bab8960e1b176f44ba49f50fbd40"
+    },
+    "experiments/gotham-illustrative-v1/fen-inputs.json": {
+      "bytes": 740,
+      "sha256": "255f2ab88c654bb8a1c82c0128552ffb3aefbc796bfe51ca9491f22ae6fd93de"
+    },
+    "experiments/gotham-illustrative-v1/source-ledger.json": {
+      "bytes": 6868,
+      "sha256": "a23babc46d88b3767f185d1c0b1ef362f599896d30e52b06db2c3261f8c8f6e1"
+    },
+    "scripts/chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "scripts/chess_board_fact_diagnostic.py": {
+      "bytes": 27798,
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    "scripts/chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "scripts/chess_fact_sft_intake.py": {
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    }
+  },
+  "file_bindings_before": {
+    "data/open/chess/autonomy-broker-20260919-v1/acquisition-receipt.json": {
+      "bytes": 1402,
+      "sha256": "a4689d5f2e018d79b3b6e9a9f148d91ad3e6ebb2d305486605b718b5d6b3d839"
+    },
+    "data/open/chess/autonomy-broker-derived-20260919-v1/broker-receipt.json": {
+      "bytes": 1402,
+      "sha256": "a4689d5f2e018d79b3b6e9a9f148d91ad3e6ebb2d305486605b718b5d6b3d839"
+    },
+    "data/open/chess/autonomy-broker-derived-20260919-v1/manifest.json": {
+      "bytes": 52296,
+      "sha256": "3c2cd1adc263a7325294faca409aae3177764990eba1695cec8b8ce53a8f5828"
+    },
+    "data/open/chess/lichess-real-seed-v1/manifest.json": {
+      "bytes": 51523,
+      "sha256": "b515fbfc578dd7b00e2091e6c1a70e130b6e20177958234e4b6ec5042092758f"
+    },
+    "data/private/chess-board-facts-v1/dataset.json": {
+      "bytes": 9621,
+      "sha256": "30bfeeaa812b3c86e819405ebe9ee64a692575d43969139ae1d4fb99a821e51f"
+    },
+    "data/private/chess-classifier-v3/dataset.json": {
+      "bytes": 1972761,
+      "sha256": "7689124a85fac5181f17d6f5fb648840f8cff5e3f3d9f823870e4f2b77fc7256"
+    },
+    "data/private/chess-distill-v1/dataset.json": {
+      "bytes": 210973,
+      "sha256": "8b191767fe56cf5abea4ff9123b25e6899753b23f9bc6eb9bff96be897dd46a9"
+    },
+    "data/private/chess-distill-v1/source-prefix.csv.zst.part": {
+      "bytes": 4194304,
+      "sha256": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056"
+    },
+    "data/private/chess-distill-v2/dataset.json": {
+      "bytes": 784193,
+      "sha256": "59bcdb731ac2e2ba2fd3f8aedabb928738145eaedaee350e3503d772e2debf82"
+    },
+    "data/private/chess-fact-sft-v1/acquisition-v2.json": {
+      "bytes": 3593,
+      "sha256": "3e5dda5647ecfd1d2301b494d7221d615f10eb7db0f8e5a0031c768bbe04f895"
+    },
+    "data/private/chess-fact-sft-v1/cohort/dataset.json": {
+      "bytes": 5855183,
+      "sha256": "ae1cfa3ad6c4e7582fa233d6118f7a4baaaa7dc05d57ee9d6b5807c321bd983c"
+    },
+    "data/private/chess-fact-sft-v1/cohort/dev-inputs.json": {
+      "bytes": 18870,
+      "sha256": "68c02d2d947ee4324c0997eac3c45fbce878f0d33a1456c3a4504a342f7bfca2"
+    },
+    "data/private/chess-fact-sft-v1/cohort/exclusion-registry.json": {
+      "bytes": 2913427,
+      "sha256": "79ae0c7244f3d0bf525988c448dee1b419e35f1fb05845cbec0cccad047824f0"
+    },
+    "data/private/chess-fact-sft-v1/cohort/frozen-data.json": {
+      "bytes": 1648,
+      "sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6"
+    },
+    "data/private/chess-fact-sft-v1/cohort/holdout-inputs.json": {
+      "bytes": 37686,
+      "sha256": "3dda4139c4c6706f7db5c5cf0705a7c617cf2dc0b24f8be99e66819d540b146a"
+    },
+    "data/private/chess-fact-sft-v1/cohort/train-inputs.json": {
+      "bytes": 1204078,
+      "sha256": "a0392a16efe545f9a145ed9f465ed7b619259c1e3eb9225074b19d7e45e432fc"
+    },
+    "data/private/chess-fact-sft-v1/models/base/config.json": {
+      "bytes": 726,
+      "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd"
+    },
+    "data/private/chess-fact-sft-v1/models/base/generation_config.json": {
+      "bytes": 239,
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+    },
+    "data/private/chess-fact-sft-v1/models/base/merges.txt": {
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "data/private/chess-fact-sft-v1/models/base/tokenizer.json": {
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "data/private/chess-fact-sft-v1/models/base/tokenizer_config.json": {
+      "bytes": 9732,
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+    },
+    "data/private/chess-fact-sft-v1/models/base/vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/adapter/adapter_config.json": {
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/manifest.json": {
+      "bytes": 523,
+      "sha256": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc"
+    },
+    "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet": {
+      "bytes": 294920084,
+      "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87"
+    },
+    "data/private/chess-move-only-lm-v4/dataset.json": {
+      "bytes": 1943768,
+      "sha256": "e9f58c898e225fb35684938a2c77ca474fb0317a5e9404b54a7fa3e801083541"
+    },
+    "experiments/chess-fact-sft-v1/protocol.json": {
+      "bytes": 29104,
+      "sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+    },
+    "experiments/chess-rollout-stress-v1/games.pgn": {
+      "bytes": 47501,
+      "sha256": "b7a1c21136073e7a85caa380701c406db6f334dc2b39b131dfa9658e1063dd78"
+    },
+    "experiments/gotham-constructed-middlegame-v1/fact-inputs.json": {
+      "bytes": 198,
+      "sha256": "196150067f48c2fab77fcb6955bab5c0f4608511200111ee4e9720927d45d693"
+    },
+    "experiments/gotham-constructed-middlegame-v1/freeze-manifest.json": {
+      "bytes": 27593,
+      "sha256": "30bd14085aa5966ceb4f3d17bd5c3df6b8f01af43c4b60dd067b4904f085a2b7"
+    },
+    "experiments/gotham-constructed-middlegame-v1/move-inputs.json": {
+      "bytes": 168,
+      "sha256": "9c07908144a51cb18e91354602a1ea5333da457edbee8bf4869eca66a42d1a0e"
+    },
+    "experiments/gotham-constructed-middlegame-v1/protocol.json": {
+      "bytes": 27408,
+      "sha256": "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75"
+    },
+    "experiments/gotham-constructed-middlegame-v1/source-reference.json": {
+      "bytes": 806,
+      "sha256": "747a528d8811c9b52eb61b96550ae15a9005bab8960e1b176f44ba49f50fbd40"
+    },
+    "experiments/gotham-illustrative-v1/fen-inputs.json": {
+      "bytes": 740,
+      "sha256": "255f2ab88c654bb8a1c82c0128552ffb3aefbc796bfe51ca9491f22ae6fd93de"
+    },
+    "experiments/gotham-illustrative-v1/source-ledger.json": {
+      "bytes": 6868,
+      "sha256": "a23babc46d88b3767f185d1c0b1ef362f599896d30e52b06db2c3261f8c8f6e1"
+    },
+    "scripts/chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "scripts/chess_board_fact_diagnostic.py": {
+      "bytes": 27798,
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    "scripts/chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "scripts/chess_fact_sft_intake.py": {
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    }
+  },
+  "inspector": {
+    "bytes": 14607,
+    "sha256": "0fe8c68281d8b88e2f681c24c3ac97affa6ba14b7fe72bf0c26527755827b540"
+  },
+  "known_registry": {
+    "bytes": 4502119,
+    "sha256": "418e9eb789c6b220dbe6ea915ddc24521d2bd9abdc6c6050fe1230002afb7d7d"
+  },
+  "parquet_metadata_only": {
+    "columns": [
+      "PuzzleId",
+      "GameId",
+      "FEN",
+      "Moves",
+      "Rating",
+      "RatingDeviation",
+      "Popularity",
+      "NbPlays",
+      "element",
+      "element"
+    ],
+    "field_types": {
+      "FEN": "large_string",
+      "GameId": "string",
+      "Moves": "large_string",
+      "NbPlays": "uint32",
+      "OpeningTags": "list<element: string>",
+      "Popularity": "int8",
+      "PuzzleId": "large_string",
+      "Rating": "uint16",
+      "RatingDeviation": "uint16",
+      "Themes": "list<element: string>"
+    },
+    "new_cohort_rows_selected": 0,
+    "new_pairs_searched": 0,
+    "new_source_rows_read": 0,
+    "row_group_rows": [
+      489997,
+      489997,
+      489997,
+      489997,
+      92459
+    ],
+    "row_groups": 5,
+    "rows": 2052447
+  },
+  "runtime": {
+    "chess": "1.10.0",
+    "chess_source": {
+      "bytes": 147552,
+      "sha256": "0ce2e6977cc63ffb71cbda2caae477d53f9262f3be20091ea7158e220f5e45f2"
+    },
+    "interpreter": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "pgn_source": {
+      "bytes": 58783,
+      "sha256": "3434e182a80fd8dfe9aa0f3a8ae47054eaf14c84963147eeaca5f84495c21e63"
+    },
+    "pyarrow": "26.0.0",
+    "python": "3.12.2 (tags/v3.12.2:6abddd9, Feb  6 2024, 21:26:36) [MSC v.1937 64 bit (AMD64)]",
+    "zstandard": "0.25.0"
+  },
+  "schema": "chess.matched-check.source-exclusion-metadata.v1",
+  "seconds": 7.10899999999674,
+  "source": {
+    "amendment": "data/private/chess-fact-sft-v1/acquisition-v2.json",
+    "amendment_sha256": "3e5dda5647ecfd1d2301b494d7221d615f10eb7db0f8e5a0031c768bbe04f895",
+    "failed_original": "data/private/chess-fact-sft-v1/acquisition.json",
+    "failed_original_retained": true,
+    "failed_reason": "Original32MiB CSV acquisition failed certificate validation; no TLS bypass.",
+    "license_declared": "CC0-1.0",
+    "revision": "461725966ea46898ec6481372a6326de3281bfbd",
+    "scope": "One complete pinned Parquet shard only; not the full884570255byte dataset. Footer shows2052447rows/5rowgroups; no cohort row has been selected in this proposal.",
+    "source_bytes": 294920084,
+    "source_path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+    "source_repo": "Lichess/chess-puzzles",
+    "source_sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "source_url": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet"
+  },
+  "stages": {
+    "exact_primary_registry_reproduced": {
+      "board_keys": 45704,
+      "games": 21704,
+      "illustrative_preboards": 3,
+      "rollout_games": 64,
+      "rollout_plies": 4784
+    },
+    "historical_seed": {
+      "board_keys": 146,
+      "games": 24
+    },
+    "legacy_derived_manifest_union": {
+      "board_keys": 45704,
+      "games": 21704,
+      "manifest_items": 24,
+      "new_board_keys": 0,
+      "new_games": 0
+    },
+    "reconstructed_historical_and_v1_to_v4": {
+      "board_keys": 43474,
+      "games": 21688,
+      "registered_puzzle_rows": 21664,
+      "retained_prefix_rows_replayed": 23374
+    },
+    "with_all_known_fact_selected_successors": {
+      "board_keys": 71448,
+      "games": 30280,
+      "selected_moves_replayed": 8592
+    },
+    "with_all_primary_games_and_both_source_roles": {
+      "board_keys": 62856,
+      "games": 30280,
+      "primary_positions": 8576
+    },
+    "with_known_constructed_board_and_supplied_fact_successor": {
+      "board_keys": 71457,
+      "constructed_preboards": 1,
+      "games": 30280,
+      "given_moves": 1
+    },
+    "with_known_video_histories_and_displayed_successors": {
+      "board_keys": 71455,
+      "displayed_successors": 3,
+      "games": 30280,
+      "history_plies": 16
+    },
+    "with_spent_fact_panel": {
+      "board_keys": 43506,
+      "games": 21704
+    }
+  },
+  "status": "PASS: existing exclusions reconstructed and bound; no new cohort or model call"
+}

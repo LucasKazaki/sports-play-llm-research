@@ -1,0 +1,82 @@
+{
+  "files": {
+    ".gitattributes": {
+      "bytes": 72,
+      "sha256": "308a40fa1d89ae5ea4390b4c9b46a0108b09f171f07898f25d451fa0c69c4e9f"
+    },
+    "README.md": {
+      "bytes": 1077,
+      "sha256": "f1b1e1278e08adec6eda3bcb25a8aee1424d7671c9cb81680cc6d600b2202338"
+    },
+    "archive/v1/FINAL-protocol-PROPOSAL-v1.json": {
+      "bytes": 35758,
+      "sha256": "3c0afc7f4409fd241cbc705df4f571d435de445e8281079b0691a49d3fe084fa"
+    },
+    "archive/v1/feasibility-and-handoff.txt": {
+      "bytes": 3021,
+      "sha256": "cbb8ff3ecc2a4bd6d6255a7f7e5a00da1114e04b0582434ecc57f6c092bdcd38"
+    },
+    "archive/v1/handoff.json": {
+      "bytes": 841,
+      "sha256": "5aa8041b9862b706e0259cdc636ba6c6173478f8abca12e1abf9b208fca1b64a"
+    },
+    "archive/v1/inspect_existing_metadata.py": {
+      "bytes": 14607,
+      "sha256": "0fe8c68281d8b88e2f681c24c3ac97affa6ba14b7fe72bf0c26527755827b540"
+    },
+    "archive/v1/known-history-exclusions.json": {
+      "bytes": 4502119,
+      "sha256": "418e9eb789c6b220dbe6ea915ddc24521d2bd9abdc6c6050fe1230002afb7d7d"
+    },
+    "archive/v1/prepare_protocol_proposal.py": {
+      "bytes": 24476,
+      "sha256": "03ebbc3b912efb768a7cb9c116693df092eaad14d65eb6b202ba5b599b77285d"
+    },
+    "archive/v1/source-and-exclusion-metadata.json": {
+      "bytes": 18423,
+      "sha256": "3c54efc59492de364f8f3d9159b7f014e877c3a98977b5585121092f79c0df52"
+    },
+    "archive/v2/FINAL-protocol-PROPOSAL-v2.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    },
+    "archive/v2/amend_spent_states.py": {
+      "bytes": 17543,
+      "sha256": "ad9926afe431cc8de0659c447adf3bf1d4b49cbd04441f5a80f043dbe9abf4b7"
+    },
+    "archive/v2/amendment-summary.txt": {
+      "bytes": 2112,
+      "sha256": "0a130c1e738ab7930ebb71501fa0a3a86d08481a996bb0e4d639a0987e4cd87d"
+    },
+    "archive/v2/handoff-v2.json": {
+      "bytes": 1636,
+      "sha256": "5168ff9e75f92c7a5cbc06cbcb6e3ff3643b9652ddda5319340591a0991a5b40"
+    },
+    "archive/v2/known-history-exclusions-v2.json": {
+      "bytes": 4506757,
+      "sha256": "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb"
+    },
+    "archive/v2/protocol-amendment-diff-v2.json": {
+      "bytes": 4111,
+      "sha256": "17c4981e79e072440bb9f200262a1b1fcf3764abd9f1b17c3ff65a4df0820544"
+    },
+    "archive/v2/spent-state-amendment-audit-v2.json": {
+      "bytes": 25861,
+      "sha256": "15cbe3a52447ef02ec1af93e498c20035cffadae834da9af4a98eecdeb789118"
+    },
+    "protocol-freeze.json": {
+      "bytes": 1077,
+      "sha256": "22278fc0fa502218ce121af5984fe92c384d41a40e7c0af0e9046b2b9fbabdef"
+    },
+    "protocol.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    },
+    "root-protocol-review.json": {
+      "bytes": 1003,
+      "sha256": "887fb3977fd14148c5b6c0cf0610446df31c6819f8994b702918b7e1c116b171"
+    }
+  },
+  "schema": "chess.matched-check.protocol-artifacts.v1",
+  "scope": "Protocol-first archival bytes; no implementation or new cohort outputs."
+}

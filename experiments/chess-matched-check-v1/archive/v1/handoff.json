@@ -1,0 +1,26 @@
+{
+  "schema": "chess.matched-check.protocol-proposal-handoff.v1",
+  "protocol": {
+    "bytes": 35758,
+    "sha256": "3c0afc7f4409fd241cbc705df4f571d435de445e8281079b0691a49d3fe084fa"
+  },
+  "metadata_report": {
+    "bytes": 18423,
+    "sha256": "3c54efc59492de364f8f3d9159b7f014e877c3a98977b5585121092f79c0df52"
+  },
+  "known_registry": {
+    "bytes": 4502119,
+    "sha256": "418e9eb789c6b220dbe6ea915ddc24521d2bd9abdc6c6050fe1230002afb7d7d"
+  },
+  "inspector": {
+    "bytes": 14607,
+    "sha256": "0fe8c68281d8b88e2f681c24c3ac97affa6ba14b7fe72bf0c26527755827b540"
+  },
+  "proposal_builder": {
+    "bytes": 24476,
+    "sha256": "03ebbc3b912efb768a7cb9c116693df092eaad14d65eb6b202ba5b599b77285d"
+  },
+  "bound_existing_files": 44,
+  "new_selection_or_model_calls": 0,
+  "status": "Proposal requires root review; implementation not started"
+}

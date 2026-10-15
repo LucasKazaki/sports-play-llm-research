@@ -1,0 +1,57 @@
+{
+  "changed_json_paths": [
+    "/created_utc",
+    "/evidence_before_new_work/additional_workspace_bindings",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/fact-input.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/move-input.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/move-raw-closed.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/move-raw-seal.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/outcome-ledger.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/raw-results.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/raw-seal.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/raw/base_classifier_9m.npy",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/raw/selected_classifier_9m_step512.npy",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/sources/illustration_core.py",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/sources/local_backends.py",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/sources/owned_native.py",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/sources/reviewed-source-bindings.json",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/sources/reviewed/chess_fact_sft_common.py",
+    "/evidence_before_new_work/all_frozen_existing_inputs_sha256/data/private/gothamchess/constructed-middlegame-eval-v1/sources/reviewed/chess_native_resources.py",
+    "/evidence_before_new_work/known_registry/bytes",
+    "/evidence_before_new_work/known_registry/path",
+    "/evidence_before_new_work/known_registry/sha256",
+    "/evidence_before_new_work/prior_v1_preserved",
+    "/evidence_before_new_work/spent_state_amendment",
+    "/future_runtime_guards/cpu_intake_maximum_wall_seconds",
+    "/future_runtime_guards/cpu_intake_scope",
+    "/future_runtime_guards/deadline",
+    "/future_runtime_guards/loading_reuse",
+    "/future_runtime_guards/owner",
+    "/known_history_exclusions/constructed",
+    "/known_history_exclusions/final_known_board_keys",
+    "/known_history_exclusions/stages/completed_gotham_first_choices_and_raw_masked_top5_successors",
+    "/model_and_generation/loaded_identity_proof",
+    "/proposed_source_test_scope/separate_runtime",
+    "/schema",
+    "/status"
+  ],
+  "from_protocol": {
+    "bytes": 35758,
+    "sha256": "3c0afc7f4409fd241cbc705df4f571d435de445e8281079b0691a49d3fe084fa"
+  },
+  "schema": "chess.matched-check.protocol-amendment-diff.v2",
+  "summary": "Only completed spent-state bindings/union/stage and root-requested CPU/intake/runtime loader/base-digest proof clarifiers. No new selection, prompt, matching, ranking, denominator, metrics or learned results.",
+  "to_protocol": {
+    "bytes": 42855,
+    "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+  },
+  "unchanged_scientific_sections": [
+    "scientific_status",
+    "fixed_scope",
+    "source",
+    "intake_algorithm",
+    "files_after_future_intake",
+    "evaluation"
+  ],
+  "wording_note": "Final document spacing polish only in already-amended explanatory text; earlier proposed bytes preserved. Executed file-only amendment source/audit and every numerical field remain unchanged."
+}

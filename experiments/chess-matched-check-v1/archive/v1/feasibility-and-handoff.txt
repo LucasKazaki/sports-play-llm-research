@@ -1,0 +1,17 @@
+Matched-check diagnostic: source and exclusion feasibility
+
+Status: FINAL PROPOSAL ONLY. No implementation, new cohort selection or model calls.
+
+The existing pinned 294,920,084-byte Parquet shard was streamed for SHA-256 before and after metadata work and matches 5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87. Its footer has 2,052,447 rows in five row groups. GameId is a string, not a URL; the reviewed suffix parser successfully reconstructs all 8,576 already-selected primary identities. The adapter can request only PuzzleId, GameId, FEN and Moves in deterministic 4,096-row batches. Only the first legal setup token will be used. No source answer tail, rating or theme has a role.
+
+The old retained registry was independently reconstructed exactly: 21,704 known games and 45,704 keys. The additional 24-item broker-derived manifest is entirely within that union. All 8,576 primary games and both source roles produce 30,280 games and 62,856 keys. Replaying all 8,592 known supplied fact moves adds successors to 71,448 keys. Known video histories/displayed successors add seven keys; the immutable constructed preboard and supplied fact successor add two, for 71,457 total. Unknown original video games and upstream pretraining remain unresolved. Current active illustration outputs were not inspected; any additional spent states require a registry amendment before selection.
+
+Format and retained identity/replay routes are feasible. Availability of 32 pairs under the deliberately strict same-origin/piece/capture matching is NOT assessed: no new Parquet data rows or pairs were searched. The protocol proposes a fixed 200,000-row cap, first eligible 32 games in source order, deterministic hash ranking of eligible pairs and label-neutral response order. A shortfall stops with zero model calls; it never relaxes matching or fills using favorable results.
+
+The protocol binds 44 existing inputs, a metadata inspector/report and the exact 4.5 MB known-history registry. It proposes separate additive intake/tests and a root-owned inference-only runner. All primary source, protocol, data, scores and weights remain unchanged. The exact pair/order hash domains use ASCII prefix plus byte 10, avoiding newline-escaping ambiguity. CPU token and independent all-row audits must precede any actual model call.
+
+Metadata research completed in about 7.1 seconds, with zero new cohort rows, engine calls, pretrained loads/forwards, GPU calls or network calls. Rehashing all 44 bound existing files after proposal construction also passed. This is metadata/plan validation, not a new software test suite or evidence that CUDA execution or the pair quota works.
+
+Current protocol: FINAL-protocol-PROPOSAL-v1.json
+Exact sizes and hashes: handoff.json
+The earlier unclarified proposal draft is retained under draft-before-clarifying-edit; the current proposal replaces ambiguous pseudocode hash-prefix escaping with explicit byte 10. No executed cohort or scientific result was changed.
