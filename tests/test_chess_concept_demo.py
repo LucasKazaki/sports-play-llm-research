@@ -1,6 +1,7 @@
 import json, subprocess, sys, tempfile, threading, unittest
 from pathlib import Path
 from urllib.request import urlopen
+from urllib.error import HTTPError
 ROOT = Path(__file__).parents[1]
 sys.path.insert(0, str(ROOT / "prototype"))
 from chess_concept_demo import make_preview_server
@@ -46,6 +47,31 @@ class ChessConceptDemoTests(unittest.TestCase):
             server.shutdown(); thread.join(timeout=3); server.server_close()
     def test_preview_rejects_non_loopback_host(self):
         with self.assertRaises(ValueError): make_preview_server(packet(), "0.0.0.0", 0)
+    def test_preview_assets_and_label_free_development_projection(self):
+        server = make_preview_server(packet(), "127.0.0.1", 0)
+        thread = threading.Thread(target=server.serve_forever); thread.start()
+        base = "http://127.0.0.1:%d" % server.server_port
+        try:
+            for path, content_type, marker in (
+                ("/", "text/html", b"Open development set"),
+                ("/app.css", "text/css", b"prefers-reduced-motion"),
+                ("/app.js", "text/javascript", b"textContent"),
+            ):
+                with urlopen(base + path, timeout=3) as response:
+                    self.assertIn(content_type, response.headers["Content-Type"])
+                    self.assertIn(marker, response.read())
+                    self.assertNotIn("unsafe-inline", response.headers["Content-Security-Policy"])
+            with urlopen(base + "/api/development", timeout=3) as response:
+                source = json.loads(response.read())
+                self.assertEqual(source["selected_count"], 8)
+                self.assertTrue(all(row["split"] == "dev" for row in source["items"]))
+                self.assertTrue(all(not ({"solution", "themes", "rating"} & row.keys()) for row in source["items"]))
+            for path in ("/../AGENTS.md", "/data/open/chess/lichess-real-seed-v1/sample.csv", "/app.js/../AGENTS.md"):
+                with self.assertRaises(HTTPError) as error:
+                    urlopen(base + path, timeout=3)
+                self.assertEqual(error.exception.code, 404)
+        finally:
+            server.shutdown(); thread.join(timeout=3); server.server_close()
     def test_packaged_fixture_fails_closed(self):
         result = subprocess.run([sys.executable, str(DEMO), "--packet", str(FIXTURE)], cwd=ROOT, text=True, capture_output=True)
         self.assertEqual(result.returncode, 2)

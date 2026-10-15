@@ -1,0 +1,10 @@
+# Bounded Windows Python 3.12 pilot; isolated from the historical soccer lock.
+# Install torch separately from https://download.pytorch.org/whl/cu128
+torch==2.8.0
+transformers==5.19.0
+huggingface_hub==2.2.0
+chess==1.10.0
+numpy==2.5.4
+requests==2.34.2
+zstandard==0.25.0
+pytest==9.1.1

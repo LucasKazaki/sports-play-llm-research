@@ -1,0 +1,23 @@
+{
+  "schema": "sports-play-llm.chess.creator-media-software-checks.v1",
+  "command": [
+    ".venv-soccernet\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_collect_gothamchess_media.py",
+    "tests/test_collect_gothamchess_metadata.py",
+    "-q"
+  ],
+  "python_version": "3.12.2",
+  "returncode": 0,
+  "stdout": "........................                                                 [100%]\n24 passed in 0.19s\n",
+  "stderr": "",
+  "source_sha256": {
+    "scripts/collect_gothamchess_media.py": "c359fa3d6a47db9f84415c248c4bba5753e6964a8b43dbcdc15240ca1cb20fa1",
+    "tests/test_collect_gothamchess_media.py": "eaa7aba3d1f8dbef31dcae4f74407981142dcd8e7d83290f7ef3ff9501ae87ac",
+    "scripts/collect_gothamchess_metadata.py": "3746e3dbcf5f28c1a9d5ec0f5a01eca1fca6e35f7bde32a5f3b01e5dc2351469",
+    "tests/test_collect_gothamchess_metadata.py": "7b200e33d14460d39e90f554175ff5ef5063c02008acb6b4367278375a7e03c4"
+  },
+  "scope": "offline software control-flow tests; separate actual media provenance in research/gothamchess-private-benchmark-2026-10-15.json",
+  "independent_promotion_review": "not_performed"
+}

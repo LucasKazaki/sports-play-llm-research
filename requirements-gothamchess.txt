@@ -1,0 +1,2 @@
+# Optional private-source acquisition helper. FFmpeg is installed separately.
+yt-dlp==2026.8.19

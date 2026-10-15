@@ -1,5 +1,18 @@
 # Research Action Plan
 
+## Native chess experiments — October 15, 2026
+
+[Two completed weight-training pilots](../reports/chess-training-2026-10-15.md)
+reduced teacher agreement; retain the corrected native-format base specialist as
+the executable default. Next compare move-only classification/candidate scoring
+with a matched-representation general-model control on newly frozen games.
+Preserve both negative results and spent holdouts. Predicted scores are not
+engine observations, and the commentary capability gate remains open.
+
+The real evidence inspector and three private GothamChess downloads are ready
+for local review. Video-derived positions still need complete source-game
+verification and legal replay before entering an observational challenge set.
+
 ## Current finite repair — September 22, 20:29 UTC
 
 The strict no-forward input boundary is now implemented and source-reviewed. It has 50 new passing tests and eight retained real-development input packets, with no model calls or commentary quality result. Read [the current handoff](chess-no-forward-input-2026-09-22.md). Next implement the local generation runner and durable raw-output/failure retention using this boundary, with meaningful fake-transport tests before any live request. The broader frozen factuality experiment remains open. Earlier missing-boundary directions below describe prior state.

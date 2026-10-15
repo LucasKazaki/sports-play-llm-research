@@ -12,7 +12,14 @@ from chess_concept_schema_validator import validate_position
 
 LOOPBACK_HOST = "127.0.0.1"
 
-PREVIEW_HTML = """<!doctype html><html lang="en"><meta charset="utf-8"><title>Chess Concept Model — local preview</title><style>body{font-family:system-ui,sans-serif;max-width:56rem;margin:2rem auto;padding:0 1rem;color:#16202a;background:#f7fafc}h1{margin-bottom:.25rem}.notice{padding:1rem;border-left:5px solid #9a3412;background:#fff7ed}pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#0f172a;color:#e2e8f0;padding:1rem;border-radius:.4rem}</style><body><h1>Chess Concept Model</h1><p>Evidence-only local preview. This screen does not run a chess engine or a language model.</p><div id="status" class="notice">Loading the local, fixed packet…</div><pre id="payload" aria-label="Review payload"></pre><script>const status=document.getElementById('status'),payload=document.getElementById('payload');fetch('/api/review',{cache:'no-store'}).then(r=>r.json()).then(data=>{status.textContent=data.reason==='local_generator_not_configured'?'Validated packet; the configured result is an intentional abstention.':'Preview blocked safely: '+data.reason;payload.textContent=JSON.stringify(data,null,2);}).catch(error=>{status.textContent='Preview request failed safely.';payload.textContent=String(error);});</script></body></html>"""
+UI_ROOT = Path(__file__).with_name("chess_demo_ui")
+UI_FILES = {
+    "/": ("index.html", "text/html; charset=utf-8"),
+    "/app.css": ("app.css", "text/css; charset=utf-8"),
+    "/app.js": ("app.js", "text/javascript; charset=utf-8"),
+}
+DEVELOPMENT_SOURCE = Path(__file__).parents[1] / "data/open/chess/lichess-real-seed-v1/dev-source-projection-v1.json"
+
 
 def board_rows(fen):
     rows = []
@@ -54,11 +61,22 @@ def make_preview_server(packet, host=LOOPBACK_HOST, port=8782):
         def _send(self, status, content_type, body):
             self.send_response(status); self.send_header("Content-Type", content_type)
             self.send_header("Cache-Control", "no-store"); self.send_header("X-Content-Type-Options", "nosniff")
-            self.send_header("Content-Security-Policy", "default-src 'self'; connect-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; frame-ancestors 'none'")
+            self.send_header("Content-Security-Policy", "default-src 'none'; connect-src 'self'; style-src 'self'; script-src 'self'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'")
             self.send_header("Content-Length", str(len(body))); self.end_headers(); self.wfile.write(body)
         def do_GET(self):
             path = urlparse(self.path).path
-            if path == "/": self._send(200, "text/html; charset=utf-8", PREVIEW_HTML.encode("utf-8"))
+            if path in UI_FILES:
+                name, content_type = UI_FILES[path]
+                try:
+                    self._send(200, content_type, (UI_ROOT / name).read_bytes())
+                except OSError:
+                    self._send(503, "application/json; charset=utf-8", b'{"error":"preview_asset_unavailable"}')
+            elif path == "/api/development":
+                # Exact label-free historical development projection only; no arbitrary file access.
+                try:
+                    self._send(200, "application/json; charset=utf-8", DEVELOPMENT_SOURCE.read_bytes())
+                except OSError:
+                    self._send(503, "application/json; charset=utf-8", b'{"error":"development_source_unavailable"}')
             elif path == "/api/review": self._send(200, "application/json; charset=utf-8", payload)
             elif path == "/health": self._send(200, "application/json; charset=utf-8", b'{"status":"ok","scope":"loopback-only"}')
             else: self._send(404, "application/json; charset=utf-8", b'{"error":"not_found"}')

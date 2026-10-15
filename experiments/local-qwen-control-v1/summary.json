@@ -1,0 +1,75 @@
+{
+  "schema": "chess.local-ollama-control.v1",
+  "model": {
+    "name": "qwen3.8-27b-local-q2k:latest",
+    "model": "qwen3.8-27b-local-q2k:latest",
+    "modified_at": "2026-09-27T01:44:25.8802945-04:00",
+    "size": 11792211469,
+    "digest": "7b0c2ef4e855aa2ea19d0a4d892311961e2710243ea624c300e6ccaa50ffeee2",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen35",
+      "families": [
+        "qwen35"
+      ],
+      "parameter_size": "27.3B",
+      "quantization_level": "Q2_K",
+      "context_length": 262144,
+      "embedding_length": 5120
+    },
+    "capabilities": [
+      "tools",
+      "thinking",
+      "completion",
+      "vision"
+    ]
+  },
+  "model_details": {
+    "parent_model": "",
+    "format": "gguf",
+    "family": "qwen35",
+    "families": [
+      "qwen35"
+    ],
+    "parameter_size": "27.3B",
+    "quantization_level": "Q2_K"
+  },
+  "labels_sha256": "8c310191248dd67f0685b40c569ce0ddfcb9fb5ec2404f5dc3237ddc69febb41",
+  "declared_before_generation": {
+    "count_per_condition": 4,
+    "conditions": [
+      "fen_only",
+      "board_and_legal_moves"
+    ],
+    "options": {
+      "temperature": 0,
+      "seed": 4082026,
+      "num_predict": 96,
+      "num_ctx": 4096
+    },
+    "think": false,
+    "source": "first four development positions; no holdout",
+    "weights_updated": false
+  },
+  "limitations": [
+    "Four-position development smoke test; no strength or population estimate.",
+    "Legal-move-list input is tool assisted; report separately from FEN-only control.",
+    "No weight updates; installed model display alias is preserved alongside backend family and digest."
+  ],
+  "conditions": {
+    "fen_only": {
+      "count": 4,
+      "raw_legal_count": 0,
+      "top1_match_count": 0,
+      "completed": 4
+    },
+    "board_and_legal_moves": {
+      "count": 4,
+      "raw_legal_count": 4,
+      "top1_match_count": 1,
+      "completed": 4
+    }
+  },
+  "raw_receipt_sha256": "c405f8d4ed89d4cbf4bf8b1e56cf86b906367bfd56a5dc430a450850606f308f"
+}

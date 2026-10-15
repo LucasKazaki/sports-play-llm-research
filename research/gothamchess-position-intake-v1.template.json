@@ -1,0 +1,65 @@
+{
+  "schema": "sports-play-llm.chess.creator-position-intake.v1",
+  "status": "template_not_an_observation",
+  "position_id": null,
+  "source": {
+    "youtube_id": null,
+    "watch_url": null,
+    "timestamp_seconds": null,
+    "media_sha256": null,
+    "original_game_id": null,
+    "source_type": null,
+    "pgn_url": null,
+    "pgn_private_path": null,
+    "pgn_sha256": null,
+    "applicable_rights_record": null,
+    "visible_board_frame_private_path": null,
+    "visible_board_frame_sha256": null,
+    "editorial_variation_ruled_out": false
+  },
+  "replay": {
+    "initial_fen": null,
+    "mainline_moves_before_position_uci": [],
+    "pre_move_fen": null,
+    "side_to_move": null,
+    "observed_played_move_uci": null,
+    "legal_replay_passed": false,
+    "replay_tool_version": null,
+    "original_game_fingerprint_sha256": null
+  },
+  "manual_validation": {
+    "status": "not_reviewed",
+    "reviewer": null,
+    "reviewed_at_utc": null,
+    "board_matches_video": false,
+    "move_matches_video": false,
+    "castling_en_passant_and_move_counters_checked": false,
+    "notes": null
+  },
+  "split": {
+    "role": "sealed_observational_holdout",
+    "unit": "entire_original_game",
+    "training_allowed": false,
+    "development_tuning_allowed": false,
+    "training_game_manifest_sha256": null,
+    "development_game_manifest_sha256": null,
+    "original_game_exclusion_check_receipt": null,
+    "position_hash_exclusion_check_receipt": null
+  },
+  "generator_input_allowlist": [
+    "pre_move_fen",
+    "side_to_move"
+  ],
+  "evaluator_only_fields": [
+    "observed_played_move_uci",
+    "future_moves",
+    "engine_principal_variation",
+    "post_move_fen",
+    "video_transcript",
+    "creator_commentary",
+    "solution_or_theme",
+    "teacher_rationale"
+  ],
+  "evaluation_protocol_sha256": null,
+  "evaluation_status": "not_eligible"
+}

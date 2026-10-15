@@ -1,5 +1,29 @@
 # SportsPlayLLMResearch
 
+## Local chess execution — October 15, 2026
+
+Real Windows/CUDA execution now includes pinned ROOK-LM-124m inference,
+Stockfish-supervised weight training, complete before/after comparisons, and an
+[evidence inspector](prototype/chess_demo_ui/README.md). See the
+[experiment report](reports/chess-training-2026-10-15.md) and versioned summaries
+under `experiments/stockfish-distill-v*/`.
+
+The corrected native-format **base** specialist produced 255 legal actions on
+256 new development/holdout positions, matching the bounded Stockfish teacher on
+57. Both fine-tuning pilots reduced move agreement; neither trained checkpoint
+replaces the base model. These observations do not establish Elo, commentary
+quality, or sports competence.
+
+Three recent GothamChess AI-bot videos were acquired with the Python yt-dlp
+library in ignored private local storage. [Source provenance and benchmark
+intake](research/gothamchess-benchmark-intake-v1.md) are versioned; no creator
+video/transcript is committed or used as training data. No video-derived position
+has passed source-game and legal-state verification yet.
+
+The new chess-only environment used installed Python 3.12.2; the historical
+soccer bootstrap and Python 3.11 lock below remain unchanged. Implementation and
+candidate notes were prepared with Codex assistance and remain review candidates.
+
 ## Current authority — September 22, 18:28 UTC
 
 Stay within chess until [the no-forward commentary capability gate](research/chess-commentary-capability-gate-v1.md) is independently satisfied. A generator must never receive engine PV tails, post-move FENs, future moves/features, solution/theme or answer labels, annotations or evaluator-only material. The legacy forward-assisted prototype is not a no-forward candidate. Internal implementation and review use registered local agents and the native executor; do not activate cloud roles merely for activity. Professional-commentator claims and board-game expansion remain gated. Earlier soccer/transfer and assisted-generation directions below are historical where they conflict with this authority.
