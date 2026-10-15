@@ -1,5 +1,15 @@
 # SportsPlayLLMResearch
 
+## Move-only classifier pilot v3 — October 15, 2026
+
+The [new local classifier experiment](reports/chess-classifier-v3-2026-10-15.md)
+trained real weights on the RTX 5080 after eight CPU workers generated 8,704
+Stockfish labels. A development-selected checkpoint improved heldout raw teacher
+agreement from 142/256 to 167/256, while raw legality fell from 256/256 to 254/256.
+It remains an experimental move-policy candidate, with no automatic default
+replacement, Elo or commentary claim. Raw and legal-mask results stay separate.
+The v1/v2 negative language-model pilots below remain preserved.
+
 ## Local chess execution — October 15, 2026
 
 Real Windows/CUDA execution now includes pinned ROOK-LM-124m inference,

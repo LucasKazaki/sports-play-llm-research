@@ -1,0 +1,18 @@
+{
+  "python_focused": {
+    "passed": 133,
+    "failed": 0,
+    "test_log_sha256": "185fcb39178417c56784cbd5ce803170cae5ca8abc446d631b0bed3f5ce04ba9"
+  },
+  "frozen_run_independent_audit": {
+    "recomputed_logit_rows": 1536,
+    "initial_hash_checks": 29,
+    "exact_split_reconstruction": true
+  },
+  "adapter_differential_fens": 261,
+  "post_run_fixes": [
+    "missing checkpoint metadata packaged with unchanged weights",
+    "future model exception/shape failure accounting tested without regenerating frozen holdout"
+  ],
+  "full_repository_suite_claimed": false
+}
