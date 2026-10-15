@@ -1,0 +1,11 @@
+{
+  "closed_sha256": "3a050b0ddd94c3e706bfca8987c380e3cde5a649f5b5d47548e4df61213e09e5",
+  "rows": 4,
+  "conditions": [
+    "base_classifier_9m",
+    "selected_classifier_9m_step512",
+    "base_language_policy_124m",
+    "selected_language_policy_124m_v4_step2048"
+  ],
+  "fact_payload_opened": false
+}

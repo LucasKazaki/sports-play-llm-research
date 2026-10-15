@@ -1,0 +1,152 @@
+{
+  "schema": "gotham.constructed-middlegame.result-summary.v1",
+  "utc": "2026-10-15T10:13:50.129193+00:00",
+  "status": "one_audited_illustration_no_promotion",
+  "freeze_commit": "55fc2901142cd84c8a59785b7f0526f529eb074a",
+  "source": {
+    "private_ledger_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\gothamchess\\middlegame-supplement-v1\\candidate-ledger.json",
+    "private_ledger_sha256": "6be315b055b4725b1390076795975be70b5a80a348d6b878db260cd5409723e5",
+    "media_sha256": "56e035edc9fc121f4b94d00bda71cc81d88ff8069f870ec8edd0d1fee81f8afe",
+    "source_url": "https://www.youtube.com/watch?v=sskvj1_ehx4&t=620s",
+    "source_original_game_identity": null,
+    "full_observed_FEN": null,
+    "constructed_FEN": "r2r2k1/pb2qppp/1p2p3/4P3/2B5/2R5/PP2QPPP/3R2K1 w - - 0 1",
+    "counters": "0/1 computational convention only; never claimed observed",
+    "accepted_holdout": false,
+    "source_history_mainline_unresolved": true,
+    "source_media_frames_audio_transcript_copied": false
+  },
+  "planned_outcomes": 6,
+  "completed_raw": 6,
+  "errors": 0,
+  "not_run": 0,
+  "family_pairs": [
+    {
+      "family": "classifier_9m",
+      "task": "move_policy",
+      "base": "base_classifier_9m",
+      "selected": "selected_classifier_9m_step512"
+    },
+    {
+      "family": "move_language_policy_124m",
+      "task": "move_policy",
+      "base": "base_language_policy_124m",
+      "selected": "selected_language_policy_124m_v4_step2048"
+    },
+    {
+      "family": "fact_language_model_0_6b",
+      "task": "given_move_immediate_facts",
+      "base": "base_fact_lm_0_6b_adapter_disabled",
+      "selected": "selected_fact_lm_0_6b"
+    }
+  ],
+  "conditions": {
+    "base_classifier_9m": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "selected_classifier_9m_step512": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "d1d8",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "base_language_policy_124m": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "selected_language_policy_124m_v4_step2048": {
+      "task": "move_policy",
+      "planned": 1,
+      "raw_uci": "c3d3",
+      "raw_legal": true,
+      "matches_displayed_move": false,
+      "raw_status": "completed"
+    },
+    "base_fact_lm_0_6b_adapter_disabled": {
+      "task": "given_move_immediate_facts",
+      "planned": 1,
+      "strict_parse_completed": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      },
+      "all_eight_correct": false,
+      "raw_status": "completed"
+    },
+    "selected_fact_lm_0_6b": {
+      "task": "given_move_immediate_facts",
+      "planned": 1,
+      "strict_parse_completed": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      },
+      "all_eight_correct": true,
+      "raw_status": "completed"
+    }
+  },
+  "move_interpretation": "Each of four raw choices is legal and differs from displayedRh3. Displayed move agreement is observational; alternatives are not labelled incorrect play. No engine-quality or common accuracy score.",
+  "fact_interpretation": "GivenRh3 is a distinct task. Selected model returns the exact schema with all8 immediate facts correct on this one noncapture/noncheck/nonpromotion rook move. Base response fails exact schema; no partial repair. This does not measure strategic ideas.",
+  "primary_failures_remain": {
+    "report": "reports/chess-fact-sft-v1-2026-10-15.md",
+    "selected_positive_check_correct": 0,
+    "selected_positive_check_support": 13,
+    "selected_positive_promotion_correct": 0,
+    "selected_positive_promotion_support": 1,
+    "summary_sha256": "cded9c9fc9125a9e69b9223e31354ef05e4508445836bc98a47c2d7c7701107e",
+    "interpretation": "Easy negative-class illustration does not repair the existing primary heldout check/promotion failures. No re-selection/retraining or primary rerun occurred."
+  },
+  "owned_execution": {
+    "pid": 30536,
+    "terminal_exit_code": 0,
+    "elapsed_seconds": 29.797000000005937,
+    "forced_termination": false,
+    "resource_cancel": false
+  },
+  "resources": {
+    "preflight_samples": 10,
+    "running_samples": 17,
+    "max_running_sample_gap_seconds": 1.0470000000059372,
+    "max_preflight_and_running_UTC_sample_gap_seconds": 1.0508010387420654,
+    "minimum_running_physical_available_bytes": 10924072960,
+    "minimum_running_commit_headroom_bytes": 17195888640,
+    "minimum_running_GPU_free_bytes": 13404995584,
+    "timing_limit": "Ownership started_monotonic marks whole-job entry including preflight; running gaps use retained running samples, combined gaps use sampler UTC. Resource observations are sampled, not instantaneous peaks."
+  },
+  "raw_seal_sha256": "25af8a8a8a0578935f1585b8040c3b27a75a2a03b9bf01c40bded3a0359f5cb9",
+  "evaluation_sha256": "b888293ce1a587346a6b34dd1195296f41d6492e79738befc612c07ea4a937ca",
+  "evidence_manifest_sha256": "5b33549a3a5cd8844560b12ac5606a5ff12940b6a36f950f85802f7105d91bcb",
+  "independent_retained_review_sha256": "4bd2abd5ee1dea8e7a3c204ee7e6bc5512f193c24794bbf94578f4264fcd893d",
+  "pre_call_package_manifest_sha256": "fa324ab7a85b52b7e6e288fc966ea2d50c8bbbef4209e546081e072d405009df",
+  "limits": [
+    "Constructed computational counters0/1; original game, full history and mainline unresolved.",
+    "Unknown source-game and upstream-pretraining overlap. Zero accepted holdout positions.",
+    "No pooled move-choice/given-move-fact accuracy, statistical generalization, best-play, ideas, strength, Elo or commentary claim.",
+    "The two124m generations reach the16-token cap; first-M parser still scores their first token under the frozen policy.",
+    "Resource figures are sampled observations, not instantaneous or sustained peaks."
+  ],
+  "assistance": "Codex-assisted research engineering; no human-only authorship or formal research promotion claimed."
+}

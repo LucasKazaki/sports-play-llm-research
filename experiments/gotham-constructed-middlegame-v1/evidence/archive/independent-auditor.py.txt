@@ -1,0 +1,174 @@
+"""Independent retained-file recount. Loads tokenizers on CPU, never weights."""
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import re
+import sys
+import chess
+import numpy as np
+
+ROOT=Path(__file__).resolve().parent.parent
+REPO=ROOT/'work/repos/sports-play-llm-research'
+RUN=REPO/'data/private/gothamchess/constructed-middlegame-eval-v1'
+PACKAGE=REPO/'experiments/gotham-constructed-middlegame-v1'
+WORK=ROOT/'work/gotham-constructed-middlegame-runner-v1'
+sys.path.insert(0,str(WORK))
+import illustration_core as reviewed
+
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def read(path):return json.loads(Path(path).read_text(encoding='utf-8'))
+def within(root,name):
+    path=(root/name).resolve();path.relative_to(root.resolve());return path
+
+seal=read(RUN/'raw-seal.json')
+assert sha(RUN/'raw-seal.json')=='25af8a8a8a0578935f1585b8040c3b27a75a2a03b9bf01c40bded3a0359f5cb9'
+assert seal['planned']==6 and seal['conditions']==list(reviewed.CONDITIONS) and seal['evaluator_opened'] is False
+for name,digest in seal['files_sha256'].items():assert sha(within(RUN,name))==digest
+raw=read(RUN/'raw-results.json');rows=raw['rows']
+assert raw['planned']==6 and raw['accepted_holdout'] is False and len(rows)==6
+assert [r['condition'] for r in rows]==list(reviewed.CONDITIONS)
+assert rows==read(RUN/'outcome-ledger.json')['rows']
+assert all(r['status']=='completed' and r['attempted'] is True and r['cancelled_after_return'] is False for r in rows)
+plan=read(RUN/'plan.json');extension=read(RUN/'execution-extension.json')
+assert sha(RUN/'plan.json')==reviewed.PLAN_SHA
+assert sha(RUN/'execution-extension.json')=='9df1a3fe206f7c2b5d356d4fbf73815d10b7ec9c34fa619b897f56c05f5627bb'
+for name,digest in extension['source_sha256'].items():
+    assert sha(WORK/name)==sha(RUN/'sources'/name)==digest
+closed=read(RUN/'move-raw-closed.json');move_seal=read(RUN/'move-raw-seal.json')
+assert closed['rows']==rows[:4] and closed['fact_payload_opened'] is False and closed['forbid_further_move_calls'] is True
+assert move_seal['closed_sha256']==sha(RUN/'move-raw-closed.json')
+opened=read(RUN/'fact-input-opened.json');assert opened['move_seal_sha256']==sha(RUN/'move-raw-seal.json')
+move_row=read(RUN/'move-input.json')['positions'][0];fact_row=read(RUN/'fact-input.json')['positions'][0]
+assert set(move_row)=={'case_id','fen'} and set(fact_row)=={'case_id','fen','selected_uci'}
+assert {k:fact_row[k] for k in move_row}==move_row
+assert sha(plan['input_files']['move_policy']['path'])==plan['input_files']['move_policy']['sha256']
+assert sha(plan['input_files']['immediate_facts']['path'])==opened['fact_sha256']==plan['input_files']['immediate_facts']['sha256']
+assert fact_row['fen']==plan['admission']['constructed_full_FEN'] and fact_row['fen'].split()[-2:]==['0','1']
+board=chess.Board(move_row['fen']);assert board.is_valid() and not board.is_game_over()
+legal={m.uci() for m in board.legal_moves}
+supervision=read(RUN/'supervision.json');ownership=read(RUN/'ownership.json');identity=read(RUN/'worker-identity.json')
+assert supervision['exit_code']==0 and supervision['child_launched'] and not supervision['forced_owned_termination']
+assert supervision['issues']==[] and supervision['failure'] is None and supervision['elapsed_seconds']<600
+assert identity['pid']==ownership['pid'] and identity['torch_imported'] is False
+for key in ('base_executable','venv_executable','venv_prefix','dependency_versions'):
+    assert identity[key]==ownership['native_launch_identity'][key]
+preflight=read(RUN/'preflight.json');samples=[json.loads(line) for line in (RUN/'resources.jsonl').read_text().splitlines()]
+assert preflight['status']=='passed' and len(preflight['samples'])==10 and len(samples)==17
+GIB=1024**3
+for group,limits in ((preflight['samples'],(10,16,13)),(samples,(4,8,1))):
+    for sample in group:
+        available=(sample['physical_available_bytes'],sample['commit_limit_bytes']-sample['commit_total_bytes'],sample['gpu_free_bytes'])
+        assert all(value>=minimum*GIB for value,minimum in zip(available,limits))
+gaps=[b['monotonic']-a['monotonic'] for a,b in zip(samples,samples[1:])]
+assert all(0<=gap<=3 for gap in gaps)
+
+# All raw/source/resource checks above precede evaluator-only truth access.
+target_path=Path(plan['evaluator_separation']['path'])
+assert sha(target_path)==plan['evaluator_separation']['sha256']
+label=read(target_path)['positions'][0]
+assert label['case_id']==fact_row['case_id'] and label['next_displayed_move_uci']==fact_row['selected_uci']
+move=chess.Move.from_uci(fact_row['selected_uci']);assert move in board.legal_moves
+piece=board.piece_at(move.from_square);ep=board.is_en_passant(move)
+victim=board.piece_at(move.to_square)
+after=board.copy(stack=False);after.push(move)
+truth={'moving_piece':chess.piece_name(piece.piece_type),'moving_colour':'white' if piece.color else 'black',
+       'is_capture':board.is_capture(move),'captured_piece':'pawn' if ep else chess.piece_name(victim.piece_type) if victim else None,
+       'gives_check':after.is_check(),'is_castling':board.is_castling(move),'is_en_passant':ep,
+       'promotion_piece':chess.piece_name(move.promotion) if move.promotion else None}
+assert label['immediate_facts']==truth
+
+def strict_facts(text):
+    def unique(pairs):
+        result={}
+        for key,value in pairs:
+            if key in result:raise ValueError('duplicate')
+            result[key]=value
+        return result
+    def invalid(_):raise ValueError('nonfinite')
+    obj=json.loads(text,object_pairs_hook=unique,parse_constant=invalid)
+    if not isinstance(obj,dict) or set(obj)!=set(truth):raise ValueError('fields')
+    for field in ('is_capture','gives_check','is_castling','is_en_passant'):
+        if type(obj[field]) is not bool and obj[field]!='unknown':raise ValueError('boolean type')
+    for field in ('moving_piece','captured_piece','promotion_piece'):
+        allowed={'pawn','knight','bishop','rook','queen','king','unknown'}
+        if field=='promotion_piece':allowed={'queen','rook','bishop','knight','unknown',None}
+        elif field=='captured_piece':allowed.add(None)
+        if obj[field] not in allowed:raise ValueError('piece enum')
+    if obj['moving_colour'] not in ('white','black','unknown'):raise ValueError('colour')
+    return obj
+
+for bad in (json.dumps({**truth,'gives_check':0}),json.dumps({**truth,'extra':False}),'{}',
+            json.dumps(truth)[:-1]+',"gives_check":false}'):
+    try:strict_facts(bad)
+    except (ValueError,TypeError):pass
+    else:raise AssertionError('strict-parser negative fixture accepted')
+
+from transformers import AutoTokenizer
+common,facts,adapter=reviewed.reviewed_modules()
+results={};token_replays=[]
+for row in rows:
+    name=row['condition'];encoded=row['encoded']
+    if name in reviewed.MOVES[:2]:
+        info=plan['conditions'][name];contract=adapter.load_native_contract(REPO/info['private_model_directory'])
+        # Independently reconstruct the literal native FEN character layout.
+        placement,turn,castle,ep_field,half,full=move_row['fen'].split()
+        text=''.join('.'*int(c) if c.isdigit() else c for c in placement if c!='/')+turn+castle.ljust(4,'.')+ep_field.ljust(2,'.')+half.ljust(2,'.')+'.'+full.ljust(3,'.')
+        ids=[contract['vocab'][c] for c in text]+[34]
+        assert encoded=={'input_ids':ids,'attention_mask':[1]*78}
+        artifact=row['logit_artifact'];vector=np.load(RUN/artifact['path'],allow_pickle=False)
+        assert vector.shape==(1968,) and vector.dtype==np.float32 and np.isfinite(vector).all()
+        mapping=row['id2label'];assert mapping==list(contract['id2label'])
+        order=sorted(range(1968),key=lambda i:(-float(vector[i]),i))
+        def record(i):return {'class_id':i,'move_uci':mapping[i],'logit':float(vector[i]),'legal':mapping[i] in legal}
+        assert row['raw']['raw_topk']==[record(i) for i in order[:5]]
+        assert row['raw']['legal_topk']==[record(i) for i in order if mapping[i] in legal][:5]
+        chosen=mapping[order[0]];assert row['raw']['raw_choice_uci']==chosen
+    else:
+        directory=REPO/(plan['conditions'][name]['private_model_directory'] if name in reviewed.MOVES else extension['native_base_directory'])
+        tokenizer=AutoTokenizer.from_pretrained(directory,local_files_only=True,trust_remote_code=False)
+        config=read(directory/'config.json')
+        if name in reviewed.MOVES:
+            prompt=f"P: {move_row['fen']:90}M:"
+            ids=tokenizer(prompt,add_special_tokens=False)['input_ids']
+            assert encoded=={'input_ids':ids,'attention_mask':[1]*len(ids),'prompt':prompt}
+            prediction=row['returned_prediction'];new=row['new_ids']
+            assert prediction['full_generated_ids']==ids+new and len(new)<=16
+            assert all(type(t) is int and 0<=t<config['vocab_size'] for t in new)
+            assert row['text']==tokenizer.decode(new,skip_special_tokens=True)
+            first=row['text'].strip()
+            if first.startswith('M:'):first=first[2:].strip()
+            chosen=first.split()[0] if first.split() else None
+            if chosen is not None and re.fullmatch(r'[a-h][1-8][a-h][1-8][qrbn]?',chosen) is None:chosen=None
+            assert chosen==row['raw_uci'] and row['raw_legal']==(chosen in legal)
+        else:
+            ids=common.native_prompt(tokenizer,fact_row)
+            assert encoded=={'input_ids':ids,'attention_mask':[1]*len(ids)}
+            new=row['new_ids'];assert row['full_generated_ids']==ids+new and len(new)<=128
+            assert all(type(t) is int and 0<=t<config['vocab_size'] for t in new)
+            end=new.index(151645);assert all(t==151643 for t in new[end+1:])
+            assert row['text']==tokenizer.decode(new[:end],skip_special_tokens=False)
+            assert row['adapter_disabled']==(name==reviewed.FACTS[0])
+            try:parsed=strict_facts(row['text'])
+            except (ValueError,TypeError):parsed=None
+            correct={key:parsed is not None and type(parsed[key]) is type(value) and parsed[key]==value for key,value in truth.items()}
+            results[name]={'task':'given_move_immediate_facts','planned':1,'strict_parse_completed':parsed is not None,'field_correct':correct,'all_eight_correct':all(correct.values()),'raw_status':row['status']}
+        token_replays.append({'condition':name,'prompt_tokens':len(ids),'new_tokens':len(new)})
+    if name in reviewed.MOVES:
+        results[name]={'task':'move_policy','planned':1,'raw_uci':chosen,'raw_legal':chosen in legal,'matches_displayed_move':chosen in legal and chosen==fact_row['selected_uci'],'raw_status':row['status']}
+evaluation=read(RUN/'evaluation.json')
+assert evaluation['conditions']==results and evaluation['raw_seal_sha256']==sha(RUN/'raw-seal.json')
+assert evaluation['accepted_holdout'] is False
+for name,digest in seal['files_sha256'].items():assert sha(within(RUN,name))==digest
+result={'schema':'gotham.constructed-middlegame.root-retained-audit.v1','utc':datetime.now(timezone.utc).isoformat(),
+        'verdict':'SEALED_SIX_OUTCOMES_NATIVE_TOKENS_LOGITS_RULE_FACTS_AND_RECOUNT_MATCH',
+        'raw_seal_sha256':sha(RUN/'raw-seal.json'),'evaluation_sha256':sha(RUN/'evaluation.json'),
+        'sealed_files':len(seal['files_sha256']),'planned':6,'completed_raw':6,'token_replays':token_replays,
+        'conditions':results,'resource_samples':len(samples),'max_running_sample_gap':max(gaps),
+        'owned_pid':identity['pid'],'resource_and_cleanup_checks':'Exit0, no cancellation/forced termination,10preflight/17runtime samples above frozen reserves.',
+        'negative_parser_fixtures':4,'new_model_engine_calls':0,
+        'limits':'CPU tokenizers and retained-file arithmetic only; no weights/forward/inference. Constructed clocks0/1, unknown original game/history/mainline. Four legal alternative moves do not prove incorrect play. Given-move facts are a distinct task. No accepted holdout, pooled accuracy, ideas, strength or commentary claim.',
+        'auditor_sha256':sha(__file__)}
+out=ROOT/'outputs/gotham-constructed-middlegame-independent-review.json'
+with out.open('x',encoding='utf-8',newline='\n') as stream:json.dump(result,stream,indent=2);stream.write('\n')
+print(json.dumps({'verdict':result['verdict'],'sha256':sha(out),'completed':6,'sealed_files':result['sealed_files']}))

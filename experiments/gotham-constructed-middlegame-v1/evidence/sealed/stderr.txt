@@ -1,0 +1,6 @@
+Loading weights:   0%|          | 0/75 [00:00<?, ?it/s]Loading weights: 100%|##########| 75/75 [00:00<00:00, 37466.98it/s]
+Loading weights:   0%|          | 0/75 [00:00<?, ?it/s]Loading weights: 100%|##########| 75/75 [00:00<00:00, 9375.12it/s]
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights:  19%|#8        | 28/148 [00:00<00:00, 177.06it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 890.80it/s]
+[transformers] Ignoring clean_up_tokenization_spaces=True for BPE tokenizer GPT2Tokenizer. The clean_up_tokenization post-processing step is designed for WordPiece tokenizers and is destructive for BPE (it strips spaces before punctuation). Set clean_up_tokenization_spaces=False to suppress this warning, or set clean_up_tokenization_spaces_for_bpe_even_though_it_will_corrupt_output=True to force cleanup anyway.
+Loading weights:   0%|          | 0/148 [00:00<?, ?it/s]Loading weights:   7%|7         | 11/148 [00:00<00:02, 67.86it/s]Loading weights: 100%|##########| 148/148 [00:00<00:00, 896.39it/s]
+Loading weights:   0%|          | 0/311 [00:00<?, ?it/s]Loading weights:   6%|5         | 18/311 [00:00<00:01, 175.59it/s]Loading weights:  12%|#1        | 36/311 [00:00<00:03, 88.36it/s] Loading weights: 100%|##########| 311/311 [00:00<00:00, 811.91it/s]

@@ -1,0 +1,105 @@
+"""Illustration-specific exact-process wrapper; no model or resource imports.
+
+The identity policy follows the reviewed Windows native-launch repair. This is
+a distinct wrapper; the original training supervisor is preserved unchanged.
+"""
+from __future__ import annotations
+
+import importlib.metadata
+import os
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+FORBIDDEN_ENV = ("PYTHONHOME", "PYTHONPATH", "PYTHONEXECUTABLE", "__PYVENV_LAUNCHER__")
+BASE_SHA = "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181"
+STUB_SHA = "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5"
+DEPENDENCIES = {"torch": "2.8.0+cu128", "transformers": "5.19.0", "peft": "0.21.2",
+                "accelerate": "1.15.0", "pyarrow": "26.0.0"}
+
+
+def sha(path):
+    import hashlib
+    result = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(65536), b""):
+            result.update(block)
+    return result.hexdigest()
+
+
+def configuration(repo, *, environ=None):
+    """No spawning/mutation. Return reviewed actual executable and child-only env."""
+    environment = os.environ if environ is None else environ
+    if any(environment.get(name) for name in FORBIDDEN_ENV):
+        raise ValueError("conflicting Python path environment")
+    repo = Path(repo).resolve()
+    prefix = (repo / ".venv-soccernet").resolve()
+    stub = (prefix / "Scripts/python.exe").resolve()
+    base = Path(sys._base_executable).resolve()
+    if sys.platform != "win32" or sys.version_info[:3] != (3, 12, 2):
+        raise ValueError("reviewed Windows Python3.12.2 required")
+    if Path(sys.prefix).resolve() != prefix or Path(sys.executable).resolve() != stub:
+        raise ValueError("reviewed project virtualenv required")
+    if sha(base) != BASE_SHA or sha(stub) != STUB_SHA:
+        raise ValueError("native executable/venv redirector hash mismatch")
+    versions = {name: importlib.metadata.version(name) for name in DEPENDENCIES}
+    if versions != DEPENDENCIES:
+        raise ValueError("dependency metadata drift")
+    child_env = dict(environment)
+    child_env["__PYVENV_LAUNCHER__"] = str(stub)
+    identity = {"base_executable": str(base), "base_executable_sha256": BASE_SHA,
+                "venv_executable": str(stub), "venv_executable_sha256": STUB_SHA,
+                "venv_prefix": str(prefix), "pyvenv_cfg_sha256": sha(prefix / "pyvenv.cfg"),
+                "dependency_versions": versions, "changed_environment_keys": ["__PYVENV_LAUNCHER__"]}
+    return str(base), child_env, identity
+
+
+def verify_child(identity, expected_pid):
+    """Run before any torch/model import in the owned worker."""
+    if type(expected_pid) is not int or expected_pid != os.getpid():
+        raise ValueError("owned Popen PID differs from actual worker")
+    actual = {"base_executable": str(Path(sys._base_executable).resolve()),
+              "venv_executable": str(Path(sys.executable).resolve()),
+              "venv_prefix": str(Path(sys.prefix).resolve())}
+    if any(actual[key] != identity[key] for key in actual):
+        raise ValueError("owned worker interpreter identity mismatch")
+    if sha(identity["base_executable"]) != identity["base_executable_sha256"] or sha(identity["venv_executable"]) != identity["venv_executable_sha256"]:
+        raise ValueError("owned worker executable changed")
+    if sha(Path(sys.prefix) / "pyvenv.cfg") != identity["pyvenv_cfg_sha256"]:
+        raise ValueError("owned virtualenv configuration changed")
+    versions = {name: importlib.metadata.version(name) for name in identity["dependency_versions"]}
+    if versions != identity["dependency_versions"]:
+        raise ValueError("owned worker dependency metadata drift")
+    if "torch" in sys.modules:
+        raise ValueError("identity gate must precede torch import")
+    return {"pid": os.getpid(), **actual, "dependency_versions": versions,
+            "torch_imported": False}
+
+
+def await_ownership(path, read, *, clock=time.monotonic, sleep=time.sleep):
+    deadline = clock() + 5.0
+    path = Path(path)
+    while not path.exists() and clock() < deadline:
+        sleep(0.01)
+    if not path.is_file():
+        raise ValueError("owned supervisor handshake timed out")
+    record = read(path)
+    return record, verify_child(record["native_launch_identity"], record["pid"])
+
+
+def stop_owned(child, cancel_callback, *, grace_seconds=30.0):
+    """Cleanup remains exact-handle even when persistence of cancel fails."""
+    if child.poll() is not None:
+        return False
+    try:
+        cancel_callback()
+    except Exception:
+        pass
+    try:
+        child.wait(timeout=grace_seconds)
+        return False
+    except subprocess.TimeoutExpired:
+        child.terminate()
+        child.wait(timeout=10)
+        return True
