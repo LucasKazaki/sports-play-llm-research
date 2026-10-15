@@ -1,0 +1,112 @@
+{
+  "schema": "gotham.illustrative.independent-results-audit.v1",
+  "scope": "File/tokenizer-only; no neural or Stockfish calls",
+  "auditor_source_sha256": "7e93b942ee0c0b93f98b5cee71572d10263f3995b58c835cd6104a831f425a27",
+  "sealed_hash_bindings": 16,
+  "planned_outcomes": 9,
+  "accounted": 9,
+  "logit_rows_recomputed": 6,
+  "language_rows_decoded": 3,
+  "native_inputs_reconstructed": 9,
+  "groups": {
+    "base_classifier_9m": {
+      "planned": 3,
+      "accounted": 3,
+      "parsed": 3,
+      "raw_legal": 3,
+      "matches_displayed_move": 1,
+      "statuses": {
+        "ok": 3
+      }
+    },
+    "selected_classifier_9m_step512": {
+      "planned": 3,
+      "accounted": 3,
+      "parsed": 3,
+      "raw_legal": 3,
+      "matches_displayed_move": 1,
+      "statuses": {
+        "ok": 3
+      }
+    },
+    "base_language_policy_124m": {
+      "planned": 3,
+      "accounted": 3,
+      "parsed": 3,
+      "raw_legal": 3,
+      "matches_displayed_move": 1,
+      "statuses": {
+        "ok": 3
+      }
+    }
+  },
+  "records": [
+    {
+      "condition": "base_classifier_9m",
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "raw_move": "c1d2",
+      "displayed_move": "e2e3",
+      "match": false
+    },
+    {
+      "condition": "base_classifier_9m",
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "raw_move": "f3d4",
+      "displayed_move": "f3d4",
+      "match": true
+    },
+    {
+      "condition": "base_classifier_9m",
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "raw_move": "e4e5",
+      "displayed_move": "b1c3",
+      "match": false
+    },
+    {
+      "condition": "selected_classifier_9m_step512",
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "raw_move": "c1d2",
+      "displayed_move": "e2e3",
+      "match": false
+    },
+    {
+      "condition": "selected_classifier_9m_step512",
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "raw_move": "f3d4",
+      "displayed_move": "f3d4",
+      "match": true
+    },
+    {
+      "condition": "selected_classifier_9m_step512",
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "raw_move": "e4e5",
+      "displayed_move": "b1c3",
+      "match": false
+    },
+    {
+      "condition": "base_language_policy_124m",
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "raw_move": "d1c2",
+      "displayed_move": "e2e3",
+      "match": false
+    },
+    {
+      "condition": "base_language_policy_124m",
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "raw_move": "f1c4",
+      "displayed_move": "f3d4",
+      "match": false
+    },
+    {
+      "condition": "base_language_policy_124m",
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "raw_move": "b1c3",
+      "displayed_move": "b1c3",
+      "match": true
+    }
+  ],
+  "raw_seal_sha256": "bc47f4ee8aab5bd334b0fd3b2e2515aa5615725c174272acbc6f9493202f9324",
+  "evaluation_sha256": "58b6df701db7712a80429d25eb6e2fd1ec54c85de7ae7c3449aa78c302986ce8",
+  "accepted_holdouts": 0,
+  "claim": "Three source-scene illustrations, not accuracy/strength/ideas equivalence"
+}

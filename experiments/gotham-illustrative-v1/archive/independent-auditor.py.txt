@@ -1,0 +1,111 @@
+"""Independent file-only ranking/token/hash audit; never instantiate a model."""
+import hashlib
+import json
+from pathlib import Path
+import re
+
+import chess
+import numpy as np
+from transformers import AutoTokenizer
+
+work = Path(__file__).parent
+repo = work / "repos/sports-play-llm-research"
+run = repo / "data/private/gothamchess/illustrative-eval-v1"
+
+def digest(path):
+    with path.open("rb") as stream:
+        return hashlib.file_digest(stream, "sha256").hexdigest()
+
+def read(path):
+    return json.loads(path.read_text())
+
+seal, prepared, raw = (read(run / name) for name in ("raw-seal.json", "prepared.json", "raw-results.json"))
+plan, evaluation = read(run / "plan.json"), read(run / "evaluation.json")
+assert raw["planned_outcomes"] == raw["accounted"] == 9 and raw["evaluator_ledger_read"] is False
+assert all(digest(run / path) == value for path, value in seal["files_sha256"].items())
+assert all(seal["files_sha256"][path] == value for path, value in prepared["source_sha256"].items())
+ledger_path = Path(plan["source_binding"]["candidate_ledger_path"])
+assert digest(ledger_path) == plan["source_binding"]["candidate_ledger_sha256"]
+scenes = {r["position_id"]: r for r in read(ledger_path)["scenes"]}
+assert read(ledger_path)["counts"]["accepted_holdout_positions"] == 0
+tokenizer = AutoTokenizer.from_pretrained(repo / plan["conditions"]["base_language_policy_124m"]["private_model_directory"],
+                                          local_files_only=True, trust_remote_code=False)
+counts, details = {}, []
+for row in raw["records"]:
+    name, fen = row["condition"], row["pre_move_fen"]
+    board = chess.Board(fen)
+    assert board.is_valid() and row["status"] == "ok" and row["model_call_attempted"]
+    directory = repo / plan["conditions"][name]["private_model_directory"]
+    identity = plan["conditions"][name]
+    assert digest(directory / "model.safetensors") == identity["weights_sha256"]
+    assert all(digest(directory / path) == value for path, value in identity["metadata_sha256"].items())
+    if name != "base_language_policy_124m":
+        artifact = row["raw_logit_artifact"]
+        assert seal["files_sha256"][artifact["path"]] == artifact["sha256"] == digest(run / artifact["path"])
+        vector = np.load(run / artifact["path"], allow_pickle=False)
+        assert vector.shape == (1968,) and np.isfinite(vector).all()
+        config, tokmeta = read(directory / "config.json"), read(directory / "tokenizer.json")
+        labels = [config["id2label"][str(i)] for i in range(1968)]
+        legal_moves = {move.uci() for move in board.legal_moves}
+        order = np.argsort(-vector, kind="stable").tolist()
+        ranked = lambda indices: [{"class_id": i, "move_uci": labels[i], "logit": float(vector[i]), "legal": labels[i] in legal_moves} for i in indices]
+        assert row["raw_top5"] == ranked(order[:5])
+        legal_order = [i for i in order if labels[i] in legal_moves]
+        assert row["legal_mask_top5_diagnostic"] == ranked(legal_order[:5])
+        move = labels[order[0]]
+        assert row["legal_mask_choice_diagnostic"] == labels[legal_order[0]]
+        assert row["mask_would_intervene"] == (move != labels[legal_order[0]])
+        # Independently reconstruct the native square/field representation.
+        position, turn, castling, ep, halfmove, fullmove = fen.split()
+        squares = "".join("." * int(c) if c.isdigit() else c for c in position if c != "/")
+        text = squares + turn + castling.ljust(4, ".") + ep.ljust(2, ".") + halfmove.ljust(2, ".") + "." + fullmove.ljust(3, ".")
+        vocab = tokmeta["model"]["vocab"] | {t["content"]: t["id"] for t in tokmeta["added_tokens"]}
+        assert len(text) == 77
+        assert row["encoded_input"]["input_ids"] == [vocab[c] for c in text] + [vocab["[CLS]"]]
+    else:
+        prompt = f"P: {fen:90}M:"
+        assert row["encoded_input"]["prompt"] == prompt
+        assert row["encoded_input"]["input_ids"] == tokenizer.encode(prompt, add_special_tokens=False)
+        tokens = row["generated_token_ids"]
+        assert len(tokens) <= 16 and all(type(t) is int for t in tokens)
+        decoded = tokenizer.decode(tokens, skip_special_tokens=True, clean_up_tokenization_spaces=False)
+        assert decoded == row["raw_output"]
+        text = decoded.strip()
+        if text.startswith("M:"):
+            text = text[2:].lstrip()
+        first = text.split(maxsplit=1)[0] if text else ""
+        move = first if re.fullmatch(r"[a-h][1-8][a-h][1-8][qrbn]?", first) else None
+    assert row["encoded_input"]["attention_mask"] == [1] * len(row["encoded_input"]["input_ids"])
+    assert move == row["move_uci"] and row["parsed"] == (move is not None)
+    is_legal = move is not None and chess.Move.from_uci(move) in board.legal_moves
+    assert row["raw_legal"] == is_legal
+    scene = scenes[row["position_id"]]
+    assert scene["pre_move_fen"] == fen and scene["side_to_move"] == row["side_to_move"]
+    displayed = scene["next_displayed_move_evaluator_only"]["next_displayed_move_uci"]
+    assert chess.Move.from_uci(displayed) in board.legal_moves
+    matching = is_legal and move == displayed
+    group = counts.setdefault(name, {"planned": 3, "accounted": 0, "parsed": 0, "raw_legal": 0,
+                                     "matches_displayed_move": 0, "statuses": {"ok": 0}})
+    group["accounted"] += 1
+    group["parsed"] += move is not None
+    group["raw_legal"] += is_legal
+    group["matches_displayed_move"] += matching
+    group["statuses"]["ok"] += 1
+    details.append({"condition": name, "position_id": row["position_id"], "raw_move": move,
+                    "displayed_move": displayed, "match": matching})
+assert counts == evaluation["groups"]
+assert evaluation["raw_seal_sha256"] == digest(run / "raw-seal.json")
+assert evaluation["raw_results_sha256"] == digest(run / "raw-results.json")
+for value in raw["models"].values():
+    assert value["load_count"] == 1 and value["call_attempts"] == 3
+audit = {"schema": "gotham.illustrative.independent-results-audit.v1", "scope": "File/tokenizer-only; no neural or Stockfish calls",
+         "auditor_source_sha256": digest(Path(__file__)), "sealed_hash_bindings": len(seal["files_sha256"]),
+         "planned_outcomes": 9, "accounted": 9, "logit_rows_recomputed": 6, "language_rows_decoded": 3,
+         "native_inputs_reconstructed": 9, "groups": counts, "records": details,
+         "raw_seal_sha256": digest(run / "raw-seal.json"), "evaluation_sha256": digest(run / "evaluation.json"),
+         "accepted_holdouts": 0, "claim": "Three source-scene illustrations, not accuracy/strength/ideas equivalence"}
+destination = work / "gotham-illustrative-independent-results-audit.json"
+with destination.open("x") as stream:
+    json.dump(audit, stream, indent=2)
+    stream.write("\n")
+print(json.dumps({"accounted": 9, "groups": counts, "audit_sha256": digest(destination)}))

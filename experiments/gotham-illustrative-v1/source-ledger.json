@@ -1,0 +1,102 @@
+{
+  "schema": "gothamchess.illustrative.scene.candidate-ledger.v1",
+  "created_at_utc": "2026-10-15T05:58:46.757894+00:00",
+  "status": "Three provisional illustrative opening scenes; zero accepted holdouts",
+  "counts": {
+    "downloaded_videos": 3,
+    "provisional_scenes": 3,
+    "accepted_holdout_positions": 0,
+    "models_evaluated_on_scenes": 0
+  },
+  "inspection_scope": "Bounded opening-scene inspection with coarse survey and intermediate one-second frames; no full-video transcription or exhaustive creator-link/comment search",
+  "exclusion_scope": {
+    "manifest_sha256": {
+      "data\\open\\chess\\lichess-real-seed-v1\\manifest.json": "b515fbfc578dd7b00e2091e6c1a70e130b6e20177958234e4b6ec5042092758f",
+      "data\\private\\chess-distill-v1\\dataset.json": "8b191767fe56cf5abea4ff9123b25e6899753b23f9bc6eb9bff96be897dd46a9",
+      "data\\private\\chess-distill-v2\\dataset.json": "59bcdb731ac2e2ba2fd3f8aedabb928738145eaedaee350e3503d772e2debf82",
+      "data\\private\\chess-classifier-v3\\dataset.json": "7689124a85fac5181f17d6f5fb648840f8cff5e3f3d9f823870e4f2b77fc7256"
+    },
+    "retained_source_prefix_sha256": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056",
+    "source_games": 13112,
+    "source_before_setup_after_and_historical_board_keys": 26322,
+    "full_original_game_exclusion": "Unknown original game; not verifiable from these scenes",
+    "upstream_pretraining_overlap": "Unknown"
+  },
+  "scenes": [
+    {
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "source_url": "https://www.youtube.com/watch?v=sskvj1_ehx4&t=150s",
+      "private_record": "data\\private\\gothamchess\\provisional-scene-sskvj1_ehx4-t0150.json",
+      "private_record_sha256": "d12868539f65652ac76b1871ae1c24403e798eacc1d7de7ab61b2b477eaeb27a",
+      "media_sha256": "56e035edc9fc121f4b94d00bda71cc81d88ff8069f870ec8edd0d1fee81f8afe",
+      "history_san": "d4 Nf6 c4 e6 Nc3 Bb4",
+      "plies_before_position": 6,
+      "pre_move_fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPP4/2N5/PP2PPPP/R1BQKBNR w KQkq - 2 4",
+      "side_to_move": "white",
+      "position_has_retained_board_overlap": false,
+      "next_displayed_move_evaluator_only": {
+        "next_displayed_move_uci": "e2e3",
+        "next_displayed_move_timestamp_seconds": 155,
+        "next_displayed_move_frame_private_path": "data\\private\\gothamchess\\review-frames\\history\\sskvj1_ehx4-t0155.png",
+        "next_displayed_move_frame_sha256": "4349035ff1de6b52afae05bbaecfc9ad8006cef5c9a02fcea89e735391f64a25",
+        "warning": "Do not pass this observation, source video, future moves or creator comments to a generator. It is not a verified best move or controlled model answer."
+      },
+      "notes": "Nearby arrows show hypothetical continuations; sampled opening history is consistent, but human editorial/mainline review remains pending."
+    },
+    {
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "source_url": "https://www.youtube.com/watch?v=ulLBRyVrI1Y&t=152s",
+      "private_record": "data\\private\\gothamchess\\provisional-scene-ulLBRyVrI1Y-t0152.json",
+      "private_record_sha256": "5f7c92d6bdcd8396b8c6c91bb8f887004f801d55f5b31564a26c9d4e39449085",
+      "media_sha256": "69f0de2e6ddef13c6a65a8889d913388c5627dd82a3685ed47dccb77b5842dd6",
+      "history_san": "e4 c5 Nf3 d6 d4 cxd4",
+      "plies_before_position": 6,
+      "pre_move_fen": "rnbqkbnr/pp2pppp/3p4/8/3pP3/5N2/PPP2PPP/RNBQKB1R w KQkq - 0 4",
+      "side_to_move": "white",
+      "position_has_retained_board_overlap": false,
+      "next_displayed_move_evaluator_only": {
+        "next_displayed_move_uci": "f3d4",
+        "next_displayed_move_timestamp_seconds": 153,
+        "next_displayed_move_frame_private_path": "data\\private\\gothamchess\\review-frames\\history\\ulLBRyVrI1Y-t0153.png",
+        "next_displayed_move_frame_sha256": "38c794675b87833fc5bd5162cafb7b05428a239f3471112aeb9325d960489ddc",
+        "warning": "Do not pass this observation, source video, future moves or creator comments to a generator. It is not a verified best move or controlled model answer."
+      },
+      "notes": "Six plies observed through distinct intermediate boards; nearby arrows are not counted as moves. Human editorial/mainline review remains pending."
+    },
+    {
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "source_url": "https://www.youtube.com/watch?v=PVVA-_wvKks&t=130s",
+      "private_record": "data\\private\\gothamchess\\provisional-scene-PVVA-_wvKks-t0130.json",
+      "private_record_sha256": "0d80997cf03ffd6892a64cd7bb42a7c7ce713c90c9bacff8fc07ab0349ab4401",
+      "media_sha256": "4e7bf19d1cb7bcb00a02092c1d9c521c862c1f96e96c18ea822dc40daa2c71f1",
+      "history_san": "e4 e6 d4 d5",
+      "plies_before_position": 4,
+      "pre_move_fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+      "side_to_move": "white",
+      "position_has_retained_board_overlap": false,
+      "next_displayed_move_evaluator_only": {
+        "next_displayed_move_uci": "b1c3",
+        "next_displayed_move_timestamp_seconds": 145,
+        "next_displayed_move_frame_private_path": "data\\private\\gothamchess\\review-frames\\history\\PVVA-_wvKks-t0145.png",
+        "next_displayed_move_frame_sha256": "3687f35a9c2ad413cc5baf3a79d1a80f5c69f6ab6748060bbede7e262d7b0f51",
+        "warning": "Do not pass this observation, source video, future moves or creator comments to a generator. It is not a verified best move or controlled model answer."
+      },
+      "notes": "The following section visibly explores and rewinds hypothetical branches (including ...Bb4 and ...Nf6). Only the preceding four-ply history is retained. The next displayed Nc3 is an evaluator-only observation, not an authenticated original-game mainline label."
+    }
+  ],
+  "separation": {
+    "model_input_file": "gothamchess-illustrative-inputs.json",
+    "evaluator_material": "Next displayed moves remain evaluator-only in this ledger/private observation records. Model input file contains position ID, pre-move FEN and side only.",
+    "training_allowed": false,
+    "development_tuning_allowed": false
+  },
+  "limits": [
+    "These are short standard openings, not a difficult challenge cohort",
+    "No human editorial/mainline review or original-game fingerprint; whole-game exclusion remains unverified",
+    "Scene nonoverlap covers retained historical/v1/v2/v3 source-before/setup-after board keys, not unknown upstream pretraining",
+    "No model inference was run during intake",
+    "No calibrated model identity, Elo, commentary ability or sports-transfer evidence",
+    "Public availability/user download authorization is not a training or redistribution license",
+    "No copied creator analysis or transcript is included"
+  ]
+}

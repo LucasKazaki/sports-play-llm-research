@@ -1,0 +1,491 @@
+"""Frozen three-scene illustration, with generation and evaluator stages separated.
+
+No engine calls, training, model selection, accepted-holdout or strength claims.
+prepare() is CPU/file work. CLI generate requires an explicit GPU-release flag.
+"""
+from __future__ import annotations
+
+import argparse
+import ast
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import platform
+import re
+import shutil
+import sys
+import time
+
+import chess
+
+FROZEN_PLAN_SHA256 = "bbe7f80c5729ff124e8d6aab038b3208e2b572ffc6c590a2f11ce419f70d9523"
+CONDITIONS = ("base_classifier_9m", "selected_classifier_9m_step512", "base_language_policy_124m")
+
+
+def digest(path):
+    h = hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda: stream.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read_json(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def save(path, value):
+    path = Path(path)
+    temporary = path.with_name(path.name + ".tmp")
+    temporary.write_text(json.dumps(value, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    temporary.replace(path)
+
+
+def parse_action(output):
+    text = output.strip()
+    if text.startswith("M:"):
+        text = text[2:].lstrip()
+    first = text.split(maxsplit=1)[0] if text else ""
+    return first if re.fullmatch(r"[a-h][1-8][a-h][1-8][qrbn]?", first) else None
+
+
+def parser_ast_sha256(path):
+    node = next(n for n in ast.parse(Path(path).read_text(encoding="utf-8")).body
+                if isinstance(n, ast.FunctionDef) and n.name == "parse_action")
+    return hashlib.sha256(ast.dump(node, include_attributes=False).encode()).hexdigest()
+
+
+def legal(fen, uci):
+    try:
+        return uci is not None and chess.Move.from_uci(uci) in chess.Board(fen).legal_moves
+    except (ValueError, TypeError):
+        return False
+
+
+def checked_child(directory, relative):
+    path = (directory / relative).resolve()
+    if not path.is_relative_to(directory.resolve()):
+        raise ValueError("artifact path escapes run directory")
+    return path
+
+
+def verify_models(plan, repo):
+    facts = {}
+    for name in CONDITIONS:
+        expected = plan["conditions"][name]
+        directory = (repo / expected["private_model_directory"]).resolve()
+        if not directory.is_relative_to(repo.resolve()):
+            raise ValueError("model directory escapes repository")
+        actual = {"weights_sha256": digest(directory / "model.safetensors"),
+                  "metadata_sha256": {n: digest(directory / n) for n in expected["metadata_sha256"]}}
+        if actual["weights_sha256"] != expected["weights_sha256"] or actual["metadata_sha256"] != expected["metadata_sha256"]:
+            raise ValueError("model identity mismatch: " + name)
+        facts[name] = actual
+    return facts
+
+
+def planned_rows(plan, inputs):
+    return [{"condition": condition, **row, "status": "not_run", "move_uci": None,
+             "parsed": False, "raw_legal": False, "model_call_attempted": False}
+            for condition in CONDITIONS for row in inputs["positions"]]
+
+
+def prepare(plan_path, repo, out, expected_plan_sha256=FROZEN_PLAN_SHA256):
+    """Snapshot only FEN input, code and metadata. Never read the source ledger."""
+    plan_path, repo, out = Path(plan_path), Path(repo), Path(out)
+    if out.exists():
+        raise ValueError("refusing to replace an existing illustrative attempt")
+    if digest(plan_path) != expected_plan_sha256:
+        raise ValueError("frozen plan identity mismatch")
+    plan = read_json(plan_path)
+    if tuple(plan["conditions"]) != CONDITIONS or plan["planned_denominators"] != {
+            "conditions": 3, "scenes_per_condition": 3, "total_policy_scene_outcomes": 9,
+            "failure_retention": plan["planned_denominators"]["failure_retention"]}:
+        raise ValueError("unexpected planned conditions/counts")
+    binding = plan["source_binding"]
+    input_path = Path(binding["fen_only_input_path"])
+    if digest(input_path) != binding["fen_only_input_sha256"]:
+        raise ValueError("FEN input identity mismatch")
+    inputs = read_json(input_path)
+    if len(inputs["positions"]) != 3 or [r["position_id"] for r in inputs["positions"]] != binding["position_ids"]:
+        raise ValueError("FEN input denominator/identity mismatch")
+    if len(set(binding["position_ids"])) != 3:
+        raise ValueError("duplicate position identity")
+    for row in inputs["positions"]:
+        if set(row) != {"position_id", "pre_move_fen", "side_to_move"}:
+            raise ValueError("FEN input contains evaluator material or unknown fields")
+        board = chess.Board(row["pre_move_fen"])
+        if not board.is_valid() or row["side_to_move"] != ("white" if board.turn else "black"):
+            raise ValueError("invalid scene board or side")
+    if parser_ast_sha256(__file__) != plan["language_policy"]["parser_source_ast_sha256"]:
+        raise ValueError("first-M parser differs from frozen plan")
+    sources = {}
+    for relative, expected in plan["source_sha256"].items():
+        path = (repo / relative).resolve()
+        if not path.is_relative_to(repo.resolve()) or digest(path) != expected:
+            raise ValueError("pinned source identity mismatch: " + relative)
+        sources[relative] = path
+    models = verify_models(plan, repo)
+    out.mkdir(parents=True)
+    (out / "sources").mkdir()
+    (out / "raw").mkdir()
+    shutil.copyfile(plan_path, out / "plan.json")
+    shutil.copyfile(input_path, out / "fen-inputs.json")
+    source_hashes = {}
+    source_roles = {}
+    for relative, source in sources.items():
+        target = out / "sources" / source.name
+        shutil.copyfile(source, target)
+        source_hashes[target.relative_to(out).as_posix()] = digest(target)
+        source_roles[target.relative_to(out).as_posix()] = (
+            "executed_native_adapter" if source.name == "chess_classifier_adapter.py" else "pinned_reference_only")
+    runner = out / "sources" / "gotham_illustrative_eval.py"
+    shutil.copyfile(Path(__file__), runner)
+    source_hashes[runner.relative_to(out).as_posix()] = digest(runner)
+    source_roles[runner.relative_to(out).as_posix()] = "executed_runner"
+    tests = Path(__file__).with_name("test_gotham_illustrative_eval.py")
+    if tests.is_file():
+        target = out / "sources" / tests.name
+        shutil.copyfile(tests, target)
+        source_hashes[target.relative_to(out).as_posix()] = digest(target)
+        source_roles[target.relative_to(out).as_posix()] = "test_source_only"
+    save(out / "prepared.json", {"schema": "chess.creator-scene.prepared.v1", "repo": str(repo.resolve()),
+         "plan_sha256": digest(out / "plan.json"), "fen_input_sha256": digest(out / "fen-inputs.json"),
+         "ledger_sha256_constant_only": binding["candidate_ledger_sha256"],
+         "models": models, "source_sha256": source_hashes, "source_roles": source_roles,
+         "planned_outcomes": 9, "model_calls": 0, "evaluator_ledger_read": False})
+    save(out / "raw-progress.json", {"records": planned_rows(plan, inputs)})
+    return out
+
+
+def load_prepared(out):
+    before = read_json(out / "prepared.json")
+    for name, expected in {"plan.json": before["plan_sha256"], "fen-inputs.json": before["fen_input_sha256"],
+                           **before["source_sha256"]}.items():
+        if digest(checked_child(out, name)) != expected:
+            raise ValueError("prepared file changed: " + name)
+    return before, read_json(out / "plan.json"), read_json(out / "fen-inputs.json")
+
+
+def load_adapter(out):
+    # Execute only the exact reviewed local adapter snapshot; never HF model.py/tokenizer.py.
+    spec = importlib.util.spec_from_file_location("gotham_pinned_classifier_adapter", out / "sources/chess_classifier_adapter.py")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def runtime_info():
+    import torch
+    import transformers
+    torch.set_num_threads(4)
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    return {"python": platform.python_version(), "torch": torch.__version__,
+            "transformers": transformers.__version__, "python_chess": chess.__version__,
+            "device": device, "gpu": torch.cuda.get_device_name() if device == "cuda" else None,
+            "parameters": "float32", "autocast": False, "torch_cpu_threads": 4}
+
+
+class LocalBackend:
+    def __init__(self, condition, directory, adapter, runtime):
+        import torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer, LlamaForSequenceClassification
+        self.torch, self.device, self.adapter = torch, runtime["device"], adapter
+        self.classifier = condition != "base_language_policy_124m"
+        if self.classifier:
+            self.contract = adapter.load_native_contract(directory)
+            self.model = LlamaForSequenceClassification.from_pretrained(
+                directory, local_files_only=True, attn_implementation="sdpa").float().to(self.device).eval()
+        else:
+            self.tokenizer = AutoTokenizer.from_pretrained(directory, local_files_only=True, trust_remote_code=False)
+            self.tokenizer.padding_side = "left"
+            self.tokenizer.pad_token = self.tokenizer.eos_token
+            self.model = AutoModelForCausalLM.from_pretrained(
+                directory, local_files_only=True, trust_remote_code=False).float().to(self.device).eval()
+
+    def encode(self, fen):
+        if self.classifier:
+            return self.adapter.encode_fen(fen, self.contract)
+        if len(fen) > 90 or not chess.Board(fen).is_valid():
+            raise ValueError("unsupported native FEN")
+        prompt = f"P: {fen:90}M:"
+        encoded = self.tokenizer(prompt, add_special_tokens=False)
+        return {"input_ids": encoded["input_ids"], "attention_mask": encoded["attention_mask"], "prompt": prompt}
+
+    def predict(self, encoded):
+        torch = self.torch
+        ids = torch.tensor([encoded["input_ids"]], dtype=torch.long, device=self.device)
+        mask = torch.tensor([encoded["attention_mask"]], dtype=torch.long, device=self.device)
+        with torch.inference_mode():
+            if self.classifier:
+                logits = self.model(input_ids=ids, attention_mask=mask).logits
+                if logits.ndim != 2 or tuple(logits.shape) != (1, 1968):
+                    raise ValueError("classifier output shape mismatch")
+                vector = logits[0].float().cpu().numpy()
+                return {"kind": "classifier", "logits": vector, "id2label": self.contract["id2label"]}
+            generated = self.model.generate(input_ids=ids, attention_mask=mask, max_new_tokens=16,
+                do_sample=False, pad_token_id=self.tokenizer.pad_token_id, eos_token_id=self.tokenizer.eos_token_id)
+            if not torch.is_tensor(generated) or generated.ndim != 2 or generated.shape[0] != 1:
+                raise ValueError("language output shape mismatch")
+            full = generated[0].cpu().tolist()
+            prefix = encoded["input_ids"]
+            if full[:len(prefix)] != prefix or not len(prefix) <= len(full) <= len(prefix) + 16:
+                raise ValueError("generated prefix or token budget mismatch")
+            tokens = full[len(prefix):]
+            return {"kind": "language", "generated_token_ids": tokens,
+                    "raw_output": self.tokenizer.decode(tokens, skip_special_tokens=True)}
+
+    def close(self):
+        del self.model
+        if self.device == "cuda":
+            self.torch.cuda.empty_cache()
+
+
+def error_record(row, status, error):
+    row.update(status=status, error={"type": type(error).__name__, "message": str(error)[:1000]})
+
+
+def account_prediction(row, prediction, adapter, out, artifact_name):
+    if prediction["kind"] == "classifier":
+        import numpy as np
+        vector = np.asarray(prediction["logits"])
+        artifact = out / "raw" / (artifact_name + ".npy")
+        # Preserve even malformed/nonfinite raw vectors before validation.
+        np.save(artifact, vector, allow_pickle=False)
+        row["raw_logit_artifact"] = {"path": artifact.relative_to(out).as_posix(), "sha256": digest(artifact),
+                                     "shape": list(vector.shape), "dtype": str(vector.dtype)}
+        if vector.shape != (1968,) or vector.dtype.kind != "f" or not np.isfinite(vector).all():
+            raise ValueError("nonfinite or malformed classifier logits")
+        ranked = adapter.rank_logits(row["pre_move_fen"], vector.tolist(), prediction["id2label"], top_k=5)
+        row.update(move_uci=ranked["raw_choice_uci"], parsed=True, raw_legal=ranked["raw_choice_is_legal"],
+                   raw_top5=ranked["raw_topk"], legal_mask_top5_diagnostic=ranked["legal_topk"],
+                   legal_mask_choice_diagnostic=ranked["legal_choice_uci"],
+                   mask_would_intervene=ranked["raw_choice_uci"] != ranked["legal_choice_uci"])
+    elif prediction["kind"] == "language":
+        tokens, raw = prediction["generated_token_ids"], prediction["raw_output"]
+        if not isinstance(raw, str) or not isinstance(tokens, list) or not all(type(t) is int and t >= 0 for t in tokens) or len(tokens) > 16:
+            row["malformed_language_output_repr"] = repr(prediction)[:2000]
+            raise ValueError("malformed language output")
+        row.update(generated_token_ids=tokens, raw_output=raw)
+        move = parse_action(raw)
+        row.update(move_uci=move, parsed=move is not None, raw_legal=legal(row["pre_move_fen"], move))
+    else:
+        raise ValueError("unknown backend output kind")
+    row["status"] = "ok" if row["raw_legal"] else "raw_illegal" if row["parsed"] else "parse_failure"
+
+
+def seal_raw(out, rows, model_facts, runtime, before):
+    inputs = read_json(out / "fen-inputs.json")
+    expected_ids = [(c, r["position_id"]) for c in CONDITIONS for r in inputs["positions"]]
+    if [(r["condition"], r["position_id"]) for r in rows] != expected_ids or len(rows) != 9:
+        raise ValueError("raw outcome denominator changed")
+    if any(r["status"] == "not_run" for r in rows):
+        raise ValueError("unaccounted planned outcome")
+    result = {"schema": "chess.creator-scene.raw.v1", "planned_outcomes": 9, "accounted": len(rows),
+              "records": rows, "models": model_facts, "runtime": runtime, "evaluator_ledger_read": False}
+    save(out / "raw-results.json", result)
+    artifacts = {p.relative_to(out).as_posix(): digest(p) for p in sorted((out / "raw").glob("*.npy"))}
+    files = {"prepared.json": digest(out / "prepared.json"), "before-model-calls.json": digest(out / "before-model-calls.json"),
+             "plan.json": before["plan_sha256"], "fen-inputs.json": before["fen_input_sha256"],
+             "raw-results.json": digest(out / "raw-results.json"), **before["source_sha256"], **artifacts}
+    save(out / "raw-seal.json", {"schema": "chess.creator-scene.raw-seal.v1", "files_sha256": files,
+         "planned_outcomes": 9, "accounted": 9, "evaluator_ledger_read": False})
+    return result
+
+
+def generate(out, backend_factory=LocalBackend, runtime_factory=runtime_info):
+    """Only FEN-derived tensors reach backends. All rows exist before any load."""
+    out = Path(out)
+    if any((out / name).exists() for name in ("before-model-calls.json", "raw-seal.json", "raw-results.json")):
+        raise ValueError("refusing to repeat a retained generation attempt")
+    before, plan, inputs = load_prepared(out)
+    # The executed runner must equal the snapshotted runner.
+    if digest(__file__) != before["source_sha256"]["sources/gotham_illustrative_eval.py"]:
+        raise ValueError("runner differs from prepared source")
+    rows = planned_rows(plan, inputs)
+    try:
+        runtime = runtime_factory()
+    except Exception as error:
+        for row in rows:
+            error_record(row, "runtime_error", error)
+        runtime = {"runtime_error": type(error).__name__}
+        save(out / "before-model-calls.json", {"prepared_sha256": digest(out / "prepared.json"),
+             "runtime": runtime, "planned_outcomes": 9, "evaluator_ledger_read": False})
+        return seal_raw(out, rows, {}, runtime, before)
+    save(out / "before-model-calls.json", {"prepared_sha256": digest(out / "prepared.json"),
+         "runtime": runtime, "planned_outcomes": 9, "evaluator_ledger_read": False})
+    try:
+        adapter = load_adapter(out)
+    except Exception as error:
+        for row in rows:
+            error_record(row, "adapter_load_error", error)
+        return seal_raw(out, rows, {}, runtime, before)
+    model_facts = {}
+    for ci, condition in enumerate(CONDITIONS):
+        group = [r for r in rows if r["condition"] == condition]
+        backend = None
+        try:
+            directory = Path(before["repo"]) / plan["conditions"][condition]["private_model_directory"]
+            expected = before["models"][condition]
+            if digest(directory / "model.safetensors") != expected["weights_sha256"] or any(
+                    digest(directory / n) != h for n, h in expected["metadata_sha256"].items()):
+                raise ValueError("model changed after preparation")
+            load_started = time.perf_counter()
+            backend = backend_factory(condition, directory, adapter, runtime)
+            model_facts[condition] = {"load_seconds": time.perf_counter() - load_started, "load_count": 1, "call_attempts": 0}
+        except Exception as error:
+            for row in group:
+                error_record(row, "model_load_error", error)
+        else:
+            failed = None
+            for index, row in enumerate(group):
+                if failed is not None:
+                    error_record(row, "not_run_after_backend_failure", failed)
+                    continue
+                try:
+                    encoded = backend.encode(row["pre_move_fen"])
+                    if set(encoded) - {"input_ids", "attention_mask", "prompt"} or not isinstance(encoded["input_ids"], list) or not isinstance(encoded["attention_mask"], list):
+                        raise ValueError("unexpected encoded input fields")
+                    if len(encoded["input_ids"]) != len(encoded["attention_mask"]) or not encoded["input_ids"]:
+                        raise ValueError("invalid encoded input length")
+                    if not all(type(t) is int and t >= 0 for t in encoded["input_ids"]) or not all(type(t) is int and t in (0, 1) for t in encoded["attention_mask"]):
+                        raise ValueError("invalid encoded token/mask values")
+                    row["encoded_input"] = encoded
+                except Exception as error:
+                    error_record(row, "encoding_error", error)
+                    continue
+                row["model_call_attempted"] = True
+                row["first_call_after_load"] = model_facts[condition]["call_attempts"] == 0
+                model_facts[condition]["call_attempts"] += 1
+                call_started = time.perf_counter()
+                try:
+                    prediction = backend.predict(encoded)
+                except Exception as error:
+                    failed = error
+                    error_record(row, "model_call_error", error)
+                else:
+                    try:
+                        account_prediction(row, prediction, adapter, out, f"condition-{ci}-scene-{index}")
+                    except Exception as error:
+                        error_record(row, "model_output_error", error)
+                finally:
+                    row["call_seconds"] = time.perf_counter() - call_started
+                    save(out / "raw-progress.json", {"records": rows})
+        finally:
+            if backend is not None:
+                try:
+                    backend.close()
+                except Exception as error:
+                    model_facts[condition]["close_error"] = type(error).__name__
+            save(out / "raw-progress.json", {"records": rows})
+    return seal_raw(out, rows, model_facts, runtime, before)
+
+
+def load_verified_raw(out):
+    seal = read_json(out / "raw-seal.json")
+    if seal["planned_outcomes"] != 9 or seal["accounted"] != 9 or seal["evaluator_ledger_read"] is not False:
+        raise ValueError("invalid raw seal")
+    required = {"prepared.json", "before-model-calls.json", "plan.json", "fen-inputs.json", "raw-results.json", "sources/gotham_illustrative_eval.py"}
+    if not required.issubset(seal["files_sha256"]):
+        raise ValueError("raw seal omits required files")
+    for relative, expected in seal["files_sha256"].items():
+        if digest(checked_child(out, relative)) != expected:
+            raise ValueError("sealed raw artifact changed: " + relative)
+    prepared = read_json(out / "prepared.json")
+    for relative, expected in prepared["source_sha256"].items():
+        if seal["files_sha256"].get(relative) != expected:
+            raise ValueError("raw seal omits or changes a prepared source binding")
+    raw, plan, inputs = read_json(out / "raw-results.json"), read_json(out / "plan.json"), read_json(out / "fen-inputs.json")
+    expected = [(c, r["position_id"]) for c in CONDITIONS for r in inputs["positions"]]
+    if raw["accounted"] != 9 or [(r["condition"], r["position_id"]) for r in raw["records"]] != expected:
+        raise ValueError("sealed outcome denominator changed")
+    for row in raw["records"]:
+        if "raw_logit_artifact" in row:
+            artifact = row["raw_logit_artifact"]
+            relative, expected = artifact["path"], artifact["sha256"]
+            if seal["files_sha256"].get(relative) != expected or digest(checked_child(out, relative)) != expected:
+                raise ValueError("unbound or changed row-referenced raw logit artifact")
+    return seal, raw, plan
+
+
+def evaluator_ledger(plan):
+    """This is the sole function that opens the source-move ledger."""
+    path = Path(plan["source_binding"]["candidate_ledger_path"])
+    data = path.read_bytes()
+    if hashlib.sha256(data).hexdigest() != plan["source_binding"]["candidate_ledger_sha256"]:
+        raise ValueError("evaluator ledger identity mismatch")
+    return json.loads(data)
+
+
+def evaluate(out, ledger_loader=evaluator_ledger):
+    """Verify ALL sealed raw files before calling the evaluator-only loader."""
+    out = Path(out)
+    if (out / "evaluation.json").exists():
+        raise ValueError("refusing to replace a retained evaluator join")
+    _, raw, plan = load_verified_raw(out)
+    ledger = ledger_loader(plan)
+    scenes = {s["position_id"]: s for s in ledger["scenes"]}
+    if len(scenes) != 3 or set(scenes) != set(plan["source_binding"]["position_ids"]) or ledger["counts"]["accepted_holdout_positions"] != 0:
+        raise ValueError("unexpected evaluator scene identities/status")
+    joined, groups = [], {}
+    for row in raw["records"]:
+        scene = scenes[row["position_id"]]
+        if scene["pre_move_fen"] != row["pre_move_fen"] or scene["side_to_move"] != row["side_to_move"]:
+            raise ValueError("evaluator position mismatch")
+        displayed = scene["next_displayed_move_evaluator_only"]["next_displayed_move_uci"]
+        if not legal(row["pre_move_fen"], displayed):
+            raise ValueError("displayed observation is not legal in frozen scene")
+        match = bool(row["raw_legal"] and row["move_uci"] == displayed)
+        joined.append({"condition": row["condition"], "position_id": row["position_id"],
+                       "status": row["status"], "raw_move_uci": row["move_uci"], "raw_legal": row["raw_legal"],
+                       "next_displayed_move_evaluator_only": displayed, "matches_displayed_move": match})
+        summary = groups.setdefault(row["condition"], {"planned": 3, "accounted": 0, "parsed": 0,
+                  "raw_legal": 0, "matches_displayed_move": 0, "statuses": {}})
+        summary["accounted"] += 1
+        summary["parsed"] += bool(row["parsed"])
+        summary["raw_legal"] += bool(row["raw_legal"])
+        summary["matches_displayed_move"] += match
+        summary["statuses"][row["status"]] = summary["statuses"].get(row["status"], 0) + 1
+    result = {"schema": "chess.creator-scene.evaluator-join.v1", "raw_seal_sha256": digest(out / "raw-seal.json"),
+              "raw_results_sha256": digest(out / "raw-results.json"),
+              "evaluator_ledger_sha256": plan["source_binding"]["candidate_ledger_sha256"],
+              "planned_outcomes": 9, "accounted": len(joined), "accepted_holdout_positions": 0,
+              "groups": groups, "records": joined, "limitations": plan["limitations"],
+              "claim": "Three standard-opening illustrations only. Displayed moves are not verified best moves or controlled frontier-model answers."}
+    save(out / "evaluation.json", result)
+    save(out / "evaluation-receipt.json", {"evaluation_sha256": digest(out / "evaluation.json"),
+         "raw_seal_sha256": result["raw_seal_sha256"], "raw_results_sha256": result["raw_results_sha256"],
+         "evaluator_ledger_sha256": result["evaluator_ledger_sha256"], "model_calls_during_join": 0})
+    return result
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    sub = parser.add_subparsers(dest="phase", required=True)
+    prep = sub.add_parser("prepare")
+    prep.add_argument("--plan", type=Path, required=True)
+    prep.add_argument("--repo", type=Path, required=True)
+    prep.add_argument("--out", type=Path, required=True)
+    gen = sub.add_parser("generate")
+    gen.add_argument("--out", type=Path, required=True)
+    gen.add_argument("--gpu-released", action="store_true")
+    join = sub.add_parser("evaluate")
+    join.add_argument("--out", type=Path, required=True)
+    args = parser.parse_args(argv)
+    if args.phase == "prepare":
+        prepare(args.plan, args.repo, args.out)
+        print(json.dumps({"phase": "prepared", "model_calls": 0, "evaluator_ledger_read": False}))
+    elif args.phase == "generate":
+        if not args.gpu_released:
+            parser.error("generation requires the parent-confirmed GPU handoff (--gpu-released)")
+        result = generate(args.out)
+        print(json.dumps({"phase": "raw_sealed", "accounted": result["accounted"], "evaluator_ledger_read": False}))
+    else:
+        result = evaluate(args.out)
+        print(json.dumps({"phase": "evaluator_join", "groups": result["groups"], "accepted_holdout_positions": 0}))
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

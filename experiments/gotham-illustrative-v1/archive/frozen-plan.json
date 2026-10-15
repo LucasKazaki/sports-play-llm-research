@@ -1,0 +1,172 @@
+{
+  "schema": "chess.creator-scene.illustrative.protocol.v1",
+  "status": "frozen_plan_before_scene_model_calls_not_executed",
+  "frozen_at_utc": "2026-10-15T06:07:29.456920+00:00",
+  "question": "For three short source-bound opening scenes, record what fixed local policies propose from FEN alone, including raw parse/legality failures and differences from the next displayed source move. This is an illustration, not an accepted benchmark.",
+  "source_binding": {
+    "candidate_ledger_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\gothamchess-illustrative-scenes.json",
+    "candidate_ledger_sha256": "a23babc46d88b3767f185d1c0b1ef362f599896d30e52b06db2c3261f8c8f6e1",
+    "fen_only_input_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\gothamchess-illustrative-inputs.json",
+    "fen_only_input_sha256": "255f2ab88c654bb8a1c82c0128552ffb3aefbc796bfe51ca9491f22ae6fd93de",
+    "position_ids": [
+      "gotham-illustrative-sskvj1_ehx4-t0150",
+      "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "gotham-illustrative-PVVA-_wvKks-t0130"
+    ],
+    "private_observation_record_sha256": {
+      "gotham-illustrative-sskvj1_ehx4-t0150": "d12868539f65652ac76b1871ae1c24403e798eacc1d7de7ab61b2b477eaeb27a",
+      "gotham-illustrative-ulLBRyVrI1Y-t0152": "5f7c92d6bdcd8396b8c6c91bb8f887004f801d55f5b31564a26c9d4e39449085",
+      "gotham-illustrative-PVVA-_wvKks-t0130": "0d80997cf03ffd6892a64cd7bb42a7c7ce713c90c9bacff8fc07ab0349ab4401"
+    },
+    "accepted_holdout_positions": 0,
+    "human_mainline_validation": "Pending; source3 contains nearby hypothetical branches/rewinds",
+    "original_game_identity": "Unknown for all three; entire-game exclusion cannot be certified",
+    "media_rights": "Private authorized viewing only; no creator-media training or redistribution"
+  },
+  "conditions": {
+    "base_classifier_9m": {
+      "private_model_directory": "data\\private\\chess-classifier-v3\\base-model",
+      "weights_sha256": "c078a2a8ff26fb9d9c6b4cfcf684da4c72dbec124eb1442f36bb8461293c9b22",
+      "metadata_sha256": {
+        "config.json": "dbaa8428d8eae85240647acc7c6a808be080d085902f03ec4c8254bf80dc9f7b",
+        "model.py": "a083849af9e66ff804c43a7cf4e35779ffd1a79b8789add439944195bf6eda08",
+        "README.md": "d215c76982e55eb909f9ea09c0554e03199dd9771ca6a5ffdb40c5e3ac32747c",
+        "special_tokens_map.json": "328b2c707c1ca355740fb674e39216a5f0213d6fd32cd481a4d6d040c600d7d9",
+        "tokenizer.json": "9fc73325486601b4696a2da5ab9d37798a66a2c36b1bb25ec02334274c5a3b19",
+        "tokenizer.py": "b73320309cc088cd4df4e35944f92f8ba90d3e5847369e559d7b86ec4102f1b5",
+        "tokenizer_config.json": "a29920c3f23ecf49dda2e4744f03eeadad70a812a039890769cfdd4487b17755"
+      },
+      "condition": "Frozen existing weights; no scene tuning, training or selection",
+      "loader": "Stock transformers LlamaForSequenceClassification; reviewed native adapter; no HF remote code execution"
+    },
+    "selected_classifier_9m_step512": {
+      "private_model_directory": "data\\private\\chess-classifier-v3\\checkpoints\\step-512",
+      "weights_sha256": "2643e51526335e5a33a67370bf1fa70ddf3c6b2e64b31550ad6ca033f9430a22",
+      "metadata_sha256": {
+        "config.json": "5a7d8a0c7b6d2e066434ec7e2fbdc16f977fa1cf1471f147adf0fe369a9be202",
+        "metadata-package.json": "e2d20f1a4053a1cede8d91e3572313fdef34ad71cf65b31d21f316f9a58edee4",
+        "README.md": "d215c76982e55eb909f9ea09c0554e03199dd9771ca6a5ffdb40c5e3ac32747c",
+        "special_tokens_map.json": "328b2c707c1ca355740fb674e39216a5f0213d6fd32cd481a4d6d040c600d7d9",
+        "tokenizer.json": "9fc73325486601b4696a2da5ab9d37798a66a2c36b1bb25ec02334274c5a3b19",
+        "tokenizer.py": "b73320309cc088cd4df4e35944f92f8ba90d3e5847369e559d7b86ec4102f1b5",
+        "tokenizer_config.json": "a29920c3f23ecf49dda2e4744f03eeadad70a812a039890769cfdd4487b17755"
+      },
+      "condition": "Frozen existing weights; no scene tuning, training or selection",
+      "loader": "Stock transformers LlamaForSequenceClassification; reviewed native adapter; no HF remote code execution"
+    },
+    "base_language_policy_124m": {
+      "private_model_directory": "data\\private\\chess-distill-v1\\base-model",
+      "weights_sha256": "ed72e5afabae85f9ff1848f116cb39d83287062b856b9fe2602befe4f45a6941",
+      "metadata_sha256": {
+        "config.json": "faf791105526efef207fb9df4402ea7d06c33e420f0d2668efeef624ae2624a1",
+        "generation_config.json": "26b042f10bbe30f7196831741ee8b6e89572f98f0e20700f739da6404ecaccd9",
+        "merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+        "README.md": "b5ee7d7b595670ca260cf9d528ab4459b4726ba57f5b15f5187aa001419c6e64",
+        "special_tokens_map.json": "98412137ae43c77f8af52eb51b19c3536d3242cb55339167d841005fa94a23b7",
+        "tokenizer.json": "a6aa29bf8416d74ad795a73262b1aa3f985564ee338adbee7ffbc5861f78b6b8",
+        "tokenizer_config.json": "6543c71f8ce812f9d118021be764c6250cd0d1e71ef604e9f028df73ff908cd0",
+        "vocab.json": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7"
+      },
+      "condition": "Frozen existing weights; no scene tuning, training or selection",
+      "loader": "Stock transformers AutoModelForCausalLM and local pinned tokenizer; no remote code"
+    }
+  },
+  "planned_denominators": {
+    "conditions": 3,
+    "scenes_per_condition": 3,
+    "total_policy_scene_outcomes": 9,
+    "failure_retention": "Every planned ID remains, including load/encode/model/parse/illegal failures and not_run outcomes"
+  },
+  "generation_inputs": {
+    "read_only_file": "gothamchess-illustrative-inputs.json",
+    "allowlist": [
+      "pre_move_fen",
+      "side_to_move"
+    ],
+    "position_id": "Bookkeeping only; never inserted into model prompt or tokens",
+    "forbidden": [
+      "candidate ledger contents",
+      "next displayed source move",
+      "video frames",
+      "creator commentary/transcript",
+      "engine scores/PVs",
+      "future FENs/moves",
+      "themes/rationale/answer labels"
+    ],
+    "isolation": "Each FEN is an independent stateless request; reset any model conversation/history between cases"
+  },
+  "classifier_policy": {
+    "representation": "Reviewed native77-character FEN plus CLS,78 tokens, exact metadata/action-space validation; reject unsupported inputs without truncation",
+    "prediction": "One forward pass per position; full1968logits saved with ID/FEN/model binding",
+    "raw": "Stable descending logits then lower class ID; report raw top1 and top5, UCI legality",
+    "legal_mask_diagnostic": "Report separately top5 legal classes from the same logits and intervention flag; never replace or hide raw output in common metrics",
+    "top_k": 5
+  },
+  "language_policy": {
+    "representation": "Literal P: plus currentFEN padded to90 characters then M:, no teacher or video labels",
+    "generation": {
+      "max_new_tokens": 16,
+      "do_sample": false,
+      "batch_size": 1,
+      "padding_side": "left",
+      "pad_token": "EOS",
+      "add_special_tokens": false
+    },
+    "parser": "Strip whitespace; remove one optional initial M: marker; take only first whitespace token; require full orthodox UCI syntax; never recover later text or B: output",
+    "parser_source_ast_sha256": "dcd58a735d9363d2783d6221c0469bade42da295da63fee7170f6c9993954e57",
+    "retention": [
+      "Exact input token IDs and attention mask",
+      "Complete generated token IDs and raw completion including trailing text",
+      "First-token parsed action, parse validity and raw legality",
+      "Explicit per-case failures and not_run outcomes"
+    ]
+  },
+  "evaluator_separation": {
+    "phase1": "Load only frozen FEN input file and model metadata, generate and save all raw outputs or explicit failures. Do not read candidate ledger contents. The prebound ledger SHA is a provenance constant only.",
+    "phase2": "Close inference, save immutable raw-result hashes and exact executed-source/model/runtime bindings.",
+    "phase3": "Separate evaluator loads hash-verified ledger and joins next_displayed_move_evaluator_only by position ID. Compute per-case match-to-displayed-move only after raw outputs are frozen.",
+    "not_an_answer_key": "Displayed source moves are not verified best moves or authenticated frontier-model decisions; source3 variation status is explicit.",
+    "diagnostics": "No Stockfish calls in this plan; legality from orthodox chess rules is evaluator-only except separately marked classifier mask diagnostics"
+  },
+  "accounting": {
+    "primary_common": "For each model show planned3, completed, parsed/raw action, raw-legal count, failure counts and all3 rows. No pooled ranking.",
+    "source_move_agreement": "Descriptive integer count out of all3 only; parse/error/illegal remains in denominator. Do not call this accuracy, improvement or strength.",
+    "latency": "Per-case warm/cold status and measured latency, model/runtime/device and exception types; no performance speed claim from n=3",
+    "no_selection": "No policy/checkpoint/hyperparameter/prompt changes based on these outputs; do not promote a preferred model from three scenes"
+  },
+  "retention": {
+    "proposed_private_run_directory": "data/private/gothamchess/illustrative-eval-v1",
+    "overwrite_policy": "Refuse an existing run directory; preserve partial failures",
+    "before_calls": [
+      "Exact protocol bytes/hash",
+      "FEN input file bytes/hash",
+      "Ledger hash without evaluator contents",
+      "Executed source snapshots and hashes",
+      "Model weights and config/tokenizer/class mapping hashes",
+      "Torch/transformers/python-chess/device/runtime versions"
+    ],
+    "after_calls": [
+      "All9 planned outcomes",
+      "All retained raw logits or generated strings/tokens",
+      "Raw-result hashes before evaluator join",
+      "Source-ledger evaluator join and complete denominator summary"
+    ]
+  },
+  "source_sha256": {
+    "scripts\\chess_classifier_adapter.py": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+    "data\\private\\chess-move-only-lm-v4\\executed-chess_move_only_lm_v4.py": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118",
+    "scripts\\chess_stockfish_distill.py": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7"
+  },
+  "execution_precondition": "Parent confirms v4GPU run is complete and GPU is available; no model/LLM/engine call authorized by writing this plan alone. Parent owns subsequent execution.",
+  "limitations": [
+    "Three short standard opening scenes are intentionally illustrative and too small/easy for generalization",
+    "Zero accepted holdouts; no human original-game/mainline certification",
+    "Unknown upstream pretraining overlap",
+    "Classifiers provide move classes, not ideas or grounded commentary",
+    "First-M language-policy task differs from original full-native B:first policy; no cross-protocol strength comparison",
+    "No authenticated frontier model identity/prompt/compute baseline from edited creator videos",
+    "Legality masking is explicit external rule assistance",
+    "No Elo, language understanding, commentary quality, teaching or sports-transfer conclusion",
+    "Codex-assisted work; this plan does not impersonate human research or satisfy formal project promotion gates"
+  ]
+}

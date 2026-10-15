@@ -1,0 +1,136 @@
+{
+  "schema": "chess.creator-scene.evaluator-join.v1",
+  "raw_seal_sha256": "bc47f4ee8aab5bd334b0fd3b2e2515aa5615725c174272acbc6f9493202f9324",
+  "raw_results_sha256": "e45f0a24b81c85d0d121bc2a16d15d1f1c3e3f4459b805d860367793e6f98de3",
+  "evaluator_ledger_sha256": "a23babc46d88b3767f185d1c0b1ef362f599896d30e52b06db2c3261f8c8f6e1",
+  "planned_outcomes": 9,
+  "accounted": 9,
+  "accepted_holdout_positions": 0,
+  "groups": {
+    "base_classifier_9m": {
+      "planned": 3,
+      "accounted": 3,
+      "parsed": 3,
+      "raw_legal": 3,
+      "matches_displayed_move": 1,
+      "statuses": {
+        "ok": 3
+      }
+    },
+    "selected_classifier_9m_step512": {
+      "planned": 3,
+      "accounted": 3,
+      "parsed": 3,
+      "raw_legal": 3,
+      "matches_displayed_move": 1,
+      "statuses": {
+        "ok": 3
+      }
+    },
+    "base_language_policy_124m": {
+      "planned": 3,
+      "accounted": 3,
+      "parsed": 3,
+      "raw_legal": 3,
+      "matches_displayed_move": 1,
+      "statuses": {
+        "ok": 3
+      }
+    }
+  },
+  "records": [
+    {
+      "condition": "base_classifier_9m",
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "status": "ok",
+      "raw_move_uci": "c1d2",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "e2e3",
+      "matches_displayed_move": false
+    },
+    {
+      "condition": "base_classifier_9m",
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "status": "ok",
+      "raw_move_uci": "f3d4",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "f3d4",
+      "matches_displayed_move": true
+    },
+    {
+      "condition": "base_classifier_9m",
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "status": "ok",
+      "raw_move_uci": "e4e5",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "b1c3",
+      "matches_displayed_move": false
+    },
+    {
+      "condition": "selected_classifier_9m_step512",
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "status": "ok",
+      "raw_move_uci": "c1d2",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "e2e3",
+      "matches_displayed_move": false
+    },
+    {
+      "condition": "selected_classifier_9m_step512",
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "status": "ok",
+      "raw_move_uci": "f3d4",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "f3d4",
+      "matches_displayed_move": true
+    },
+    {
+      "condition": "selected_classifier_9m_step512",
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "status": "ok",
+      "raw_move_uci": "e4e5",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "b1c3",
+      "matches_displayed_move": false
+    },
+    {
+      "condition": "base_language_policy_124m",
+      "position_id": "gotham-illustrative-sskvj1_ehx4-t0150",
+      "status": "ok",
+      "raw_move_uci": "d1c2",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "e2e3",
+      "matches_displayed_move": false
+    },
+    {
+      "condition": "base_language_policy_124m",
+      "position_id": "gotham-illustrative-ulLBRyVrI1Y-t0152",
+      "status": "ok",
+      "raw_move_uci": "f1c4",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "f3d4",
+      "matches_displayed_move": false
+    },
+    {
+      "condition": "base_language_policy_124m",
+      "position_id": "gotham-illustrative-PVVA-_wvKks-t0130",
+      "status": "ok",
+      "raw_move_uci": "b1c3",
+      "raw_legal": true,
+      "next_displayed_move_evaluator_only": "b1c3",
+      "matches_displayed_move": true
+    }
+  ],
+  "limitations": [
+    "Three short standard opening scenes are intentionally illustrative and too small/easy for generalization",
+    "Zero accepted holdouts; no human original-game/mainline certification",
+    "Unknown upstream pretraining overlap",
+    "Classifiers provide move classes, not ideas or grounded commentary",
+    "First-M language-policy task differs from original full-native B:first policy; no cross-protocol strength comparison",
+    "No authenticated frontier model identity/prompt/compute baseline from edited creator videos",
+    "Legality masking is explicit external rule assistance",
+    "No Elo, language understanding, commentary quality, teaching or sports-transfer conclusion",
+    "Codex-assisted work; this plan does not impersonate human research or satisfy formal project promotion gates"
+  ],
+  "claim": "Three standard-opening illustrations only. Displayed moves are not verified best moves or controlled frontier-model answers."
+}

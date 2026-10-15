@@ -1,0 +1,24 @@
+{
+  "schema": "chess.creator-scene.raw-seal.v1",
+  "files_sha256": {
+    "prepared.json": "680c59bf351c8306008f9a9fd130eaf000ff97e7ca2108addb305bcf7b27522e",
+    "before-model-calls.json": "deb95213cbac03bd6b1791a7123f107580b8038ecaf0400676db1b4bfcfe66bb",
+    "plan.json": "bbe7f80c5729ff124e8d6aab038b3208e2b572ffc6c590a2f11ce419f70d9523",
+    "fen-inputs.json": "255f2ab88c654bb8a1c82c0128552ffb3aefbc796bfe51ca9491f22ae6fd93de",
+    "raw-results.json": "e45f0a24b81c85d0d121bc2a16d15d1f1c3e3f4459b805d860367793e6f98de3",
+    "sources/chess_classifier_adapter.py": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+    "sources/executed-chess_move_only_lm_v4.py": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118",
+    "sources/chess_stockfish_distill.py": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7",
+    "sources/gotham_illustrative_eval.py": "f43f6beaed6ec8770b15967db0d14ab30827605cdcbe0a7aa55fa3034294c8a8",
+    "sources/test_gotham_illustrative_eval.py": "b504deeb1026b6298714d5de734f2577bede0ec0c3d63e1a7c89c58e3ffe8e57",
+    "raw/condition-0-scene-0.npy": "050819c794a303d86ea450841ec03a8d6c189bc46d5826fb2f31d6d88d80e49f",
+    "raw/condition-0-scene-1.npy": "b5be0915c0a9429d37959344508f1fd2980733f77e524f6caf70b2e03545ebc4",
+    "raw/condition-0-scene-2.npy": "6d42465c5562ffbc566e80dfb2cbc2ad836af36735d9db631bef5dde1017bfd8",
+    "raw/condition-1-scene-0.npy": "81aae742af7a99667eb3b4d2433fef535c88483bd1860aa66d3a8901294c4b3f",
+    "raw/condition-1-scene-1.npy": "54f2f8180f2f1a76921da9e05a1ab10b1fb1b11bb75a57b78cf14f670e8db2aa",
+    "raw/condition-1-scene-2.npy": "88272fdffbb9b1383c88acc7dcf42ad42f2417c127be47465ba88e50479bda72"
+  },
+  "planned_outcomes": 9,
+  "accounted": 9,
+  "evaluator_ledger_read": false
+}

@@ -1,0 +1,188 @@
+{
+  "schema": "gotham.illustrative.review-candidate-manifest.v1",
+  "status": "Retained nine-call illustration plus separately identified post-run code packaging; no research promotion",
+  "bound_file_count": 33,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 503,
+      "sha256": "6f6119061b34ffb13844c624c6b7eb929a1de5b6989c84c622fc82b5c939ca22"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/frozen-plan.json",
+      "bytes": 11486,
+      "sha256": "bbe7f80c5729ff124e8d6aab038b3208e2b572ffc6c590a2f11ce419f70d9523"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/independent-auditor.py.txt",
+      "bytes": 6860,
+      "sha256": "7e93b942ee0c0b93f98b5cee71572d10263f3995b58c835cd6104a831f425a27"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/original-software-checks.json",
+      "bytes": 1376,
+      "sha256": "3a2503f3101ac4da05ca4c1e81903fbf532dbde685e1984168e3d53ba0afddb3"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/packaging-auditor.py.txt",
+      "bytes": 10543,
+      "sha256": "ad6270b92d22c2aa235933ea0688c105f516ccea8d93b316fd3b52aea95d9723"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/sources/chess_classifier_adapter.py.txt",
+      "bytes": 14539,
+      "sha256": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/sources/chess_stockfish_distill.py.txt",
+      "bytes": 24592,
+      "sha256": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/sources/executed-chess_move_only_lm_v4.py.txt",
+      "bytes": 20059,
+      "sha256": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/sources/gotham_illustrative_eval.py.txt",
+      "bytes": 26426,
+      "sha256": "f43f6beaed6ec8770b15967db0d14ab30827605cdcbe0a7aa55fa3034294c8a8"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/archive/sources/test_gotham_illustrative_eval.py.txt",
+      "bytes": 16493,
+      "sha256": "b504deeb1026b6298714d5de734f2577bede0ec0c3d63e1a7c89c58e3ffe8e57"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/before-model-calls.json",
+      "bytes": 438,
+      "sha256": "deb95213cbac03bd6b1791a7123f107580b8038ecaf0400676db1b4bfcfe66bb"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/evaluation-receipt.json",
+      "bytes": 411,
+      "sha256": "098422d90af68d5a6e4afad3cd8025caff7bfb94122f9c8c29213fddef609d78"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/prepared.json",
+      "bytes": 4135,
+      "sha256": "680c59bf351c8306008f9a9fd130eaf000ff97e7ca2108addb305bcf7b27522e"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw/condition-0-scene-0.npy",
+      "bytes": 8000,
+      "sha256": "050819c794a303d86ea450841ec03a8d6c189bc46d5826fb2f31d6d88d80e49f"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw/condition-0-scene-1.npy",
+      "bytes": 8000,
+      "sha256": "b5be0915c0a9429d37959344508f1fd2980733f77e524f6caf70b2e03545ebc4"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw/condition-0-scene-2.npy",
+      "bytes": 8000,
+      "sha256": "6d42465c5562ffbc566e80dfb2cbc2ad836af36735d9db631bef5dde1017bfd8"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw/condition-1-scene-0.npy",
+      "bytes": 8000,
+      "sha256": "81aae742af7a99667eb3b4d2433fef535c88483bd1860aa66d3a8901294c4b3f"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw/condition-1-scene-1.npy",
+      "bytes": 8000,
+      "sha256": "54f2f8180f2f1a76921da9e05a1ab10b1fb1b11bb75a57b78cf14f670e8db2aa"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw/condition-1-scene-2.npy",
+      "bytes": 8000,
+      "sha256": "88272fdffbb9b1383c88acc7dcf42ad42f2417c127be47465ba88e50479bda72"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw-results.json",
+      "bytes": 38942,
+      "sha256": "e45f0a24b81c85d0d121bc2a16d15d1f1c3e3f4459b805d860367793e6f98de3"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/evidence/raw-seal.json",
+      "bytes": 1814,
+      "sha256": "bc47f4ee8aab5bd334b0fd3b2e2515aa5615725c174272acbc6f9493202f9324"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/fen-inputs.json",
+      "bytes": 740,
+      "sha256": "255f2ab88c654bb8a1c82c0128552ffb3aefbc796bfe51ca9491f22ae6fd93de"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/independent-results-audit.json",
+      "bytes": 3257,
+      "sha256": "3f732e11b7b3a5e26baf9d7af40f007a7360d2c4caf5f5e8c83c0de5c0b4c997"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/packaging-map.json",
+      "bytes": 1952,
+      "sha256": "93a296511d78df9fb01e62c859af55ad8b62b9d7221e84fcfb3d70355ba13fa4"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/packaging-results-audit.json",
+      "bytes": 3554,
+      "sha256": "dbd32036c71c4f3d1439c70ac8ae0affe1f4d6c0fe61431342cb5de3c08b2ff1"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/README.md",
+      "bytes": 5979,
+      "sha256": "6a93dcda699032ba8644597eebc51445927f3a0c66bd2ccdf3b6ed1bb35ee29e"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/software-checks.json",
+      "bytes": 1130,
+      "sha256": "3424cf0e26cf9d1ef88c92a42aec2795b34096192a9eb2b4e06d5eb4c9185421"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/software-tests.xml",
+      "bytes": 4807,
+      "sha256": "a1ee5f407b6cae758ff5c4f829d0ea449c776e88a0b4e0c4cde385f48055bbb4"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/source-ledger.json",
+      "bytes": 6868,
+      "sha256": "a23babc46d88b3767f185d1c0b1ef362f599896d30e52b06db2c3261f8c8f6e1"
+    },
+    {
+      "path": "experiments/gotham-illustrative-v1/summary.json",
+      "bytes": 4763,
+      "sha256": "58b6df701db7712a80429d25eb6e2fd1ec54c85de7ae7c3449aa78c302986ce8"
+    },
+    {
+      "path": "reports/gotham-illustrative-v1-2026-10-15.md",
+      "bytes": 5445,
+      "sha256": "6ae5c69f0b9c9ce2bff488e0ab6e20eabc3b4d747cc5a8355ecb215554ae3a3b"
+    },
+    {
+      "path": "scripts/gotham_illustrative_eval.py",
+      "bytes": 27003,
+      "sha256": "60fd75d1f5799481e17d2a9264167809135b2763ea25d658f125257614fb229a"
+    },
+    {
+      "path": "tests/test_gotham_illustrative_eval.py",
+      "bytes": 18401,
+      "sha256": "0f94fa2d4e221501889ca3811f73ed7fbbe47c4ee3154c98d51a55afb2deb280"
+    }
+  ],
+  "executed_runner_sha256": "f43f6beaed6ec8770b15967db0d14ab30827605cdcbe0a7aa55fa3034294c8a8",
+  "postrun_utility_sha256": "60fd75d1f5799481e17d2a9264167809135b2763ea25d658f125257614fb229a",
+  "frozen_plan_sha256": "bbe7f80c5729ff124e8d6aab038b3208e2b572ffc6c590a2f11ce419f70d9523",
+  "evaluation_sha256": "58b6df701db7712a80429d25eb6e2fd1ec54c85de7ae7c3449aa78c302986ce8",
+  "raw_seal_sha256": "bc47f4ee8aab5bd334b0fd3b2e2515aa5615725c174272acbc6f9493202f9324",
+  "packaging_audit_sha256": "dbd32036c71c4f3d1439c70ac8ae0affe1f4d6c0fe61431342cb5de3c08b2ff1",
+  "additional_model_or_engine_calls_during_packaging": 0,
+  "accepted_holdout_positions": 0,
+  "original_plan_is_portable": false,
+  "preservation": "All original paths, plan, private receipts, seal, models and earlier v4 report/viewer remain unchanged",
+  "excluded": [
+    "Creator media/frames/transcripts",
+    "Model weights",
+    "Whole original games, which remain unknown"
+  ],
+  "assistance": "Codex-assisted code and evidence packaging; no formal Luna/Terra/Company Runtime acceptance claimed"
+}

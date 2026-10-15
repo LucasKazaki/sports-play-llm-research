@@ -1,0 +1,31 @@
+{
+  "schema": "gotham.illustrative.packaging-map.v1",
+  "sealed_artifact_to_candidate_path": {
+    "prepared.json": "evidence/prepared.json",
+    "before-model-calls.json": "evidence/before-model-calls.json",
+    "plan.json": "archive/frozen-plan.json",
+    "fen-inputs.json": "fen-inputs.json",
+    "raw-results.json": "evidence/raw-results.json",
+    "sources/chess_classifier_adapter.py": "archive/sources/chess_classifier_adapter.py.txt",
+    "sources/executed-chess_move_only_lm_v4.py": "archive/sources/executed-chess_move_only_lm_v4.py.txt",
+    "sources/chess_stockfish_distill.py": "archive/sources/chess_stockfish_distill.py.txt",
+    "sources/gotham_illustrative_eval.py": "archive/sources/gotham_illustrative_eval.py.txt",
+    "sources/test_gotham_illustrative_eval.py": "archive/sources/test_gotham_illustrative_eval.py.txt",
+    "raw/condition-0-scene-0.npy": "evidence/raw/condition-0-scene-0.npy",
+    "raw/condition-0-scene-1.npy": "evidence/raw/condition-0-scene-1.npy",
+    "raw/condition-0-scene-2.npy": "evidence/raw/condition-0-scene-2.npy",
+    "raw/condition-1-scene-0.npy": "evidence/raw/condition-1-scene-0.npy",
+    "raw/condition-1-scene-1.npy": "evidence/raw/condition-1-scene-1.npy",
+    "raw/condition-1-scene-2.npy": "evidence/raw/condition-1-scene-2.npy"
+  },
+  "executed_runner_sha256": "f43f6beaed6ec8770b15967db0d14ab30827605cdcbe0a7aa55fa3034294c8a8",
+  "original_tests_sha256": "b504deeb1026b6298714d5de734f2577bede0ec0c3d63e1a7c89c58e3ffe8e57",
+  "frozen_plan_sha256": "bbe7f80c5729ff124e8d6aab038b3208e2b572ffc6c590a2f11ce419f70d9523",
+  "postrun_adaptations": [
+    "Repository import and adapter fixture paths in tests",
+    "Test snapshot discovery adjacent to runner or in ../tests",
+    "Optional explicit --expected-plan-sha256 for a separately frozen new plan; original default unchanged"
+  ],
+  "archival_plan_is_portable": false,
+  "additional_model_or_engine_calls": 0
+}
