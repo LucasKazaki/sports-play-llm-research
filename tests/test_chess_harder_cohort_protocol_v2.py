@@ -133,6 +133,17 @@ def rebind_strata_audit(manifest, audit):
     manifest["strata_audit_sha256"] = protocol_module.sha256_json(audit)
 
 
+def test_evaluator_theme_entry_can_be_empty_when_minimum_is_met_elsewhere(tmp_path):
+    base = write_base_manifest(tmp_path)
+    protocol = valid_protocol(base)
+    manifest = staged_manifest(protocol)
+    audit = bind_strata_audit(protocol, manifest)
+    audit["entries"][1]["themes"] = []
+    rebind_strata_audit(manifest, audit)
+    result = protocol_module.validate_staged_manifest(protocol, manifest, audit, base)
+    assert result["strata_audit_passed"] is True
+
+
 def test_valid_protocol_returns_only_redacted_preacquisition_summary(tmp_path):
     base = write_base_manifest(tmp_path)
     result = protocol_module.validate_protocol(valid_protocol(base), base)

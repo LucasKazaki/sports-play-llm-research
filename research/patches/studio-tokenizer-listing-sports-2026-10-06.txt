@@ -1,0 +1,387 @@
+--- a/src/server/lmstudio-client.js
++++ b/src/server/lmstudio-client.js
+@@ -943,6 +943,11 @@
+     }));
+   }
+   if (name === 'list_project_files') {
++    // Sports' expanded goal prompt needs literal spaces between listed entries
++    // after the model packet escapes newlines. Preserve the old compact bytes
++    // for other projects; the listing's parsed JSON value stays the same.
++    const listingJson = value => executionEnv.STUDIO_COMPANY_PROJECT_ID === 'sports-play-llm'
++      ? JSON.stringify(value, null, 1) : JSON.stringify(value);
+     const exactReads = exactAllowedReadPaths(executionEnv);
+     if (exactReads.length) {
+       const prefix = normalizedListingPath(args.path);
+@@ -951,7 +956,7 @@
+         || relative.toLowerCase() === comparablePrefix
+         || relative.toLowerCase().startsWith(`${comparablePrefix}/`));
+       if (!files.length) throw new Error('Project listing path is outside the task packet read allowlist');
+-      return JSON.stringify({
++      return listingJson({
+         ok: true,
+         root: path.basename(workspace),
+         files: files.map((relative) => {
+@@ -984,7 +989,7 @@
+     }
+     if (!fs.statSync(target).isDirectory()) throw new Error('List target is not a directory');
+     const depth = Number.isFinite(Number(args.depth)) ? Math.max(0, Math.min(3, Number(args.depth))) : 2;
+-    return JSON.stringify({ ok: true, root: path.basename(workspace), ...listProjectFiles(workspace, target, depth, sourceNavigationAdmitted) });
++    return listingJson({ ok: true, root: path.basename(workspace), ...listProjectFiles(workspace, target, depth, sourceNavigationAdmitted) });
+   }
+   if (name === 'read_project_file' || name === 'search_project_file') {
+     const ranged = Object.hasOwn(args, 'startLine') || Object.hasOwn(args, 'endLine');
+--- a/tests/lmstudio-project-listing-path.test.js
++++ b/tests/lmstudio-project-listing-path.test.js
+@@ -3,6 +3,7 @@
+ import fs from 'node:fs';
+ import os from 'node:os';
+ import path from 'node:path';
++import { createHash } from 'node:crypto';
+ import { executeProjectToolForTest } from '../src/server/lmstudio-client.js';
+ 
+ function fixture(t) {
+@@ -36,6 +37,34 @@
+     const result = await f.list(value);
+     assert.deepEqual(result.files.map(file => file.path), ['prototype/tests/test_example.py']);
+   }
++});
++
++test('large project listing stays countable after its JSON is nested in a model packet', async t => {
++  const f = fixture(t);
++  for (let index = 0; index < 300; index += 1) {
++    fs.writeFileSync(path.join(f.root, `synthetic-file-${String(index).padStart(3, '0')}.txt`),
++      `fixture ${index}`);
++  }
++  const otherProjectRaw = await executeProjectToolForTest('list_project_files',
++    { path: '.', depth: 1 }, f.options);
++  assert.equal(otherProjectRaw === JSON.stringify(JSON.parse(otherProjectRaw)), true,
++    'other projects retain their compact result bytes');
++  f.options.projectWorkspaces = new Map([['sports-play-llm', f.root]]);
++  f.options.executionEnv.STUDIO_COMPANY_PROJECT_ID = 'sports-play-llm';
++  const raw = await executeProjectToolForTest('list_project_files', { path: '.', depth: 1 }, f.options);
++  const parsed = JSON.parse(raw);
++  assert.equal(parsed.ok, true);
++  assert.equal(parsed.files.length, 300);
++  const generated = parsed.files.filter(file => file.path.startsWith('synthetic-file-'));
++  assert(generated.length >= 297);
++  assert(generated.every(file => file.type === 'file'));
++  const packet = JSON.stringify({ request: { messages: [{ role: 'tool', content: raw }] } });
++  const longestRun = Math.max(...[...packet.matchAll(/\S+/gu)].map(match => match[0].length));
++  assert(longestRun < 256, `projected listing contains an unbroken ${longestRun}-character run`);
++  const read = JSON.parse(await executeProjectToolForTest('read_project_file',
++    { path: 'README.md' }, f.options));
++  assert.equal(read.sha256,
++    createHash('sha256').update(fs.readFileSync(path.join(f.root, 'README.md'))).digest('hex'));
+ });
+ 
+ test('root listing aliases preserve an exact read allowlist', async t => {
+--- a/src/server/goal-work-session.js
++++ b/src/server/goal-work-session.js
+@@ -18,6 +18,7 @@
+ const SPORTS_MALFORMED_OUTPUT = 'HERMES_SPORTS_MALFORMED_OUTPUT';
+ const SPORTS_MALFORMED_REASONS = new Set(['malformed_assistant_envelope', 'invalid_assistant_shape',
+   'malformed_tool_arguments', 'required_tool_choice_omitted']);
++const PROJECT_LISTING_TYPES = new Set(['file', 'directory', 'other', 'missing', 'unavailable']);
+ const SHA256 = /^[a-f0-9]{64}$/;
+ const FORMAT_REPAIR_ID = /^[A-Za-z0-9][A-Za-z0-9._:-]{7,199}$/;
+ export function boundedCompanyHermesFormatRepair(marker) {
+@@ -134,6 +135,37 @@
+     if (contextCapacityError(error)) return { fits: false, reason: 'context' };
+     throw error;
+   }
++}
++
++// The durable goal history keeps the tool's exact original bytes. After the
++// context sampler has chosen a bounded set of directory entries, put literal
++// spaces between those entries only in the provider view. The enclosing JSON
++// transport escapes newlines, but not spaces; an old compact 300-file result
++// otherwise becomes one long tokenizer regex span on a resumed request.
++export function countableGoalProjectListingMessages(messages, toolTrace) {
++  const listingCalls = new Set(messages.flatMap(item => item.role === 'assistant'
++    ? (item.tool_calls || []).filter(call => call.function?.name === 'list_project_files')
++      .map(call => call.id) : []));
++  const traces = new Map();
++  for (const entry of toolTrace) {
++    if (typeof entry?.toolCallId !== 'string') continue;
++    traces.set(entry.toolCallId, [...(traces.get(entry.toolCallId) || []), entry]);
++  }
++  return messages.map(item => {
++    if (item.role !== 'tool' || !listingCalls.has(item.tool_call_id)
++      || typeof item.content !== 'string') return item;
++    const matching = traces.get(item.tool_call_id);
++    if (matching?.length !== 1 || matching[0].name !== 'list_project_files'
++      || matching[0].executed !== true || matching[0].ok !== true) return item;
++    let output;
++    try { output = JSON.parse(item.content); } catch { return item; }
++    if (!output || typeof output !== 'object' || Array.isArray(output)
++      || output.ok !== true || typeof output.root !== 'string' || !output.root
++      || !Array.isArray(output.files) || output.files.length > 300
++      || output.files.some(file => !file || typeof file !== 'object' || Array.isArray(file)
++        || typeof file.path !== 'string' || !file.path || !PROJECT_LISTING_TYPES.has(file.type))) return item;
++    return { ...item, content: JSON.stringify(output, null, 1) };
++  });
+ }
+ 
+ // The runtime owns persistence and its task/run/lease fence. This interpreter
+@@ -250,6 +282,25 @@
+     if (!state.feedback || drafts.length === 0) return state.history;
+     return state.history.filter(item => item.role === 'tool' || item.tool_calls);
+   };
++  const providerMessages = (baseMessages, options) => {
++    if (projectId !== 'sports-play-llm') return goalModelMessages(baseMessages, options);
++    const projected = goalModelMessages(baseMessages, options);
++    const countable = countableGoalProjectListingMessages(projected, state.toolTrace);
++    if (JSON.stringify(countable).length <= options.characterBudget) return countable;
++    // Reserve only the measured formatting overhead. The sampler may then
++    // reduce optional source/discovery text while keeping the required pairs.
++    const overhead = JSON.stringify(countable).length - JSON.stringify(projected).length;
++    const reduced = goalModelMessages(baseMessages,
++      { ...options, characterBudget: options.characterBudget - overhead });
++    const result = countableGoalProjectListingMessages(reduced, state.toolTrace);
++    if (JSON.stringify(result).length > options.characterBudget) {
++      const error = new Error('Countable retained project listing does not fit the reviewed goal context budget.');
++      error.code = 'LOCAL_MODEL_CONTEXT_BUDGET_EXCEEDED';
++      error.retryable = false;
++      throw error;
++    }
++    return result;
++  };
+   const requestInstruction = () => {
+     const drafts = nonterminalDrafts();
+     if (!state.feedback || drafts.length === 0) return `${guidance()}${state.feedback ? `\n${state.feedback}` : ''}${groundingPlan ?
+@@ -452,7 +503,7 @@
+           messages=null;
+           if(referenceContext){
+             try{
+-              const withReference=goalModelMessages([...baseMessages,{role:'user',content:referenceContext}],options);
++              const withReference=providerMessages([...baseMessages,{role:'user',content:referenceContext}],options);
+               const usefulSources=state.readReceipts.every(receipt=>withReference.some(message=>{
+                 if(message.role!=='tool')return false;
+                 try{const projected=JSON.parse(message.content);return projected.path===receipt.path&&projected.sha256===receipt.sha256
+@@ -461,7 +512,7 @@
+               if(usefulSources)messages=withReference;
+             }catch(error){if(!contextCapacityError(error))throw error;}
+           }
+-          messages ||= goalModelMessages(baseMessages,options);
++          messages ||= providerMessages(baseMessages,options);
+           requestTools = candidate.tools;
+           requestToolChoice = candidate.toolChoice;
+         } catch (error) {
+--- a/tests/goal-work-session.test.js
++++ b/tests/goal-work-session.test.js
+@@ -1,6 +1,6 @@
+ import test from 'node:test';
+ import assert from 'node:assert/strict';
+-import { runGoalWorkSession } from '../src/server/goal-work-session.js';
++import { countableGoalProjectListingMessages, runGoalWorkSession } from '../src/server/goal-work-session.js';
+ import { createLmStudioClient } from '../src/server/lmstudio-client.js';
+ import fs from 'node:fs';
+ import os from 'node:os';
+@@ -62,6 +62,132 @@
+   assert.equal(retained.text, result.text);
+   assert.equal(retained.metrics.requestCount, 0);
+   assert.equal(retained.usage.totalTokens, 0);
++});
++
++test('a retained compact 300-file listing is countable only in the resumed provider view', async () => {
++  const listingCall = call('task-grounding-6', 'list_project_files', { path: '.', depth: 2 });
++  const sourceCall = call('task-grounding-8', 'read_project_file', { path: 'source.py' });
++  const listing = JSON.stringify({ ok: true, root: 'SportsPlayLLMResearch',
++    files: Array.from({ length: 300 }, (_, index) => ({
++      path: `research/development/game-${String(index).padStart(4, '0')}.pgn`, type: 'file',
++    })), truncated: true });
++  const sourceText = 'source evidence and implementation\n'.repeat(1900);
++  const sourceReceipt = { ok: true, path: 'source.py', sha256: 'a'.repeat(64),
++    bytes: Buffer.byteLength(sourceText), content: sourceText };
++  let state = { version: 1, phase: 'provider_pending', requestCount: 1, toolCalls: 2,
++    rounds: 1, requiredReadIndex: 0, history: [
++      { role: 'assistant', content: null, tool_calls: [listingCall] },
++      { role: 'tool', tool_call_id: listingCall.id, content: listing },
++      { role: 'assistant', content: null, tool_calls: [sourceCall] },
++      { role: 'tool', tool_call_id: sourceCall.id, content: JSON.stringify(sourceReceipt) },
++    ], readReceipts: [sourceReceipt], toolTrace: [
++      { name: 'list_project_files', executed: true, ok: true, toolCallId: listingCall.id },
++      { name: 'read_project_file', executed: true, ok: true, toolCallId: sourceCall.id },
++    ], usage: { inputTokens: 0, outputTokens: 0, cachedTokens: 0, reasoningTokens: 0, totalTokens: 0 },
++    pendingAssistant: null, pendingIndex: 0, pendingReserved: false, feedback: '', corrections: 0,
++    finalText: '', error: '', decisionEvidence: null };
++  const durableHistory = JSON.stringify(state.history);
++  const durableReceipts = JSON.stringify(state.readReceipts);
++  const durableTrace = JSON.stringify(state.toolTrace);
++  const result = await runGoalWorkSession({
++    session: { get state() { return state; }, async save(value) { state = structuredClone(value); } },
++    projectId: 'sports-play-llm', system: 'Exact project authority. '.repeat(170),
++    task: 'Explain the current chess research task from retained evidence. '.repeat(500),
++    tools: ['list_project_files', 'read_project_file', 'propose_project_edit'].map(name => ({
++      type: 'function', function: { name, parameters: { type: 'object' } },
++    })), maximumRequests: 5, maximumCalls: 6, contextOptions: { characterBudget: 190_000 },
++    executeRead: async () => { throw Error('Retained reads must not be repeated.'); },
++    compileProposal: async () => { throw Error('No proposal is expected.'); },
++    validateEnvelope: text => JSON.parse(text).status === 'blocked',
++    requestModel: async request => {
++      const projected = request.messages.find(item => item.role === 'tool'
++        && item.tool_call_id === listingCall.id);
++      assert(projected, 'the retained listing must remain paired with its tool call');
++      assert.deepEqual(JSON.parse(projected.content), JSON.parse(listing));
++      const packet = JSON.stringify(request);
++      const longestRun = Math.max(...[...packet.matchAll(/\S+/gu)].map(match => match[0].length));
++      assert(longestRun < 1024, `resumed provider packet contains an unbroken ${longestRun}-character run`);
++      assert(packet.length <= 190_000, 'countable formatting must stay inside the reviewed context budget');
++      return body({ content: JSON.stringify({ status: 'blocked', summary: 'Review the retained evidence.',
++        evidence: [], messages: [], followUpTasks: [], browserRequests: [] }) });
++    },
++  });
++  assert.equal(JSON.parse(result.text).status, 'blocked');
++  assert.equal(JSON.stringify(state.history), durableHistory, 'provider formatting must not rewrite durable history');
++  assert.equal(JSON.stringify(state.readReceipts), durableReceipts, 'read receipts must retain their exact bytes');
++  assert.equal(JSON.stringify(state.toolTrace), durableTrace, 'tool trace must retain the original tool identity');
++  assert.equal(state.history[1].content, listing, 'the compact listing remains in the checkpoint');
++});
++
++test('countable provider formatting admits only successful paired project listings with valid entries', () => {
++  const listingCall = call('listed-files', 'list_project_files', { path: '.' });
++  const readCall = call('read-source', 'read_project_file', { path: 'source.py' });
++  const valid = JSON.stringify({ ok: true, root: 'SportsPlayLLMResearch',
++    files: [{ path: 'research/source.py', type: 'file' }], truncated: false });
++  const messages = [
++    { role: 'assistant', content: null, tool_calls: [listingCall, readCall] },
++    { role: 'tool', tool_call_id: listingCall.id, content: valid },
++    { role: 'tool', tool_call_id: readCall.id, content: valid },
++  ];
++  const trace = [
++    { name: 'list_project_files', executed: true, ok: true, toolCallId: listingCall.id },
++    { name: 'read_project_file', executed: true, ok: true, toolCallId: readCall.id },
++  ];
++  const before = JSON.stringify(messages);
++  const projected = countableGoalProjectListingMessages(messages, trace);
++  assert.deepEqual(JSON.parse(projected[1].content), JSON.parse(valid));
++  assert.notEqual(projected[1].content, valid);
++  assert.equal(projected[2].content, valid, 'a non-listing tool keeps its exact result bytes');
++  assert.equal(JSON.stringify(messages), before, 'projection cannot mutate durable input messages');
++  for (const invalid of ['{', JSON.stringify({ ok: false, root: 'x', files: [] }),
++    JSON.stringify({ ok: true, root: 'x', files: [null] }),
++    JSON.stringify({ ok: true, root: 'x', files: [{ path: 'source.py', type: 'unknown' }] }),
++    JSON.stringify({ ok: true, files: [{ path: 'source.py', type: 'file' }] })]) {
++    const input = [{ role: 'assistant', content: null, tool_calls: [listingCall] },
++      { role: 'tool', tool_call_id: listingCall.id, content: invalid }];
++    assert.equal(countableGoalProjectListingMessages(input, trace)[1].content, invalid);
++  }
++  for (const denied of [
++    [{ name: 'list_project_files', executed: false, ok: true, toolCallId: listingCall.id }],
++    [{ name: 'list_project_files', executed: true, ok: false, toolCallId: listingCall.id }],
++    [{ name: 'read_project_file', executed: true, ok: true, toolCallId: listingCall.id }],
++    [trace[0], trace[0]],
++  ]) assert.equal(countableGoalProjectListingMessages(messages, denied)[1].content, valid);
++});
++
++test('a non-Sports goal retains its original compact listing provider bytes', async () => {
++  const listingCall = call('other-list', 'list_project_files', { path: '.' });
++  const listing = JSON.stringify({ ok: true, root: 'other-project',
++    files: Array.from({ length: 300 }, (_, index) => ({
++      path: `research/file-${String(index).padStart(4, '0')}.md`, type: 'file',
++    })), truncated: true });
++  let state = { version: 1, phase: 'ready', requestCount: 1, toolCalls: 1,
++    rounds: 1, requiredReadIndex: 0, history: [
++      { role: 'assistant', content: null, tool_calls: [listingCall] },
++      { role: 'tool', tool_call_id: listingCall.id, content: listing },
++    ], readReceipts: [], toolTrace: [
++      { name: 'list_project_files', executed: true, ok: true, toolCallId: listingCall.id },
++    ], usage: { inputTokens: 0, outputTokens: 0, cachedTokens: 0, reasoningTokens: 0, totalTokens: 0 },
++    pendingAssistant: null, pendingIndex: 0, pendingReserved: false, feedback: '', corrections: 0,
++    finalText: '', error: '', decisionEvidence: null };
++  const result = await runGoalWorkSession({
++    session: { get state() { return state; }, async save(value) { state = structuredClone(value); } },
++    projectId: 'other-project', mode: 'verify', system: 'Read-only review.', task: 'Review retained output.',
++    tools: [], maximumRequests: 3, maximumCalls: 2, contextOptions: { characterBudget: 50_000 },
++    executeRead: async () => { throw Error('Retained listing must not be re-executed.'); },
++    compileProposal: async () => { throw Error('Read-only route has no proposal.'); },
++    validateEnvelope: text => JSON.parse(text).status === 'needs_review',
++    requestModel: async request => {
++      const projected = request.messages.find(item => item.role === 'tool'
++        && item.tool_call_id === listingCall.id);
++      assert.equal(projected?.content === listing, true,
++        'a non-Sports provider prompt must retain its earlier compact bytes');
++      return body({ content: JSON.stringify({ status: 'needs_review', summary: 'Read-only check.',
++        evidence: [], messages: [], followUpTasks: [], browserRequests: [] }) });
++    },
++  });
++  assert.equal(JSON.parse(result.text).status, 'needs_review');
++  assert.equal(state.history[1].content, listing);
+ });
+ 
+ test('verified zero-tool Sports malformed output settles once for review with spent budget and safe diagnostic', async () => {
+--- a/src/server/company-hermes-structured-completion.js
++++ b/src/server/company-hermes-structured-completion.js
+@@ -413,7 +413,18 @@
+   }
+   const packet = { schema: 'company-hermes-structured-completion/v1',
+     binding: { projectId, agentId, taskId, runId, fence }, request };
+-  const packetJson = JSON.stringify(packet);
++  // JSON escapes retain the exact parsed request and source hashes while
++  // keeping the prompt bytes sent to Hermes countable by the local tokenizer.
++  // Use the same text for both the token guard and the query-file transport.
++  const serializedPacket = JSON.stringify(packet);
++  const packetJson = projectId === 'sports-play-llm'
++    ? serializedPacket.replace(/[^\x00-\x7f]/gu, char => {
++      const point = char.codePointAt(0);
++      if (point <= 0xffff) return `\\u${point.toString(16).padStart(4, '0')}`;
++      const shifted = point - 0x10000;
++      return `\\u${(0xd800 + (shifted >> 10)).toString(16)}`
++        + `\\u${(0xdc00 + (shifted & 0x3ff)).toString(16)}`;
++    }) : serializedPacket;
+   const requiredToolRule = 'The packet request tool_choice is "required". Do not return the projected six-field task envelope or any final answer in this step. Set role to "assistant", content to null, and tool_calls to an array containing exactly one offered function call. The call has exactly id, type:"function", function:{name,arguments}; use a unique id, an exact offered function name, and a JSON-object arguments value matching its schema. Propose the next grounded tool call; do not invent a tool result.';
+   const requiredToolTail = request.tool_choice === 'required'
+     ? '\nOUTPUT CONTRACT: The packet request tool_choice is "required". Do not return the projected six-field task envelope. Exactly one tool call with an offered function and schema-matching arguments is required.'
+--- a/tests/company-hermes-transport-schema.test.js
++++ b/tests/company-hermes-transport-schema.test.js
+@@ -137,6 +137,50 @@
+   }
+ });
+ 
++test('large resumed Sports prompt counts and sends the same value-preserving Unicode-escaped JSON packet', async () => {
++  const quotedSource = `Retained source says \u201cqueen trade\u201d \u2014 then \u2192 \u{1f3af}.\n${'Development evidence with spaces. '.repeat(4700)}`;
++  const sourceResult = JSON.stringify({ ok: true, path: 'research/chess-source.md',
++    sha256: 'a'.repeat(64), bytes: Buffer.byteLength(quotedSource), content: quotedSource });
++  const priorCall = { id: 'prior-source-read', type: 'function', function: {
++    name: 'read_project_file', arguments: '{"path":"research/chess-source.md"}',
++  } };
++  const projectedRequest = request({ tool_choice: 'auto', messages: [
++    ...messages, { role: 'assistant', content: null, tool_calls: [priorCall] },
++    { role: 'tool', tool_call_id: priorCall.id, content: sourceResult },
++  ] });
++  const counted = [];
++  const complete = fixture(async (_args, options) => {
++    assert(counted.includes(options.stdinText), 'the exact query-file bytes must have been token-counted');
++    assert.equal([...options.stdinText].some(char => char.codePointAt(0) > 127), false,
++      'the exact counted and sent prompt must use ASCII JSON escapes');
++    assert.match(options.stdinText, /\\u201cqueen trade\\u201d/);
++    const packet = JSON.parse(options.stdinText.slice(options.stdinText.indexOf('\n') + 1));
++    assert.deepEqual(packet.request, projectedRequest, 'JSON escaping cannot change tool/source values');
++    assert.equal(packet.request.messages.at(-1).content, sourceResult,
++      'the retained source receipt and SHA256 remain byte-identical after parsing');
++    return `${finalAnswer}\nSession ID: session_12345678`;
++  }, { countPromptTokens: async prompt => { counted.push(prompt); return 50_000; } });
++  const result = await complete({ ...ordinaryGoalBinding, request: projectedRequest });
++  assert.equal(result.choices[0].finish_reason, 'stop');
++  assert(counted.length >= 2, 'all oversized candidate prompts are counted');
++  assert(counted.every(prompt => [...prompt].every(char => char.codePointAt(0) < 128)));
++});
++
++test('the Sports tokenizer encoding leaves other project prompt bytes unchanged', async () => {
++  const otherRequest = request({ tools: [], tool_choice: 'auto', messages: [
++    { role: 'system', content: 'Supervisor source is authoritative.' },
++    { role: 'user', content: 'Review the \u201cquoted\u201d status.' },
++  ] });
++  const complete = fixture(async (_args, options) => {
++    assert.equal(options.stdinText.includes('\u201cquoted\u201d'), true);
++    const packet = JSON.parse(options.stdinText.slice(options.stdinText.indexOf('\n') + 1));
++    assert.deepEqual(packet.request, otherRequest);
++    return `{"status":"needs_review","summary":"Read-only check.","evidence":[],"messages":[],"followUpTasks":[],"browserRequests":[]}\nSession ID: session_12345678`;
++  });
++  const result = await complete({ ...supervisorBinding, request: otherRequest });
++  assert.equal(result.choices[0].finish_reason, 'stop');
++});
++
+ test('required transport binds each offered name to its own exact parameters without mixed anyOf nodes', async () => {
+   const search = { type: 'function', function: { name: 'search_project_files',
+     parameters: { type: 'object', additionalProperties: false, required: ['query'],

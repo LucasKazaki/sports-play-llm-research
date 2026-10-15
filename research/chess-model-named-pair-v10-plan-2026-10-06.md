@@ -1,0 +1,15 @@
+# Model-named paired search attachment — v10 proposal
+
+**Design only, 6 October 2026.** No v10 code, model call, engine call, new game, or quality result exists. This is a next software step under the [chess commentary gate](chess-commentary-capability-gate-v1.md), not permission to relax it.
+
+The [v9 checker](chess-no-forward-teaching-v9-2026-10-06.md) can replay a model-named alternative and conditional board fact. It cannot rank that alternative. The [four-position paired baseline](chesscom-breadth-baseline-2026-10-06.md) searched an engine-selected alternative, which need not be the model's choice. Three of its four comparisons contain a score bound. Giving their PVs or later boards to the generator would violate the no-forward input contract.
+
+## Proposed evaluator-only interface
+
+Create a separate `scripts/chess_no_forward_named_pair_v10.py` with an offline `attach_named_pair(packet_bytes, packet_sha256, raw_response, *, source_binding, paired_review_bytes, paired_review_sha256, native_receipt_binding)` function. Do not change the v9 generator packet, prompt or claim schema. Recompute the v9 legal verdict first. If it lacks an accepted model-named `alternative_uci`, return an explicit no-comparison result.
+
+For an accepted alternative, hash-check and validate a pinned `chess-paired-review/v3` record against the same source game, ply, pre-move FEN and played move. Require the record's paired alternative to equal the model-named move. Only two unqualified centipawn scores from the **same paired search**, with the same pre-move mover's perspective, can produce `delta_cp = alternative - played`. Mate values, upper/lower bounds, a mismatched move, a different root/search event, a missing receipt or any source mismatch must abstain or reject. Return separate typed fields for the legal v9 witness and the finite engine observation; set `causal_claim_supported: false` and `quality_evaluated: false`. Do not render new lesson prose.
+
+Meaningful synthetic tests should exercise a signed exact-score difference, reversed perspective, altered source/hash/ply/root/PV, rejected or abstaining model output, and the unchanged nine-field no-forward projection. A source-bound integration over the four retained practice records should return **no rankable model-named contrast**: the synthetic queen alternative `Rc1` differs from the engine-sampled `Qb3`; the rook alternative `Rb1` has an upper-bound score; the other two v9 examples name no alternative. Those results would test safe restraint, not model quality.
+
+The existing paired-search tool chooses its own alternative and cannot request arbitrary model-named root moves. A later separately versioned post-generation search, with a frozen budget and source receipt, would be needed before this adapter could rank such a move. Even a valid finite score difference is one Stockfish observation, not proof of *why* the move is bad or that the explanation teaches well. Formal function-level source review, actual one-attempt model outputs, fresh-game testing and qualified chess judgment remain separate gates.

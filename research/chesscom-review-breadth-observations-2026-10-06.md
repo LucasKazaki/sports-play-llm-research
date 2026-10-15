@@ -1,0 +1,25 @@
+# Chess.com Game Review breadth observations — 6 October 2026
+
+At 13:15 UTC I revisited the already open [Kazaki44–fredje81 Game Review](https://www.chess.com/analysis/game/live/184866057876/review) in the user's Chrome tab. These are **four visible Chess.com annotations from one game**, collected as practice references for the [four-case development plan](chesscom-breadth-practice-plan-2026-10-06.md). They are not independent ground truth, model results, engine results, or a blind test. The scores below are transcribed exactly as displayed on each loaded move card; no score perspective or mate meaning is inferred beyond the sign shown.
+
+| Planned case | Selected review card and link | Chess.com label and displayed score | Visible coach message, paraphrased |
+| --- | --- | --- | --- |
+| Ply 33, **17.Qc2** | [17.Qc2](https://www.chess.com/analysis/game/live/184866057876/review?move=32); the move card showed “c2” with a queen icon. | **Inaccuracy**, **+1.14** | The card says a better option would threaten to capture a knight; it does not name that move in the message. |
+| Ply 46, **23...Qxd4+** | [23...Qxd4+](https://www.chess.com/analysis/game/live/184866057876/review?move=45); the card showed “xd4+” with a queen icon. | **Best**, **−2.99** | Black takes White's pawn and, in the review's account, comes out with material after the exchanges. |
+| Ply 57, **29.Rac1** | [29.Rac1](https://www.chess.com/analysis/game/live/184866057876/review?move=56); the card showed “ac1” with a rook icon. | **Miss**, **−3.05** | The review says White's best move would instead have put a rook on an open file. |
+| Ply 93, **47.Rb8** | [47.Rb8](https://www.chess.com/analysis/game/live/184866057876/review?move=92); the card showed “b8” with a rook icon. | **Best**, **−6.67** | Placing the rook behind Black's passed pawn makes that pawn harder to promote. |
+
+The interface initially showed loading placeholders after each move URL; I recorded a case only after the selected move card, score, and coach bubble appeared together. The move card's piece icon and the mainline list supplied the full SAN where its heading shortened the move to a destination such as “c2” or “b8.” The screenshots were inspected through the live browser tool but **were not saved as local files**; the links identify the visible UI states, not immutable evidence. Chess.com may recompute or change a review later. The page's accessibility text omitted the coach bubble, so those paraphrases were read from the visible screenshots rather than an exported machine-readable record. I did not click Explain or Best, request another analysis, or inspect any suggested continuation.
+
+These messages sharpen the development questions without deciding them. For 17.Qc2 the plan's verified queen escape is a board fact, while the review's teaching emphasis is an *alternative* that threatens a knight. For 23...Qxd4+ the review talks about material after trades but does not itself spell out the check or queen attack visible in the plan's replay facts. For 29.Rac1 it calls the move a miss and favors open-file play; the plan's rook-support geometry alone therefore cannot justify calling the played move good. For 47.Rb8 the passed-pawn explanation aligns with the geometric idea, yet the displayed score still describes a position unfavorable to White. None of these differences proves that Chess.com or the project is right about the strategic cause. Preserve these annotations outside any no-forward generator input and use them only in a separate, source-labeled evaluation.
+
+
+## Live recheck at 20:00 UTC
+
+I used the same open Game Review and selected all four moves through its visible move list. The loaded cards still showed the labels and scores in the table. The Qc2 card's message spoke only of threatening to capture a knight, so I removed the earlier unsupported “developing move” inference. The card does not identify the alternative move or prove that threat. The other three paraphrases remain faithful to the cards I saw: material after trades on Qxd4+, open-file rook play instead of Rac1, and placing the rook behind the passed pawn on Rb8.
+
+I briefly opened **Explain** on the Rb8 card. It displayed a possible Black rook move and a continuation, which I did not treat as the played game or a verified engine line. No screenshot or machine-readable Chess.com answer was retained from this recheck. These dated UI observations stay outside the generator packet and remain unsuitable as a frozen paired comparator.
+
+## Live recheck at 04:46 UTC on 7 October
+
+The open review was still on 47.Rb8 (`move=92`). Its loaded card still called the move **best**, but now displayed **−6.69**, rather than the **−6.67** recorded on 6 October. I opened **Explain** once and read a possible reply about blocking an attack on a pawn, then returned to the selected move. I did not verify that continuation as a chess claim or use it as model input. This small display change is another reason to keep the dated Chess.com observations separate from the source-pinned four-case evaluation; it is not a new result for our model.

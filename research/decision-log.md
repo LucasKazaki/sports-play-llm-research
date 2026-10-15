@@ -1,5 +1,48 @@
 # Decision Log
 
+## D-052 — 2026-10-06 — Stage the Hermes repair without disrupting active inference
+
+The live Studio checkout contains a narrow, tested semantic port of exact offered-tool grammar for ordinary Sports goal work. Preserve its concurrent supervisor route and the failed model session as evidence. Twenty-one transport and 63 adjacent checks pass, with independent read-only source review; this is on-disk source only. The current model call and native jobs retain their ownership. Activate through the documented lease-backed, zero-busy maintenance restart, then inspect one fresh non-replayed goal outcome. Do not report a working model path from static tests alone.
+
+## D-051 — 2026-10-06 — Keep the holdout freeze card structural until real gates exist
+
+Use the new offline freeze-card validator to reject missing or inconsistent prospective study fields before any source acquisition. Its 26 synthetic checks and native receipt prove only structural behavior; the output states `holdout_frozen=false`. The official Lichess catalog lists the proposed October 2025 standard file and checksum, but no archive game was opened and source rights/exclusion truth is not established by the synthetic card. The next bounded task is a count-only protected-exclusion oracle contract with synthetic negative controls; no sealed member details or heldout cases enter a model. Source, qualified reviewers, independent receipt review and a separate Chess.com paired study remain required for quality claims.
+
+## D-050 — 2026-10-06 — Change the next goal input, retain the failed turns
+
+The Sports goal worker's two attempts yielded no chess answer: malformed `propose_project_edit` arguments, then a 1,800-second inactivity timeout. Preserve those task/run receipts and the new active task. Narrow only the future `GOAL_WORK.json` item to the already written heldout protocol candidate and five relevant read paths; do not rerun old captures or treat a planner packet as a model result. The root transport mismatch has a tested candidate in an isolated Studio worktree, but no activation or live proof. The exact boundary and hashes are in [the repair note](chess-goal-work-repair-2026-10-06.md).
+
+## D-049 — 2026-10-06 — Keep the lesson's legal examples separate from model quality
+
+Use the v5 step-by-step page for the Chess.com practice question only as evaluator-side teaching material. Its r7 source corrects generic labels that could name the wrong side, piece type or reply, or imply a unique option without proof. Final native task `4fa6a4c7-dae6-475e-8623-7ed590b316e7` passed 23 focused tests and reverified the saved page; independent source review closed the wording findings before a whitespace-only source normalization. The retained JSON's analogous-target flag is narrower than a full option-availability check. Keep this page away from the no-forward generator and keep model quality unclaimed. The separate game-disjoint holdout protocol remains a candidate with unfilled source and review pins; it authorizes no holdout acquisition or board-game expansion.
+
+## D-048 — 2026-10-06 — Reject incomplete or silently skipped standard-game text
+
+For a broader chess development set, accept only caller-pinned decompressed PGN records with an observed complete boundary, a standard start, a supported time control and a fully consumed legal mainline. An independent review found that the general PGN parser could silently skip junk or extra moves after a result. The repaired intake lexes every visible mainline token, checks move numbering and canonical SAN, and rejects false check or mate marks. Native task `0d4a1c58-b194-4399-8a7c-86d5823403d2` passed 135 focused checks with one Windows symlink privilege skip; an independent 17-case adversarial recheck found no remaining false acceptance in this scope. The parser is evaluator-only and does not establish source provenance: the compressed-prefix broker, decompression binding, protected-game exclusions and cohort selection remain separate work. Preserve the failed reproductions and earlier test receipts as repair evidence.
+
+## D-046 — 2026-10-06 — Keep the practice lesson, model input, and quality claim separate
+
+Use the user's open Chess.com Game Review as one post-game practice case. The first plausible pawn-loss explanation was incomplete: a legal queen trade reaches the same board after both Qc3 and Qe4. Preserve the failed verifier and the correction, then show the b7 threat and possible replies only on a separately checked evaluator-side page. A no-forward generator receives one move's source-bound pre-move facts and qualified score, never the saved continuation, alternative, annotations or post-move board. The v4 page and packets passed native checks, but there has been no model explanation of this game or independent teaching review. Keep the Archit Doc edit as a plain-language candidate until the actual Luna/Terra publication sequence is available. Save reviewable source to draft GitHub PR #4; keep raw PGN and generated evidence local under the mirror policy. The chess capability gate remains open.
+
+Pin the evaluator-side v4 page to the *approved* v3 receipt and page digests, not merely whatever matching files occupy the input folder. The first version had a coherent-replacement gap; the repaired page and negative test passed native checks. Preserve the original r5 output as history and use the pinned r6 output for current practice.
+
+## D-047 — 2026-10-06 — Freeze one move per local-model attempt
+
+Keep Qc3 and Qe4 in separate frozen requests so the generator never sees the comparison answer. Bind the PGN, approved review, packet, prompt, route, every called local helper and request manifest before a POST. Preserve the first unused frozen version and its review finding; use only the new helper-pinned directories for a future call. Count a timeout or interrupted request as a spent attempt, and require a matching model identity before treating raw output as captured. The shared route's existing research owner finishes first. A valid typed response will still be development plumbing, not a chess teaching verdict.
+
+## 2026-10-05 — Keep the usable chess review distinct from commentary acceptance
+
+Build a local page over the eight real development positions and a separate
+post-game PGN review path. Both expose legal rule facts and typed, bounded
+Stockfish observations, while explicitly withholding unsupported strategic
+explanations. Preserve the frozen eight-call local-model capture and its zero
+admitted typed claims; the original transport supplied no typed-output
+instruction, so a corrected run must be newly versioned with fresh
+game-disjoint data. Do not turn the synthetic finished-game software demo or
+passing tests into chess-quality evidence. Exact implementation, verification
+and remaining promotion gates are in
+`chess-product-readiness-2026-10-05.md`.
+
 ## 2026-09-22 — Exact implementation after failed planner handoffs
 
 Preserve malformed/missing-source proposals and failed jobs; supply a bounded native implementation with meaningful tests rather than an unchanged planner retry. The new evaluator distinguishes legal asserted variations from exact retained engine PV attribution. Full typed receipts remain evaluator-only. Correct the old assisted-generation instructions to the current strict no-forward contract. Record local independent-review failure separately from code-test success; a bundle of exact source/log bytes repairs the finite read-packet mismatch without changing budgets or model routing.

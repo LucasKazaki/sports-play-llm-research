@@ -1,8 +1,13 @@
 # Project Guide — Sports Play LLM Research
 
-Latest repair: [frozen intake restoration and unresolved false cohort acceptance](research/chess-intake-restoration-2026-09-22.md). The original v1 importer is restored with 102 focused and 1375 full passing tests (one existing permission skip). The stored harder-cohort acceptance is erroneous; no new cohort was acquired. Preserve its original task/receipt/budget evidence and treat the substantive requirement as unfinished.
+Historical repair: [frozen intake restoration and false cohort acceptance](research/chess-intake-restoration-2026-09-22.md). The original v1 importer was restored. Preserve the erroneous September 22 acceptance and exact counter-evidence. A separately versioned 24-position cohort was assembled from the retained CC0 prefix on October 5; its source binding and limitations are in [the current readiness receipt](research/chess-product-readiness-2026-10-05.md). This does not pass the commentary gate.
 
 Current acceptance authority: read `research/chess-commentary-capability-gate-v1.md` before planning commentary work. The latest finite implementation/evidence handoff is `research/chess-no-forward-input-2026-09-22.md`; it links the earlier extended-claim validator and the next generation-runner requirement. Chess remains the only active domain; local execution continues while the gate is unpassed.
+
+Current local review entrypoint: `prototype/CHESS_EVIDENCE_REVIEW.md` documents the
+real-development evidence page and the offline completed-game PGN review tool.
+They expose board facts and bounded engine observations; the commentary gate
+above remains unpassed.
 
 
 ## Purpose

@@ -93,8 +93,9 @@ def _timestamp(value, code):
     return parsed
 
 
-def _distinct_strings(values, code):
-    if not isinstance(values, list) or not values or any(not isinstance(item, str) or not item for item in values):
+def _distinct_strings(values, code, allow_empty=False):
+    if not isinstance(values, list) or (not allow_empty and not values) \
+            or any(not isinstance(item, str) or not item for item in values):
         _fail(code)
     if len(values) != len(set(values)):
         _fail(code)
@@ -312,7 +313,7 @@ def _validate_strata_audit(audit, manifest, protocol, position_ids, retrieved_at
         if len(matches) != 1:
             _fail("cohort_strata_rating_invalid")
         rating_counts[matches[0]] += 1
-        themes = _distinct_strings(entry["themes"], "cohort_strata_audit_invalid")
+        themes = _distinct_strings(entry["themes"], "cohort_strata_audit_invalid", allow_empty=True)
         if set(themes) - set(theme_counts):
             _fail("cohort_strata_theme_invalid")
         for theme in themes:
