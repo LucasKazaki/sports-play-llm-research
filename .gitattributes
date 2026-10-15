@@ -28,3 +28,11 @@ experiments/gotham-constructed-middlegame-v1/** -text whitespace=blank-at-eol,bl
 
 # Retain exact reviewed matched-check pre-call source snapshots.
 experiments/chess-matched-check-v1/pre-call-runtime-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Retain the completed matched-check report bytes.
+reports/chess-matched-check-v1-2026-10-15.md -text
+
+# Preserve the reviewed LF intake source/test bytes on Windows checkout.
+scripts/chess_matched_check_intake.py text eol=lf
+tests/test_chess_matched_check_intake.py text eol=lf
+tests/test_chess_matched_check_exclusions.py text eol=lf

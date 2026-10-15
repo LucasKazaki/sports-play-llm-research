@@ -1,0 +1,81 @@
+--- stable-v1/matched_run.py
++++ stable-v2/matched_run.py
+@@ -205,6 +205,53 @@
+     boundary.reviewed_modules()[0].seal_raw(raw,outcomes,[row["case_id"] for row in rows],metadata)
+ 
+ 
++def failed_outcome_ledger(worker_out,reason):
++    """Separate failure accounting, never overwrite/reseal a partial raw tree."""
++    cases=planned_ids()
++    found,conflicts,notes={},{},[]
++    journal=worker_out/"journal.jsonl"
++    if journal.exists():
++        with journal.open(encoding="utf-8") as stream:
++            for index,line in enumerate(stream):
++                try:
++                    row=json.loads(line)
++                    if (not isinstance(row,dict) or row.get("case_id") not in cases or
++                        row.get("status") not in ("completed","truncated","error","not_run") or
++                        not isinstance(row.get("text"),str)):
++                        raise ValueError("invalid journal outcome")
++                except (ValueError,TypeError):
++                    notes.append({"journal_line":index,"invalid_or_partial":True})
++                    continue
++                case=row["case_id"]
++                if case in found:
++                    conflicts[case]=True
++                else:
++                    found[case]=row
++    outcomes=[]
++    for index,case in enumerate(cases):
++        if case in conflicts:
++            outcomes.append({"case_id":case,"status":"error","text":"",
++                "actual_call_status":"unresolved_conflicting_journal_outcomes"})
++        elif case in found:
++            outcomes.append(found[case])
++        elif (worker_out/(f"prepared-{index:02d}.json")).exists():
++            outcomes.append({"case_id":case,"status":"error","text":"",
++                "actual_call_status":"unknown_after_worker_interruption"})
++        else:
++            outcomes.append({"case_id":case,"status":"not_run","text":""})
++    partial_files={}
++    for name in ("raw/raw.json","raw/raw.json.tmp","raw/seal.json","raw/seal.json.tmp","journal.jsonl"):
++        path=worker_out/name
++        if path.is_file():
++            partial_files[name]=boundary.sha(path)
++    target=worker_out.parent/"failed-outcome-ledger.json"
++    boundary.fresh(target,{"schema":"chess.matched-check.failed-outcomes.v1","planned":64,
++        "rows":outcomes,"reason":reason,"partial_files_sha256":partial_files,
++        "recovery_notes":notes,"status":"FAILED","quality_completion":False,
++        "limits":"File-only failure accounting, not a raw seal or permission to score/replay. No labels opened."})
++    return boundary.sha(target)
++
++
+ def supervise(repo,cohort,extension_path,expected_extension_sha,out,*,sampler=None,
+               foreign=foreign_check,clock=time.monotonic,sleep=time.sleep,popen=subprocess.Popen):
+     started=clock()  # Includes all preflight, hashes, model load, eval and finalization.
+@@ -216,6 +263,7 @@
+     boundary.fresh(out/"intent.json",{"planned":64,"selected_step":512,"budget_seconds":600,
+         "cleanup_seconds":30,"extension_sha256":expected_extension_sha})
+     child,failure,forced=None,None,False
++    failed_ledger_sha256=None
+     # IDs alone disclose no answers and let setup failures keep all64 outcomes.
+     rows=[{"case_id":case} for case in planned_ids()]
+     extension,manifest=None,None
+@@ -298,10 +346,15 @@
+                     "no_quality_completion":failure is not None})
+             except Exception as error:
+                 failure=(failure or "")+";recovery:"+type(error).__name__+":"+str(error)
++                try:
++                    failed_ledger_sha256=failed_outcome_ledger(worker_out,failure)
++                except Exception as ledger_error:
++                    failure+=";failure_ledger:"+type(ledger_error).__name__+":"+str(ledger_error)
+         boundary.fresh(out/"supervision.json",{"status":"FAILED" if failure else "PASS",
+             "failure":failure,"last_owned_pid":child.pid if child else None,
+             "last_exit_code":child.poll() if child else None,"forced_owned_termination":forced,
+-            "elapsed_seconds":clock()-started,"planned":64,"no_response_retries":True})
++            "elapsed_seconds":clock()-started,"planned":64,"no_response_retries":True,
++            "failed_outcome_ledger_sha256":failed_ledger_sha256})
+     if failure:
+         raise RuntimeError("attempt failed and retained; no replay:"+failure)
+     return boundary.sha(out/"completion.json")

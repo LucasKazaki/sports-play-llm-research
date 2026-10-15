@@ -1,0 +1,56 @@
+{
+  "status": "CONSTRUCTED_SOFTWARE_FIXTURES_NOT_REAL_SOURCE_OR_COHORT",
+  "source_rows_read": 0,
+  "fixtures": [
+    {
+      "name": "quiet_rook_geometry",
+      "row": {"PuzzleId": "Fixture1", "GameId": "AbCd0001/black#38", "FEN": "6k1/8/8/8/8/8/4R3/K7 b - - 0 1", "Moves": "g8f8"},
+      "expected_after_fen": "5k2/8/8/8/8/8/4R3/K7 w - - 1 2",
+      "manually_expected_pair": ["e2e3", "e2e8"],
+      "manual_checks": {"e2e3": false, "e2e8": true},
+      "manual_explanation": "Re8 attacks Kf8 along rank8; Re3 shares neither rank nor file with Kf8. Both moves originate at e2 and are quiet rook moves."
+    },
+    {
+      "name": "same_victim_knight_capture",
+      "row": {"PuzzleId": "Fixture2", "GameId": "AbCd0002#10", "FEN": "6k1/n5n1/8/8/3B4/4r3/8/K7 b - - 0 1", "Moves": "g8h8"},
+      "expected_after_fen": "7k/n5n1/8/8/3B4/4r3/8/K7 w - - 1 2",
+      "manually_expected_pair": ["d4a7", "d4g7"],
+      "manual_checks": {"d4a7": false, "d4g7": true},
+      "different_victim_move": "d4e3",
+      "manual_explanation": "Bxg7 attacks Kh8 on the adjacent diagonal; Bxa7 does not. Both capture knights; Bxe3 captures a rook and cannot match that capture type."
+    },
+    {
+      "name": "pinned_rook_apparent_check_is_illegal",
+      "row": {"PuzzleId": "Fixture3", "GameId": "AbCd0003", "FEN": "4r1k1/8/8/8/8/8/4R3/4K3 b - - 0 1", "Moves": "g8f8"},
+      "expected_after_fen": "4rk2/8/8/8/8/8/4R3/4K3 w - - 1 2",
+      "must_not_be_legal": "e2f2",
+      "expected_matched_pairs": 0,
+      "manual_explanation": "Rf2 would line up with Kf8 but exposes Ke1 to the black rook on e8. Rxe8 is a checking capture without a matching nonchecking capture."
+    },
+    {
+      "name": "candidate_promotions_and_both_castles_excluded",
+      "row": {"PuzzleId": "Fixture4", "GameId": "AbCd0004/white", "FEN": "6k1/4P3/8/8/8/8/8/R3K2R b KQ - 0 1", "Moves": "g8f7"},
+      "expected_after_fen": "8/4Pk2/8/8/8/8/8/R3K2R w KQ - 1 2",
+      "legal_but_excluded_candidates": ["e7e8q", "e7e8r", "e7e8b", "e7e8n", "e1g1", "e1c1"],
+      "manual_explanation": "All four promotions and both orthodox castles are legal here but outside this diagnostic's candidate domain."
+    },
+    {
+      "name": "en_passant_candidate_excluded",
+      "row": {"PuzzleId": "Fixture5", "GameId": "AbCd0005", "FEN": "6k1/3p4/8/4P3/8/8/8/6KR b - - 0 1", "Moves": "d7d5"},
+      "expected_after_fen": "6k1/8/8/3pP3/8/8/8/6KR w - d6 0 2",
+      "legal_but_excluded_candidates": ["e5d6"],
+      "manual_explanation": "The setup double pawn move establishes legal en passant; e5d6 is excluded from pairing."
+    },
+    {
+      "name": "special_setup_move_itself_is_not_forbidden",
+      "row": {"PuzzleId": "Fixture6", "GameId": "AbCd0006", "FEN": "6k1/8/8/8/8/K7/p3R3/8 b - - 0 1", "Moves": "a2a1q"},
+      "expected_after_fen": "6k1/8/8/8/8/K7/4R3/q7 w - - 0 2",
+      "manual_explanation": "A legal first setup promotion is allowed by the frozen setup rule. Only proposed paired candidate moves exclude special moves."
+    }
+  ],
+  "canonical_key_fixture": {
+    "fen_with_illegal_ep_due_to_pin": "4r1k1/8/8/3pP3/8/8/8/4K3 w - d6 0 2",
+    "same_key_with_other_clocks_and_no_ep": "4r1k1/8/8/3pP3/8/8/8/4K3 w - - 47 20",
+    "manual_explanation": "En passant would expose Ke1 along the e-file; default legal-en-passant FEN normalizes it away. Clocks are omitted only from exclusion keys."
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "audit_sha256": "2f5c9b0e470d300021449349a503cbaed3357fa3bbf24cacc559acd31664b3a3",
+  "authority": "Curate exact positive aliases/docs and immutable failure evidence, verify full original memberships before/after, commit/push a new draft stackedPR12, attach and root-verify remote Git bytes. No weights/optimizer/Parquet/media upload, merge, deployment, supervisor message or new model/engine call.",
+  "evidence_companion_sha256": "80562db89e7e6ffdf85bfe80a880f8dd1505a8d1b3603462db5cc67186e55a8e",
+  "limits": [
+    "Exploratory selected-only balanced diagnostic of an already observed class failure; no baseline comparison, strength, natural-prevalence, significance or promotion claim.",
+    "Known-history-disjoint only; unknown original video games/history and upstream pretraining remain unresolved.",
+    "Loaded identity is bound by reviewed execution receipts and independently reconstructed inert tensor-byte digests, without instantiating/rerunning a model.",
+    "Recorded samples support observed reserves/gaps only and cannot establish absence of shorter unobserved resource peaks."
+  ],
+  "loaded_byte_identity": "Independent raw safetensors/name-order reconstruction matches actual before/after basee3af and adaptera37d receipts; no model instantiation/forward.",
+  "new_model_engine_GPU_calls": 0,
+  "read_in_full": [
+    "audit_completed_matched_run.py16424B",
+    "postrun_reference.py10230B",
+    "test_postrun_reference.py4897B",
+    "report.PROPOSED.md6739B",
+    "Earlier actual intake auditor/reference/native-boundary source and all reviewed runtime source/tests/repair diff."
+  ],
+  "report_required_finishing": [
+    "Replace pending audit text with actual audit/report links and exact hashes.",
+    "Show explicitTP0/FN32/FP0/TN32 plus separatezero unknown/schema/runtime/truncated/not-run outcomes.",
+    "Retain every software fixture/reviewer/partial-seal failure and original source bytes; keep formal promotion and practical verification separate."
+  ],
+  "result": {
+    "all_eight_correct": 32,
+    "checking_correct": 0,
+    "checking_planned": 32,
+    "nonchecking_correct": 32,
+    "nonchecking_planned": 32,
+    "paired_both_correct": 0,
+    "planned_pairs": 32,
+    "planned_responses": 64,
+    "predicted_check_true": 0,
+    "schema_valid": 64
+  },
+  "root_current_binding_recheck": {
+    "all_exact": true,
+    "protected_cohort_files": 13,
+    "protected_run_files": 100,
+    "source_and_artifact_files": 168
+  },
+  "schema": "chess.matched-check.root-completed-publication-review.v1",
+  "utc": "2026-10-15T11:15:08.544616+00:00",
+  "verdict": "No actionable mismatch in reviewed complete file-only audit; publication GO."
+}

@@ -1,0 +1,55 @@
+{
+  "plan": {
+    "conditions": {
+      "base_fact_lm_0_6b_adapter_disabled": {
+        "model_files_sha256": {
+          "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+          "README.md": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9",
+          "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+          "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+          "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+          "model.safetensors": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+          "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+          "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+          "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+        }
+      }
+    },
+    "fact_language_policy": {
+      "lora_config": {
+        "r": 8,
+        "alpha": 16,
+        "dropout": 0.0,
+        "bias": "none",
+        "task_type": "CAUSAL_LM",
+        "target_modules": [
+          "q_proj",
+          "k_proj",
+          "v_proj",
+          "o_proj",
+          "gate_proj",
+          "up_proj",
+          "down_proj"
+        ],
+        "target_linear_modules": 196,
+        "adapter_parameters": 5046272,
+        "init": "Standard PEFT A Kaiming-uniform, B zero; exact installed default source bound.",
+        "base_dtype": "bfloat16,all frozen",
+        "adapter_dtype": "float32,only trainable parameters",
+        "runtime_checks": "Verify exact target names/shapes/counts, trainable dtype/count and no unintended trainable base/head/embedding parameters."
+      }
+    }
+  },
+  "extension": {
+    "native_base_directory": "data/private/chess-fact-sft-v1/models/base",
+    "native_selection": {
+      "selected_step": 512,
+      "adapter_directory": "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/adapter",
+      "files_sha256": {
+        "README.md": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f",
+        "adapter_config.json": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a",
+        "adapter_model.safetensors": "9d183cdd12024865e4d4c92864e70c32c6dccd605102a42e9ed8da018d947137"
+      }
+    }
+  }
+}

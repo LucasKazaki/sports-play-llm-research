@@ -1,0 +1,108 @@
+{
+  "schema": "chess.matched-check.packaging-checks.v1",
+  "status": "PASS",
+  "exact_aliases": 199,
+  "protected_original_files": 119,
+  "pre_call_files_unchanged": 20,
+  "protocol_first_manifest_files_unchanged": 19,
+  "exact_intentionally_malformed_fixture_preserved": "33c4ed16bc8f016cdd5b5280a1a40e44c3cbecbab2e25a8cadd517582c131878",
+  "copied_raw_score_recomputed_exact": true,
+  "local_report_links": [
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "../../reports/chess-matched-check-v1-2026-10-15.md"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "summary.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/reviews/chess-matched-check-intake-independent-audit.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "README.md"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "pre-call-runtime-v1/manifest.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/reviews/chess-matched-check-completed-independent-audit.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/reviews/chess-matched-check-completed-audit-evidence.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/reviews/chess-matched-check-root-completed-publication-review.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "public-manifest.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/failures/partial-seal-original/runtime-review-tests-v1.txt"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/failures/partial-seal-repair/partial-seal-repair.diff"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/reviews/chess-matched-check-runtime-independent-review.json"
+    },
+    {
+      "from": "experiments/chess-matched-check-v1/RESULTS.md",
+      "href": "completed-evidence/tests/mandatory-historical/test-output.txt"
+    },
+    {
+      "from": "reports/chess-matched-check-v1-2026-10-15.md",
+      "href": "../experiments/chess-matched-check-v1/summary.json"
+    },
+    {
+      "from": "reports/chess-matched-check-v1-2026-10-15.md",
+      "href": "../experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-completed-independent-audit.json"
+    },
+    {
+      "from": "reports/chess-matched-check-v1-2026-10-15.md",
+      "href": "../experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-completed-audit-evidence.json"
+    },
+    {
+      "from": "reports/chess-matched-check-v1-2026-10-15.md",
+      "href": "../experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-root-completed-publication-review.json"
+    },
+    {
+      "from": "reports/chess-matched-check-v1-2026-10-15.md",
+      "href": "../experiments/chess-matched-check-v1/public-manifest.json"
+    },
+    {
+      "from": "reports/chess-matched-check-v1-2026-10-15.md",
+      "href": "../experiments/chess-matched-check-v1/RESULTS.md"
+    }
+  ],
+  "artifacts": {
+    "experiments/chess-matched-check-v1/public-manifest.json": {
+      "bytes": 114015,
+      "sha256": "c5b86ed71449f0bc235155457c05ea7a046227189aad12a88f332df9d45d8aef"
+    },
+    "experiments/chess-matched-check-v1/summary.json": {
+      "bytes": 7071,
+      "sha256": "f5b6371b051b90f25f0770e03c5dcc6c987e674cbf84c62a5a1534862696ee1d"
+    },
+    "experiments/chess-matched-check-v1/RESULTS.md": {
+      "bytes": 3363,
+      "sha256": "b701c9164715a43158a96ad961878a427a3e8ee658e357c478ff0de245cab1ef"
+    },
+    "reports/chess-matched-check-v1-2026-10-15.md": {
+      "bytes": 7525,
+      "sha256": "6e0e4c1fcbfa2d21425910f27a305156c9529ed3adc7d1b747935ce20193c82d"
+    }
+  },
+  "new_model_GPU_engine_calls": 0,
+  "validator_sha256": "2bc2bda23a22db8bd90456176861e557e350f779259d7672b1a0e819f7ed147b"
+}

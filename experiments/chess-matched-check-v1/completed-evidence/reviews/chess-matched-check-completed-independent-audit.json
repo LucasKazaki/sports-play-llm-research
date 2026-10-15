@@ -1,0 +1,2539 @@
+{
+  "GPU_queries": 0,
+  "elapsed_seconds": 7.609000000004016,
+  "engine_calls": 0,
+  "extension_sha256": "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45",
+  "limits": [
+    "Exploratory selected-only balanced diagnostic of an already observed class failure; no baseline comparison, strength, natural-prevalence, significance or promotion claim.",
+    "Known-history-disjoint only; unknown original video games/history and upstream pretraining remain unresolved.",
+    "Loaded identity is bound by reviewed execution receipts and independently reconstructed inert tensor-byte digests, without instantiating/rerunning a model.",
+    "Recorded samples support observed reserves/gaps only and cannot establish absence of shorter unobserved resource peaks."
+  ],
+  "model_byte_digests": {
+    "adapter": {
+      "scalars": 5046272,
+      "sha256": "a37d6d6dca148d0bf1089991374b0f9cd2723e080bc84d0cddc09d89b7002a43",
+      "tensors": 392
+    },
+    "base": {
+      "scalars": 596049920,
+      "sha256": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008",
+      "tensors": 310
+    }
+  },
+  "new_model_calls": 0,
+  "outcomes": {
+    "check_classes": {
+      "false": {
+        "correct": 32,
+        "error": 0,
+        "false": 32,
+        "not_run": 0,
+        "schema_failure": 0,
+        "support": 32,
+        "true": 0,
+        "truncated": 0,
+        "unknown": 0
+      },
+      "true": {
+        "correct": 0,
+        "error": 0,
+        "false": 32,
+        "not_run": 0,
+        "schema_failure": 0,
+        "support": 32,
+        "true": 0,
+        "truncated": 0,
+        "unknown": 0
+      }
+    },
+    "counts": {
+      "all_eight_correct": 32,
+      "error": 0,
+      "not_run": 0,
+      "parse_error": 0,
+      "planned": 64,
+      "strict_parse_completed": 64,
+      "truncated": 0
+    },
+    "fields": {
+      "captured_piece": {
+        "classes": {
+          "\"pawn\"": {
+            "correct": 6,
+            "support": 6
+          },
+          "null": {
+            "correct": 58,
+            "support": 58
+          }
+        },
+        "confusion": {
+          "\"pawn\" -> \"pawn\"": 6,
+          "null -> null": 58
+        },
+        "correct": 64,
+        "unknown": 0
+      },
+      "gives_check": {
+        "classes": {
+          "false": {
+            "correct": 32,
+            "support": 32
+          },
+          "true": {
+            "correct": 0,
+            "support": 32
+          }
+        },
+        "confusion": {
+          "false -> false": 32,
+          "true -> false": 32
+        },
+        "correct": 32,
+        "unknown": 0
+      },
+      "is_capture": {
+        "classes": {
+          "false": {
+            "correct": 58,
+            "support": 58
+          },
+          "true": {
+            "correct": 6,
+            "support": 6
+          }
+        },
+        "confusion": {
+          "false -> false": 58,
+          "true -> true": 6
+        },
+        "correct": 64,
+        "unknown": 0
+      },
+      "is_castling": {
+        "classes": {
+          "false": {
+            "correct": 64,
+            "support": 64
+          }
+        },
+        "confusion": {
+          "false -> false": 64
+        },
+        "correct": 64,
+        "unknown": 0
+      },
+      "is_en_passant": {
+        "classes": {
+          "false": {
+            "correct": 64,
+            "support": 64
+          }
+        },
+        "confusion": {
+          "false -> false": 64
+        },
+        "correct": 64,
+        "unknown": 0
+      },
+      "moving_colour": {
+        "classes": {
+          "\"black\"": {
+            "correct": 38,
+            "support": 38
+          },
+          "\"white\"": {
+            "correct": 26,
+            "support": 26
+          }
+        },
+        "confusion": {
+          "\"black\" -> \"black\"": 38,
+          "\"white\" -> \"white\"": 26
+        },
+        "correct": 64,
+        "unknown": 0
+      },
+      "moving_piece": {
+        "classes": {
+          "\"bishop\"": {
+            "correct": 2,
+            "support": 2
+          },
+          "\"knight\"": {
+            "correct": 16,
+            "support": 16
+          },
+          "\"pawn\"": {
+            "correct": 4,
+            "support": 4
+          },
+          "\"queen\"": {
+            "correct": 24,
+            "support": 24
+          },
+          "\"rook\"": {
+            "correct": 18,
+            "support": 18
+          }
+        },
+        "confusion": {
+          "\"bishop\" -> \"bishop\"": 2,
+          "\"knight\" -> \"knight\"": 16,
+          "\"pawn\" -> \"pawn\"": 4,
+          "\"queen\" -> \"queen\"": 24,
+          "\"rook\" -> \"rook\"": 18
+        },
+        "correct": 64,
+        "unknown": 0
+      },
+      "promotion_piece": {
+        "classes": {
+          "null": {
+            "correct": 64,
+            "support": 64
+          }
+        },
+        "confusion": {
+          "null -> null": 64
+        },
+        "correct": 64,
+        "unknown": 0
+      }
+    },
+    "outcomes": [
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-22-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-23-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-16-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-17-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-20-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-23-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-16-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-03-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-30-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-04-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-08-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-28-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-29-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-06-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-14-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-01-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-29-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-04-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-02-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-26-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-19-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-06-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-12-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-27-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-07-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-14-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-24-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-31-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-09-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-00-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-12-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-13-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-07-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-05-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-11-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-15-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-15-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-22-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-10-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-25-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-26-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-18-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-02-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-11-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-21-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-10-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-09-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-20-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-01-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-19-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-28-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-17-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-18-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-25-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-24-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-31-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-21-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-30-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-27-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-13-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": false,
+        "case_id": "mc-pair-08-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": false,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-03-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-05-0",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      },
+      {
+        "all_eight_correct": true,
+        "case_id": "mc-pair-00-1",
+        "field_correct": {
+          "captured_piece": true,
+          "gives_check": true,
+          "is_capture": true,
+          "is_castling": true,
+          "is_en_passant": true,
+          "moving_colour": true,
+          "moving_piece": true,
+          "promotion_piece": true
+        }
+      }
+    ],
+    "paired": {
+      "both_check_labels_correct": 0,
+      "planned": 32
+    },
+    "predicted_check_true": 0
+  },
+  "protected_inventories": {
+    "cohort": {
+      "before-selection.json": {
+        "bytes": 12301,
+        "sha256": "bc282c687c88c4579711d67d2aa254733a743dfb01c639cb3528ae2a21fd2e03"
+      },
+      "dataset.json": {
+        "bytes": 33547,
+        "sha256": "ae305d86cf415f2b48bd3cde7a36bd022cf43da567c019a4f8d8bb17b8c34a18"
+      },
+      "frozen-data.json": {
+        "bytes": 1446,
+        "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+      },
+      "inputs.json": {
+        "bytes": 9312,
+        "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+      },
+      "labels.json": {
+        "bytes": 20898,
+        "sha256": "997c3834b4e038a2c363e9b375908761a3b34efd7fca6334fc836f871a784ad2"
+      },
+      "protocol.json": {
+        "bytes": 42855,
+        "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+      },
+      "selection-trace.jsonl": {
+        "bytes": 2441005,
+        "sha256": "0de1eafbe538e24856b869e5a6d702d9466866e6c2f5c87f6d271dcc1afb8dce"
+      },
+      "sources/chess_board_fact_core.py": {
+        "bytes": 5902,
+        "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+      },
+      "sources/chess_board_fact_diagnostic.py": {
+        "bytes": 27798,
+        "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+      },
+      "sources/chess_fact_sft_intake.py": {
+        "bytes": 15840,
+        "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+      },
+      "sources/chess_matched_check_intake.py": {
+        "bytes": 29085,
+        "sha256": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28"
+      },
+      "sources/test_chess_matched_check_exclusions.py": {
+        "bytes": 6566,
+        "sha256": "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1"
+      },
+      "sources/test_chess_matched_check_intake.py": {
+        "bytes": 15865,
+        "sha256": "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb"
+      }
+    },
+    "run": {
+      "completion.json": {
+        "bytes": 219,
+        "sha256": "1a82dc141903787742de8bfee0c332d7228a1b6ba054527cddadc7bb552ac86c"
+      },
+      "evaluation-resources.jsonl": {
+        "bytes": 279,
+        "sha256": "13064fa5434fddde573525629614ac11865ee5c56048cb2a98e6f56374ba4afa"
+      },
+      "evaluator-ownership.json": {
+        "bytes": 1094,
+        "sha256": "5f5b3f07292b572f55ac359ce392a6100e75d4db58bcc80502b0be859be3e1aa"
+      },
+      "evaluator-stderr.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "evaluator-stdout.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "execution-extension.json": {
+        "bytes": 2131,
+        "sha256": "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45"
+      },
+      "frozen-manifest-metadata.json": {
+        "bytes": 1446,
+        "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+      },
+      "generation-resources.jsonl": {
+        "bytes": 51495,
+        "sha256": "0c14e03898ea55c7f6bcc282ab2a7983dcebbbfc199ce8ae462be780e046c16a"
+      },
+      "generation/inputs.json": {
+        "bytes": 9312,
+        "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+      },
+      "generation/journal.jsonl": {
+        "bytes": 308301,
+        "sha256": "ef62337900d37402c96641b958a8387a0f4ce426167cc046ddf31c79f1e93e59"
+      },
+      "generation/model-after.json": {
+        "bytes": 399,
+        "sha256": "535b0969541bae00672438d209b14d4adeb09d67b47d6658fdd8ae6ba9ed2549"
+      },
+      "generation/model-before.json": {
+        "bytes": 399,
+        "sha256": "535b0969541bae00672438d209b14d4adeb09d67b47d6658fdd8ae6ba9ed2549"
+      },
+      "generation/model.json": {
+        "bytes": 2384,
+        "sha256": "dfbef45b2758ca7fdc519d34e739205c96b05a72a1edda22737359a3532b2551"
+      },
+      "generation/ownership.json": {
+        "bytes": 2498,
+        "sha256": "86283b7fd95e6b90e0b4681d0cf5f2b159a6def8795ced6abd487248b43973bb"
+      },
+      "generation/prepared-00.json": {
+        "bytes": 11986,
+        "sha256": "a25c3bcaedd5edb2d21c1d65f36ad1186aa025ab43b242d0c2c943c6a3324019"
+      },
+      "generation/prepared-01.json": {
+        "bytes": 11955,
+        "sha256": "226315b03c9207644702734cb0c66b49248a7b011b26895022c3659577e5035a"
+      },
+      "generation/prepared-02.json": {
+        "bytes": 11892,
+        "sha256": "a4a36bf427058f185167072ecaec200fb5a812e05f5a3f697891f8f1756821c6"
+      },
+      "generation/prepared-03.json": {
+        "bytes": 11941,
+        "sha256": "07197595ce98975d6238298083df6b35216f0811f9ddf6820a2f5fc15fee3fba"
+      },
+      "generation/prepared-04.json": {
+        "bytes": 11824,
+        "sha256": "167dbb655c19a954466504242dd9be8972bbd7aafa23b7563f183b991e58d697"
+      },
+      "generation/prepared-05.json": {
+        "bytes": 11955,
+        "sha256": "113c45134e7a96114942b9dba6663b9f12ac2980be7b3ca7f815190fcee29afe"
+      },
+      "generation/prepared-06.json": {
+        "bytes": 11892,
+        "sha256": "35b89633d71a5a4e5afb429b3e33f0d3d505be7720a4298227a9c6f3d6c98726"
+      },
+      "generation/prepared-07.json": {
+        "bytes": 11704,
+        "sha256": "986062f758588fcb1f12a38cdbae99581cf72e54d021d1793ad65208c9bb61a1"
+      },
+      "generation/prepared-08.json": {
+        "bytes": 11953,
+        "sha256": "d96ab283fbe8d1fcb635efc7e8d380d5036e7442532bd3f4c0cd19ee559701d6"
+      },
+      "generation/prepared-09.json": {
+        "bytes": 11849,
+        "sha256": "ee42e860cb4996640c8faa1dad24492c505d3f3cd5714df45092ddc1e78d606a"
+      },
+      "generation/prepared-10.json": {
+        "bytes": 11881,
+        "sha256": "13b69258e3f51f37ad1a640a0ed94d47b2bc8ca9c1415797f5639795aa1b7cb8"
+      },
+      "generation/prepared-11.json": {
+        "bytes": 11971,
+        "sha256": "0d66ddbf327aba91916e38f227f5589ec0d0ab0e75a13dd8aa765e61c1a43d4f"
+      },
+      "generation/prepared-12.json": {
+        "bytes": 11867,
+        "sha256": "3269160f7aa547e397ad016b78ba0bcdf9df90effc9c4379f020961916fb21d4"
+      },
+      "generation/prepared-13.json": {
+        "bytes": 11922,
+        "sha256": "d978774c566af7c2de3f39d9b7b7dc9c59e21ec4fdbbd9065c63889cc037be7b"
+      },
+      "generation/prepared-14.json": {
+        "bytes": 12008,
+        "sha256": "bfc318ab2960ed72045b98f1b78ce22bd27a4ff36dc33a26a4d43dacaeb6bfd2"
+      },
+      "generation/prepared-15.json": {
+        "bytes": 11878,
+        "sha256": "7d4f3ece3010a37b898314a79f2f71f3732b6076c977e7036265c3c884a512da"
+      },
+      "generation/prepared-16.json": {
+        "bytes": 11867,
+        "sha256": "0d38118cd27d1b02c1ac1c6abbbe15a2ea61876e1b2a39de43a3c76d81bfd7b3"
+      },
+      "generation/prepared-17.json": {
+        "bytes": 11849,
+        "sha256": "72b426e451dd4833ce84d219aa92352e22d51d303fc3f913878618e18f8cfc0f"
+      },
+      "generation/prepared-18.json": {
+        "bytes": 11871,
+        "sha256": "9108f5cb958c5fb2176d2c06b926333cad71143853b259eee0bba3bb900f8333"
+      },
+      "generation/prepared-19.json": {
+        "bytes": 11706,
+        "sha256": "b80ac984cfd77c1238d42426ed5b1c21424221573a7d1007b5a7cde15aa48960"
+      },
+      "generation/prepared-20.json": {
+        "bytes": 11838,
+        "sha256": "67a9cedc382ec71027ab2c1bdc785a483a00cab38da368a2454a330c2ee1936c"
+      },
+      "generation/prepared-21.json": {
+        "bytes": 11922,
+        "sha256": "0c8a2b6e2c85b1873bf1dd44a8b31d2c5a4fd3dfe6949ed18f121c456bf2fb36"
+      },
+      "generation/prepared-22.json": {
+        "bytes": 11866,
+        "sha256": "76fc2da2f40cda63ade8dc249f15c8c343f0276a27fdcb298cedace195338d07"
+      },
+      "generation/prepared-23.json": {
+        "bytes": 11899,
+        "sha256": "5e84b91f83637b89a44df11d20d606ea58a7f08fe85145cc87975320e19ad804"
+      },
+      "generation/prepared-24.json": {
+        "bytes": 11847,
+        "sha256": "59067bdfb41333b2a9f864455b802f690eae75769c2666c1571118fe70edc296"
+      },
+      "generation/prepared-25.json": {
+        "bytes": 12008,
+        "sha256": "dea8c03defb8e99cb7c5ab89399a91304fc2134e889942cb3a2bed5f29275ff4"
+      },
+      "generation/prepared-26.json": {
+        "bytes": 11799,
+        "sha256": "4f3afafdab64f245c50b576e5ab2bbbf8d7678e00bad241e36f0601d5a881a62"
+      },
+      "generation/prepared-27.json": {
+        "bytes": 11877,
+        "sha256": "eb303a6005fcb39611712197c35a9e3608175304798c1789abe1e07a04485cfb"
+      },
+      "generation/prepared-28.json": {
+        "bytes": 11868,
+        "sha256": "d363a85abee1f2bd3b306d8a29494f9d6b3f225bc16ec254c2de4c70142af096"
+      },
+      "generation/prepared-29.json": {
+        "bytes": 11826,
+        "sha256": "820c08b1f9968e1a23410da16b5e743b61914f8165efc76ac6d3e6bfe17b117f"
+      },
+      "generation/prepared-30.json": {
+        "bytes": 11866,
+        "sha256": "6a562bb3277dec69d958791c350b0ff9be42528830e508f899b282cdc15507be"
+      },
+      "generation/prepared-31.json": {
+        "bytes": 11692,
+        "sha256": "f88000e0c4ba6b8921006844f7716518f614782de00f0d4f2072865036a3a971"
+      },
+      "generation/prepared-32.json": {
+        "bytes": 11847,
+        "sha256": "2d0b15a8c38f976f22dd763f1091f7504cdb5fe47d9957ea56e76ba7b42f65e4"
+      },
+      "generation/prepared-33.json": {
+        "bytes": 11881,
+        "sha256": "482c4cf88332e4d5564ed80e1999e9aca1b9fce4f542297871e302eaa0c4adbf"
+      },
+      "generation/prepared-34.json": {
+        "bytes": 11906,
+        "sha256": "c96b5156ac2e6ab6c342f3de646517f5d2b78be1dd908bcdc45949f530638e53"
+      },
+      "generation/prepared-35.json": {
+        "bytes": 11822,
+        "sha256": "fe937a3cba696740c60c5dabeb07e935800c51750f07fe73e3b9172dcd231e98"
+      },
+      "generation/prepared-36.json": {
+        "bytes": 11822,
+        "sha256": "50de3e6e48fc8c08c480d2374fc8da252e112cb113199b08d0ff073c3fcf9334"
+      },
+      "generation/prepared-37.json": {
+        "bytes": 11986,
+        "sha256": "75462cdc640fccf082c0c9b3996ae3da2e0c188a5038aac380aa6e1a00de428c"
+      },
+      "generation/prepared-38.json": {
+        "bytes": 11868,
+        "sha256": "f0b28edfd527c47c4fdc3fa9f80723cccacc1082c18f21e80708fb4797e2e2b0"
+      },
+      "generation/prepared-39.json": {
+        "bytes": 11883,
+        "sha256": "8c09ae6a8c652d27340343995839964922ad48421b2b5d8a16d0ef260afd28b9"
+      },
+      "generation/prepared-40.json": {
+        "bytes": 11706,
+        "sha256": "b6d2122ac9d92cacffadafd5ee399dad3033d303e1d7d9ff36701f32793774fc"
+      },
+      "generation/prepared-41.json": {
+        "bytes": 11913,
+        "sha256": "fb0251d273b8da41c5eed231450c9118ddf2a439e173d1c640fd567a38dc4a06"
+      },
+      "generation/prepared-42.json": {
+        "bytes": 11871,
+        "sha256": "9531520546a5dedf55335acd539393f875394c59a06a4f094c472d4d1430a66c"
+      },
+      "generation/prepared-43.json": {
+        "bytes": 11906,
+        "sha256": "17b25ae1c511ff6f139af9c95270ab81cfaff4953407f70d2e82c141921f79a7"
+      },
+      "generation/prepared-44.json": {
+        "bytes": 11895,
+        "sha256": "0868f29f122253f7d47ca4c9ea2034558de9247495b8f013c185b4663f44b202"
+      },
+      "generation/prepared-45.json": {
+        "bytes": 11868,
+        "sha256": "d1964a8a6738be029fbe60520ba1cf282ea12da3053971c400a7bbb19c005aff"
+      },
+      "generation/prepared-46.json": {
+        "bytes": 11868,
+        "sha256": "f3e0cdfdfd338787a38087b8feb1fe015b548002845883c4a6b9483bc90dfda3"
+      },
+      "generation/prepared-47.json": {
+        "bytes": 11824,
+        "sha256": "540933980dac427506208003809283de86e1b6b4708f456535b3e9c074d6c99a"
+      },
+      "generation/prepared-48.json": {
+        "bytes": 11878,
+        "sha256": "cd59d6ed6876ce495e2152510aeca07287590213b36374d2c3718082db9ad1af"
+      },
+      "generation/prepared-49.json": {
+        "bytes": 11838,
+        "sha256": "29f97a7afda907495c5e72d8a12c167ffbd5c77dd4c11d6479643551c37a619d"
+      },
+      "generation/prepared-50.json": {
+        "bytes": 11971,
+        "sha256": "39daa90b0aaa7dd480607726722663aefff1a0a2f7092b31a54af963814bfc04"
+      },
+      "generation/prepared-51.json": {
+        "bytes": 11941,
+        "sha256": "41aa71190507a03829d4efbe765afce30cdb19c08d3c2a271049278dfe04d6a9"
+      },
+      "generation/prepared-52.json": {
+        "bytes": 11913,
+        "sha256": "daca4ec1a6f6ae7c43f6a6945c08e22f45db7f10000f03cf70ab108f6875576b"
+      },
+      "generation/prepared-53.json": {
+        "bytes": 11883,
+        "sha256": "c20b50c48a108a55be8a69c62d748fae352e56af281cd2d27effffd3e4a94c0d"
+      },
+      "generation/prepared-54.json": {
+        "bytes": 11799,
+        "sha256": "1d4a9020904d95121c8283bdf3ab86176a300c708f0ae5dae2d6f92f3113ceb2"
+      },
+      "generation/prepared-55.json": {
+        "bytes": 11877,
+        "sha256": "f2577e43a49bd149c7a5df2eaae5072ba2dfd2c6286451faa8c85437ced16b46"
+      },
+      "generation/prepared-56.json": {
+        "bytes": 11895,
+        "sha256": "1954c3cfc5b47e28c99015bcc83741f780b7d847dad5da9bbaca962ba31e5b5c"
+      },
+      "generation/prepared-57.json": {
+        "bytes": 11953,
+        "sha256": "93c3c30c71f9cdc91c0c3e1f06a382ef8a2cddeb298a5181b753dcf1867305ee"
+      },
+      "generation/prepared-58.json": {
+        "bytes": 11899,
+        "sha256": "02a812ccc11fc10c0924341e2dc2b456d873b87d7b87e193c785256d687016d4"
+      },
+      "generation/prepared-59.json": {
+        "bytes": 11692,
+        "sha256": "6f73a6126746d0f750536e9967b8e97ea78b82f4d30901497bdaf9791f9af77b"
+      },
+      "generation/prepared-60.json": {
+        "bytes": 11881,
+        "sha256": "8d07eb47fc259a894b7538ee6fab7ebcb084ec7d804fb291cb3b6c0dcda3f817"
+      },
+      "generation/prepared-61.json": {
+        "bytes": 11704,
+        "sha256": "37d3a29d29bbb30b9d6debcd621fdc65467d264eb3f4d2104d678d60e088ec29"
+      },
+      "generation/prepared-62.json": {
+        "bytes": 11881,
+        "sha256": "83ee453e9ab5de46e10cfb615e000a8a9806e21164a1cf35a5d93f28ac1cd0c5"
+      },
+      "generation/prepared-63.json": {
+        "bytes": 11826,
+        "sha256": "fa3561cf44e762380102e3535ce4eca2272392308dcb978715769368a2b4e8e6"
+      },
+      "generation/raw/raw.json": {
+        "bytes": 730567,
+        "sha256": "ca2cf6d7f956579a019fe4a5918b9e0c9f54ac6bfd2e9bb6a78df336e5084449"
+      },
+      "generation/raw/seal.json": {
+        "bytes": 2821,
+        "sha256": "3baf918c02223f2ef82de5014fb798ac564c755fcc1849392deee77e8c1cfa3f"
+      },
+      "generation/sources/identity_probe_worker.py": {
+        "bytes": 614,
+        "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+      },
+      "generation/sources/illustration_core.py": {
+        "bytes": 2278,
+        "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+      },
+      "generation/sources/inherited-source-bindings.json": {
+        "bytes": 600,
+        "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+      },
+      "generation/sources/local_backends.py": {
+        "bytes": 11662,
+        "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+      },
+      "generation/sources/matched_evaluate.py": {
+        "bytes": 3288,
+        "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+      },
+      "generation/sources/matched_run.py": {
+        "bytes": 19005,
+        "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+      },
+      "generation/sources/matched_worker.py": {
+        "bytes": 8174,
+        "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+      },
+      "generation/sources/owned_native.py": {
+        "bytes": 4797,
+        "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+      },
+      "generation/sources/reviewed/chess_board_fact_core.py": {
+        "bytes": 5902,
+        "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+      },
+      "generation/sources/reviewed/chess_fact_sft_common.py": {
+        "bytes": 10669,
+        "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+      },
+      "generation/sources/reviewed/chess_native_resources.py": {
+        "bytes": 5573,
+        "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+      },
+      "generation/sources/test_matched_runner.py": {
+        "bytes": 24460,
+        "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+      },
+      "generation/worker-identity.json": {
+        "bytes": 587,
+        "sha256": "f1f62e0a90e8c6cc8a1c5ddeaa071aab9b7b242dba76449b5235a6dc5126c94f"
+      },
+      "generation/worker-outcome.json": {
+        "bytes": 145,
+        "sha256": "439816fe71ec7b56ebe5b311d424ea56b0d15ceccfc64c14b708ee3b1ebf5dac"
+      },
+      "intent.json": {
+        "bytes": 184,
+        "sha256": "5a606c5291366c9b8b045f3798a04c9a2fab97f410c68ff1a6d24e06b2e4a365"
+      },
+      "preflight.json": {
+        "bytes": 3124,
+        "sha256": "0640b991d9018e59e58237e0aa32787201416719eaedad5c53a5e70c9010b1c4"
+      },
+      "score.json": {
+        "bytes": 26748,
+        "sha256": "ddf11538ff5a820ee8638dc0d46099c021f6c5a0b661811ee4d1614c65a262a8"
+      },
+      "supervision.json": {
+        "bytes": 258,
+        "sha256": "50e0e67211187d0bd5da70e28608f961b0f04c591bc32c8132016542ec5b882c"
+      },
+      "worker-stderr.txt": {
+        "bytes": 129,
+        "sha256": "0c57aeaa034338a42cde554b3ada9bc23c37d04f28dafc5db10f4f9dbf110558"
+      },
+      "worker-stdout.txt": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  },
+  "protected_inventories_before_and_after_identical": true,
+  "raw_seal_sha256": "3baf918c02223f2ef82de5014fb798ac564c755fcc1849392deee77e8c1cfa3f",
+  "raw_token_counts": [
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 47
+    },
+    {
+      "native_status": "completed",
+      "new_tokens": 48
+    }
+  ],
+  "raw_verified_before_evaluator_labels": true,
+  "resources": {
+    "evaluation": {
+      "max_recorded_monotonic_gap_seconds": 0.0,
+      "minimum_commit_headroom_bytes": 21560881152,
+      "minimum_gpu_free_bytes": 15171846144,
+      "minimum_physical_available_bytes": 12171292672,
+      "samples": 1
+    },
+    "generation": {
+      "max_recorded_monotonic_gap_seconds": 1.0630000000019209,
+      "minimum_commit_headroom_bytes": 16594010112,
+      "minimum_gpu_free_bytes": 13342081024,
+      "minimum_physical_available_bytes": 10279256064,
+      "samples": 184
+    },
+    "preflight": {
+      "max_recorded_monotonic_gap_seconds": 0.0,
+      "minimum_commit_headroom_bytes": 21509177344,
+      "minimum_gpu_free_bytes": 15171846144,
+      "minimum_physical_available_bytes": 12111564800,
+      "samples": 10
+    }
+  },
+  "schema": "chess.matched-check.completed-independent-audit.v1",
+  "source_and_artifact_bindings": {
+    "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": {
+      "bytes": 103192,
+      "sha256": "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-matched-check-intake-independent-audit.json": {
+      "bytes": 41658,
+      "sha256": "5d3decb29d660f51b55ea4ce3068428d998816809d40e5608299b9fb57ffb01d"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-matched-check-root-runtime-execution-review.json": {
+      "bytes": 3462,
+      "sha256": "6a9cc80d702cc3f1bdab131b426781cb8f9d859ebde83a8c7b912552d2e99b63"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\audit_completed_matched_run.py": {
+      "bytes": 16424,
+      "sha256": "3337049b08cfab92f8b78c30a577f17ea8c660baff9aa7417b8d84372cd61414"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\matched_check_reference.py": {
+      "bytes": 9965,
+      "sha256": "35bfb1a6942470956a2ea8da1fa6724c9945f64eb0b38ad347b6cb0cae185236"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\postrun_reference.py": {
+      "bytes": 10230,
+      "sha256": "a996671ab84eb32ba51b85ab2550b9e0f2962e1f3495f4972de1c434ba9b28f7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\identity_probe_worker.py": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\illustration_core.py": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\inherited-source-bindings.json": {
+      "bytes": 600,
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\local_backends.py": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_evaluate.py": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_run.py": {
+      "bytes": 19005,
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\matched_worker.py": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\owned_native.py": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\reviewed\\chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\reviewed\\chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\reviewed\\chess_native_resources.py": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\test_matched_runner.py": {
+      "bytes": 24460,
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\models\\qwen3\\modeling_qwen3.py": {
+      "bytes": 22034,
+      "sha256": "ca9535e36ea4e689c76d7d753b91aec9ea00da837fbf223c8ea4c01a3b50cac0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe": {
+      "bytes": 270616,
+      "sha256": "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\pyvenv.cfg": {
+      "bytes": 381,
+      "sha256": "115d62f8b05b80befb8aabe8ef3106697bae48f40694c95ff94014b29690a4d9"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\LICENSE": {
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\README.md": {
+      "bytes": 13965,
+      "sha256": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\config.json": {
+      "bytes": 726,
+      "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\generation_config.json": {
+      "bytes": 239,
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\merges.txt": {
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\model.safetensors": {
+      "bytes": 1503300328,
+      "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\tokenizer.json": {
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\tokenizer_config.json": {
+      "bytes": 9732,
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\vocab.json": {
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\native-run-v3\\checkpoint-512\\adapter\\README.md": {
+      "bytes": 5400,
+      "sha256": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\native-run-v3\\checkpoint-512\\adapter\\adapter_config.json": {
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\native-run-v3\\checkpoint-512\\adapter\\adapter_model.safetensors": {
+      "bytes": 20236472,
+      "sha256": "9d183cdd12024865e4d4c92864e70c32c6dccd605102a42e9ed8da018d947137"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\before-selection.json": {
+      "bytes": 12301,
+      "sha256": "bc282c687c88c4579711d67d2aa254733a743dfb01c639cb3528ae2a21fd2e03"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\dataset.json": {
+      "bytes": 33547,
+      "sha256": "ae305d86cf415f2b48bd3cde7a36bd022cf43da567c019a4f8d8bb17b8c34a18"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\frozen-data.json": {
+      "bytes": 1446,
+      "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\inputs.json": {
+      "bytes": 9312,
+      "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\labels.json": {
+      "bytes": 20898,
+      "sha256": "997c3834b4e038a2c363e9b375908761a3b34efd7fca6334fc836f871a784ad2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\protocol.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\selection-trace.jsonl": {
+      "bytes": 2441005,
+      "sha256": "0de1eafbe538e24856b869e5a6d702d9466866e6c2f5c87f6d271dcc1afb8dce"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\sources\\chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\sources\\chess_board_fact_diagnostic.py": {
+      "bytes": 27798,
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\sources\\chess_fact_sft_intake.py": {
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\sources\\chess_matched_check_intake.py": {
+      "bytes": 29085,
+      "sha256": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\sources\\test_chess_matched_check_exclusions.py": {
+      "bytes": 6566,
+      "sha256": "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort\\sources\\test_chess_matched_check_intake.py": {
+      "bytes": 15865,
+      "sha256": "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\completion.json": {
+      "bytes": 219,
+      "sha256": "1a82dc141903787742de8bfee0c332d7228a1b6ba054527cddadc7bb552ac86c"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\evaluation-resources.jsonl": {
+      "bytes": 279,
+      "sha256": "13064fa5434fddde573525629614ac11865ee5c56048cb2a98e6f56374ba4afa"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\evaluator-ownership.json": {
+      "bytes": 1094,
+      "sha256": "5f5b3f07292b572f55ac359ce392a6100e75d4db58bcc80502b0be859be3e1aa"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\evaluator-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\evaluator-stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\execution-extension.json": {
+      "bytes": 2131,
+      "sha256": "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\frozen-manifest-metadata.json": {
+      "bytes": 1446,
+      "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation-resources.jsonl": {
+      "bytes": 51495,
+      "sha256": "0c14e03898ea55c7f6bcc282ab2a7983dcebbbfc199ce8ae462be780e046c16a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\inputs.json": {
+      "bytes": 9312,
+      "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\journal.jsonl": {
+      "bytes": 308301,
+      "sha256": "ef62337900d37402c96641b958a8387a0f4ce426167cc046ddf31c79f1e93e59"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\model-after.json": {
+      "bytes": 399,
+      "sha256": "535b0969541bae00672438d209b14d4adeb09d67b47d6658fdd8ae6ba9ed2549"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\model-before.json": {
+      "bytes": 399,
+      "sha256": "535b0969541bae00672438d209b14d4adeb09d67b47d6658fdd8ae6ba9ed2549"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\model.json": {
+      "bytes": 2384,
+      "sha256": "dfbef45b2758ca7fdc519d34e739205c96b05a72a1edda22737359a3532b2551"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\ownership.json": {
+      "bytes": 2498,
+      "sha256": "86283b7fd95e6b90e0b4681d0cf5f2b159a6def8795ced6abd487248b43973bb"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-00.json": {
+      "bytes": 11986,
+      "sha256": "a25c3bcaedd5edb2d21c1d65f36ad1186aa025ab43b242d0c2c943c6a3324019"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-01.json": {
+      "bytes": 11955,
+      "sha256": "226315b03c9207644702734cb0c66b49248a7b011b26895022c3659577e5035a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-02.json": {
+      "bytes": 11892,
+      "sha256": "a4a36bf427058f185167072ecaec200fb5a812e05f5a3f697891f8f1756821c6"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-03.json": {
+      "bytes": 11941,
+      "sha256": "07197595ce98975d6238298083df6b35216f0811f9ddf6820a2f5fc15fee3fba"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-04.json": {
+      "bytes": 11824,
+      "sha256": "167dbb655c19a954466504242dd9be8972bbd7aafa23b7563f183b991e58d697"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-05.json": {
+      "bytes": 11955,
+      "sha256": "113c45134e7a96114942b9dba6663b9f12ac2980be7b3ca7f815190fcee29afe"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-06.json": {
+      "bytes": 11892,
+      "sha256": "35b89633d71a5a4e5afb429b3e33f0d3d505be7720a4298227a9c6f3d6c98726"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-07.json": {
+      "bytes": 11704,
+      "sha256": "986062f758588fcb1f12a38cdbae99581cf72e54d021d1793ad65208c9bb61a1"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-08.json": {
+      "bytes": 11953,
+      "sha256": "d96ab283fbe8d1fcb635efc7e8d380d5036e7442532bd3f4c0cd19ee559701d6"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-09.json": {
+      "bytes": 11849,
+      "sha256": "ee42e860cb4996640c8faa1dad24492c505d3f3cd5714df45092ddc1e78d606a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-10.json": {
+      "bytes": 11881,
+      "sha256": "13b69258e3f51f37ad1a640a0ed94d47b2bc8ca9c1415797f5639795aa1b7cb8"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-11.json": {
+      "bytes": 11971,
+      "sha256": "0d66ddbf327aba91916e38f227f5589ec0d0ab0e75a13dd8aa765e61c1a43d4f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-12.json": {
+      "bytes": 11867,
+      "sha256": "3269160f7aa547e397ad016b78ba0bcdf9df90effc9c4379f020961916fb21d4"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-13.json": {
+      "bytes": 11922,
+      "sha256": "d978774c566af7c2de3f39d9b7b7dc9c59e21ec4fdbbd9065c63889cc037be7b"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-14.json": {
+      "bytes": 12008,
+      "sha256": "bfc318ab2960ed72045b98f1b78ce22bd27a4ff36dc33a26a4d43dacaeb6bfd2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-15.json": {
+      "bytes": 11878,
+      "sha256": "7d4f3ece3010a37b898314a79f2f71f3732b6076c977e7036265c3c884a512da"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-16.json": {
+      "bytes": 11867,
+      "sha256": "0d38118cd27d1b02c1ac1c6abbbe15a2ea61876e1b2a39de43a3c76d81bfd7b3"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-17.json": {
+      "bytes": 11849,
+      "sha256": "72b426e451dd4833ce84d219aa92352e22d51d303fc3f913878618e18f8cfc0f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-18.json": {
+      "bytes": 11871,
+      "sha256": "9108f5cb958c5fb2176d2c06b926333cad71143853b259eee0bba3bb900f8333"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-19.json": {
+      "bytes": 11706,
+      "sha256": "b80ac984cfd77c1238d42426ed5b1c21424221573a7d1007b5a7cde15aa48960"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-20.json": {
+      "bytes": 11838,
+      "sha256": "67a9cedc382ec71027ab2c1bdc785a483a00cab38da368a2454a330c2ee1936c"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-21.json": {
+      "bytes": 11922,
+      "sha256": "0c8a2b6e2c85b1873bf1dd44a8b31d2c5a4fd3dfe6949ed18f121c456bf2fb36"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-22.json": {
+      "bytes": 11866,
+      "sha256": "76fc2da2f40cda63ade8dc249f15c8c343f0276a27fdcb298cedace195338d07"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-23.json": {
+      "bytes": 11899,
+      "sha256": "5e84b91f83637b89a44df11d20d606ea58a7f08fe85145cc87975320e19ad804"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-24.json": {
+      "bytes": 11847,
+      "sha256": "59067bdfb41333b2a9f864455b802f690eae75769c2666c1571118fe70edc296"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-25.json": {
+      "bytes": 12008,
+      "sha256": "dea8c03defb8e99cb7c5ab89399a91304fc2134e889942cb3a2bed5f29275ff4"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-26.json": {
+      "bytes": 11799,
+      "sha256": "4f3afafdab64f245c50b576e5ab2bbbf8d7678e00bad241e36f0601d5a881a62"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-27.json": {
+      "bytes": 11877,
+      "sha256": "eb303a6005fcb39611712197c35a9e3608175304798c1789abe1e07a04485cfb"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-28.json": {
+      "bytes": 11868,
+      "sha256": "d363a85abee1f2bd3b306d8a29494f9d6b3f225bc16ec254c2de4c70142af096"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-29.json": {
+      "bytes": 11826,
+      "sha256": "820c08b1f9968e1a23410da16b5e743b61914f8165efc76ac6d3e6bfe17b117f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-30.json": {
+      "bytes": 11866,
+      "sha256": "6a562bb3277dec69d958791c350b0ff9be42528830e508f899b282cdc15507be"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-31.json": {
+      "bytes": 11692,
+      "sha256": "f88000e0c4ba6b8921006844f7716518f614782de00f0d4f2072865036a3a971"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-32.json": {
+      "bytes": 11847,
+      "sha256": "2d0b15a8c38f976f22dd763f1091f7504cdb5fe47d9957ea56e76ba7b42f65e4"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-33.json": {
+      "bytes": 11881,
+      "sha256": "482c4cf88332e4d5564ed80e1999e9aca1b9fce4f542297871e302eaa0c4adbf"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-34.json": {
+      "bytes": 11906,
+      "sha256": "c96b5156ac2e6ab6c342f3de646517f5d2b78be1dd908bcdc45949f530638e53"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-35.json": {
+      "bytes": 11822,
+      "sha256": "fe937a3cba696740c60c5dabeb07e935800c51750f07fe73e3b9172dcd231e98"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-36.json": {
+      "bytes": 11822,
+      "sha256": "50de3e6e48fc8c08c480d2374fc8da252e112cb113199b08d0ff073c3fcf9334"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-37.json": {
+      "bytes": 11986,
+      "sha256": "75462cdc640fccf082c0c9b3996ae3da2e0c188a5038aac380aa6e1a00de428c"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-38.json": {
+      "bytes": 11868,
+      "sha256": "f0b28edfd527c47c4fdc3fa9f80723cccacc1082c18f21e80708fb4797e2e2b0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-39.json": {
+      "bytes": 11883,
+      "sha256": "8c09ae6a8c652d27340343995839964922ad48421b2b5d8a16d0ef260afd28b9"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-40.json": {
+      "bytes": 11706,
+      "sha256": "b6d2122ac9d92cacffadafd5ee399dad3033d303e1d7d9ff36701f32793774fc"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-41.json": {
+      "bytes": 11913,
+      "sha256": "fb0251d273b8da41c5eed231450c9118ddf2a439e173d1c640fd567a38dc4a06"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-42.json": {
+      "bytes": 11871,
+      "sha256": "9531520546a5dedf55335acd539393f875394c59a06a4f094c472d4d1430a66c"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-43.json": {
+      "bytes": 11906,
+      "sha256": "17b25ae1c511ff6f139af9c95270ab81cfaff4953407f70d2e82c141921f79a7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-44.json": {
+      "bytes": 11895,
+      "sha256": "0868f29f122253f7d47ca4c9ea2034558de9247495b8f013c185b4663f44b202"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-45.json": {
+      "bytes": 11868,
+      "sha256": "d1964a8a6738be029fbe60520ba1cf282ea12da3053971c400a7bbb19c005aff"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-46.json": {
+      "bytes": 11868,
+      "sha256": "f3e0cdfdfd338787a38087b8feb1fe015b548002845883c4a6b9483bc90dfda3"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-47.json": {
+      "bytes": 11824,
+      "sha256": "540933980dac427506208003809283de86e1b6b4708f456535b3e9c074d6c99a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-48.json": {
+      "bytes": 11878,
+      "sha256": "cd59d6ed6876ce495e2152510aeca07287590213b36374d2c3718082db9ad1af"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-49.json": {
+      "bytes": 11838,
+      "sha256": "29f97a7afda907495c5e72d8a12c167ffbd5c77dd4c11d6479643551c37a619d"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-50.json": {
+      "bytes": 11971,
+      "sha256": "39daa90b0aaa7dd480607726722663aefff1a0a2f7092b31a54af963814bfc04"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-51.json": {
+      "bytes": 11941,
+      "sha256": "41aa71190507a03829d4efbe765afce30cdb19c08d3c2a271049278dfe04d6a9"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-52.json": {
+      "bytes": 11913,
+      "sha256": "daca4ec1a6f6ae7c43f6a6945c08e22f45db7f10000f03cf70ab108f6875576b"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-53.json": {
+      "bytes": 11883,
+      "sha256": "c20b50c48a108a55be8a69c62d748fae352e56af281cd2d27effffd3e4a94c0d"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-54.json": {
+      "bytes": 11799,
+      "sha256": "1d4a9020904d95121c8283bdf3ab86176a300c708f0ae5dae2d6f92f3113ceb2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-55.json": {
+      "bytes": 11877,
+      "sha256": "f2577e43a49bd149c7a5df2eaae5072ba2dfd2c6286451faa8c85437ced16b46"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-56.json": {
+      "bytes": 11895,
+      "sha256": "1954c3cfc5b47e28c99015bcc83741f780b7d847dad5da9bbaca962ba31e5b5c"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-57.json": {
+      "bytes": 11953,
+      "sha256": "93c3c30c71f9cdc91c0c3e1f06a382ef8a2cddeb298a5181b753dcf1867305ee"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-58.json": {
+      "bytes": 11899,
+      "sha256": "02a812ccc11fc10c0924341e2dc2b456d873b87d7b87e193c785256d687016d4"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-59.json": {
+      "bytes": 11692,
+      "sha256": "6f73a6126746d0f750536e9967b8e97ea78b82f4d30901497bdaf9791f9af77b"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-60.json": {
+      "bytes": 11881,
+      "sha256": "8d07eb47fc259a894b7538ee6fab7ebcb084ec7d804fb291cb3b6c0dcda3f817"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-61.json": {
+      "bytes": 11704,
+      "sha256": "37d3a29d29bbb30b9d6debcd621fdc65467d264eb3f4d2104d678d60e088ec29"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-62.json": {
+      "bytes": 11881,
+      "sha256": "83ee453e9ab5de46e10cfb615e000a8a9806e21164a1cf35a5d93f28ac1cd0c5"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\prepared-63.json": {
+      "bytes": 11826,
+      "sha256": "fa3561cf44e762380102e3535ce4eca2272392308dcb978715769368a2b4e8e6"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\raw\\raw.json": {
+      "bytes": 730567,
+      "sha256": "ca2cf6d7f956579a019fe4a5918b9e0c9f54ac6bfd2e9bb6a78df336e5084449"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\raw\\seal.json": {
+      "bytes": 2821,
+      "sha256": "3baf918c02223f2ef82de5014fb798ac564c755fcc1849392deee77e8c1cfa3f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\identity_probe_worker.py": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\illustration_core.py": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\inherited-source-bindings.json": {
+      "bytes": 600,
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\local_backends.py": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\matched_evaluate.py": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\matched_run.py": {
+      "bytes": 19005,
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\matched_worker.py": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\owned_native.py": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\reviewed\\chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\reviewed\\chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\reviewed\\chess_native_resources.py": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\sources\\test_matched_runner.py": {
+      "bytes": 24460,
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\worker-identity.json": {
+      "bytes": 587,
+      "sha256": "f1f62e0a90e8c6cc8a1c5ddeaa071aab9b7b242dba76449b5235a6dc5126c94f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\generation\\worker-outcome.json": {
+      "bytes": 145,
+      "sha256": "439816fe71ec7b56ebe5b311d424ea56b0d15ceccfc64c14b708ee3b1ebf5dac"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\intent.json": {
+      "bytes": 184,
+      "sha256": "5a606c5291366c9b8b045f3798a04c9a2fab97f410c68ff1a6d24e06b2e4a365"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\preflight.json": {
+      "bytes": 3124,
+      "sha256": "0640b991d9018e59e58237e0aa32787201416719eaedad5c53a5e70c9010b1c4"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\score.json": {
+      "bytes": 26748,
+      "sha256": "ddf11538ff5a820ee8638dc0d46099c021f6c5a0b661811ee4d1614c65a262a8"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\supervision.json": {
+      "bytes": 258,
+      "sha256": "50e0e67211187d0bd5da70e28608f961b0f04c591bc32c8132016542ec5b882c"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\worker-stderr.txt": {
+      "bytes": 129,
+      "sha256": "0c57aeaa034338a42cde554b3ada9bc23c37d04f28dafc5db10f4f9dbf110558"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\selected-run-v1\\worker-stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\.gitattributes": {
+      "bytes": 72,
+      "sha256": "308a40fa1d89ae5ea4390b4c9b46a0108b09f171f07898f25d451fa0c69c4e9f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\execution-extension.json": {
+      "bytes": 2131,
+      "sha256": "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\frozen-data-metadata.json": {
+      "bytes": 1446,
+      "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\independent-intake-audit.json": {
+      "bytes": 41658,
+      "sha256": "5d3decb29d660f51b55ea4ce3068428d998816809d40e5608299b9fb57ffb01d"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\independent-runtime-review.json": {
+      "bytes": 10555,
+      "sha256": "8461d24a826f42d7633875935d68f6029d3bd60ffa7d62ffe4b3c0d87cf00e9f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\inputs.json": {
+      "bytes": 9312,
+      "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\manifest.json": {
+      "bytes": 3182,
+      "sha256": "6aa155ce2b70c6115455fe784b222334c32e73ea50ffb1d987b7a7265666a86e"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\root-runtime-review.json": {
+      "bytes": 3462,
+      "sha256": "6a9cc80d702cc3f1bdab131b426781cb8f9d859ebde83a8c7b912552d2e99b63"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\identity_probe_worker.py.txt": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\illustration_core.py.txt": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\inherited-source-bindings.json": {
+      "bytes": 600,
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\local_backends.py.txt": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\matched_evaluate.py.txt": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\matched_run.py.txt": {
+      "bytes": 19005,
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\matched_worker.py.txt": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\owned_native.py.txt": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\reviewed\\chess_board_fact_core.py.txt": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\reviewed\\chess_fact_sft_common.py.txt": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\reviewed\\chess_native_resources.py.txt": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\sources\\test_matched_runner.py.txt": {
+      "bytes": 24460,
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\pre-call-runtime-v1\\stable-handoff-v2.json": {
+      "bytes": 3801,
+      "sha256": "9bc26370d33034cc0afb04259dbec1ebd9139e97e177138ab63949d04bdbca7d"
+    },
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\protocol.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    }
+  },
+  "status": "PASS_RETAINED_FILE_TOKEN_BYTE_IDENTITY_AND_SCORE_RECOUNT",
+  "supervision": {
+    "elapsed_seconds": 204.45300000000134,
+    "failed_outcome_ledger_sha256": null,
+    "failure": null,
+    "forced_owned_termination": false,
+    "last_exit_code": 0,
+    "last_owned_pid": 43312,
+    "no_response_retries": true,
+    "planned": 64,
+    "status": "PASS"
+  },
+  "utc": "2026-10-15T11:12:20.207739+00:00"
+}

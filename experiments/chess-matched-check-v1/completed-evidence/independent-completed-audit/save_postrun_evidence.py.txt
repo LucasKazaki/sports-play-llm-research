@@ -1,0 +1,53 @@
+"""Bind immutable completed audit, all its source dependencies and finite tests."""
+from datetime import datetime, timezone
+import hashlib
+import json
+from pathlib import Path
+import xml.etree.ElementTree as ET
+
+HERE=Path(__file__).resolve().parent
+ROOT=HERE.parents[1]
+OUT=ROOT/"outputs/chess-matched-check-completed-audit-evidence.json"
+
+def binding(path):
+    path=Path(path).resolve(); h=hashlib.sha256()
+    with path.open("rb") as stream:
+        for block in iter(lambda:stream.read(65536),b""):h.update(block)
+    return {"path":str(path),"bytes":path.stat().st_size,"sha256":h.hexdigest()}
+
+primary=ROOT/"outputs/chess-matched-check-completed-independent-audit.json"
+assert binding(primary)["sha256"]=="2f5c9b0e470d300021449349a503cbaed3357fa3bbf24cacc559acd31664b3a3"
+audit=json.loads(primary.read_text())
+previous=json.loads((ROOT/"outputs/chess-matched-check-intake-independent-audit.json").read_text())
+# The shared Reader/normalizer and native-boundary skeleton were already frozen
+# in the pre-call intake audit. Verify their current bytes against that record.
+for name in ("audit_actual_intake.py","auditor_skeleton.py","matched_check_reference.py"):
+    p=(HERE/name).resolve()
+    expected=previous["bound_files_stable_before_after"][str(p)]
+    assert {k:binding(p)[k] for k in ("bytes","sha256")}==expected
+cases=list(ET.parse(HERE/"postrun-finite-junit-v1.xml").getroot().iter("testcase"))
+assert len(cases)==11 and not any(list(case) for case in cases)
+for name,expected in audit["source_and_artifact_bindings"].items():
+    actual=binding(name)
+    assert all(actual[k]==expected[k] for k in ("bytes","sha256")),name
+result={"schema":"chess.matched-check.completed-audit-evidence.v1",
+    "utc":datetime.now(timezone.utc).isoformat(),"status":"BOUND_ORIGINAL_AUDIT_UNCHANGED_NO_REAUDIT_OR_MODEL_CALLS",
+    "primary_audit":binding(primary),
+    "source_dependencies":{name:binding(HERE/name) for name in (
+        "audit_completed_matched_run.py","postrun_reference.py","audit_actual_intake.py",
+        "auditor_skeleton.py","matched_check_reference.py","test_postrun_reference.py")},
+    "finite_checks":{"passed":11,"failed":0,"seconds_pytest":.16,
+        "tests":"Strict typed scoring, collapse/unknown/error denominators, model padded-vocabulary/EOS decoding, streamed tensor name/order/dtype/count/finiteness and constructor parameter order."},
+    "evidence":{name:binding(HERE/name) for name in (
+        "postrun-finite-junit-v1.xml","postrun-finite-tests-v1.txt","completed-run-audit-log-v1.txt","save_postrun_evidence.py")},
+    "protected_memberships":{"cohort":len(audit["protected_inventories"]["cohort"]),
+        "run":len(audit["protected_inventories"]["run"])},
+    "all_primary_168_bindings_current":len(audit["source_and_artifact_bindings"])==168,
+    "interpretation":{"checking_correct":0,"checking_support":32,"nonchecking_correct":32,"nonchecking_support":32,
+        "paired_both_check_labels_correct":0,"pairs":32,"all_eight_correct":32,"responses":64,
+        "strict_schema_completed":64,"other_seven_field_correct_counts":{k:v["correct"] for k,v in audit["outcomes"]["fields"].items() if k!="gives_check"},
+        "claim":"Retained selected-model responses repeated false for every supplied move's check field; this balanced exploratory panel does not support check discrimination.",
+        "limits":"No baseline run, retraining, causal explanation, strength, natural prevalence or automatic promotion; special moves excluded by design."},
+    "new_model_calls":0,"GPU_queries":0,"engine_calls":0}
+with OUT.open("x",encoding="utf-8",newline="\n") as stream:stream.write(json.dumps(result,indent=2,sort_keys=True,allow_nan=False)+"\n")
+print(json.dumps(binding(OUT)))

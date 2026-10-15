@@ -1,0 +1,65 @@
+{
+  "utc": "2026-10-15T11:01:00.334832+00:00",
+  "command": [
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\test_matched_runner.py",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-partial-seal-repair-v1\\fixtures",
+    "--junitxml",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-runner-v1\\software-partial-seal-repair-v1\\junit.xml"
+  ],
+  "exit_code": 0,
+  "seconds": 2.0460000000020955,
+  "sources_before_after": {
+    "matched_run.py": {
+      "bytes": 19005,
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "matched_worker.py": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "matched_evaluate.py": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "illustration_core.py": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "test_matched_runner.py": {
+      "bytes": 24460,
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    },
+    "local_backends.py": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "owned_native.py": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "reviewed/chess_fact_sft_common.py": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "reviewed/chess_board_fact_core.py": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "reviewed/chess_native_resources.py": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    }
+  },
+  "stdout_sha256": "76f5a5d6d4d3b4c127385025cf6ec801f8aecc066a036ef6b9c51984dc21317e",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "model_GPU_engine_calls": 0,
+  "real_cohort_labels_read": false
+}

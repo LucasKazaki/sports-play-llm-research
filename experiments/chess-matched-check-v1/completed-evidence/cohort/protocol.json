@@ -1,0 +1,586 @@
+{
+  "actions_so_far": "Workspace-only proposal and metadata research. No new candidate source rows read, pair search, data cohort selection, implementation, repository/Git mutation, training, model/engine/GPU call or new acquisition.",
+  "created_utc": "2026-10-15T10:23:02.992850+00:00",
+  "evaluation": {
+    "confusion": "Show TP/FN/FP/TN for strict-schema completed booleans, with unknown predictions, schema failures, truncation, runtime errors and not-run shown separately for each truth class. Those outcomes receive zero correctness without being relabelled as false predictions.",
+    "limits": "The selected panel is deliberately check-balanced and restricted to boards with matched pairs. It cannot estimate natural accuracy, evaluate promotion/castling/en-passant positives or identify why the failure occurs. No null-hypothesis significance claim from this finite descriptive diagnostic.",
+    "paired": "Both check labels correct within the same matched board /32 planned pairs; any missing/invalid response makes the pair incorrect.",
+    "parser": "Exact hash-bound core.parse_facts, common.decode_generated and common.score_sealed strict type/schema/full-denominator semantics; paired/class summary is an additive evaluator only.",
+    "primary": "True-check detection correct /32 planned checking moves and correct non-check rejection /32 planned nonchecking moves, side by side.",
+    "secondary": "Exact-schema valid /64, all-eight exact /64, all-field per-class support/correctness, predicted check-true count and full 64 outcome ledger. If schema-conditional rates appear, keep their smaller denominator visible and secondary."
+  },
+  "evidence_before_new_work": {
+    "additional_workspace_bindings": {
+      "outputs/gotham-constructed-middlegame-independent-review.json": {
+        "bytes": 3512,
+        "sha256": "4bd2abd5ee1dea8e7a3c204ee7e6bc5512f193c24794bbf94578f4264fcd893d"
+      },
+      "work/audit_gotham_constructed_retained.py": {
+        "bytes": 12309,
+        "sha256": "62809b27a8c7d64b9934bf4bea0f8c968e5045dccb0fba9fe0c85673a6394bff"
+      }
+    },
+    "all_frozen_existing_inputs_sha256": {
+      "data/open/chess/autonomy-broker-20260919-v1/acquisition-receipt.json": {
+        "bytes": 1402,
+        "sha256": "a4689d5f2e018d79b3b6e9a9f148d91ad3e6ebb2d305486605b718b5d6b3d839"
+      },
+      "data/open/chess/autonomy-broker-derived-20260919-v1/broker-receipt.json": {
+        "bytes": 1402,
+        "sha256": "a4689d5f2e018d79b3b6e9a9f148d91ad3e6ebb2d305486605b718b5d6b3d839"
+      },
+      "data/open/chess/autonomy-broker-derived-20260919-v1/manifest.json": {
+        "bytes": 52296,
+        "sha256": "3c2cd1adc263a7325294faca409aae3177764990eba1695cec8b8ce53a8f5828"
+      },
+      "data/open/chess/lichess-real-seed-v1/manifest.json": {
+        "bytes": 51523,
+        "sha256": "b515fbfc578dd7b00e2091e6c1a70e130b6e20177958234e4b6ec5042092758f"
+      },
+      "data/private/chess-board-facts-v1/dataset.json": {
+        "bytes": 9621,
+        "sha256": "30bfeeaa812b3c86e819405ebe9ee64a692575d43969139ae1d4fb99a821e51f"
+      },
+      "data/private/chess-classifier-v3/dataset.json": {
+        "bytes": 1972761,
+        "sha256": "7689124a85fac5181f17d6f5fb648840f8cff5e3f3d9f823870e4f2b77fc7256"
+      },
+      "data/private/chess-distill-v1/dataset.json": {
+        "bytes": 210973,
+        "sha256": "8b191767fe56cf5abea4ff9123b25e6899753b23f9bc6eb9bff96be897dd46a9"
+      },
+      "data/private/chess-distill-v1/source-prefix.csv.zst.part": {
+        "bytes": 4194304,
+        "sha256": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056"
+      },
+      "data/private/chess-distill-v2/dataset.json": {
+        "bytes": 784193,
+        "sha256": "59bcdb731ac2e2ba2fd3f8aedabb928738145eaedaee350e3503d772e2debf82"
+      },
+      "data/private/chess-fact-sft-v1/acquisition-v2.json": {
+        "bytes": 3593,
+        "sha256": "3e5dda5647ecfd1d2301b494d7221d615f10eb7db0f8e5a0031c768bbe04f895"
+      },
+      "data/private/chess-fact-sft-v1/cohort/dataset.json": {
+        "bytes": 5855183,
+        "sha256": "ae1cfa3ad6c4e7582fa233d6118f7a4baaaa7dc05d57ee9d6b5807c321bd983c"
+      },
+      "data/private/chess-fact-sft-v1/cohort/dev-inputs.json": {
+        "bytes": 18870,
+        "sha256": "68c02d2d947ee4324c0997eac3c45fbce878f0d33a1456c3a4504a342f7bfca2"
+      },
+      "data/private/chess-fact-sft-v1/cohort/exclusion-registry.json": {
+        "bytes": 2913427,
+        "sha256": "79ae0c7244f3d0bf525988c448dee1b419e35f1fb05845cbec0cccad047824f0"
+      },
+      "data/private/chess-fact-sft-v1/cohort/frozen-data.json": {
+        "bytes": 1648,
+        "sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6"
+      },
+      "data/private/chess-fact-sft-v1/cohort/holdout-inputs.json": {
+        "bytes": 37686,
+        "sha256": "3dda4139c4c6706f7db5c5cf0705a7c617cf2dc0b24f8be99e66819d540b146a"
+      },
+      "data/private/chess-fact-sft-v1/cohort/train-inputs.json": {
+        "bytes": 1204078,
+        "sha256": "a0392a16efe545f9a145ed9f465ed7b619259c1e3eb9225074b19d7e45e432fc"
+      },
+      "data/private/chess-fact-sft-v1/models/base/config.json": {
+        "bytes": 726,
+        "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd"
+      },
+      "data/private/chess-fact-sft-v1/models/base/generation_config.json": {
+        "bytes": 239,
+        "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2"
+      },
+      "data/private/chess-fact-sft-v1/models/base/merges.txt": {
+        "bytes": 1671853,
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5"
+      },
+      "data/private/chess-fact-sft-v1/models/base/tokenizer.json": {
+        "bytes": 11422654,
+        "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4"
+      },
+      "data/private/chess-fact-sft-v1/models/base/tokenizer_config.json": {
+        "bytes": 9732,
+        "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101"
+      },
+      "data/private/chess-fact-sft-v1/models/base/vocab.json": {
+        "bytes": 2776833,
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/adapter/adapter_config.json": {
+        "bytes": 1341,
+        "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+      },
+      "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/manifest.json": {
+        "bytes": 523,
+        "sha256": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc"
+      },
+      "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet": {
+        "bytes": 294920084,
+        "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87"
+      },
+      "data/private/chess-move-only-lm-v4/dataset.json": {
+        "bytes": 1943768,
+        "sha256": "e9f58c898e225fb35684938a2c77ca474fb0317a5e9404b54a7fa3e801083541"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/fact-input.json": {
+        "bytes": 198,
+        "sha256": "196150067f48c2fab77fcb6955bab5c0f4608511200111ee4e9720927d45d693"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/move-input.json": {
+        "bytes": 168,
+        "sha256": "9c07908144a51cb18e91354602a1ea5333da457edbee8bf4869eca66a42d1a0e"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/move-raw-closed.json": {
+        "bytes": 82889,
+        "sha256": "3a050b0ddd94c3e706bfca8987c380e3cde5a649f5b5d47548e4df61213e09e5"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/move-raw-seal.json": {
+        "bytes": 303,
+        "sha256": "f6686c8162861e51673be50b4fa261e3013328c57c9e64a9dbfb56861b0b9900"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/outcome-ledger.json": {
+        "bytes": 177242,
+        "sha256": "d6b7eb66372d299f5b9823e956430936f493e403c087f2f3e3d52611fce81d2e"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/raw-results.json": {
+        "bytes": 177302,
+        "sha256": "4d0fbb835b90e1b156e82aaffb605aa484d93c95d653d50ecc79b3fd57ffcdaf"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/raw-seal.json": {
+        "bytes": 4044,
+        "sha256": "25af8a8a8a0578935f1585b8040c3b27a75a2a03b9bf01c40bded3a0359f5cb9"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/raw/base_classifier_9m.npy": {
+        "bytes": 8000,
+        "sha256": "5557ce9c561db0b7c77186a8b276d7176292398bf16fd87721183e05ea94ccac"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/raw/selected_classifier_9m_step512.npy": {
+        "bytes": 8000,
+        "sha256": "896e488791628e6309b86ba79bb1732bf5ff8582cfbee498ed84b8e47d6dc338"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/sources/illustration_core.py": {
+        "bytes": 21010,
+        "sha256": "31a075b37dc7c586a360aa9fb465949823e8dff4951665d68f8ab43e27af3cb9"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/sources/local_backends.py": {
+        "bytes": 11662,
+        "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/sources/owned_native.py": {
+        "bytes": 4797,
+        "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/sources/reviewed-source-bindings.json": {
+        "bytes": 606,
+        "sha256": "a1a84081c3fb8d3e91ebe6bd94d32678b9a6eda447bfae9d148911f99202b178"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/sources/reviewed/chess_fact_sft_common.py": {
+        "bytes": 10669,
+        "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+      },
+      "data/private/gothamchess/constructed-middlegame-eval-v1/sources/reviewed/chess_native_resources.py": {
+        "bytes": 5573,
+        "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+      },
+      "experiments/chess-fact-sft-v1/launch-and-persistence-amendment-v3.json": {
+        "bytes": 10667,
+        "sha256": "265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e"
+      },
+      "experiments/chess-fact-sft-v1/protocol.json": {
+        "bytes": 29104,
+        "sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+      },
+      "experiments/chess-rollout-stress-v1/games.pgn": {
+        "bytes": 47501,
+        "sha256": "b7a1c21136073e7a85caa380701c406db6f334dc2b39b131dfa9658e1063dd78"
+      },
+      "experiments/gotham-constructed-middlegame-v1/fact-inputs.json": {
+        "bytes": 198,
+        "sha256": "196150067f48c2fab77fcb6955bab5c0f4608511200111ee4e9720927d45d693"
+      },
+      "experiments/gotham-constructed-middlegame-v1/freeze-manifest.json": {
+        "bytes": 27593,
+        "sha256": "30bd14085aa5966ceb4f3d17bd5c3df6b8f01af43c4b60dd067b4904f085a2b7"
+      },
+      "experiments/gotham-constructed-middlegame-v1/move-inputs.json": {
+        "bytes": 168,
+        "sha256": "9c07908144a51cb18e91354602a1ea5333da457edbee8bf4869eca66a42d1a0e"
+      },
+      "experiments/gotham-constructed-middlegame-v1/protocol.json": {
+        "bytes": 27408,
+        "sha256": "8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75"
+      },
+      "experiments/gotham-constructed-middlegame-v1/source-reference.json": {
+        "bytes": 806,
+        "sha256": "747a528d8811c9b52eb61b96550ae15a9005bab8960e1b176f44ba49f50fbd40"
+      },
+      "experiments/gotham-illustrative-v1/fen-inputs.json": {
+        "bytes": 740,
+        "sha256": "255f2ab88c654bb8a1c82c0128552ffb3aefbc796bfe51ca9491f22ae6fd93de"
+      },
+      "experiments/gotham-illustrative-v1/source-ledger.json": {
+        "bytes": 6868,
+        "sha256": "a23babc46d88b3767f185d1c0b1ef362f599896d30e52b06db2c3261f8c8f6e1"
+      },
+      "scripts/chess_board_fact_core.py": {
+        "bytes": 5902,
+        "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+      },
+      "scripts/chess_board_fact_diagnostic.py": {
+        "bytes": 27798,
+        "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+      },
+      "scripts/chess_fact_sft_common.py": {
+        "bytes": 10669,
+        "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+      },
+      "scripts/chess_fact_sft_evaluate.py": {
+        "bytes": 688,
+        "sha256": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99"
+      },
+      "scripts/chess_fact_sft_intake.py": {
+        "bytes": 15840,
+        "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+      },
+      "scripts/chess_fact_sft_supervise.py": {
+        "bytes": 10446,
+        "sha256": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c"
+      },
+      "scripts/chess_fact_sft_train.py": {
+        "bytes": 19533,
+        "sha256": "35fcc46ade2e46b35911da4758bddb9431f3b0b1ad66134d684006c7f74d7404"
+      },
+      "scripts/chess_native_resources.py": {
+        "bytes": 5573,
+        "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+      }
+    },
+    "hash_scope": "Actual streamed local bytes before and after reconstruction. Model weight hashes below are inherited from bound primary protocol/checkpoint manifests; no new model-weight file rehash or load was needed for this proposal. Future execution must verify them before loading.",
+    "known_registry": {
+      "bytes": 4506757,
+      "path": "work/chess-matched-check-diagnostic-protocol-v2/known-history-exclusions-v2.json",
+      "sha256": "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb"
+    },
+    "metadata_inspector": {
+      "bytes": 14607,
+      "path": "work/chess-matched-check-diagnostic-protocol-v1/inspect_existing_metadata.py",
+      "sha256": "0fe8c68281d8b88e2f681c24c3ac97affa6ba14b7fe72bf0c26527755827b540"
+    },
+    "metadata_only_operations": "Existing registered puzzles, fact-selected moves, PGNs and immutable known video inputs were reconstructed. Parquet footer/schema and full-source hash were checked; no new Parquet data rows read, pairs enumerated or cohort selected. No network, engine, pretrained or GPU call.",
+    "metadata_report": {
+      "bytes": 18423,
+      "path": "work/chess-matched-check-diagnostic-protocol-v1/source-and-exclusion-metadata.json",
+      "sha256": "3c54efc59492de364f8f3d9159b7f014e877c3a98977b5585121092f79c0df52"
+    },
+    "prior_v1_preserved": {
+      "known_registry": {
+        "bytes": 4502119,
+        "sha256": "418e9eb789c6b220dbe6ea915ddc24521d2bd9abdc6c6050fe1230002afb7d7d"
+      },
+      "metadata_report": {
+        "bytes": 18423,
+        "sha256": "3c54efc59492de364f8f3d9159b7f014e877c3a98977b5585121092f79c0df52"
+      },
+      "protocol": {
+        "bytes": 35758,
+        "sha256": "3c0afc7f4409fd241cbc705df4f571d435de445e8281079b0691a49d3fe084fa"
+      }
+    },
+    "spent_state_amendment": {
+      "bytes": 25861,
+      "path": "work/chess-matched-check-diagnostic-protocol-v2/spent-state-amendment-audit-v2.json",
+      "sha256": "15cbe3a52447ef02ec1af93e498c20035cffadae834da9af4a98eecdeb789118"
+    }
+  },
+  "files_after_future_intake": {
+    "bindings": "Copy exact protocol and executed intake/core/helper/test source snapshots, bound exclusion inventory and hashes into a create-only directory. Write before-selection intent and source-order trace. Hash all outputs into frozen-data.json. Immutable intent -> dataset files -> frozen-data manifest; no circular self-hash.",
+    "independent_gate": "A separate all-row audit reconstructs both source roles, both moves, all four keys, complete pair enumeration/rank, exact source order/first32 eligibility, current known/new exclusions, both oracles, all 64 prompts/targets and native token boundaries. Source answer tails may be poisoned in tests to prove they never influence selection. No model call until root reviews this audit.",
+    "input_only": "inputs.json: {schema, rows:[{case_id,fen,selected_uci}]}, exactly64 in frozen generation order; no source, labels, successor boards, outcomes or cohort class in each model row.",
+    "metadata": "dataset.json:32 pair records with game/native ID,puzzle ID,source URL/location,source-before FEN,first setup UCI,setup-after FEN,matched UCIs,successor keys,matching attributes,pair/hash/order evidence,rejection/coverage counts. No source answer tail retained.",
+    "proposed_private_directory": "data/private/chess-matched-check-diagnostic-v1/cohort",
+    "separate_labels": "labels.json: {schema, rows:[{case_id,expected:<all eight facts>}]}, matching exact 64 order. Two routes core.expected_facts and core.independent_facts must agree before any call; strict core.parse_facts must accept each target."
+  },
+  "fixed_scope": {
+    "alternative_checkpoints": 0,
+    "conditions": [
+      "primary_v3_selected_step512_only"
+    ],
+    "engine_calls": 0,
+    "games": 32,
+    "moves_each": 2,
+    "optimizer_updates": 0,
+    "pre_move_boards": 32,
+    "prompt_variants": 0,
+    "repeat_generations": 0,
+    "seed": 4082032,
+    "source_row_cap": 200000,
+    "total_planned_responses": 64,
+    "true_checking_cases": 32,
+    "true_nonchecking_cases": 32
+  },
+  "future_runtime_guards": {
+    "cpu_intake_maximum_wall_seconds": 600,
+    "cpu_intake_scope": "A separate owned CPU-only attempt starts its 600 s timer before hash/exclusion preflight and includes source scan, pair selection, labels, output freeze and final hashes. A timeout stops only that owned child after bounded cleanup; parent records failed/partial intake and zero model calls. Never relax the row cap, reuse partial acceptance or resume after timeout. This CPU budget does not reset or extend the separately bounded 600 s inference job.",
+    "deadline": "One 600 s total inference-job timer starts at wrapper entry BEFORE preflight or model load and includes all 64 calls, raw journaling/seal, separate CPU evaluator completion, identity/content finalization and cleanup. No phase/reset extension and no unbounded evaluator wait outside this timer. At deadline latch cooperative stop; after 30 s terminate only the exact owned child handle, retaining all incomplete/error/not-run outcomes.",
+    "loading_reuse": "Reuse the exact reviewed Gotham sources/local_backends.py FactBackend/native decode plus owned_native.py and their byte-bound reviewed helper snapshots. Any small adapter/64-row runner change receives full source review and fresh finite CPU-only identity/deadline/cleanup/persistence probes before execution. Load selected step 512 ONCE, with adapter enabled for all 64 calls; no training entrypoint, duplicate loader, baseline pass or optimizer state. Existing 45 checks are historical evidence, not proof that a new wrapper works.",
+    "owned_cancel_grace_seconds": 30,
+    "owner": "Root serializes one new local native job only after source/intake reviews and explicit execution GO. Completed run24401 remains immutable; no current GPU/model work is authorized by this proposal.",
+    "proposed_total_job_wall_seconds": 600,
+    "reserves": "Inherited primary pre-load 10 healthy 1 s samples: physical>=10GiB,commit headroom>=16GiB,GPU free>=13GiB; during physical>=4GiB,commit headroom>=8GiB,GPU free>=1GiB,nominal 1 s samples,gap <= 3 s. Root must approve exact current resource-source hashes and the inference-only wrapper before execution.",
+    "resource_contract": "Reuse the exact reviewed current native resource/owned-PID/venv identity and Windows status-file persistence policy, with a new job and create-only directory. Do not retry inference after artifact failures or kill by name.",
+    "stopping": "Resource, ownership, counter, deadline, input-binding or artifact failure stops the attempt. Keep partial evidence and no quality conclusion or implicit restart. This is not an instantaneous allocation guarantee."
+  },
+  "intake_algorithm": {
+    "acceptance": "Process rows in physical source order and accept the first eligible pair from each new game until 32. Assign pair_id='mc-pair-'+format(accepted_index,'02d') for index0..31. Within the chosen pair order the two moves lexicographically and give case_id=pair_id+'-'+str(lexical_index) with indices0/1; IDs do not encode true class and are not in the model prompt. Repeated accepted puzzle identity is a hard integrity failure.",
+    "candidate_moves": "Enumerate legal moves in lexicographic UCI order on that board. Reject promotions, castling and en passant from candidate pairing. Compute immediate capture status, captured-piece type, moving piece and check via board rules only. No engine, source-answer choice, model output or evaluation score.",
+    "generation_order": "For each opaque case_id compute sha256(ASCII('matched-check-order-v1')+byte(10)+json.dumps({seed:4082032,case_id:case_id},sort_keys=True,separators=(',',':'),ensure_ascii=True).encode('utf-8')).hexdigest(); sort by (digest,case_id). Keep evaluator labels in this same sealed order without opening them in generation. Do not run all checking cases first or leak label-dependent names.",
+    "global_new_exclusions": "After acceptance add that canonical game and all four role keys to the new-cohort exclusion union. The pre-move board intentionally appears twice in the two input records of its own pair; it may not recur in another pair or collide with any selected successor.",
+    "matched_pairs": "Enumerate every unordered distinct move pair in lexical UCI order. Require the same from_square, moving piece/color, capture boolean and captured-piece type, with exactly one checking and one nonchecking move. Both successors must be valid, distinct, and absent from known and already accepted new keys. Also reject internal collision among source-before, setup-after and the two successor keys.",
+    "pair_rank": "digest=sha256(ASCII('matched-check-pair-v1')+byte(10)+payload_bytes).hexdigest(); choose min((digest,uci1,uci2)). Choice is fixed after legality/exclusion/matching filters and independent of outputs. Do not modify eligibility to obtain favorable model results.",
+    "pair_rank_canonical_payload": "For every eligible pair, payload={seed:4082032,game_id:canonical_game_id,puzzle_id:PuzzleId,fen:setup_after_full_canonical_FEN,moves:sorted([uci1,uci2])}; encode json.dumps(payload,sort_keys=True,separators=(',',':'),ensure_ascii=True).encode('utf-8').",
+    "rejection_accounting": "One terminal trace outcome per scanned source row in this precedence: invalid; known_or_new_game_overlap; source_role_board_overlap; repeated_accepted_puzzle_identity fatal; no_legal_matched_pair_after_all_filters; accepted. Also retain aggregate candidate move/pair filtering counts and exact source locations. Do not double-count a row into the terminal rejection sum.",
+    "row_validation": "PuzzleId must be a nonempty ASCII alphanumeric string. Parse GameId exactly as above; parse source FEN as a valid orthodox python-chess Board. Reject malformed fields with a source-order trace. Split Moves at most once and parse ONLY its first token as a legal non-null setup move. Never inspect a later source answer token, rating, theme, opening or popularity.",
+    "setup": "Keep source_before_fen; push exactly the first setup move; require a valid, nonterminal setup-after board with legal moves. This setup-after board is the pre-move model input. Check game and both source role keys against known history and already accepted new roles.",
+    "shortfall": "A source cap shortfall, oracle mismatch, identity conflict, binding drift or output collision seals a failed intake with zero model calls. Do not resume, overwrite, silently drop, or select a replacement after outcomes."
+  },
+  "known_history_exclusions": {
+    "canonical_board_key": "Exactly ' '.join(chess.Board(fen).fen().split()[:4]) using pinned python-chess 1.10.0, orthodox valid boards and default legal-en-passant normalization. Omit half/fullmove clocks for duplicate detection; retain the original complete canonical FEN for prompts.",
+    "canonical_game_id": "Full-match ([A-Za-z0-9]{8})(?:/(?:white|black))?(?:#[0-9]+)?; retain the case-sensitive first capture and original native GameId. Reject missing/malformed values; do not infer unknown game identities.",
+    "constructed": "Immutable constructed preboard and supplied c3h3 fact successor, plus every legal first move and both classifiers' legal raw/masked top5 successors from the completed sealed run 24401. Seven distinct legal moves produce six additional board keys; no invented game ID. Original game/history/mainline remain unknown; constructed clocks 0/1 are computational. No active raw, fact-label or model-quality score file was read for this amendment.",
+    "earlier_fact_panel": "All 16 earlier fact games, both source roles and their supplied-move successors.",
+    "final_known_board_keys": 71463,
+    "final_known_games": 30280,
+    "inventory_gate": "At root's eventual intake GO, confirm that no additional spent cohort/game/board has appeared after this proposal. If current illustration execution or another experiment creates newly spent states not covered here, freeze a hash-bound registry amendment before selection; never read an active score file or silently expand after model outputs.",
+    "legacy": "24 historical seed games including already-spent retained replay boards; all registered v1/v2/v3/v4 splits and both source-before/setup-after roles reconstructed from the retained 4 MiB prefix. The 24-item legacy broker-derived manifest adds no new game/board beyond this union, but remains hash-bound and checked.",
+    "limits": "Known board exclusions do not authenticate unknown video game identities, exclude their unknown full histories, or establish independence from upstream model pretraining.",
+    "primary": "All 8192 train, 128 development, 256 held-out primary positions: all 8576 games, source-before/setup-after keys, and the rule-constructible successor of every supplied fact move. No model-quality file or label is needed to reconstruct these roles.",
+    "reconstruct_not_count_only": "Before selection, rehash every bound input; reconstruct the existing registry and all added known roles; require exact sorted-game and sorted-board equality with the bound workspace registry, not merely matching counts.",
+    "rollout": "All 64 retained PGNs, their initial state and every legal mainline state:4784 known plies. These are designed software stress games, not real-game identity evidence.",
+    "stages": {
+      "completed_gotham_first_choices_and_raw_masked_top5_successors": {
+        "board_keys": 71463,
+        "classifier_vectors_replayed": 2,
+        "completed_move_conditions": 4,
+        "distinct_legal_move_choices": 7,
+        "games": 30280,
+        "move_choice_top5_occurrences": 26,
+        "new_game_ids": 0,
+        "new_successor_board_keys": 6
+      },
+      "exact_primary_registry_reproduced": {
+        "board_keys": 45704,
+        "games": 21704,
+        "illustrative_preboards": 3,
+        "rollout_games": 64,
+        "rollout_plies": 4784
+      },
+      "historical_seed": {
+        "board_keys": 146,
+        "games": 24
+      },
+      "legacy_derived_manifest_union": {
+        "board_keys": 45704,
+        "games": 21704,
+        "manifest_items": 24,
+        "new_board_keys": 0,
+        "new_games": 0
+      },
+      "reconstructed_historical_and_v1_to_v4": {
+        "board_keys": 43474,
+        "games": 21688,
+        "registered_puzzle_rows": 21664,
+        "retained_prefix_rows_replayed": 23374
+      },
+      "with_all_known_fact_selected_successors": {
+        "board_keys": 71448,
+        "games": 30280,
+        "selected_moves_replayed": 8592
+      },
+      "with_all_primary_games_and_both_source_roles": {
+        "board_keys": 62856,
+        "games": 30280,
+        "primary_positions": 8576
+      },
+      "with_known_constructed_board_and_supplied_fact_successor": {
+        "board_keys": 71457,
+        "constructed_preboards": 1,
+        "games": 30280,
+        "given_moves": 1
+      },
+      "with_known_video_histories_and_displayed_successors": {
+        "board_keys": 71455,
+        "displayed_successors": 3,
+        "games": 30280,
+        "history_plies": 16
+      },
+      "with_spent_fact_panel": {
+        "board_keys": 43506,
+        "games": 21704
+      }
+    },
+    "video": "All three immutable illustrative preboards, known opening-history states and three displayed-move successors. These old evaluator observations serve only to exclude spent board keys and never enter candidate selection or any model prompt."
+  },
+  "model_and_generation": {
+    "adapter_directory": "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/adapter",
+    "adapter_files_sha256": {
+      "README.md": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f",
+      "adapter_config.json": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a",
+      "adapter_model.safetensors": "9d183cdd12024865e4d4c92864e70c32c6dccd605102a42e9ed8da018d947137"
+    },
+    "base": {
+      "actual_loaded_unique_parameters_expected_after_verified_tie": 596049920,
+      "files_sha256": {
+        "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+        "README.md": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9",
+        "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+        "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+        "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "model.safetensors": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+        "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+        "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+        "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+      },
+      "license_declared": "Apache-2.0",
+      "license_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "load": {
+        "attention_implementation": "sdpa",
+        "device": "cuda:0",
+        "dtype": "bfloat16",
+        "local_files_only": true,
+        "trust_remote_code": false,
+        "use_safetensors": true
+      },
+      "local_path": "data/private/chess-fact-sft-v1/models/base",
+      "no_quantization_or_ollama_training": true,
+      "repo": "Qwen/Qwen3-0.6B",
+      "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+      "runtime_tie_gate": "After actual local from_pretrained, require input embedding weight is output head weight,596049920 unique base parameters, correct config and frozen BF16 base. Meta inspection alone is not runtime verification. Fail on mismatch before forward.",
+      "stored_BF16_scalars_metadata": 751632384,
+      "weight_bytes": 1503300328
+    },
+    "fixed_selected_step": 512,
+    "generation": {
+      "batch_size": 1,
+      "decode": "Separate new IDs at padded input width; keep raw IDs. First generated native EOS terminates output. Decode preceding IDs with skip_special_tokensFalse; remove only generated batch padding after EOS. No think/fence/prose extraction. Missing EOS at cap is truncation.",
+      "do_sample": false,
+      "eos_token_id": 151645,
+      "max_new_tokens": 128,
+      "no_constraints": "No legal mask, JSON repair or constrained grammar; same predeclared native prompt for base and adapter.",
+      "pad_token_id": 151643,
+      "thinking": false,
+      "use_cache": true
+    },
+    "immutable_base_content_digest": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008",
+    "loaded_identity_proof": "File hashes alone prove only retained packages. At actual load verify tied 596,049,920 BF16 base, exact 392 adapter tensors / 5,046,272 F32 scalars and byte-equal loaded adapter state per FactBackend. For an unchanged-base claim, explicitly iterate the same primary named_parameters order/names while EXCLUDING any name containing 'lora_', hash name.encode plus each contiguous CPU uint8 parameter bytes as primary did, and require before+after equality to e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008. FactBackend freezes ALL parameters: do NOT reuse primary requires_grad filtering, which would now include LoRA. Any whole-model-state hash must instead be labelled as such and is not the primary base digest. Retain failures; no fabricated base-integrity success from package file checks.",
+    "no_training_or_search": "No optimizer, gradients, new checkpoint selection, baseline condition or prompt/decoding variants. Do not load retained optimizer/training state.",
+    "prompt": "Exactly current hash-bound core.build_prompt(row,'fen_uci_piece_map') and common.native_prompt(tokenizer,row): same complete primary instruction/schema, native template, thinking disabled. Only pre-move FEN, supplied UCI and same-board piece map enter the prompt. No truth, case/game/source ID, successor, source video, output, or explanation.",
+    "raw_first": "Exactly 64 planned outcomes. Journal every attempted/generated raw token sequence/text/status and immutable source/model/input bindings; seal all raw data before a separate CPU evaluator opens labels. No response retries, partial-field extraction, JSON grammar, output repair or hidden answer rescue.",
+    "selection_manifest": {
+      "path": "data/private/chess-fact-sft-v1/native-run-v3/checkpoint-512/manifest.json",
+      "sha256": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc"
+    },
+    "token_gate": "Before pretrained load, independently check all 64 native prompts <=1408 tokens and separate-audit targets <=127 JSON+EOS tokens/full sequence<=1536 with exact joint generation prefix, EOS and target round-trip. No truncation, replacement or edited prompt on overflow. Generator sees input lengths only, not label targets."
+  },
+  "motivation": "The completed primary held-out panel had 0/13 true checks identified, despite 242/256 all-eight accuracy. This diagnostic targets that observed class failure without retraining, changing prompts or comparing checkpoints.",
+  "proposed_source_test_scope": {
+    "finite_review": "Bind complete source/tests/results in review units below 30,000 bytes if using the native project review route; do not clip a source file or treat fake tests as real-model evidence. Root independent source/intake/token reviews precede any actual call.",
+    "meaningful_tests": [
+      "Native GameId suffix cases, malformed IDs/fields, invalid orthodox boards, illegal setup, and proof that poisoned answer tails/ratings/themes cannot alter selection or prompts.",
+      "Known-game overlap, both source roles and each selected successor overlap separately; clock-only duplicate normalization; old primary holdout exclusion; accepted-pair cross-collision and repeated puzzle identity.",
+      "Small manually known checking/nonchecking fixtures; same-origin/piece/capture matching, excluded promotion/castle/EP, all-candidate enumeration, hash tie-break, first eligible source order, source cap and no-relaxation shortfall.",
+      "Exactly32 boards/64 inputs/32+32 truth support, input/label/order identity and no class label in input IDs or prompts; independent oracle disagreement hard failure.",
+      "Protocol/source/registry/source-file tamper before and after selection; refusal of existing output/symlink/partial attempt; failed intent retained, no overwrite or implicit resume.",
+      "Native prefix/EOS/length gates using pinned tokenizer CPU only; no pretrained forward; generated tokens with multiple JSON objects/fences/prose/duplicate keys/unknown or wrong types score strictly without repair.",
+      "Fake 64-outcome examples including invalid schema, truncation, runtime error and not-run prove 32 / 32 / 32 / 64 denominators, separate confusion failures, pair failure, raw seal-before-label access and no response retry.",
+      "Actual CPU-only owned-process identity/deadline/cleanup/persistence probes in bounded temp directories; fake resource/model interfaces do not count as real CUDA integration evidence."
+    ],
+    "new_intake": "scripts/chess_matched_check_intake.py and tests/test_chess_matched_check_intake.py only for metadata reconstruction, exact matching/ranking/order, create-only freezing and pre-call validation. Reuse unchanged existing core/helpers under their exact source hashes; no edits to original importer, primary protocol/cohort/common or trained weights.",
+    "ownership": "Names are proposed; no repository mutation while chess_media owns its frozen branch. Root assigns a new branch and file ownership after protocol approval.",
+    "required_legacy_checks": "After actual intake implementation, run tests/test_chess_broker_intake.py, tests/test_chess_real_data.py and tests/test_chess_no_forward_packet.py together using the project venv. Preserve missing historical fixture failures exactly; do not claim the current 9 failed / 5 passed / 89 errors historical state has been repaired without evidence.",
+    "separate_runtime": "Root-owned inference-only runner reuses byte-bound Gotham FactBackend, native decode and owned_native helpers after full adaptation review. Selected adapter only: 64 calls and one load. No training entrypoint or duplicate weight loader. Add a paired/class file-only evaluator and actual bounded CPU identity/deadline/closure probes for the new wrapper; prior 45 checks do not establish this adaptation's integration."
+  },
+  "question": "Does the fixed selected step-512 fact adapter distinguish checking from non-checking legal moves on matched, known-history-disjoint boards, or repeat the observed always-false check response?",
+  "required_gates": [
+    "Root reads and approves this final proposal and exact known-history inventory; any additional newly spent evidence requires a preselection amendment.",
+    "Freeze protocol-first on a new authorized branch after current owner releases it; implement only agreed new files and preserve all primary evidence.",
+    "Root reviews exact full source/tests and retained checks before one create-only actual intake.",
+    "Independent all-row/exclusion/first-eligible-pair/native-token audit clears; root separately authorizes64 actual local responses under available resources.",
+    "Retained raw64 sealed before separate evaluation; independent postrun source/token/scoring/model-integrity/full-denominator audit before any public summary."
+  ],
+  "schema": "chess.matched-check.diagnostic.protocol-proposal.v2",
+  "scientific_status": {
+    "fresh_definition": "Disjoint from the exact KNOWN games and canonical boards reconstructed in the bound registry only. Original Gotham game IDs and unknown upstream pretraining remain unresolved; do not claim full original-game or pretraining independence.",
+    "kind": "Exploratory successor diagnostic of a known failure, not an untouched confirmatory test or a new project acceptance gate.",
+    "no_strength_inference": "Legal moves are supplied to a fact-reporting model. This cannot establish move-choice quality, strategy, Elo, commentary, sports transfer, a causal mechanism for failure, or automatic promotion.",
+    "reporting": "Report the full fixed denominator and complete class confusion, even if results are negative. No ranking or percentage-point improvement against the primary convenience panel."
+  },
+  "source": {
+    "amendment": "data/private/chess-fact-sft-v1/acquisition-v2.json",
+    "amendment_sha256": "3e5dda5647ecfd1d2301b494d7221d615f10eb7db0f8e5a0031c768bbe04f895",
+    "applicable_rights": "Reuse the completed primary protocol's pinned public Lichess CC0-1.0 source and retained acquisition metadata. This step performs no new download, terms acceptance or rights expansion.",
+    "cap_and_completion": "Inspect ordinals 0 through 199999 at most, including all rejected rows. Stop after accepting the 32nd board, or at the cap. No cohort/model execution is permitted on a shortfall. Preserve the attempted intake and rejection trace; no quota relaxation or replacement.",
+    "columns_to_request": [
+      "PuzzleId",
+      "GameId",
+      "FEN",
+      "Moves"
+    ],
+    "failed_original": "data/private/chess-fact-sft-v1/acquisition.json",
+    "failed_original_retained": true,
+    "failed_reason": "Original32MiB CSV acquisition failed certificate validation; no TLS bypass.",
+    "format": "GameId is a string; PuzzleId/FEN/Moves are large_string. There is no GameUrl column. Top-level Themes/OpeningTags are not selected; Parquet physical schema uses nested element leaves.",
+    "iteration": "ParquetFile.iter_batches(batch_size=4096, columns=[PuzzleId,GameId,FEN,Moves], row_groups=[group], use_threads=False), ascending row group, batch and physical row order. Record zero-based global ordinal/group/in-group indices.",
+    "license_declared": "CC0-1.0",
+    "metadata": {
+      "columns": [
+        "PuzzleId",
+        "GameId",
+        "FEN",
+        "Moves",
+        "Rating",
+        "RatingDeviation",
+        "Popularity",
+        "NbPlays",
+        "element",
+        "element"
+      ],
+      "field_types": {
+        "FEN": "large_string",
+        "GameId": "string",
+        "Moves": "large_string",
+        "NbPlays": "uint32",
+        "OpeningTags": "list<element: string>",
+        "Popularity": "int8",
+        "PuzzleId": "large_string",
+        "Rating": "uint16",
+        "RatingDeviation": "uint16",
+        "Themes": "list<element: string>"
+      },
+      "new_cohort_rows_selected": 0,
+      "new_pairs_searched": 0,
+      "new_source_rows_read": 0,
+      "row_group_rows": [
+        489997,
+        489997,
+        489997,
+        489997,
+        92459
+      ],
+      "row_groups": 5,
+      "rows": 2052447
+    },
+    "new_acquisition": false,
+    "revision": "461725966ea46898ec6481372a6326de3281bfbd",
+    "scope": "One complete pinned Parquet shard only; not the full884570255byte dataset. Footer shows2052447rows/5rowgroups; no cohort row has been selected in this proposal.",
+    "source_bytes": 294920084,
+    "source_path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+    "source_repo": "Lichess/chess-puzzles",
+    "source_reuse_only": true,
+    "source_sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "source_url": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet"
+  },
+  "status": "FINAL V2 PROPOSAL ONLY: additive spent-state and runtime-proof amendment; not an execution freeze or implementation GO"
+}

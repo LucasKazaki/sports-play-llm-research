@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "source_and_test_bytes_unchanged": {
+    "scripts/chess_matched_check_intake.py": {
+      "sha256": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28",
+      "current_bytes": 29085,
+      "CRLF_count": 0,
+      "forced_autocrlf_checkout_equal": true
+    },
+    "tests/test_chess_matched_check_intake.py": {
+      "sha256": "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb",
+      "current_bytes": 15865,
+      "CRLF_count": 0,
+      "forced_autocrlf_checkout_equal": true
+    },
+    "tests/test_chess_matched_check_exclusions.py": {
+      "sha256": "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1",
+      "current_bytes": 6566,
+      "CRLF_count": 0,
+      "forced_autocrlf_checkout_equal": true
+    }
+  },
+  "check_attr": "scripts/chess_matched_check_intake.py: text: set\nscripts/chess_matched_check_intake.py: eol: lf\ntests/test_chess_matched_check_intake.py: text: set\ntests/test_chess_matched_check_intake.py: eol: lf\ntests/test_chess_matched_check_exclusions.py: text: set\ntests/test_chess_matched_check_exclusions.py: eol: lf\n",
+  "command": [
+    "git",
+    "-c",
+    "core.autocrlf=true",
+    "checkout-index",
+    "--prefix=C:/Users/lucas/Documents/Codex/2026-10-15/go/work/chess-matched-check-publication-v1/forced-autocrlf-checkout/",
+    "--",
+    "scripts/chess_matched_check_intake.py",
+    "tests/test_chess_matched_check_intake.py",
+    "tests/test_chess_matched_check_exclusions.py"
+  ],
+  "stdout": "",
+  "stderr": "",
+  "new_model_engine_GPU_calls": 0
+}

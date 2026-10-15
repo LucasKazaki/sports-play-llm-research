@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="29" time="0.833" timestamp="2026-10-15T06:52:08.472404-04:00" hostname="DESKTOP-AKPLL81"><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_exact64_input_contract_and_order" time="0.001" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;0]" time="0.001" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;1]" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;2]" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;3]" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;4]" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;5]" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;6]" time="0.001" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forbidden_payload_rejected[&lt;lambda&gt;7]" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_evaluator_balanced_full_denominators" time="0.002"><failure message="TypeError: expected_facts() missing 1 required positional argument: 'uci'">tmp_path = WindowsPath('C:/Users/lucas/Documents/Codex/2026-10-15/go/work/chess-matched-check-runner-v1/software-attempt1/test_evaluator_balanced_full_d0')
+
+    def test_evaluator_balanced_full_denominators(tmp_path):
+&gt;       path,_=seal_fixture(tmp_path)
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:72: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+work\chess-matched-check-runner-v1\test_matched_runner.py:38: in seal_fixture
+    labels=labels_for(rows)
+           ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+rows = [{'case_id': 'mc-pair-22-0', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-...lected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-1', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c2'}, ...]
+
+    def labels_for(rows):
+&gt;       return [{"case_id":row["case_id"],"expected":core.expected_facts(row)} for row in rows]
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: expected_facts() missing 1 required positional argument: 'uci'
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:33: TypeError</failure></testcase><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_raw_first_rejects_tamper_before_labels_are_touched" time="0.002"><failure message="TypeError: expected_facts() missing 1 required positional argument: 'uci'">tmp_path = WindowsPath('C:/Users/lucas/Documents/Codex/2026-10-15/go/work/chess-matched-check-runner-v1/software-attempt1/test_raw_first_rejects_tamper_0')
+monkeypatch = &lt;_pytest.monkeypatch.MonkeyPatch object at 0x000001A15FC91F70&gt;
+
+    def test_raw_first_rejects_tamper_before_labels_are_touched(tmp_path,monkeypatch):
+&gt;       path,_=seal_fixture(tmp_path)
+               ^^^^^^^^^^^^^^^^^^^^^^
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+work\chess-matched-check-runner-v1\test_matched_runner.py:38: in seal_fixture
+    labels=labels_for(rows)
+           ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+rows = [{'case_id': 'mc-pair-22-0', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-...lected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-1', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c2'}, ...]
+
+    def labels_for(rows):
+&gt;       return [{"case_id":row["case_id"],"expected":core.expected_facts(row)} for row in rows]
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: expected_facts() missing 1 required positional argument: 'uci'
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:33: TypeError</failure></testcase><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_invalid_unknown_missing_are_not_false_predictions" time="0.001"><failure message="TypeError: expected_facts() missing 1 required positional argument: 'uci'">tmp_path = WindowsPath('C:/Users/lucas/Documents/Codex/2026-10-15/go/work/chess-matched-check-runner-v1/software-attempt1/test_invalid_unknown_missing_a0')
+
+    def test_invalid_unknown_missing_are_not_false_predictions(tmp_path):
+        def mutate(rows,labels):
+            true=[i for i,label in enumerate(labels) if label["expected"]["gives_check"]]
+            for index,status in zip(true[:5],["truncated","error","not_run","completed","completed"]):
+                rows[index].update(status=status,text="{}")
+            labels[true[4]]["expected"]["gives_check"]=True
+            output=dict(labels[true[4]]["expected"],gives_check="unknown")
+            rows[true[4]]["text"]=json.dumps(output)
+&gt;       path,_=seal_fixture(tmp_path,mutate)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:101: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+work\chess-matched-check-runner-v1\test_matched_runner.py:38: in seal_fixture
+    labels=labels_for(rows)
+           ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+rows = [{'case_id': 'mc-pair-22-0', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-...lected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-1', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c2'}, ...]
+
+    def labels_for(rows):
+&gt;       return [{"case_id":row["case_id"],"expected":core.expected_facts(row)} for row in rows]
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: expected_facts() missing 1 required positional argument: 'uci'
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:33: TypeError</failure></testcase><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_all_false_collapse_visible" time="0.001"><failure message="TypeError: expected_facts() missing 1 required positional argument: 'uci'">tmp_path = WindowsPath('C:/Users/lucas/Documents/Codex/2026-10-15/go/work/chess-matched-check-runner-v1/software-attempt1/test_all_false_collapse_visibl0')
+
+    def test_all_false_collapse_visible(tmp_path):
+        def mutate(rows,labels):
+            for row,label in zip(rows,labels,strict=True):
+                row["text"]=json.dumps(dict(label["expected"],gives_check=False))
+&gt;       path,_=seal_fixture(tmp_path,mutate)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:114: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+work\chess-matched-check-runner-v1\test_matched_runner.py:38: in seal_fixture
+    labels=labels_for(rows)
+           ^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+rows = [{'case_id': 'mc-pair-22-0', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-...lected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-1', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c2'}, ...]
+
+    def labels_for(rows):
+&gt;       return [{"case_id":row["case_id"],"expected":core.expected_facts(row)} for row in rows]
+                                                     ^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: expected_facts() missing 1 required positional argument: 'uci'
+
+work\chess-matched-check-runner-v1\test_matched_runner.py:33: TypeError</failure></testcase><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_generation_passes_only_input_and_never_disables_adapter" time="0.210" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_failure_never_retries_generation[encode]" time="0.006" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_failure_never_retries_generation[predict]" time="0.007" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_failure_never_retries_generation[write]" time="0.006" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_raw_recovery_preserves_completed_unknown_and_notrun" time="0.021" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_explicit_lora_exclusion_and_original_byte_order" time="0.081" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_actual_owned_cpu_identity_and_target_only_cleanup" time="0.233" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_forced_cleanup_uses_exact_handle_even_cancel_write_fails" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_monitor_latches_unhealthy_counters_and_clock[missing]" time="0.002" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_monitor_latches_unhealthy_counters_and_clock[low]" time="0.002" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_monitor_latches_unhealthy_counters_and_clock[gap]" time="0.002" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_monitor_latches_unhealthy_counters_and_clock[reverse]" time="0.002" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_preflight_failure_is_preserved_with_zero_children" time="0.010" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_deadline_is_not_reset_between_phases" time="0.000" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_inherited_sources_exact_and_no_model_module_imports" time="0.006" /><testcase classname="work.chess-matched-check-runner-v1.test_matched_runner" name="test_ownership_mismatch_fails_before_any_model_import" time="0.008" /></testsuite></testsuites>

@@ -1,0 +1,97 @@
+"""File-only packaging verification. No model/engine/GPU import or operation."""
+from pathlib import Path
+import hashlib
+import importlib
+import json
+import re
+import sys
+import xml.etree.ElementTree as ET
+
+W=Path(__file__).resolve().parents[2]
+HERE=Path(__file__).resolve().parent
+REPO=W/"work/repos/sports-play-llm-research"
+EXP=REPO/"experiments/chess-matched-check-v1"
+
+
+def sha(path):
+    h=hashlib.sha256()
+    with Path(path).open("rb") as stream:
+        for block in iter(lambda:stream.read(65536),b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding="utf-8"))
+
+
+def main():
+    manifest=read(EXP/"public-manifest.json")
+    seen=set()
+    for item in manifest["exact_original_to_public_aliases"]:
+        alias=item["planned_public_repo_path"]
+        assert alias not in seen
+        seen.add(alias)
+        target=(REPO/alias).resolve()
+        target.relative_to(EXP.resolve())
+        original=(W/item["original_workspace_path"]).resolve()
+        original.relative_to(W)
+        assert target.stat().st_size==original.stat().st_size==item["bytes"]
+        assert sha(target)==sha(original)==item["sha256"]
+        assert target.suffix.lower() not in (".safetensors",".pt",".parquet",".mp4",".webm",".exe",".dll")
+        if target.suffix==".json":read(target)
+        if target.suffix==".xml":ET.parse(target)
+    actual=REPO/"data/private/chess-matched-check-diagnostic-v1"
+    actual_count=0
+    for name,expected in manifest["complete_actual_tree_inventories_before_after"].items():
+        root=actual/name
+        found={p.relative_to(root).as_posix():{"bytes":p.stat().st_size,"sha256":sha(p)}
+               for p in sorted(root.rglob("*")) if p.is_file()}
+        assert found==expected
+        actual_count+=len(found)
+    for name,binding in manifest["existing_pre_call_capsule_unchanged"].items():
+        assert sha(REPO/name)==binding["sha256"]
+    for name,binding in read(EXP/"manifest.json")["files"].items():
+        assert sha(EXP/name)==binding["sha256"]
+    # Re-run only pure file scoring on copied raw/labels, never generation.
+    runner=W/"work/chess-matched-check-runner-v1"
+    sys.path.insert(0,str(runner))
+    evaluator=importlib.import_module("matched_evaluate")
+    assert sha(runner/"matched_evaluate.py")=="e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    score=evaluator.evaluate(EXP/"completed-evidence/selected-run-v1/generation/raw",
+        EXP/"completed-evidence/cohort/labels.json","997c3834b4e038a2c363e9b375908761a3b34efd7fca6334fc836f871a784ad2")
+    summary=read(EXP/"summary.json")
+    retained=read(EXP/"completed-evidence/selected-run-v1/score.json")
+    for name in ("counts","fields","check_classes","paired","predicted_check_true"):
+        assert score[name]==retained[name]
+    for name in ("counts","fields","check_classes"):
+        assert summary[name]==score[name]
+    assert summary["check_confusion"]=={"TP":0,"FN":32,"FP":0,"TN":32,"unknown":0,
+        "schema_failure":0,"runtime_error":0,"truncated":0,"not_run":0}
+    assert "torch" not in sys.modules and "transformers" not in sys.modules
+    links=[]
+    for path in (EXP/"RESULTS.md",REPO/"reports/chess-matched-check-v1-2026-10-15.md"):
+        text=path.read_text(encoding="utf-8")
+        assert "pending" not in text.lower()
+        for href in re.findall(r"\[[^\]]+\]\(([^)]+)\)",text):
+            assert not href.startswith(("http:","https:"))
+            target=(path.parent/href).resolve()
+            target.relative_to(REPO)
+            assert target.is_file(),href
+            links.append({"from":path.relative_to(REPO).as_posix(),"href":href})
+    artifacts={}
+    for path in (EXP/"public-manifest.json",EXP/"summary.json",EXP/"RESULTS.md",
+                 REPO/"reports/chess-matched-check-v1-2026-10-15.md"):
+        artifacts[path.relative_to(REPO).as_posix()]={"bytes":path.stat().st_size,"sha256":sha(path)}
+    result={"schema":"chess.matched-check.packaging-checks.v1","status":"PASS",
+        "exact_aliases":len(seen),"protected_original_files":actual_count,
+        "pre_call_files_unchanged":len(manifest["existing_pre_call_capsule_unchanged"]),
+        "protocol_first_manifest_files_unchanged":len(read(EXP/"manifest.json")["files"]),
+        "copied_raw_score_recomputed_exact":True,"local_report_links":links,"artifacts":artifacts,
+        "new_model_GPU_engine_calls":0,"validator_sha256":sha(Path(__file__))}
+    with (HERE/"packaging-checks.json").open("x",encoding="utf-8") as stream:
+        stream.write(json.dumps(result,indent=2)+"\n")
+    print(json.dumps({k:v for k,v in result.items() if k not in ("local_report_links","artifacts")},indent=2))
+
+
+if __name__=="__main__":main()

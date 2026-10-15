@@ -1,0 +1,325 @@
+{
+  "rows": [
+    {
+      "case_id": "mc-pair-22-0",
+      "fen": "4r1k1/1b2rp1p/p2q2p1/P2p4/1PpQ4/2P4P/2B2PP1/R3R1K1 b - - 0 31",
+      "selected_uci": "d6e6"
+    },
+    {
+      "case_id": "mc-pair-23-0",
+      "fen": "r1b2rk1/pp1p1p1p/2p2Rn1/5N2/1q6/1P4Q1/4B1PP/2RK4 w - - 5 24",
+      "selected_uci": "f5d4"
+    },
+    {
+      "case_id": "mc-pair-16-1",
+      "fen": "r5k1/pb2r3/4N1p1/3pBp2/1pp5/4P3/PPP2P2/2K4R w - - 0 31",
+      "selected_uci": "h1h8"
+    },
+    {
+      "case_id": "mc-pair-17-1",
+      "fen": "3r2k1/r2P1pp1/p5p1/1p4b1/1n2Nq2/7P/PPP1QP2/1K1RR3 w - - 1 27",
+      "selected_uci": "e4f6"
+    },
+    {
+      "case_id": "mc-pair-20-0",
+      "fen": "1r4k1/5pp1/4p2p/R1Pn4/3P4/4PN2/5PPP/6K1 b - - 0 27",
+      "selected_uci": "b8a8"
+    },
+    {
+      "case_id": "mc-pair-23-1",
+      "fen": "r1b2rk1/pp1p1p1p/2p2Rn1/5N2/1q6/1P4Q1/4B1PP/2RK4 w - - 5 24",
+      "selected_uci": "f5e7"
+    },
+    {
+      "case_id": "mc-pair-16-0",
+      "fen": "r5k1/pb2r3/4N1p1/3pBp2/1pp5/4P3/PPP2P2/2K4R w - - 0 31",
+      "selected_uci": "h1h2"
+    },
+    {
+      "case_id": "mc-pair-03-1",
+      "fen": "8/2R3p1/7k/7p/PP1n1K2/8/8/8 b - - 0 46",
+      "selected_uci": "d4e6"
+    },
+    {
+      "case_id": "mc-pair-30-1",
+      "fen": "2rk4/2r2R1p/p3p1p1/1pBp4/1P1Pn2P/P7/2P2P2/2K4R w - - 1 28",
+      "selected_uci": "f7f5"
+    },
+    {
+      "case_id": "mc-pair-04-0",
+      "fen": "3r1k2/5p2/pp1P3p/1rP1R3/8/8/5P1P/3R2K1 w - - 0 38",
+      "selected_uci": "e5e6"
+    },
+    {
+      "case_id": "mc-pair-08-1",
+      "fen": "6r1/R1p4k/2P1N2p/3p1p2/3PnPq1/8/2Q3PP/6K1 b - - 2 37",
+      "selected_uci": "g4g3"
+    },
+    {
+      "case_id": "mc-pair-28-0",
+      "fen": "r1b2r1k/pp1pnq1p/2n1p2Q/2p5/2B1P3/2NP2R1/PPP2PPP/R5K1 w - - 1 19",
+      "selected_uci": "g3g8"
+    },
+    {
+      "case_id": "mc-pair-29-0",
+      "fen": "4k3/p1p2pp1/2P5/5P2/3P2n1/P3P3/1PR5/4qQ1K b - - 0 28",
+      "selected_uci": "e1d2"
+    },
+    {
+      "case_id": "mc-pair-06-1",
+      "fen": "r5k1/6pp/1pb5/5N2/2P1pP2/1P2P2P/3r2B1/4R1K1 w - - 1 32",
+      "selected_uci": "f5g3"
+    },
+    {
+      "case_id": "mc-pair-14-0",
+      "fen": "r3q1k1/2p2ppp/p1n2b2/1p1N4/6P1/3P1Q1P/PPP2P2/2K2B1R b - - 0 15",
+      "selected_uci": "e8d7"
+    },
+    {
+      "case_id": "mc-pair-01-0",
+      "fen": "7k/1p5p/1ppn4/3r1p2/3P1Pq1/4Q1RR/PP4PP/6K1 b - - 0 28",
+      "selected_uci": "g4d1"
+    },
+    {
+      "case_id": "mc-pair-29-1",
+      "fen": "4k3/p1p2pp1/2P5/5P2/3P2n1/P3P3/1PR5/4qQ1K b - - 0 28",
+      "selected_uci": "e1h4"
+    },
+    {
+      "case_id": "mc-pair-04-1",
+      "fen": "3r1k2/5p2/pp1P3p/1rP1R3/8/8/5P1P/3R2K1 w - - 0 38",
+      "selected_uci": "e5e8"
+    },
+    {
+      "case_id": "mc-pair-02-1",
+      "fen": "5rk1/1Q3ppp/p1r1p3/b2qP3/3P4/5N1P/R4PP1/5RK1 w - - 0 23",
+      "selected_uci": "b7f7"
+    },
+    {
+      "case_id": "mc-pair-26-1",
+      "fen": "8/8/2p5/P2bK3/1k4p1/8/5B2/8 w - - 0 39",
+      "selected_uci": "f2h4"
+    },
+    {
+      "case_id": "mc-pair-19-0",
+      "fen": "r3r1k1/pq3pp1/1p6/3Q4/8/7P/PP3PP1/R2R2K1 b - - 0 23",
+      "selected_uci": "e8e1"
+    },
+    {
+      "case_id": "mc-pair-06-0",
+      "fen": "r5k1/6pp/1pb5/5N2/2P1pP2/1P2P2P/3r2B1/4R1K1 w - - 1 32",
+      "selected_uci": "f5e7"
+    },
+    {
+      "case_id": "mc-pair-12-1",
+      "fen": "3r4/6pk/1R5p/1P2p3/2N1Pn2/5NP1/5P1P/6K1 b - - 0 29",
+      "selected_uci": "f4e6"
+    },
+    {
+      "case_id": "mc-pair-27-1",
+      "fen": "3Br1k1/n5pp/1n4p1/p1q1p3/Pb2P2P/8/4QPB1/RN3K1R b - - 0 28",
+      "selected_uci": "c5d4"
+    },
+    {
+      "case_id": "mc-pair-07-1",
+      "fen": "R7/8/1r2k3/2p1Prp1/2PpRnK1/1P5p/3N4/8 w - - 0 45",
+      "selected_uci": "a8e8"
+    },
+    {
+      "case_id": "mc-pair-14-1",
+      "fen": "r3q1k1/2p2ppp/p1n2b2/1p1N4/6P1/3P1Q1P/PPP2P2/2K2B1R b - - 0 15",
+      "selected_uci": "e8e3"
+    },
+    {
+      "case_id": "mc-pair-24-1",
+      "fen": "2k5/pp6/8/2p5/3pP3/P1PPqPr1/1P2Q3/R4KR1 b - - 0 29",
+      "selected_uci": "e3h6"
+    },
+    {
+      "case_id": "mc-pair-31-0",
+      "fen": "3k4/3r2p1/2Q2p1p/7P/1pK1P1P1/2b1P3/8/8 b - - 4 51",
+      "selected_uci": "d7d4"
+    },
+    {
+      "case_id": "mc-pair-09-0",
+      "fen": "5r1k/6pp/1p6/p2Q1P1q/3P1BN1/b1r4P/6K1/R3R3 b - - 2 30",
+      "selected_uci": "h5f5"
+    },
+    {
+      "case_id": "mc-pair-00-0",
+      "fen": "rnbk3r/pppp1Qpp/3b4/8/2B2P2/7n/PPPP2PP/RNB3RK b - - 0 12",
+      "selected_uci": "h3f2"
+    },
+    {
+      "case_id": "mc-pair-12-0",
+      "fen": "3r4/6pk/1R5p/1P2p3/2N1Pn2/5NP1/5P1P/6K1 b - - 0 29",
+      "selected_uci": "f4e2"
+    },
+    {
+      "case_id": "mc-pair-13-1",
+      "fen": "8/8/3R3p/6pk/5n2/1r5P/6PK/8 w - - 8 45",
+      "selected_uci": "g2g4"
+    },
+    {
+      "case_id": "mc-pair-07-0",
+      "fen": "R7/8/1r2k3/2p1Prp1/2PpRnK1/1P5p/3N4/8 w - - 0 45",
+      "selected_uci": "a8c8"
+    },
+    {
+      "case_id": "mc-pair-05-1",
+      "fen": "r4r1k/3R2pp/pb2pN2/np3pQ1/8/1Pq1P3/P4PPP/R5K1 w - - 0 23",
+      "selected_uci": "g5g7"
+    },
+    {
+      "case_id": "mc-pair-11-0",
+      "fen": "3k1b2/5R2/3p4/1P1N3p/2P2P2/4R2P/1r5r/5K2 b - - 3 39",
+      "selected_uci": "h2d2"
+    },
+    {
+      "case_id": "mc-pair-15-0",
+      "fen": "8/1p3pp1/3p3k/p1pP1K2/2P2P2/1P5P/P7/8 b - - 4 37",
+      "selected_uci": "g7g5"
+    },
+    {
+      "case_id": "mc-pair-15-1",
+      "fen": "8/1p3pp1/3p3k/p1pP1K2/2P2P2/1P5P/P7/8 b - - 4 37",
+      "selected_uci": "g7g6"
+    },
+    {
+      "case_id": "mc-pair-22-1",
+      "fen": "4r1k1/1b2rp1p/p2q2p1/P2p4/1PpQ4/2P4P/2B2PP1/R3R1K1 b - - 0 31",
+      "selected_uci": "d6h2"
+    },
+    {
+      "case_id": "mc-pair-10-1",
+      "fen": "4R3/kpq3p1/p7/3N1P1p/6n1/2P2Q2/PP4P1/2b4K b - - 4 27",
+      "selected_uci": "c7h2"
+    },
+    {
+      "case_id": "mc-pair-25-0",
+      "fen": "4r3/2p2ppp/p1k5/8/P4n2/1PB2P2/2P1R1PP/3R2K1 b - - 0 26",
+      "selected_uci": "f4e6"
+    },
+    {
+      "case_id": "mc-pair-26-0",
+      "fen": "8/8/2p5/P2bK3/1k4p1/8/5B2/8 w - - 0 39",
+      "selected_uci": "f2e1"
+    },
+    {
+      "case_id": "mc-pair-18-1",
+      "fen": "3r1k2/1p5p/p3bNp1/2p2p2/2PnP3/1P6/P4PPP/3R1BK1 b - - 1 25",
+      "selected_uci": "d4f3"
+    },
+    {
+      "case_id": "mc-pair-02-0",
+      "fen": "5rk1/1Q3ppp/p1r1p3/b2qP3/3P4/5N1P/R4PP1/5RK1 w - - 0 23",
+      "selected_uci": "b7a6"
+    },
+    {
+      "case_id": "mc-pair-11-1",
+      "fen": "3k1b2/5R2/3p4/1P1N3p/2P2P2/4R2P/1r5r/5K2 b - - 3 39",
+      "selected_uci": "h2h1"
+    },
+    {
+      "case_id": "mc-pair-21-0",
+      "fen": "1r5k/4Q2p/3p2p1/1p2q3/2n5/6P1/P3P1BP/5R1K w - - 1 28",
+      "selected_uci": "e7e6"
+    },
+    {
+      "case_id": "mc-pair-10-0",
+      "fen": "4R3/kpq3p1/p7/3N1P1p/6n1/2P2Q2/PP4P1/2b4K b - - 4 27",
+      "selected_uci": "c7g3"
+    },
+    {
+      "case_id": "mc-pair-09-1",
+      "fen": "5r1k/6pp/1p6/p2Q1P1q/3P1BN1/b1r4P/6K1/R3R3 b - - 2 30",
+      "selected_uci": "h5h3"
+    },
+    {
+      "case_id": "mc-pair-20-1",
+      "fen": "1r4k1/5pp1/4p2p/R1Pn4/3P4/4PN2/5PPP/6K1 b - - 0 27",
+      "selected_uci": "b8b1"
+    },
+    {
+      "case_id": "mc-pair-01-1",
+      "fen": "7k/1p5p/1ppn4/3r1p2/3P1Pq1/4Q1RR/PP4PP/6K1 b - - 0 28",
+      "selected_uci": "g4f3"
+    },
+    {
+      "case_id": "mc-pair-19-1",
+      "fen": "r3r1k1/pq3pp1/1p6/3Q4/8/7P/PP3PP1/R2R2K1 b - - 0 23",
+      "selected_uci": "e8e5"
+    },
+    {
+      "case_id": "mc-pair-28-1",
+      "fen": "r1b2r1k/pp1pnq1p/2n1p2Q/2p5/2B1P3/2NP2R1/PPP2PPP/R5K1 w - - 1 19",
+      "selected_uci": "g3h3"
+    },
+    {
+      "case_id": "mc-pair-17-0",
+      "fen": "3r2k1/r2P1pp1/p5p1/1p4b1/1n2Nq2/7P/PPP1QP2/1K1RR3 w - - 1 27",
+      "selected_uci": "e4d2"
+    },
+    {
+      "case_id": "mc-pair-18-0",
+      "fen": "3r1k2/1p5p/p3bNp1/2p2p2/2PnP3/1P6/P4PPP/3R1BK1 b - - 1 25",
+      "selected_uci": "d4b5"
+    },
+    {
+      "case_id": "mc-pair-25-1",
+      "fen": "4r3/2p2ppp/p1k5/8/P4n2/1PB2P2/2P1R1PP/3R2K1 b - - 0 26",
+      "selected_uci": "f4h3"
+    },
+    {
+      "case_id": "mc-pair-24-0",
+      "fen": "2k5/pp6/8/2p5/3pP3/P1PPqPr1/1P2Q3/R4KR1 b - - 0 29",
+      "selected_uci": "e3f2"
+    },
+    {
+      "case_id": "mc-pair-31-1",
+      "fen": "3k4/3r2p1/2Q2p1p/7P/1pK1P1P1/2b1P3/8/8 b - - 4 51",
+      "selected_uci": "d7d6"
+    },
+    {
+      "case_id": "mc-pair-21-1",
+      "fen": "1r5k/4Q2p/3p2p1/1p2q3/2n5/6P1/P3P1BP/5R1K w - - 1 28",
+      "selected_uci": "e7f6"
+    },
+    {
+      "case_id": "mc-pair-30-0",
+      "fen": "2rk4/2r2R1p/p3p1p1/1pBp4/1P1Pn2P/P7/2P2P2/2K4R w - - 1 28",
+      "selected_uci": "f7d7"
+    },
+    {
+      "case_id": "mc-pair-27-0",
+      "fen": "3Br1k1/n5pp/1n4p1/p1q1p3/Pb2P2P/8/4QPB1/RN3K1R b - - 0 28",
+      "selected_uci": "c5c1"
+    },
+    {
+      "case_id": "mc-pair-13-0",
+      "fen": "8/8/3R3p/6pk/5n2/1r5P/6PK/8 w - - 8 45",
+      "selected_uci": "g2g3"
+    },
+    {
+      "case_id": "mc-pair-08-0",
+      "fen": "6r1/R1p4k/2P1N2p/3p1p2/3PnPq1/8/2Q3PP/6K1 b - - 2 37",
+      "selected_uci": "g4d1"
+    },
+    {
+      "case_id": "mc-pair-03-0",
+      "fen": "8/2R3p1/7k/7p/PP1n1K2/8/8/8 b - - 0 46",
+      "selected_uci": "d4b3"
+    },
+    {
+      "case_id": "mc-pair-05-0",
+      "fen": "r4r1k/3R2pp/pb2pN2/np3pQ1/8/1Pq1P3/P4PPP/R5K1 w - - 0 23",
+      "selected_uci": "g5f5"
+    },
+    {
+      "case_id": "mc-pair-00-1",
+      "fen": "rnbk3r/pppp1Qpp/3b4/8/2B2P2/7n/PPPP2PP/RNB3RK b - - 0 12",
+      "selected_uci": "h3g5"
+    }
+  ],
+  "schema": "chess.matched-check.inputs.v1"
+}

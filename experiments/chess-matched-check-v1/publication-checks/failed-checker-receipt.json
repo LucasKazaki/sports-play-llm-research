@@ -1,0 +1,16 @@
+{
+  "status": "FAILED_POSTRUN_PACKAGING_CHECK_NOT_EXPERIMENT_FAILURE",
+  "checker_sha256": "872b1a8ebcc58b09b0f441307461a77298f938908b1507cb5702f0730c6fd76e",
+  "actual_error": "json.decoder.JSONDecodeError: Expecting value: line 1 column 25 (char 24)",
+  "invalid_JSON_artifacts": [
+    {
+      "path": "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/actual-fixture/raw/raw.json",
+      "error": "Expecting value: line 1 column 25 (char 24)",
+      "sha256": "33c4ed16bc8f016cdd5b5280a1a40e44c3cbecbab2e25a8cadd517582c131878",
+      "role": "Exact retained finite fixture/probe; no model calls"
+    }
+  ],
+  "cause": "Checker incorrectly required intentionally malformed original partial-seal regression fixture JSON to parse. Original/copy byte hashes match. No experiment artifact or source changed.",
+  "repair_scope": "Exempt only exact documented original partial-seal fixture artifact from JSON schema validation; continue exact-byte binding.",
+  "new_model_calls": 0
+}

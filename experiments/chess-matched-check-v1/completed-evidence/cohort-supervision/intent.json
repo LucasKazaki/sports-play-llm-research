@@ -1,0 +1,26 @@
+{
+  "budget_seconds": 600,
+  "command": [
+    "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "-B",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_matched_check_intake.py",
+    "--worker",
+    "--repo",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+    "--workspace-root",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go",
+    "--protocol",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-matched-check-v1\\protocol.json",
+    "--out",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort",
+    "--expected-source-sha256",
+    "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28",
+    "--parent-pid",
+    "22272",
+    "--cancel",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-matched-check-diagnostic-v1\\cohort-supervision\\cancel.json"
+  ],
+  "grace_seconds": 30,
+  "model_calls": 0,
+  "parent_pid": 22272
+}

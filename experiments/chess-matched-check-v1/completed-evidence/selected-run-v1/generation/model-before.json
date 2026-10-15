@@ -1,0 +1,16 @@
+{
+  "base": {
+    "sha256": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008",
+    "tensors": 310,
+    "scalars": 596049920
+  },
+  "adapter": {
+    "sha256": "a37d6d6dca148d0bf1089991374b0f9cd2723e080bc84d0cddc09d89b7002a43",
+    "tensors": 392,
+    "scalars": 5046272
+  },
+  "tied": true,
+  "all_parameters_frozen": true,
+  "base_dtype": "bfloat16",
+  "adapter_dtype": "float32"
+}

@@ -1,0 +1,179 @@
+"""Independent strict scoring and safetensors byte accounting; no model imports."""
+from collections import Counter
+import hashlib
+import json
+import math
+from pathlib import Path
+import struct
+
+FIELDS = ("moving_piece", "moving_colour", "is_capture", "captured_piece", "gives_check",
+          "is_castling", "is_en_passant", "promotion_piece")
+BOOLS = {"is_capture", "gives_check", "is_castling", "is_en_passant"}
+PIECES = {"pawn", "knight", "bishop", "rook", "queen", "king"}
+
+
+def strict_parse(text):
+    def pairs(items):
+        result = {}
+        for name, value in items:
+            if name in result: raise ValueError("duplicate key")
+            result[name] = value
+        return result
+    def constant(_): raise ValueError("nonfinite JSON")
+    value = json.loads(text, object_pairs_hook=pairs, parse_constant=constant)
+    if type(value) is not dict or set(value) != set(FIELDS): raise ValueError("exact fields")
+    for field, item in value.items():
+        if field in BOOLS:
+            if type(item) is not bool and not (type(item) is str and item == "unknown"):
+                raise ValueError("boolean or unknown")
+        else:
+            allowed = PIECES | {"unknown"} if field == "moving_piece" else {"white", "black", "unknown"} if field == "moving_colour" else PIECES | {None, "unknown"} if field == "captured_piece" else {"queen", "rook", "bishop", "knight", None, "unknown"}
+            if item is not None and type(item) is not str: raise ValueError("categorical type")
+            if item not in allowed: raise ValueError("categorical value")
+    return value
+
+
+def score(raw, labels):
+    assert len(raw) == len(labels) == 64
+    assert [r["case_id"] for r in raw] == [r["case_id"] for r in labels]
+    assert len({r["case_id"] for r in raw}) == 64
+    counts = {"planned":64, "all_eight_correct":0, "strict_parse_completed":0,
+              "parse_error":0, "truncated":0, "error":0, "not_run":0}
+    fields = {f:{"correct":0,"unknown":0,"classes":{},"confusion":{}} for f in FIELDS}
+    classes = {str(v).lower():{"support":0,"correct":0,"true":0,"false":0,"unknown":0,
+               "schema_failure":0,"truncated":0,"error":0,"not_run":0} for v in (True, False)}
+    outcomes, pairs, predicted_true = [], {}, 0
+    for row, label in zip(raw, labels, strict=True):
+        truth = strict_parse(json.dumps(label["expected"]))
+        assert type(truth["gives_check"]) is bool
+        parsed = None
+        if row["status"] == "completed":
+            try:
+                parsed = strict_parse(row["text"]); counts["strict_parse_completed"] += 1
+            except (ValueError, TypeError): counts["parse_error"] += 1
+        elif row["status"] in ("truncated", "error", "not_run"): counts[row["status"]] += 1
+        else: raise ValueError("unknown status")
+        matches = {}
+        for field in FIELDS:
+            target = truth[field]
+            prediction = parsed[field] if parsed is not None else "__invalid__"
+            exact = type(prediction) is type(target) and prediction == target
+            matches[field] = exact
+            stat = fields[field]; stat["correct"] += int(exact); stat["unknown"] += int(prediction == "unknown")
+            value = json.dumps(target)
+            member = stat["classes"].setdefault(value, {"support":0,"correct":0})
+            member["support"] += 1; member["correct"] += int(exact)
+            confusion = value + " -> " + json.dumps(prediction)
+            stat["confusion"][confusion] = stat["confusion"].get(confusion, 0) + 1
+        all_correct = all(matches.values()); counts["all_eight_correct"] += int(all_correct)
+        outcomes.append({"case_id":row["case_id"],"all_eight_correct":all_correct,"field_correct":matches})
+        stat = classes[str(truth["gives_check"]).lower()]; stat["support"] += 1
+        if parsed is not None:
+            prediction = parsed["gives_check"]
+            stat[str(prediction).lower()] += 1; predicted_true += int(prediction is True)
+        elif row["status"] == "completed": stat["schema_failure"] += 1
+        else: stat[row["status"]] += 1
+        stat["correct"] += int(matches["gives_check"])
+        pair, side = row["case_id"].rsplit("-", 1)
+        assert pair in {f"mc-pair-{i:02d}" for i in range(32)} and side in ("0", "1")
+        pairs.setdefault(pair, []).append((side, truth["gives_check"], matches["gives_check"]))
+    assert len(pairs) == 32 and all(len(p) == 2 and {a[0] for a in p} == {"0", "1"} and {a[1] for a in p} == {False, True} for p in pairs.values())
+    assert all(stat["support"] == 32 for stat in classes.values())
+    return {"counts":counts,"fields":fields,"outcomes":outcomes,"check_classes":classes,
+            "paired":{"planned":32,"both_check_labels_correct":sum(all(a[2] for a in p) for p in pairs.values())},
+            "predicted_check_true":predicted_true}
+
+
+def validate_generated(tokenizer, prompt_ids, row, vocab_size):
+    new = row["new_ids"]
+    if type(new) is not list or not 0 < len(new) <= 128: raise ValueError("token count")
+    if any(type(t) is not int or not 0 <= t < vocab_size for t in new): raise ValueError("model vocabulary")
+    if row["full_generated_ids"] != prompt_ids + new: raise ValueError("native prefix/full tokens")
+    try: end = new.index(tokenizer.eos_token_id)
+    except ValueError:
+        expected_status, expected_text = "truncated", tokenizer.decode(new, skip_special_tokens=False)
+    else:
+        if any(t != tokenizer.pad_token_id for t in new[end + 1:]): raise ValueError("nonpad after EOS")
+        expected_status, expected_text = "completed", tokenizer.decode(new[:end], skip_special_tokens=False)
+    if row["status"] != expected_status or row["text"] != expected_text: raise ValueError("native decode/status")
+    if row["adapter_disabled"] is not False: raise ValueError("wrong selected condition")
+    return {"new_tokens":len(new),"native_status":expected_status}
+
+
+class SafeBytes:
+    """Read checked safetensors headers and stream tensor bytes without torch."""
+    WIDTH = {"BF16":2, "F32":4}
+    def __init__(self, path):
+        self.path = Path(path)
+        with self.path.open("rb") as stream:
+            size_bytes = stream.read(8)
+            if len(size_bytes) != 8: raise ValueError("short header")
+            size = struct.unpack("<Q", size_bytes)[0]
+            if not 0 < size <= 1048576: raise ValueError("header bound")
+            data = stream.read(size)
+            if len(data) != size: raise ValueError("short header payload")
+        def pairs(items):
+            result={}
+            for name, value in items:
+                if name in result: raise ValueError("duplicate header key")
+                result[name]=value
+            return result
+        self.header = json.loads(data, object_pairs_hook=pairs)
+        self.start = 8 + size
+        self.tensors = {k:v for k,v in self.header.items() if k != "__metadata__"}
+        spans=[]
+        for name, value in self.tensors.items():
+            if set(value) != {"dtype", "shape", "data_offsets"}: raise ValueError("tensor header fields")
+            if value["dtype"] not in self.WIDTH: raise ValueError("unsupported tensor dtype")
+            shape, offset = value["shape"], value["data_offsets"]
+            if type(shape) is not list or any(type(d) is not int or d <= 0 for d in shape): raise ValueError("shape")
+            if type(offset) is not list or len(offset)!=2 or any(type(d) is not int or d < 0 for d in offset): raise ValueError("offset")
+            if offset[1]-offset[0] != math.prod(shape)*self.WIDTH[value["dtype"]]: raise ValueError("tensor size")
+            spans.append(tuple(offset))
+        cursor=0
+        for left,right in sorted(spans):
+            if left != cursor: raise ValueError("overlap/hole")
+            cursor=right
+        if self.start + cursor != self.path.stat().st_size: raise ValueError("data extent")
+
+    def digest_named(self, ordered, dtype, *, finite=False):
+        result, scalars, count = hashlib.sha256(), 0, 0
+        with self.path.open("rb") as stream:
+            for stored, loaded in ordered:
+                item = self.tensors[stored]
+                if item["dtype"] != dtype: raise ValueError("wrong dtype")
+                count += 1; scalars += math.prod(item["shape"])
+                result.update(loaded.encode())
+                left,right = item["data_offsets"]; stream.seek(self.start+left)
+                remaining=right-left
+                while remaining:
+                    block=stream.read(min(1048576, remaining))
+                    if not block: raise ValueError("short tensor data")
+                    result.update(block); remaining-=len(block)
+                    if finite and any(not math.isfinite(v[0]) for v in struct.iter_unpack("<f",block)):
+                        raise ValueError("nonfinite adapter")
+        return {"sha256":result.hexdigest(),"tensors":count,"scalars":scalars}
+
+
+def parameter_order(layer_count):
+    """Pinned Qwen3 constructors + PEFT module registration order, no forward."""
+    base = [("model.embed_tokens.weight", "base_model.model.model.embed_tokens.weight")]
+    adapter=[]
+    for index in range(layer_count):
+        root=f"model.layers.{index}."
+        for group, modules in (("self_attn",("q_proj","k_proj","v_proj","o_proj")),
+                               ("mlp",("gate_proj","up_proj","down_proj"))):
+            if group == "mlp":
+                for name in ("q_norm","k_norm"):
+                    stored=root+"self_attn."+name+".weight"; base.append((stored,"base_model.model."+stored))
+            for module in modules:
+                stored=root+group+"."+module+".weight"
+                loaded="base_model.model."+stored[:-len("weight")]+"base_layer.weight"
+                base.append((stored,loaded))
+                for letter in ("A","B"):
+                    prefix="base_model.model."+root+group+"."+module+".lora_"+letter
+                    adapter.append((prefix+".weight",prefix+".default.weight"))
+        for name in ("input_layernorm","post_attention_layernorm"):
+            stored=root+name+".weight"; base.append((stored,"base_model.model."+stored))
+    base.append(("model.norm.weight","base_model.model.model.norm.weight"))
+    return base,adapter

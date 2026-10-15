@@ -1,0 +1,39 @@
+{
+  "pid": 20040,
+  "native_launch_identity": {
+    "base_executable": "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "base_executable_sha256": "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181",
+    "venv_executable": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "venv_executable_sha256": "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5",
+    "venv_prefix": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet",
+    "pyvenv_cfg_sha256": "115d62f8b05b80befb8aabe8ef3106697bae48f40694c95ff94014b29690a4d9",
+    "dependency_versions": {
+      "torch": "2.8.0+cu128",
+      "transformers": "5.19.0",
+      "peft": "0.21.2",
+      "accelerate": "1.15.0",
+      "pyarrow": "26.0.0"
+    },
+    "changed_environment_keys": [
+      "__PYVENV_LAUNCHER__"
+    ]
+  },
+  "source_sha256": {
+    "identity_probe_worker.py": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed",
+    "illustration_core.py": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb",
+    "inherited-source-bindings.json": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2",
+    "local_backends.py": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505",
+    "matched_evaluate.py": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2",
+    "matched_run.py": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7",
+    "matched_worker.py": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed",
+    "owned_native.py": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0",
+    "reviewed/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "reviewed/chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "reviewed/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "test_matched_runner.py": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+  },
+  "inputs_sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7",
+  "model_sha256": "dfbef45b2758ca7fdc519d34e739205c96b05a72a1edda22737359a3532b2551",
+  "repo": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+  "deadline_monotonic": 62693.734
+}

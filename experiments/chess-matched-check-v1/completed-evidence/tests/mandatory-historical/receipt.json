@@ -1,0 +1,45 @@
+{
+  "kind": "legacy",
+  "utc": "2026-10-15T10:43:06.177733+00:00",
+  "command": [
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "-B",
+    "-m",
+    "pytest",
+    "tests/test_chess_broker_intake.py",
+    "tests/test_chess_real_data.py",
+    "tests/test_chess_no_forward_packet.py",
+    "-q",
+    "-p",
+    "no:cacheprovider",
+    "--basetemp",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\work\\matched-check-legacy-final",
+    "--junitxml",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-intake-review-v1\\legacy-final\\junit.xml"
+  ],
+  "exit_code": 1,
+  "seconds": 2.561999999998079,
+  "sources_before_and_after": {
+    "scripts/chess_matched_check_intake.py": {
+      "bytes": 29085,
+      "sha256": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28"
+    },
+    "tests/test_chess_broker_intake.py": {
+      "bytes": 11807,
+      "sha256": "405b8dcf85be6c81fb70b8f94c2350fec4a6b2515f487d8feb3b55529ad80683"
+    },
+    "tests/test_chess_real_data.py": {
+      "bytes": 5017,
+      "sha256": "3149e932678adfadd97955de8218633875978e7bface29585870888f40a51412"
+    },
+    "tests/test_chess_no_forward_packet.py": {
+      "bytes": 10356,
+      "sha256": "c2dee6dfcb2d411435547509511558c4960be065445f13e5cdee361a974fec91"
+    }
+  },
+  "output": {
+    "bytes": 215686,
+    "sha256": "ca2f12633ed0a337a1bfdab48dda8df0e4a6735e0b2d709262bd7618ee0ae951"
+  },
+  "scope": "Software fixtures only; no real new source intake or learned calls authorized."
+}

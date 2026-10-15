@@ -1,0 +1,1045 @@
+{
+  "schema": "chess.matched-check.final-public-package-index.v1",
+  "base_commit": "ff720e8f918818ce7b227a6861018669a84b4103",
+  "pre_call_commit": "2739917c014aa0294d80a55186b174acabf9be00",
+  "files_excluding_this_index": {
+    ".gitattributes": {
+      "bytes": 2524,
+      "sha256": "d5d4653f833906e23727a3820ee5b1e66e5bb314afd9551adf2d1ccd5697ad65"
+    },
+    "experiments/chess-matched-check-v1/.gitattributes": {
+      "bytes": 72,
+      "sha256": "308a40fa1d89ae5ea4390b4c9b46a0108b09f171f07898f25d451fa0c69c4e9f"
+    },
+    "experiments/chess-matched-check-v1/README.md": {
+      "bytes": 1077,
+      "sha256": "f1b1e1278e08adec6eda3bcb25a8aee1424d7671c9cb81680cc6d600b2202338"
+    },
+    "experiments/chess-matched-check-v1/RESULTS.md": {
+      "bytes": 3363,
+      "sha256": "b701c9164715a43158a96ad961878a427a3e8ee658e357c478ff0de245cab1ef"
+    },
+    "experiments/chess-matched-check-v1/archive/v1/FINAL-protocol-PROPOSAL-v1.json": {
+      "bytes": 35758,
+      "sha256": "3c0afc7f4409fd241cbc705df4f571d435de445e8281079b0691a49d3fe084fa"
+    },
+    "experiments/chess-matched-check-v1/archive/v1/feasibility-and-handoff.txt": {
+      "bytes": 3021,
+      "sha256": "cbb8ff3ecc2a4bd6d6255a7f7e5a00da1114e04b0582434ecc57f6c092bdcd38"
+    },
+    "experiments/chess-matched-check-v1/archive/v1/handoff.json": {
+      "bytes": 841,
+      "sha256": "5aa8041b9862b706e0259cdc636ba6c6173478f8abca12e1abf9b208fca1b64a"
+    },
+    "experiments/chess-matched-check-v1/archive/v1/inspect_existing_metadata.py": {
+      "bytes": 14607,
+      "sha256": "0fe8c68281d8b88e2f681c24c3ac97affa6ba14b7fe72bf0c26527755827b540"
+    },
+    "experiments/chess-matched-check-v1/archive/v1/known-history-exclusions.json": {
+      "bytes": 4502119,
+      "sha256": "418e9eb789c6b220dbe6ea915ddc24521d2bd9abdc6c6050fe1230002afb7d7d"
+    },
+    "experiments/chess-matched-check-v1/archive/v1/prepare_protocol_proposal.py": {
+      "bytes": 24476,
+      "sha256": "03ebbc3b912efb768a7cb9c116693df092eaad14d65eb6b202ba5b599b77285d"
+    },
+    "experiments/chess-matched-check-v1/archive/v1/source-and-exclusion-metadata.json": {
+      "bytes": 18423,
+      "sha256": "3c54efc59492de364f8f3d9159b7f014e877c3a98977b5585121092f79c0df52"
+    },
+    "experiments/chess-matched-check-v1/archive/v2/FINAL-protocol-PROPOSAL-v2.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    },
+    "experiments/chess-matched-check-v1/archive/v2/amend_spent_states.py": {
+      "bytes": 17543,
+      "sha256": "ad9926afe431cc8de0659c447adf3bf1d4b49cbd04441f5a80f043dbe9abf4b7"
+    },
+    "experiments/chess-matched-check-v1/archive/v2/amendment-summary.txt": {
+      "bytes": 2112,
+      "sha256": "0a130c1e738ab7930ebb71501fa0a3a86d08481a996bb0e4d639a0987e4cd87d"
+    },
+    "experiments/chess-matched-check-v1/archive/v2/handoff-v2.json": {
+      "bytes": 1636,
+      "sha256": "5168ff9e75f92c7a5cbc06cbcb6e3ff3643b9652ddda5319340591a0991a5b40"
+    },
+    "experiments/chess-matched-check-v1/archive/v2/known-history-exclusions-v2.json": {
+      "bytes": 4506757,
+      "sha256": "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb"
+    },
+    "experiments/chess-matched-check-v1/archive/v2/protocol-amendment-diff-v2.json": {
+      "bytes": 4111,
+      "sha256": "17c4981e79e072440bb9f200262a1b1fcf3764abd9f1b17c3ff65a4df0820544"
+    },
+    "experiments/chess-matched-check-v1/archive/v2/spent-state-amendment-audit-v2.json": {
+      "bytes": 25861,
+      "sha256": "15cbe3a52447ef02ec1af93e498c20035cffadae834da9af4a98eecdeb789118"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/.gitattributes": {
+      "bytes": 79,
+      "sha256": "4d3ae5ae68edb8ee6691bff32630062337903a3db17a262d7b8e886b0bb47501"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort-supervision/intent.json": {
+      "bytes": 1218,
+      "sha256": "9ed71396e005d71bb1cf95ad332fb929234c3b44bd75e58b77d59dffec914af0"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort-supervision/launch-identity.json": {
+      "bytes": 595,
+      "sha256": "28e99b580d9af444560e90fb535099095c16ad2a6cf520d467bb3bbe81c9fcdc"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort-supervision/owned-process.json": {
+      "bytes": 42,
+      "sha256": "aac21eb22e957076e351a2aa16a88c45148ca0790cacfc93a86df316009ac8a1"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort-supervision/receipt.json": {
+      "bytes": 226,
+      "sha256": "101f9d57cb306d28639779f0ba79bee69f6ebb1d106466143da14a52e4c6ccff"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort-supervision/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort-supervision/stdout.txt": {
+      "bytes": 133,
+      "sha256": "50925cdf1225552df0322973e4814156f530f684c0021716800a0afdacea07cf"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/before-selection.json": {
+      "bytes": 12301,
+      "sha256": "bc282c687c88c4579711d67d2aa254733a743dfb01c639cb3528ae2a21fd2e03"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/dataset.json": {
+      "bytes": 33547,
+      "sha256": "ae305d86cf415f2b48bd3cde7a36bd022cf43da567c019a4f8d8bb17b8c34a18"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/frozen-data.json": {
+      "bytes": 1446,
+      "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/inputs.json": {
+      "bytes": 9312,
+      "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/labels.json": {
+      "bytes": 20898,
+      "sha256": "997c3834b4e038a2c363e9b375908761a3b34efd7fca6334fc836f871a784ad2"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/protocol.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/selection-trace.jsonl": {
+      "bytes": 2441005,
+      "sha256": "0de1eafbe538e24856b869e5a6d702d9466866e6c2f5c87f6d271dcc1afb8dce"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/sources/chess_board_fact_core.py.txt": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/sources/chess_board_fact_diagnostic.py.txt": {
+      "bytes": 27798,
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/sources/chess_fact_sft_intake.py.txt": {
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/sources/chess_matched_check_intake.py.txt": {
+      "bytes": 29085,
+      "sha256": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/sources/test_chess_matched_check_exclusions.py.txt": {
+      "bytes": 6566,
+      "sha256": "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/cohort/sources/test_chess_matched_check_intake.py.txt": {
+      "bytes": 15865,
+      "sha256": "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/distribution-name-fixture/full-source-review-junit.xml": {
+      "bytes": 16168,
+      "sha256": "edfab9421d2e9ddeaaf000e56c1577fa774fa6c7aeb6592eaee759491290d9e4"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/distribution-name-fixture/full-source-review-test-output.txt": {
+      "bytes": 3001,
+      "sha256": "ff0fdb31a584d0dcdd693906893fc54b0b5522da87298952b1c794f4a250ed61"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/distribution-name-fixture/stderr.txt": {
+      "bytes": 1112,
+      "sha256": "16967808bc2e56b012b46469cf15a76e5c260d739ecda913666037e6d506514e"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/distribution-name-fixture/test_author_review.py.txt": {
+      "bytes": 6953,
+      "sha256": "81d2b25b4bda1c28a9ac493da5cf0fedcf21c3e4c807f7a697e0dc7c792e5890"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/identity_probe_worker.py.txt": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/illustration_core.py.txt": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/matched_evaluate.py.txt": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/matched_run.py.txt": {
+      "bytes": 14569,
+      "sha256": "100b32e3f11e2fba1c6f69587fe57a67c0b48dd58be46da35b467de6d99cd259"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/matched_worker.py.txt": {
+      "bytes": 8268,
+      "sha256": "e37b060291c9d8a77515a1b2455a7d7c5dfe1b4beaa0970f2c9837a76c0121fa"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/receipt.json": {
+      "bytes": 1261,
+      "sha256": "9e2b8d382b966b2563b6b71c8b2c7ff855b21d100b480f328b11d2a3183beb70"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/software-attempt1-junit.xml": {
+      "bytes": 10977,
+      "sha256": "cf2ff91d545e01d50f244df0e0f2aeb08dd9f8dd2c7e5d36943e37fc0b8babef"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/fixture-signature/test_matched_runner.py.txt": {
+      "bytes": 12742,
+      "sha256": "23202e57b8ddb0e364079c5300b19699429b2770e8172d8b4f86dfe055f02b54"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/output-fixture/receipt.json": {
+      "bytes": 508,
+      "sha256": "85d2fef1d37fa919428642f63815dbc28c544e9fa4c7af8f65536694a65ec3f3"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/output-fixture/software-attempt3-junit.xml": {
+      "bytes": 9563,
+      "sha256": "cc1a0df1ca3ac64d8bc817819ad51dce291c7bfe5597947c4895fa3812a65711"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/output-fixture/test_matched_runner.py.txt": {
+      "bytes": 20613,
+      "sha256": "113fd7ded8f79eeef0e415f0d30a9b76102a7091e99016107625932160c77d8d"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/actual-fixture/journal.jsonl": {
+      "bytes": 87,
+      "sha256": "6b6c10cb842a93de88695c75e91b0c8525be9b000cfaa4a74ad4bb4f0b088d43"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/actual-fixture/prepared-01.json": {
+      "bytes": 32,
+      "sha256": "68c8c0414fbaf5fb6cf93e821d8b56694f835eb8fd71e5a3cbf4be4f9815100e"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/actual-fixture/raw/raw.json": {
+      "bytes": 24,
+      "sha256": "33c4ed16bc8f016cdd5b5280a1a40e44c3cbecbab2e25a8cadd517582c131878"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/matched_run.py.txt": {
+      "bytes": 16303,
+      "sha256": "43eb473f5446dc098059212d357734a3fa6a8c19eb0ecab1aff44cc9e7644997"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/runtime-review-junit-v1.xml": {
+      "bytes": 9262,
+      "sha256": "e69205dc6478deb3090113ac2de4617e9535315fdb19800d5db77d8a9dbd9dfa"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/runtime-review-tests-v1.txt": {
+      "bytes": 2575,
+      "sha256": "24c12fce24bfab8928f430f6021057c416e3a4fe5926be66b91d661857ed1e44"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-original/test_runtime_review.py.txt": {
+      "bytes": 3546,
+      "sha256": "ed0ece6956cfbfa5831e21c9e2b78a15b179435d65c60006aa6fe04171b15b08"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-repair/partial-seal-repair.diff": {
+      "bytes": 4502,
+      "sha256": "102648f089e44c4c17c3ae55bb2afb99fab15d788a3adf1da81fcb665c0b633b"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-repair/stable-handoff-v1.json": {
+      "bytes": 6396,
+      "sha256": "3093932a377b32952e627b036f76e0e624334e0dee6af4ed4589449f4ae82e89"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/failures/partial-seal-repair/stable-handoff-v2.json": {
+      "bytes": 3801,
+      "sha256": "9bc26370d33034cc0afb04259dbec1ebd9139e97e177138ab63949d04bdbca7d"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/audit_actual_intake.py.txt": {
+      "bytes": 25593,
+      "sha256": "5185e06743f24b93b22038973f684cd586de26d2f6bb2607fc296bbe98b41dce"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/audit_completed_matched_run.py.txt": {
+      "bytes": 16424,
+      "sha256": "3337049b08cfab92f8b78c30a577f17ea8c660baff9aa7417b8d84372cd61414"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/auditor_skeleton.py.txt": {
+      "bytes": 5430,
+      "sha256": "89bd4a471e6955973325ce9731ce75cdc8ceccb98d9bf6fad4670ea806ecc739"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/completed-run-audit-log-v1.txt": {
+      "bytes": 797,
+      "sha256": "0239cd960e62cafe1a0b4bfb1a807a997f28db197c243a38f8fffa7afc0e35c9"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/matched_check_reference.py.txt": {
+      "bytes": 9965,
+      "sha256": "35bfb1a6942470956a2ea8da1fa6724c9945f64eb0b38ad347b6cb0cae185236"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/postrun-finite-junit-v1.xml": {
+      "bytes": 2507,
+      "sha256": "cd618085d4b975f16a807f0112ed53cd19fbc996386ed98f301cfe1509223197"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/postrun-finite-tests-v1.txt": {
+      "bytes": 101,
+      "sha256": "224ce414a9bdd36ac5118ebd967e34dd8353540a7ce4f1a8907b734bc0d413b7"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/postrun_reference.py.txt": {
+      "bytes": 10230,
+      "sha256": "a996671ab84eb32ba51b85ab2550b9e0f2962e1f3495f4972de1c434ba9b28f7"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/save_postrun_evidence.py.txt": {
+      "bytes": 3722,
+      "sha256": "cfa65ef99c3398606e11eddecc6d1999bd4692729206b78c782d6ef30c44d230"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-completed-audit/test_postrun_reference.py.txt": {
+      "bytes": 4897,
+      "sha256": "03b9b6024330f4730d1819bbe9e772d8230c4491845521789620258095cedbce"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/auditor_skeleton.py.txt": {
+      "bytes": 5430,
+      "sha256": "89bd4a471e6955973325ce9731ce75cdc8ceccb98d9bf6fad4670ea806ecc739"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/constructed-fixtures.json": {
+      "bytes": 3361,
+      "sha256": "6b1f843e6a33f1ba11e3815c6694e00be710af21711c584f20ebfe2c796c0d5f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/full-source-review-junit-v2.xml": {
+      "bytes": 13506,
+      "sha256": "afa79a6fc9d4e89bc63fb0499ec7c56c566aa897896a85cc2752a0447d63de42"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/full-source-review-test-output-v2.txt": {
+      "bytes": 183,
+      "sha256": "0fbdbe62bbc2a0d8132e4b41a178eca52b1c1e1f59159a0cf6af859444946c91"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/matched_check_reference.py.txt": {
+      "bytes": 9965,
+      "sha256": "35bfb1a6942470956a2ea8da1fa6724c9945f64eb0b38ad347b6cb0cae185236"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/save_source_review.py.txt": {
+      "bytes": 6671,
+      "sha256": "b5cd765ea2775487899a433781c6b88d8f07842ad6079f9933cab47dc3449fcb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/test_auditor_skeleton.py.txt": {
+      "bytes": 3884,
+      "sha256": "9fee2ba00d4d882bc8bbad025575b6bc29e618363fe6a2aa4c360efcacda30c0"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/test_author_review.py.txt": {
+      "bytes": 6946,
+      "sha256": "a893911c00ab7975d0432767408a48f3fe7ab9f53abf9f41efdc2370000e6b49"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-intake-review/test_matched_check_reference.py.txt": {
+      "bytes": 7510,
+      "sha256": "4eee75236799ad5c1c73766241e2457f921d6b4ec36b7f7ea4e4eb82572a4993"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-runtime-review/runtime-review-junit-v1.xml": {
+      "bytes": 9262,
+      "sha256": "e69205dc6478deb3090113ac2de4617e9535315fdb19800d5db77d8a9dbd9dfa"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-runtime-review/runtime-review-junit-v2.xml": {
+      "bytes": 8259,
+      "sha256": "0e5b4ddf58b4428feb5279ca5ce12b9a4af70f027482c402ae8005dde72640eb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-runtime-review/runtime-review-tests-v1.txt": {
+      "bytes": 2575,
+      "sha256": "24c12fce24bfab8928f430f6021057c416e3a4fe5926be66b91d661857ed1e44"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-runtime-review/runtime-review-tests-v2.txt": {
+      "bytes": 101,
+      "sha256": "38ca5fb834a5e3d788f0631543573d5da7f3a5a725fc05866bbe40191f0c6618"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-runtime-review/save_runtime_review.py.txt": {
+      "bytes": 6982,
+      "sha256": "8a40133462df59f51b3077f98797083462bf7baec9a356b618040b546dc7bc3b"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/independent-runtime-review/test_runtime_review.py.txt": {
+      "bytes": 6856,
+      "sha256": "712eb45dd23ba9443d73897bae528c54024afe967a18a88fc4af714504bb17f6"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/owned-CPU-identity/cancel.json": {
+      "bytes": 22,
+      "sha256": "7717520110454c6532689344cdf5a63dddf8235f8d968feec83d1f1c6019600b"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/owned-CPU-identity/cpu-resources.jsonl": {
+      "bytes": 248,
+      "sha256": "7022e144978fd8d46590dbd3213520914116323482acada52aedc80c5b1207f4"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/owned-CPU-identity/identity.json": {
+      "bytes": 587,
+      "sha256": "658554bb21011e28b2ec01ed9183f94b107a29c430ded5316c458c1047f5a21c"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/owned-CPU-identity/ownership.json": {
+      "bytes": 972,
+      "sha256": "7d64ae8f91e93164cf3c97db52df661d18097bb7abef142dfde35f05406b7c4e"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/owned-CPU-identity/probe-receipt.json": {
+      "bytes": 171,
+      "sha256": "b06c95a453e030f92883bfe84dcec206f1976430fbdc60cf42fbc6adc262312e"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/separate-CPU-evaluator/evaluator-probe-receipt.json": {
+      "bytes": 1074,
+      "sha256": "9c2455cd7bdf74937c2afb5b1980ae555ff16ac1faefd407f3ae68c6bb38f20e"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/separate-CPU-evaluator/labels.json": {
+      "bytes": 20787,
+      "sha256": "a1b3038e39d88f40dc2ef7823fe9bd02ad2e8c41e554f3b6a38f8f59d50d8080"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/separate-CPU-evaluator/raw/raw.json": {
+      "bytes": 19222,
+      "sha256": "20fce3b3821c64350ad585f05e5cde0e9c7f19e061e7d6e719fb115dd5d7e565"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/separate-CPU-evaluator/raw/seal.json": {
+      "bytes": 1425,
+      "sha256": "bfddd933d0449f083fc9e8f81b0becb854ff18b57da9c08636ca4a61ad8880ac"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/probes/separate-CPU-evaluator/score.json": {
+      "bytes": 25867,
+      "sha256": "2d9ac0188b3a74f29b5eb6aeefe432d58b07e2ccf24e7ed932c8a5ac55f334e3"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/publication-tools/curate_publication.py.txt": {
+      "bytes": 7783,
+      "sha256": "02020df1b51e4c8a0030d3eeaa8661ea9b606b43846c56ea6df17fc426afc838"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-completed-audit-evidence.json": {
+      "bytes": 4632,
+      "sha256": "80562db89e7e6ffdf85bfe80a880f8dd1505a8d1b3603462db5cc67186e55a8e"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-completed-independent-audit.json": {
+      "bytes": 103128,
+      "sha256": "2f5c9b0e470d300021449349a503cbaed3357fa3bbf24cacc559acd31664b3a3"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-intake-independent-audit.json": {
+      "bytes": 41658,
+      "sha256": "5d3decb29d660f51b55ea4ce3068428d998816809d40e5608299b9fb57ffb01d"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-intake-independent-source-review.json": {
+      "bytes": 8692,
+      "sha256": "ba10c897f617ebbb9fc36a631dd70ff688af7ad1375ab047e1f712c3d8fdb7bb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-root-completed-publication-review.json": {
+      "bytes": 2673,
+      "sha256": "e1472e216061eaa9701bcd96454db3d2e394015330946f978788416038ac3898"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-root-intake-source-review.json": {
+      "bytes": 1787,
+      "sha256": "232fd9133c33282f3d9a75f259d9b6455732b54973cf5e1c424bd98ed64c3d72"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-root-protocol-review.json": {
+      "bytes": 1003,
+      "sha256": "887fb3977fd14148c5b6c0cf0610446df31c6819f8994b702918b7e1c116b171"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-root-runtime-execution-review.json": {
+      "bytes": 3462,
+      "sha256": "6a9cc80d702cc3f1bdab131b426781cb8f9d859ebde83a8c7b912552d2e99b63"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/reviews/chess-matched-check-runtime-independent-review.json": {
+      "bytes": 10555,
+      "sha256": "8461d24a826f42d7633875935d68f6029d3bd60ffa7d62ffe4b3c0d87cf00e9f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/completion.json": {
+      "bytes": 219,
+      "sha256": "1a82dc141903787742de8bfee0c332d7228a1b6ba054527cddadc7bb552ac86c"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/evaluation-resources.jsonl": {
+      "bytes": 279,
+      "sha256": "13064fa5434fddde573525629614ac11865ee5c56048cb2a98e6f56374ba4afa"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/evaluator-ownership.json": {
+      "bytes": 1094,
+      "sha256": "5f5b3f07292b572f55ac359ce392a6100e75d4db58bcc80502b0be859be3e1aa"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/evaluator-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/evaluator-stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/execution-extension.json": {
+      "bytes": 2131,
+      "sha256": "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/frozen-manifest-metadata.json": {
+      "bytes": 1446,
+      "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation-resources.jsonl": {
+      "bytes": 51495,
+      "sha256": "0c14e03898ea55c7f6bcc282ab2a7983dcebbbfc199ce8ae462be780e046c16a"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/inputs.json": {
+      "bytes": 9312,
+      "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/journal.jsonl": {
+      "bytes": 308301,
+      "sha256": "ef62337900d37402c96641b958a8387a0f4ce426167cc046ddf31c79f1e93e59"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/model-after.json": {
+      "bytes": 399,
+      "sha256": "535b0969541bae00672438d209b14d4adeb09d67b47d6658fdd8ae6ba9ed2549"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/model-before.json": {
+      "bytes": 399,
+      "sha256": "535b0969541bae00672438d209b14d4adeb09d67b47d6658fdd8ae6ba9ed2549"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/model.json": {
+      "bytes": 2384,
+      "sha256": "dfbef45b2758ca7fdc519d34e739205c96b05a72a1edda22737359a3532b2551"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/ownership.json": {
+      "bytes": 2498,
+      "sha256": "86283b7fd95e6b90e0b4681d0cf5f2b159a6def8795ced6abd487248b43973bb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-00.json": {
+      "bytes": 11986,
+      "sha256": "a25c3bcaedd5edb2d21c1d65f36ad1186aa025ab43b242d0c2c943c6a3324019"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-01.json": {
+      "bytes": 11955,
+      "sha256": "226315b03c9207644702734cb0c66b49248a7b011b26895022c3659577e5035a"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-02.json": {
+      "bytes": 11892,
+      "sha256": "a4a36bf427058f185167072ecaec200fb5a812e05f5a3f697891f8f1756821c6"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-03.json": {
+      "bytes": 11941,
+      "sha256": "07197595ce98975d6238298083df6b35216f0811f9ddf6820a2f5fc15fee3fba"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-04.json": {
+      "bytes": 11824,
+      "sha256": "167dbb655c19a954466504242dd9be8972bbd7aafa23b7563f183b991e58d697"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-05.json": {
+      "bytes": 11955,
+      "sha256": "113c45134e7a96114942b9dba6663b9f12ac2980be7b3ca7f815190fcee29afe"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-06.json": {
+      "bytes": 11892,
+      "sha256": "35b89633d71a5a4e5afb429b3e33f0d3d505be7720a4298227a9c6f3d6c98726"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-07.json": {
+      "bytes": 11704,
+      "sha256": "986062f758588fcb1f12a38cdbae99581cf72e54d021d1793ad65208c9bb61a1"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-08.json": {
+      "bytes": 11953,
+      "sha256": "d96ab283fbe8d1fcb635efc7e8d380d5036e7442532bd3f4c0cd19ee559701d6"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-09.json": {
+      "bytes": 11849,
+      "sha256": "ee42e860cb4996640c8faa1dad24492c505d3f3cd5714df45092ddc1e78d606a"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-10.json": {
+      "bytes": 11881,
+      "sha256": "13b69258e3f51f37ad1a640a0ed94d47b2bc8ca9c1415797f5639795aa1b7cb8"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-11.json": {
+      "bytes": 11971,
+      "sha256": "0d66ddbf327aba91916e38f227f5589ec0d0ab0e75a13dd8aa765e61c1a43d4f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-12.json": {
+      "bytes": 11867,
+      "sha256": "3269160f7aa547e397ad016b78ba0bcdf9df90effc9c4379f020961916fb21d4"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-13.json": {
+      "bytes": 11922,
+      "sha256": "d978774c566af7c2de3f39d9b7b7dc9c59e21ec4fdbbd9065c63889cc037be7b"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-14.json": {
+      "bytes": 12008,
+      "sha256": "bfc318ab2960ed72045b98f1b78ce22bd27a4ff36dc33a26a4d43dacaeb6bfd2"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-15.json": {
+      "bytes": 11878,
+      "sha256": "7d4f3ece3010a37b898314a79f2f71f3732b6076c977e7036265c3c884a512da"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-16.json": {
+      "bytes": 11867,
+      "sha256": "0d38118cd27d1b02c1ac1c6abbbe15a2ea61876e1b2a39de43a3c76d81bfd7b3"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-17.json": {
+      "bytes": 11849,
+      "sha256": "72b426e451dd4833ce84d219aa92352e22d51d303fc3f913878618e18f8cfc0f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-18.json": {
+      "bytes": 11871,
+      "sha256": "9108f5cb958c5fb2176d2c06b926333cad71143853b259eee0bba3bb900f8333"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-19.json": {
+      "bytes": 11706,
+      "sha256": "b80ac984cfd77c1238d42426ed5b1c21424221573a7d1007b5a7cde15aa48960"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-20.json": {
+      "bytes": 11838,
+      "sha256": "67a9cedc382ec71027ab2c1bdc785a483a00cab38da368a2454a330c2ee1936c"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-21.json": {
+      "bytes": 11922,
+      "sha256": "0c8a2b6e2c85b1873bf1dd44a8b31d2c5a4fd3dfe6949ed18f121c456bf2fb36"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-22.json": {
+      "bytes": 11866,
+      "sha256": "76fc2da2f40cda63ade8dc249f15c8c343f0276a27fdcb298cedace195338d07"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-23.json": {
+      "bytes": 11899,
+      "sha256": "5e84b91f83637b89a44df11d20d606ea58a7f08fe85145cc87975320e19ad804"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-24.json": {
+      "bytes": 11847,
+      "sha256": "59067bdfb41333b2a9f864455b802f690eae75769c2666c1571118fe70edc296"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-25.json": {
+      "bytes": 12008,
+      "sha256": "dea8c03defb8e99cb7c5ab89399a91304fc2134e889942cb3a2bed5f29275ff4"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-26.json": {
+      "bytes": 11799,
+      "sha256": "4f3afafdab64f245c50b576e5ab2bbbf8d7678e00bad241e36f0601d5a881a62"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-27.json": {
+      "bytes": 11877,
+      "sha256": "eb303a6005fcb39611712197c35a9e3608175304798c1789abe1e07a04485cfb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-28.json": {
+      "bytes": 11868,
+      "sha256": "d363a85abee1f2bd3b306d8a29494f9d6b3f225bc16ec254c2de4c70142af096"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-29.json": {
+      "bytes": 11826,
+      "sha256": "820c08b1f9968e1a23410da16b5e743b61914f8165efc76ac6d3e6bfe17b117f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-30.json": {
+      "bytes": 11866,
+      "sha256": "6a562bb3277dec69d958791c350b0ff9be42528830e508f899b282cdc15507be"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-31.json": {
+      "bytes": 11692,
+      "sha256": "f88000e0c4ba6b8921006844f7716518f614782de00f0d4f2072865036a3a971"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-32.json": {
+      "bytes": 11847,
+      "sha256": "2d0b15a8c38f976f22dd763f1091f7504cdb5fe47d9957ea56e76ba7b42f65e4"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-33.json": {
+      "bytes": 11881,
+      "sha256": "482c4cf88332e4d5564ed80e1999e9aca1b9fce4f542297871e302eaa0c4adbf"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-34.json": {
+      "bytes": 11906,
+      "sha256": "c96b5156ac2e6ab6c342f3de646517f5d2b78be1dd908bcdc45949f530638e53"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-35.json": {
+      "bytes": 11822,
+      "sha256": "fe937a3cba696740c60c5dabeb07e935800c51750f07fe73e3b9172dcd231e98"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-36.json": {
+      "bytes": 11822,
+      "sha256": "50de3e6e48fc8c08c480d2374fc8da252e112cb113199b08d0ff073c3fcf9334"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-37.json": {
+      "bytes": 11986,
+      "sha256": "75462cdc640fccf082c0c9b3996ae3da2e0c188a5038aac380aa6e1a00de428c"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-38.json": {
+      "bytes": 11868,
+      "sha256": "f0b28edfd527c47c4fdc3fa9f80723cccacc1082c18f21e80708fb4797e2e2b0"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-39.json": {
+      "bytes": 11883,
+      "sha256": "8c09ae6a8c652d27340343995839964922ad48421b2b5d8a16d0ef260afd28b9"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-40.json": {
+      "bytes": 11706,
+      "sha256": "b6d2122ac9d92cacffadafd5ee399dad3033d303e1d7d9ff36701f32793774fc"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-41.json": {
+      "bytes": 11913,
+      "sha256": "fb0251d273b8da41c5eed231450c9118ddf2a439e173d1c640fd567a38dc4a06"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-42.json": {
+      "bytes": 11871,
+      "sha256": "9531520546a5dedf55335acd539393f875394c59a06a4f094c472d4d1430a66c"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-43.json": {
+      "bytes": 11906,
+      "sha256": "17b25ae1c511ff6f139af9c95270ab81cfaff4953407f70d2e82c141921f79a7"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-44.json": {
+      "bytes": 11895,
+      "sha256": "0868f29f122253f7d47ca4c9ea2034558de9247495b8f013c185b4663f44b202"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-45.json": {
+      "bytes": 11868,
+      "sha256": "d1964a8a6738be029fbe60520ba1cf282ea12da3053971c400a7bbb19c005aff"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-46.json": {
+      "bytes": 11868,
+      "sha256": "f3e0cdfdfd338787a38087b8feb1fe015b548002845883c4a6b9483bc90dfda3"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-47.json": {
+      "bytes": 11824,
+      "sha256": "540933980dac427506208003809283de86e1b6b4708f456535b3e9c074d6c99a"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-48.json": {
+      "bytes": 11878,
+      "sha256": "cd59d6ed6876ce495e2152510aeca07287590213b36374d2c3718082db9ad1af"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-49.json": {
+      "bytes": 11838,
+      "sha256": "29f97a7afda907495c5e72d8a12c167ffbd5c77dd4c11d6479643551c37a619d"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-50.json": {
+      "bytes": 11971,
+      "sha256": "39daa90b0aaa7dd480607726722663aefff1a0a2f7092b31a54af963814bfc04"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-51.json": {
+      "bytes": 11941,
+      "sha256": "41aa71190507a03829d4efbe765afce30cdb19c08d3c2a271049278dfe04d6a9"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-52.json": {
+      "bytes": 11913,
+      "sha256": "daca4ec1a6f6ae7c43f6a6945c08e22f45db7f10000f03cf70ab108f6875576b"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-53.json": {
+      "bytes": 11883,
+      "sha256": "c20b50c48a108a55be8a69c62d748fae352e56af281cd2d27effffd3e4a94c0d"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-54.json": {
+      "bytes": 11799,
+      "sha256": "1d4a9020904d95121c8283bdf3ab86176a300c708f0ae5dae2d6f92f3113ceb2"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-55.json": {
+      "bytes": 11877,
+      "sha256": "f2577e43a49bd149c7a5df2eaae5072ba2dfd2c6286451faa8c85437ced16b46"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-56.json": {
+      "bytes": 11895,
+      "sha256": "1954c3cfc5b47e28c99015bcc83741f780b7d847dad5da9bbaca962ba31e5b5c"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-57.json": {
+      "bytes": 11953,
+      "sha256": "93c3c30c71f9cdc91c0c3e1f06a382ef8a2cddeb298a5181b753dcf1867305ee"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-58.json": {
+      "bytes": 11899,
+      "sha256": "02a812ccc11fc10c0924341e2dc2b456d873b87d7b87e193c785256d687016d4"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-59.json": {
+      "bytes": 11692,
+      "sha256": "6f73a6126746d0f750536e9967b8e97ea78b82f4d30901497bdaf9791f9af77b"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-60.json": {
+      "bytes": 11881,
+      "sha256": "8d07eb47fc259a894b7538ee6fab7ebcb084ec7d804fb291cb3b6c0dcda3f817"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-61.json": {
+      "bytes": 11704,
+      "sha256": "37d3a29d29bbb30b9d6debcd621fdc65467d264eb3f4d2104d678d60e088ec29"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-62.json": {
+      "bytes": 11881,
+      "sha256": "83ee453e9ab5de46e10cfb615e000a8a9806e21164a1cf35a5d93f28ac1cd0c5"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/prepared-63.json": {
+      "bytes": 11826,
+      "sha256": "fa3561cf44e762380102e3535ce4eca2272392308dcb978715769368a2b4e8e6"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/raw/raw.json": {
+      "bytes": 730567,
+      "sha256": "ca2cf6d7f956579a019fe4a5918b9e0c9f54ac6bfd2e9bb6a78df336e5084449"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/raw/seal.json": {
+      "bytes": 2821,
+      "sha256": "3baf918c02223f2ef82de5014fb798ac564c755fcc1849392deee77e8c1cfa3f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/identity_probe_worker.py.txt": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/illustration_core.py.txt": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/inherited-source-bindings.json": {
+      "bytes": 600,
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/local_backends.py.txt": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/matched_evaluate.py.txt": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/matched_run.py.txt": {
+      "bytes": 19005,
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/matched_worker.py.txt": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/owned_native.py.txt": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/reviewed/chess_board_fact_core.py.txt": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/reviewed/chess_fact_sft_common.py.txt": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/reviewed/chess_native_resources.py.txt": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/sources/test_matched_runner.py.txt": {
+      "bytes": 24460,
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/worker-identity.json": {
+      "bytes": 587,
+      "sha256": "f1f62e0a90e8c6cc8a1c5ddeaa071aab9b7b242dba76449b5235a6dc5126c94f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/generation/worker-outcome.json": {
+      "bytes": 145,
+      "sha256": "439816fe71ec7b56ebe5b311d424ea56b0d15ceccfc64c14b708ee3b1ebf5dac"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/intent.json": {
+      "bytes": 184,
+      "sha256": "5a606c5291366c9b8b045f3798a04c9a2fab97f410c68ff1a6d24e06b2e4a365"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/preflight.json": {
+      "bytes": 3124,
+      "sha256": "0640b991d9018e59e58237e0aa32787201416719eaedad5c53a5e70c9010b1c4"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/score.json": {
+      "bytes": 26748,
+      "sha256": "ddf11538ff5a820ee8638dc0d46099c021f6c5a0b661811ee4d1614c65a262a8"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/supervision.json": {
+      "bytes": 258,
+      "sha256": "50e0e67211187d0bd5da70e28608f961b0f04c591bc32c8132016542ec5b882c"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/worker-stderr.txt": {
+      "bytes": 129,
+      "sha256": "0c57aeaa034338a42cde554b3ada9bc23c37d04f28dafc5db10f4f9dbf110558"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/selected-run-v1/worker-stdout.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/intake-focused/junit.xml": {
+      "bytes": 6755,
+      "sha256": "b401f71228bd93c2e6d42ab94e6d4cececb9a1f7c6becc6389d5e860ca2c2aa7"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/intake-focused/receipt.json": {
+      "bytes": 1521,
+      "sha256": "198c03a4c6e98149ab1247e0c4f55b0938f3a6a1520143b8aa4e4436ce7c1d7f"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/intake-focused/test-output.txt": {
+      "bytes": 101,
+      "sha256": "18f2c12fb59f8d39897da2b12152ed7101dc241a2e7929cf2a2891b56831c2fe"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/mandatory-historical/junit.xml": {
+      "bytes": 236218,
+      "sha256": "0b1fd0c09d578d8cecf89beaff57d29092db56aa42ab98d84146131da6771316"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/mandatory-historical/receipt.json": {
+      "bytes": 1685,
+      "sha256": "1791149a33933549d58ebc0806c8486676f7ee075faa233930dda5ea4b5968dc"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/mandatory-historical/test-output.txt": {
+      "bytes": 215686,
+      "sha256": "ca2f12633ed0a337a1bfdab48dda8df0e4a6735e0b2d709262bd7618ee0ae951"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/runtime-repair/junit.xml": {
+      "bytes": 7420,
+      "sha256": "cf7427951cf8b2b579b23edc0598a36b2007cc053f137c3a7180737cba5a4248"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/runtime-repair/receipt.json": {
+      "bytes": 2539,
+      "sha256": "5192abbbf929ae73305a783b8699fafa26d2d9d4bb8ac16b4f0fa51c6c455235"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/runtime-repair/stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "experiments/chess-matched-check-v1/completed-evidence/tests/runtime-repair/stdout.txt": {
+      "bytes": 101,
+      "sha256": "76f5a5d6d4d3b4c127385025cf6ec801f8aecc066a036ef6b9c51984dc21317e"
+    },
+    "experiments/chess-matched-check-v1/manifest.json": {
+      "bytes": 3083,
+      "sha256": "c4da800a5032df33dc42a21b697e65720a6920514cc37e49f9878828933ed678"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/execution-extension.json": {
+      "bytes": 2131,
+      "sha256": "87163e6bf3765db92c6b378b56ad12517ec3e7b89be42db302bbd8d21b8fdf45"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/frozen-data-metadata.json": {
+      "bytes": 1446,
+      "sha256": "6f4fd9e1608bb44982dddbc886394087ec4c420525a26ad4800fcb79687500a0"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/independent-intake-audit.json": {
+      "bytes": 41658,
+      "sha256": "5d3decb29d660f51b55ea4ce3068428d998816809d40e5608299b9fb57ffb01d"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/independent-runtime-review.json": {
+      "bytes": 10555,
+      "sha256": "8461d24a826f42d7633875935d68f6029d3bd60ffa7d62ffe4b3c0d87cf00e9f"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/inputs.json": {
+      "bytes": 9312,
+      "sha256": "457dce3805b56ee53093ad0548424fb28310f2de82352c84b690ae6e281034a7"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/manifest.json": {
+      "bytes": 3182,
+      "sha256": "6aa155ce2b70c6115455fe784b222334c32e73ea50ffb1d987b7a7265666a86e"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/root-runtime-review.json": {
+      "bytes": 3462,
+      "sha256": "6a9cc80d702cc3f1bdab131b426781cb8f9d859ebde83a8c7b912552d2e99b63"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/identity_probe_worker.py.txt": {
+      "bytes": 614,
+      "sha256": "cd2baad9dcfeda97d3447660c2d79213740d0e147c4c71146fdadb0510a239ed"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/illustration_core.py.txt": {
+      "bytes": 2278,
+      "sha256": "2626d418dc25985a68840007610d8eed2255878b113966b6889d4eba29d3f1bb"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/inherited-source-bindings.json": {
+      "bytes": 600,
+      "sha256": "0ee616a6bc9c8de5fcd1163742f94e1ac75cbb3434e12d742fd870e08b340db2"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/local_backends.py.txt": {
+      "bytes": 11662,
+      "sha256": "04357fa4d9e0e390ad1a606ce7b10131665c59c1bc02fe346314099f8ad9c505"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/matched_evaluate.py.txt": {
+      "bytes": 3288,
+      "sha256": "e6ca34ebf630c105ecabfcd198a5e773b57e98290350070bcdc51d576c3c9ac2"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/matched_run.py.txt": {
+      "bytes": 19005,
+      "sha256": "1b06d5e917b787a505838ac1a76ad15ab5a860989424da00216bd83d67dd8fc7"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/matched_worker.py.txt": {
+      "bytes": 8174,
+      "sha256": "66743c7de707f12ff95a02b96736ec6f4bec7dcde85d7113a0dfead9a60bcfed"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/owned_native.py.txt": {
+      "bytes": 4797,
+      "sha256": "2bf23e4406f089874763a2b7fd9aa6e2a2c1f185ab1a79298c6fa0c58f5cdbd0"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/reviewed/chess_board_fact_core.py.txt": {
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/reviewed/chess_fact_sft_common.py.txt": {
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/reviewed/chess_native_resources.py.txt": {
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/sources/test_matched_runner.py.txt": {
+      "bytes": 24460,
+      "sha256": "85e4ad8569133a3bd0069f9449c0812b1399eeeca239a40b6bdfee95e253825a"
+    },
+    "experiments/chess-matched-check-v1/pre-call-runtime-v1/stable-handoff-v2.json": {
+      "bytes": 3801,
+      "sha256": "9bc26370d33034cc0afb04259dbec1ebd9139e97e177138ab63949d04bdbca7d"
+    },
+    "experiments/chess-matched-check-v1/protocol-freeze.json": {
+      "bytes": 1077,
+      "sha256": "22278fc0fa502218ce121af5984fe92c384d41a40e7c0af0e9046b2b9fbabdef"
+    },
+    "experiments/chess-matched-check-v1/protocol.json": {
+      "bytes": 42855,
+      "sha256": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+    },
+    "experiments/chess-matched-check-v1/public-manifest.json": {
+      "bytes": 114015,
+      "sha256": "c5b86ed71449f0bc235155457c05ea7a046227189aad12a88f332df9d45d8aef"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/.gitattributes": {
+      "bytes": 20,
+      "sha256": "e97602ab9cac70102245345c5ab0fc9830df8b17f1072b188265a662a3a547ae"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/README.md": {
+      "bytes": 804,
+      "sha256": "909f9a76bf7d6d5750cc8790e86289a9d8fcbde399eb8e5925567d351cffd8f3"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/checks.json": {
+      "bytes": 4346,
+      "sha256": "409e925d295f29342815ade94d37bf5c649754a72f267d429ca9245af59b983d"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/corrected-validator.py.txt": {
+      "bytes": 5284,
+      "sha256": "2bc2bda23a22db8bd90456176861e557e350f779259d7672b1a0e819f7ed147b"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/failed-checker-receipt.json": {
+      "bytes": 1031,
+      "sha256": "95309f89df46173e80a4e46d2ef2869d0b4729b793fdd6273d588a25d70003f9"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/failed-validator.py.txt": {
+      "bytes": 4747,
+      "sha256": "872b1a8ebcc58b09b0f441307461a77298f938908b1507cb5702f0730c6fd76e"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/lf-checkout-proof.json": {
+      "bytes": 1592,
+      "sha256": "c09f2024776b44cc447058aaf47973972e3b666968a05bbaa760c68d42fdd39e"
+    },
+    "experiments/chess-matched-check-v1/publication-checks/manifest.json": {
+      "bytes": 1786,
+      "sha256": "b1cf118fc2db78de43d2f81ff98152a56baf98fde709b45a66a6fc773bccd410"
+    },
+    "experiments/chess-matched-check-v1/root-protocol-review.json": {
+      "bytes": 1003,
+      "sha256": "887fb3977fd14148c5b6c0cf0610446df31c6819f8994b702918b7e1c116b171"
+    },
+    "experiments/chess-matched-check-v1/summary.json": {
+      "bytes": 7071,
+      "sha256": "f5b6371b051b90f25f0770e03c5dcc6c987e674cbf84c62a5a1534862696ee1d"
+    },
+    "reports/chess-matched-check-v1-2026-10-15.md": {
+      "bytes": 7525,
+      "sha256": "6e0e4c1fcbfa2d21425910f27a305156c9529ed3adc7d1b747935ce20193c82d"
+    },
+    "scripts/chess_matched_check_intake.py": {
+      "bytes": 29085,
+      "sha256": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28"
+    },
+    "tests/test_chess_matched_check_exclusions.py": {
+      "bytes": 6566,
+      "sha256": "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1"
+    },
+    "tests/test_chess_matched_check_intake.py": {
+      "bytes": 15865,
+      "sha256": "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb"
+    }
+  },
+  "membership": {
+    "exact_main_original_aliases": 199,
+    "main_alias_manifest_self": 1,
+    "publication_check_directory_files": 8,
+    "protocol_first_files_preserved": 20,
+    "pre_call_files_preserved": 20,
+    "total_paths_excluding_this_index": 256
+  },
+  "main_manifest_sha256": "c5b86ed71449f0bc235155457c05ea7a046227189aad12a88f332df9d45d8aef",
+  "notes": [
+    "Explicitly includes main aliases, manifest self, separate publication-check supplement and all new derived docs/policies.",
+    "The index excludes its own hash; exact Git head and external output/root remote-verification receipts bind it.",
+    "All119 actual cohort/run originals remain unchanged; source/weights/protocol/raw outputs are not regenerated."
+  ]
+}

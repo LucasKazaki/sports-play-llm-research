@@ -1,0 +1,190 @@
+"""Independent protocol reference on caller-supplied rows; no source-file IO.
+
+This module never imports the author intake, PyArrow, torch or transformers.
+Current use is restricted to explicitly constructed fixtures. A future reviewed
+adapter must separately authenticate real source/registry files after root GO.
+"""
+from __future__ import annotations
+
+from collections import Counter
+import hashlib
+from itertools import combinations, islice
+import json
+import re
+
+import chess
+
+SEED = 4082032
+GAME = re.compile(r"([A-Za-z0-9]{8})(?:/(?:white|black))?(?:#[0-9]+)?")
+ALNUM = re.compile(r"[A-Za-z0-9]+")
+
+
+class RepeatedPuzzle(ValueError):
+    def __init__(self, trace):
+        super().__init__("repeated accepted puzzle identity")
+        self.trace = trace
+
+
+def canonical_game(native):
+    match = GAME.fullmatch(native) if type(native) is str else None
+    if match is None:
+        raise ValueError("invalid native GameId")
+    return match.group(1)
+
+
+def board_key(fen):
+    board = chess.Board(fen)
+    if not board.is_valid() or board.chess960:
+        raise ValueError("valid orthodox board required")
+    return " ".join(board.fen().split()[:4])
+
+
+def parse_row(row):
+    # These are the only source columns inspected. In particular, no answer tail
+    # token, rating, theme, opening, popularity or quality field is accessed.
+    puzzle, native, fen, moves = (row[key] for key in ("PuzzleId", "GameId", "FEN", "Moves"))
+    if type(puzzle) is not str or ALNUM.fullmatch(puzzle) is None:
+        raise ValueError("invalid PuzzleId")
+    game = canonical_game(native)
+    if type(fen) is not str or type(moves) is not str:
+        raise ValueError("invalid FEN/Moves fields")
+    before = chess.Board(fen)
+    if not before.is_valid() or before.chess960:
+        raise ValueError("invalid source-before board")
+    token = moves.split(maxsplit=1)
+    if not token:
+        raise ValueError("missing first setup move")
+    setup = chess.Move.from_uci(token[0])
+    if not setup or setup not in before.legal_moves:
+        raise ValueError("illegal/null setup move")
+    after = before.copy(stack=False)
+    after.push(setup)
+    if not after.is_valid() or after.is_game_over() or not any(after.legal_moves):
+        raise ValueError("invalid/terminal setup-after board")
+    return {"puzzle_id": puzzle, "game_id": game, "native_game_id": native,
+            "source_before_fen": before.fen(), "setup_uci": setup.uci(), "fen": after.fen(),
+            "source_before_key": board_key(before.fen()), "setup_after_key": board_key(after.fen())}
+
+
+def predicate_facts(fen, uci):
+    board, move = chess.Board(fen), chess.Move.from_uci(uci)
+    if move not in board.legal_moves:
+        raise ValueError("rule facts require a legal move")
+    moving = board.piece_at(move.from_square)
+    ep = board.is_en_passant(move)
+    victim = chess.Piece(chess.PAWN, not moving.color) if ep else board.piece_at(move.to_square)
+    return {"moving_piece": chess.piece_name(moving.piece_type),
+            "moving_colour": "white" if moving.color else "black", "is_capture": board.is_capture(move),
+            "captured_piece": chess.piece_name(victim.piece_type) if victim else None,
+            "gives_check": board.gives_check(move), "is_castling": board.is_castling(move),
+            "is_en_passant": ep, "promotion_piece": chess.piece_name(move.promotion) if move.promotion else None}
+
+
+def transition_facts(fen, uci):
+    """Push/material/attack route, without gives_check or capture predicates."""
+    before, move = chess.Board(fen), chess.Move.from_uci(uci)
+    if move not in before.legal_moves:
+        raise ValueError("rule facts require a legal move")
+    mover = before.piece_at(move.from_square)
+    enemy = {square: piece for square, piece in before.piece_map().items() if piece.color != mover.color}
+    after = before.copy(stack=False)
+    after.push(move)
+    remaining = {square for square, piece in after.piece_map().items() if piece.color != mover.color}
+    removed = set(enemy) - remaining
+    if len(removed) > 1:
+        raise ValueError("unsupported multi-victim transition")
+    victim = enemy[next(iter(removed))] if removed else None
+    return {"moving_piece": chess.piece_name(mover.piece_type),
+            "moving_colour": "white" if mover.color else "black", "is_capture": bool(removed),
+            "captured_piece": chess.piece_name(victim.piece_type) if victim else None,
+            "gives_check": after.is_attacked_by(mover.color, after.king(not mover.color)),
+            "is_castling": mover.piece_type == chess.KING and abs(chess.square_file(move.to_square)-chess.square_file(move.from_square)) == 2,
+            "is_en_passant": mover.piece_type == chess.PAWN and chess.square_file(move.to_square) != chess.square_file(move.from_square) and before.piece_at(move.to_square) is None,
+            "promotion_piece": chess.piece_name(after.piece_at(move.to_square).piece_type) if len(uci) == 5 else None}
+
+
+def pair_digest(record, moves):
+    packet = {"seed": SEED, "game_id": record["game_id"], "puzzle_id": record["puzzle_id"],
+              "fen": record["fen"], "moves": sorted(moves)}
+    payload = json.dumps(packet, sort_keys=True, separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+    return hashlib.sha256(b"matched-check-pair-v1\n" + payload).hexdigest()
+
+
+def enumerate_pairs(record, unavailable_keys=(), *, digest=pair_digest):
+    """Complete legal candidate set and winner; no source answer is available."""
+    board = chess.Board(record["fen"])
+    unavailable = set(unavailable_keys)
+    source_roles = {record["source_before_key"], record["setup_after_key"]}
+    counts, moves = Counter(), []
+    for move in sorted(board.legal_moves, key=lambda item: item.uci()):
+        counts["legal_moves"] += 1
+        if move.promotion or board.is_castling(move) or board.is_en_passant(move):
+            counts["excluded_special_moves"] += 1
+            continue
+        facts = predicate_facts(record["fen"], move.uci())
+        if facts != transition_facts(record["fen"], move.uci()):
+            raise ValueError("independent rule routes disagree")
+        after = board.copy(stack=False); after.push(move)
+        if not after.is_valid(): raise ValueError("legal move produced invalid successor")
+        signature = (move.from_square, facts["moving_piece"], facts["moving_colour"], facts["is_capture"], facts["captured_piece"])
+        moves.append({"uci": move.uci(), "facts": facts, "signature": signature, "successor_key": board_key(after.fen())})
+    pairs = []
+    for left, right in combinations(moves, 2):
+        counts["candidate_unordered_pairs"] += 1
+        if left["signature"] != right["signature"]:
+            counts["signature_mismatch"] += 1; continue
+        if left["facts"]["gives_check"] is right["facts"]["gives_check"]:
+            counts["same_check_class"] += 1; continue
+        successors = {left["successor_key"], right["successor_key"]}
+        if len(source_roles | successors) != 4:
+            counts["internal_role_collision"] += 1; continue
+        if successors & unavailable:
+            counts["successor_excluded"] += 1; continue
+        ucis = (left["uci"], right["uci"])
+        pairs.append({"moves": ucis, "sha256": digest(record, ucis), "successor_keys": tuple(item["successor_key"] for item in (left, right)),
+                      "signature": left["signature"], "facts": (left["facts"], right["facts"])})
+    pairs.sort(key=lambda item: (item["sha256"], *item["moves"]))
+    counts["eligible_pairs"] = len(pairs)
+    return pairs, dict(counts)
+
+
+def generation_order(case_ids):
+    if len(case_ids) != len(set(case_ids)):
+        raise ValueError("duplicate case identity")
+    def key(case_id):
+        payload = json.dumps({"seed": SEED, "case_id": case_id}, sort_keys=True,
+                             separators=(",", ":"), ensure_ascii=True).encode("utf-8")
+        return hashlib.sha256(b"matched-check-order-v1\n" + payload).hexdigest(), case_id
+    return sorted(case_ids, key=key)
+
+
+def reconstruct_fixture_selection(rows, known_games=(), known_keys=(), *, target=32, cap=200000):
+    """Reference on already supplied fixture objects; no file adapter exists yet."""
+    games, keys = set(known_games), set(known_keys)
+    accepted, puzzles, trace = [], set(), []
+    for ordinal, row in enumerate(islice(rows, cap)):
+        note = {"source_ordinal": ordinal}
+        try:
+            record = parse_row(row)
+        except (KeyError, ValueError, TypeError) as exc:
+            trace.append({**note, "terminal": "invalid", "reason": type(exc).__name__}); continue
+        if record["game_id"] in games:
+            trace.append({**note, "terminal": "known_or_new_game_overlap"}); continue
+        if {record["source_before_key"], record["setup_after_key"]} & keys:
+            trace.append({**note, "terminal": "source_role_board_overlap"}); continue
+        if record["puzzle_id"] in puzzles:
+            trace.append({**note, "terminal": "repeated_accepted_puzzle_identity"})
+            raise RepeatedPuzzle(trace)
+        candidates, counts = enumerate_pairs(record, keys)
+        if not candidates:
+            trace.append({**note, "terminal": "no_legal_matched_pair_after_all_filters", "counts": counts}); continue
+        chosen = candidates[0]
+        pair_id = "mc-pair-" + format(len(accepted), "02d")
+        record.update(pair_id=pair_id, moves=chosen["moves"], pair_sha256=chosen["sha256"],
+                      successor_keys=chosen["successor_keys"], source_ordinal=ordinal, pair_counts=counts)
+        accepted.append(record)
+        games.add(record["game_id"]); puzzles.add(record["puzzle_id"])
+        keys.update((record["source_before_key"], record["setup_after_key"], *chosen["successor_keys"]))
+        trace.append({**note, "terminal": "accepted", "pair_id": pair_id})
+        if len(accepted) == target: break
+    return {"status": "complete" if len(accepted) == target else "shortfall", "pairs": accepted, "trace": trace}

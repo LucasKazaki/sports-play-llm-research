@@ -1,0 +1,1091 @@
+{
+  "schema": "chess.matched-check.score.v1",
+  "seal_sha256": "3baf918c02223f2ef82de5014fb798ac564c755fcc1849392deee77e8c1cfa3f",
+  "labels_sha256": "997c3834b4e038a2c363e9b375908761a3b34efd7fca6334fc836f871a784ad2",
+  "counts": {
+    "planned": 64,
+    "all_eight_correct": 32,
+    "strict_parse_completed": 64,
+    "parse_error": 0,
+    "truncated": 0,
+    "error": 0,
+    "not_run": 0
+  },
+  "fields": {
+    "moving_piece": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "\"queen\"": {
+          "support": 24,
+          "correct": 24
+        },
+        "\"knight\"": {
+          "support": 16,
+          "correct": 16
+        },
+        "\"rook\"": {
+          "support": 18,
+          "correct": 18
+        },
+        "\"bishop\"": {
+          "support": 2,
+          "correct": 2
+        },
+        "\"pawn\"": {
+          "support": 4,
+          "correct": 4
+        }
+      },
+      "confusion": {
+        "\"queen\" -> \"queen\"": 24,
+        "\"knight\" -> \"knight\"": 16,
+        "\"rook\" -> \"rook\"": 18,
+        "\"bishop\" -> \"bishop\"": 2,
+        "\"pawn\" -> \"pawn\"": 4
+      }
+    },
+    "moving_colour": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "\"black\"": {
+          "support": 38,
+          "correct": 38
+        },
+        "\"white\"": {
+          "support": 26,
+          "correct": 26
+        }
+      },
+      "confusion": {
+        "\"black\" -> \"black\"": 38,
+        "\"white\" -> \"white\"": 26
+      }
+    },
+    "is_capture": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 58,
+          "correct": 58
+        },
+        "true": {
+          "support": 6,
+          "correct": 6
+        }
+      },
+      "confusion": {
+        "false -> false": 58,
+        "true -> true": 6
+      }
+    },
+    "captured_piece": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "null": {
+          "support": 58,
+          "correct": 58
+        },
+        "\"pawn\"": {
+          "support": 6,
+          "correct": 6
+        }
+      },
+      "confusion": {
+        "null -> null": 58,
+        "\"pawn\" -> \"pawn\"": 6
+      }
+    },
+    "gives_check": {
+      "correct": 32,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 32,
+          "correct": 32
+        },
+        "true": {
+          "support": 32,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "false -> false": 32,
+        "true -> false": 32
+      }
+    },
+    "is_castling": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 64,
+          "correct": 64
+        }
+      },
+      "confusion": {
+        "false -> false": 64
+      }
+    },
+    "is_en_passant": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 64,
+          "correct": 64
+        }
+      },
+      "confusion": {
+        "false -> false": 64
+      }
+    },
+    "promotion_piece": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "null": {
+          "support": 64,
+          "correct": 64
+        }
+      },
+      "confusion": {
+        "null -> null": 64
+      }
+    }
+  },
+  "outcomes": [
+    {
+      "case_id": "mc-pair-22-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-23-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-16-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-17-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-20-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-23-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-16-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-03-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-30-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-04-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-08-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-28-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-29-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-06-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-14-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-01-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-29-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-04-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-02-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-26-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-19-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-06-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-12-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-27-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-07-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-14-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-24-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-31-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-09-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-00-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-12-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-13-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-07-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-05-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-11-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-15-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-15-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-22-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-10-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-25-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-26-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-18-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-02-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-11-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-21-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-10-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-09-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-20-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-01-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-19-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-28-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-17-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-18-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-25-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-24-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-31-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-21-1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-30-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-27-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-13-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-08-0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": false,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-03-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-05-0",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    },
+    {
+      "case_id": "mc-pair-00-1",
+      "all_eight_correct": true,
+      "field_correct": {
+        "moving_piece": true,
+        "moving_colour": true,
+        "is_capture": true,
+        "captured_piece": true,
+        "gives_check": true,
+        "is_castling": true,
+        "is_en_passant": true,
+        "promotion_piece": true
+      }
+    }
+  ],
+  "check_classes": {
+    "true": {
+      "support": 32,
+      "correct": 0,
+      "true": 0,
+      "false": 32,
+      "unknown": 0,
+      "schema_failure": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "false": {
+      "support": 32,
+      "correct": 32,
+      "true": 0,
+      "false": 32,
+      "unknown": 0,
+      "schema_failure": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    }
+  },
+  "paired": {
+    "planned": 32,
+    "both_check_labels_correct": 0
+  },
+  "predicted_check_true": 0,
+  "limits": [
+    "Balanced rule-selected known-history-disjoint panel; upstream pretraining and original video histories unknown.",
+    "No natural-prevalence, playing-strength, promotion/castling/en-passant or causal-mechanism claim."
+  ]
+}

@@ -1,0 +1,91 @@
+"""Create-only practical review receipt; metadata/source reads only."""
+from datetime import datetime, timezone
+import hashlib
+import importlib.metadata
+import json
+from pathlib import Path
+import subprocess
+import sys
+import xml.etree.ElementTree as ET
+
+ROOT = Path(__file__).resolve().parents[2]
+HERE = Path(__file__).resolve().parent
+REPO = ROOT / "work/repos/sports-play-llm-research"
+OUT = ROOT / "outputs/chess-matched-check-intake-independent-source-review.json"
+
+def binding(path):
+    path = Path(path); data = path.read_bytes()
+    return {"path": str(path), "bytes": len(data), "sha256": hashlib.sha256(data).hexdigest()}
+
+expected = {
+    "scripts/chess_matched_check_intake.py": "024920191a0ed46fb3d430cce8ec11be8f35a03c5379b6ad4f5bbf2943799c28",
+    "tests/test_chess_matched_check_intake.py": "80b87f8eb5022f8c1efb75e8e009c365ddaee0e94bae93ad24e2c8d48ca895eb",
+    "tests/test_chess_matched_check_exclusions.py": "1711836c29f0cb67ad1f935d01e117cb79b1d06a62f85705ffe58fa2a9fd35a1",
+    "experiments/chess-matched-check-v1/protocol.json": "c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd",
+    "experiments/chess-matched-check-v1/protocol-freeze.json": "22278fc0fa502218ce121af5984fe92c384d41a40e7c0af0e9046b2b9fbabdef",
+}
+sources = {}
+for name, sha in expected.items():
+    actual = binding(REPO / name)
+    assert actual["sha256"] == sha, name
+    blob = subprocess.check_output(["git", "show", "HEAD:" + name], cwd=REPO)
+    assert hashlib.sha256(blob).hexdigest() == sha, name
+    sources[name] = actual
+suite = ET.parse(HERE / "full-source-review-junit-v2.xml").getroot()
+cases = list(suite.iter("testcase"))
+assert len(cases) == 104 and not list(suite.iter("failure")) and not list(suite.iter("error"))
+head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=REPO, text=True).strip()
+assert head == "00a9837e5c95871b479285fb039a961ed8a75919"
+receipt = {
+    "schema": "chess.matched-check.independent-source-review.v1",
+    "utc": datetime.now(timezone.utc).isoformat(),
+    "status": "PRACTICAL_SOURCE_REVIEW_CLEAR_FOR_ONE_BOUNDED_CPU_INTAKE_AFTER_ROOT_GO",
+    "head_at_review": head,
+    "source_and_git_blob_bindings": sources,
+    "findings": [],
+    "checks": {
+        "total": 104, "passed": 104, "failed": 0, "duration_seconds_pytest": 2.10,
+        "author_checks": 46, "independent_reference_and_boundary_checks": 43,
+        "new_independent_comparison_and_ownership_checks": 15,
+        "manual_source_setup_fixtures": 6, "constructed_legal_trajectory_boards": 12,
+        "pair_comparison": "Complete eligible ordered pair sets, literal rank digest and successor keys; successor exclusion changes compared before rank.",
+        "selection_comparison": "Independent selected membership, lexical move IDs, generation order, two rule routes, exact labels/input fields and terminal trace on constructed rows.",
+        "ownership": "Actual Windows CPU-only base-interpreter child PID==owned Popen PID, direct parent, venv prefix/executable/base identity and chess/pyarrow/numpy metadata; no torch import and no parent environment change.",
+        "injected_persistence_failures": ["owned-process.json write failure", "cancel.json write failure after timeout"],
+        "cleanup": "Each injected failure terminated only the owned child; unrelated control child remained alive and failed receipt survived.",
+        "forbidden_environment": ["PYTHONHOME", "PYTHONPATH", "PYTHONEXECUTABLE", "__PYVENV_LAUNCHER__"],
+    },
+    "source_review": [
+        "Full new intake and both tests read against the exact frozen protocol; fixed count/seed/cap in executable freeze path.",
+        "Only first legal setup token is parsed; source answer tails, ratings and themes have no role in candidate selection or model inputs.",
+        "Complete legal non-special paired candidates match origin, piece, colour, capture and victim type with opposite check truth; all four role keys distinct and known/new exclusions applied before SHA rank.",
+        "Code reconstructs and compares exact historical game/key sets, including supplied-fact successors and retained legal first/top-five illustrative successors; actual reconstruction remains a later audited step.",
+        "Create-only output/refusal, pinned protocol/source/input/runtime hashes, before-selection provenance, post-selection rehash, partial trace and failure receipts reviewed.",
+        "Parent owns 600-second CPU attempt and bounded child cleanup; no process-name kill, GPU/model/engine operation or outcome-based retry.",
+    ],
+    "limitations": [
+        "No actual Parquet row was selected/read and no actual source cohort/registry reconstruction was executed by this review; the later first-32/full-registry/token audit remains mandatory before model calls.",
+        "Worker has a direct-parent guard but no separate built-in prefix assertion; exact interpreter/prefix was verified in real CPU launch probes. Future actual before-selection/owned-PID provenance still must be checked.",
+        "Both independently coded rule routes share the pinned python-chess library; finite fixtures are practical cross-checks, not a formal proof.",
+        "Cooperative checks are not inside every inherited exclusion helper; the independently owned parent deadline bounds the whole CPU process.",
+        "No model, pretrained forward, GPU query, Stockfish call, quality score, accepted holdout, statistical claim or formal promotion occurred.",
+    ],
+    "review_fixture_correction": {
+        "initial_result": "103 passed / 1 failed because independent probe requested absent distribution name python-chess; installed distribution is chess.",
+        "correction": "Only workspace independent probe metadata key changed to chess; author bytes unchanged.",
+        "preserved": str(HERE / "before-distribution-name-fixture-repair"),
+    },
+    "runtime": {"python": sys.version, "executable": sys.executable,
+        "base_executable": sys._base_executable,
+        "versions": {k: importlib.metadata.version(k) for k in ("chess", "pyarrow", "numpy", "pytest")}},
+    "evidence": {p.name: binding(p) for p in [
+        HERE / "matched_check_reference.py", HERE / "test_matched_check_reference.py",
+        HERE / "auditor_skeleton.py", HERE / "test_auditor_skeleton.py",
+        HERE / "test_author_review.py", HERE / "constructed-fixtures.json",
+        HERE / "full-source-review-junit-v2.xml", HERE / "full-source-review-test-output-v2.txt",
+        Path(__file__),
+    ]},
+}
+with OUT.open("x", encoding="utf-8", newline="\n") as stream:
+    stream.write(json.dumps(receipt, indent=2, sort_keys=True, allow_nan=False) + "\n")
+print(json.dumps(binding(OUT)))

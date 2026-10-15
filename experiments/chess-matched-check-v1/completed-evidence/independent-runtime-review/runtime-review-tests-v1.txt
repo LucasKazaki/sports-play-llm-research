@@ -1,0 +1,40 @@
+...........................................F                             [100%]
+================================== FAILURES ===================================
+___ test_interrupted_raw_sealing_retains_full_failed_denominator_separately ___
+
+tmp_path = WindowsPath('C:/Users/lucas/AppData/Local/Temp/pytest-of-lucas/pytest-699/test_interrupted_raw_sealing_r0')
+
+    def test_interrupted_raw_sealing_retains_full_failed_denominator_separately(tmp_path):
+        planned = rows()
+        completed = {"case_id":planned[0]["case_id"],"status":"completed","text":"{}", "new_ids":[151645]}
+        (tmp_path / "journal.jsonl").write_text(json.dumps(completed) + "\n")
+        boundary.fresh(tmp_path / "prepared-01.json", {"case_id":planned[1]["case_id"]})
+        # A worker can stop after seal_raw mkdir/raw write and before seal write.
+        partial = tmp_path / "raw"; partial.mkdir()
+        (partial / "raw.json").write_bytes(b'{"partial retained raw":')
+        original = (partial / "raw.json").read_bytes()
+>       runner.recover_raw(tmp_path, planned, {"recovered_after_failure":True})
+
+work\chess-matched-check-independent-v1\test_runtime_review.py:62: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+worker_out = WindowsPath('C:/Users/lucas/AppData/Local/Temp/pytest-of-lucas/pytest-699/test_interrupted_raw_sealing_r0')
+rows = [{'case_id': 'mc-pair-22-0', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-...lected_uci': 'c1c8'}, {'case_id': 'mc-pair-23-1', 'fen': '7k/8/8/8/8/8/8/K1R5 w - - 0 1', 'selected_uci': 'c1c8'}, ...]
+metadata = {'recovered_after_failure': True}
+
+    def recover_raw(worker_out,rows,metadata):
+        """Full fixed denominator recovery; prepared-without-return remains unknown."""
+        raw=worker_out/"raw"
+        if (raw/"seal.json").is_file():
+            seal=boundary.read(raw/"seal.json")
+            if boundary.sha(raw/"raw.json")!=seal["raw_sha256"]:
+                raise ValueError("raw seal mismatch")
+            return
+        if raw.exists():
+>           raise ValueError("partial raw seal retained; cannot overwrite")
+E           ValueError: partial raw seal retained; cannot overwrite
+
+work\chess-matched-check-runner-v1\matched_run.py:182: ValueError
+=========================== short test summary info ===========================
+FAILED work/chess-matched-check-independent-v1/test_runtime_review.py::test_interrupted_raw_sealing_retains_full_failed_denominator_separately
+1 failed, 43 passed in 1.50s

@@ -1,0 +1,318 @@
+"""One owned selected-only run; one 600-second clock includes CPU evaluation.
+
+Source preparation and CPU tests confer no actual model execution authority.
+The explicit execution extension must be frozen after intake and its audit.
+"""
+from __future__ import annotations
+import argparse
+from dataclasses import asdict
+import importlib
+import json
+from pathlib import Path
+import shutil
+import subprocess
+import time
+from urllib.request import urlopen
+import illustration_core as boundary
+import owned_native
+from matched_worker import inputs,planned_ids
+
+HERE=Path(__file__).resolve().parent
+PROTOCOL_SHA="c9c22898e14772744e83c6e68f62bfef845cb3b6ba62f0e1c8005f6caf0f63dd"
+GOTHAM_PLAN_SHA="8c5313c2088ebbce8acbbd23df195b108f69c341237cc1f6305fd9875c66ba75"
+SOURCES=("illustration_core.py","matched_worker.py","matched_evaluate.py","matched_run.py",
+         "local_backends.py","owned_native.py","inherited-source-bindings.json",
+         "test_matched_runner.py","identity_probe_worker.py",
+         "reviewed/chess_fact_sft_common.py","reviewed/chess_board_fact_core.py",
+         "reviewed/chess_native_resources.py")
+
+
+def protected_output(repo,cohort,out):
+    """New sibling of the cohort only, without aliases or retained destinations."""
+    repo=Path(repo).resolve()
+    path=Path(out).absolute()
+    family=repo/"data/private/chess-matched-check-diagnostic-v1"
+    expected_cohort=family/"cohort"
+    if ".." in path.parts or path.is_symlink() or path.exists():
+        raise ValueError("create-only nonalias output required")
+    for ancestor in (path,*path.parents):
+        if ancestor.is_symlink() or ancestor.is_junction():
+            raise ValueError("output path traverses alias")
+        if ancestor==repo:
+            break
+    target=path.resolve()
+    if target.parent!=family.resolve() or Path(cohort).resolve()!=expected_cohort.resolve():
+        raise ValueError("new private run sibling required")
+    protected=(expected_cohort,family/"cohort-supervision",HERE,
+               repo/"data/private/chess-fact-sft-v1",repo/"data/private/gothamchess",
+               repo/"experiments/chess-matched-check-v1")
+    for retained in protected:
+        retained=retained.resolve()
+        if target==retained or retained in target.parents or target in retained.parents:
+            raise ValueError("output overlaps retained cohort/model/source/evidence")
+    return target
+
+
+def check_deadline(started,clock):
+    if clock()-started >=600:
+        raise RuntimeError("whole-job600s deadline")
+
+
+def bound_file(path,digest,check):
+    check()
+    if boundary.sha(path)!=digest:
+        raise ValueError("frozen bytes changed:"+str(path))
+    check()
+
+
+def verify(repo,cohort,extension_path,expected_sha,check):
+    bound_file(extension_path,expected_sha,check)
+    extension=boundary.read(extension_path)
+    if extension.get("status")!="FROZEN_AFTER_INTAKE_AND_SOURCE_REVIEW_BEFORE_CALLS" or extension.get("protocol_sha256")!=PROTOCOL_SHA:
+        raise ValueError("future frozen execution extension required")
+    if set(extension["source_sha256"])!=set(SOURCES):
+        raise ValueError("complete source/test bindings required")
+    for name,digest in extension["source_sha256"].items():
+        bound_file(boundary.confined(HERE,name),digest,check)
+    inherited=boundary.read(HERE/"inherited-source-bindings.json")
+    for name,digest in inherited.items():
+        bound_file(HERE/name,digest,check)
+    bound_file(HERE/"protocol.json",PROTOCOL_SHA,check)
+    protocol=boundary.read(HERE/"protocol.json")
+    audit=extension["intake_audit"]
+    if audit.get("passed") is not True or audit.get("planned")!=64 or audit.get("native_token_boundaries_passed") is not True:
+        raise ValueError("root-approved all-row/native-boundary audit required")
+    bound_file(audit["path"],audit["sha256"],check)
+    bound_file(cohort/"frozen-data.json",extension["frozen_data_sha256"],check)
+    manifest=boundary.read(cohort/"frozen-data.json")
+    if (manifest.get("schema")!="chess.matched-check.frozen-data.v1" or manifest.get("pairs")!=32 or
+        manifest.get("planned")!=64 or manifest.get("model_calls")!=0 or manifest.get("protocol_sha256")!=PROTOCOL_SHA):
+        raise ValueError("complete frozen32/64 intake required")
+    # Inspect manifest metadata only. No labels/dataset bytes, even for hashing.
+    files=manifest["files_sha256"]
+    if set(("inputs.json","labels.json","dataset.json"))-set(files):
+        raise ValueError("frozen intake artifacts missing")
+    bound_file(cohort/"inputs.json",files["inputs.json"],check)
+    payload=boundary.read(cohort/"inputs.json")
+    inputs(payload)
+    bound_file(repo/"experiments/gotham-constructed-middlegame-v1/protocol.json",GOTHAM_PLAN_SHA,check)
+    old=boundary.read(repo/"experiments/gotham-constructed-middlegame-v1/protocol.json")
+    info=protocol["model_and_generation"]
+    if info["fixed_selected_step"]!=512:
+        raise ValueError("fixed selected512 required")
+    for relative,digest in info["base"]["files_sha256"].items():
+        bound_file(boundary.confined(repo/info["base"]["local_path"],relative),digest,check)
+    for relative,digest in info["adapter_files_sha256"].items():
+        bound_file(boundary.confined(repo/info["adapter_directory"],relative),digest,check)
+    selection=info["selection_manifest"]
+    bound_file(boundary.confined(repo,selection["path"]),selection["sha256"],check)
+    model={"plan":{"conditions":{boundary.FACTS[0]:{"model_files_sha256":info["base"]["files_sha256"]}},
+                   "fact_language_policy":{"lora_config":old["fact_language_policy"]["lora_config"]}},
+           "extension":{"native_base_directory":info["base"]["local_path"],
+                        "native_selection":{"selected_step":512,"adapter_directory":info["adapter_directory"],
+                                            "files_sha256":info["adapter_files_sha256"]}}}
+    return extension,manifest,payload,model
+
+
+def foreign_check():
+    with urlopen("http://127.0.0.1:11434/api/ps",timeout=5) as response:
+        if json.load(response).get("models")!=[]:
+            raise ValueError("foreign Ollama model resident")
+    result=subprocess.run(["powershell","-NoProfile","-Command",
+        "@(Get-Process -Name 'llama-server' -ErrorAction SilentlyContinue).Count"],
+        capture_output=True,text=True,check=True,timeout=10)
+    if result.stdout.strip()!="0":
+        raise ValueError("foreign llama-server resident")
+
+
+def stop(child,cancel,clock=time.monotonic):
+    """At most30s total cleanup, exact owned handle; never terminate by name."""
+    if child.poll() is not None:
+        return False
+    cleanup_end=clock()+30
+    try:
+        cancel()
+    except Exception:
+        pass
+    try:
+        child.wait(timeout=max(0,min(20,cleanup_end-clock())))
+        return False
+    except subprocess.TimeoutExpired:
+        child.terminate()
+        child.wait(timeout=max(0,cleanup_end-clock()))
+        return True
+
+
+def wait_owned(child,out,stage,started,sampler,resources,*,clock=time.monotonic,sleep=time.sleep):
+    policy=resources.Policy(maximum_owned_request_seconds=600.)
+    last=clock()
+    with (out/(stage+"-resources.jsonl")).open("x",encoding="utf-8",buffering=1) as log:
+        while child.poll() is None:
+            now=clock()
+            issues=[]
+            try:
+                sample=sampler()
+                sample.validate()
+                log.write(json.dumps({"monotonic":now,**asdict(sample)},allow_nan=False)+"\n")
+                issues.extend(resources.reasons(sample,policy,"running"))
+            except Exception as error:
+                issues.append("resource_sample_failure:"+type(error).__name__)
+            if now-last>3 or now<last:
+                issues.append("monitor_sample_gap_or_reversal")
+            last=now
+            if now-started>=600:
+                issues.append("whole_job600s_deadline")
+            if issues:
+                raise RuntimeError("owned stop:"+repr(issues))
+            sleep(1)
+    check_deadline(started,clock)
+    if child.poll()!=0:
+        raise RuntimeError(stage+" worker exited:"+str(child.poll()))
+
+
+def recover_raw(worker_out,rows,metadata):
+    """Full fixed denominator recovery; prepared-without-return remains unknown."""
+    raw=worker_out/"raw"
+    if (raw/"seal.json").is_file():
+        seal=boundary.read(raw/"seal.json")
+        if boundary.sha(raw/"raw.json")!=seal["raw_sha256"]:
+            raise ValueError("raw seal mismatch")
+        return
+    if raw.exists():
+        raise ValueError("partial raw seal retained; cannot overwrite")
+    found={}
+    if (worker_out/"journal.jsonl").exists():
+        for line in (worker_out/"journal.jsonl").read_text(encoding="utf-8").splitlines():
+            try:
+                row=json.loads(line)
+            except ValueError:
+                continue
+            if row["case_id"] in found:
+                raise ValueError("duplicate journal outcome")
+            found[row["case_id"]]=row
+    outcomes=[]
+    for index,row in enumerate(rows):
+        case=row["case_id"]
+        if case in found:
+            outcomes.append(found.pop(case))
+        elif (worker_out/(f"prepared-{index:02d}.json")).exists():
+            outcomes.append({"case_id":case,"status":"error","text":"",
+                "actual_call_status":"unknown_after_worker_interruption"})
+        else:
+            outcomes.append({"case_id":case,"status":"not_run","text":""})
+    if found:
+        raise ValueError("unknown journal outcome")
+    boundary.reviewed_modules()[0].seal_raw(raw,outcomes,[row["case_id"] for row in rows],metadata)
+
+
+def supervise(repo,cohort,extension_path,expected_extension_sha,out,*,sampler=None,
+              foreign=foreign_check,clock=time.monotonic,sleep=time.sleep,popen=subprocess.Popen):
+    started=clock()  # Includes all preflight, hashes, model load, eval and finalization.
+    out=protected_output(repo,cohort,out)
+    repo,cohort=map(lambda path:Path(path).resolve(),(repo,cohort))
+    out.mkdir(parents=True)
+    worker_out=out/"generation"
+    worker_out.mkdir()
+    boundary.fresh(out/"intent.json",{"planned":64,"selected_step":512,"budget_seconds":600,
+        "cleanup_seconds":30,"extension_sha256":expected_extension_sha})
+    child,failure,forced=None,None,False
+    # IDs alone disclose no answers and let setup failures keep all64 outcomes.
+    rows=[{"case_id":case} for case in planned_ids()]
+    extension,manifest=None,None
+    check=lambda:check_deadline(started,clock)
+    try:
+        extension,manifest,payload,model=verify(repo,cohort,Path(extension_path),expected_extension_sha,check)
+        rows=inputs(payload)
+        executable,environment,identity=owned_native.configuration(repo)
+        resources=importlib.import_module("chess_native_resources")
+        if Path(resources.__file__).resolve()!=HERE/"reviewed/chess_native_resources.py":
+            raise ValueError("resource helper outside snapshot")
+        sampler=resources.windows_sample if sampler is None else sampler
+        for name in SOURCES:
+            target=boundary.confined(worker_out/"sources",name)
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(HERE/name,target)
+        boundary.fresh(worker_out/"inputs.json",payload)
+        boundary.fresh(worker_out/"model.json",model)
+        # Full intake manifest, labels path/hash and evaluator data remain parent-only.
+        boundary.fresh(out/"execution-extension.json",extension)
+        boundary.fresh(out/"frozen-manifest-metadata.json",manifest)
+        foreign()
+        samples=[]
+        last_preflight=clock()
+        for _ in range(10):
+            check()
+            sample=sampler()
+            sample.validate()
+            now=clock()
+            if now-last_preflight>3 or now<last_preflight:
+                raise RuntimeError("preflight sample gap or clock reversal")
+            last_preflight=now
+            samples.append(asdict(sample))
+            if resources.reasons(sample,resources.Policy(),"start"):
+                raise RuntimeError("preload resource reserve failed")
+            sleep(1)
+        boundary.fresh(out/"preflight.json",{"status":"passed","samples":samples})
+        check()
+        command=[executable,"-B",str(worker_out/"sources/matched_worker.py"),"--out",str(worker_out)]
+        with (out/"worker-stdout.txt").open("xb") as stdout,(out/"worker-stderr.txt").open("xb") as stderr:
+            child=popen(command,cwd=repo,env=environment,stdout=stdout,stderr=stderr)
+            boundary.fresh(worker_out/"ownership.json",{"pid":child.pid,"native_launch_identity":identity,
+                "source_sha256":extension["source_sha256"],"inputs_sha256":manifest["files_sha256"]["inputs.json"],
+                "model_sha256":boundary.sha(worker_out/"model.json"),"repo":str(repo),"deadline_monotonic":started+600})
+            wait_owned(child,out,"generation",started,sampler,resources,clock=clock,sleep=sleep)
+        check()
+        expected={"planned":64,"status":"completed_raw_accounting","seal_sha256":boundary.sha(worker_out/"raw/seal.json")}
+        if boundary.read(worker_out/"worker-outcome.json")!=expected:
+            raise ValueError("zero-exit worker omitted exact raw accounting")
+        recover_raw(worker_out,rows,{"recovered":False})
+        check()
+        command=[executable,"-B",str(worker_out/"sources/matched_evaluate.py"),
+            "--raw",str(worker_out/"raw"),"--labels",str(cohort/"labels.json"),
+            "--expected-label-sha256",manifest["files_sha256"]["labels.json"],"--out",str(out/"score.json")]
+        with (out/"evaluator-stdout.txt").open("xb") as stdout,(out/"evaluator-stderr.txt").open("xb") as stderr:
+            child=popen(command,cwd=repo,env=environment,stdout=stdout,stderr=stderr)
+            boundary.fresh(out/"evaluator-ownership.json",{"pid":child.pid,"command":command,"raw_seal_sha256":expected["seal_sha256"]})
+            wait_owned(child,out,"evaluation",started,sampler,resources,clock=clock,sleep=sleep)
+        check()
+        if boundary.read(out/"score.json")["counts"]["planned"]!=64:
+            raise ValueError("evaluator full denominator missing")
+        for name,digest in extension["source_sha256"].items():
+            bound_file(worker_out/"sources"/name,digest,check)
+        bound_file(cohort/"frozen-data.json",extension["frozen_data_sha256"],check)
+        bound_file(cohort/"inputs.json",manifest["files_sha256"]["inputs.json"],check)
+        boundary.fresh(out/"completion.json",{"planned":64,"selected_step":512,
+            "score_sha256":boundary.sha(out/"score.json"),"raw_seal_sha256":expected["seal_sha256"]})
+        check()
+    except BaseException as error:
+        failure=type(error).__name__+":"+str(error)
+    finally:
+        if child is not None and child.poll() is None:
+            try:
+                forced=stop(child,lambda:boundary.fresh(worker_out/"cancel.json",{"reason":failure}),clock)
+            except Exception as error:
+                failure=(failure or "")+";cleanup:"+type(error).__name__+":"+str(error)
+        if rows:
+            try:
+                recover_raw(worker_out,rows,{"recovered_after_failure":failure is not None,
+                    "no_quality_completion":failure is not None})
+            except Exception as error:
+                failure=(failure or "")+";recovery:"+type(error).__name__+":"+str(error)
+        boundary.fresh(out/"supervision.json",{"status":"FAILED" if failure else "PASS",
+            "failure":failure,"last_owned_pid":child.pid if child else None,
+            "last_exit_code":child.poll() if child else None,"forced_owned_termination":forced,
+            "elapsed_seconds":clock()-started,"planned":64,"no_response_retries":True})
+    if failure:
+        raise RuntimeError("attempt failed and retained; no replay:"+failure)
+    return boundary.sha(out/"completion.json")
+
+
+if __name__=="__main__":
+    parser=argparse.ArgumentParser(description=__doc__)
+    for name in ("repo","cohort","extension-path","expected-extension-sha","out"):
+        parser.add_argument("--"+name,required=True)
+    parser.add_argument("--root-execution-go",action="store_true")
+    args=vars(parser.parse_args())
+    if not args.pop("root_execution_go"):
+        parser.error("separate root actual model GO required")
+    supervise(**args)

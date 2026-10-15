@@ -1,0 +1,100 @@
+{
+  "GPU_queries": 0,
+  "all_primary_168_bindings_current": true,
+  "engine_calls": 0,
+  "evidence": {
+    "completed-run-audit-log-v1.txt": {
+      "bytes": 797,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\completed-run-audit-log-v1.txt",
+      "sha256": "0239cd960e62cafe1a0b4bfb1a807a997f28db197c243a38f8fffa7afc0e35c9"
+    },
+    "postrun-finite-junit-v1.xml": {
+      "bytes": 2507,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\postrun-finite-junit-v1.xml",
+      "sha256": "cd618085d4b975f16a807f0112ed53cd19fbc996386ed98f301cfe1509223197"
+    },
+    "postrun-finite-tests-v1.txt": {
+      "bytes": 101,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\postrun-finite-tests-v1.txt",
+      "sha256": "224ce414a9bdd36ac5118ebd967e34dd8353540a7ce4f1a8907b734bc0d413b7"
+    },
+    "save_postrun_evidence.py": {
+      "bytes": 3722,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\save_postrun_evidence.py",
+      "sha256": "cfa65ef99c3398606e11eddecc6d1999bd4692729206b78c782d6ef30c44d230"
+    }
+  },
+  "finite_checks": {
+    "failed": 0,
+    "passed": 11,
+    "seconds_pytest": 0.16,
+    "tests": "Strict typed scoring, collapse/unknown/error denominators, model padded-vocabulary/EOS decoding, streamed tensor name/order/dtype/count/finiteness and constructor parameter order."
+  },
+  "interpretation": {
+    "all_eight_correct": 32,
+    "checking_correct": 0,
+    "checking_support": 32,
+    "claim": "Retained selected-model responses repeated false for every supplied move's check field; this balanced exploratory panel does not support check discrimination.",
+    "limits": "No baseline run, retraining, causal explanation, strength, natural prevalence or automatic promotion; special moves excluded by design.",
+    "nonchecking_correct": 32,
+    "nonchecking_support": 32,
+    "other_seven_field_correct_counts": {
+      "captured_piece": 64,
+      "is_capture": 64,
+      "is_castling": 64,
+      "is_en_passant": 64,
+      "moving_colour": 64,
+      "moving_piece": 64,
+      "promotion_piece": 64
+    },
+    "paired_both_check_labels_correct": 0,
+    "pairs": 32,
+    "responses": 64,
+    "strict_schema_completed": 64
+  },
+  "new_model_calls": 0,
+  "primary_audit": {
+    "bytes": 103128,
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-matched-check-completed-independent-audit.json",
+    "sha256": "2f5c9b0e470d300021449349a503cbaed3357fa3bbf24cacc559acd31664b3a3"
+  },
+  "protected_memberships": {
+    "cohort": 13,
+    "run": 100
+  },
+  "schema": "chess.matched-check.completed-audit-evidence.v1",
+  "source_dependencies": {
+    "audit_actual_intake.py": {
+      "bytes": 25593,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\audit_actual_intake.py",
+      "sha256": "5185e06743f24b93b22038973f684cd586de26d2f6bb2607fc296bbe98b41dce"
+    },
+    "audit_completed_matched_run.py": {
+      "bytes": 16424,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\audit_completed_matched_run.py",
+      "sha256": "3337049b08cfab92f8b78c30a577f17ea8c660baff9aa7417b8d84372cd61414"
+    },
+    "auditor_skeleton.py": {
+      "bytes": 5430,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\auditor_skeleton.py",
+      "sha256": "89bd4a471e6955973325ce9731ce75cdc8ceccb98d9bf6fad4670ea806ecc739"
+    },
+    "matched_check_reference.py": {
+      "bytes": 9965,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\matched_check_reference.py",
+      "sha256": "35bfb1a6942470956a2ea8da1fa6724c9945f64eb0b38ad347b6cb0cae185236"
+    },
+    "postrun_reference.py": {
+      "bytes": 10230,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\postrun_reference.py",
+      "sha256": "a996671ab84eb32ba51b85ab2550b9e0f2962e1f3495f4972de1c434ba9b28f7"
+    },
+    "test_postrun_reference.py": {
+      "bytes": 4897,
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-matched-check-independent-v1\\test_postrun_reference.py",
+      "sha256": "03b9b6024330f4730d1819bbe9e772d8230c4491845521789620258095cedbce"
+    }
+  },
+  "status": "BOUND_ORIGINAL_AUDIT_UNCHANGED_NO_REAUDIT_OR_MODEL_CALLS",
+  "utc": "2026-10-15T11:13:49.363160+00:00"
+}

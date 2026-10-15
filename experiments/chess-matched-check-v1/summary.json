@@ -1,0 +1,277 @@
+{
+  "schema": "chess.matched-check.summary.v1",
+  "status": "Completed; independent retained-artifact audit PASS; no promotion",
+  "purpose": "Fixed selected-step512 supplied-move check diagnostic; no training, baseline, engine or prompt search.",
+  "primary": {
+    "checking_correct": 0,
+    "checking_support": 32,
+    "nonchecking_correct": 32,
+    "nonchecking_support": 32,
+    "both_check_labels_correct": 0,
+    "matched_pairs": 32,
+    "predicted_check_true": 0
+  },
+  "counts": {
+    "planned": 64,
+    "all_eight_correct": 32,
+    "strict_parse_completed": 64,
+    "parse_error": 0,
+    "truncated": 0,
+    "error": 0,
+    "not_run": 0
+  },
+  "check_classes": {
+    "true": {
+      "support": 32,
+      "correct": 0,
+      "true": 0,
+      "false": 32,
+      "unknown": 0,
+      "schema_failure": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "false": {
+      "support": 32,
+      "correct": 32,
+      "true": 0,
+      "false": 32,
+      "unknown": 0,
+      "schema_failure": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    }
+  },
+  "fields": {
+    "moving_piece": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "\"queen\"": {
+          "support": 24,
+          "correct": 24
+        },
+        "\"knight\"": {
+          "support": 16,
+          "correct": 16
+        },
+        "\"rook\"": {
+          "support": 18,
+          "correct": 18
+        },
+        "\"bishop\"": {
+          "support": 2,
+          "correct": 2
+        },
+        "\"pawn\"": {
+          "support": 4,
+          "correct": 4
+        }
+      },
+      "confusion": {
+        "\"queen\" -> \"queen\"": 24,
+        "\"knight\" -> \"knight\"": 16,
+        "\"rook\" -> \"rook\"": 18,
+        "\"bishop\" -> \"bishop\"": 2,
+        "\"pawn\" -> \"pawn\"": 4
+      }
+    },
+    "moving_colour": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "\"black\"": {
+          "support": 38,
+          "correct": 38
+        },
+        "\"white\"": {
+          "support": 26,
+          "correct": 26
+        }
+      },
+      "confusion": {
+        "\"black\" -> \"black\"": 38,
+        "\"white\" -> \"white\"": 26
+      }
+    },
+    "is_capture": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 58,
+          "correct": 58
+        },
+        "true": {
+          "support": 6,
+          "correct": 6
+        }
+      },
+      "confusion": {
+        "false -> false": 58,
+        "true -> true": 6
+      }
+    },
+    "captured_piece": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "null": {
+          "support": 58,
+          "correct": 58
+        },
+        "\"pawn\"": {
+          "support": 6,
+          "correct": 6
+        }
+      },
+      "confusion": {
+        "null -> null": 58,
+        "\"pawn\" -> \"pawn\"": 6
+      }
+    },
+    "gives_check": {
+      "correct": 32,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 32,
+          "correct": 32
+        },
+        "true": {
+          "support": 32,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "false -> false": 32,
+        "true -> false": 32
+      }
+    },
+    "is_castling": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 64,
+          "correct": 64
+        }
+      },
+      "confusion": {
+        "false -> false": 64
+      }
+    },
+    "is_en_passant": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 64,
+          "correct": 64
+        }
+      },
+      "confusion": {
+        "false -> false": 64
+      }
+    },
+    "promotion_piece": {
+      "correct": 64,
+      "unknown": 0,
+      "classes": {
+        "null": {
+          "support": 64,
+          "correct": 64
+        }
+      },
+      "confusion": {
+        "null -> null": 64
+      }
+    }
+  },
+  "source": {
+    "revision": "461725966ea46898ec6481372a6326de3281bfbd",
+    "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "known_games": 30280,
+    "known_board_keys": 71463,
+    "source_rows_scanned": 23463,
+    "new_games": 32,
+    "pre_move_boards": 32,
+    "supplied_moves": 64,
+    "license_declared": "CC0-1.0"
+  },
+  "execution": {
+    "status": "PASS",
+    "failure": null,
+    "last_owned_pid": 43312,
+    "last_exit_code": 0,
+    "forced_owned_termination": false,
+    "elapsed_seconds": 204.45300000000134,
+    "planned": 64,
+    "no_response_retries": true,
+    "failed_outcome_ledger_sha256": null
+  },
+  "loaded_model_before": {
+    "base": {
+      "sha256": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008",
+      "tensors": 310,
+      "scalars": 596049920
+    },
+    "adapter": {
+      "sha256": "a37d6d6dca148d0bf1089991374b0f9cd2723e080bc84d0cddc09d89b7002a43",
+      "tensors": 392,
+      "scalars": 5046272
+    },
+    "tied": true,
+    "all_parameters_frozen": true,
+    "base_dtype": "bfloat16",
+    "adapter_dtype": "float32"
+  },
+  "loaded_model_after": {
+    "base": {
+      "sha256": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008",
+      "tensors": 310,
+      "scalars": 596049920
+    },
+    "adapter": {
+      "sha256": "a37d6d6dca148d0bf1089991374b0f9cd2723e080bc84d0cddc09d89b7002a43",
+      "tensors": 392,
+      "scalars": 5046272
+    },
+    "tied": true,
+    "all_parameters_frozen": true,
+    "base_dtype": "bfloat16",
+    "adapter_dtype": "float32"
+  },
+  "raw_seal_sha256": "3baf918c02223f2ef82de5014fb798ac564c755fcc1849392deee77e8c1cfa3f",
+  "score_sha256": "ddf11538ff5a820ee8638dc0d46099c021f6c5a0b661811ee4d1614c65a262a8",
+  "pre_call_commit": "2739917c014aa0294d80a55186b174acabf9be00",
+  "limits": [
+    "Balanced matched panel does not estimate natural accuracy; no percentage-point comparison to primary convenience panel.",
+    "No positive promotion/castling/en-passant cases; six pawn captures and no moving-king cases.",
+    "Known-history disjointness only; original Gotham games/full histories and upstream pretraining unknown.",
+    "The descriptive result does not identify a causal mechanism or establish playing strength/strategic ideas.",
+    "No automatic promotion, training or model-call retry.",
+    "Codex-assisted research engineering; practical audits do not replace the formal research-promotion gate."
+  ],
+  "check_confusion": {
+    "TP": 0,
+    "FN": 32,
+    "FP": 0,
+    "TN": 32,
+    "unknown": 0,
+    "schema_failure": 0,
+    "runtime_error": 0,
+    "truncated": 0,
+    "not_run": 0
+  },
+  "independent_completed_audit_sha256": "2f5c9b0e470d300021449349a503cbaed3357fa3bbf24cacc559acd31664b3a3",
+  "completed_audit_evidence_sha256": "80562db89e7e6ffdf85bfe80a880f8dd1505a8d1b3603462db5cc67186e55a8e",
+  "root_publication_GO_sha256": "e1472e216061eaa9701bcd96454db3d2e394015330946f978788416038ac3898",
+  "public_manifest_sha256": "c5b86ed71449f0bc235155457c05ea7a046227189aad12a88f332df9d45d8aef",
+  "new_training_updates": 0,
+  "engine_calls": 0,
+  "actual_model_generations": 64,
+  "actual_attempts": 1
+}

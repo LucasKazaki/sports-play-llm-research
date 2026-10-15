@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "C:\Users\lucas\AppData\Local\Programs\Python\Python312\Lib\importlib\metadata\__init__.py", line 397, in from_name
+    return next(cls.discover(name=name))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "C:\Users\lucas\AppData\Local\Programs\Python\Python312\Lib\importlib\metadata\__init__.py", line 888, in version
+    return distribution(distribution_name).version
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Local\Programs\Python\Python312\Lib\importlib\metadata\__init__.py", line 861, in distribution
+    return Distribution.from_name(distribution_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\lucas\AppData\Local\Programs\Python\Python312\Lib\importlib\metadata\__init__.py", line 399, in from_name
+    raise PackageNotFoundError(name)
+importlib.metadata.PackageNotFoundError: No package metadata was found for python-chess

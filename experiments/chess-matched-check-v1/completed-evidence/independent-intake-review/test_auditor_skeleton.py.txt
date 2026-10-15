@@ -1,0 +1,85 @@
+import copy
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+
+import pytest
+
+import auditor_skeleton as audit
+import matched_check_reference as ref
+
+
+def records():
+    fixtures = json.loads(Path(__file__).with_name("constructed-fixtures.json").read_text())["fixtures"]
+    result = ref.reconstruct_fixture_selection([fixtures[0]["row"], fixtures[1]["row"]], target=2)
+    assert result["status"] == "complete"
+    return result["pairs"]
+
+
+def test_pure_fixture_rows_keep_full_paired_denominator_and_no_label_fields():
+    pairs = records(); inputs, labels = audit.expected_rows(pairs)
+    assert audit.compare_rows(pairs, inputs, labels, planned_pairs=2) == {"pairs": 2, "rows": 4, "checking": 2, "nonchecking": 2, "input_extra_fields": 0}
+    assert all(set(row) == {"case_id", "fen", "selected_uci"} for row in inputs)
+
+
+@pytest.mark.parametrize("failure", ["extra_answer", "missing_row", "wrong_order", "bool_as_int", "wrong_truth"])
+def test_candidate_row_or_label_corruption_is_rejected(failure):
+    pairs = records(); inputs, labels = audit.expected_rows(pairs)
+    if failure == "extra_answer": inputs[0]["gives_check"] = labels[0]["expected"]["gives_check"]
+    elif failure == "missing_row": inputs.pop()
+    elif failure == "wrong_order": inputs.reverse()
+    elif failure == "bool_as_int": labels[0]["expected"]["gives_check"] = int(labels[0]["expected"]["gives_check"])
+    elif failure == "wrong_truth": labels[0]["expected"]["gives_check"] = not labels[0]["expected"]["gives_check"]
+    with pytest.raises(ValueError): audit.compare_rows(pairs, inputs, labels, planned_pairs=2)
+
+
+class FakeTokenizer:
+    eos_token_id = 151645
+    prefix_count = 3
+    target_count = 2
+    omit_eos = False
+    bad_prefix = False
+    wrong_decode = False
+    def apply_chat_template(self, messages, **kwargs):
+        assert kwargs["enable_thinking"] is False and kwargs["return_dict"] is False
+        prefix = [10]*self.prefix_count
+        if len(messages) == 1: return prefix
+        self.expected_text = messages[1]["content"]
+        content = [20]*(self.target_count-1)
+        if self.bad_prefix: prefix[0] = 11
+        return prefix + content + ([] if self.omit_eos else [self.eos_token_id]) + [99]
+    def decode(self, ids, **kwargs):
+        assert kwargs["skip_special_tokens"] is False
+        return "wrong" if self.wrong_decode else self.expected_text
+
+
+def sample():
+    pairs = records(); inputs, labels = audit.expected_rows(pairs)
+    return inputs[0], labels[0]["expected"]
+
+
+def test_native_boundary_skeleton_uses_joint_prefix_first_eos_and_omits_chat_newline():
+    row, truth = sample()
+    result = audit.independent_native_boundary(FakeTokenizer(), row, truth, "fixture instruction: ")
+    assert result["target_ids"] == [20, 151645]
+    assert result["sequence_count"] == 5
+
+
+@pytest.mark.parametrize("attribute,value", [("prefix_count", 1409), ("target_count", 128),
+    ("omit_eos", True), ("bad_prefix", True), ("wrong_decode", True)])
+def test_native_boundary_errors_are_not_silently_truncated_or_repaired(attribute, value):
+    tokenizer = FakeTokenizer(); setattr(tokenizer, attribute, value)
+    row, truth = sample()
+    with pytest.raises(ValueError): audit.independent_native_boundary(tokenizer, row, truth, "fixture: ")
+
+
+@pytest.mark.parametrize("flag", [[], ["--completed-intake-audit-authorized"]])
+def test_cli_refuses_real_source_or_cohort_access_before_adapter_review(tmp_path, flag):
+    absent = tmp_path / "never_open_this_cohort"
+    environment = {**os.environ, "__PYVENV_LAUNCHER__": sys.executable}
+    result = subprocess.run([sys._base_executable, "-B", str(Path(audit.__file__)), "--cohort", str(absent), *flag], capture_output=True, text=True, timeout=10, env=environment)
+    assert result.returncode == 2
+    assert "Real-cohort adapter not implemented" in result.stderr
+    assert not absent.exists()
