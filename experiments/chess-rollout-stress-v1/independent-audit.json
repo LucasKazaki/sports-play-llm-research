@@ -1,0 +1,184 @@
+{
+  "scope": "independent retained-artifact audit; no model/engine calls",
+  "hash_checks": 24,
+  "hash_bound_paths": [
+    "research\\chess-rollout-stress-protocol-v1.json",
+    "data\\private\\chess-rollout-stress-v1\\executed-chess_rollout_stress.py",
+    "scripts\\chess_rollout_stress.py",
+    "data\\private\\chess-rollout-stress-v1\\executed-chess_classifier_adapter.py",
+    "scripts\\chess_classifier_adapter.py",
+    "data\\private\\chess-rollout-stress-v1\\executed-chess_stockfish_distill.py",
+    "scripts\\chess_stockfish_distill.py",
+    "data\\private\\chess-rollout-stress-v1\\executed-chess-rollout-stress-protocol-v1.json",
+    "research\\chess-rollout-stress-protocol-v1.json",
+    "data\\private\\chess-classifier-v3\\base-model\\config.json",
+    "data\\private\\chess-classifier-v3\\base-model\\tokenizer_config.json",
+    "data\\private\\chess-classifier-v3\\base-model\\tokenizer.py",
+    "data\\private\\chess-classifier-v3\\base-model\\tokenizer.json",
+    "data\\private\\chess-classifier-v3\\base-model\\model.safetensors",
+    "data\\private\\chess-classifier-v3\\checkpoints\\step-512\\config.json",
+    "data\\private\\chess-classifier-v3\\checkpoints\\step-512\\tokenizer_config.json",
+    "data\\private\\chess-classifier-v3\\checkpoints\\step-512\\tokenizer.py",
+    "data\\private\\chess-classifier-v3\\checkpoints\\step-512\\tokenizer.json",
+    "data\\private\\chess-classifier-v3\\checkpoints\\step-512\\model.safetensors",
+    "data\\private\\chess-distill-v1\\tools\\stockfish\\stockfish-windows-x86-64-universal.exe",
+    "data\\private\\chess-rollout-stress-v1\\games.json",
+    "data\\private\\chess-rollout-stress-v1\\games.pgn",
+    "data\\private\\chess-rollout-stress-v1\\base-logits.npy",
+    "data\\private\\chess-rollout-stress-v1\\selected_step_512-logits.npy"
+  ],
+  "games": 64,
+  "pgns": 64,
+  "logit_rows": 2252,
+  "legal_applied_moves": 4528,
+  "all_logits_finite": true,
+  "every_row_linked_exactly_once": true,
+  "aggregate": {
+    "base:raw_abstain": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 15,
+        "raw_illegal": 1
+      },
+      "chess_results": {
+        "0-1": 8,
+        "1-0": 7,
+        "*": 1
+      },
+      "model_decisions": 590,
+      "raw_legal_decisions": 589,
+      "mask_interventions": 0,
+      "additional_plies": 1186
+    },
+    "base:legal_mask": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 16
+      },
+      "chess_results": {
+        "0-1": 8,
+        "1-0": 8
+      },
+      "model_decisions": 590,
+      "raw_legal_decisions": 589,
+      "mask_interventions": 1,
+      "additional_plies": 1188
+    },
+    "selected_step_512:raw_abstain": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 13,
+        "raw_illegal": 3
+      },
+      "chess_results": {
+        "0-1": 7,
+        "1-0": 6,
+        "*": 3
+      },
+      "model_decisions": 527,
+      "raw_legal_decisions": 524,
+      "mask_interventions": 0,
+      "additional_plies": 1056
+    },
+    "selected_step_512:legal_mask": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 16
+      },
+      "chess_results": {
+        "0-1": 8,
+        "1-0": 8
+      },
+      "model_decisions": 545,
+      "raw_legal_decisions": 541,
+      "mask_interventions": 4,
+      "additional_plies": 1098
+    }
+  },
+  "checkmate_perspective": {
+    "base:raw_abstain:opponent_win": 15,
+    "base:legal_mask:opponent_win": 16,
+    "selected_step_512:raw_abstain:opponent_win": 13,
+    "selected_step_512:legal_mask:opponent_win": 16
+  },
+  "raw_illegal_games": [
+    {
+      "id": "base:raw_abstain:fianchetto:black",
+      "additional_plies": 81,
+      "fen": "8/3R2bk/8/5p1p/8/2Qp2PP/3B1PK1/1N6 b - - 2 43",
+      "raw_uci": "h7h6",
+      "logit_row": 1105
+    },
+    {
+      "id": "selected_step_512:raw_abstain:open-centre:black",
+      "additional_plies": 63,
+      "fen": "8/p1p2k1p/5b2/8/P1P5/5R2/5PK1/R1B5 b - - 0 34",
+      "raw_uci": "f6a1",
+      "logit_row": 911
+    },
+    {
+      "id": "selected_step_512:raw_abstain:early-queen:black",
+      "additional_plies": 41,
+      "fen": "r4kr1/pR3p1p/2p1p3/5p1N/3P4/Q7/2q1BPPP/3R2K1 b - - 2 23",
+      "raw_uci": "f8g7",
+      "logit_row": 662
+    },
+    {
+      "id": "selected_step_512:raw_abstain:locked-pawns:white",
+      "additional_plies": 110,
+      "fen": "7K/1p3q2/8/8/4k3/1P6/3r4/8 w - - 2 59",
+      "raw_uci": "h8g8",
+      "logit_row": 1070
+    }
+  ],
+  "paired_common_history_checks": 32,
+  "identical_raw_mask_pairs": 28,
+  "divergent_raw_mask_pairs": [
+    {
+      "model": "base",
+      "opening": "fianchetto",
+      "colour": "black",
+      "same_move_sequence": false,
+      "common_additional_plies": 81,
+      "raw_termination": "raw_illegal",
+      "mask_interventions": 1
+    },
+    {
+      "model": "selected_step_512",
+      "opening": "open-centre",
+      "colour": "black",
+      "same_move_sequence": false,
+      "common_additional_plies": 63,
+      "raw_termination": "raw_illegal",
+      "mask_interventions": 2
+    },
+    {
+      "model": "selected_step_512",
+      "opening": "early-queen",
+      "colour": "black",
+      "same_move_sequence": false,
+      "common_additional_plies": 41,
+      "raw_termination": "raw_illegal",
+      "mask_interventions": 1
+    },
+    {
+      "model": "selected_step_512",
+      "opening": "locked-pawns",
+      "colour": "white",
+      "same_move_sequence": false,
+      "common_additional_plies": 110,
+      "raw_termination": "raw_illegal",
+      "mask_interventions": 1
+    }
+  ],
+  "max_same_fen_logit_abs_delta": 0.0,
+  "limitations": [
+    "Authored opening software stress only",
+    "No Elo or fresh acquired holdout inference",
+    "Raw-illegal unfinished games are not chess losses",
+    "Legality masking adds external rule assistance",
+    "No direct evidence of language understanding, commentary or sports transfer",
+    "Hash consistency does not independently reproduce GPU calls or engine search"
+  ],
+  "verdict": "Narrow software stress observation supported; all 60 actual checkmates were opponent wins, four additional raw-illegal failures are unfinished"
+}

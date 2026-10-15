@@ -1,0 +1,24 @@
+{
+  "schema": "chess.rollout.stress.protocol.v1",
+  "status": "frozen_before_rollout_model_calls",
+  "purpose": "Expose compounding legality and integration failures in a fixed software stress panel. No model selection, training, Elo or independent real-game generalization claim.",
+  "inputs": "Eight deliberately authored opening fixtures legally replayed from the standard initial board; these are synthetic software fixtures, not acquired human games or video positions.",
+  "openings": [
+    {"id": "initial", "uci": []},
+    {"id": "open-centre", "uci": ["e2e4", "e7e5", "g1f3", "b8c6"]},
+    {"id": "asymmetric-centre", "uci": ["e2e4", "c7c5", "g1f3", "d7d6"]},
+    {"id": "closed-centre", "uci": ["d2d4", "d7d5", "c2c4", "e7e6"]},
+    {"id": "fianchetto", "uci": ["g1f3", "d7d5", "g2g3", "g8f6"]},
+    {"id": "early-queen", "uci": ["e2e4", "d7d5", "e4d5", "d8d5"]},
+    {"id": "locked-pawns", "uci": ["e2e4", "e7e6", "d2d4", "d7d5", "e4e5", "c7c5"]},
+    {"id": "exchange-centre", "uci": ["e2e4", "c7c6", "d2d4", "d7d5", "e4d5", "c6d5"]}
+  ],
+  "conditions": {"models": ["base", "selected_step_512"], "modes": ["raw_abstain", "legal_mask"], "model_colours": ["white", "black"], "planned_games": 64, "max_additional_plies": 200},
+  "model_binding": {"base_weight_sha256": "c078a2a8ff26fb9d9c6b4cfcf684da4c72dbec124eb1442f36bb8461293c9b22", "selected_weight_sha256": "2643e51526335e5a33a67370bf1fa70ddf3c6b2e64b31550ad6ca033f9430a22", "selection": "Frozen v3 development-selected step512; no rollout-based weight or hyperparameter changes"},
+  "opponent": {"name": "Stockfish19", "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0", "nodes_per_move": 10000, "threads": 1, "hash_mb": 32, "clear_hash_per_move": true, "full_legal_move_stack": true},
+  "decision_rules": {"model_inputs": "Native FEN tokens only; no opponent answer, scores or continuation", "raw": "Record top class and stop game as raw_illegal if it is not a legal move; do not count as chess checkmate or replace it", "legal_mask": "Record the same raw class separately and select the highest-ranked legal class; retain every masked intervention", "draw": "Stop on python-chess outcome(claim_draw=True), explicitly including immediately claimable draws", "cap": "Stop as ply_cap with result*; never relabel as a draw", "errors": "Model/adapter/opponent exceptions remain explicit failed games in the full64 denominator; unstarted games remain not_run"},
+  "retention": ["Exact protocol bytes and source hashes before calls", "Model and engine identities", "Every pre-move FEN, raw decision, applied legal move and legal replay", "Full PGNs, including unfinished games and non-chess termination labels", "Complete game denominator and separate raw-legality, legal-mask, terminal-outcome and error counts"],
+  "limitations": ["Designed opening panel, not a fresh acquired holdout", "Opponents are bounded searches, not a calibrated rating reference", "Legality masking is rule assistance and cannot establish learned rule compliance", "A raw-illegal stop is an integration failure rather than a chess loss", "No commentary, teaching, professional quality or sports-transfer evidence"],
+  "sources": ["https://python-chess.readthedocs.io/en/latest/core.html#chess.Board.outcome", "https://python-chess.readthedocs.io/en/latest/engine.html#chess.engine.Protocol.play"],
+  "assistance": "Codex-assisted implementation and candidate evidence; preserve provenance"
+}

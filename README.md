@@ -10,6 +10,13 @@ It remains an experimental move-policy candidate, with no automatic default
 replacement, Elo or commentary claim. Raw and legal-mask results stay separate.
 The v1/v2 negative language-model pilots below remain preserved.
 
+The subsequent [64-game software stress panel](reports/chess-rollout-stress-2026-10-15.md)
+ended in 60 opponent checkmates and four raw-illegal unfinished games. Explicit
+legal masking exposed one base and four selected-policy interventions. These
+authored opening fixtures test sequential integration; they are not a real-game
+holdout or Elo measurement. Complete generated PGNs and an independent artifact
+audit are retained with the aggregate evidence.
+
 ## Local chess execution — October 15, 2026
 
 Real Windows/CUDA execution now includes pinned ROOK-LM-124m inference,
