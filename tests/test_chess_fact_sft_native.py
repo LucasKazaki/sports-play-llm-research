@@ -199,3 +199,49 @@ def test_full_denominator_recovery_keeps_partial_and_unstarted_cohorts(tmp_path)
     assert value['cohorts']['dev-0'][1]['actual_call_status'] == 'unknown_after_local_failure'
     assert all(row['status']=='not_run' for name,rows in value['cohorts'].items() if name!='dev-0' for row in rows)
     assert value['recovery_notes'][0]['journal_partial_or_invalid']
+
+
+@pytest.mark.parametrize('code', [5,32,33])
+def test_transient_windows_reader_conflicts_preserve_atomic_bytes(tmp_path, monkeypatch, code):
+    from types import SimpleNamespace
+    import chess_fact_sft_common as common
+    target = tmp_path/'status.json'
+    save(target, {'version':'old'})
+    original = Path.replace
+    calls, sleeps, temp_bytes = [], [], []
+    def replace(source, destination):
+        calls.append(str(destination)); temp_bytes.append(source.read_bytes())
+        if len(calls) <= 3:
+            assert read(target) == {'version':'old'}
+            error = PermissionError('injected reader lock')
+            error.winerror = code
+            raise error
+        return original(source, destination)
+    monkeypatch.setattr(Path, 'replace', replace)
+    monkeypatch.setattr(common, 'time', SimpleNamespace(sleep=sleeps.append))
+    save(target, {'version':'new'})
+    assert len(calls) == 4 and sleeps == [.020]*3
+    assert len(set(temp_bytes)) == 1 and read(target) == {'version':'new'}
+    assert not target.with_name('status.json.tmp').exists()
+
+
+@pytest.mark.parametrize('code,attempts,sleeps', [(5,51,50),(32,51,50),(33,51,50),(112,1,0)])
+def test_permanent_or_unrelated_file_failure_stays_bounded_and_preserved(tmp_path, monkeypatch, code, attempts, sleeps):
+    from types import SimpleNamespace
+    import chess_fact_sft_common as common
+    target = tmp_path/'status.json'
+    save(target, {'version':'old'})
+    observed, waits = [], []
+    def fail(source, destination):
+        observed.append(source.read_bytes())
+        error = OSError('injected permanent local failure')
+        error.winerror = code
+        raise error
+    monkeypatch.setattr(Path, 'replace', fail)
+    monkeypatch.setattr(common, 'time', SimpleNamespace(sleep=waits.append))
+    with pytest.raises(OSError, match='permanent'):
+        save(target, {'version':'new'})
+    assert len(observed) == attempts and len(waits) == sleeps
+    assert sum(waits) <= 1.000000001
+    assert read(target) == {'version':'old'}
+    assert json.loads(target.with_name('status.json.tmp').read_text()) == {'version':'new'}

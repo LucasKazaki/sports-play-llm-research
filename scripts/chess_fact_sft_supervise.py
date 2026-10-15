@@ -11,7 +11,7 @@ from urllib.request import urlopen
 from chess_fact_sft_common import read, save, sha, declare_run, finalize_run_ledger
 from chess_native_resources import windows_sample, Policy, reasons
 
-LAUNCH_AMENDMENT_SHA256 = 'e2dd94d0d47fbf59e90d3c678d41ce6f0e48d1ecb6adb43fae879767ced7d2a8'
+LAUNCH_AMENDMENT_SHA256 = '265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e'
 
 
 def launch_configuration(repo, out, amendment_path):
@@ -27,9 +27,10 @@ def launch_configuration(repo, out, amendment_path):
         raise ValueError('amended launch requires reviewed Windows Python3.12.2')
     if any(os.environ.get(name) for name in ('PYTHONHOME','PYTHONPATH','PYTHONEXECUTABLE','__PYVENV_LAUNCHER__')):
         raise ValueError('conflicting Python path environment')
-    for name, digest in amendment['previous_attempt']['files_sha256'].items():
-        if sha(repo/amendment['previous_attempt']['path']/name) != digest:
-            raise ValueError('retained original attempt changed')
+    for previous in [amendment['previous_attempt'], *amendment.get('additional_previous_attempts', [])]:
+        for name, digest in previous['files_sha256'].items():
+            if sha(repo/previous['path']/name) != digest:
+                raise ValueError('retained original attempt changed')
     base = Path(sys._base_executable).resolve()
     launcher = Path(sys.executable).resolve()
     if launcher != (repo/'.venv-soccernet/Scripts/python.exe').resolve() or Path(sys.prefix).resolve() != (repo/'.venv-soccernet').resolve():

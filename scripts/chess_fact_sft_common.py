@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import time
 import chess_board_fact_core as core
 
 
@@ -22,7 +23,14 @@ def save(path, value):
     path = Path(path)
     temp = path.with_name(path.name + '.tmp')
     temp.write_text(json.dumps(value, indent=2, allow_nan=False) + '\n', encoding='utf-8', newline='\n')
-    temp.replace(path)
+    for attempt in range(51):
+        try:
+            temp.replace(path)
+            break
+        except OSError as error:
+            if getattr(error, 'winerror', None) not in (5,32,33) or attempt == 50:
+                raise
+            time.sleep(.020)  # Local sharing conflicts only; never replay model work.
 
 
 def native_prompt(tokenizer, row):
