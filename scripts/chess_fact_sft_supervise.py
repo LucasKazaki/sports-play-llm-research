@@ -2,6 +2,7 @@
 from __future__ import annotations
 import argparse
 from dataclasses import asdict
+import os
 from pathlib import Path
 import subprocess
 import sys
@@ -9,6 +10,43 @@ import time
 from urllib.request import urlopen
 from chess_fact_sft_common import read, save, sha, declare_run, finalize_run_ledger
 from chess_native_resources import windows_sample, Policy, reasons
+
+LAUNCH_AMENDMENT_SHA256 = 'e2dd94d0d47fbf59e90d3c678d41ce6f0e48d1ecb6adb43fae879767ced7d2a8'
+
+
+def launch_configuration(repo, out, amendment_path):
+    if amendment_path is None:
+        return sys.executable, None, None
+    path = Path(amendment_path).resolve()
+    if sha(path) != LAUNCH_AMENDMENT_SHA256:
+        raise ValueError('frozen launch amendment changed')
+    amendment = read(path)
+    if out != (repo/amendment['new_attempt']['path']).resolve():
+        raise ValueError('amended launch requires its single new attempt path')
+    if sys.platform != 'win32' or sys.version_info[:3] != (3,12,2):
+        raise ValueError('amended launch requires reviewed Windows Python3.12.2')
+    if any(os.environ.get(name) for name in ('PYTHONHOME','PYTHONPATH','PYTHONEXECUTABLE','__PYVENV_LAUNCHER__')):
+        raise ValueError('conflicting Python path environment')
+    for name, digest in amendment['previous_attempt']['files_sha256'].items():
+        if sha(repo/amendment['previous_attempt']['path']/name) != digest:
+            raise ValueError('retained original attempt changed')
+    base = Path(sys._base_executable).resolve()
+    launcher = Path(sys.executable).resolve()
+    if launcher != (repo/'.venv-soccernet/Scripts/python.exe').resolve() or Path(sys.prefix).resolve() != (repo/'.venv-soccernet').resolve():
+        raise ValueError('reviewed project virtualenv required')
+    if (sha(base) != amendment['launch']['base_executable_sha256'] or
+            sha(launcher) != amendment['launch']['venv_redirector_sha256']):
+        raise ValueError('native executable or virtualenv redirector changed')
+    environment = os.environ.copy()
+    environment['__PYVENV_LAUNCHER__'] = str(launcher)
+    identity = {'amendment_sha256':sha(path), 'base_executable':str(base),
+        'base_executable_sha256':sha(base), 'venv_executable':str(launcher),
+        'venv_executable_sha256':sha(launcher), 'venv_prefix':str(Path(sys.prefix).resolve()),
+        'pyvenv_cfg_sha256':sha(Path(sys.prefix)/'pyvenv.cfg'),
+        'changed_environment_keys':['__PYVENV_LAUNCHER__'],
+        'dependency_versions':{'torch':'2.8.0+cu128','transformers':'5.19.0','peft':'0.21.2',
+                               'accelerate':'1.15.0','pyarrow':'26.0.0'}}
+    return str(base), environment, identity
 
 
 def termination_due(cancelled_at, now):
@@ -27,10 +65,11 @@ def phase_deadline(start, phase, now):
     return []
 
 
-def run(repo, cohort, protocol, out):
+def run(repo, cohort, protocol, out, launch_amendment=None):
     repo, cohort, protocol, out = (Path(item).resolve() for item in (repo, cohort, protocol, out))
     if out.exists():
         raise ValueError('create-only job; no replay')
+    executable, child_environment, launch_identity = launch_configuration(repo, out, launch_amendment)
     # The fixed experiment assets/model are confined to this checkout's private area.
     cohort.relative_to(repo / 'data/private/chess-fact-sft-v1')
     out.relative_to(repo / 'data/private/chess-fact-sft-v1')
@@ -67,14 +106,17 @@ def run(repo, cohort, protocol, out):
             raise RuntimeError('resource preflight failed: ' + repr(issues))
         time.sleep(1.)
     save(out / 'preflight.json', {'status': 'passed', 'samples': records})
-    command = [sys.executable, str(repo / 'scripts/chess_fact_sft_train.py'), '--repo', str(repo),
+    command = [executable, str(repo / 'scripts/chess_fact_sft_train.py'), '--repo', str(repo),
         '--cohort', str(cohort), '--protocol', str(protocol), '--out', str(out)]
     sources = {}
     snapshots = out / 'executed-sources'
     snapshots.mkdir()
     import shutil
-    for path in [*repo.glob('scripts/chess_fact_sft_*.py'), repo/'scripts/chess_native_resources.py',
-                 repo/'scripts/chess_board_fact_core.py', protocol]:
+    source_paths = [*repo.glob('scripts/chess_fact_sft_*.py'), repo/'scripts/chess_native_resources.py',
+                 repo/'scripts/chess_board_fact_core.py', protocol]
+    if launch_amendment is not None:
+        source_paths.append(Path(launch_amendment).resolve())
+    for path in source_paths:
         target = snapshots / path.name
         shutil.copyfile(path, target)
         sources[path.relative_to(repo).as_posix()] = sha(path)
@@ -83,11 +125,14 @@ def run(repo, cohort, protocol, out):
     finalization_error = None
     with (out / 'worker.stdout.txt').open('wb') as stdout, (out / 'worker.stderr.txt').open('wb') as stderr, \
          (out / 'resources.jsonl').open('w', encoding='utf-8', buffering=1) as log:
-        child = subprocess.Popen(command, cwd=repo, stdout=stdout, stderr=stderr)
+        child = subprocess.Popen(command, cwd=repo, stdout=stdout, stderr=stderr, env=child_environment)
         forced = False
         try:
-            save(out / 'ownership.json', {'pid': child.pid, 'command': command, 'source_sha256': sources,
-                'started_monotonic': start, 'policy': asdict(policy), 'cohort_frozen_sha256': frozen_digest})
+            ownership = {'pid': child.pid, 'command': command, 'source_sha256': sources,
+                'started_monotonic': start, 'policy': asdict(policy), 'cohort_frozen_sha256': frozen_digest}
+            if launch_identity is not None:
+                ownership['native_launch_identity'] = launch_identity
+            save(out/'ownership.json', ownership)  # Publish complete identity atomically once.
             while child.poll() is None:
                 now = time.monotonic()
                 current_issues = []
@@ -147,4 +192,5 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     for item in ('repo', 'cohort', 'protocol', 'out'):
         parser.add_argument('--' + item, required=True)
+    parser.add_argument('--launch-amendment')
     run(**vars(parser.parse_args()))

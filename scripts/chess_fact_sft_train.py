@@ -31,12 +31,25 @@ def base_hash(model):
     return digest.hexdigest()
 
 
-def score_external(repo, cohort, raw, split, expected_label_sha256):
+def score_external(repo, cohort, raw, split, expected_label_sha256, native_launch_identity=None):
     score = raw.parent / (raw.name + '-score.json')
-    subprocess.run([sys.executable, str(repo / 'scripts/chess_fact_sft_evaluate.py'),
+    executable, environment = sys.executable, None
+    if native_launch_identity is not None:
+        import os
+        identity = native_launch_identity
+        if (str(Path(sys._base_executable).resolve()) != identity['base_executable'] or
+                str(Path(sys.prefix).resolve()) != identity['venv_prefix'] or
+                sha(Path(identity['base_executable'])) != identity['base_executable_sha256']):
+            raise ValueError('CPU evaluator native launch identity mismatch')
+        if any(os.environ.get(name) for name in ('PYTHONHOME','PYTHONPATH','PYTHONEXECUTABLE','__PYVENV_LAUNCHER__')):
+            raise ValueError('conflicting evaluator Python path environment')
+        environment = os.environ.copy()
+        environment['__PYVENV_LAUNCHER__'] = identity['venv_executable']
+        executable = identity['base_executable']
+    subprocess.run([executable, str(repo / 'scripts/chess_fact_sft_evaluate.py'),
         '--raw', str(raw), '--labels', str(cohort / (split + '-labels.json')), '--out', str(score),
         '--expected-label-sha256', expected_label_sha256],
-        check=True, timeout=60, capture_output=True, text=True)
+        check=True, timeout=60, capture_output=True, text=True, env=environment)
     return read(score)
 
 
@@ -114,6 +127,16 @@ def run(repo, cohort, protocol, out):
     ownership = read(out / 'ownership.json')
     if ownership['pid'] != os.getpid():
         raise ValueError('child ownership identity mismatch')
+    launch = ownership.get('native_launch_identity')
+    if launch is not None:
+        if (str(Path(sys.prefix).resolve()) != launch['venv_prefix'] or
+                str(Path(sys.executable).resolve()) != launch['venv_executable'] or
+                str(Path(sys._base_executable).resolve()) != launch['base_executable'] or
+                sha(Path(sys.prefix)/'pyvenv.cfg') != launch['pyvenv_cfg_sha256']):
+            raise ValueError('native worker virtualenv identity mismatch')
+        import importlib.metadata
+        if any(importlib.metadata.version(name) != version for name, version in launch['dependency_versions'].items()):
+            raise ValueError('native worker dependency version drift')
     for name, digest in ownership['source_sha256'].items():
         if sha(repo / name) != digest:
             raise ValueError('executed source changed after parent snapshot')
@@ -212,7 +235,7 @@ def run(repo, cohort, protocol, out):
                 'checkpoint_sha256': binding, 'inputs_sha256': sha(cohort/'dev-inputs.json'),
                 'protocol_sha256': sha(protocol)}
             generate_cohort(model, tokenizer, dev_inputs, raw, metadata, out, step == 0, torch)
-            value = score_external(repo, cohort, raw, 'dev', frozen['files_sha256']['dev-labels.json'])
+            value = score_external(repo, cohort, raw, 'dev', frozen['files_sha256']['dev-labels.json'], launch)
             scores.append({'step': step, 'counts': value['counts'], 'score_sha256': sha(raw.parent/(raw.name+'-score.json')),
                 'checkpoint_sha256': binding})
             save(out / 'dev-scores.json', scores)
@@ -293,7 +316,7 @@ def run(repo, cohort, protocol, out):
         # Both full conditions are sealed before this separate label-reading process.
         for condition in ('base', 'selected'):
             score_external(repo, cohort, out/('holdout-'+condition), 'holdout',
-                frozen['files_sha256']['holdout-labels.json'])
+                frozen['files_sha256']['holdout-labels.json'], launch)
         after = base_hash(model)
         if before != after:
             raise ValueError('frozen base weights changed')
