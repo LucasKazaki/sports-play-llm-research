@@ -1,0 +1,212 @@
+{
+  "schema": "sports-play-llm.chess.creator-private-benchmark.v1",
+  "created_at_utc": "2026-10-15T05:05:35Z",
+  "status": "media_acquired_positions_pending",
+  "channel_id": "UCQHX6ViZmPsWiYSFAyS0a3Q",
+  "source_policy": {
+    "classification": "private_observational_holdout",
+    "user_authorized_private_download": true,
+    "media_committed": false,
+    "transcripts_committed": false,
+    "training_allowed": false,
+    "redistribution_allowed": false,
+    "source_index_history": "research/gothamchess-ai-agent-discovery-2026-10-14.json"
+  },
+  "selection": {
+    "method": "latest public channel listing; first three AI-title candidates in a bounded 40-upload scan",
+    "channel_url": "https://www.youtube.com/@GothamChess/videos",
+    "scan_receipt": "data/private/gothamchess/latest-uploads.json",
+    "scanned_uploads": 40,
+    "scanned_at_utc": "2026-10-15T05:03:22Z"
+  },
+  "acquisition": {
+    "collector": "scripts/collect_gothamchess_media.py",
+    "collector_sha256": "c359fa3d6a47db9f84415c248c4bba5753e6964a8b43dbcdc15240ca1cb20fa1",
+    "yt_dlp_version": "2026.8.19",
+    "selection_manifest": "research/gothamchess-source-selection-2026-10-15.json",
+    "selection_manifest_sha256": "9533cca333ee86e7634e72ff56004b7232bf4b8c79fc5c64cfd3e57de347fe99",
+    "private_receipt": "data/private/gothamchess/media/collection-receipt.json",
+    "private_receipt_sha256": "e04b418cd14b3552417951cdd74b176e4c0c537849f27d39ab380c077a4233a1",
+    "private_integrity_receipt": "data/private/gothamchess/media-integrity.json",
+    "private_integrity_receipt_sha256": "0a764eb40c54f20c392051570d1e5d77e0292a4c706154454814d7baed2c0a4d",
+    "private_scan_receipt_sha256": "a34892ed7f5de09fba73a991f4f5ca18afe370e5495b5afef8f289a920cc8559",
+    "status": "completed",
+    "total_final_media_bytes": 195060289,
+    "source_access": "public unauthenticated; no cookies or account login",
+    "limitations": [
+      "yt-dlp reported no supported JavaScript runtime; downloaded formats succeeded, format availability may have been incomplete.",
+      "Source titles differ between channel listing and detail extraction; identifiers, observed fields and original history are retained.",
+      "No direct .pgn URL appeared in the three extracted descriptions; shortened links and comments were not exhaustively investigated."
+    ]
+  },
+  "videos": [
+    {
+      "youtube_id": "sskvj1_ehx4",
+      "watch_url": "https://www.youtube.com/watch?v=sskvj1_ehx4",
+      "detail_title_observed": "GPT-6 Astra vs Opus 5.5: The End Of Chess",
+      "channel_listing_title_observed": "GPT-6 ASTRA vs CLAUDE OPUS 5.5 (10,000 ELO CHESS)",
+      "upload_date_utc": "20261014",
+      "duration_seconds_metadata": 1841,
+      "channel_listing_ordinal": 1,
+      "status": "downloaded",
+      "files": [
+        {
+          "private_path": "data/private/gothamchess/media/sskvj1_ehx4.mp4",
+          "bytes": 76954957,
+          "sha256": "56e035edc9fc121f4b94d00bda71cc81d88ff8069f870ec8edd0d1fee81f8afe"
+        }
+      ],
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "codec_name": "opus",
+            "codec_type": "audio"
+          }
+        ],
+        "format": {
+          "duration": "1840.914000",
+          "size": "76954957"
+        }
+      },
+      "pgn_link_candidates": [],
+      "benchmark_role": "sealed_observational_holdout",
+      "training_allowed": false,
+      "positions": []
+    },
+    {
+      "youtube_id": "ulLBRyVrI1Y",
+      "watch_url": "https://www.youtube.com/watch?v=ulLBRyVrI1Y",
+      "detail_title_observed": "GPT-6 ASTRA vs CLAUDE FABLE 5.1 (INSANE CHESS MATCH)",
+      "channel_listing_title_observed": "GPT-6 ASTRA vs CLAUDE FABLE 5.1 (INSANE CHESS MATCH)",
+      "upload_date_utc": "20261012",
+      "duration_seconds_metadata": 1557,
+      "channel_listing_ordinal": 2,
+      "status": "downloaded",
+      "files": [
+        {
+          "private_path": "data/private/gothamchess/media/ulLBRyVrI1Y.mp4",
+          "bytes": 58503419,
+          "sha256": "69f0de2e6ddef13c6a65a8889d913388c5627dd82a3685ed47dccb77b5842dd6"
+        }
+      ],
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "codec_name": "opus",
+            "codec_type": "audio"
+          }
+        ],
+        "format": {
+          "duration": "1557.394000",
+          "size": "58503419"
+        }
+      },
+      "pgn_link_candidates": [],
+      "benchmark_role": "sealed_observational_holdout",
+      "training_allowed": false,
+      "positions": []
+    },
+    {
+      "youtube_id": "PVVA-_wvKks",
+      "watch_url": "https://www.youtube.com/watch?v=PVVA-_wvKks",
+      "detail_title_observed": "GPT-6 Astra Solved Chess. Unbelievable.",
+      "channel_listing_title_observed": "GPT-6 Astra Solved Chess. Unbelievable.",
+      "upload_date_utc": "20261010",
+      "duration_seconds_metadata": 1503,
+      "channel_listing_ordinal": 3,
+      "status": "downloaded",
+      "files": [
+        {
+          "private_path": "data/private/gothamchess/media/PVVA-_wvKks.mp4",
+          "bytes": 59601913,
+          "sha256": "4e7bf19d1cb7bcb00a02092c1d9c521c862c1f96e96c18ea822dc40daa2c71f1"
+        }
+      ],
+      "ffprobe": {
+        "programs": [],
+        "stream_groups": [],
+        "streams": [
+          {
+            "codec_name": "av1",
+            "codec_type": "video",
+            "width": 1280,
+            "height": 720
+          },
+          {
+            "codec_name": "opus",
+            "codec_type": "audio"
+          }
+        ],
+        "format": {
+          "duration": "1502.794000",
+          "size": "59601913"
+        }
+      },
+      "pgn_link_candidates": [],
+      "benchmark_role": "sealed_observational_holdout",
+      "training_allowed": false,
+      "positions": []
+    }
+  ],
+  "position_intake": {
+    "status": "pending_manual_source_validation",
+    "accepted_positions": 0,
+    "reason": "A video title and downloaded bytes do not establish legal board positions or comparable model prompts. No positions are fabricated.",
+    "template": "research/gothamchess-position-intake-v1.template.json"
+  },
+  "split_policy": {
+    "unit": "entire original game",
+    "role": "sealed_observational_holdout",
+    "exclude_from": [
+      "training",
+      "teacher_distillation",
+      "prompt_examples",
+      "development_tuning"
+    ],
+    "release_to_evaluation_only_after": [
+      "source PGN or independent visual transcription validated by legal replay",
+      "position timestamp and visible board verified by human review",
+      "original game fingerprint excluded from training and development",
+      "frozen evaluation protocol; no-forward input audit"
+    ]
+  },
+  "validation": {
+    "ffprobe_passed": 3,
+    "video_frames_checked": [
+      {
+        "youtube_id": "sskvj1_ehx4",
+        "timestamp_seconds": 180,
+        "observation": "Visible chess board and creator/model labels match the requested topic; visual spot check only, no game position accepted."
+      },
+      {
+        "youtube_id": "ulLBRyVrI1Y",
+        "timestamp_seconds": 180,
+        "observation": "Visible chess board and creator/model labels match the requested topic; visual spot check only, no game position accepted."
+      },
+      {
+        "youtube_id": "PVVA-_wvKks",
+        "timestamp_seconds": 180,
+        "observation": "Visible chess board and creator/model labels match the requested topic; visual spot check only, no game position accepted."
+      }
+    ],
+    "accepted_positions": 0,
+    "professional_chess_strength_claim": false,
+    "frontier_model_identity_verified": false
+  }
+}

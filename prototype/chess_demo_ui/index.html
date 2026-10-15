@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Chess evidence · PlayGround</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#position">Skip to position</a>
+  <header class="app-header">
+    <a class="brand" href="/" aria-label="PlayGround chess evidence"><span class="brand-mark" aria-hidden="true">♞</span><span>PlayGround<span class="brand-subtitle">Chess evidence</span></span></a>
+    <span class="local-label">Local research preview</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div><p class="eyebrow">Position → evidence → review</p><h1 id="page-title">Inspect the position.</h1><p class="intro-copy">Compare retained moves, inspect the source, and read the actual output. Keep the evidence close to the claim.</p></div>
+      <div class="load-actions"><button id="loadDevelopment" type="button">Open development set</button><label class="button primary" for="fileInput">Open result JSON<input id="fileInput" type="file" accept=".json,application/json"></label><p>Files stay in this browser. No model runs here.</p></div>
+    </section>
+    <div id="notice" class="notice" role="status" aria-live="polite"><strong id="noticeTitle">Loading the fixed local preview…</strong><span id="noticeText">The preview shows retained evidence only.</span></div>
+    <div id="error" class="error" role="alert" hidden></div>
+    <section id="workspace" class="workspace" aria-label="Position evidence inspector" hidden>
+      <aside class="position-list" aria-label="Positions">
+        <div class="section-heading"><h2>Positions</h2><span id="positionCount" class="count"></span></div>
+        <p id="datasetLabel" class="muted"></p>
+        <label class="sr-only" for="positionSelect">Select position</label><select id="positionSelect"></select>
+        <div id="positionButtons" class="position-buttons"></div>
+        <p class="list-note">Use ↑ and ↓ in the list to move between positions.</p>
+      </aside>
+      <section id="position" class="board-panel" aria-labelledby="positionTitle" tabindex="-1">
+        <div class="section-heading"><div><p id="positionContext" class="eyebrow"></p><h2 id="positionTitle"></h2></div><button id="flipBoard" class="quiet" type="button" aria-pressed="false">Flip board</button></div>
+        <div id="board" class="chess-board" role="img" aria-label="Chess position"></div>
+        <div class="board-caption"><strong id="sideToMove"></strong><span id="boardState">Before the selected move</span></div>
+        <div class="board-actions"><button id="showBefore" type="button" aria-pressed="true">Before move</button><button id="showAfter" type="button" aria-pressed="false" disabled>Retained after-board</button></div>
+        <p id="moveSummary" class="move-summary"></p>
+        <details class="fen-disclosure"><summary>Position FEN</summary><code id="fenValue"></code><button id="copyFen" class="quiet" type="button">Copy FEN</button><span id="copyStatus" role="status" class="muted"></span></details>
+      </section>
+      <section class="evidence-panel" aria-label="Evidence and output">
+        <div class="section-heading"><h2>Evidence &amp; output</h2><span id="evidenceKind" class="tag"></span></div>
+        <div id="evidenceBody"></div>
+        <section class="source-section" aria-labelledby="sourceTitle"><h3 id="sourceTitle">Source</h3><dl id="sourceFacts" class="facts"></dl><a id="gameLink" class="source-link" target="_blank" rel="noopener noreferrer" hidden>Open original game ↗</a></section>
+      </section>
+    </section>
+    <section id="limitationsSection" class="limitations" aria-labelledby="limitationsTitle" hidden><div><p class="eyebrow">What this supports</p><h2 id="limitationsTitle">Evidence before conclusions.</h2></div><ul id="limitations"></ul></section>
+    <details id="rawSection" class="raw-section" hidden><summary>Inspect complete loaded JSON</summary><p class="muted">Raw content is untrusted text. Displaying a receipt does not verify its hashes, legality checks, or research claims.</p><pre id="payload"></pre></details>
+  </main>
+  <footer><span>PlayGround · Chess-first research</span><span>Local inspection. Explanation quality remains unmeasured.</span></footer>
+</body>
+</html>

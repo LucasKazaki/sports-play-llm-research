@@ -1,0 +1,129 @@
+{
+  "schema": "chess.stockfish-distillation.v2",
+  "created_at": "2026-10-15T05:15:45.857999+00:00",
+  "protocol_sha256": "f253ce50a7898c3df1b5f02ef627bc8c1e4d2ef598d2293b6c57b6cf8999adca",
+  "dataset": {
+    "source_url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+    "sha256": "59bcdb731ac2e2ba2fd3f8aedabb928738145eaedaee350e3503d772e2debf82",
+    "labels_sha256": "7a1e5b981172997bb331990c9a0af390528d2368202ab4f7620da49ecb270daa",
+    "train_count": 3200,
+    "development_count": 128,
+    "holdout_count": 128
+  },
+  "teacher": {
+    "name": "Stockfish 19",
+    "author": "the Stockfish developers (see AUTHORS file)",
+    "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "settings": {
+      "engine": "Stockfish 19",
+      "threads": 1,
+      "hash_mb": 64,
+      "nodes_per_position": 10000,
+      "multipv": 5,
+      "perspective": "side to move",
+      "clear_hash_between_positions": true
+    }
+  },
+  "model": {
+    "source": "jrahn/ROOK-LM-124m",
+    "revision": "c16158d399a61847cbcb616ecf2e36e6c96e16ca",
+    "base_sha256": "ed72e5afabae85f9ff1848f116cb39d83287062b856b9fe2602befe4f45a6941",
+    "checkpoint_sha256": "e656bea1c7224ecc1f197738b9862242bcc1f0ce77741e62734dddd3d083b68d"
+  },
+  "runtime": {
+    "python": "3.12.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5080"
+  },
+  "limitations": [
+    "Tactical prefix convenience sample, not a representative chess benchmark.",
+    "Game disjointness does not exclude unknown overlap with upstream ROOK pretraining.",
+    "10,000-node Stockfish agreement is a bounded reference, not perfect chess truth.",
+    "No Elo, commentary quality, human teaching or sports transfer was measured.",
+    "No proprietary model or creator transcript was used as training data."
+  ],
+  "training": {
+    "steps": 800,
+    "batch_size": 8,
+    "learning_rate": 2e-06,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "seed": 4082026,
+    "target": "native P:/M:/E:/B: serialization with five paired candidates and completion-only joint tokenization",
+    "precision": "float32 parameters with CUDA bfloat16 autocast if supported",
+    "examples_seen": 6400,
+    "loss_before": 1.0332795303276583,
+    "loss_after": 0.970587436467194,
+    "elapsed_seconds": 81.507,
+    "optimizer_phase_elapsed_seconds": 55.320908800000325,
+    "elapsed_seconds_scope": "original field includes training plus later evaluation/loading; not optimizer-only timing"
+  },
+  "evaluation": {
+    "baseline": {
+      "development": {
+        "count": 128,
+        "raw_legal_count": 128,
+        "top1_match_count": 24,
+        "fallback_count": 0,
+        "failures": 0,
+        "elapsed_seconds": 9.239
+      },
+      "holdout": {
+        "count": 128,
+        "raw_legal_count": 127,
+        "top1_match_count": 33,
+        "fallback_count": 0,
+        "failures": 0,
+        "elapsed_seconds": 8.297
+      }
+    },
+    "trained": {
+      "development": {
+        "count": 128,
+        "raw_legal_count": 127,
+        "top1_match_count": 21,
+        "fallback_count": 0,
+        "failures": 0,
+        "elapsed_seconds": 8.233
+      },
+      "holdout": {
+        "count": 128,
+        "raw_legal_count": 127,
+        "top1_match_count": 27,
+        "fallback_count": 0,
+        "failures": 0,
+        "elapsed_seconds": 8.444
+      }
+    }
+  },
+  "raw_receipt_sha256": "de55e3e555d45abe6000d4a90bde5240720481c7c41024faca0666fb03c8393c",
+  "default_replacement_approved": false,
+  "review_status": "independent practical source/evidence inspection; formal research-promotion gate not claimed",
+  "ai_assistance": "Codex-assisted implementation and candidate report; Lucas must review interpretation and supervisor use",
+  "implementation": {
+    "wrapper_sha256": "ff95aa682fdd5f4482c333f31fcfb80bcbdcc53cb5a9c1067435aed61bf6cb83",
+    "core_sha256": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7"
+  },
+  "accounting_repair": {
+    "reason": "M: marker was supplied in prompt, absent from raw completion fallback parsing",
+    "original_receipt_sha256": "0e40191996c2f438787d82345a4ed7db7db9d00be796bfae3626991f09c06426",
+    "implementation_sha256": "85c97864252a1997b34d463e92f95fc4ad57c446c7b4c1173c3a15a1481c8fbb",
+    "rows_recomputed": 512,
+    "model_calls": 0,
+    "optimizer_updates": 0,
+    "raw_outputs_changed": false
+  },
+  "teacher_limitations": {
+    "candidate_count": "exactly min(5, legal moves); train115/dev2/holdout8 rows have fewer than5 legal moves",
+    "top1_bound_rows": {
+      "train": 200,
+      "development": 7,
+      "holdout": 8
+    },
+    "score_targets": "retain CP/mate distinction but omit lower/upper-bound qualifiers; score prediction faithfulness is unmeasured",
+    "causal_scope": "format, candidate count, learning rate and sample changed together; no single-factor causal claim"
+  }
+}

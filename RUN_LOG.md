@@ -674,3 +674,10 @@ Pre-registered reliability job 8a578229-c0ca-4b2f-89dc-991aa084256f ran the depe
 Company Runtime task b69c0b9b-2a34-4b21-96ca-30935632dd5e completed internal packet research/chess-concept-evaluation-and-transfer-map-v1.md in job 82ac34e5-6d2b-48cb-82b1-a2c98be24b60. Its SHA-256 is 8d6b8c0334fb4ecf3282db1b40578db5b4d5b287768f57c49f5fc0021e23200f; focused verification returned evaluation_transfer_packet_ok 3147.
 
 The packet records engine comparison as NOT_EVALUABLE, unrun measures as NOT_RUN, and human concept quality as BLOCKED. It separates synthetic candidate references from engine receipts and imposes a sports semantic NO-GO: chess evidence or explanations cannot substantiate soccer/football understanding, prediction, coaching, player evaluation, or tactical truth. The next safe action is a recorded rights/compliance decision for an approved local rules library and engine; no installation or download occurred.
+
+
+## 2026-10-15 — Native chess execution and evidence inspection
+
+Completed two real Stockfish-supervised ROOK weight-training pilots on Windows/RTX5080. Both reduced move agreement and remain unpromoted; source-matched base model is executable default. Versioned aggregate results, frozen protocols, source hashes and failure/recount limits are retained under experiments/stockfish-distill-v1 and v2, with full local receipts under ignored data/private. Installed Qwen control completed4cases per representation without weight updates.
+
+Three recent GothamChess videos downloaded privately with source identity, hashes and720p audio/video checks; zero accepted benchmark positions. Added responsive local evidence inspector, private yt-dlp collector and fail-closed single-position ROOK CLI. Changed-area validation:75Python checks and9JavaScript checks pass. Older fixture-dependent compatibility failures remain separately documented. Practical independent source/receipt reviews completed; formal scientific promotion, commentary quality, Elo and sports transfer remain unclaimed. See reports/chess-training-2026-10-15.md.

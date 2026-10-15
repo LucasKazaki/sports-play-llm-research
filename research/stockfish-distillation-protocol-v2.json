@@ -1,0 +1,73 @@
+{
+  "schema": "chess.stockfish-distillation.protocol.v2",
+  "frozen_at": "2026-10-15T05:13:24.373331+00:00",
+  "question": "Does source-matched ROOK serialization plus a smaller fixed learning rate avoid the v1 format failure on entirely new games?",
+  "base_model": "jrahn/ROOK-LM-124m",
+  "base_revision": "c16158d399a61847cbcb616ecf2e36e6c96e16ca",
+  "model_license_source": "https://huggingface.co/jrahn/ROOK-LM-124m/blob/c16158d399a61847cbcb616ecf2e36e6c96e16ca/README.md",
+  "source_url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+  "source_rights": "CC0; https://database.lichess.org/",
+  "acquisition": {
+    "maximum_compressed_bytes": 4194304,
+    "selection": "bounded prefix convenience sample, first eligible unique games in each hash bucket"
+  },
+  "splits": {
+    "train": 3200,
+    "development": 128,
+    "holdout": 128,
+    "seed": 4082027,
+    "assignment": "sha256('4082027:' + game_id) integer modulo 10: 0=holdout, 1=development, 2..9=train"
+  },
+  "exclusions": "Every historical seed game/board and EVERY v1 train/development/holdout game and board; new unique games/boards across splits",
+  "teacher": {
+    "engine": "Stockfish 19",
+    "threads": 1,
+    "hash_mb": 64,
+    "nodes_per_position": 10000,
+    "multipv": 5,
+    "perspective": "side to move",
+    "clear_hash_between_positions": true
+  },
+  "training": {
+    "steps": 800,
+    "batch_size": 8,
+    "learning_rate": 2e-06,
+    "optimizer": "AdamW",
+    "weight_decay": 0.01,
+    "seed": 4082026,
+    "target": "native P:/M:/E:/B: serialization with five paired candidates and completion-only joint tokenization",
+    "precision": "float32 parameters with CUDA bfloat16 autocast if supported"
+  },
+  "generation": {
+    "max_new_tokens": 128,
+    "do_sample": false,
+    "batch_size": 8,
+    "input": "P: + current FEN padded to90 + literal M: marker; no candidate, score, answer or continuation",
+    "action_parser": "B: first legal-shape UCI token; if absent use first M: candidate, flag fallback separately"
+  },
+  "evaluation": {
+    "development": "same128 new development positions before/after fixed training",
+    "holdout": "one final before/after comparison on128 new games; no tuning",
+    "metrics": [
+      "complete denominator",
+      "raw legality",
+      "Stockfish top-1 agreement",
+      "format/fallback rate",
+      "latency",
+      "completion-token NLL"
+    ],
+    "missing_outputs": "failures stay in denominator",
+    "claim_boundary": "descriptive pilot; no Elo, statistical significance, professional commentary, novel-game generalization, or sports-transfer claim"
+  },
+  "video_policy": "GothamChess media are private observational challenge sources, never training data. Only verified game positions can enter a separately frozen video challenge set.",
+  "teacher_rationales": "No invented natural-language Stockfish rationale. Proprietary frontier model outputs and Chess.com analyses are not used as training targets.",
+  "success_criterion": "Pipeline completion requires retained source/engine/model hashes, real optimizer updates and full before/after denominators. Quality improvement is an observed outcome, not required or presumed. Any later larger experiment requires a new protocol.",
+  "ai_assistance": "Implementation and candidate notes prepared with Codex assistance; Lucas reviews research interpretation and any supervisor-facing writing.",
+  "source_reuse": "Verified exact v1 captured4MiB prefix bytes, new selections only; no invented fresh acquisition",
+  "upstream_serialization": {
+    "revision": "4e2d5b3a949670c98f45258cb9ba6a8eea08495f",
+    "source": "https://github.com/jorahn/RookWorld/blob/4e2d5b3a949670c98f45258cb9ba6a8eea08495f/dev/data/rook/generate_lichess.py",
+    "note": "Preserve P prefix and M/E padding; use Stockfish side-to-move best candidate0 rather than copying upstream black-selection code."
+  },
+  "v1_status": "Failed experiment retained; neither its holdout nor trained weights used forv2 selection. Multiplev2 changes mean this is not a causal single-factor ablation."
+}
