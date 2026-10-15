@@ -1,0 +1,134 @@
+{
+  "schema": "chess.stockfish-classifier.v3",
+  "protocol_sha256": "4b6943feeb4285a6684256c3b631cac0cbf5a339b45d97a980fa089ba74f12f6",
+  "dataset_sha256": "7689124a85fac5181f17d6f5fb648840f8cff5e3f3d9f823870e4f2b77fc7256",
+  "labels_sha256": "f85de6b1fd726bcc1e6d05f152e7e2d6b875d9d1473a010e00d8ff72c66bb88b",
+  "model": {
+    "source": "jrahn/ROOK-CLF-9m",
+    "revision": "a02db44faf1c495a85f9dd725584d197c58294a1",
+    "base_sha256": "c078a2a8ff26fb9d9c6b4cfcf684da4c72dbec124eb1442f36bb8461293c9b22",
+    "selected_step": 512,
+    "selected_sha256": "2643e51526335e5a33a67370bf1fa70ddf3c6b2e64b31550ad6ca033f9430a22"
+  },
+  "training": {
+    "seed": 4082028,
+    "optimizer": "AdamW",
+    "learning_rate": 1e-05,
+    "weight_decay": 0.01,
+    "batch_size": 32,
+    "steps": 512,
+    "checkpoint_steps": [
+      0,
+      128,
+      256,
+      512
+    ],
+    "objective": "unmasked1968-way action cross-entropy",
+    "gradient_clip": 1.0,
+    "encoded_count": 8192,
+    "rejected_rows": [],
+    "presentations": 16384,
+    "elapsed_seconds_including_dev_checks": 21.44170829999348
+  },
+  "runtime": {
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "cuda_peak_allocated_bytes": 702262272,
+    "python": "3.12.2",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0"
+  },
+  "limitations": [
+    "Tactical prefix convenience sample; unknown upstream pretraining overlap.",
+    "Raw and legal-mask outcomes are separate; masked legality does not establish model board understanding.",
+    "Move-only classifier is not a language/commentary model, and no Elo or sports competence is established.",
+    "Development checkpoint selection is declared; heldout is used only after selection.",
+    "Experimental candidate, no automatic model-default or scientific promotion."
+  ],
+  "evaluation": {
+    "baseline": {
+      "development": {
+        "count": 256,
+        "encoded_count": 256,
+        "raw_legal_count": 254,
+        "raw_top1_match_count": 169,
+        "raw_top3_match_count": 225,
+        "masked_top1_match_count": 171,
+        "failure_count": 0,
+        "cross_entropy": 1.1762496731116698,
+        "cross_entropy_count": 256,
+        "elapsed_seconds": 3.8922892000045977,
+        "logits_sha256": "4c09b5141651a2d9856aa584079609a7bebf07ba2635a70c1a7a97fc02b437f2"
+      },
+      "holdout": {
+        "count": 256,
+        "encoded_count": 256,
+        "raw_legal_count": 256,
+        "raw_top1_match_count": 142,
+        "raw_top3_match_count": 202,
+        "masked_top1_match_count": 142,
+        "failure_count": 0,
+        "cross_entropy": 1.5032244110975626,
+        "cross_entropy_count": 256,
+        "elapsed_seconds": 0.27794379999977536,
+        "logits_sha256": "67e02f9ed428800c6c116d6c5c54ba991f96c133aa1173a6074d08fa97a798a4"
+      }
+    },
+    "selected": {
+      "development": {
+        "count": 256,
+        "encoded_count": 256,
+        "raw_legal_count": 253,
+        "raw_top1_match_count": 194,
+        "raw_top3_match_count": 227,
+        "masked_top1_match_count": 196,
+        "failure_count": 0,
+        "cross_entropy": 0.8502437117003865,
+        "cross_entropy_count": 256,
+        "elapsed_seconds": 0.2881296999985352,
+        "logits_sha256": "5b8f55f60197bd8a179770f165ea73bc36386c4b2fe06c31fd40b55f19e1e77d"
+      },
+      "holdout": {
+        "count": 256,
+        "encoded_count": 256,
+        "raw_legal_count": 254,
+        "raw_top1_match_count": 167,
+        "raw_top3_match_count": 226,
+        "masked_top1_match_count": 168,
+        "failure_count": 0,
+        "cross_entropy": 1.1103935101455136,
+        "cross_entropy_count": 256,
+        "elapsed_seconds": 0.2802034999986063,
+        "logits_sha256": "a429614df4f8adf982bebc3f014e91144ee9ef034be3d6a3e43d78f72c28c0ef"
+      }
+    }
+  },
+  "verification": {
+    "original_receipt_sha256": "dc497fa4ae26878b66c73e30a439985f8afc1ff9958db29a4692e63a4f08595b",
+    "manifest_sha256": "b4ef3b1c0444042595bf1b33701a6a9efe6b7c5409f52f1f0c76acdfa6fc3bf5",
+    "bound_file_count": 48,
+    "independent_recomputed_logit_rows": 1536,
+    "adapter_differential_fens": 261,
+    "promotion": "not approved"
+  },
+  "teacher": {
+    "name": "Stockfish19",
+    "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "settings": {
+      "engine": "Stockfish19 pinned executable from v1",
+      "threads_per_worker": 1,
+      "workers": 8,
+      "hash_mb_per_worker": 32,
+      "nodes": 20000,
+      "hash_clear_per_position": true,
+      "target": "actual UCI bestmove at search completion; one legal move label only",
+      "score_capture": "last individual score-bearing info event, retaining type, perspective and same-event bound flags; never use merged stale bounds as exact observations"
+    }
+  },
+  "comparison_scope": "Different games, model architecture and teacher node budget from v1/v2; no direct cross-pilot strength comparison.",
+  "post_run_operations": [
+    "Metadata packaging of selected weights, with identical before/after weight hash.",
+    "Future evaluation now records model exceptions/shape errors and skips remaining calls; frozen successful logits were not regenerated.",
+    "Live base/selected single-position smoke used initial board only, outside heldout selection."
+  ]
+}

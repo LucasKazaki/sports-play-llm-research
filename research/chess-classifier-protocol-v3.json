@@ -1,0 +1,20 @@
+{
+  "schema": "chess.stockfish-classifier.protocol.v3",
+  "status": "frozen_before_dataset_selection_or_model_measurement",
+  "question": "Can move-only Stockfish supervision improve a small classification specialist while retaining raw legality, compared with its base weights?",
+  "base_model": "jrahn/ROOK-CLF-9m",
+  "base_revision": "a02db44faf1c495a85f9dd725584d197c58294a1",
+  "license": "MIT declared by pinned upstream model card; private local research, no weight redistribution",
+  "adapter_source_revision": "jorahn/rook@49b49aee5d6608f24f9be1f5436c6945238f9909",
+  "source": "exact retained 4MiB Lichess CC0 prefix acquired in v1; source bytes and provider metadata preserved",
+  "splits": {"train": 8192, "development": 256, "holdout": 256, "seed": 4082028, "assignment": "sha256('4082028:' + game_id) integer modulo10:0=holdout,1=development,2..9=train"},
+  "exclusions": "All historical seed and v1/v2 games, source-before and setup-after board keys, duplicate new games/boards; all previous holdouts are spent and excluded",
+  "teacher": {"engine": "Stockfish19 pinned executable from v1", "threads_per_worker": 1, "workers": 8, "hash_mb_per_worker": 32, "nodes": 20000, "hash_clear_per_position": true, "target": "actual UCI bestmove at search completion; one legal move label only", "score_capture": "last individual score-bearing info event, retaining type, perspective and same-event bound flags; never use merged stale bounds as exact observations"},
+  "training": {"seed": 4082028, "optimizer": "AdamW", "learning_rate": 0.00001, "weight_decay": 0.01, "batch_size": 32, "steps": 512, "checkpoint_steps": [0,128,256,512], "objective": "unmasked1968-way action cross-entropy", "gradient_clip": 1.0},
+  "selection": {"data": "development only", "criterion": "highest raw top1 teacher agreement; then highest raw legality; then earliest checkpoint including step0 base", "holdout": "only evaluate base and selected checkpoint after selection is saved; do not evaluate rejected checkpoints on holdout"},
+  "evaluation": {"batch_size": 64, "metrics": ["complete denominator including rejected adapter/model cases", "raw top1 legality", "raw top1 teacher agreement", "raw top3 teacher coverage", "legality-masked top1 agreement separately", "cross-entropy", "latency"], "representation": "source-verified fixed78 native FEN tokens; input includes no teacher answer or continuation", "uncertainty": "descriptive pilot with one position per source game; no Elo, professional commentary, significance or sports-transfer claim"},
+  "resource_policy": {"machine": "Ryzen9 7950X3D16cores32threads,32GiB RAM,RTX508016GiB", "cpu": "at most8 one-thread Stockfish workers concurrent with independent LapSim sweeps; reduce on memory pressure", "gpu": "serialize against large Qwen engineering review; CUDA model training after that model unloads", "ram": "check freeRAM before dispatch and preserve4GiB free headroom; do not change power/thermal controls", "purpose": "useful throughput; no artificial load target"},
+  "failure_policy": "unsupported FEN encodings, absent labels, transport/model errors remain failures in each full split denominator; never silently resample to hide them",
+  "promotion_policy": "a selected checkpoint is an experimental candidate; even improved heldout move agreement does not satisfy the commentary gate or authorize automatic default replacement",
+  "ai_assistance": "Codex-assisted experiment implementation; local model suggestions are unverified hypotheses until deterministic checks"
+}
