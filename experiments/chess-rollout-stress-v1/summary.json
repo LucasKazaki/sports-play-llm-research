@@ -1,0 +1,146 @@
+{
+  "schema": "chess.rollout.stress.receipt.v1",
+  "protocol_sha256": "e440a9264c4998cc8414cf42216fc403eb323d584bcfae19e7155aaeca64b8b4",
+  "source_snapshots": {
+    "executed-chess_rollout_stress.py": "8cf5486a1477a37f24fd8f0eabb425b6756d2e0b1151cad9ea170b908aaabcf9",
+    "executed-chess_classifier_adapter.py": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+    "executed-chess_stockfish_distill.py": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7",
+    "executed-chess-rollout-stress-protocol-v1.json": "e440a9264c4998cc8414cf42216fc403eb323d584bcfae19e7155aaeca64b8b4"
+  },
+  "model_binding": {
+    "base_weight_sha256": "c078a2a8ff26fb9d9c6b4cfcf684da4c72dbec124eb1442f36bb8461293c9b22",
+    "selected_weight_sha256": "2643e51526335e5a33a67370bf1fa70ddf3c6b2e64b31550ad6ca033f9430a22",
+    "selection": "Frozen v3 development-selected step512; no rollout-based weight or hyperparameter changes"
+  },
+  "engine_sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+  "native_contract_source_sha256": {
+    "base": {
+      "config.json": "dbaa8428d8eae85240647acc7c6a808be080d085902f03ec4c8254bf80dc9f7b",
+      "tokenizer_config.json": "a29920c3f23ecf49dda2e4744f03eeadad70a812a039890769cfdd4487b17755",
+      "tokenizer.py": "b73320309cc088cd4df4e35944f92f8ba90d3e5847369e559d7b86ec4102f1b5",
+      "tokenizer.json": "9fc73325486601b4696a2da5ab9d37798a66a2c36b1bb25ec02334274c5a3b19"
+    },
+    "selected_step_512": {
+      "config.json": "5a7d8a0c7b6d2e066434ec7e2fbdc16f977fa1cf1471f147adf0fe369a9be202",
+      "tokenizer_config.json": "a29920c3f23ecf49dda2e4744f03eeadad70a812a039890769cfdd4487b17755",
+      "tokenizer.py": "b73320309cc088cd4df4e35944f92f8ba90d3e5847369e559d7b86ec4102f1b5",
+      "tokenizer.json": "9fc73325486601b4696a2da5ab9d37798a66a2c36b1bb25ec02334274c5a3b19"
+    }
+  },
+  "contract_failures": {},
+  "planned_games": 64,
+  "aggregate": {
+    "base:legal_mask": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 16
+      },
+      "chess_results": {
+        "0-1": 8,
+        "1-0": 8
+      },
+      "model_decisions": 590,
+      "raw_legal_decisions": 589,
+      "mask_interventions": 1,
+      "additional_plies": 1188
+    },
+    "base:raw_abstain": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 15,
+        "raw_illegal": 1
+      },
+      "chess_results": {
+        "0-1": 8,
+        "1-0": 7,
+        "*": 1
+      },
+      "model_decisions": 590,
+      "raw_legal_decisions": 589,
+      "mask_interventions": 0,
+      "additional_plies": 1186
+    },
+    "selected_step_512:legal_mask": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 16
+      },
+      "chess_results": {
+        "0-1": 8,
+        "1-0": 8
+      },
+      "model_decisions": 545,
+      "raw_legal_decisions": 541,
+      "mask_interventions": 4,
+      "additional_plies": 1098
+    },
+    "selected_step_512:raw_abstain": {
+      "planned_games": 16,
+      "terminations": {
+        "checkmate": 13,
+        "raw_illegal": 3
+      },
+      "chess_results": {
+        "0-1": 7,
+        "1-0": 6,
+        "*": 3
+      },
+      "model_decisions": 527,
+      "raw_legal_decisions": 524,
+      "mask_interventions": 0,
+      "additional_plies": 1056
+    }
+  },
+  "elapsed_seconds": 36.910442300002615,
+  "runtime": {
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "torch": "2.8.0+cu128",
+    "python_chess": "1.10.0"
+  },
+  "artifacts": {
+    "games_json_sha256": "fa76b501c9fe3303e3a6c4abc226166e85ac8bb28835d7385572f44a5e726d6a",
+    "pgn_sha256": "b7a1c21136073e7a85caa380701c406db6f334dc2b39b131dfa9658e1063dd78",
+    "logits": {
+      "base": {
+        "path": "base-logits.npy",
+        "rows": 1180,
+        "sha256": "c011d06d8f4ada0d09036f75c5f56ace1b5c9634dfaff5030dcec218e6ef156f"
+      },
+      "selected_step_512": {
+        "path": "selected_step_512-logits.npy",
+        "rows": 1072,
+        "sha256": "e1618c25fb4877324e46f6c3874ddb55978d84829173152ea519f97fbc29a9b0"
+      }
+    }
+  },
+  "limitations": [
+    "Designed opening panel, not a fresh acquired holdout",
+    "Opponents are bounded searches, not a calibrated rating reference",
+    "Legality masking is rule assistance and cannot establish learned rule compliance",
+    "A raw-illegal stop is an integration failure rather than a chess loss",
+    "No commentary, teaching, professional quality or sports-transfer evidence"
+  ],
+  "receipt_sha256": "79e7b55cb6fa1a0d1a38a25364167d2d276450941fc27e8cfd7dddcf63d22c52",
+  "independent_audit_sha256": "d91a845ed6e1a96a18f4f144dc601545579ec966547fe6ec8bab6dd08390143f",
+  "independent_audit": {
+    "hash_checks": 24,
+    "games": 64,
+    "pgns": 64,
+    "logit_rows": 2252,
+    "legal_applied_moves": 4528,
+    "all_logits_finite": true,
+    "every_row_linked_exactly_once": true,
+    "checkmate_perspective": {
+      "base:raw_abstain:opponent_win": 15,
+      "base:legal_mask:opponent_win": 16,
+      "selected_step_512:raw_abstain:opponent_win": 13,
+      "selected_step_512:legal_mask:opponent_win": 16
+    }
+  },
+  "software_checks": {
+    "focused_tests_passed": 12,
+    "full_historical_suite_claimed": false
+  },
+  "assistance": "Codex-assisted implementation and independent agent artifact review; not qualified chess-supervisor acceptance"
+}
