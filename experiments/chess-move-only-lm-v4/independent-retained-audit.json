@@ -1,0 +1,139 @@
+{
+  "schema": "chess.move-only-v4.independent-retained-audit.v1",
+  "status": "passed_artifact_reaccounting_not_scientific_promotion",
+  "audit_plan_sha256": "41400e4fa747ed7ccf660f509d55b67aa0c0e6e3982b1acf695e41a28d1723c0",
+  "audit_source_sha256": "c766a5876aa071e46030f60eb7791f8fb9d238ce239cee4747d6f44483c1f938",
+  "decoded_nonfailure_rows": 1152,
+  "explicit_failure_rows": 0,
+  "development_candidates": {
+    "0": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 128,
+      "raw_match_count": 32,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 2.1393820000012056
+    },
+    "256": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 128,
+      "raw_match_count": 32,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.0212116000038804
+    },
+    "512": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 128,
+      "raw_match_count": 30,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.014843999997538
+    },
+    "1024": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 127,
+      "raw_match_count": 33,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.0245644000024186
+    },
+    "2048": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 124,
+      "raw_match_count": 34,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.0214448000042466
+    }
+  },
+  "selected_step": 2048,
+  "holdout": {
+    "base": {
+      "count": 256,
+      "accounted": 256,
+      "raw_parse_count": 256,
+      "raw_legal_count": 256,
+      "raw_match_count": 58,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 2.0956134000007296
+    },
+    "selected": {
+      "count": 256,
+      "accounted": 256,
+      "raw_parse_count": 256,
+      "raw_legal_count": 250,
+      "raw_match_count": 65,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 2.0369974999994156
+    },
+    "paired_transitions": {
+      "wrong_to_match": 25,
+      "match_to_wrong": 18,
+      "legal_to_illegal": 6,
+      "illegal_to_legal": 0
+    }
+  },
+  "selected_cpu_weights": {
+    "finite_float32_tensors": 148,
+    "finite_scalars": 124439808
+  },
+  "selection_file_precedes_holdout_file_timestamp": true,
+  "bound_files": {
+    "data\\private\\chess-move-only-lm-v4\\dataset.json": "e9f58c898e225fb35684938a2c77ca474fb0317a5e9404b54a7fa3e801083541",
+    "data\\private\\chess-move-only-lm-v4\\labels.json": "2718c1721bf94c5dbfdae012146d9b19b331420ce2f789b32d9a2730c935dd62",
+    "data\\private\\chess-move-only-lm-v4\\before-teacher-calls.json": "c764bf9ddf491a66a61d70747b1e11219a20a84f2adeb6895c30971cc62c8bfe",
+    "data\\private\\chess-move-only-lm-v4\\before-model-calls.json": "4fcdc269e3439107d76701ce6a60b632e1638c7df3b8376f7404668e4b3cf94e",
+    "research\\stockfish-move-only-lm-protocol-v4.json": "2d15588ce0ad7e97948a9899d619fae148f9b5088b7048c511c3d3c802c47954",
+    "data\\private\\chess-move-only-lm-v4\\executed-chess_move_only_lm_v4.py": "8b973d6d8d6eebfabcc1bc580935eef62e82e666f7f9968a8a4a6173b94d8118",
+    "data\\private\\chess-move-only-lm-v4\\executed-chess_stockfish_distill.py": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7",
+    "data\\private\\chess-move-only-lm-v4\\executed-chess_classifier_experiment_v3.py": "1d9f7f9378eb6d92251de0d8d144bd71a63b7ac95f6ab46b2b54892e760b3506",
+    "data\\private\\chess-move-only-lm-v4\\executed-stockfish-move-only-lm-protocol-v4.json": "2d15588ce0ad7e97948a9899d619fae148f9b5088b7048c511c3d3c802c47954",
+    "data\\private\\chess-distill-v1\\base-model\\config.json": "faf791105526efef207fb9df4402ea7d06c33e420f0d2668efeef624ae2624a1",
+    "data\\private\\chess-distill-v1\\base-model\\generation_config.json": "26b042f10bbe30f7196831741ee8b6e89572f98f0e20700f739da6404ecaccd9",
+    "data\\private\\chess-distill-v1\\base-model\\merges.txt": "1ce1664773c50f3e0cc8842619a93edc4624525b728b188a9e0be33b7726adc5",
+    "data\\private\\chess-distill-v1\\base-model\\README.md": "b5ee7d7b595670ca260cf9d528ab4459b4726ba57f5b15f5187aa001419c6e64",
+    "data\\private\\chess-distill-v1\\base-model\\special_tokens_map.json": "98412137ae43c77f8af52eb51b19c3536d3242cb55339167d841005fa94a23b7",
+    "data\\private\\chess-distill-v1\\base-model\\tokenizer.json": "a6aa29bf8416d74ad795a73262b1aa3f985564ee338adbee7ffbc5861f78b6b8",
+    "data\\private\\chess-distill-v1\\base-model\\tokenizer_config.json": "6543c71f8ce812f9d118021be764c6250cd0d1e71ef604e9f028df73ff908cd0",
+    "data\\private\\chess-distill-v1\\base-model\\vocab.json": "3ba3c3109ff33976c4bd966589c11ee14fcaa1f4c9e5e154c2ed7f99d80709e7",
+    "data\\private\\chess-distill-v1\\base-model\\model.safetensors": "ed72e5afabae85f9ff1848f116cb39d83287062b856b9fe2602befe4f45a6941",
+    "data\\private\\chess-move-only-lm-v4\\training-log.json": "b4d5a49db6e5c4001c0cad8dfa90505f1743ee73b99495aa011c37bcd96f1233",
+    "data\\private\\chess-move-only-lm-v4\\base-development.json": "3986f32b8d6eeae2215f72c2dc9e4a213435ddaace612d5de340ba433cc2fbe5",
+    "data\\private\\chess-move-only-lm-v4\\step-256-development.json": "09398c4f94cfdea478eaba96a3cc9d2a34a47885be425808e065d6a61c22f57b",
+    "data\\private\\chess-move-only-lm-v4\\step-512-development.json": "54eef3390b2cd3e8d52927b30dde562a2ba542aa7aa5fa4b6e1a97612290d65f",
+    "data\\private\\chess-move-only-lm-v4\\step-1024-development.json": "61e6020831e6fcf1e91b96e9c21012eb3644335996fc6b53fe3022e06bc3e51f",
+    "data\\private\\chess-move-only-lm-v4\\step-2048-development.json": "d13e841ea034e1f7fc1139f1d2a852a5ba221d254199a88b96b5e4fff1cbc38d",
+    "data\\private\\chess-move-only-lm-v4\\selection-before-holdout.json": "de811b94e516826c1814fd5423c805331ac1c45fc4725cab3b438a0e0e38e2ef",
+    "data\\private\\chess-move-only-lm-v4\\base-holdout.json": "81d14eb0ed2614bfaeaf56f93dab116307960c51548fbce56afb34f84c54b53c",
+    "data\\private\\chess-move-only-lm-v4\\selected-holdout.json": "ebc177113e3f48552e06a8a5f6a1b255a197afd3c0e3742cd096374267d7ff28",
+    "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\model.safetensors": "b67b013c95af6adb47eb50f7b5b8e191797f810bbb371cb3ef0ce9085718db41",
+    "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\config.json": "a8cd5a37b2d78b0b7e0d901a19dfa91b1e85f45538a98c0446420f96d2e9d46f",
+    "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\generation_config.json": "c9a2c0c6085f72d95b5bc56694c48881a2d832950ef4186be5d3e5a916429e52",
+    "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\tokenizer.json": "df0cd5809511f1800f27b340802f09dc698fe8b57515abc11d3319261565e0f0",
+    "data\\private\\chess-move-only-lm-v4\\checkpoints\\step-2048\\tokenizer_config.json": "bd953e3e533d21fb73aa85133b6cbb7476299867b6e06786b443e1a41aff640e",
+    "data\\private\\chess-move-only-lm-v4\\receipt.json": "16bc1cf5acb68e839854801201d5dbf3258738571131dbc097cf6454fa5ce9ca"
+  },
+  "elapsed_seconds": 1.2891969000047538,
+  "actual_model_inference_or_engine_calls": 0,
+  "gpu_calls": 0,
+  "limitations": [
+    "Retained token strings/accounting were recomputed, not independent model inference or teacher searches.",
+    "Development NLL was checked for finite values and correct selection use, not recomputed with weights.",
+    "The separate source/intake audit owns actual acquisition and game/both-role exclusion validation.",
+    "Filesystem ordering supports the reviewed executed source order; timestamps alone are not a tamper-proof chronology.",
+    "No Elo, commentary, teaching, general understanding or sports-transfer claim; no automatic promotion."
+  ]
+}

@@ -1,5 +1,16 @@
 # SportsPlayLLMResearch
 
+## Move-only language-policy pilot v4 — October 15, 2026
+
+The [new language-policy experiment](reports/chess-move-only-lm-v4-2026-10-15.md)
+ran 2,048 CUDA optimizer updates after eight CPU workers generated 8,576 new
+Stockfish labels. Its selected checkpoint increased raw heldout matches from
+58/256 to 65/256, while raw legality fell from 256/256 to 250/256. Independent
+review reconstructed intake and decoded all 1,152 retained outputs. The weights
+remain experimental. This first-M task differs from the earlier full-native
+policy; the percentages are not a matched cross-pilot strength comparison.
+Explicit local use requires a model directory and abstains on illegal actions.
+
 ## Move-only classifier pilot v3 — October 15, 2026
 
 The [new local classifier experiment](reports/chess-classifier-v3-2026-10-15.md)

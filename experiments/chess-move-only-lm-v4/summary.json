@@ -1,0 +1,212 @@
+{
+  "schema": "chess.move-only-lm.summary.v4",
+  "status": "experimental_candidate_with_raw_legality_regression",
+  "protocol_sha256": "2d15588ce0ad7e97948a9899d619fae148f9b5088b7048c511c3d3c802c47954",
+  "receipt_sha256": "16bc1cf5acb68e839854801201d5dbf3258738571131dbc097cf6454fa5ce9ca",
+  "dataset_sha256": "e9f58c898e225fb35684938a2c77ca474fb0317a5e9404b54a7fa3e801083541",
+  "labels_sha256": "2718c1721bf94c5dbfdae012146d9b19b331420ce2f789b32d9a2730c935dd62",
+  "source": {
+    "url": "https://database.lichess.org/lichess_db_puzzle.csv.zst",
+    "status": 206,
+    "content_range": "bytes 0-4194303/307234795",
+    "etag": "\"6abf70a1-125007eb\"",
+    "bytes": 4194304,
+    "sha256": "3238fba025cfee9dcf0e3156a22e7758ee15a84ee1dc3a3825a0bad0f801f056",
+    "captured_at": "2026-10-15T05:05:58.849428+00:00"
+  },
+  "source_reused": true,
+  "splits": {
+    "train": 8192,
+    "development": 128,
+    "holdout": 256
+  },
+  "exclusions": {
+    "games": 13112,
+    "board_keys": 26322
+  },
+  "model": {
+    "source": "jrahn/ROOK-LM-124m",
+    "revision": "c16158d399a61847cbcb616ecf2e36e6c96e16ca",
+    "base_weight_sha256": "ed72e5afabae85f9ff1848f116cb39d83287062b856b9fe2602befe4f45a6941",
+    "selected_step": 2048,
+    "selected_weight_sha256": "b67b013c95af6adb47eb50f7b5b8e191797f810bbb371cb3ef0ce9085718db41"
+  },
+  "teacher": {
+    "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+    "settings": {
+      "engine": "Stockfish19",
+      "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      "workers": 8,
+      "threads_per_worker": 1,
+      "hash_mb_per_worker": 32,
+      "nodes": 50000,
+      "hash_clear_per_position": true,
+      "target": "actual legal UCI bestmove at completed search only; retained score-event bounds are observation metadata, never inputs or targets"
+    }
+  },
+  "teacher_seconds": 50.071549699998286,
+  "training": {
+    "seed": 4082029,
+    "optimizer": "AdamW",
+    "steps": 2048,
+    "batch_size": 32,
+    "learning_rate": 2e-06,
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "precision": "float32 parameters; CUDA bfloat16 autocast where available",
+    "checkpoint_steps": [
+      0,
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "objective": "completion-only UCI bestmove string plus EOS; no score, candidate-list or rationale targets",
+    "encoded_positions": 8192,
+    "presentations": 65536,
+    "elapsed_seconds_including_dev_checks": 167.20387529999425,
+    "development_nll": {
+      "0": 3.9543457329273224,
+      "256": 3.7156148850917816,
+      "512": 3.5577901899814606,
+      "1024": 3.3017902970314026,
+      "2048": 3.0321463644504547
+    },
+    "log_sha256": "b4d5a49db6e5c4001c0cad8dfa90505f1743ee73b99495aa011c37bcd96f1233"
+  },
+  "runtime": {
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "peak_cuda_allocated_bytes": 6075981824,
+    "bfloat16_autocast": true,
+    "python": "3.12.2",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0"
+  },
+  "evaluation": {
+    "baseline": {
+      "development": {
+        "count": 128,
+        "accounted": 128,
+        "raw_parse_count": 128,
+        "raw_legal_count": 128,
+        "raw_match_count": 32,
+        "backend_failure_count": 0,
+        "backend_failure_stop": null,
+        "elapsed_seconds": 2.1393820000012056
+      },
+      "holdout": {
+        "count": 256,
+        "accounted": 256,
+        "raw_parse_count": 256,
+        "raw_legal_count": 256,
+        "raw_match_count": 58,
+        "backend_failure_count": 0,
+        "backend_failure_stop": null,
+        "elapsed_seconds": 2.0956134000007296
+      }
+    },
+    "selected": {
+      "development": {
+        "count": 128,
+        "accounted": 128,
+        "raw_parse_count": 128,
+        "raw_legal_count": 124,
+        "raw_match_count": 34,
+        "backend_failure_count": 0,
+        "backend_failure_stop": null,
+        "elapsed_seconds": 1.0214448000042466
+      },
+      "holdout": {
+        "count": 256,
+        "accounted": 256,
+        "raw_parse_count": 256,
+        "raw_legal_count": 250,
+        "raw_match_count": 65,
+        "backend_failure_count": 0,
+        "backend_failure_stop": null,
+        "elapsed_seconds": 2.0369974999994156
+      }
+    }
+  },
+  "development_candidates": {
+    "0": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 128,
+      "raw_match_count": 32,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 2.1393820000012056
+    },
+    "256": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 128,
+      "raw_match_count": 32,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.0212116000038804
+    },
+    "512": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 128,
+      "raw_match_count": 30,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.014843999997538
+    },
+    "1024": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 127,
+      "raw_match_count": 33,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.0245644000024186
+    },
+    "2048": {
+      "count": 128,
+      "accounted": 128,
+      "raw_parse_count": 128,
+      "raw_legal_count": 124,
+      "raw_match_count": 34,
+      "backend_failure_count": 0,
+      "backend_failure_stop": null,
+      "elapsed_seconds": 1.0214448000042466
+    }
+  },
+  "paired_holdout": {
+    "wrong_to_matching": 25,
+    "matching_to_wrong": 18,
+    "legal_to_illegal": 6,
+    "illegal_to_legal": 0
+  },
+  "software_checks": {
+    "root_focused_tests_passed": 29,
+    "independent_preflight_tests_passed": 26,
+    "independent_native_tokenizer_rows": 8320,
+    "independent_retained_rows": 1152,
+    "full_historical_repository_suite_claimed": false
+  },
+  "independent_review_sha256": {
+    "independent-source-review.md": "1ffb1ffd3412b09f13fecf8fc0d68dcb088339666c42aa377dbe1fba68d2bdd3",
+    "independent-retained-audit.json": "0269276fdcb8ce67ffcd61621a50e19dd80e16089cce6bc629c5c981cf321d82",
+    "independent-intake-audit.json": "482a0e23e48f879c0b07f5998eaa21ad36023a6648d44fef7f1083181cc43a04"
+  },
+  "task_change": "This first-M move policy is deliberately different from the full-native B:first policy in v2. Apply exactly this parser/budget to base and trained; do not compare cross-protocol percentages as strength gains.",
+  "promotion_policy": "An improved selected checkpoint remains an experimental move-only language-policy candidate. No automatic default replacement, broader understanding, Elo, commentary, teaching or sports-transfer claim.",
+  "limitations": [
+    "Tactical prefix convenience sample, unknown upstream pretraining overlap.",
+    "Only first-M action is evaluated; trailing candidate text and failure records are retained.",
+    "One run with development checkpoint selection; no significance or Elo claim.",
+    "New data/teacher budget/task differ from earlier pilots; no matched cross-pilot strength comparison.",
+    "No commentary quality, professional teaching or sports competence measured."
+  ],
+  "assistance": "Codex-assisted implementation and independent practical agent review; no formal project promotion"
+}
