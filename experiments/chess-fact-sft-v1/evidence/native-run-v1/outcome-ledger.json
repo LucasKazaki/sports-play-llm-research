@@ -1,0 +1,6934 @@
+{
+  "schema": "chess.fact-sft.full-outcomes.v1",
+  "planned": 1152,
+  "cohorts": {
+    "dev-0": [
+      {
+        "case_id": "fact-sft-08b72",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08d8r",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08mq0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08pXf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08zBJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0905I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-093XY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Hte",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09InA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Ktk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09OqU",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Rxd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09TTJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09lis",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09nvK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09uZI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09vM0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09wqH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09y40",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A5bd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A9FS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AALY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ABO1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACQC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACeu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ADIJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJTV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJVI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJy9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ALrx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMQW",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMic",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMjq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0APo0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AQCC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ASFO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AZKQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Abea",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Adqg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Agqm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AiSq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AlJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AsAa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Atht",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AtyV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Awgb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B0Iq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3A1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3VQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B6pV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BBdM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCKF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCda",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BDFm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BETy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BFNX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIQH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIff",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIpm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BK3y",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL3T",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BLZR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMi5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMu4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOKS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOwq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BRMT",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BTRP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BULo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ba9c",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bagj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbjI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcIk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcMF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bccz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgEX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgQ6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BhSf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bnga",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Br1L",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrG9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrjZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BsoI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BudO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxYw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxzM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ByiS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BznS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C3sw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C4Pp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C5U1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C7n9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C851",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C8VV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C9ct",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCNZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCT1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CE2i",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CEtI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CQb6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSRv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CTx3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CXo6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CcKi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cgm4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ChDP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CiUa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ckoc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ClkB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpD1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpzZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Csn4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CuH2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cuca",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CvdY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CwKm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cy4u",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Czey",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D6Tj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9CN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9jN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DAWk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DBQk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DDQo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DF9U",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DFZb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGKy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGqA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      }
+    ],
+    "dev-128": [
+      {
+        "case_id": "fact-sft-08b72",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08d8r",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08mq0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08pXf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08zBJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0905I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-093XY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Hte",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09InA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Ktk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09OqU",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Rxd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09TTJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09lis",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09nvK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09uZI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09vM0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09wqH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09y40",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A5bd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A9FS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AALY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ABO1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACQC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACeu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ADIJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJTV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJVI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJy9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ALrx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMQW",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMic",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMjq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0APo0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AQCC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ASFO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AZKQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Abea",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Adqg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Agqm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AiSq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AlJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AsAa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Atht",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AtyV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Awgb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B0Iq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3A1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3VQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B6pV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BBdM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCKF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCda",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BDFm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BETy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BFNX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIQH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIff",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIpm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BK3y",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL3T",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BLZR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMi5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMu4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOKS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOwq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BRMT",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BTRP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BULo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ba9c",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bagj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbjI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcIk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcMF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bccz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgEX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgQ6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BhSf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bnga",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Br1L",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrG9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrjZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BsoI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BudO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxYw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxzM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ByiS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BznS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C3sw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C4Pp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C5U1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C7n9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C851",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C8VV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C9ct",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCNZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCT1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CE2i",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CEtI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CQb6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSRv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CTx3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CXo6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CcKi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cgm4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ChDP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CiUa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ckoc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ClkB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpD1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpzZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Csn4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CuH2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cuca",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CvdY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CwKm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cy4u",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Czey",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D6Tj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9CN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9jN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DAWk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DBQk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DDQo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DF9U",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DFZb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGKy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGqA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      }
+    ],
+    "dev-256": [
+      {
+        "case_id": "fact-sft-08b72",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08d8r",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08mq0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08pXf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08zBJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0905I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-093XY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Hte",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09InA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Ktk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09OqU",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Rxd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09TTJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09lis",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09nvK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09uZI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09vM0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09wqH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09y40",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A5bd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A9FS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AALY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ABO1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACQC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACeu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ADIJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJTV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJVI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJy9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ALrx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMQW",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMic",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMjq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0APo0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AQCC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ASFO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AZKQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Abea",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Adqg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Agqm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AiSq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AlJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AsAa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Atht",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AtyV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Awgb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B0Iq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3A1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3VQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B6pV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BBdM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCKF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCda",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BDFm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BETy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BFNX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIQH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIff",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIpm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BK3y",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL3T",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BLZR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMi5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMu4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOKS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOwq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BRMT",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BTRP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BULo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ba9c",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bagj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbjI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcIk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcMF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bccz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgEX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgQ6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BhSf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bnga",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Br1L",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrG9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrjZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BsoI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BudO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxYw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxzM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ByiS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BznS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C3sw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C4Pp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C5U1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C7n9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C851",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C8VV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C9ct",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCNZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCT1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CE2i",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CEtI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CQb6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSRv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CTx3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CXo6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CcKi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cgm4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ChDP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CiUa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ckoc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ClkB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpD1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpzZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Csn4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CuH2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cuca",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CvdY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CwKm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cy4u",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Czey",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D6Tj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9CN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9jN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DAWk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DBQk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DDQo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DF9U",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DFZb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGKy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGqA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      }
+    ],
+    "dev-512": [
+      {
+        "case_id": "fact-sft-08b72",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08d8r",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08mq0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08pXf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08zBJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0905I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-093XY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Hte",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09InA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Ktk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09OqU",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Rxd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09TTJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09lis",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09nvK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09uZI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09vM0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09wqH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09y40",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A5bd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A9FS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AALY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ABO1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACQC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACeu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ADIJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJTV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJVI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJy9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ALrx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMQW",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMic",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMjq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0APo0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AQCC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ASFO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AZKQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Abea",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Adqg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Agqm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AiSq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AlJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AsAa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Atht",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AtyV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Awgb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B0Iq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3A1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3VQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B6pV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BBdM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCKF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCda",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BDFm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BETy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BFNX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIQH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIff",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIpm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BK3y",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL3T",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BLZR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMi5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMu4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOKS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOwq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BRMT",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BTRP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BULo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ba9c",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bagj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbjI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcIk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcMF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bccz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgEX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgQ6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BhSf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bnga",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Br1L",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrG9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrjZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BsoI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BudO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxYw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxzM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ByiS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BznS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C3sw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C4Pp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C5U1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C7n9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C851",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C8VV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C9ct",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCNZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCT1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CE2i",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CEtI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CQb6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSRv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CTx3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CXo6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CcKi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cgm4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ChDP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CiUa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ckoc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ClkB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpD1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpzZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Csn4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CuH2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cuca",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CvdY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CwKm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cy4u",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Czey",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D6Tj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9CN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9jN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DAWk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DBQk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DDQo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DF9U",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DFZb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGKy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGqA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      }
+    ],
+    "dev-1024": [
+      {
+        "case_id": "fact-sft-08b72",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08d8r",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08mq0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08pXf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08zBJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0905I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-093XY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Hte",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09InA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Ktk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09OqU",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Rxd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09TTJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09lis",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09nvK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09uZI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09vM0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09wqH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09y40",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A5bd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A9FS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AALY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ABO1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACQC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ACeu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ADIJ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJTV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJVI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJy9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ALrx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMQW",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMic",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AMjq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0APo0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AQCC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ASFO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AZKQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Abea",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Adqg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Agqm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AiSq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AlJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AsAa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Atht",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AtyV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Awgb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B0Iq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3A1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3VQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B6pV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BBdM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCKF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BCda",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BDFm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BETy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BFNX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIQH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIff",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BIpm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BK3y",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL3T",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BLZR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMi5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMu4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOKS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BOwq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BRMT",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BTRP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BULo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ba9c",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bagj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbjI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcIk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BcMF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bccz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgEX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BgQ6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BhSf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bnga",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Br1L",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrG9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrjZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BsoI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BudO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxYw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BxzM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ByiS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BznS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C3sw",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C4Pp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C5U1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C7n9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C851",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C8VV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C9ct",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCNZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CCT1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CE2i",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CEtI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CQb6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSRv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CTx3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CXo6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CcKi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cgm4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ChDP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CiUa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ckoc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ClkB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpD1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CpzZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Csn4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CuH2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cuca",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CvdY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CwKm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cy4u",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Czey",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D6Tj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9CN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9jN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DAWk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DBQk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DDQo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DF9U",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DFZb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGKy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DGqA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      }
+    ],
+    "holdout-base": [
+      {
+        "case_id": "fact-sft-086eu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08AKI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08UTv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08lfj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08vX3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08yJ9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-091aD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Ar5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09KOr",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09NKS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09S8l",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09UxB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09V0A",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09XLX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09ZOA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09bLP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09mu0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09nJV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09oN2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09uk2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09wNf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09zTO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A036",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A0Hv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A2hM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AH5m",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJz9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AK1R",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AL3z",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AP1s",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AQfA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AYSk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AZM3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ab4I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ab9p",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AcOR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AcRz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AdFZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AgQ9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Aj3m",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Akxu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AmWM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AmiB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AnkR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Aox8",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AqOm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Arbk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Arvo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AuI5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AuJV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AwBA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B04i",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B0gX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3Ak",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3xc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B65w",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BALs",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BG0S",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BK43",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL0C",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL3P",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMeN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMwo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BPEg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BQgG",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BTeI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BWMu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BX1P",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BXLQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BZuA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbC2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbEB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bckv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bezp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BfGk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bfog",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BjzF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BlS8",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BoaI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bpnf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BqMg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrFI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Brqi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Btfy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bxfo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BynO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C12L",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C1SS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C5wP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C6eb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C77K",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C876",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C92A",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CD09",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CEQO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CJR9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CM0s",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CMOd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0COOC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSJX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSU6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSiR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CXQr",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ca27",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CaJd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cb7E",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CbRT",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CfON",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CfU3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CgEM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cl6f",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CrhE",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CsPB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ct5F",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CvhL",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D0FF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D39f",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D3Kn",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D6UC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D77e",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D7ZN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D7zu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D8DS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D8jB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D8s9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9pA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DC0x",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DCuP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DDjb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DIag",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DJ8X",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DMG3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DMLv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DPH7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DQy2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DRuy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DVsQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DW33",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DWMR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DXTq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DcvV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ddt1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dix9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dmsm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DnLY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dqpu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dri5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ds02",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ds1f",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DsBa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dtda",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dth7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DvYq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DwI2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DxJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E2MQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E2Xk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E3VD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E3lD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EAUK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ECTq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EFKN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EFKg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EHq4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EJA7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ELZP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EOWL",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ERej",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ET91",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ETxy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EWR4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EY52",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EY5I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EYJ9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EYJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EZ8E",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EZYx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ea2R",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ea6Q",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EaJo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EaRH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ebry",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EbxV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EcIM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ecbh",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EcwW",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EdSu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EfTf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EgHp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EgUI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Egil",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eh3z",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EhP2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ei9t",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EiQ3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EiUN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ej1p",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EjCb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ejy9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EkPV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ekgx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eklh",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EkrH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ekzd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0El5Z",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Em3k",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EmLk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EmiZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Emsj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0En60",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Enwh",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EpMs",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EpZc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eq4R",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ErXa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Es0q",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Es73",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EsFd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EszQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EtCP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Etfi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EuPK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EuU6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eudo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EvIY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Evai",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EvhK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Evs0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ew0t",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ewhe",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ExXa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Expr",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Expz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Exvg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eyv7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eyzc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EzRX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F1Q0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F1YX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F2PM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F2lI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F3hc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F3zR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F44W",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F4Ag",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F4FD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F5Rb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F5Wz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F6Kd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F6My",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F6YE",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F71D",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F71n",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F84Q",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F8N6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F91j",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      }
+    ],
+    "holdout-selected": [
+      {
+        "case_id": "fact-sft-086eu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08AKI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08UTv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08lfj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08vX3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-08yJ9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-091aD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09Ar5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09KOr",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09NKS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09S8l",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09UxB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09V0A",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09XLX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09ZOA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09bLP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09mu0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09nJV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09oN2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09uk2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09wNf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-09zTO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A036",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A0Hv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0A2hM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AH5m",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AJz9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AK1R",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AL3z",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AP1s",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AQfA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AYSk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AZM3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ab4I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ab9p",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AcOR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AcRz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AdFZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AgQ9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Aj3m",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Akxu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AmWM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AmiB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AnkR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Aox8",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AqOm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Arbk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Arvo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AuI5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AuJV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0AwBA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B04i",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B0gX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3Ak",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B3xc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0B65w",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BALs",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BG0S",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BK43",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL0C",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BL3P",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMeN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BMwo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BPEg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BQgG",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BTeI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BWMu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BX1P",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BXLQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BZuA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbC2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BbEB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bckv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bezp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BfGk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bfog",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BjzF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BlS8",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BoaI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bpnf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BqMg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BrFI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Brqi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Btfy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Bxfo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0BynO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C12L",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C1SS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C5wP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C6eb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C77K",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C876",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0C92A",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CD09",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CEQO",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CJR9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CM0s",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CMOd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0COOC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSJX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSU6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CSiR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CXQr",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ca27",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CaJd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cb7E",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CbRT",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CfON",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CfU3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CgEM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Cl6f",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CrhE",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CsPB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ct5F",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0CvhL",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D0FF",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D39f",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D3Kn",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D6UC",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D77e",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D7ZN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D7zu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D8DS",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D8jB",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D8s9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0D9pA",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DC0x",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DCuP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DDjb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DIag",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DJ8X",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DMG3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DMLv",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DPH7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DQy2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DRuy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DVsQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DW33",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DWMR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DXTq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DcvV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ddt1",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dix9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dmsm",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DnLY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dqpu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dri5",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ds02",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ds1f",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DsBa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dtda",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Dth7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DvYq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DwI2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0DxJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E2MQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E2Xk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E3VD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0E3lD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EAUK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ECTq",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EFKN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EFKg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EHq4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EJA7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ELZP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EOWL",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ERej",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ET91",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ETxy",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EWR4",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EY52",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EY5I",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EYJ9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EYJQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EZ8E",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EZYx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ea2R",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ea6Q",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EaJo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EaRH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ebry",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EbxV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EcIM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ecbh",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EcwW",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EdSu",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EfTf",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EgHp",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EgUI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Egil",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eh3z",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EhP2",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ei9t",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EiQ3",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EiUN",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ej1p",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EjCb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ejy9",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EkPV",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ekgx",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eklh",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EkrH",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ekzd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0El5Z",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Em3k",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EmLk",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EmiZ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Emsj",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0En60",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Enwh",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EpMs",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EpZc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eq4R",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ErXa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Es0q",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Es73",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EsFd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EszQ",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EtCP",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Etfi",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EuPK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EuU6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eudo",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EvIY",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Evai",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EvhK",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Evs0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ew0t",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Ewhe",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0ExXa",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Expr",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Expz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Exvg",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eyv7",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0Eyzc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0EzRX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F1Q0",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F1YX",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F2PM",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F2lI",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F3hc",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F3zR",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F44W",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F4Ag",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F4FD",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F5Rb",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F5Wz",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F6Kd",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F6My",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F6YE",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F71D",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F71n",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F84Q",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F8N6",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      },
+      {
+        "case_id": "fact-sft-0F91j",
+        "status": "not_run",
+        "text": "",
+        "reason": "no retained attempted outcome"
+      }
+    ]
+  },
+  "recovery_notes": [],
+  "limits": "File-only accounting; not_run/unknown outcomes do not complete missing experiments or permit selection."
+}

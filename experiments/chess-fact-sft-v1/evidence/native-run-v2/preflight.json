@@ -1,0 +1,95 @@
+{
+  "status": "passed",
+  "samples": [
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12442689536,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29210021888,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15066988544,
+      "utc": "2026-10-15T08:07:34.451375+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12446240768,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29191094272,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15068037120,
+      "utc": "2026-10-15T08:07:35.493155+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12446650368,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29189734400,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15083765760,
+      "utc": "2026-10-15T08:07:36.538791+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12472328192,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29144850432,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15105785856,
+      "utc": "2026-10-15T08:07:37.569663+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12478148608,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29166133248,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15066988544,
+      "utc": "2026-10-15T08:07:38.607630+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12473274368,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29167525888,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15068037120,
+      "utc": "2026-10-15T08:07:39.648513+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12479729664,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29139283968,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15083765760,
+      "utc": "2026-10-15T08:07:40.678799+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12481257472,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29130756096,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15105785856,
+      "utc": "2026-10-15T08:07:41.718817+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12491739136,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29138051072,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15066988544,
+      "utc": "2026-10-15T08:07:42.758158+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 12495253504,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 29132599296,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 15068037120,
+      "utc": "2026-10-15T08:07:43.792197+00:00"
+    }
+  ]
+}

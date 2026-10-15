@@ -19,3 +19,6 @@ experiments/chess-fact-sft-v1/** -text whitespace=blank-at-eol,blank-at-eof,spac
 scripts/chess_fact_sft_*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/chess_native_resources.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_fact_sft_*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Original pytest traceback spacing is evidence; preserve it byte-for-byte.
+experiments/chess-fact-sft-v1/evidence/reviews/chess-fact-sft-legacy-tests-v1.txt -text -whitespace

@@ -1,0 +1,19 @@
+{
+  "pid": 49036,
+  "exit_code": 0,
+  "forced_owned_termination": false,
+  "cancel_issues": [],
+  "sample_count": 3849,
+  "elapsed_seconds": 4012.0939999999973,
+  "sources_sha256": {
+    "scripts/chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "scripts/chess_fact_sft_evaluate.py": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99",
+    "scripts/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+    "scripts/chess_fact_sft_supervise.py": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c",
+    "scripts/chess_fact_sft_train.py": "35fcc46ade2e46b35911da4758bddb9431f3b0b1ad66134d684006c7f74d7404",
+    "scripts/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "scripts/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "experiments/chess-fact-sft-v1/protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+    "experiments/chess-fact-sft-v1/launch-and-persistence-amendment-v3.json": "265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e"
+  }
+}

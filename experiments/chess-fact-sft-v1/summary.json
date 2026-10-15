@@ -1,0 +1,597 @@
+{
+  "schema": "chess.fact-sft.review-summary.v1",
+  "created_at_utc": "2026-10-15T09:47:40.949418+00:00",
+  "status": "completed_candidate_not_promoted",
+  "task": "Eight immediate move facts from a pre-move board, selected legal move and board-derived piece map. Rule-labelled fact supervision; distinct from earlier Stockfish-supervised move models.",
+  "model": {
+    "repo": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "unique_frozen_base_parameters": 596049920,
+    "trainable_LoRA_parameters": 5046272,
+    "base_integrity": {
+      "before": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008",
+      "after": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008",
+      "unchanged": true
+    }
+  },
+  "training": {
+    "updates": 1024,
+    "examples_consumed_once": 8192,
+    "target_tokens": 388023,
+    "loss_first": 0.41113027930259705,
+    "loss_last": 0.0011848107678815722,
+    "loss_min": 5.138241976965219e-05,
+    "loss_max": 0.4168435335159302
+  },
+  "selection": {
+    "selected_step": 512,
+    "ranking": [
+      {
+        "step": 512,
+        "counts": {
+          "planned": 128,
+          "all_eight_correct": 118,
+          "strict_parse_completed": 128,
+          "parse_error": 0,
+          "truncated": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "score_sha256": "eda2e14558dfdea1d71dd7581e08d1099accd791e3de3eb459d3780f32c74007",
+        "checkpoint_sha256": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc"
+      },
+      {
+        "step": 1024,
+        "counts": {
+          "planned": 128,
+          "all_eight_correct": 118,
+          "strict_parse_completed": 128,
+          "parse_error": 0,
+          "truncated": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "score_sha256": "204d11eefa9257b67aece1d1eee662545427302c6fd19e62fa70f3baeae9cdd9",
+        "checkpoint_sha256": "ca2d32ac9869a5a879c99aed041dd42db5ec654a12ef9af0b756e1079d756e62"
+      },
+      {
+        "step": 256,
+        "counts": {
+          "planned": 128,
+          "all_eight_correct": 115,
+          "strict_parse_completed": 128,
+          "parse_error": 0,
+          "truncated": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "score_sha256": "2d3ce76a85ed861b27e2bb55feebe97ce07b42c6ac882b9524da4d1abde300cb",
+        "checkpoint_sha256": "cfeb30d5a4e8cf480a0bcc5e3fb6d29ae2053e4a86bc89f7776b67ad2bcbdf62"
+      },
+      {
+        "step": 128,
+        "counts": {
+          "planned": 128,
+          "all_eight_correct": 111,
+          "strict_parse_completed": 128,
+          "parse_error": 0,
+          "truncated": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "score_sha256": "791455c7601ffb66e3741ca84c3302dd7f5c0f1a11b77b259d97bec5e8f821a3",
+        "checkpoint_sha256": "aec01e511adff5cbbe98147cbecfc61bfdee2ea0c00858338446e2212cdc5f64"
+      },
+      {
+        "step": 0,
+        "counts": {
+          "planned": 128,
+          "all_eight_correct": 0,
+          "strict_parse_completed": 0,
+          "parse_error": 128,
+          "truncated": 0,
+          "error": 0,
+          "not_run": 0
+        },
+        "score_sha256": "eb37764711da9994e36921f71df564ec03e81f7e318485dea63b5a88cbcfe522",
+        "checkpoint_sha256": "167945d0004f4735f08a618b35318a5e3c1115cf91ed5564bfb5742fdab61ff6"
+      }
+    ],
+    "checkpoint_bindings": {
+      "0": "167945d0004f4735f08a618b35318a5e3c1115cf91ed5564bfb5742fdab61ff6",
+      "128": "aec01e511adff5cbbe98147cbecfc61bfdee2ea0c00858338446e2212cdc5f64",
+      "256": "cfeb30d5a4e8cf480a0bcc5e3fb6d29ae2053e4a86bc89f7776b67ad2bcbdf62",
+      "512": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc",
+      "1024": "ca2d32ac9869a5a879c99aed041dd42db5ec654a12ef9af0b756e1079d756e62"
+    },
+    "base_hash": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008"
+  },
+  "holdout": {
+    "holdout-base": {
+      "counts": {
+        "planned": 256,
+        "all_eight_correct": 0,
+        "strict_parse_completed": 0,
+        "parse_error": 256,
+        "truncated": 0,
+        "error": 0,
+        "not_run": 0
+      },
+      "fields": {
+        "moving_piece": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "\"knight\"": {
+              "support": 24,
+              "correct": 0
+            },
+            "\"bishop\"": {
+              "support": 31,
+              "correct": 0
+            },
+            "\"queen\"": {
+              "support": 49,
+              "correct": 0
+            },
+            "\"rook\"": {
+              "support": 66,
+              "correct": 0
+            },
+            "\"king\"": {
+              "support": 33,
+              "correct": 0
+            },
+            "\"pawn\"": {
+              "support": 53,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "\"knight\" -> \"__invalid__\"": 24,
+            "\"bishop\" -> \"__invalid__\"": 31,
+            "\"queen\" -> \"__invalid__\"": 49,
+            "\"rook\" -> \"__invalid__\"": 66,
+            "\"king\" -> \"__invalid__\"": 33,
+            "\"pawn\" -> \"__invalid__\"": 53
+          }
+        },
+        "moving_colour": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "\"black\"": {
+              "support": 112,
+              "correct": 0
+            },
+            "\"white\"": {
+              "support": 144,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "\"black\" -> \"__invalid__\"": 112,
+            "\"white\" -> \"__invalid__\"": 144
+          }
+        },
+        "is_capture": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 239,
+              "correct": 0
+            },
+            "true": {
+              "support": 17,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "false -> \"__invalid__\"": 239,
+            "true -> \"__invalid__\"": 17
+          }
+        },
+        "captured_piece": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "null": {
+              "support": 239,
+              "correct": 0
+            },
+            "\"pawn\"": {
+              "support": 13,
+              "correct": 0
+            },
+            "\"rook\"": {
+              "support": 3,
+              "correct": 0
+            },
+            "\"knight\"": {
+              "support": 1,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "null -> \"__invalid__\"": 239,
+            "\"pawn\" -> \"__invalid__\"": 13,
+            "\"rook\" -> \"__invalid__\"": 3,
+            "\"knight\" -> \"__invalid__\"": 1
+          }
+        },
+        "gives_check": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 243,
+              "correct": 0
+            },
+            "true": {
+              "support": 13,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "false -> \"__invalid__\"": 243,
+            "true -> \"__invalid__\"": 13
+          }
+        },
+        "is_castling": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 256,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "false -> \"__invalid__\"": 256
+          }
+        },
+        "is_en_passant": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 256,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "false -> \"__invalid__\"": 256
+          }
+        },
+        "promotion_piece": {
+          "correct": 0,
+          "unknown": 0,
+          "classes": {
+            "null": {
+              "support": 255,
+              "correct": 0
+            },
+            "\"rook\"": {
+              "support": 1,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "null -> \"__invalid__\"": 255,
+            "\"rook\" -> \"__invalid__\"": 1
+          }
+        }
+      }
+    },
+    "holdout-selected": {
+      "counts": {
+        "planned": 256,
+        "all_eight_correct": 242,
+        "strict_parse_completed": 256,
+        "parse_error": 0,
+        "truncated": 0,
+        "error": 0,
+        "not_run": 0
+      },
+      "fields": {
+        "moving_piece": {
+          "correct": 256,
+          "unknown": 0,
+          "classes": {
+            "\"knight\"": {
+              "support": 24,
+              "correct": 24
+            },
+            "\"bishop\"": {
+              "support": 31,
+              "correct": 31
+            },
+            "\"queen\"": {
+              "support": 49,
+              "correct": 49
+            },
+            "\"rook\"": {
+              "support": 66,
+              "correct": 66
+            },
+            "\"king\"": {
+              "support": 33,
+              "correct": 33
+            },
+            "\"pawn\"": {
+              "support": 53,
+              "correct": 53
+            }
+          },
+          "confusion": {
+            "\"knight\" -> \"knight\"": 24,
+            "\"bishop\" -> \"bishop\"": 31,
+            "\"queen\" -> \"queen\"": 49,
+            "\"rook\" -> \"rook\"": 66,
+            "\"king\" -> \"king\"": 33,
+            "\"pawn\" -> \"pawn\"": 53
+          }
+        },
+        "moving_colour": {
+          "correct": 256,
+          "unknown": 0,
+          "classes": {
+            "\"black\"": {
+              "support": 112,
+              "correct": 112
+            },
+            "\"white\"": {
+              "support": 144,
+              "correct": 144
+            }
+          },
+          "confusion": {
+            "\"black\" -> \"black\"": 112,
+            "\"white\" -> \"white\"": 144
+          }
+        },
+        "is_capture": {
+          "correct": 256,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 239,
+              "correct": 239
+            },
+            "true": {
+              "support": 17,
+              "correct": 17
+            }
+          },
+          "confusion": {
+            "false -> false": 239,
+            "true -> true": 17
+          }
+        },
+        "captured_piece": {
+          "correct": 256,
+          "unknown": 0,
+          "classes": {
+            "null": {
+              "support": 239,
+              "correct": 239
+            },
+            "\"pawn\"": {
+              "support": 13,
+              "correct": 13
+            },
+            "\"rook\"": {
+              "support": 3,
+              "correct": 3
+            },
+            "\"knight\"": {
+              "support": 1,
+              "correct": 1
+            }
+          },
+          "confusion": {
+            "null -> null": 239,
+            "\"pawn\" -> \"pawn\"": 13,
+            "\"rook\" -> \"rook\"": 3,
+            "\"knight\" -> \"knight\"": 1
+          }
+        },
+        "gives_check": {
+          "correct": 243,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 243,
+              "correct": 243
+            },
+            "true": {
+              "support": 13,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "false -> false": 243,
+            "true -> false": 13
+          }
+        },
+        "is_castling": {
+          "correct": 256,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 256,
+              "correct": 256
+            }
+          },
+          "confusion": {
+            "false -> false": 256
+          }
+        },
+        "is_en_passant": {
+          "correct": 256,
+          "unknown": 0,
+          "classes": {
+            "false": {
+              "support": 256,
+              "correct": 256
+            }
+          },
+          "confusion": {
+            "false -> false": 256
+          }
+        },
+        "promotion_piece": {
+          "correct": 255,
+          "unknown": 0,
+          "classes": {
+            "null": {
+              "support": 255,
+              "correct": 255
+            },
+            "\"rook\"": {
+              "support": 1,
+              "correct": 0
+            }
+          },
+          "confusion": {
+            "null -> null": 255,
+            "\"rook\" -> null": 1
+          }
+        }
+      }
+    }
+  },
+  "paired_all_eight": {
+    "both_correct": 0,
+    "selected_only_correct": 242,
+    "base_only_correct": 0,
+    "neither_correct": 14
+  },
+  "strict_all_eight_percentage_point_change": 94.53125,
+  "interpretation": "The base produced no response satisfying the exact eight-field schema. The change therefore combines response-format/task conformance and factual correctness; it does not isolate a gain in chess knowledge. No partial extraction or repair was allowed.",
+  "planned_outcome_counts": {
+    "dev-0": {
+      "planned": 128,
+      "all_eight_correct": 0,
+      "strict_parse_completed": 0,
+      "parse_error": 128,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "dev-128": {
+      "planned": 128,
+      "all_eight_correct": 111,
+      "strict_parse_completed": 128,
+      "parse_error": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "dev-256": {
+      "planned": 128,
+      "all_eight_correct": 115,
+      "strict_parse_completed": 128,
+      "parse_error": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "dev-512": {
+      "planned": 128,
+      "all_eight_correct": 118,
+      "strict_parse_completed": 128,
+      "parse_error": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "dev-1024": {
+      "planned": 128,
+      "all_eight_correct": 118,
+      "strict_parse_completed": 128,
+      "parse_error": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "holdout-base": {
+      "planned": 256,
+      "all_eight_correct": 0,
+      "strict_parse_completed": 0,
+      "parse_error": 256,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    },
+    "holdout-selected": {
+      "planned": 256,
+      "all_eight_correct": 242,
+      "strict_parse_completed": 256,
+      "parse_error": 0,
+      "truncated": 0,
+      "error": 0,
+      "not_run": 0
+    }
+  },
+  "planned_outcomes": 1152,
+  "resources": {
+    "samples": 3849,
+    "max_gap_seconds": 1.0780000000013388,
+    "minimum_physical_available_bytes": 9553625088,
+    "minimum_commit_headroom_bytes": 11404517376,
+    "minimum_GPU_free_bytes": 10345250816,
+    "elapsed_seconds": 4012.0939999999973,
+    "recorded_training_dev_phase_seconds": 2647.765999999996,
+    "recorded_holdout_plus_parent_finalization_seconds": 1364.3280000000013,
+    "timing_limit": "Parent elapsed includes final file-only ledger/supervision writes; token/kernel stopping is cooperative and sampler-bounded, not instantaneous."
+  },
+  "software_validation": {
+    "repaired_launch_and_persistence_review": {
+      "passed": 83,
+      "deselected": 1,
+      "scope": "Finite software and real CPU ownership/file-lock checks; not the full repository suite."
+    },
+    "mandatory_historical_compatibility_run": {
+      "failed": 9,
+      "passed": 5,
+      "errors": 89,
+      "seconds": 2.1,
+      "retained_log": "evidence/reviews/chess-fact-sft-legacy-tests-v1.txt",
+      "limitation": "Historical private fixtures are unavailable in this checkout. The required run is retained; no full-suite pass or restored historical acceptance is claimed."
+    }
+  },
+  "preserved_failed_attempts": [
+    {
+      "attempt": "v1",
+      "optimizer_updates": 0,
+      "completed_raw_responses": 0,
+      "error": 0,
+      "not_run": 1152,
+      "failure": "Owned PID mismatch before model import/load; separate amendment frozen before repair."
+    },
+    {
+      "attempt": "v2",
+      "optimizer_updates": 0,
+      "completed_raw_responses": 16,
+      "error": 1,
+      "not_run": 1135,
+      "failure": "Access denied replacing local progress file. Exact locking process was not captured; separate persistence amendment frozen before repair."
+    }
+  ],
+  "development_repeat_disclosure": "The16 interrupted baseline-development prompts may be generated again in the complete v3 baseline. Keep v2 outputs separately; never select/average among repetitions or pool their scores. No interrupted response quality or truth comparison was inspected to choose this repair. Model, cohort, fixed selector, seeds and all training/generation settings stay unchanged. Holdout was never called. This is an amended experiment after engineering failure, not an untouched original run.",
+  "protocol_sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+  "frozen_data_sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6",
+  "independent_completed_audit_sha256": "afbadb547d1ba0e232fb79fccab35ae241a1b516002c8336852e0fb1a58e7587",
+  "publication_bindings_sha256": "426fa92ae82d7dacd7fa745b1224ff11f24d30b0502c06aa7692788c9e3db72c",
+  "limits": [
+    "A descriptive, game-disjoint convenience-source comparison, not playing strength, Elo, strategic understanding or commentary quality.",
+    "Baseline strict-schema failure is not evidence that every underlying factual statement was wrong or absent; malformed responses receive zero by the predeclared rule.",
+    "Development-selected candidate only; no default-model or formal research promotion.",
+    "Zero heldout castling/en-passant positives and only one rook promotion. Inspect capture/check true-class support separately from prevalent false values.",
+    "Unknown upstream pretraining overlap; finite exclusion registry does not establish universal novelty.",
+    "The earlier16 interrupted development responses remain separate and are never pooled into these metrics."
+  ],
+  "assistance": "Codex-assisted research engineering, source selection, local training and practical verification. No claim of human-only authorship."
+}

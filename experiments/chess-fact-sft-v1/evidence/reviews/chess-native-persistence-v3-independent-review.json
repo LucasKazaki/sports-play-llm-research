@@ -1,0 +1,387 @@
+{
+  "schema": "chess.native-fact-sft.persistence-v3.independent-review.v1",
+  "utc": "2026-10-15T08:23:44.626965+00:00",
+  "reviewer": "chess_media independent practical source/CPU review; Codex-assisted",
+  "verdict": "CLEAR_FOR_SINGLE_SEPARATELY_AUTHORIZED_CREATE_ONLY_NATIVE_RUN_V3",
+  "outstanding_blockers": [],
+  "head_at_review": "fcffac915bf514b796d1c021f5299be0474de3f0",
+  "runtime_changes_uncommitted_at_review": true,
+  "amendment_frozen_before_repair_commit": "fcffac9",
+  "amendment_sha256": "265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e",
+  "source_sha256": {
+    "scripts/chess_fact_sft_common.py": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+    "scripts/chess_fact_sft_train.py": "35fcc46ade2e46b35911da4758bddb9431f3b0b1ad66134d684006c7f74d7404",
+    "scripts/chess_fact_sft_supervise.py": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c",
+    "scripts/chess_fact_sft_evaluate.py": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99",
+    "scripts/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "scripts/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "scripts/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+    "tests/test_chess_fact_sft_native.py": "c1c58954d8209b1fa9db396ec27b5d7ddecf8639201c72f5e4d871b667f8171c",
+    "tests/test_chess_fact_sft_intake.py": "89b5ba54fadf3645445bb0c3a1b434b83b8407e61f53e8ee654c2e453a42064b",
+    "experiments/chess-fact-sft-v1/protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+    "experiments/chess-fact-sft-v1/launch-and-persistence-amendment-v3.json": "265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e"
+  },
+  "prior_attempts_preserved": [
+    {
+      "path": "data/private/chess-fact-sft-v1/native-run-v1",
+      "bound_files": 16,
+      "file_inventory_exact": true,
+      "all_hashes_unchanged": true,
+      "ledger_counts": {
+        "not_run": 1152
+      }
+    },
+    {
+      "path": "data/private/chess-fact-sft-v1/native-run-v2",
+      "bound_files": 31,
+      "file_inventory_exact": true,
+      "all_hashes_unchanged": true,
+      "ledger_counts": {
+        "completed": 16,
+        "error": 1,
+        "not_run": 1135
+      }
+    }
+  ],
+  "prior_review_v2_test_source_preserved": true,
+  "tests": {
+    "passed": 83,
+    "deselected": 1,
+    "seconds": 7.27,
+    "breakdown": {
+      "repository_native": 30,
+      "repository_intake": 30,
+      "new_launch_persistence": 18,
+      "prior_independent_fake_only": 5,
+      "prior_random_model_test_explicitly_excluded": 1
+    },
+    "result_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-fact-sft-review-v1\\v3-independent-check-results.json",
+    "result_sha256": "0e28f96d2f78b28cb82927ccd3cbe14c1dc67dec0e87a045fc1afe7f8dff574b",
+    "new_test_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\chess-fact-sft-review-v1\\test_launch_and_persistence_v3.py",
+    "new_test_sha256": "fa442105f0e16f3cf41c2d5bd0af520f4b2e1ed907a631345c2b44e31dbb6fe7",
+    "real_windows_lock_observations": [
+      {
+        "delayed_release": true,
+        "observed_attempts": [
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "success": true
+          }
+        ],
+        "temp_write_count": 1,
+        "sleeps": [
+          0.02,
+          0.02,
+          0.02
+        ],
+        "elapsed_seconds": 0.062000000005355105,
+        "old_destination_preserved_until_atomic_success_or_final_failure": true,
+        "temp_preserved_on_permanent_failure": false
+      },
+      {
+        "delayed_release": false,
+        "observed_attempts": [
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          },
+          {
+            "winerror": 5,
+            "temp_sha256": "07184071838b06108d3e027b0d8abf89cf977b78b84932eae58c2627e05b8c29"
+          }
+        ],
+        "temp_write_count": 1,
+        "sleeps": [
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02,
+          0.02
+        ],
+        "elapsed_seconds": 1.0469999999986612,
+        "old_destination_preserved_until_atomic_success_or_final_failure": true,
+        "temp_preserved_on_permanent_failure": true
+      }
+    ]
+  },
+  "source_scope": [
+    "AST comparison: save is the only changed common function; all prompt/token/mask/parser/scoring/selector functions unchanged.",
+    "Trainer/evaluator/core/resource/intake bytes exactly match retained v2 execution snapshots.",
+    "Supervisor changes only frozen amendment identity and retention checks for both prior attempts.",
+    "One temp write, up to51 replace attempts; retry only OSError.winerror5/32/33;50 sleeps of20ms maximum; other errors immediate and permanent error preserves prior destination and owned temp.",
+    "The1.0second limit is total requested sleep budget, not a hard bound on filesystem syscall wall time.",
+    "No generation, training step, response repair or optimizer retry; phase/resource policy unchanged."
+  ],
+  "failure_attribution_clarification": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\outputs\\chess-native-v2-failure-attribution-clarification.json",
+    "sha256": "ee0eca1ba6b3d629745ad62af6684961a8796d6093ae8c780103f0b4c4280e59"
+  },
+  "development_repeat_disclosure": "The16 interrupted baseline-development prompts may be generated again in the complete v3 baseline. Keep v2 outputs separately; never select/average among repetitions or pool their scores. No interrupted response quality or truth comparison was inspected to choose this repair. Model, cohort, fixed selector, seeds and all training/generation settings stay unchanged. Holdout was never called. This is an amended experiment after engineering failure, not an untouched original run.",
+  "review_boundary": {
+    "pretrained_loads": 0,
+    "actual_model_forwards": 0,
+    "GPU_calls": 0,
+    "actual_experiment_quality_scoring": 0,
+    "heldout_label_joins": 0,
+    "permitted_work": "CPU metadata/stdlib child/fake model/temporary file sharing probes and source/hash/status accounting only"
+  },
+  "limits": [
+    "Engineering readiness only; does not establish completed training, experimental gain, resource guarantee or scientific promotion.",
+    "Permanent sharing/access errors and conflicts lasting beyond the bounded attempts still stop the run.",
+    "This local atomic visibility repair does not add power-loss durability or multi-writer transaction guarantees.",
+    "Original16 development responses remain separately preserved; a v3 repetition must not be pooled, selected or described as an untouched original run.",
+    "New job requires root commit/source binding and separate execution authorization."
+  ]
+}

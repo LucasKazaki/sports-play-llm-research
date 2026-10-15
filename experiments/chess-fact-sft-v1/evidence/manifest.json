@@ -1,0 +1,793 @@
+{
+  "schema": "chess.fact-sft.public-evidence-manifest.v1",
+  "files": [
+    {
+      "path": "cohort/before-selection.json",
+      "bytes": 835,
+      "sha256": "decea38386533453835dafc17aa0f659637998a729883ba08aa3c5abf182298c"
+    },
+    {
+      "path": "cohort/dataset.json",
+      "bytes": 5855183,
+      "sha256": "ae1cfa3ad6c4e7582fa233d6118f7a4baaaa7dc05d57ee9d6b5807c321bd983c"
+    },
+    {
+      "path": "cohort/dev-inputs.json",
+      "bytes": 18870,
+      "sha256": "68c02d2d947ee4324c0997eac3c45fbce878f0d33a1456c3a4504a342f7bfca2"
+    },
+    {
+      "path": "cohort/dev-labels.json",
+      "bytes": 42025,
+      "sha256": "cf67b1d588f7cfaf2162e2515be0b5b7b021e681f420d16ab66bd9ce7c1c1354"
+    },
+    {
+      "path": "cohort/exclusion-registry.json",
+      "bytes": 2913427,
+      "sha256": "79ae0c7244f3d0bf525988c448dee1b419e35f1fb05845cbec0cccad047824f0"
+    },
+    {
+      "path": "cohort/frozen-data.json",
+      "bytes": 1648,
+      "sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6"
+    },
+    {
+      "path": "cohort/holdout-inputs.json",
+      "bytes": 37686,
+      "sha256": "3dda4139c4c6706f7db5c5cf0705a7c617cf2dc0b24f8be99e66819d540b146a"
+    },
+    {
+      "path": "cohort/holdout-labels.json",
+      "bytes": 83938,
+      "sha256": "6eb9595d07ed23a56f8d43e95b5177ef5d62c4b45e6149460c762055d9d38e79"
+    },
+    {
+      "path": "cohort/protocol.json",
+      "bytes": 29104,
+      "sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+    },
+    {
+      "path": "cohort/selection-sources/chess_board_fact_core.py.txt",
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "cohort/selection-sources/chess_board_fact_diagnostic.py.txt",
+      "bytes": 27798,
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    {
+      "path": "cohort/selection-sources/chess_fact_sft_intake.py.txt",
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "cohort/selection-trace.jsonl",
+      "bytes": 3253765,
+      "sha256": "eb8c7d87706b4a35375a5990a06a680363970003cc097bcc6ac8bf6c45e49967"
+    },
+    {
+      "path": "cohort/train-inputs.json",
+      "bytes": 1204078,
+      "sha256": "a0392a16efe545f9a145ed9f465ed7b619259c1e3eb9225074b19d7e45e432fc"
+    },
+    {
+      "path": "cohort/train-labels.json",
+      "bytes": 2684566,
+      "sha256": "d35822e1251072081831abe92dc14b249fe118d7aaa0c862eca8cd3c7add0339"
+    },
+    {
+      "path": "native-run-v3/base-integrity.json",
+      "bytes": 183,
+      "sha256": "e3a0926b6a8d6d54eb3957947fb00737ac806787b9bdc8140a5f5148cdaa6caf"
+    },
+    {
+      "path": "native-run-v3/checkpoint-0/adapter/adapter_config.json",
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    {
+      "path": "native-run-v3/checkpoint-0/adapter/README.md",
+      "bytes": 5400,
+      "sha256": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    },
+    {
+      "path": "native-run-v3/checkpoint-0/manifest.json",
+      "bytes": 521,
+      "sha256": "167945d0004f4735f08a618b35318a5e3c1115cf91ed5564bfb5742fdab61ff6"
+    },
+    {
+      "path": "native-run-v3/checkpoint-1024/adapter/adapter_config.json",
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    {
+      "path": "native-run-v3/checkpoint-1024/adapter/README.md",
+      "bytes": 5400,
+      "sha256": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    },
+    {
+      "path": "native-run-v3/checkpoint-1024/manifest.json",
+      "bytes": 524,
+      "sha256": "ca2d32ac9869a5a879c99aed041dd42db5ec654a12ef9af0b756e1079d756e62"
+    },
+    {
+      "path": "native-run-v3/checkpoint-128/adapter/adapter_config.json",
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    {
+      "path": "native-run-v3/checkpoint-128/adapter/README.md",
+      "bytes": 5400,
+      "sha256": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    },
+    {
+      "path": "native-run-v3/checkpoint-128/manifest.json",
+      "bytes": 523,
+      "sha256": "aec01e511adff5cbbe98147cbecfc61bfdee2ea0c00858338446e2212cdc5f64"
+    },
+    {
+      "path": "native-run-v3/checkpoint-256/adapter/adapter_config.json",
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    {
+      "path": "native-run-v3/checkpoint-256/adapter/README.md",
+      "bytes": 5400,
+      "sha256": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    },
+    {
+      "path": "native-run-v3/checkpoint-256/manifest.json",
+      "bytes": 523,
+      "sha256": "cfeb30d5a4e8cf480a0bcc5e3fb6d29ae2053e4a86bc89f7776b67ad2bcbdf62"
+    },
+    {
+      "path": "native-run-v3/checkpoint-512/adapter/adapter_config.json",
+      "bytes": 1341,
+      "sha256": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a"
+    },
+    {
+      "path": "native-run-v3/checkpoint-512/adapter/README.md",
+      "bytes": 5400,
+      "sha256": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    },
+    {
+      "path": "native-run-v3/checkpoint-512/manifest.json",
+      "bytes": 523,
+      "sha256": "f416c9b9b9c2b9ac287b22f456825893cfe364e98f2731b5add711525e9ee8bc"
+    },
+    {
+      "path": "native-run-v3/dev-0/raw.json",
+      "bytes": 1427946,
+      "sha256": "9ce6629c9687219539a0f77932c6b34055142e284f156e55560c50d10bfc9fdb"
+    },
+    {
+      "path": "native-run-v3/dev-0/seal.json",
+      "bytes": 3302,
+      "sha256": "03ff1776b48b73bcdabd56699bd9ea7b2c81ea7a41a263221873bef8ec941236"
+    },
+    {
+      "path": "native-run-v3/dev-0-score.json",
+      "bytes": 50594,
+      "sha256": "eb37764711da9994e36921f71df564ec03e81f7e318485dea63b5a88cbcfe522"
+    },
+    {
+      "path": "native-run-v3/dev-1024/raw.json",
+      "bytes": 1379659,
+      "sha256": "04df4f6833a72f35e8466cb38bf34e31876b637432189cbe38d1869662814265"
+    },
+    {
+      "path": "native-run-v3/dev-1024/seal.json",
+      "bytes": 3306,
+      "sha256": "3006be1668491cfe5b73e5e070134a410b9f8421f81f3bb14c402f278a0c4d6b"
+    },
+    {
+      "path": "native-run-v3/dev-1024-score.json",
+      "bytes": 49345,
+      "sha256": "204d11eefa9257b67aece1d1eee662545427302c6fd19e62fa70f3baeae9cdd9"
+    },
+    {
+      "path": "native-run-v3/dev-128/raw.json",
+      "bytes": 1379443,
+      "sha256": "649082d3b60f7821f63cc7598fb47d5ce04730f6b54c30fd505e604fd3c74f33"
+    },
+    {
+      "path": "native-run-v3/dev-128/seal.json",
+      "bytes": 3305,
+      "sha256": "f4a2808061afd85886870e1102ab58756665eaa7d34d988db6857751603b7640"
+    },
+    {
+      "path": "native-run-v3/dev-128-score.json",
+      "bytes": 49354,
+      "sha256": "791455c7601ffb66e3741ca84c3302dd7f5c0f1a11b77b259d97bec5e8f821a3"
+    },
+    {
+      "path": "native-run-v3/dev-256/raw.json",
+      "bytes": 1379584,
+      "sha256": "cd8ff8cfd9d7546ba8b4ec5c84fb6dadd3b34f206f55d6390ebc4784e6e594c1"
+    },
+    {
+      "path": "native-run-v3/dev-256/seal.json",
+      "bytes": 3305,
+      "sha256": "e3ae27c4d4db525372725fa49799703fcdcf875d4ab3db342e30d405ec2e1cb8"
+    },
+    {
+      "path": "native-run-v3/dev-256-score.json",
+      "bytes": 49489,
+      "sha256": "2d3ce76a85ed861b27e2bb55feebe97ce07b42c6ac882b9524da4d1abde300cb"
+    },
+    {
+      "path": "native-run-v3/dev-512/raw.json",
+      "bytes": 1379509,
+      "sha256": "42778c884e73cbd5c1da1584d9b5619beb2d781b067bd3336fa65b921af362f8"
+    },
+    {
+      "path": "native-run-v3/dev-512/seal.json",
+      "bytes": 3305,
+      "sha256": "48553936c31ab25917738b85673e8a39acf7e6c0e01ed7755dafb98b4f967f07"
+    },
+    {
+      "path": "native-run-v3/dev-512-score.json",
+      "bytes": 49345,
+      "sha256": "eda2e14558dfdea1d71dd7581e08d1099accd791e3de3eb459d3780f32c74007"
+    },
+    {
+      "path": "native-run-v3/dev-scores.json",
+      "bytes": 2015,
+      "sha256": "5da2b1c446a36848de9f3149d05508c7f1b9674c00c6c7d605d0a60933f777da"
+    },
+    {
+      "path": "native-run-v3/executed-sources/chess_board_fact_core.py.txt",
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "native-run-v3/executed-sources/chess_fact_sft_common.py.txt",
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    {
+      "path": "native-run-v3/executed-sources/chess_fact_sft_evaluate.py.txt",
+      "bytes": 688,
+      "sha256": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99"
+    },
+    {
+      "path": "native-run-v3/executed-sources/chess_fact_sft_intake.py.txt",
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "native-run-v3/executed-sources/chess_fact_sft_supervise.py.txt",
+      "bytes": 10446,
+      "sha256": "aa12e13ab7ebdf3c957202285f9bdf0cd8e294fbe4e7328ace4f3e03d3da7f1c"
+    },
+    {
+      "path": "native-run-v3/executed-sources/chess_fact_sft_train.py.txt",
+      "bytes": 19533,
+      "sha256": "35fcc46ade2e46b35911da4758bddb9431f3b0b1ad66134d684006c7f74d7404"
+    },
+    {
+      "path": "native-run-v3/executed-sources/chess_native_resources.py.txt",
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "path": "native-run-v3/executed-sources/launch-and-persistence-amendment-v3.json",
+      "bytes": 10667,
+      "sha256": "265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e"
+    },
+    {
+      "path": "native-run-v3/executed-sources/protocol.json",
+      "bytes": 29104,
+      "sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+    },
+    {
+      "path": "native-run-v3/first-gradients.json",
+      "bytes": 15893,
+      "sha256": "3950d6a8f1397279cd581640624d4e442359724c4478af7285e7a469698ff454"
+    },
+    {
+      "path": "native-run-v3/holdout-base/raw.json",
+      "bytes": 2853515,
+      "sha256": "7af087affe48469025324d599b625d50d6c8a71ca5fee980425a4367f76d5f8f"
+    },
+    {
+      "path": "native-run-v3/holdout-base/seal.json",
+      "bytes": 6030,
+      "sha256": "79d8e9dbbd0eeb128e32ba0cca371d3d8818208a7fe1729248a6a43b39550353"
+    },
+    {
+      "path": "native-run-v3/holdout-base-score.json",
+      "bytes": 97316,
+      "sha256": "71006f96fe82dc71782958d1e6299c9b2af38aef1b8364e640907b1f8f5e3bb4"
+    },
+    {
+      "path": "native-run-v3/holdout-selected/raw.json",
+      "bytes": 2758872,
+      "sha256": "b17e75c225fb9d8456cd61a8031bba66b961116cf0f3eac14eb76afa7137e536"
+    },
+    {
+      "path": "native-run-v3/holdout-selected/seal.json",
+      "bytes": 6033,
+      "sha256": "30afdec6b71ce50f993b202c461bcd10c7270f824040a8f6e58c914411e93804"
+    },
+    {
+      "path": "native-run-v3/holdout-selected-score.json",
+      "bytes": 94920,
+      "sha256": "dc5de63bd987b3f288ad8426da590d6f07a240e6418c1a78dbe45df51103af17"
+    },
+    {
+      "path": "native-run-v3/outcome-ledger.json",
+      "bytes": 14363696,
+      "sha256": "8f4f253cd1d268cab953e459343031cd0ee28faaeb4f4992bfd0801e6b87d2d8"
+    },
+    {
+      "path": "native-run-v3/outcome.json",
+      "bytes": 172,
+      "sha256": "517f4f272ce6f6232c65f366d75bfc2fa3b8cecb72c02ed33d3435038b92a6f0"
+    },
+    {
+      "path": "native-run-v3/ownership.json",
+      "bytes": 3437,
+      "sha256": "e4e48846b5c233101814b7d47a2c88ca3298574bce38c43c98da84424a73f3af"
+    },
+    {
+      "path": "native-run-v3/permutation.json",
+      "bytes": 64429,
+      "sha256": "bb3ef5c68dab6fbb70e6c03329fd9cdc40f497780665ddcef9cb2d28b31bb75f"
+    },
+    {
+      "path": "native-run-v3/phase.json",
+      "bytes": 149,
+      "sha256": "bf07f1d6cc20357843a397d04d96d1f1e5feb98c159fdfae3b480c1f8f83c3ff"
+    },
+    {
+      "path": "native-run-v3/planned-outcomes.json",
+      "bytes": 27863,
+      "sha256": "d11d6ceb054639b27dfb4076e077474c52922d4bfdf041f564088b2c0b78734c"
+    },
+    {
+      "path": "native-run-v3/preflight.json",
+      "bytes": 3124,
+      "sha256": "6a0d44ad180f5e9af16b9fe06e5bbd21b8cacc480a3355a619dddca34cac4179"
+    },
+    {
+      "path": "native-run-v3/progress.json",
+      "bytes": 141,
+      "sha256": "0139cd07eeeb2d2a9d8c303878b50336d75830cb3954625edb363f552e601011"
+    },
+    {
+      "path": "native-run-v3/resources.jsonl",
+      "bytes": 1076235,
+      "sha256": "dbfeb25a31047331eea3d9ec2609acd728240192172f2658312dc19a64daed5e"
+    },
+    {
+      "path": "native-run-v3/runtime-identity.json",
+      "bytes": 30700,
+      "sha256": "130d29474e3c9966909f922a5657f2b1020e36a9b8dbcdfedc8fa80f633bcc3a"
+    },
+    {
+      "path": "native-run-v3/selection.json",
+      "bytes": 2706,
+      "sha256": "2e60458dc28be2b9e3ddf812cb2d2105d01a0f81c0400edb33972db47666bd4c"
+    },
+    {
+      "path": "native-run-v3/supervision.json",
+      "bytes": 1214,
+      "sha256": "cc5e74751a7637d8bb72bb6b34dccab6a4e27b58e9de934361ecc8d90e532f1f"
+    },
+    {
+      "path": "native-run-v3/token-boundaries.json",
+      "bytes": 223,
+      "sha256": "ffb875efeaa7671eacf0f67e768fb51c2101f7acfb9f6bc18afe3b434e582602"
+    },
+    {
+      "path": "native-run-v3/training-progress.json",
+      "bytes": 32,
+      "sha256": "66ac4a849f2ce4fe63e3977facfa447b0c3b2710bf900380280dd0e462b4daf6"
+    },
+    {
+      "path": "native-run-v3/training.jsonl",
+      "bytes": 245252,
+      "sha256": "40fab82785cb099d9cf819efbd67d22114a4530138ae4820ead1a95f33aa6e9e"
+    },
+    {
+      "path": "native-run-v3/worker.stderr.txt",
+      "bytes": 129,
+      "sha256": "8fbef42942829fb18bdc1e28163b6162294c43815f01b8b13e73a06dcbbd250d"
+    },
+    {
+      "path": "native-run-v3/worker.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-run-v1/executed-sources/chess_board_fact_core.py.txt",
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "native-run-v1/executed-sources/chess_fact_sft_common.py.txt",
+      "bytes": 10363,
+      "sha256": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4"
+    },
+    {
+      "path": "native-run-v1/executed-sources/chess_fact_sft_evaluate.py.txt",
+      "bytes": 688,
+      "sha256": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99"
+    },
+    {
+      "path": "native-run-v1/executed-sources/chess_fact_sft_intake.py.txt",
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "native-run-v1/executed-sources/chess_fact_sft_supervise.py.txt",
+      "bytes": 7556,
+      "sha256": "d9cc7d8700e80dce4b5577635dfb288dffb2e600561d71d29b31112477ce3b12"
+    },
+    {
+      "path": "native-run-v1/executed-sources/chess_fact_sft_train.py.txt",
+      "bytes": 17913,
+      "sha256": "cf7391e3ab4d8c94dbbda956f7c44042fece10b249e3182bcc8a27554fe0f5c5"
+    },
+    {
+      "path": "native-run-v1/executed-sources/chess_native_resources.py.txt",
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "path": "native-run-v1/executed-sources/protocol.json",
+      "bytes": 29104,
+      "sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+    },
+    {
+      "path": "native-run-v1/outcome-ledger.json",
+      "bytes": 176661,
+      "sha256": "2af2d4d38baf9246902287dcad0db65da64ac0ddf3e3ac63053debb4ce8968a9"
+    },
+    {
+      "path": "native-run-v1/ownership.json",
+      "bytes": 2300,
+      "sha256": "dee8d74ecb6235e15b1270f42b9c69459fca3f107f881e49c784c3f8e459bf80"
+    },
+    {
+      "path": "native-run-v1/planned-outcomes.json",
+      "bytes": 27863,
+      "sha256": "d11d6ceb054639b27dfb4076e077474c52922d4bfdf041f564088b2c0b78734c"
+    },
+    {
+      "path": "native-run-v1/preflight.json",
+      "bytes": 3124,
+      "sha256": "4b3e6dbf52c4fdfdf7403f6e494cc9eac5d8fb1a7c8a856add334e3f3d29b5bd"
+    },
+    {
+      "path": "native-run-v1/resources.jsonl",
+      "bytes": 280,
+      "sha256": "59336db55e55f168d4fb335ab515c7515a9255ddef11d94985bcfd170bc14658"
+    },
+    {
+      "path": "native-run-v1/supervision.json",
+      "bytes": 1065,
+      "sha256": "8862b523e141b687efa14b86027593df275b973b4018ed40b99f94d8f5ae1dea"
+    },
+    {
+      "path": "native-run-v1/worker.stderr.txt",
+      "bytes": 467,
+      "sha256": "c42024517f53abfc843c826fae71137aca4957a1f3509f205efd4e7e1660e357"
+    },
+    {
+      "path": "native-run-v1/worker.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "native-run-v2/checkpoint-0/adapter/adapter_config.json",
+      "bytes": 1341,
+      "sha256": "ca1ba037b99a84b7442d4c8ff7a97a766fcf1298b0f86ecf607461b13cd55db9"
+    },
+    {
+      "path": "native-run-v2/checkpoint-0/adapter/README.md",
+      "bytes": 5400,
+      "sha256": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+    },
+    {
+      "path": "native-run-v2/checkpoint-0/manifest.json",
+      "bytes": 521,
+      "sha256": "9cec842a381fe166135a271696db10a0ae24701a0275d8239f012f172247ae4a"
+    },
+    {
+      "path": "native-run-v2/dev-0/raw.json",
+      "bytes": 205111,
+      "sha256": "f9f2dbe9017850bc66a7918e5f4f917b2133a8d656dd2c3058c1f27c8d0d7b5d"
+    },
+    {
+      "path": "native-run-v2/dev-0/seal.json",
+      "bytes": 3302,
+      "sha256": "80e3f38989fbfd180dd0dcdf937c437c35eae56903b09325657bd8ef6d03a897"
+    },
+    {
+      "path": "native-run-v2/dev-0.journal.jsonl",
+      "bytes": 80953,
+      "sha256": "733090727fb60f3019d559b0827e629cdaa0beb77ec9471e7cab6dd6bb3e3230"
+    },
+    {
+      "path": "native-run-v2/executed-sources/chess_board_fact_core.py.txt",
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "native-run-v2/executed-sources/chess_fact_sft_common.py.txt",
+      "bytes": 10363,
+      "sha256": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4"
+    },
+    {
+      "path": "native-run-v2/executed-sources/chess_fact_sft_evaluate.py.txt",
+      "bytes": 688,
+      "sha256": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99"
+    },
+    {
+      "path": "native-run-v2/executed-sources/chess_fact_sft_intake.py.txt",
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "native-run-v2/executed-sources/chess_fact_sft_supervise.py.txt",
+      "bytes": 10371,
+      "sha256": "b84e9a7c1f16857a6d538f7437bc331b890be1cab6083028941ba680cdf46212"
+    },
+    {
+      "path": "native-run-v2/executed-sources/chess_fact_sft_train.py.txt",
+      "bytes": 19533,
+      "sha256": "35fcc46ade2e46b35911da4758bddb9431f3b0b1ad66134d684006c7f74d7404"
+    },
+    {
+      "path": "native-run-v2/executed-sources/chess_native_resources.py.txt",
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "path": "native-run-v2/executed-sources/launch-amendment-v2.json",
+      "bytes": 5166,
+      "sha256": "e2dd94d0d47fbf59e90d3c678d41ce6f0e48d1ecb6adb43fae879767ced7d2a8"
+    },
+    {
+      "path": "native-run-v2/executed-sources/protocol.json",
+      "bytes": 29104,
+      "sha256": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765"
+    },
+    {
+      "path": "native-run-v2/outcome-ledger.json",
+      "bytes": 390293,
+      "sha256": "b6785313b45590d12906bfca902bad5de2c8077b6fd592d787468c73cd7ad513"
+    },
+    {
+      "path": "native-run-v2/outcome.json",
+      "bytes": 563,
+      "sha256": "bb5e983d72e0ea2e490fe8790cb62d71cf15c1940c9bd78809cba15001961115"
+    },
+    {
+      "path": "native-run-v2/ownership.json",
+      "bytes": 3421,
+      "sha256": "879a546de8e745c281ce3aeacaa51c46c8e521d2deed343096d610020bb4270b"
+    },
+    {
+      "path": "native-run-v2/permutation.json",
+      "bytes": 64429,
+      "sha256": "bb3ef5c68dab6fbb70e6c03329fd9cdc40f497780665ddcef9cb2d28b31bb75f"
+    },
+    {
+      "path": "native-run-v2/planned-outcomes.json",
+      "bytes": 27863,
+      "sha256": "d11d6ceb054639b27dfb4076e077474c52922d4bfdf041f564088b2c0b78734c"
+    },
+    {
+      "path": "native-run-v2/preflight.json",
+      "bytes": 3124,
+      "sha256": "147ee4ca2bb25be24065e0fb97c4041da9bb7ab9e1b5a2d9ac0466c51663cba6"
+    },
+    {
+      "path": "native-run-v2/progress.json",
+      "bytes": 123,
+      "sha256": "ae1b0597eb8693e6ac2ecfff7695cfd9a353028cd33d515cec493a1e4aabe32c"
+    },
+    {
+      "path": "native-run-v2/progress.json.tmp",
+      "bytes": 123,
+      "sha256": "7c2d3bcdb7e52428b3f5c6e91009f559a373d63bbcd48626fdba8f92877bc957"
+    },
+    {
+      "path": "native-run-v2/resources.jsonl",
+      "bytes": 17910,
+      "sha256": "370854d73750a3a23dec5c330153f359a99f3bdd0b2e48cf99b0040eebe46355"
+    },
+    {
+      "path": "native-run-v2/runtime-identity.json",
+      "bytes": 30700,
+      "sha256": "130d29474e3c9966909f922a5657f2b1020e36a9b8dbcdfedc8fa80f633bcc3a"
+    },
+    {
+      "path": "native-run-v2/supervision.json",
+      "bytes": 1195,
+      "sha256": "8e275965dda62556665731fe60ac990cb6bc99e33091f791e3324da17a7775e6"
+    },
+    {
+      "path": "native-run-v2/token-boundaries.json",
+      "bytes": 223,
+      "sha256": "ffb875efeaa7671eacf0f67e768fb51c2101f7acfb9f6bc18afe3b434e582602"
+    },
+    {
+      "path": "native-run-v2/worker.stderr.txt",
+      "bytes": 1823,
+      "sha256": "9d86d8a0c8627c6e8d150a053cec3129c619cf3d7b0d5100a602475f7bf0b942"
+    },
+    {
+      "path": "native-run-v2/worker.stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "acquisition/acquisition.json",
+      "bytes": 5696,
+      "sha256": "eacd909cea2a2ce57f68bb3de2f93c2e7d4713495135f9a924f01b2324f4b4aa"
+    },
+    {
+      "path": "acquisition/acquisition-v2.json",
+      "bytes": 3593,
+      "sha256": "3e5dda5647ecfd1d2301b494d7221d615f10eb7db0f8e5a0031c768bbe04f895"
+    },
+    {
+      "path": "independent-completed-review.json",
+      "bytes": 7235,
+      "sha256": "afbadb547d1ba0e232fb79fccab35ae241a1b516002c8336852e0fb1a58e7587"
+    },
+    {
+      "path": "reviews/chess-fact-sft-publication-bindings.json",
+      "bytes": 65544,
+      "sha256": "426fa92ae82d7dacd7fa745b1224ff11f24d30b0502c06aa7692788c9e3db72c"
+    },
+    {
+      "path": "publication-sources/fact_sft_publication_gate.py.txt",
+      "bytes": 4220,
+      "sha256": "4878a1564ff02183c9fbb8c6cb489a02685e7e93032eed006a806679c5f7bb8f"
+    },
+    {
+      "path": "publication-sources/package_native_fact_sft.py.txt",
+      "bytes": 5113,
+      "sha256": "41835006f7710c9cda524ccab911ca28c6d55d87f0600aaafcda37c0dd5f84d3"
+    },
+    {
+      "path": "publication-sources/build_native_fact_summary.py.txt",
+      "bytes": 5903,
+      "sha256": "599a3ff91325363d282d80ff44d181098117dcd0ba6f23aa3b472bc6b796368b"
+    },
+    {
+      "path": "reviews/chess-fact-sft-intake-audit.json",
+      "bytes": 3239,
+      "sha256": "17616835ff8bb5aee9708d2662855e4af596a7cc0106b7e34c4a5e33b1b0b4de"
+    },
+    {
+      "path": "reviews/chess-native-persistence-v3-independent-review.json",
+      "bytes": 15179,
+      "sha256": "228c0852b75ea268fa442365b45bb0a826ac21cdaaa0af80de87868d7880d0d0"
+    },
+    {
+      "path": "reviews/chess-native-v2-failure-attribution-clarification.json",
+      "bytes": 1386,
+      "sha256": "ee0eca1ba6b3d629745ad62af6684961a8796d6093ae8c780103f0b4c4280e59"
+    },
+    {
+      "path": "reviews/chess-fact-sft-coverage-clarification.json",
+      "bytes": 1020,
+      "sha256": "431b47f6b2b0833f267b9751d4e9fb6d7846c8e3adf5d56ab8ef45fa292dd198"
+    },
+    {
+      "path": "reviews/chess-fact-sft-legacy-tests-v1.txt",
+      "bytes": 212594,
+      "sha256": "470ebd2230e047ba491dae1ec03a897fb794eaf04577f40ea4c5ca922f3b55b2"
+    }
+  ],
+  "private_hashed_artifacts": [
+    {
+      "source": "native-run-v3/checkpoint-0/adapter/adapter_model.safetensors",
+      "bytes": 20236472,
+      "sha256": "d1ffa279ba3f63eac05f32c14e17595bab11ea784667cbfdfff1fb5ab89420bc"
+    },
+    {
+      "source": "native-run-v3/checkpoint-0/training-state.pt",
+      "bytes": 36445,
+      "sha256": "3cc6b5faa18ba1c4b404a14b95d3c335f183376b29f2706fb2b4709031cd8b95"
+    },
+    {
+      "source": "native-run-v3/checkpoint-1024/adapter/adapter_model.safetensors",
+      "bytes": 20236472,
+      "sha256": "8433f36fe676b92aa264e7471735ca6d770270b620ce7c8d3420847b7fad2507"
+    },
+    {
+      "source": "native-run-v3/checkpoint-1024/training-state.pt",
+      "bytes": 40739549,
+      "sha256": "de527852e38dffbe4642cd66c6ddd24eb02efda705299ed13eab0c7cff6289cc"
+    },
+    {
+      "source": "native-run-v3/checkpoint-128/adapter/adapter_model.safetensors",
+      "bytes": 20236472,
+      "sha256": "8759e594964182f472f36bf39c3a90464e8cfaf456b362aac1b0384924c26808"
+    },
+    {
+      "source": "native-run-v3/checkpoint-128/training-state.pt",
+      "bytes": 40739549,
+      "sha256": "bb4bb2db72cb9481ca162070b49843f3ed587ad452ca215795a2899713f7bb0d"
+    },
+    {
+      "source": "native-run-v3/checkpoint-256/adapter/adapter_model.safetensors",
+      "bytes": 20236472,
+      "sha256": "4c595f8f78fd81bc535c3a063ba9a93c82c45b21b88e55638615c277e8c20173"
+    },
+    {
+      "source": "native-run-v3/checkpoint-256/training-state.pt",
+      "bytes": 40739549,
+      "sha256": "c57796f76b0ee499e685e113cbbfdd77b800faa210729a8720885671261208fe"
+    },
+    {
+      "source": "native-run-v3/checkpoint-512/adapter/adapter_model.safetensors",
+      "bytes": 20236472,
+      "sha256": "9d183cdd12024865e4d4c92864e70c32c6dccd605102a42e9ed8da018d947137"
+    },
+    {
+      "source": "native-run-v3/checkpoint-512/training-state.pt",
+      "bytes": 40739549,
+      "sha256": "1106fd58ca7ef86d02deaa223e0701d8e26b993d44bd09d0b6583347bffa3621"
+    },
+    {
+      "source": "native-run-v3/dev-0.journal.jsonl",
+      "bytes": 609863,
+      "sha256": "e5a4c61b490d1f24c88860e7f4f7b725e3355060d90bc7c923ab9ff6d907272b"
+    },
+    {
+      "source": "native-run-v3/dev-1024.journal.jsonl",
+      "bytes": 586956,
+      "sha256": "d81f511909e4215dfd17a91ba8ddc9d75ac2f3b43bd47bf0bbbf8c2c96176624"
+    },
+    {
+      "source": "native-run-v3/dev-128.journal.jsonl",
+      "bytes": 586773,
+      "sha256": "76b06f150db0e23d6e0521d1f2b0083741f07c6fa680a20d3bb65be81ea9571e"
+    },
+    {
+      "source": "native-run-v3/dev-256.journal.jsonl",
+      "bytes": 586882,
+      "sha256": "abfa49178b565370350c444e146a86acce811f25d7f7fbd68c8e5c780724c186"
+    },
+    {
+      "source": "native-run-v3/dev-512.journal.jsonl",
+      "bytes": 586807,
+      "sha256": "9a8cc913f7d0408ef2d424ac195a100f0ba2ccce6040b213132fad68d833d16b"
+    },
+    {
+      "source": "native-run-v3/holdout-base.journal.jsonl",
+      "bytes": 1218512,
+      "sha256": "317f6fa8e3d34cb195fa63da1d4625ac97ee7cec52d4360775d235e58d9e73e3"
+    },
+    {
+      "source": "native-run-v3/holdout-selected.journal.jsonl",
+      "bytes": 1173698,
+      "sha256": "b45e26cb05fe471da256848f586e7c55d36b3cf009d99d12d0ba939629c84141"
+    },
+    {
+      "source": "native-run-v2/checkpoint-0/adapter/adapter_model.safetensors",
+      "bytes": 20236472,
+      "sha256": "d1ffa279ba3f63eac05f32c14e17595bab11ea784667cbfdfff1fb5ab89420bc"
+    },
+    {
+      "source": "native-run-v2/checkpoint-0/training-state.pt",
+      "bytes": 36445,
+      "sha256": "3cc6b5faa18ba1c4b404a14b95d3c335f183376b29f2706fb2b4709031cd8b95"
+    }
+  ],
+  "private_reason": "Model/adapter weights and optimizer/RNG states stay local; journals duplicate sealed complete raw records. No media or upstream source shard is redistributed.",
+  "base_and_source_identity": "Pinned protocol and acquisition receipts bind the private base weights and CC0 source shard.",
+  "completed_audit_sha256": "afbadb547d1ba0e232fb79fccab35ae241a1b516002c8336852e0fb1a58e7587",
+  "new_model_calls": 0,
+  "publication_bindings_sha256": "426fa92ae82d7dacd7fa745b1224ff11f24d30b0502c06aa7692788c9e3db72c",
+  "assistance": "Codex-assisted engineering candidate; no formal research promotion."
+}

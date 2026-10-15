@@ -1,0 +1,9 @@
+{
+  "train_count": 8192,
+  "prompt_min": 697,
+  "prompt_max": 735,
+  "target_min": 47,
+  "target_max": 49,
+  "sequence_max": 783,
+  "permutation_sha256": "bb3ef5c68dab6fbb70e6c03329fd9cdc40f497780665ddcef9cb2d28b31bb75f"
+}

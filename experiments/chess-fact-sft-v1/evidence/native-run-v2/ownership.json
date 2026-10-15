@@ -1,0 +1,57 @@
+{
+  "pid": 16692,
+  "command": [
+    "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_fact_sft_train.py",
+    "--repo",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+    "--cohort",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\cohort",
+    "--protocol",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-fact-sft-v1\\protocol.json",
+    "--out",
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\native-run-v2"
+  ],
+  "source_sha256": {
+    "scripts/chess_fact_sft_common.py": "77fb560608b64bbf3eea306ef4411b23f6637692f53b1c2e750fc52146b84fe4",
+    "scripts/chess_fact_sft_evaluate.py": "d997c5699387eee312a68b03ddd747fd73352405de8ff5db254ca3fc0cd73d99",
+    "scripts/chess_fact_sft_intake.py": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+    "scripts/chess_fact_sft_supervise.py": "b84e9a7c1f16857a6d538f7437bc331b890be1cab6083028941ba680cdf46212",
+    "scripts/chess_fact_sft_train.py": "35fcc46ade2e46b35911da4758bddb9431f3b0b1ad66134d684006c7f74d7404",
+    "scripts/chess_native_resources.py": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+    "scripts/chess_board_fact_core.py": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+    "experiments/chess-fact-sft-v1/protocol.json": "56602640605f890479115f30f822de027ebe702aafd5fff8a561d43f9838e765",
+    "experiments/chess-fact-sft-v1/launch-amendment-v2.json": "e2dd94d0d47fbf59e90d3c678d41ce6f0e48d1ecb6adb43fae879767ced7d2a8"
+  },
+  "started_monotonic": 51437.765,
+  "policy": {
+    "start_physical_available_bytes": 10737418240,
+    "start_commit_headroom_bytes": 17179869184,
+    "start_gpu_free_bytes": 13958643712,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 8589934592,
+    "stop_gpu_free_bytes": 1073741824,
+    "maximum_owned_request_seconds": 5400.0,
+    "maximum_sample_gap_seconds": 3.0
+  },
+  "cohort_frozen_sha256": "fee767748dfabd0cf6c28978b5908b8837d99acf2a132144ee65e690ff0614c6",
+  "native_launch_identity": {
+    "amendment_sha256": "e2dd94d0d47fbf59e90d3c678d41ce6f0e48d1ecb6adb43fae879767ced7d2a8",
+    "base_executable": "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+    "base_executable_sha256": "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181",
+    "venv_executable": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "venv_executable_sha256": "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5",
+    "venv_prefix": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet",
+    "pyvenv_cfg_sha256": "115d62f8b05b80befb8aabe8ef3106697bae48f40694c95ff94014b29690a4d9",
+    "changed_environment_keys": [
+      "__PYVENV_LAUNCHER__"
+    ],
+    "dependency_versions": {
+      "torch": "2.8.0+cu128",
+      "transformers": "5.19.0",
+      "peft": "0.21.2",
+      "accelerate": "1.15.0",
+      "pyarrow": "26.0.0"
+    }
+  }
+}

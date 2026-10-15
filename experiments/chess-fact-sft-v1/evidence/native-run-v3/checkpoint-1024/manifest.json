@@ -1,0 +1,10 @@
+{
+  "step": 1024,
+  "files_sha256": {
+    "training-state.pt": "de527852e38dffbe4642cd66c6ddd24eb02efda705299ed13eab0c7cff6289cc",
+    "adapter/adapter_config.json": "fa55f4e49c6184a04f5bd3a3256ef28ced42986b58a3bef780427f4c4654d38a",
+    "adapter/adapter_model.safetensors": "8433f36fe676b92aa264e7471735ca6d770270b620ce7c8d3420847b7fad2507",
+    "adapter/README.md": "d018008d43c1c7454c0909dd34efb6aa4be4f128315234fad1bf27f5ee7a096f"
+  },
+  "base_hash": "e3af872d3dca520ddbcc6ebd78caf41dccb84203a7835efa7022545db713c008"
+}

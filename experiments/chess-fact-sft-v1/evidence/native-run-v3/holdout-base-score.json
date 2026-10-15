@@ -1,0 +1,3766 @@
+{
+  "schema": "chess.fact-sft.score.v1",
+  "seal_sha256": "79d8e9dbbd0eeb128e32ba0cca371d3d8818208a7fe1729248a6a43b39550353",
+  "labels_sha256": "6eb9595d07ed23a56f8d43e95b5177ef5d62c4b45e6149460c762055d9d38e79",
+  "counts": {
+    "planned": 256,
+    "all_eight_correct": 0,
+    "strict_parse_completed": 0,
+    "parse_error": 256,
+    "truncated": 0,
+    "error": 0,
+    "not_run": 0
+  },
+  "fields": {
+    "moving_piece": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "\"knight\"": {
+          "support": 24,
+          "correct": 0
+        },
+        "\"bishop\"": {
+          "support": 31,
+          "correct": 0
+        },
+        "\"queen\"": {
+          "support": 49,
+          "correct": 0
+        },
+        "\"rook\"": {
+          "support": 66,
+          "correct": 0
+        },
+        "\"king\"": {
+          "support": 33,
+          "correct": 0
+        },
+        "\"pawn\"": {
+          "support": 53,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "\"knight\" -> \"__invalid__\"": 24,
+        "\"bishop\" -> \"__invalid__\"": 31,
+        "\"queen\" -> \"__invalid__\"": 49,
+        "\"rook\" -> \"__invalid__\"": 66,
+        "\"king\" -> \"__invalid__\"": 33,
+        "\"pawn\" -> \"__invalid__\"": 53
+      }
+    },
+    "moving_colour": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "\"black\"": {
+          "support": 112,
+          "correct": 0
+        },
+        "\"white\"": {
+          "support": 144,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "\"black\" -> \"__invalid__\"": 112,
+        "\"white\" -> \"__invalid__\"": 144
+      }
+    },
+    "is_capture": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 239,
+          "correct": 0
+        },
+        "true": {
+          "support": 17,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "false -> \"__invalid__\"": 239,
+        "true -> \"__invalid__\"": 17
+      }
+    },
+    "captured_piece": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "null": {
+          "support": 239,
+          "correct": 0
+        },
+        "\"pawn\"": {
+          "support": 13,
+          "correct": 0
+        },
+        "\"rook\"": {
+          "support": 3,
+          "correct": 0
+        },
+        "\"knight\"": {
+          "support": 1,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "null -> \"__invalid__\"": 239,
+        "\"pawn\" -> \"__invalid__\"": 13,
+        "\"rook\" -> \"__invalid__\"": 3,
+        "\"knight\" -> \"__invalid__\"": 1
+      }
+    },
+    "gives_check": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 243,
+          "correct": 0
+        },
+        "true": {
+          "support": 13,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "false -> \"__invalid__\"": 243,
+        "true -> \"__invalid__\"": 13
+      }
+    },
+    "is_castling": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 256,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "false -> \"__invalid__\"": 256
+      }
+    },
+    "is_en_passant": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "false": {
+          "support": 256,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "false -> \"__invalid__\"": 256
+      }
+    },
+    "promotion_piece": {
+      "correct": 0,
+      "unknown": 0,
+      "classes": {
+        "null": {
+          "support": 255,
+          "correct": 0
+        },
+        "\"rook\"": {
+          "support": 1,
+          "correct": 0
+        }
+      },
+      "confusion": {
+        "null -> \"__invalid__\"": 255,
+        "\"rook\" -> \"__invalid__\"": 1
+      }
+    }
+  },
+  "outcomes": [
+    {
+      "case_id": "fact-sft-086eu",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-08AKI",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-08UTv",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-08lfj",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-08vX3",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-08yJ9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-091aD",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09Ar5",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09KOr",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09NKS",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09S8l",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09UxB",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09V0A",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09XLX",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09ZOA",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09bLP",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09mu0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09nJV",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09oN2",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09uk2",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09wNf",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-09zTO",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0A036",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0A0Hv",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0A2hM",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AH5m",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AJz9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AK1R",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AL3z",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AP1s",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AQfA",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AYSk",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AZM3",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ab4I",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ab9p",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AcOR",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AcRz",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AdFZ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AgQ9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Aj3m",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Akxu",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AmWM",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AmiB",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AnkR",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Aox8",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AqOm",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Arbk",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Arvo",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AuI5",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AuJV",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0AwBA",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0B04i",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0B0gX",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0B3Ak",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0B3xc",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0B65w",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BALs",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BG0S",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BK43",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BL0C",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BL3P",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BMeN",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BMwo",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BPEg",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BQgG",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BTeI",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BWMu",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BX1P",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BXLQ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BZuA",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BbC2",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BbEB",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bckv",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bezp",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BfGk",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bfog",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BjzF",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BlS8",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BoaI",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bpnf",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BqMg",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BrFI",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Brqi",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Btfy",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bxfo",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0BynO",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0C12L",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0C1SS",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0C5wP",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0C6eb",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0C77K",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0C876",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0C92A",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CD09",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CEQO",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CJR9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CM0s",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CMOd",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0COOC",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CSJX",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CSU6",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CSiR",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CXQr",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ca27",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CaJd",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Cb7E",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CbRT",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CfON",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CfU3",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CgEM",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Cl6f",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CrhE",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CsPB",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ct5F",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0CvhL",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D0FF",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D39f",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D3Kn",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D6UC",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D77e",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D7ZN",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D7zu",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D8DS",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D8jB",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D8s9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0D9pA",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DC0x",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DCuP",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DDjb",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DIag",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DJ8X",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DMG3",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DMLv",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DPH7",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DQy2",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DRuy",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DVsQ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DW33",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DWMR",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DXTq",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DcvV",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ddt1",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dix9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dmsm",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DnLY",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dqpu",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dri5",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ds02",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ds1f",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DsBa",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dtda",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dth7",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DvYq",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DwI2",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0DxJQ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0E2MQ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0E2Xk",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0E3VD",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0E3lD",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EAUK",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0ECTq",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EFKN",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EFKg",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EHq4",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EJA7",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0ELZP",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EOWL",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0ERej",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0ET91",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0ETxy",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EWR4",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EY52",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EY5I",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EYJ9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EYJQ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EZ8E",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EZYx",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ea2R",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ea6Q",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EaJo",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EaRH",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ebry",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EbxV",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EcIM",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ecbh",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EcwW",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EdSu",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EfTf",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EgHp",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EgUI",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Egil",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eh3z",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EhP2",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ei9t",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EiQ3",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EiUN",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ej1p",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EjCb",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ejy9",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EkPV",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ekgx",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eklh",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EkrH",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ekzd",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0El5Z",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Em3k",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EmLk",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EmiZ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Emsj",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0En60",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Enwh",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EpMs",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EpZc",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eq4R",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0ErXa",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Es0q",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Es73",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EsFd",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EszQ",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EtCP",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Etfi",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EuPK",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EuU6",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eudo",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EvIY",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Evai",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EvhK",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Evs0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ew0t",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ewhe",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0ExXa",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Expr",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Expz",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Exvg",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eyv7",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eyzc",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0EzRX",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F1Q0",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F1YX",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F2PM",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F2lI",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F3hc",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F3zR",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F44W",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F4Ag",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F4FD",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F5Rb",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F5Wz",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F6Kd",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F6My",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F6YE",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F71D",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F71n",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F84Q",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F8N6",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    },
+    {
+      "case_id": "fact-sft-0F91j",
+      "all_eight_correct": false,
+      "field_correct": {
+        "moving_piece": false,
+        "moving_colour": false,
+        "is_capture": false,
+        "captured_piece": false,
+        "gives_check": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "promotion_piece": false
+      }
+    }
+  ]
+}

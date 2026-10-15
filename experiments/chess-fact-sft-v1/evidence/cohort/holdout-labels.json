@@ -1,0 +1,3333 @@
+{
+  "rows": [
+    {
+      "case_id": "fact-sft-086eu",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-08AKI",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-08UTv",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-08lfj",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-08vX3",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-08yJ9",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-091aD",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09Ar5",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09KOr",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09NKS",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09S8l",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09UxB",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09V0A",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09XLX",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09ZOA",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09bLP",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": true,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09mu0",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09nJV",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09oN2",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09uk2",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09wNf",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-09zTO",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0A036",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0A0Hv",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0A2hM",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AH5m",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AJz9",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AK1R",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AL3z",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AP1s",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AQfA",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AYSk",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AZM3",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ab4I",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ab9p",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AcOR",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AcRz",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AdFZ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AgQ9",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Aj3m",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Akxu",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AmWM",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AmiB",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AnkR",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Aox8",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AqOm",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Arbk",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Arvo",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AuI5",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AuJV",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0AwBA",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0B04i",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0B0gX",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0B3Ak",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0B3xc",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0B65w",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BALs",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BG0S",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BK43",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BL0C",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BL3P",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BMeN",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BMwo",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BPEg",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BQgG",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BTeI",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BWMu",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BX1P",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BXLQ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BZuA",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BbC2",
+      "expected": {
+        "captured_piece": "rook",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BbEB",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bckv",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bezp",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BfGk",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bfog",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BjzF",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BlS8",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BoaI",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bpnf",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BqMg",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BrFI",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Brqi",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Btfy",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Bxfo",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0BynO",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0C12L",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0C1SS",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0C5wP",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0C6eb",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0C77K",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0C876",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0C92A",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CD09",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CEQO",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CJR9",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CM0s",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CMOd",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0COOC",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CSJX",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CSU6",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CSiR",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CXQr",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ca27",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CaJd",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Cb7E",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CbRT",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CfON",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CfU3",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": true,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CgEM",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Cl6f",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CrhE",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CsPB",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ct5F",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0CvhL",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D0FF",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D39f",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D3Kn",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D6UC",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D77e",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D7ZN",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D7zu",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D8DS",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D8jB",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D8s9",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": true,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0D9pA",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DC0x",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DCuP",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DDjb",
+      "expected": {
+        "captured_piece": "rook",
+        "gives_check": true,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DIag",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DJ8X",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DMG3",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DMLv",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DPH7",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DQy2",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DRuy",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DVsQ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DW33",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DWMR",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DXTq",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DcvV",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ddt1",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dix9",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dmsm",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DnLY",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dqpu",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dri5",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ds02",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ds1f",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DsBa",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dtda",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Dth7",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DvYq",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DwI2",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0DxJQ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0E2MQ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0E2Xk",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0E3VD",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0E3lD",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EAUK",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0ECTq",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EFKN",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EFKg",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EHq4",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EJA7",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0ELZP",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EOWL",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0ERej",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0ET91",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0ETxy",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EWR4",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EY52",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EY5I",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EYJ9",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EYJQ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EZ8E",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EZYx",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ea2R",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ea6Q",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EaJo",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EaRH",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ebry",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EbxV",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EcIM",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ecbh",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EcwW",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EdSu",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EfTf",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EgHp",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EgUI",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Egil",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eh3z",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EhP2",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ei9t",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EiQ3",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EiUN",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ej1p",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EjCb",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ejy9",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EkPV",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ekgx",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eklh",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EkrH",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ekzd",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0El5Z",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Em3k",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EmLk",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EmiZ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Emsj",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0En60",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Enwh",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EpMs",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EpZc",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eq4R",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0ErXa",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Es0q",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Es73",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EsFd",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EszQ",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EtCP",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Etfi",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EuPK",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EuU6",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eudo",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EvIY",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Evai",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EvhK",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Evs0",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ew0t",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Ewhe",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0ExXa",
+      "expected": {
+        "captured_piece": "rook",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Expr",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Expz",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Exvg",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eyv7",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "pawn",
+        "promotion_piece": "rook"
+      }
+    },
+    {
+      "case_id": "fact-sft-0Eyzc",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0EzRX",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F1Q0",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": true,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F1YX",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": true,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "bishop",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F2PM",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F2lI",
+      "expected": {
+        "captured_piece": "knight",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F3hc",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F3zR",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F44W",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F4Ag",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F4FD",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F5Rb",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F5Wz",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F6Kd",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F6My",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "rook",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F6YE",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "king",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F71D",
+      "expected": {
+        "captured_piece": "pawn",
+        "gives_check": false,
+        "is_capture": true,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "knight",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F71n",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F84Q",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "black",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F8N6",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "pawn",
+        "promotion_piece": null
+      }
+    },
+    {
+      "case_id": "fact-sft-0F91j",
+      "expected": {
+        "captured_piece": null,
+        "gives_check": false,
+        "is_capture": false,
+        "is_castling": false,
+        "is_en_passant": false,
+        "moving_colour": "white",
+        "moving_piece": "queen",
+        "promotion_piece": null
+      }
+    }
+  ],
+  "schema": "chess.fact-sft.labels.v1"
+}

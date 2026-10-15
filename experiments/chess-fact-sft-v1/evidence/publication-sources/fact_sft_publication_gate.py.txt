@@ -1,0 +1,65 @@
+"""Read-only publication guard; no model construction, execution or evaluation."""
+import hashlib
+import json
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+REPO = ROOT / 'work/repos/sports-play-llm-research'
+BINDINGS = ROOT / 'outputs/chess-fact-sft-publication-bindings.json'
+BINDINGS_SHA = '426fa92ae82d7dacd7fa745b1224ff11f24d30b0502c06aa7692788c9e3db72c'
+AUDIT_SHA = 'afbadb547d1ba0e232fb79fccab35ae241a1b516002c8336852e0fb1a58e7587'
+
+
+def sha(path):
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as stream:
+        for block in iter(lambda: stream.read(65536), b''):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def require(condition, message):
+    if not condition:
+        raise ValueError(message)
+
+
+def verify_publication_inputs():
+    # Authenticate the receipt before interpreting any supplied path or score.
+    require(sha(BINDINGS) == BINDINGS_SHA, 'publication binding receipt changed')
+    binding = json.loads(BINDINGS.read_text(encoding='utf-8'))
+    require(binding['schema'] == 'chess.native-fact-sft.publication-bindings.v1', 'binding schema')
+    require(binding['verdict'] == 'STABLE_COMPLETE_INVENTORY_AND_IDENTICAL_FILE_ONLY_REAUDIT', 'binding verdict')
+    require(Path(binding['repo_root']).resolve() == REPO.resolve(), 'repository identity')
+    require(Path(binding['workspace_root']).resolve() == ROOT.resolve(), 'workspace identity')
+    require(binding['original_completed_audit_sha256'] == AUDIT_SHA, 'original audit identity')
+    require(binding['directory_and_file_inventories_identical_before_after'] is True, 'unstable inventory')
+    require(binding['inventory_before_sha256'] == binding['inventory_after_sha256'], 'inventory digest mismatch')
+    require(binding['original_audit_unchanged'] is True and binding['model_engine_generation_calls'] == 0, 'audit provenance')
+    for group, base in (('repo_files_sha256', REPO), ('workspace_files_sha256', ROOT), ('external_files_sha256', None)):
+        for name, expected in binding[group].items():
+            path = (base / name).resolve() if base else Path(name).resolve()
+            require(base is None or path.is_relative_to(base.resolve()), 'inventory path escapes its root')
+            require(path.is_file(), 'missing inventoried file: ' + name)
+            require(path.stat().st_size == binding['file_bytes'][group + ':' + name], 'inventoried size changed: ' + name)
+            require(sha(path) == expected, 'inventoried bytes changed: ' + name)
+    for name, expected in binding['directory_inventory'].items():
+        directory = (REPO / name).resolve()
+        require(directory.is_relative_to(REPO.resolve()) and directory.is_dir(), 'inventory directory missing or escaped')
+        actual = sorted(path.relative_to(REPO).as_posix() for path in directory.rglob('*') if path.is_file())
+        # WindowsPath and plain strings order mixed-case filenames differently.
+        # Directory membership is order-independent; retain duplicate rejection.
+        require(len(expected) == len(set(expected)) and actual == sorted(expected),
+                'inventoried directory membership changed: ' + name)
+    repeated = binding['reaudit']
+    require(repeated['exit_code'] == 0 and repeated['identical_except_utc'] is True, 're-audit outcome')
+    require(sha(repeated['path']) == repeated['sha256'], 're-audit bytes changed')
+    require(sha(repeated['actual_log_path']) == repeated['actual_log_sha256'], 're-audit log changed')
+    run = REPO / 'data/private/chess-fact-sft-v1/native-run-v3'
+    require(sha(run / 'selection.json') == binding['selection_sha256'], 'selection bytes changed')
+    require(sha(run / 'base-integrity.json') == binding['base_integrity_sha256'], 'base integrity bytes changed')
+    for name, score in binding['scores'].items():
+        require(sha(run / (name + '-score.json')) == score['score_sha256'], 'score binding changed')
+        require(sha(run / name / 'seal.json') == score['raw_seal_sha256'], 'raw seal binding changed')
+    for step, digest in binding['checkpoint_manifest_sha256'].items():
+        require(sha(run / ('checkpoint-' + step) / 'manifest.json') == digest, 'checkpoint binding changed')
+    return binding

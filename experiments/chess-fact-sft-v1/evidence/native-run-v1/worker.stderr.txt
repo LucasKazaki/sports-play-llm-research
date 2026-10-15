@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_train.py", line 322, in <module>
+    run(**vars(parser.parse_args()))
+  File "C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\scripts\chess_fact_sft_train.py", line 116, in run
+    raise ValueError('child ownership identity mismatch')
+ValueError: child ownership identity mismatch

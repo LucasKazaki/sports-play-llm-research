@@ -1,0 +1,15 @@
+{
+  "schema": "chess.native-sft.failure-attribution-clarification.v1",
+  "utc": "2026-10-15T08:23:44.625968+00:00",
+  "frozen_amendment_sha256": "265dd7b029852e8ee3f0ca1e3b30408df0ad0fc4368add83ba60453522ee0d9e",
+  "preserve_frozen_prose": true,
+  "confirmed": "V2 observed PermissionError WinError5 during progress.json.tmp replacement. It stopped with16 completed development responses,1 local artifact error,1135 not_run and0 optimizer updates.",
+  "unresolved": "The process/handle denying replacement was not captured. Nearby status reads suggest a possible sharing conflict but do not establish its exact holder or prove that cause.",
+  "independent_reproduction": "A deliberately held Windows GENERIC_READ handle allowing FILE_SHARE_READ/WRITE but omitting FILE_SHARE_DELETE causes WinError5 on the same atomic replacement mechanism. This demonstrates the mechanism, not historical attribution.",
+  "policy_scope": "Retry only the same already-written local temp replacement for WinError5/32/33, never a model request or training step. Access-denied can also be permanent; bounded exhaustion still raises.",
+  "primary_sources": [
+    "https://learn.microsoft.com/en-us/windows/win32/api/fileapi/nf-fileapi-createfilew",
+    "https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-movefileexw",
+    "https://docs.python.org/3.12/library/os.html#os.replace"
+  ]
+}

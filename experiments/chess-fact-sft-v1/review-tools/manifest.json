@@ -1,0 +1,26 @@
+{
+  "schema": "chess.fact-sft.review-tool-source-bindings.v1",
+  "files": [
+    {
+      "path": "audit_completed_native_run.py.txt",
+      "sha256": "9c8f7aa9a647ebde2adca18d86165000a3a975c8578d2a36227edb580134c6da",
+      "bytes": 32754
+    },
+    {
+      "path": "test_completed_native_auditor.py.txt",
+      "sha256": "a13bfdc629d0deb5bca4a138979fa01594b62c2cbf967cc409fe9ac3c0adb8ef",
+      "bytes": 13146
+    },
+    {
+      "path": "bind_publication_artifacts.py.txt",
+      "sha256": "746a2c6c89eaf2f5bf835b389e4a5e008215415c2576c030409b6f870ffc9e5e",
+      "bytes": 9356
+    },
+    {
+      "path": "completed-auditor-preflight-v2.json",
+      "sha256": "9b8e914f1668079ec39985936e0fd4bbfde2597cce86d37b4d96a16e2e664fbb",
+      "bytes": 889
+    }
+  ],
+  "purpose": "Inert exact source/test evidence; no additional audit/model execution. The auditor and original completed review remain unchanged."
+}

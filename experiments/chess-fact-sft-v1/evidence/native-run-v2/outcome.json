@@ -1,0 +1,7 @@
+{
+  "status": "aborted",
+  "failure": "PermissionError:[WinError 5] Access is denied: 'C:\\\\Users\\\\lucas\\\\Documents\\\\Codex\\\\2026-10-15\\\\go\\\\work\\\\repos\\\\sports-play-llm-research\\\\data\\\\private\\\\chess-fact-sft-v1\\\\native-run-v2\\\\progress.json.tmp' -> 'C:\\\\Users\\\\lucas\\\\Documents\\\\Codex\\\\2026-10-15\\\\go\\\\work\\\\repos\\\\sports-play-llm-research\\\\data\\\\private\\\\chess-fact-sft-v1\\\\native-run-v2\\\\progress.json'",
+  "completed_updates": 0,
+  "cuda_peak_allocated": 1421991424,
+  "cuda_peak_reserved": 1522532352
+}

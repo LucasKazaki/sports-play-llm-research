@@ -1,0 +1,119 @@
+{
+  "schema": "chess.fact-training.asset-acquisition.v1",
+  "plan_sha256": "2b302bf75d55f87b2720e4cd9127886a734377e0c73eb8b9e9559af9fa1dbc07",
+  "model_files": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/LICENSE",
+      "status": 200,
+      "content_length": "11343",
+      "content_range": null,
+      "etag": "\"6634c8cc3133b3848ec74b9f275acaaa1ea618ab\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\LICENSE",
+      "bytes": 11343,
+      "sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "seconds": 0.12298390000069048
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/README.md",
+      "status": 200,
+      "content_length": "13965",
+      "content_range": null,
+      "etag": "\"a50b19e76f5274f9ec99f5a5d99873dca5bff25e\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\README.md",
+      "bytes": 13965,
+      "sha256": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9",
+      "seconds": 0.1012373000048683
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/config.json",
+      "status": 200,
+      "content_length": "726",
+      "content_range": null,
+      "etag": "\"f5c3703b78ae2a478ae15b247e9f855e0ce2107b\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\config.json",
+      "bytes": 726,
+      "sha256": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "seconds": 0.07132560000172816
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/generation_config.json",
+      "status": 200,
+      "content_length": "239",
+      "content_range": null,
+      "etag": "\"20a8a9156fc8c3f25295ca067f61fdf120d517c5\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\generation_config.json",
+      "bytes": 239,
+      "sha256": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "seconds": 0.09424050000234274
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/merges.txt",
+      "status": 200,
+      "content_length": "1671853",
+      "content_range": null,
+      "etag": "\"31349551d90c7606f325fe0f11bbb8bd5fa0d7c7\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\merges.txt",
+      "bytes": 1671853,
+      "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "seconds": 0.12370589999773074
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/model.safetensors",
+      "status": 200,
+      "content_length": "1503300328",
+      "content_range": null,
+      "etag": "\"6f87d3bff66602a9611e541180dec950a6b6a9068ca274ee43ac8f83550f0223\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\model.safetensors",
+      "bytes": 1503300328,
+      "sha256": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+      "seconds": 14.30003150000266
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/tokenizer.json",
+      "status": 200,
+      "content_length": "11422654",
+      "content_range": null,
+      "etag": "\"6aec39639a0a2d1ca966356b8c2b8426a484f80ff80731f44fa8482040713bdf\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\tokenizer.json",
+      "bytes": 11422654,
+      "sha256": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "seconds": 0.30489879999367986
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/tokenizer_config.json",
+      "status": 200,
+      "content_length": "9732",
+      "content_range": null,
+      "etag": "\"417d038a63fa3de29cfde265caedae14d1a58d92\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\tokenizer_config.json",
+      "bytes": 9732,
+      "sha256": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "seconds": 0.08848199999920325
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-0.6B/resolve/c1899de289a04d12100db370d81485cdf75e47ca/vocab.json",
+      "status": 200,
+      "content_length": "2776833",
+      "content_range": null,
+      "etag": "\"4783fe10ac3adce15ac8f358ef5462739852c569\"",
+      "last_modified": null,
+      "path": "work\\repos\\sports-play-llm-research\\data\\private\\chess-fact-sft-v1\\models\\base\\vocab.json",
+      "bytes": 2776833,
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+      "seconds": 0.1327346000034595
+    }
+  ],
+  "package_wheels": [],
+  "model_imports": 0,
+  "model_calls": 0,
+  "status": "failed_retained",
+  "error": "URLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1000)'))"
+}
