@@ -37,10 +37,13 @@ expert assessment of the chess tutor.
    text and replayed branches. It has no expert human semantic validation and
    is an engineering diagnostic, not human gold annotation. Unsupported claims
    and illegal earlier contexts remain unassessed. The current coaching pilot
-   selects checkpoints using development data only; its fresh matched panel
-   separates free move choice from explanation of a supplied move. Neither
-   panel measures student learning, chess Elo or comprehensive explanation
-   quality. Keep failed, unknown and never-run outcomes in their denominators.
+   selects checkpoints using development data only. Its planned fresh matched
+   panel separates free move choice from explanation of a supplied move, but
+   the actual first comparison stopped before any trained-panel call. The
+   separate later 96-response checkpoint comparison remained entirely unrun.
+   Neither provides a matched coaching-improvement score. These panels do not
+   measure student learning, chess Elo or comprehensive explanation quality.
+   Keep failed, unknown and never-run outcomes in their denominators.
 
 5. **Reproduction and preservation.** Retain pinned upstream Queen code
    `c372da22ca75e95c3c79bee8a83c220fc54d0dcb` and checkpoint

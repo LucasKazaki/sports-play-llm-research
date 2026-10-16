@@ -131,3 +131,4 @@ scripts/chess_queen_counterfactual_coverage_v1.py -text whitespace=blank-at-eol,
 tests/test_chess_queen_counterfactual_coverage_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chess-counterfactual-train-dev-coverage-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chess-counterfactual-train-dev-coverage-2026-10-16/**/finite-source-plan-tests-bundle.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+research/chess-overnight-closeout-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

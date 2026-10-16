@@ -1,6 +1,6 @@
 {
   "active_domain": "chess",
-  "status": "active",
+  "status": "overnight_window_closed_capability_unmet",
   "completed_evidence": [
     "chess-move-policy-v5",
     "chess-check-balanced-v2/run-2",
@@ -24,15 +24,15 @@
   "commentary_gate": "not_achieved",
   "schema": "sportsplay.native-chess-loop.v1",
   "next_actions": [
-    "Publish reviewed aggregate coverage evidence and the current king-target scope correction to draft PR14.",
-    "Preserve the frozen corpus, reservations, unadmitted TRAIN192 and comparison96; no late retry or reserve change.",
-    "Keep the restored CPU classifier available; trained tutor profile remains disabled.",
-    "At13UTC checkpoint/report overnight work and deactivate the heartbeat. Coaching and shareable-candidate requirements remain unmet."
+    "Retain failed and unadmitted protocols unchanged. Any future operating window needs a new dated prospective plan and whole-phase resource/time admission; no late restart of the expired phases.",
+    "Predeclare broader coaching coverage and source shortages: in-check inputs, selected king/pawn moves, varied capture victims and special rules. Preserve separately fixed generalization evaluation.",
+    "Resolve actual model/controller integration and matched raw forecasting/factuality evaluation before claiming reliable explanations or enabling the trained coaching profile.",
+    "Obtain qualified human tutor feedback before teaching-usefulness claims; actual UMD ownership/tool authorization/venue and any participant-study questions remain unresolved."
   ],
   "external_contact_sent": false,
-  "active_experiment": "No active GPU or heavy CPU experiment. Descriptive TRAIN/DEV coverage audit closed and independently recomputed. Limited-check UI loaded; actual new-controller Queen completion remains unverified.",
+  "active_experiment": "None dispatched. Overnight window closed13UTC; heartbeat PAUSED. Default tutor available; trained coaching profile disabled. Overall capability unmet.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T12:34:24.150470+00:00",
+  "updated_at": "2026-10-16T13:01:50.549501+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
   "secondary_work": "TRAIN FREE has4 king targets; selected TRAIN and all DEV have0. All544 audited roots start outside check. Aggregate coverage is not learning or coaching evidence; no new counterfactual adapter exists.",
   "failed_evidence": [
@@ -44,5 +44,6 @@
     "chess-queen-coach-counterfactual-cold-qualification-v1/attempt-3",
     "chess-tutor-draft-checks-v1/saved-compatibility-input-byte-binding",
     "chess-tutor-draft-checks-v1/authored-smoke-unadmitted"
-  ]
+  ],
+  "closeout": "research/chess-overnight-closeout-2026-10-16.json"
 }

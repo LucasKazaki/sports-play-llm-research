@@ -1,0 +1,79 @@
+{
+  "schema": "chess.overnight.closeout.v1",
+  "recorded_at_utc": "2026-10-16T13:01:50.549501+00:00",
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "status": "overnight_window_closed_capability_unmet",
+  "capability_goal_achieved": false,
+  "formal_commentary_or_shareable_promotion": false,
+  "pre_closeout_published_head": "0765628285d7bed672e9f5e68957e415d81e9236",
+  "draft_PR": "https://github.com/LucasKazaki/sports-play-llm-research/pull/14",
+  "hourly_automation": {
+    "id": "chess-coach-overnight-improvement",
+    "status": "PAUSED",
+    "rrule": "FREQ=HOURLY;INTERVAL=1;BYMINUTE=0;BYSECOND=0;UNTIL=20261016T130000Z",
+    "updated_at_unix_ms": 1792155629040,
+    "prompt_sha256": "52fdfe5978de4af6e0530c9d021140970c9ce2bca4a5334428ffbd07ca88fd92"
+  },
+  "cutoff_readiness": {
+    "observed_at_utc": "2026-10-16T13:00:20.459671+00:00",
+    "health": {
+      "schema_version": "chess.tutor-candidate.v1",
+      "status": "ready",
+      "model_configured": true,
+      "engine_available": true,
+      "coaching": {
+        "configured": true,
+        "fixture": false,
+        "status": "ready",
+        "reason": null,
+        "label": "Queen (unverified draft)"
+      }
+    },
+    "shared_gpu_lease_free_probe": true,
+    "local_receipt_sha256": "d4e748872309cff06838b75b05ead541a97cfeacbe5fea1fc152bbf4c9e1fe42",
+    "receipt_scope": "This is a service, lease and resource readback, not a complete process inventory or model-quality check. Prior owned-job closures remain separately recorded."
+  },
+  "last_owned_training_inference_and_CPU_audit_jobs": "Closed in their retained individual receipts; no new experiment was dispatched at or after cutoff.",
+  "default_demo": "Available on127.0.0.1:8793 with original manual Queen configuration and restored CPU classifier; trained coaching profile disabled.",
+  "actual_new_controller_Queen_completion": "Unverified; strict older-byte compatibility failed and the one proposed integration smoke was unadmitted. Zero new model calls in that cycle.",
+  "unrun_phases": {
+    "counterfactual_TRAIN192": {
+      "updates": 0,
+      "backwards": 0,
+      "new_adapter": false
+    },
+    "fixed_existing_checkpoint_comparison96": {
+      "model_calls": 0,
+      "raw_answers": 0,
+      "matched_score": false
+    }
+  },
+  "data_coverage": {
+    "train_roots": 512,
+    "development_roots": 32,
+    "train_presentations": 1536,
+    "development_presentations": 96,
+    "train_free_king_targets": 4,
+    "train_selected_king_targets": 0,
+    "development_king_targets": 0,
+    "roots_starting_in_check": 0,
+    "aggregate_sha256": "e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6",
+    "model_quality_result": false
+  },
+  "next_design_decisions": [
+    "Retain failed and unadmitted protocols unchanged. Any future operating window needs a new dated prospective plan and whole-phase resource/time admission; no late restart of the expired phases.",
+    "Predeclare broader coaching coverage and source shortages: in-check inputs, selected king/pawn moves, varied capture victims and special rules. Preserve separately fixed generalization evaluation.",
+    "Resolve actual model/controller integration and matched raw forecasting/factuality evaluation before claiming reliable explanations or enabling the trained coaching profile.",
+    "Obtain qualified human tutor feedback before teaching-usefulness claims; actual UMD ownership/tool authorization/venue and any participant-study questions remain unresolved."
+  ],
+  "rights_and_privacy": "No new media acquisition, creator/chats training, private corpus or weight publication, external contact, institutional approval, merge or paid service was introduced by closeout.",
+  "evidence_paths": [
+    "experiments/chess-tutor-draft-checks-v1/",
+    "experiments/chess-queen-coach-counterfactual-v1/",
+    "experiments/chess-queen-existing-checkpoint-comparison-v1/",
+    "research/chess-counterfactual-train-dev-coverage-2026-10-16/",
+    "research/chess-cache-backbone-investigation-2026-10-16/",
+    "research/chess-research-radar-2026-10-16.md",
+    "research/chess-umd-research-readiness-2026-10-16.md"
+  ]
+}

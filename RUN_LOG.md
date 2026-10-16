@@ -909,3 +909,26 @@ institutional approval or formal commentary/shareable-candidate claim follows.
 Evidence: research/chess-counterfactual-train-dev-coverage-2026-10-16/.
 Actual aggregate SHA256 e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6;
 independent closed-result review e18211457ebbf319c09ed4c2535259867c7bc97fd43a42021b41e6499cd57dcd.
+
+## Overnight window closed — October 16, 13:00 UTC
+
+The fixed 09:00 Eastern window has ended. The chess heartbeat is PAUSED, with
+its prompt and schedule preserved; readback verified the change. At 13:00:20
+UTC the default tutor reported ready and the shared GPU lease was free. These
+are service/lease observations, not a complete process inventory or quality test.
+Owned experiment closures remain in their individual receipts. No new feature
+or experiment starts after cutoff. Later available memory cannot retroactively
+admit an expired phase.
+
+The reviewed UI/backbone/radar batch and descriptive data audit are published
+in draft PR14. The trained coaching profile stays disabled. Counterfactual
+TRAIN192 and fixed comparison96 remain unrun; actual Queen completion through
+the new checker remains unverified. Reliable explanations, measured broad
+multi-move prediction, human tutoring usefulness and the formal promotion gates
+remain unmet. The overall capability goal is not marked achieved.
+
+Future work needs a new dated prospective operating plan, adequate whole-phase
+capacity and separately fixed evaluation; it must preserve the failed/unadmitted
+records and address the measured coverage gaps. UMD ownership/tool/venue and any
+future participant-study questions remain unresolved. No external contact or
+institutional approval is implied. See chess-overnight-closeout-2026-10-16.json.
