@@ -1,0 +1,459 @@
+
+FILE scripts\chess_queen_counterfactual_coverage_v1.py SHA256 f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e BYTES 13376
+"""Descriptive TRAIN/DEV coverage only; no reference files, frameworks or models."""
+from __future__ import annotations
+import argparse
+from collections import Counter,defaultdict
+from datetime import datetime,timezone
+import hashlib
+import json
+from pathlib import Path
+import sys
+import time
+import chess
+import chess_queen_adapter as native
+
+ROOT=Path(__file__).resolve().parents[1]
+MODES=('free','selected_a','selected_b')
+FIELDS={'case_id','group_id','mode','input','response'}
+VALUES={chess.PAWN:1,chess.KNIGHT:3,chess.BISHOP:3,chess.ROOK:5,chess.QUEEN:9,chess.KING:0}
+
+
+def digest(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def save(path,value):Path(path).write_text(json.dumps(value,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+def bound(item):
+    path=Path(item['path']);path=path if path.is_absolute()else ROOT/path
+    if digest(path)!=item['sha256']:raise ValueError('Pinned file bytes differ: '+str(path))
+    return path
+def framework_free():
+    if any(name in sys.modules for name in('torch','transformers','bitsandbytes','pyarrow')):
+        raise RuntimeError('Coverage audit must remain framework/model free')
+def distribution(counter,denominator,keys=()):
+    counts={str(key):counter.get(key,0)for key in sorted(set(counter)|set(keys),key=str)}
+    return {'counts':counts,'denominator':denominator,
+        'rates':{key:value/denominator if denominator else None for key,value in counts.items()}}
+def board_key(board):return ' '.join(board.fen().split()[:4])
+def group_digest(groups):return hashlib.sha256(json.dumps(sorted(groups),separators=(',',':')).encode()).hexdigest()
+def overlap_profile(train,development):
+    count=len(train&development)
+    return {'count':count,'train_distinct_denominator':len(train),'development_distinct_denominator':len(development),
+        'train_rate':count/len(train)if train else None,'development_rate':count/len(development)if development else None}
+
+
+def describe(row):
+    if type(row)is not dict or set(row)!=FIELDS:raise ValueError('row_schema')
+    if any(type(row[key])is not str or not row[key].strip()for key in('case_id','group_id','mode','response')):
+        raise ValueError('missing_or_wrong_type')
+    mode=row['mode'];packet=row['input']
+    if mode not in MODES:raise ValueError('mode')
+    if row['case_id']!=f"queen-counterfactual-v1:{row['group_id']}:{mode}":raise ValueError('case_group_identity')
+    expected={'fen'}if mode=='free'else{'fen','selected_uci'}
+    if type(packet)is not dict or set(packet)!=expected or any(type(x)is not str or not x for x in packet.values()):
+        raise ValueError('input_whitelist_or_type')
+    if len(packet['fen'].split())!=6:raise ValueError('six_field_fen')
+    try:board=chess.Board(packet['fen'])
+    except ValueError:raise ValueError('invalid_fen')from None
+    if not board.is_valid()or board.is_game_over(claim_draw=False):raise ValueError('invalid_or_terminal_board')
+    sections=[part for part in native.FIELDS.finditer(row['response'])if part['name']=='BEST_MOVE']
+    if len(sections)!=1:raise ValueError('unique_target_best')
+    atom=native.MOVE.fullmatch(sections[0]['body'].strip())
+    if atom is None:raise ValueError('target_atom')
+    move,error=native.parse_atom(atom,board,board.turn)
+    if error:raise ValueError('target_'+error)
+    if mode!='free'and move.uci()!=packet['selected_uci']:raise ValueError('supplied_target_mismatch')
+    generator_packet,_=native.input_packet(packet)
+    capture=board.is_capture(move);check=board.gives_check(move)
+    victim=chess.PAWN if board.is_en_passant(move)else board.piece_type_at(move.to_square)
+    after=board.copy(stack=False);after.push(move)
+    return {'case_id':row['case_id'],'group_id':row['group_id'],'mode':mode,'board':board,'key':board_key(board),
+        'fen':board.fen(),'packet_hash':hashlib.sha256(json.dumps(generator_packet,sort_keys=True,separators=(',',':')).encode()).hexdigest(),'uci':move.uci(),'origin':move.from_square,
+        'mover':chess.piece_symbol(board.piece_type_at(move.from_square)).upper(),
+        'side':'white'if board.turn else'black','capture':capture,'check':check,
+        'victim':chess.piece_symbol(victim).upper()if victim else'none','checkmate':after.is_checkmate(),
+        'double_check':len(after.checkers())>=2,'promotion':bool(move.promotion),'castling':board.is_castling(move),
+        'en_passant':board.is_en_passant(move),'quiet_immediate':not capture and not check}
+
+
+def move_profile(rows):
+    n=len(rows)
+    values={key:distribution(Counter(row[key]for row in rows),n,keys)for key,keys in(
+        ('mover',tuple('PNBRQK')),('side',('white','black')),('victim',('none',*'PNBRQ')))}
+    values['presentations']=n
+    for key in('capture','check','checkmate','double_check','promotion','castling','en_passant','quiet_immediate'):
+        count=sum(row[key]for row in rows);values[key]={'count':count,'denominator':n,'rate':count/n if n else None}
+    values['king_move_gives_check']={'count':sum(row['mover']=='K'and row['check']for row in rows),'denominator':n,
+        'rate':sum(row['mover']=='K'and row['check']for row in rows)/n if n else None}
+    return values
+
+
+def root_profile(rows):
+    counters=defaultdict(Counter)
+    for row in rows:
+        b=row['board'];pieces=list(b.piece_map().values())
+        total=sum(VALUES[p.piece_type]for p in pieces)
+        nonpawn=sum(VALUES[p.piece_type]for p in pieces if p.piece_type!=chess.PAWN)
+        counters['material_points_total'][total]+=1
+        counters['nonpawn_material_bin']['0_13'if nonpawn<=13 else'14_38'if nonpawn<=38 else'39_plus']+=1
+        counters['nonking_piece_count'][sum(p.piece_type!=chess.KING for p in pieces)]+=1
+        counters['material_white_minus_black'][sum(VALUES[p.piece_type]*(1 if p.color else-1)for p in pieces)]+=1
+        counters['queen_count'][sum(p.piece_type==chess.QUEEN for p in pieces)]+=1
+        counters['side_to_move'][row['side']]+=1
+        counters['legal_king_move_count'][sum(b.piece_type_at(m.from_square)==chess.KING for m in b.legal_moves)]+=1
+        counters['side_to_move_in_check'][b.is_check()]+=1
+    return {key:distribution(value,len(rows))for key,value in counters.items()}
+
+
+def audit_lines(lines,requested,check=lambda:None):
+    valid=[];errors=[];missing=Counter();groups=defaultdict(list);case_ids=[];seen=0
+    for index,line in enumerate(lines,1):
+        check();seen+=1
+        try:
+            if len(line)>100000:raise ValueError('row_size')
+            row=json.loads(line)
+            if type(row)is dict:
+                for key in FIELDS:
+                    if key not in row or row[key]is None or row[key]=='':missing[key]+=1
+                if type(row.get('case_id'))is str:case_ids.append(row['case_id'])
+            value=describe(row);valid.append(value);groups[value['group_id']].append(value)
+        except(ValueError,TypeError,KeyError)as error:
+            errors.append({'line':index,'kind':type(error).__name__})
+    findings=[];roots=[];pairs=[];root_movers=Counter()
+    for group,rows in groups.items():
+        if len(rows)!=3 or {row['mode']for row in rows}!=set(MODES)or len({row['fen']for row in rows})!=1:
+            findings.append('incomplete_duplicate_mode_or_mixed_fen');continue
+        roots.append(next(row for row in rows if row['mode']=='free'))
+        root_movers.update({row['mover']for row in rows})
+        selected=[row for row in rows if row['mode']!='free'];pairs.append(selected)
+        if len({row['uci']for row in selected})!=2:findings.append('duplicate_supplied_move')
+    cases=Counter(case_ids);boards=Counter(row['key']for row in roots)
+    result={'planned_presentations':requested,'observed_rows':seen,'valid_presentations':len(valid),'invalid_rows':len(errors),
+        'missing_rows':max(0,requested-seen),'extra_rows':max(0,seen-requested),'errors':errors,
+        'missing_required_fields':distribution(missing,requested,FIELDS),'duplicate_case_ids':{'keys':sum(v>1 for v in cases.values()),'excess_rows':sum(v-1 for v in cases.values()if v>1),'affected_rows':sum(v for v in cases.values()if v>1),'denominator':seen},
+        'groups_with_valid_presentations':len(groups),'complete_root_groups':len(roots),'group_ids_sha256':group_digest(groups),
+        'expected_root_groups':requested//3,'group_findings':dict(Counter(findings)),
+        'duplicate_packet_excess_presentations':sum(v-1 for v in Counter(row['packet_hash']for row in valid).values()if v>1),
+        'duplicate_current_board_groups':sum(v-1 for v in boards.values()if v>1),
+        'by_mode':{mode:move_profile([row for row in valid if row['mode']==mode])for mode in MODES},
+        'all_presentations':move_profile(valid),'combined_selected':move_profile([row for row in valid if row['mode']!='free']),
+        'root_group_coverage':root_profile(roots),
+        'root_groups_with_target_piece':{**distribution(root_movers,len(roots),tuple('PNBRQK')),
+            'multi_label':True,'scope':'One count per complete source-game group having that mover in any of its three targets; pieces may overlap.'},
+        'selected_pairs':{'groups':len(pairs),'one_check_one_noncheck':sum(sorted(row['check']for row in pair)==[False,True]for pair in pairs),
+            'same_origin':sum(pair[0]['origin']==pair[1]['origin']for pair in pairs),
+            'one_check_one_noncheck_rate':sum(sorted(row['check']for row in pair)==[False,True]for pair in pairs)/len(pairs)if pairs else None,
+            'same_origin_rate':sum(pair[0]['origin']==pair[1]['origin']for pair in pairs)/len(pairs)if pairs else None}}
+    return result,{'groups':set(groups),'cases':set(case_ids),'current_board_state_first4':set(boards),
+        'full_fen6':{row['fen']for row in roots},'generator_packet_inputs':{row['packet_hash']for row in valid}}
+
+
+def execute(plan,protocol,out):
+    if out.exists():raise ValueError('Create-only descriptive audit')
+    out.mkdir(parents=True);started=time.monotonic()
+    result={'status':'started','kind':'Descriptive TRAIN/DEV corpus coverage, not model quality or cohort reselection',
+        'protocol_sha256':digest(protocol),'planned_presentations':{'train':1536,'development':96},'splits':{},
+        'opened_data_files':[],'frameworks_imported':False}
+    save(out/'result.json',result)
+    try:
+        framework_free()
+        if plan['implementation_sha256']!=digest(Path(__file__)):raise ValueError('Audit source differs')
+        for item in plan['dependencies']:bound(item)
+        corpus=Path(plan['corpus_root']).resolve();manifest_path=Path(plan['manifest']['path']).resolve()
+        if manifest_path!=corpus/'manifest.json':raise ValueError('Manifest whitelist path differs')
+        manifest=json.loads(bound(plan['manifest']).read_text())
+        def check():
+            if time.monotonic()-started>=30 or datetime.now(timezone.utc)>=datetime.fromisoformat(plan['cutoff_utc']):
+                raise RuntimeError('Descriptive audit30s/global13UTC bound')
+        memberships={}
+        for split,name,expected in(('train','train.jsonl',1536),('development','development.jsonl',96)):
+            check();item=plan['data_files'][name]
+            if item['sha256']!=manifest['files'][name]['sha256']or manifest['files'][name]['rows']!=expected:
+                raise ValueError('Pinned TRAIN/DEV manifest contract differs')
+            path=Path(item['path']).resolve()
+            if path!=corpus/name:raise ValueError('TRAIN/DEV whitelist path differs')
+            if path.stat().st_size>8*1024**2:raise ValueError('Bounded local export size')
+            bound(item)
+            result['opened_data_files'].append(name)
+            with path.open(encoding='utf-8')as stream:result['splits'][split],memberships[split]=audit_lines(stream,expected,check)
+            save(out/'result.json',result)
+        result['train_dev_overlap']={key:overlap_profile(memberships['train'][key],memberships['development'][key])for key in('groups','cases','current_board_state_first4','full_fen6','generator_packet_inputs')}
+        result['development_raw_groups_from_manifest']={'count':len(manifest['development_raw_group_ids']),
+            'all_present':set(manifest['development_raw_group_ids']).issubset(memberships['development']['groups']),
+            'sha256':group_digest(manifest['development_raw_group_ids'])}
+        result['train_dev_overlap']['scope']='Only these TRAIN/DEV exports; first4-state collisions, full6-FEN collisions and exact packet collisions are distinct. No historical, reserve or held paths checked. A state collision alone is not full input leakage.'
+        result.update(status='completed',frameworks_imported=False,
+            limitations=plan['limitations'],source_bindings=plan['data_files'])
+        framework_free()
+    except BaseException as error:
+        result.update(status='failed',error=type(error).__name__+': '+str(error));raise
+    finally:
+        result['frameworks_imported']=any(name in sys.modules for name in('torch','transformers','bitsandbytes','pyarrow'))
+        result['elapsed_seconds']=time.monotonic()-started;save(out/'result.json',result)
+    return result
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--protocol',type=Path,required=True)
+    parser.add_argument('--out',type=Path,required=True);args=parser.parse_args()
+    execute(json.loads(args.protocol.read_text()),args.protocol,args.out)
+
+
+FILE tests\test_chess_queen_counterfactual_coverage_v1.py SHA256 3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1 BYTES 8026
+"""Authored data fixtures only; never open the real corpus or references."""
+import json
+from pathlib import Path
+import sys
+import pytest
+import chess
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'scripts'))
+import chess_queen_counterfactual_coverage_v1 as s
+
+FEN='4k3/8/8/8/8/8/8/Q3K2R w K - 0 1'
+
+
+def atom(board,uci):
+    move=chess.Move.from_uci(uci);p=board.piece_at(move.from_square)
+    square=lambda n:n+1 if board.turn else(n^56)+1
+    text=f'<PIECE_M{p.symbol().upper()}><SQUARE_{square(move.from_square)}>'
+    victim=chess.Piece(chess.PAWN,not board.turn)if board.is_en_passant(move)else board.piece_at(move.to_square)
+    if victim:text+=f'<PIECE_O{victim.symbol().upper()}>'
+    text+=f'<SQUARE_{square(move.to_square)}>'
+    if move.promotion:text+=f'<PIECE_M{chess.piece_symbol(move.promotion).upper()}>'
+    return text
+
+
+def row(group,mode,uci,fen=FEN):
+    board=chess.Board(fen)
+    return {'case_id':f'queen-counterfactual-v1:{group}:{mode}','group_id':group,'mode':mode,
+        'input':{'fen':fen,**({'selected_uci':uci}if mode!='free'else{})},
+        'response':'ANALYSIS: authored fixture.\nBEST_MOVE: '+atom(board,uci)+'\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed'}
+
+
+def trio(group='AUTHORED',fen=FEN,moves=('a1e5','a1e5','a1a2')):
+    return [row(group,mode,uci,fen)for mode,uci in zip(s.MODES,moves)]
+
+
+def audit(rows,expected=None):return s.audit_lines([json.dumps(value)for value in rows],expected or len(rows))
+
+
+def test_root_and_presentation_grain_and_deliberate_pair_balance():
+    result,_=audit(trio())
+    assert result['complete_root_groups']==1 and result['all_presentations']['presentations']==3
+    assert result['combined_selected']['check']=={'count':1,'denominator':2,'rate':.5}
+    assert result['root_group_coverage']['side_to_move']['counts']=={'white':1}
+    assert result['all_presentations']['mover']['counts']['Q']==3
+    assert result['root_groups_with_target_piece']['counts']['Q']==1
+    assert result['all_presentations']['mover']['counts']['K']==0
+    assert result['selected_pairs']['one_check_one_noncheck']==1
+
+
+def test_black_pov_is_replayed_in_absolute_coordinates():
+    fen=chess.Board(FEN).mirror().fen()
+    value=s.describe(row('BLACK','selected_a','a8e4',fen))
+    assert value['uci']=='a8e4'and value['side']=='black'and value['check']
+
+
+@pytest.mark.parametrize('fen,uci,flag,mover',[
+ ('4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1','e5d6','en_passant','P'),
+ ('7k/P7/8/8/8/8/8/7K w - - 0 1','a7a8q','promotion','P'),
+ ('4k3/8/8/8/8/8/8/4K2R w K - 0 1','e1g1','castling','K')])
+def test_special_moves_keep_original_mover_and_capture_semantics(fen,uci,flag,mover):
+    value=s.describe(row('SPECIAL','selected_a',uci,fen))
+    assert value[flag]and value['mover']==mover
+    if flag=='en_passant':assert value['capture']and value['victim']=='P'
+
+
+def test_king_availability_and_material_are_descriptive_counts():
+    result,_=audit(trio())
+    coverage=result['root_group_coverage']
+    assert coverage['nonpawn_material_bin']['counts']=={'14_38':1}
+    assert coverage['material_points_total']['counts']=={'14':1}
+    assert sum(coverage['legal_king_move_count']['counts'].values())==1
+
+
+def test_schema_missing_fields_unknown_input_and_duplicate_best_fail_without_payload():
+    rows=trio();rows[0]['response']=None;rows[1]['input']['future_fen']='FORBIDDEN';rows[2]['response']+='\nBEST_MOVE: '+atom(chess.Board(FEN),'a1a2')
+    result,_=audit(rows)
+    assert result['invalid_rows']==3 and result['missing_required_fields']['counts']['response']==1
+    assert result['complete_root_groups']==0 and result['combined_selected']['check']['rate']is None
+    text=json.dumps(result)
+    assert FEN not in text and 'FORBIDDEN'not in text and 'AUTHORED'not in text
+
+
+def test_duplicate_cases_and_incomplete_modes_keep_full_denominator():
+    rows=trio();rows.append(rows[0]);result,_=audit(rows,3)
+    assert result['observed_rows']==4 and result['extra_rows']==1
+    assert result['duplicate_case_ids']['keys']==1 and result['duplicate_case_ids']['affected_rows']==2
+    assert result['complete_root_groups']==0 and result['group_findings']
+    assert result['duplicate_packet_excess_presentations']==1
+
+
+def test_state_overlap_is_distinct_from_full_fen_and_exact_packet():
+    _,a=audit(trio('TRAIN'))
+    changed=FEN.replace('0 1','4 9');_,b=audit(trio('DEV',changed))
+    assert a['groups'].isdisjoint(b['groups'])and a['cases'].isdisjoint(b['cases'])
+    assert len(a['current_board_state_first4']&b['current_board_state_first4'])==1
+    assert not(a['full_fen6']&b['full_fen6'])and not(a['generator_packet_inputs']&b['generator_packet_inputs'])
+
+
+def test_illegal_or_terminal_target_never_becomes_quiet_example():
+    value=row('BAD','selected_a','a1a2');value['input']['selected_uci']='a1a3'
+    result,_=audit([value],3)
+    assert result['invalid_rows']==1 and result['missing_rows']==2
+    assert result['all_presentations']['quiet_immediate']['rate']is None
+
+
+def test_deadline_failure_preserves_requested_count_in_created_attempt(tmp_path):
+    protocol=tmp_path/'p.json';protocol.write_text('{}')
+    plan={'implementation_sha256':'wrong','dependencies':[]}
+    with pytest.raises(ValueError):s.execute(plan,protocol,tmp_path/'out')
+    value=json.loads((tmp_path/'out/result.json').read_text())
+    assert value['status']=='failed'and value['planned_presentations']=={'train':1536,'development':96}
+    assert value['opened_data_files']==[]
+
+
+def test_import_and_authored_probe_remain_framework_free():
+    s.framework_free()
+
+
+def test_overlap_rates_keep_both_split_denominators_and_empty_unknown():
+    assert s.overlap_profile({'one','two'},{'two'})=={'count':1,'train_distinct_denominator':2,
+        'development_distinct_denominator':1,'train_rate':.5,'development_rate':1.}
+    assert s.overlap_profile(set(),set())['development_rate']is None
+
+
+def authored_plan(tmp_path):
+    corpus=tmp_path/'corpus';corpus.mkdir();files={}
+    for name,group,expected in(('train.jsonl','TRAIN',1536),('development.jsonl','DEV',96)):
+        path=corpus/name;path.write_text(''.join(json.dumps(value)+'\n'for value in trio(group)))
+        files[name]={'path':str(path),'sha256':s.digest(path),'rows':expected}
+    manifest=corpus/'manifest.json';manifest.write_text(json.dumps({'files':files,'development_raw_group_ids':['DEV']}))
+    plan={'implementation_sha256':s.digest(Path(s.__file__)),'dependencies':[],
+        'manifest':{'path':str(manifest),'sha256':s.digest(manifest)},'corpus_root':str(corpus),
+        'data_files':files,'cutoff_utc':'2099-01-01T00:00:00+00:00','limitations':['Authored software fixture only']}
+    protocol=tmp_path/'plan.json';protocol.write_text(json.dumps(plan));return plan,protocol
+
+
+def test_full_authored_execution_opens_only_two_exports_and_preserves_missing_denominators(tmp_path):
+    plan,protocol=authored_plan(tmp_path);result=s.execute(plan,protocol,tmp_path/'out')
+    assert result['status']=='completed'and result['opened_data_files']==['train.jsonl','development.jsonl']
+    assert result['splits']['train']['missing_rows']==1533 and result['splits']['development']['missing_rows']==93
+    assert result['train_dev_overlap']['groups']['count']==0
+    assert result['train_dev_overlap']['current_board_state_first4']['count']==1
+    assert not result['frameworks_imported']
+    assert 'queen-counterfactual-v1:'not in json.dumps(result)and FEN not in json.dumps(result)
+
+
+def test_reference_path_rejected_before_any_read_or_hash(tmp_path,monkeypatch):
+    plan,protocol=authored_plan(tmp_path);forbidden=tmp_path/'corpus/heldout-references.jsonl'
+    plan['data_files']['train.jsonl']['path']=str(forbidden)
+    original=s.digest
+    def checked(path):
+        assert Path(path)!=forbidden,'forbidden reference was accessed'
+        return original(path)
+    monkeypatch.setattr(s,'digest',checked)
+    with pytest.raises(ValueError,match='whitelist'):s.execute(plan,protocol,tmp_path/'out')
+    assert json.loads((tmp_path/'out/result.json').read_text())['opened_data_files']==[]
+
+
+FILE research\chess-counterfactual-train-dev-coverage-2026-10-16\plan.json SHA256 f7791a14e498ea9ca0a3db3e2b8096892999a85a01fc5869db8edd862b240fb0 BYTES 6354
+{
+  "schema": "chess.counterfactual-train-dev-descriptive-plan.v1",
+  "status": "prospective_source_only_not_executed_on_real_data",
+  "implementation_sha256": "f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e",
+  "manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\manifest.json",
+    "sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854"
+  },
+  "corpus_root": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2",
+  "data_files": {
+    "train.jsonl": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\train.jsonl",
+      "sha256": "828f022cdad4c8c142edd1c1ffb364c9c7ddc40f0d2ed93cadc7013fc68a615c",
+      "rows": 1536
+    },
+    "development.jsonl": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\development.jsonl",
+      "sha256": "b92db17df2cb9a0cbd3de63f9c6a4bf291bd513bee1a566bcb260e908a2c8d08",
+      "rows": 96
+    }
+  },
+  "dependencies": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_counterfactual_coverage_v1.py",
+      "sha256": "3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\chess\\__init__.py",
+      "sha256": "0ce2e6977cc63ffb71cbda2caae477d53f9262f3be20091ea7158e220f5e45f2"
+    }
+  ],
+  "root_groups_expected": {
+    "train": 512,
+    "development": 32
+  },
+  "presentations_expected": {
+    "train": 1536,
+    "development": 96
+  },
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "maximum_seconds": 30,
+  "single_process": true,
+  "source_group_binding": "Complete TRAIN/DEV group IDs are not listed in the manifest. Bind membership through exact export hashes; actual audit derives sorted group-ID digests/counts and verifies manifest raw-development subset membership without publishing IDs.",
+  "grains": "One source-game group/current root has FREE, selected_a and selected_b presentations. Root material counts use complete three-mode groups once; per-mode and combined move counts use valid presentations. Invalid, duplicate, missing, extra and incomplete groups retain explicit denominators. Root mover presence is multi-label and counts each piece at most once per root.",
+  "derivations": {
+    "target_first_move": "Exactly one complete BEST_MOVE atom parsed with the pinned pure native parser and legally replayed; supplied selected move must match. No critical-line or rationale scoring.",
+    "immediate_facts": "Python-chess legal move, mover before promotion, capture/victim including en passant, gives_check, checkmate, double check, promotion and castling. Quiet_immediate means only noncapture+noncheck.",
+    "material": "P=1,N=3,B=3,R=5,Q=9,K=0. Nonpawn bands total both sides excluding pawns/kings:0..13,14..38,39+. These are descriptive material bands, not inferred game phase or evaluation.",
+    "king_coverage": "Target king moves and king moves giving check; root legal king-move count includes castling. No claim of strategic or broad coaching coverage.",
+    "overlaps": "Distinct source-game group IDs, case IDs, normalized board.fen() first4 state, normalized full6 FEN, and exact native.input_packet-normalized generator JSON (including empty history) are counted separately. A first4 collision alone is not full input leakage."
+  },
+  "existing_evidence_reused": "Prior independent corpus audit already established source locations, quotas, teacher/target coherence and intended selected check balance. New information here is aggregate target-piece/side/capture/material/king coverage and root-versus-presentation weighting, with a small TRAIN/DEV-only consistency check.",
+  "previous_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-recovery-v2-corpus-closed-review.json",
+    "sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462"
+  },
+  "limitations": [
+    "No reserve, held, evaluation reference, teacher or historical source files may be opened; only manifest metadata and the two exports. No fresh held quality affects this plan.",
+    "No actual game IDs, FEN rows, raw targets or corpus excerpts in aggregate output. Only counts, rates, categorical definitions and file/group hashes.",
+    "Counts describe this deliberately selected puzzle-derived snapshot. Class balance is an intended design, not corruption or proof of representativeness. Material and immediate quietness do not establish strategic coverage.",
+    "No model-quality scoring, new training, reweighting, reselection, rewriting, reservation changes, engine/model/framework calls, new downloads or automation.",
+    "No game timestamps are available in these exports. Freshness is the pinned snapshot identity, not a temporal game-quality assessment.",
+    "Cross-split risk checks cover TRAIN versus DEV only, not all historical data or reserved panels. Native first-move parsing checks target validity only; broader prose/PV quality remains outside this audit."
+  ],
+  "root_dispatch_after_source_review": [
+    ".venv-soccernet/Scripts/python.exe",
+    "scripts/chess_queen_counterfactual_coverage_v1.py",
+    "--protocol",
+    "research/chess-counterfactual-train-dev-coverage-2026-10-16/plan.json",
+    "--out",
+    "data/private/chess-queen-counterfactual-coverage-v1/attempt-1"
+  ],
+  "authorization": "Root dispatch only after complete source/test/plan review and independent GO. No actual aggregate run has occurred."
+}
+
+
+FILE research\chess-counterfactual-train-dev-coverage-2026-10-16\software-tests.json SHA256 ee3a4bf76c189a0571ec6e99133c6f74a0281e26db8e7750808789e791116d49 BYTES 980
+{
+  "status": "passed_authored_software_tests_only",
+  "tests": 15,
+  "seconds": 0.19,
+  "real_corpus_aggregate_runs": 0,
+  "no_framework_or_model_calls": true,
+  "source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_counterfactual_coverage_v1.py",
+    "sha256": "f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e"
+  },
+  "tests_source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_counterfactual_coverage_v1.py",
+    "sha256": "3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1"
+  },
+  "plan": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-counterfactual-train-dev-coverage-2026-10-16\\plan.json",
+    "sha256": "f7791a14e498ea9ca0a3db3e2b8096892999a85a01fc5869db8edd862b240fb0"
+  }
+}
+

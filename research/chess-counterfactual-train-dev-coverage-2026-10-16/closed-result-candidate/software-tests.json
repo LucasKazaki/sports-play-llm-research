@@ -1,0 +1,19 @@
+{
+  "status": "passed_authored_software_tests_only",
+  "tests": 15,
+  "seconds": 0.19,
+  "real_corpus_aggregate_runs": 0,
+  "no_framework_or_model_calls": true,
+  "source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_counterfactual_coverage_v1.py",
+    "sha256": "f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e"
+  },
+  "tests_source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_counterfactual_coverage_v1.py",
+    "sha256": "3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1"
+  },
+  "plan": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-counterfactual-train-dev-coverage-2026-10-16\\plan.json",
+    "sha256": "f7791a14e498ea9ca0a3db3e2b8096892999a85a01fc5869db8edd862b240fb0"
+  }
+}

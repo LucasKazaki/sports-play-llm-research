@@ -125,3 +125,9 @@ experiments/chess-tutor-draft-checks-v1/finite-source-review/0*.txt whitespace=-
 experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture-review/0*.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
 research/chess-cache-backbone-investigation-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chess-primary-refresh-2026-10-16-1144.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve reviewed descriptive coverage source and exact closed evidence.
+scripts/chess_queen_counterfactual_coverage_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_counterfactual_coverage_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-counterfactual-train-dev-coverage-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-counterfactual-train-dev-coverage-2026-10-16/**/finite-source-plan-tests-bundle.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

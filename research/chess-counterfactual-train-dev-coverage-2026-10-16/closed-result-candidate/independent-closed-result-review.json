@@ -1,0 +1,154 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-16T12:30:25.299075+00:00",
+  "scope": "Independent closed descriptive TRAIN/DEV aggregate audit. No model-quality result or dataset-wide validity badge.",
+  "blocking_findings": [],
+  "actual_result": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-counterfactual-coverage-v1\\attempt-1\\result.json",
+    "bytes": 44685,
+    "sha256": "e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6"
+  },
+  "fully_read_finite_sections": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-coverage-closed\\01-complete-train.json",
+      "bytes": 22827,
+      "sha256": "bf884956d238b7eebf4a3c46c0df4e4d7609c91d92400e5bcc529b0253ff0fa4"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-coverage-closed\\02-complete-development-and-metadata.json",
+      "bytes": 21879,
+      "sha256": "3d14049bb5dbc59750e40097d36f8d04f9196045241126750d2b72976a0d7877"
+    }
+  ],
+  "finite_sections_reconstruct_original": true,
+  "source_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-coverage-v1-source-review.json",
+    "bytes": 7727,
+    "sha256": "6c82521357742ab07cf3b6dbf7ca6f5b86e7db64472e846b120c84c95c89c8cc"
+  },
+  "actual_source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_counterfactual_coverage_v1.py",
+    "bytes": 13376,
+    "sha256": "f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e"
+  },
+  "protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-counterfactual-train-dev-coverage-2026-10-16\\plan.json",
+    "bytes": 6354,
+    "sha256": "f7791a14e498ea9ca0a3db3e2b8096892999a85a01fc5869db8edd862b240fb0"
+  },
+  "root_authorization": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\counterfactual-coverage-v1-root-authorization.json",
+    "bytes": 814,
+    "sha256": "085756148fd61a2c01fd21e62e57991e98f4699909dcd28e8c30d7aed4f95ee2"
+  },
+  "root_closed_receipt": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\counterfactual-coverage-v1-root-closed.json",
+    "bytes": 641,
+    "sha256": "4f0de8b5af1ff4ee284c21693e9a2f9f0baa5f6888e8e55899246781e73675d3"
+  },
+  "actual_empty_log": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\counterfactual-coverage-v1-actual.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "bindings_and_chronology": "Exact protocol/source/dependency/input hashes match; source GO precedes authorization, then root closed exit0 before cutoff. Arguments equal the frozen planned command. Result closed receipt hash and two finite sections match original parsed JSON.",
+  "approved_data_content_opened": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\train.jsonl",
+      "bytes": 799663,
+      "sha256": "828f022cdad4c8c142edd1c1ffb364c9c7ddc40f0d2ed93cadc7013fc68a615c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\development.jsonl",
+      "bytes": 49618,
+      "sha256": "b92db17df2cb9a0cbd3de63f9c6a4bf291bd513bee1a566bcb260e908a2c8d08"
+    }
+  ],
+  "recomputation": {
+    "entire_split_aggregate_matches_reviewed_source": true,
+    "independent_python_chess_fact_and_root_recount_matches": true,
+    "distribution_and_binary_rates_checked": 466,
+    "actual_export_duplicate_object_keys": 0,
+    "actual_export_schema_or_group_anomalies": 0,
+    "serialized_actual_ID_FEN_or_target_payloads_detected": 0,
+    "training_and_development_overlap_counts": {
+      "groups": 0,
+      "cases": 0,
+      "current_board_state_first4": 0,
+      "full_fen6": 0,
+      "generator_packet_inputs": 0
+    }
+  },
+  "summaries": {
+    "train": {
+      "presentations": 1536,
+      "roots": 512,
+      "all_valid": true,
+      "free_check": 401,
+      "free_king_targets": 4,
+      "combined_selected_king_targets": 0,
+      "root_king_legal_available": 474,
+      "same_origin_selected_pairs": 501,
+      "one_check_one_noncheck_pairs": 512,
+      "all_presentation_mover_counts": {
+        "B": 105,
+        "K": 4,
+        "N": 188,
+        "P": 54,
+        "Q": 759,
+        "R": 426
+      },
+      "material_bands": {
+        "14_38": 234,
+        "39_plus": 220,
+        "0_13": 58
+      }
+    },
+    "development": {
+      "presentations": 96,
+      "roots": 32,
+      "all_valid": true,
+      "free_check": 27,
+      "free_king_targets": 0,
+      "combined_selected_king_targets": 0,
+      "root_king_legal_available": 30,
+      "same_origin_selected_pairs": 31,
+      "one_check_one_noncheck_pairs": 32,
+      "all_presentation_mover_counts": {
+        "B": 9,
+        "K": 0,
+        "N": 14,
+        "P": 5,
+        "Q": 38,
+        "R": 30
+      },
+      "material_bands": {
+        "14_38": 15,
+        "39_plus": 14,
+        "0_13": 3
+      }
+    }
+  },
+  "meaningful_coverage_limits": [
+    "The deliberately paired selected examples are exactly 50% checking across 1024 TRAIN and 64 DEV presentations. This is constructed balance, not learned ability or representativeness.",
+    "King targets occur only in four FREE TRAIN roots; selected TRAIN has zero king targets and every DEV mode has zero king targets, despite legal king moves being available in 474/512 TRAIN and 30/32 DEV roots.",
+    "Queens and rooks account for 1185/1536 TRAIN presentations and 68/96 DEV presentations. Presentation weighting repeats each root three times.",
+    "All roots have side-to-move not in check. TRAIN has only one double-check target and one promotion target, both FREE; DEV has neither. There are no castling or en-passant targets in these exports.",
+    "Numeric material bands describe piece counts/values only. They do not establish opening/middlegame/endgame, strategic, or coaching coverage.",
+    "Only TRAIN/DEV exports were inspected. Reserved/fresh-evaluation, teacher and historical content was not opened or scored. The prior broader corpus audit remains separate.",
+    "Process completion and zero anomalies under this narrow schema do not validate all target prose, continuations, teacher strength, model learning or generalization."
+  ],
+  "reviewer_access": {
+    "actual_train_presentations": 1536,
+    "actual_development_presentations": 96,
+    "manifest_metadata_only": true,
+    "held_or_reserve_content_opens": 0,
+    "teacher_content_opens": 0,
+    "framework_imports": 0,
+    "model_calls": 0,
+    "engine_calls": 0,
+    "gpu_calls": 0,
+    "private_rows_identifiers_positions_or_targets_published": false
+  },
+  "followUpTasks": []
+}

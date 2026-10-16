@@ -1,0 +1,78 @@
+{
+  "schema": "chess.counterfactual-train-dev-descriptive-plan.v1",
+  "status": "prospective_source_only_not_executed_on_real_data",
+  "implementation_sha256": "f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e",
+  "manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\manifest.json",
+    "sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854"
+  },
+  "corpus_root": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2",
+  "data_files": {
+    "train.jsonl": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\train.jsonl",
+      "sha256": "828f022cdad4c8c142edd1c1ffb364c9c7ddc40f0d2ed93cadc7013fc68a615c",
+      "rows": 1536
+    },
+    "development.jsonl": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\development.jsonl",
+      "sha256": "b92db17df2cb9a0cbd3de63f9c6a4bf291bd513bee1a566bcb260e908a2c8d08",
+      "rows": 96
+    }
+  },
+  "dependencies": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_counterfactual_coverage_v1.py",
+      "sha256": "3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\chess\\__init__.py",
+      "sha256": "0ce2e6977cc63ffb71cbda2caae477d53f9262f3be20091ea7158e220f5e45f2"
+    }
+  ],
+  "root_groups_expected": {
+    "train": 512,
+    "development": 32
+  },
+  "presentations_expected": {
+    "train": 1536,
+    "development": 96
+  },
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "maximum_seconds": 30,
+  "single_process": true,
+  "source_group_binding": "Complete TRAIN/DEV group IDs are not listed in the manifest. Bind membership through exact export hashes; actual audit derives sorted group-ID digests/counts and verifies manifest raw-development subset membership without publishing IDs.",
+  "grains": "One source-game group/current root has FREE, selected_a and selected_b presentations. Root material counts use complete three-mode groups once; per-mode and combined move counts use valid presentations. Invalid, duplicate, missing, extra and incomplete groups retain explicit denominators. Root mover presence is multi-label and counts each piece at most once per root.",
+  "derivations": {
+    "target_first_move": "Exactly one complete BEST_MOVE atom parsed with the pinned pure native parser and legally replayed; supplied selected move must match. No critical-line or rationale scoring.",
+    "immediate_facts": "Python-chess legal move, mover before promotion, capture/victim including en passant, gives_check, checkmate, double check, promotion and castling. Quiet_immediate means only noncapture+noncheck.",
+    "material": "P=1,N=3,B=3,R=5,Q=9,K=0. Nonpawn bands total both sides excluding pawns/kings:0..13,14..38,39+. These are descriptive material bands, not inferred game phase or evaluation.",
+    "king_coverage": "Target king moves and king moves giving check; root legal king-move count includes castling. No claim of strategic or broad coaching coverage.",
+    "overlaps": "Distinct source-game group IDs, case IDs, normalized board.fen() first4 state, normalized full6 FEN, and exact native.input_packet-normalized generator JSON (including empty history) are counted separately. A first4 collision alone is not full input leakage."
+  },
+  "existing_evidence_reused": "Prior independent corpus audit already established source locations, quotas, teacher/target coherence and intended selected check balance. New information here is aggregate target-piece/side/capture/material/king coverage and root-versus-presentation weighting, with a small TRAIN/DEV-only consistency check.",
+  "previous_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-recovery-v2-corpus-closed-review.json",
+    "sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462"
+  },
+  "limitations": [
+    "No reserve, held, evaluation reference, teacher or historical source files may be opened; only manifest metadata and the two exports. No fresh held quality affects this plan.",
+    "No actual game IDs, FEN rows, raw targets or corpus excerpts in aggregate output. Only counts, rates, categorical definitions and file/group hashes.",
+    "Counts describe this deliberately selected puzzle-derived snapshot. Class balance is an intended design, not corruption or proof of representativeness. Material and immediate quietness do not establish strategic coverage.",
+    "No model-quality scoring, new training, reweighting, reselection, rewriting, reservation changes, engine/model/framework calls, new downloads or automation.",
+    "No game timestamps are available in these exports. Freshness is the pinned snapshot identity, not a temporal game-quality assessment.",
+    "Cross-split risk checks cover TRAIN versus DEV only, not all historical data or reserved panels. Native first-move parsing checks target validity only; broader prose/PV quality remains outside this audit."
+  ],
+  "root_dispatch_after_source_review": [
+    ".venv-soccernet/Scripts/python.exe",
+    "scripts/chess_queen_counterfactual_coverage_v1.py",
+    "--protocol",
+    "research/chess-counterfactual-train-dev-coverage-2026-10-16/plan.json",
+    "--out",
+    "data/private/chess-queen-counterfactual-coverage-v1/attempt-1"
+  ],
+  "authorization": "Root dispatch only after complete source/test/plan review and independent GO. No actual aggregate run has occurred."
+}

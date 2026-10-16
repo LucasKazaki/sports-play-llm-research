@@ -1,0 +1,11 @@
+{
+  "status": "closed",
+  "exit_code": 0,
+  "closed_at_utc": "2026-10-16T12:27:55.083593+00:00",
+  "authorization_sha256": "085756148fd61a2c01fd21e62e57991e98f4699909dcd28e8c30d7aed4f95ee2",
+  "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "result_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-counterfactual-coverage-v1\\attempt-1\\result.json",
+  "result_sha256": "e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6",
+  "model_or_engine_calls": 0,
+  "fresh_held_or_reserve_contents_opened": false
+}

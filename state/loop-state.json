@@ -17,23 +17,24 @@
     "chess-queen-coach-counterfactual-v1/data-readiness-v2",
     "chess-queen-coach-counterfactual-cold-qualification-v1/attempt-4-software-only",
     "chess-tutor-draft-checks-v1/source-CPU-authored-browser-only",
-    "chess-cache-backbone-investigation-2026-10-16/source-only"
+    "chess-cache-backbone-investigation-2026-10-16/source-only",
+    "chess-counterfactual-train-dev-coverage-2026-10-16/descriptive-only"
   ],
   "cutoff": "2026-10-16T09:00:00-04:00",
   "commentary_gate": "not_achieved",
   "schema": "sportsplay.native-chess-loop.v1",
   "next_actions": [
-    "Preserve unadmitted TRAIN192 and fresh comparison96; no deadline extension.",
-    "Publish independently reviewed limited-check UI/source/evidence and source-only backbone findings to draft PR14.",
-    "Keep restored CPU classifier and original manual Queen configuration; no tuned profile promotion.",
-    "At13UTC close/checkpoint overnight experiments, report real limits and deactivate this heartbeat. Capability goal unmet."
+    "Publish reviewed aggregate coverage evidence and the current king-target scope correction to draft PR14.",
+    "Preserve the frozen corpus, reservations, unadmitted TRAIN192 and comparison96; no late retry or reserve change.",
+    "Keep the restored CPU classifier available; trained tutor profile remains disabled.",
+    "At13UTC checkpoint/report overnight work and deactivate the heartbeat. Coaching and shareable-candidate requirements remain unmet."
   ],
   "external_contact_sent": false,
-  "active_experiment": "No active GPU. Limited draft-check UI source/software/authored-browser cycle closed; reviewed code loaded. New-controller actual Queen completion unverified after startup admission failure. Backbone source-only investigation complete.",
+  "active_experiment": "No active GPU or heavy CPU experiment. Descriptive TRAIN/DEV coverage audit closed and independently recomputed. Limited-check UI loaded; actual new-controller Queen completion remains unverified.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T12:09:46.148804+00:00",
+  "updated_at": "2026-10-16T12:34:24.150470+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
-  "secondary_work": "Prepared corpus/tokenization audited; no new counterfactual adapter or fresh matched quality score. Postchecks are limited rules, not trained understanding; cache cause remains unproven.",
+  "secondary_work": "TRAIN FREE has4 king targets; selected TRAIN and all DEV have0. All544 audited roots start outside check. Aggregate coverage is not learning or coaching evidence; no new counterfactual adapter exists.",
   "failed_evidence": [
     "chess-queen-coach-sft-training-v2/heldout-1",
     "chess-queen-coach-counterfactual-v1/startup-admission",

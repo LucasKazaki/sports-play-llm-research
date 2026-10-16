@@ -1,0 +1,105 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-16T12:36:11.975437+00:00",
+  "scope": "Compact independent public candidate byte-copy, README and aggregate identity review only.",
+  "blocking_findings": [],
+  "candidate_directory": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-counterfactual-train-dev-coverage-2026-10-16\\closed-result-candidate",
+  "copy_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-counterfactual-train-dev-coverage-2026-10-16\\closed-result-candidate\\copy-manifest.json",
+    "bytes": 4727,
+    "sha256": "e7de6a6fa54469926e71398090aa55b1272c24b9dee9d522e4fa1d81430fbc82"
+  },
+  "README": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-counterfactual-train-dev-coverage-2026-10-16\\closed-result-candidate\\README.md",
+    "bytes": 2174,
+    "sha256": "8a44027e3779c6cfea511d102f7bda1e593007c966b1ff706d1c934a2f328d3b"
+  },
+  "exact_copies_verified": 12,
+  "copy_checks": [
+    {
+      "copy": "chess_queen_counterfactual_coverage_v1.py",
+      "bytes": 13376,
+      "sha256": "f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e",
+      "byte_identical": true
+    },
+    {
+      "copy": "test_chess_queen_counterfactual_coverage_v1.py",
+      "bytes": 8026,
+      "sha256": "3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1",
+      "byte_identical": true
+    },
+    {
+      "copy": "plan.json",
+      "bytes": 6354,
+      "sha256": "f7791a14e498ea9ca0a3db3e2b8096892999a85a01fc5869db8edd862b240fb0",
+      "byte_identical": true
+    },
+    {
+      "copy": "software-tests.json",
+      "bytes": 980,
+      "sha256": "ee3a4bf76c189a0571ec6e99133c6f74a0281e26db8e7750808789e791116d49",
+      "byte_identical": true
+    },
+    {
+      "copy": "actual-aggregate.json",
+      "bytes": 44685,
+      "sha256": "e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6",
+      "byte_identical": true
+    },
+    {
+      "copy": "root-authorization.json",
+      "bytes": 814,
+      "sha256": "085756148fd61a2c01fd21e62e57991e98f4699909dcd28e8c30d7aed4f95ee2",
+      "byte_identical": true
+    },
+    {
+      "copy": "root-closed.json",
+      "bytes": 641,
+      "sha256": "4f0de8b5af1ff4ee284c21693e9a2f9f0baa5f6888e8e55899246781e73675d3",
+      "byte_identical": true
+    },
+    {
+      "copy": "finite-source-plan-tests-bundle.txt",
+      "bytes": 29349,
+      "sha256": "125301bc351758fa55230cebf2f365c5682bcfd9010dd8d5cee09de0a2cbba3b",
+      "byte_identical": true
+    },
+    {
+      "copy": "01-complete-train.json",
+      "bytes": 22827,
+      "sha256": "bf884956d238b7eebf4a3c46c0df4e4d7609c91d92400e5bcc529b0253ff0fa4",
+      "byte_identical": true
+    },
+    {
+      "copy": "02-complete-development-and-metadata.json",
+      "bytes": 21879,
+      "sha256": "3d14049bb5dbc59750e40097d36f8d04f9196045241126750d2b72976a0d7877",
+      "byte_identical": true
+    },
+    {
+      "copy": "independent-source-review.json",
+      "bytes": 7727,
+      "sha256": "6c82521357742ab07cf3b6dbf7ca6f5b86e7db64472e846b120c84c95c89c8cc",
+      "byte_identical": true
+    },
+    {
+      "copy": "independent-closed-result-review.json",
+      "bytes": 7223,
+      "sha256": "e18211457ebbf319c09ed4c2535259867c7bc97fd43a42021b41e6499cd57dcd",
+      "byte_identical": true
+    }
+  ],
+  "checks": {
+    "finite_reconstruction": "Public complete TRAIN and development/metadata sections reconstruct the exact previously audited aggregate. Source/test/plan/software and both independent-review copies retain their original hashes.",
+    "README": "Read in full. All descriptive numerical statements match the already reviewed aggregate, including four FREE TRAIN king targets versus zero selected/all-DEV, 544 roots outside check, QR828/1024, pawn18/1024, selected capture victims130 pawns+2rooks, and rare/special-move limits.",
+    "status": "Pre-execution plan/software wording is explicitly historical. Actual closure and aggregate are distinguished. Counterfactual training remained unrun; no model quality, representativeness or learning claim is made.",
+    "privacy": "All copied files are exact previously reviewed source/authored fixtures, metadata, aggregate or independent evidence. No private row exports, identifiers, FEN/target payloads, references, teachers, reserves, model tensors or weights were added. This conclusion uses the exact aggregate SHA and its prior complete privacy check rather than reopening corpus data."
+  },
+  "limits": [
+    "The twelve-copy verification reads original closed evidence bytes for hashing/equality, including the closed aggregate; it opens no TRAIN/DEV export or other private data content.",
+    "No new aggregate computation, source execution/test, model, engine, GPU, reference or reserved-content read occurred.",
+    "This verifies the candidate working files only, not Git staging, index normalization, push or publication.",
+    "The result is descriptive coverage and software evidence; no additional institutional, human-expert, chess-strength or coaching-quality approval is implied."
+  ],
+  "followUpTasks": []
+}

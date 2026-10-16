@@ -875,3 +875,37 @@ fresh96 comparison was restarted, no deadline or reserve changed, no creator
 media entered training and no contact or institutional approval is claimed.
 The overall coaching and shareable-candidate gates remain unmet. The 13:00 UTC
 cutoff still ends overnight experiments and the hourly heartbeat.
+
+## Descriptive coverage cycle and scope correction — October 16, 12:27 UTC
+
+A prospective, source-reviewed CPU audit inspected only the frozen TRAIN and
+development exports. Fifteen authored software checks passed in both owner and
+independent review. The single actual pass closed in 0.438 seconds; independent
+recomputation matched every split aggregate and separately recounted board facts.
+All 1,536 TRAIN and 96 development presentations passed the narrow schema/group
+checks, and all five cross-split overlap counts were zero. These are 512 and 32
+distinct source roots, each repeated in FREE and two selected-move presentations.
+No model, framework, engine, GPU, held-reference or reserve-content access was
+part of this audit. Process completion is not a general data-quality certificate.
+
+Scope correction: earlier 2,112-candidate piece counts concerned supplied-move
+pairs across the prepared corpus. They must not be read as all FREE targets.
+TRAIN contains four FREE king targets (4/512 FREE; 4/1,536 overall), zero selected
+king targets (0/1,024), and development has none (0/96). All 544 audited roots
+start outside check. Selected TRAIN targets are queens or rooks in 828/1,024
+presentations, while 130 of 132 selected captures take pawns. There are no
+castling or en-passant targets; the one TRAIN promotion and one double-check
+target are FREE. The intended selected checking/nonchecking contrast is exactly
+50%; it does not establish ordinary-play representativeness or learned ability.
+
+The frozen corpus and reservations remain unchanged. A future broader-coaching
+design should predeclare separate coverage for in-check inputs, king and pawn
+selected moves, varied capture victims and rare rules, record source shortages,
+and retain a separately fixed generalization evaluation. This is a future design
+decision, not authority to alter current held panels or restart expired phases.
+Counterfactual TRAIN192 and the fresh comparison96 remain unrun. No coaching,
+institutional approval or formal commentary/shareable-candidate claim follows.
+
+Evidence: research/chess-counterfactual-train-dev-coverage-2026-10-16/.
+Actual aggregate SHA256 e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6;
+independent closed-result review e18211457ebbf319c09ed4c2535259867c7bc97fd43a42021b41e6499cd57dcd.
