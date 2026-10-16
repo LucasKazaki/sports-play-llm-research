@@ -139,3 +139,23 @@ research/chess-daytime-window-2026-10-16.json -text whitespace=blank-at-eol,blan
 research/chess-primary-refresh-2026-10-16-1328.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chessarena-primary-review-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chess-daytime-launch-diagnostic-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the exact reviewed direct-base worker and bounded CPU evidence.
+experiments/chess-queen-coach-daytime-v1/owned_worker_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/environment_parity_child_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/environment_parity_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/prepare_environment_parity_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_owned_worker_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct-base-worker-v2-README.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/environment-parity-protocol-v1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/build_worker_v2_review_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/01-worker-and-payload.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/02-driver-builder-and-design.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/03-tests-and-retained-result.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/04-protocol-and-review-builder.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/authored-test-result.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-QUALIFICATION-LIMITS.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-direct-base-CPU-qualification-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/publication-inventory.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct-base-worker-v2-EVIDENCE.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

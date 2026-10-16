@@ -1,0 +1,70 @@
+{
+  "scope": "Authored CPU fake-process tests, metadata lookup and byte hashes only.",
+  "actual_original_candidate_dispatch": false,
+  "actual_OS_job_calls": false,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "framework_imports": 0,
+  "runs": [
+    {
+      "tool_chunk_id": "dc0cde",
+      "passed": 23,
+      "seconds": 0.17
+    },
+    {
+      "tool_chunk_id": "138bfd",
+      "passed": 28,
+      "seconds": 0.21
+    },
+    {
+      "tool_chunk_id": "3a3133",
+      "passed": 32,
+      "seconds": 0.22
+    }
+  ],
+  "final_command": ".venv-soccernet/Scripts/python.exe -m pytest experiments/chess-queen-coach-daytime-v1/test_owned_worker_v2.py -q",
+  "final_exact_output": "................................                                         [100%]\n32 passed in 0.22s\n",
+  "final_sources": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned_worker_v2.py",
+      "bytes": 13520,
+      "sha256": "fe4ce0abb0f6be934f2b78681115ec0aa0c9c85e2ef54a6955dc2e6778103ae8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment_parity_child_v1.py",
+      "bytes": 3908,
+      "sha256": "64be13cf9bfc2244721a6e8ae8bed0258c36314470c6ca7b4bfca6a338bda8e8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment_parity_v1.py",
+      "bytes": 8005,
+      "sha256": "9265a9e7e656498552bf06e83e6ab07376ccf44a2baee56fc2973f5dc335a823"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\prepare_environment_parity_v1.py",
+      "bytes": 3254,
+      "sha256": "a6ce75d9101099767ef9f82758afb66e2d731f105aaca8fab36bdc7c75387d7b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_owned_worker_v2.py",
+      "bytes": 14615,
+      "sha256": "f4987e4888f2a3c4a27fd228b19d609f82c887b07fdbc46cef564aa70ed1ca08"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\direct-base-worker-v2-README.md",
+      "bytes": 3268,
+      "sha256": "cf2205c60c830627b438e706617318df82fa4e7e7c524a636ae1b4c8297b5c98"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment-parity-protocol-v1.json",
+      "bytes": 5760,
+      "sha256": "c16d4f57d36cfb65764a1e8f987893febfb5504786ecd8e955b17485b1267608"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\build_worker_v2_review_v1.py",
+      "bytes": 2918,
+      "sha256": "23406dffc1d709805967ea6464c914760b7ff246c54c8fd0e3a9518d697cb492"
+    }
+  ],
+  "limit": "No actual CPU parity or ownership qualification; root dispatch and independent actual review remain required."
+}

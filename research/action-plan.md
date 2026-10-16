@@ -693,3 +693,21 @@ from TRAIN. Existing software-test weights remain disposable. User authority
 continues through22UTC/18:00Eastern. See
 `research/chess-daytime-launch-diagnostic-2026-10-16.json` for exact audit hashes
 and selected official API/CPython source basis. No capability promotion follows.
+
+
+## October 16: direct-base CPU qualification
+
+The new worker's actual original/candidate environment pair passed exact 12-field
+equality. Its separate observer closed all four cases, 12 sampler calls and all
+three controlled OpenProcess87 branches. Independent closed audits are bound in
+`research/chess-direct-base-CPU-qualification-2026-10-16.json`. The actual direct
+child had explicit creator-job membership before GO, then retained EXIT and an
+empty complete owned-job list. ABSENT has no identity/EXIT/kill authority; the
+close flag is logical object metadata. Only four query process images were
+verified individually. These are bounded CPU engineering results, with no model
+or coaching-quality conclusion. The original failures remain intact. Fresh
+warm8/cold2 plans are frozen for review; full192 TRAIN and fixed96 HELD are unrun
+at this record. All512 reserved games remain excluded and current16 held roots
+have zero model calls. The reviewed 15-file worker subset preserves exact bytes;
+private inputs, raw answers and weights are excluded. No trained profile, formal
+Archit/UMD promotion or broad coaching acceptance is granted. Continue to22UTC.

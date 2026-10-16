@@ -1,0 +1,13 @@
+# Qualification limits for the direct-base worker candidate
+
+This additive note narrows the wording in the frozen candidate and README. It does not modify the eight frozen source, test, design and protocol files or their retained test evidence. No actual parity launch or model qualification is established by this note.
+
+`ownership.closure.actual_job_handle_closed` means that the unchanged original `close()` call returned and its object handle attribute became `None`. The original implementation does not expose or check the Win32 `CloseHandle` return. This field is therefore not independent evidence that the operating-system handle closed successfully. The complete explicit job list and the direct child's stable-handle EXIT are separate observations taken before the close call. Their scope remains the actual owned job and the retained direct child, rather than an arbitrary unseen process tree.
+
+The cleanup branches may take up to 30 seconds: a 10-second wait after terminating the owned child, a further 10-second wait after killing it if necessary, and a further 10 seconds to drain the owned job. The README's earlier reference to 10 seconds understated that combined bound. The worker's requested maximum bounds its wait after GO; it does not include those cleanup branches or all setup observations. The parity driver's 90-second check occurs between requests, so it is not itself a strict whole-run timeout.
+
+For the prospective CPU qualification, root must enforce an external 90-second whole-run cap and the strict 15:30 UTC cutoff on October 16, 2026. The earlier of those limits controls. The root-owned operational record must retain actual admission, timeout or closure observations. No automatic retry, extra request, later cutoff or successful qualification may be inferred from the source tests.
+
+Root must pass absolute paths for both `--protocol` and `--out`. Although the driver initially compares resolved output paths, it retains the supplied output path while constructing the child argument vectors. A relative `--out` therefore differs from the protocol's frozen absolute vectors and fails before dispatch. The earlier relative-path example was not a usable actual command. The protocol's exact argument vectors and hashes remain unchanged.
+
+The CPU qualification still plans one original launch and one candidate launch with an authored metadata-only payload. It must separately establish exact Python environment parity and the candidate's explicit pre-GO job membership and closure observations. It makes no model, training, chess-quality, parent-death or production-activation claim. Subsequent observer, warm-training and cold-generation qualifications and independent audits remain distinct gates.

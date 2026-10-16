@@ -1,0 +1,399 @@
+{
+  "status": "inventory_prepared_only",
+  "publication_or_staging_authorized_by_this_file": false,
+  "files": [
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned_worker_v2.py",
+      "bytes": 13520,
+      "sha256": "fe4ce0abb0f6be934f2b78681115ec0aa0c9c85e2ef54a6955dc2e6778103ae8",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned_worker_v2.py",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 229
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment_parity_child_v1.py",
+      "bytes": 3908,
+      "sha256": "64be13cf9bfc2244721a6e8ae8bed0258c36314470c6ca7b4bfca6a338bda8e8",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/environment_parity_child_v1.py",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 77
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment_parity_v1.py",
+      "bytes": 8005,
+      "sha256": "9265a9e7e656498552bf06e83e6ab07376ccf44a2baee56fc2973f5dc335a823",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/environment_parity_v1.py",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 121
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\prepare_environment_parity_v1.py",
+      "bytes": 3254,
+      "sha256": "a6ce75d9101099767ef9f82758afb66e2d731f105aaca8fab36bdc7c75387d7b",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/prepare_environment_parity_v1.py",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 50
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_owned_worker_v2.py",
+      "bytes": 14615,
+      "sha256": "f4987e4888f2a3c4a27fd228b19d609f82c887b07fdbc46cef564aa70ed1ca08",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_owned_worker_v2.py",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 292
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\direct-base-worker-v2-README.md",
+      "bytes": 3268,
+      "sha256": "cf2205c60c830627b438e706617318df82fa4e7e7c524a636ae1b4c8297b5c98",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/direct-base-worker-v2-README.md",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 15
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment-parity-protocol-v1.json",
+      "bytes": 5760,
+      "sha256": "c16d4f57d36cfb65764a1e8f987893febfb5504786ecd8e955b17485b1267608",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/environment-parity-protocol-v1.json",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 106,
+        "LF_without_CR": 0
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\build_worker_v2_review_v1.py",
+      "bytes": 2918,
+      "sha256": "23406dffc1d709805967ea6464c914760b7ff246c54c8fd0e3a9518d697cb492",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/build_worker_v2_review_v1.py",
+      "role": "reviewed_source_or_protocol",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 53
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned-worker-v2-evidence\\01-worker-and-payload.txt",
+      "bytes": 18073,
+      "sha256": "8c0eab2fa17b95100d346f2fad3d555feabd26d19fc6cd9259ca94b0b50d2e9d",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/01-worker-and-payload.txt",
+      "role": "complete_finite_review_bundle",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 314
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned-worker-v2-evidence\\02-driver-builder-and-design.txt",
+      "bytes": 15508,
+      "sha256": "5e59cc1b50d87491f36bc2a7fa06b263c8de14a9389eccf3ca88f80355a412c4",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/02-driver-builder-and-design.txt",
+      "role": "complete_finite_review_bundle",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 198
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned-worker-v2-evidence\\03-tests-and-retained-result.txt",
+      "bytes": 18587,
+      "sha256": "087bfb6375053075a18469eed29926a25ca933dfcca6d86c773865aa3791cb9f",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/03-tests-and-retained-result.txt",
+      "role": "complete_finite_review_bundle",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 369
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned-worker-v2-evidence\\04-protocol-and-review-builder.txt",
+      "bytes": 9337,
+      "sha256": "397b0bc53923f837107c9b8a6b83420de7164c804075f6c4a6e36a19cd4c51f2",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/04-protocol-and-review-builder.txt",
+      "role": "complete_finite_review_bundle",
+      "line_endings": {
+        "CRLF": 106,
+        "LF_without_CR": 61
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned-worker-v2-evidence\\authored-test-result.json",
+      "bytes": 3301,
+      "sha256": "b137ad3e83cff3fa379e901b8826336a7ec87e9c7ab75d997a0cf52719de6323",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/authored-test-result.json",
+      "role": "retained_authored_CPU_test_result",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 69
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned-worker-v2-evidence\\manifest.json",
+      "bytes": 4090,
+      "sha256": "31cb0be4cb3f205256fa1d111e94fc639217b92ab20e05b512c3cdec9d8c3887",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/manifest.json",
+      "role": "source_review_manifest",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 71
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned-worker-v2-QUALIFICATION-LIMITS.md",
+      "bytes": 2739,
+      "sha256": "d3c61cfc36881996cefc956c82e99b3c309ab9a464b68c28a81d1dacd8656fd2",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-QUALIFICATION-LIMITS.md",
+      "role": "additive_qualification_limits",
+      "line_endings": {
+        "CRLF": 0,
+        "LF_without_CR": 13
+      },
+      "utf8_text": true,
+      "exact_frozen_binding_match": true,
+      "current_git_attributes": {
+        "text": "unspecified",
+        "eol": "unspecified",
+        "whitespace": "unspecified"
+      },
+      "needs_byte_preservation_rule": true
+    }
+  ],
+  "file_count": 15,
+  "total_bytes_including_complete_source_duplicates": 126883,
+  "source_content_scope": "Operational Python source, authored fake tests, plans, complete source bundles, byte hashes and limits only.",
+  "content_inspection": {
+    "all_15_files_read_and_UTF8_decoded": true,
+    "raw_chess_positions_or_prose_payloads": 0,
+    "model_weights_or_tensor_storage": 0,
+    "private_input_files": 0,
+    "credentials_detected": 0,
+    "public_workstation_paths_and_private_output_path_references_present": true,
+    "limit": "Narrow reviewed text allowlist plus literal credential/payload pattern screening; not a repository-wide secret audit."
+  },
+  "attributes": {
+    "current_file": {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.gitattributes",
+      "bytes": 13037,
+      "sha256": "5583896fea7a1d25e539da24f148bbb2faa5e7c49b2580009961832e807a0a2b"
+    },
+    "read_only_check": "git check-attr text eol whitespace -- EXACT_15_PATHS",
+    "paths_needing_text_unset": [
+      "experiments/chess-queen-coach-daytime-v1/owned_worker_v2.py",
+      "experiments/chess-queen-coach-daytime-v1/environment_parity_child_v1.py",
+      "experiments/chess-queen-coach-daytime-v1/environment_parity_v1.py",
+      "experiments/chess-queen-coach-daytime-v1/prepare_environment_parity_v1.py",
+      "experiments/chess-queen-coach-daytime-v1/test_owned_worker_v2.py",
+      "experiments/chess-queen-coach-daytime-v1/direct-base-worker-v2-README.md",
+      "experiments/chess-queen-coach-daytime-v1/environment-parity-protocol-v1.json",
+      "experiments/chess-queen-coach-daytime-v1/build_worker_v2_review_v1.py",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/01-worker-and-payload.txt",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/02-driver-builder-and-design.txt",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/03-tests-and-retained-result.txt",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/04-protocol-and-review-builder.txt",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/authored-test-result.json",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/manifest.json",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-QUALIFICATION-LIMITS.md"
+    ],
+    "suggested_exact_lines_only_no_edit_performed": [
+      "experiments/chess-queen-coach-daytime-v1/owned_worker_v2.py -text",
+      "experiments/chess-queen-coach-daytime-v1/environment_parity_child_v1.py -text",
+      "experiments/chess-queen-coach-daytime-v1/environment_parity_v1.py -text",
+      "experiments/chess-queen-coach-daytime-v1/prepare_environment_parity_v1.py -text",
+      "experiments/chess-queen-coach-daytime-v1/test_owned_worker_v2.py -text",
+      "experiments/chess-queen-coach-daytime-v1/direct-base-worker-v2-README.md -text",
+      "experiments/chess-queen-coach-daytime-v1/environment-parity-protocol-v1.json -text",
+      "experiments/chess-queen-coach-daytime-v1/build_worker_v2_review_v1.py -text",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/01-worker-and-payload.txt -text",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/02-driver-builder-and-design.txt -text",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/03-tests-and-retained-result.txt -text",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/04-protocol-and-review-builder.txt -text",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/authored-test-result.json -text",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/manifest.json -text",
+      "experiments/chess-queen-coach-daytime-v1/owned-worker-v2-QUALIFICATION-LIMITS.md -text"
+    ],
+    "whitespace_note": "Optional blank-line diagnostic overrides do not alter bytes; -text is the byte-preservation requirement."
+  },
+  "supporting_review_bindings_not_in_15_file_inventory": [
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-owned-worker-v2-source-review-final.json",
+      "bytes": 10670,
+      "sha256": "fb6c5f1ca5161d0cf1721fe373a4fb568606bbc4500ec044a139d5f12f5d74ed"
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-owned-worker-v2-limit-note-review.json",
+      "bytes": 1169,
+      "sha256": "4dd95e02b8c0687602d94ae218be2f23397f87a5fdd63839776f705abd2f2ab6"
+    },
+    {
+      "absolute_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-environment-parity-1-closed-review.json",
+      "bytes": 7268,
+      "sha256": "fb347e00509dbc6d0bbc61fd0236632020dc90c22f0f407b333f60a8ac815335"
+    }
+  ],
+  "actual_qualification_metadata": {
+    "attribution": "Independent local-agent closed review; not re-executed here.",
+    "planned": 2,
+    "completed": 2,
+    "failed": 0,
+    "active_unknown": 0,
+    "not_run": 0,
+    "model_calls": 0,
+    "engine_calls": 0,
+    "framework_imports": 0,
+    "exact_complete_environment_equality": true,
+    "parity_sha256": "502978d0f2b979486f68b56eb9cefe5379f6e5e7b47225fa11ae1e826b0c0c77",
+    "candidate_worker_receipt_sha256": "dd833838ea7d98bf2cfeb60bb2683cf0b987a7b0a1541a7581d3c545ce98f7e8",
+    "source_sha256": "fe4ce0abb0f6be934f2b78681115ec0aa0c9c85e2ef54a6955dc2e6778103ae8",
+    "root_elapsed_seconds": 0.5620000000053551,
+    "limit": "One authored original/candidate environment pair; no framework numerical execution, model quality, broad OS reliability or parent-death claim."
+  },
+  "operations_performed": [
+    "Read exact allowlisted text files",
+    "SHA-256 and line-ending counts",
+    "Read-only Git attribute query",
+    "Read three small review metadata files; no private actual payload copied"
+  ],
+  "operations_not_performed": [
+    "stage",
+    "commit",
+    "push",
+    "publish",
+    "source edit",
+    "process or job observation",
+    "runtime call",
+    "framework import",
+    "model call",
+    "engine call",
+    "held/reserve read"
+  ]
+}

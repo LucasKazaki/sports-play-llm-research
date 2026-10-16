@@ -1,0 +1,167 @@
+
+===== COMPLETE FILE {"bytes": 5760, "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment-parity-protocol-v1.json", "sha256": "c16d4f57d36cfb65764a1e8f987893febfb5504786ecd8e955b17485b1267608"} =====
+{
+  "schema": "chess.environment-parity-plan.v1",
+  "launch_profile": "direct-base-owned-worker-v2",
+  "driver_sha256": "9265a9e7e656498552bf06e83e6ab07376ccf44a2baee56fc2973f5dc335a823",
+  "worker_source_sha256": "fe4ce0abb0f6be934f2b78681115ec0aa0c9c85e2ef54a6955dc2e6778103ae8",
+  "child_source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment_parity_child_v1.py",
+    "sha256": "64be13cf9bfc2244721a6e8ae8bed0258c36314470c6ca7b4bfca6a338bda8e8",
+    "bytes": 3908
+  },
+  "dependencies": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned_worker_v2.py",
+      "sha256": "fe4ce0abb0f6be934f2b78681115ec0aa0c9c85e2ef54a6955dc2e6778103ae8",
+      "bytes": 13520
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment_parity_child_v1.py",
+      "sha256": "64be13cf9bfc2244721a6e8ae8bed0258c36314470c6ca7b4bfca6a338bda8e8",
+      "bytes": 3908
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\environment_parity_v1.py",
+      "sha256": "9265a9e7e656498552bf06e83e6ab07376ccf44a2baee56fc2973f5dc335a823",
+      "bytes": 8005
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\prepare_environment_parity_v1.py",
+      "sha256": "a6ce75d9101099767ef9f82758afb66e2d731f105aaca8fab36bdc7c75387d7b",
+      "bytes": 3254
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_owned_worker_v2.py",
+      "sha256": "f4987e4888f2a3c4a27fd228b19d609f82c887b07fdbc46cef564aa70ed1ca08",
+      "bytes": 14615
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0",
+      "bytes": 11825
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+      "sha256": "9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5",
+      "bytes": 270616
+    },
+    {
+      "path": "C:\\Users\\lucas\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+      "sha256": "624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181",
+      "bytes": 103192
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\pyvenv.cfg",
+      "sha256": "115d62f8b05b80befb8aabe8ef3106697bae48f40694c95ff94014b29690a4d9",
+      "bytes": 381
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\direct-base-launch-proposal.json",
+      "sha256": "011a2da519f013440dbf509a28fe0a8957e7f4211cd2e9e7df17f1a95ea0e2a5",
+      "bytes": 6085
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-owned-job-diagnostic-1-closed-review.json",
+      "sha256": "13d76d198759419d1b60d8d4cbd6890894e7e5bfc7244ebffb22911a468b9e35",
+      "bytes": 7609
+    }
+  ],
+  "output": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-daytime-v1\\direct-base-environment-parity-1",
+  "cutoff_utc": "2026-10-16T15:30:00+00:00",
+  "maximum_seconds": 90,
+  "worker_maximum_seconds": 15,
+  "requests": {
+    "original": {
+      "arguments": [
+        "experiments\\chess-queen-coach-daytime-v1\\environment_parity_child_v1.py",
+        "--out",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-daytime-v1\\direct-base-environment-parity-1\\original\\child.json"
+      ],
+      "arguments_sha256": "0ee67e13618d069221dd4878a87ec466c706f008b3ba11c8df629b16e972efb6"
+    },
+    "candidate": {
+      "arguments": [
+        "experiments\\chess-queen-coach-daytime-v1\\environment_parity_child_v1.py",
+        "--out",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-daytime-v1\\direct-base-environment-parity-1\\candidate\\child.json"
+      ],
+      "arguments_sha256": "3c1b8a72c582d23e448487796902a2c9d3773dc43932e35b1847dca4d2fdf5ae"
+    }
+  },
+  "planned": [
+    "original",
+    "candidate"
+  ],
+  "model_calls": 0,
+  "engine_calls": 0,
+  "dispatch": "Root only after complete source/protocol independent review; one attempt, no replay.",
+  "scientific_sources_changed": false,
+  "resources_changed": false,
+  "pass_requires": [
+    "exact environment equality, including ordered sys.path/flags/package version and locations",
+    "actual direct base handle matches Popen PID/image/creation before unchanged GO",
+    "explicit creator-held owned-job membership and complete sole-member list beforeGO",
+    "candidate child NULL-job sole interpreter and exact parent identity",
+    "complete owned job empty and stable child EXIT before lease release"
+  ],
+  "later_gate": "CPU parity alone cannot admit model calls. New reviewed warm/cold qualification remains mandatory."
+}
+===== END COMPLETE FILE =====
+
+===== COMPLETE FILE {"bytes": 2918, "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\build_worker_v2_review_v1.py", "sha256": "23406dffc1d709805967ea6464c914760b7ff246c54c8fd0e3a9518d697cb492"} =====
+"""Create finite complete-source review artifacts; metadata only, no launch."""
+import hashlib
+import json
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+OUT = HERE/'owned-worker-v2-evidence'
+
+
+def binding(path):
+    raw = path.read_bytes()
+    return {'path': str(path), 'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}
+
+
+def write(path, data):
+    with path.open('xb') as handle: handle.write(data)
+
+
+def run():
+    OUT.mkdir(exist_ok=False)
+    sources = [HERE/name for name in ('owned_worker_v2.py', 'environment_parity_child_v1.py',
+        'environment_parity_v1.py', 'prepare_environment_parity_v1.py', 'test_owned_worker_v2.py',
+        'direct-base-worker-v2-README.md', 'environment-parity-protocol-v1.json', 'build_worker_v2_review_v1.py')]
+    result = {'scope': 'Authored CPU fake-process tests, metadata lookup and byte hashes only.',
+        'actual_original_candidate_dispatch': False, 'actual_OS_job_calls': False, 'model_calls': 0,
+        'engine_calls': 0, 'framework_imports': 0,
+        'runs': [{'tool_chunk_id': 'dc0cde', 'passed': 23, 'seconds': .17},
+            {'tool_chunk_id': '138bfd', 'passed': 28, 'seconds': .21},
+            {'tool_chunk_id': '3a3133', 'passed': 32, 'seconds': .22}],
+        'final_command': '.venv-soccernet/Scripts/python.exe -m pytest experiments/chess-queen-coach-daytime-v1/test_owned_worker_v2.py -q',
+        'final_exact_output': '................................                                         [100%]\n32 passed in 0.22s\n',
+        'final_sources': [binding(path) for path in sources],
+        'limit': 'No actual CPU parity or ownership qualification; root dispatch and independent actual review remain required.'}
+    write(OUT/'authored-test-result.json', json.dumps(result, indent=2).encode())
+    groups = [('01-worker-and-payload.txt', sources[:2]),
+        ('02-driver-builder-and-design.txt', sources[2:4]+[sources[5]]),
+        ('03-tests-and-retained-result.txt', [sources[4], OUT/'authored-test-result.json']),
+        ('04-protocol-and-review-builder.txt', sources[6:])]
+    bundles = []
+    for name, paths in groups:
+        data = b''
+        for path in paths:
+            raw = path.read_bytes(); header = json.dumps(binding(path), sort_keys=True).encode()
+            data += b'\n===== COMPLETE FILE '+header+b' =====\n'+raw+b'\n===== END COMPLETE FILE =====\n'
+        if len(data) >= 30000: raise ValueError('Review bundle exceeds finite bound')
+        write(OUT/name, data); bundles.append(binding(OUT/name))
+    manifest = {'source_files': [binding(path) for path in sources], 'result': binding(OUT/'authored-test-result.json'),
+        'bundles': bundles, 'status': 'source_review_candidate_only'}
+    write(OUT/'manifest.json', json.dumps(manifest, indent=2).encode())
+    print(json.dumps({'manifest': binding(OUT/'manifest.json'), 'bundles': bundles}))
+
+
+if __name__ == '__main__': run()
+
+===== END COMPLETE FILE =====

@@ -21,21 +21,23 @@
     "chess-counterfactual-train-dev-coverage-2026-10-16/descriptive-only",
     "chess-tutor-draft-checks-daytime-v1/one-actual-manual-UI-integration",
     "chess-queen-coach-daytime-v1/warm-qualification-1-software-only",
-    "chess-queen-coach-daytime-v1/explicit-job-diagnostic-1-descriptive-only"
+    "chess-queen-coach-daytime-v1/explicit-job-diagnostic-1-descriptive-only",
+    "chess-queen-coach-daytime-v1/direct-base-environment-parity-1-CPU-only",
+    "chess-queen-coach-daytime-v1/observer-cpu-direct-1-CPU-only"
   ],
   "cutoff": "2026-10-16T18:00:00-04:00",
   "commentary_gate": "not_achieved",
   "schema": "sportsplay.native-chess-loop.v1",
   "next_actions": [
-    "Review new direct-base worker/parity and direct-context/observer sources; root actual CPU qualification, then independent closed audits.",
-    "Only after actual new CPU passes freeze/review/run fresh warm8/cold2 model qualifiers; no global environment/model/data/floor change.",
-    "Only after actual dual qualifier audits, freeze/review full192-update plan from unchanged original64/fresh optimizer, then fixed96 cold evaluation.",
-    "Retain actual UI/helper/public-metadata scopes; no quality/trained admission. Replenish broad factuality frontier; stop/close/report/deactivate22UTC."
+    "Review/run new warm8 disposable qualifier; independent closed audit then cold2 spentDEV qualifier.",
+    "Only after actual dual audits freeze/review/run unchanged full192 TRAIN, development selection and fixed96 cold held comparison.",
+    "Preserve all512 reservations/current16 unspent roots, floors and no-forward inputs; keep trained profile disabled until separately qualified.",
+    "Continue research/implementation/debugging; stop new work, close owned jobs, report and deactivate heartbeat22UTC."
   ],
   "external_contact_sent": false,
-  "active_experiment": "GPU idle. New observer CPUprobe failed before4cases; explicit creator-job diagnostic completed descriptively with delegate outside that particular ownerjob. New direct-base environment/ownership qualification source in preparation; no new model call.",
+  "active_experiment": "CPU environment parity and four-case observer passed independent closed audits. Fresh direct warm8/cold2 plans frozen for source review; actual model qualifiers and full192/96 remain unrun at this record.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T14:43:38.9554031Z",
+  "updated_at": "2026-10-16T15:15:57.770184+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
   "secondary_work": "TRAIN FREE has4 king targets; selected TRAIN and all DEV have0. All544 audited roots start outside check. Aggregate coverage is not learning or coaching evidence; no new counterfactual adapter exists.",
   "failed_evidence": [

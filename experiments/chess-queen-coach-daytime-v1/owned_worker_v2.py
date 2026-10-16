@@ -1,0 +1,229 @@
+"""Direct base interpreter, unchanged venv getpath and frozen owned-job/GO gate.
+
+This candidate is operational software, not model qualification. Job handles are
+parent-only. The existing worker and its bootstrap are imported without edits.
+"""
+from __future__ import annotations
+import argparse
+import ctypes
+from ctypes import wintypes as W
+from datetime import datetime, timezone
+import hashlib
+import importlib.util
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import time
+from filelock import FileLock, Timeout
+
+ROOT = Path(__file__).resolve().parents[2]
+LOCK = ROOT/'data/private/chess-gpu-owner.lock'
+PROFILE = 'direct-base-owned-worker-v2'
+ORIGINAL = ROOT/'experiments/chess-queen-v1/gpu_worker.py'
+ORIGINAL_SHA = '1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0'
+BASE = Path('C:/Users/lucas/AppData/Local/Programs/Python/Python312/python.exe')
+BASE_SHA = '624bbc0586d8855633b875e911883bbef8a0e8b8711e11126df480dd86f54181'
+VENV = ROOT/'.venv-soccernet/Scripts/python.exe'
+VENV_SHA = '9b0bffb7a259cd2722df454fdfff41ee13665820cff1f578b1d97d31f9ef93d5'
+
+
+def digest(path): return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def normalized(path): return os.path.normcase(os.path.realpath(path))
+def save(path, value): Path(path).write_text(json.dumps(value, indent=2), encoding='utf-8')
+
+
+def pinned_original():
+    for path, expected in ((ORIGINAL, ORIGINAL_SHA), (BASE, BASE_SHA), (VENV, VENV_SHA)):
+        if digest(path) != expected: raise ValueError('Pinned worker/interpreter bytes differ: '+str(path))
+    if normalized(sys._base_executable) != normalized(BASE) or normalized(sys.executable) != normalized(VENV):
+        raise ValueError('Candidate creator must use the pinned existing venv/base interpreter')
+    spec = importlib.util.spec_from_file_location('unchanged_owned_worker_v1', ORIGINAL)
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    return module
+
+
+def child_command(script, arguments):
+    # Copy all inherited values; this single override is local to this child.
+    environment = dict(os.environ); environment['__PYVENV_LAUNCHER__'] = str(VENV)
+    return [str(BASE), str(ORIGINAL), '--bootstrap-script', str(script), '--', *arguments], environment
+
+
+class WindowsProof:
+    """Query actual stable Popen/current handles, never reopen the child by PID."""
+    def __init__(self):
+        if sys.platform != 'win32': raise RuntimeError('Windows ownership proof required')
+        self.k = ctypes.WinDLL('kernel32', use_last_error=True)
+        signatures = {
+            'GetCurrentProcess': ([], W.HANDLE),
+            'GetProcessId': ([W.HANDLE], W.DWORD),
+            'GetProcessTimes': ([W.HANDLE, *([ctypes.POINTER(W.FILETIME)]*4)], W.BOOL),
+            'QueryFullProcessImageNameW': ([W.HANDLE, W.DWORD, W.LPWSTR, ctypes.POINTER(W.DWORD)], W.BOOL),
+            'IsProcessInJob': ([W.HANDLE, W.HANDLE, ctypes.POINTER(W.BOOL)], W.BOOL),
+            'QueryInformationJobObject': ([W.HANDLE, ctypes.c_int, ctypes.c_void_p, W.DWORD, ctypes.POINTER(W.DWORD)], W.BOOL),
+            'WaitForSingleObject': ([W.HANDLE, W.DWORD], W.DWORD),
+            'TerminateJobObject': ([W.HANDLE, W.UINT], W.BOOL),
+        }
+        for name, (args, result) in signatures.items():
+            function = getattr(self.k, name); function.argtypes = args; function.restype = result
+
+    def identity(self, handle):
+        pid = int(self.k.GetProcessId(handle))
+        if pid <= 0: raise ctypes.WinError(ctypes.get_last_error())
+        times = [W.FILETIME() for _ in range(4)]
+        if not self.k.GetProcessTimes(handle, *[ctypes.byref(value) for value in times]):
+            raise ctypes.WinError(ctypes.get_last_error())
+        buffer = ctypes.create_unicode_buffer(32768); size = W.DWORD(len(buffer))
+        if not self.k.QueryFullProcessImageNameW(handle, 0, buffer, ctypes.byref(size)):
+            raise ctypes.WinError(ctypes.get_last_error())
+        return {'pid': pid, 'image': normalized(buffer.value),
+            'created': (times[0].dwHighDateTime << 32) | times[0].dwLowDateTime}
+
+    def member(self, handle, job):
+        if not job: raise ValueError('Explicit creator-held job handle required')
+        value = W.BOOL()
+        if not self.k.IsProcessInJob(handle, job, ctypes.byref(value)):
+            raise ctypes.WinError(ctypes.get_last_error())
+        return bool(value.value)
+
+    def pids(self, job):
+        if not job: raise ValueError('Explicit creator-held job handle required')
+        capacity = 64
+        while capacity <= 4096:
+            buffer = ctypes.create_string_buffer(8+capacity*ctypes.sizeof(ctypes.c_size_t)); returned = W.DWORD()
+            ctypes.set_last_error(0)
+            ok = self.k.QueryInformationJobObject(job, 3, buffer, len(buffer), ctypes.byref(returned))
+            code = ctypes.get_last_error(); assigned = ctypes.c_uint32.from_buffer(buffer, 0).value
+            count = ctypes.c_uint32.from_buffer(buffer, 4).value
+            if not ok and code != 234: raise ctypes.WinError(code)
+            if not ok or count < assigned: capacity *= 2; continue
+            if count != assigned or count > capacity or returned.value < 8+count*ctypes.sizeof(ctypes.c_size_t):
+                raise ValueError('Incomplete explicit owned-job PID list')
+            values = list((ctypes.c_size_t*count).from_buffer(buffer, 8))
+            if any(pid <= 0 for pid in values) or len(set(values)) != count: raise ValueError('Invalid owned-job PID list')
+            return sorted(values)
+        raise ValueError('Owned-job list exceeds4096')
+
+    def exited(self, handle):
+        value = int(self.k.WaitForSingleObject(handle, 0))
+        if value not in (0, 258): raise ctypes.WinError(ctypes.get_last_error())
+        return value == 0
+
+    def terminate_owned(self, job):
+        if not job or not self.k.TerminateJobObject(job, 77): raise ctypes.WinError(ctypes.get_last_error())
+
+
+def before_go(api, child, job):
+    creator_handle = api.k.GetCurrentProcess()
+    creator = api.identity(creator_handle); actual = api.identity(int(child._handle))
+    pids = api.pids(job.handle)
+    if (creator['pid'] != os.getpid() or actual['pid'] != child.pid
+        or creator['image'] != normalized(BASE) or actual['image'] != normalized(BASE)
+        or actual['created'] < creator['created'] or api.exited(int(child._handle))):
+        raise ValueError('Popen stable interpreter/creator identity differs beforeGO')
+    member = api.member(int(child._handle), job.handle)
+    creator_member = api.member(creator_handle, job.handle)
+    if not member or creator_member or pids != [child.pid]:
+        raise ValueError('Exact created interpreter must be sole explicit owned-job member beforeGO')
+    return {'creator_identity': creator, 'child_identity': actual,
+        'popen_handle_pid_matches': True, 'member_of_explicit_creator_job': member,
+        'creator_member_of_explicit_child_job': creator_member, 'complete_job_pids': pids,
+        'job_handle_passed_to_child': False}
+
+
+def close_owned(api, child, job, result=None):
+    """Require empty owned job and direct stable-handle EXIT before releasing lease."""
+    result = {} if result is None else result
+    result.update(complete_job_pids=None, child_stable_handle_exited=child is None,
+        actual_job_handle_closed=job is None, owned_termination_requested=False)
+    try:
+        if child is not None and child.poll() is None:
+            child.terminate()
+            try: child.wait(timeout=10)
+            except subprocess.TimeoutExpired: child.kill(); child.wait(timeout=10)
+        if job is not None:
+            pids = api.pids(job.handle)
+            if pids:
+                result['owned_termination_requested'] = True; api.terminate_owned(job.handle)
+                end = time.monotonic()+10
+                while pids and time.monotonic() < end:
+                    time.sleep(.01); pids = api.pids(job.handle)
+            result['complete_job_pids'] = pids
+            result['child_stable_handle_exited'] = api.exited(int(child._handle))
+            if pids or not result['child_stable_handle_exited']:
+                raise RuntimeError('Owned job/stable child exit not verified')
+        return result
+    finally:
+        if job is not None: job.close(); result['actual_job_handle_closed'] = job.handle is None
+
+
+def run_worker(arguments, receipt, maximum_seconds=300, lock_path=LOCK):
+    receipt = Path(receipt)
+    if receipt.exists() or receipt.with_suffix('.log').exists(): raise ValueError('Worker outputs are create-only')
+    if not arguments or not all(isinstance(item, str) for item in arguments): raise ValueError('Script argument vector required')
+    script = (ROOT/arguments[0]).resolve()
+    if not script.is_relative_to(ROOT) or not script.is_file() or script.suffix != '.py': raise ValueError('Existing repo Python script required')
+    if isinstance(maximum_seconds, bool) or not 1 <= maximum_seconds <= 14400: raise ValueError('Deadline must be1..14400seconds')
+    receipt.parent.mkdir(parents=True, exist_ok=True); Path(lock_path).parent.mkdir(parents=True, exist_ok=True)
+    started = time.monotonic(); child = None; job = None; api = None
+    record = {'schema': 'chess.owned-worker.v2', 'launch_profile': PROFILE,
+        'source_sha256': digest(__file__), 'started_at': datetime.now(timezone.utc).isoformat(),
+        'script': str(script.relative_to(ROOT)), 'arguments_sha256': hashlib.sha256(json.dumps(arguments).encode()).hexdigest(),
+        'lock': str(Path(lock_path).resolve()), 'log': str(receipt.with_suffix('.log')), 'status': 'not_started',
+        'child_pid': None, 'exit_code': None, 'maximum_seconds_after_GO': maximum_seconds,
+        'owned_member_before_go': False, 'owned_job_exit_verified': False, 'ownership': {},
+        'launch': {'base_executable': str(BASE), 'base_sha256': BASE_SHA, 'venv_executable': str(VENV),
+            'venv_sha256': VENV_SHA, 'original_worker_sha256': ORIGINAL_SHA,
+            'child_environment_only_override': {'__PYVENV_LAUNCHER__': str(VENV)},
+            'job_handle_passed_to_child': False, 'global_environment_mutated': False}}
+    try:
+        with FileLock(str(lock_path), timeout=0):
+            record['status'] = 'lease_acquired'; save(receipt, record)
+            try:
+                original = pinned_original(); api = WindowsProof()
+                command, environment = child_command(script, arguments[1:])
+                with receipt.with_suffix('.log').open('xb') as output:
+                    child = subprocess.Popen(command, cwd=ROOT, env=environment, close_fds=True,
+                        stdin=subprocess.PIPE, stdout=output, stderr=subprocess.STDOUT)
+                    record.update(status='awaiting_job_assignment', child_pid=child.pid); save(receipt, record)
+                    job = original.OwnedWindowsJob(child)
+                    record['ownership']['before_go'] = before_go(api, child, job)
+                    record['owned_member_before_go'] = True; save(receipt, record)
+                    # The unchanged original bootstrap is still waiting for this exact gate.
+                    child.stdin.write(b'GO\n'); child.stdin.flush(); child.stdin.close()
+                    record['ownership']['after_go_complete_job_pids'] = api.pids(job.handle)
+                    record['status'] = 'running'; save(receipt, record)
+                    try:
+                        code = child.wait(timeout=maximum_seconds)
+                        record.update(status='completed' if code == 0 else 'failed', exit_code=code)
+                    except subprocess.TimeoutExpired: record['status'] = 'deadline'
+            except BaseException as error:
+                record.update(status='failed', error=type(error).__name__+': '+str(error)); raise
+            finally:
+                try:
+                    record['ownership']['closure'] = {}
+                    close_owned(api, child, job, record['ownership']['closure'])
+                    record['owned_job_exit_verified'] = (job is not None and
+                        record['ownership']['closure']['complete_job_pids'] == [] and
+                        record['ownership']['closure']['child_stable_handle_exited'] and
+                        record['ownership']['closure']['actual_job_handle_closed'])
+                except BaseException as error:
+                    record.update(status='failed', closure_error=type(error).__name__+': '+str(error)); raise
+                finally:
+                    record['exit_code'] = child.returncode if child is not None else None
+                    record['child_exited_before_lease_release'] = child is None or child.poll() is not None
+                    record['elapsed_seconds'] = time.monotonic()-started; save(receipt, record)
+    except Timeout:
+        record.update(status='busy', elapsed_seconds=time.monotonic()-started); save(receipt, record)
+    return record
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--receipt', type=Path, required=True)
+    parser.add_argument('--maximum-seconds', type=float, default=300)
+    parser.add_argument('command', nargs=argparse.REMAINDER); args = parser.parse_args()
+    vector = args.command[1:] if args.command[:1] == ['--'] else args.command
+    result = run_worker(vector, args.receipt, args.maximum_seconds)
+    print(json.dumps(result)); raise SystemExit(0 if result['status'] == 'completed' else 75 if result['status'] == 'busy' else 2)
