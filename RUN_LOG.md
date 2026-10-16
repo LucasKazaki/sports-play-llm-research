@@ -1,5 +1,11 @@
 # Run Log
 
+## 2026-10-16 22:00 UTC — Authorized window closed
+
+The user-authorized work window ended at 6:00 PM Eastern. The existing hourly heartbeat is paused. Root-controlled training, evaluation and data operations are closed; the trained preview services remain off. No new model comparison or reference scoring followed the missed admission.
+
+Two completed coaching variants and the tutor review materials remain available as research artifacts. Broad chess understanding, reliable forecasting, teaching quality and formal Archit/UMD approval are not established. The fresh96 comparison remains UNRUN, and private reserved references stay unscored. Future live model work requires a newly valid authorized window and reviewed plan.
+
 ## 2026-10-16 21:44 UTC — CPU2 preparation audited; model comparison unrun
 
 The full 96-response model comparison missed its 20:30 UTC admission and is permanently UNRUN today, with zero new scientific-panel model requests. There is no smaller substitute, reopening or fresh matched improvement estimate. Completed training, repeated development scores and two cold software checks remain separate evidence.

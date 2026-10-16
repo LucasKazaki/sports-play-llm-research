@@ -42,12 +42,12 @@
     "Preserve the new16 reservation/private48 references and all512 TRAIN exclusions; no new scientific model calls or reference scoring today.",
     "Keep seven historical unknown-successor sets/manual-prose limits; data audit does not prove complete novelty or unseen pretraining.",
     "Keep source-ready king-evasion actualUNRUN;390-minute contract cannot fit today.",
-    "Close owned work and deactivate existing heartbeat at22UTC; no automatic window extension or trained-preview restart."
+    "Existing hourly heartbeat is paused. Future model/data/live-preview work requires a newly valid authorized window and reviewed plan."
   ],
   "external_contact_sent": false,
-  "active_experiment": "CPU2 prepared/audited metadata:16 reserved games/48 inputs/48 private references,0 model/engine. Full96 permanentlyUNRUN after20:30. Global window ACTIVE until22UTC.",
+  "active_experiment": "Research window closed22UTC. Root-controlled training/evaluation/data jobs are closed; CPU2 prepared16reservedgames/48privateunscoredpairs. Full96 remains permanentlyUNRUN today.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T21:44:20.284538+00:00",
+  "updated_at": "2026-10-16T22:00:22.834066+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
   "secondary_work": "Saved192 response/PDF support exploratory tutor review. Presentation-v3 engineering audits passed; trained previews off. Start Chess Study opens earlier manual8793 only. Future trained live use requires valid window/reviewed admission. Queen upstream unchanged20:59.",
   "failed_evidence": [
@@ -80,5 +80,9 @@
     "private_unscored_references": 48,
     "new_scientific_model_calls": 0,
     "semantic_audit_rerun": false
-  }
+  },
+  "window_status": "closed_at_2026-10-16T22:00:00+00:00",
+  "automation_status": "PAUSED",
+  "owned_heavy_operation": null,
+  "capability_goal_achieved": false
 }
