@@ -1,0 +1,268 @@
+{
+  "schema": "chess.tutor-postgeneration-draft-checks-design.v1",
+  "status": "proposal_only_not_implementation_or_admission",
+  "prepared_at_utc": "2026-10-16T11:38:07.562386+00:00",
+  "purpose": "Help a chess tutor inspect the original manually requested Queen draft by separating limited rule checks, legal move observations and unassessed prose. Never certify the whole explanation.",
+  "current_experiment_state": {
+    "original_manual_Queen_runtime": "Remains the existing qualified NF4 no-cache runtime; no source, settings, prompt, default or eligibility change proposed.",
+    "new_cold_software_qualification": "Fourth attempt passed its independent closed audit for two EOS requests. Its unknown-image live-to-EXIT observations do not identify NVIDIA or establish 96-request stability/quality.",
+    "fresh_fixed256_vs64_comparison": "All 96 calls UNRUN after the 11:30 UTC admission deadline. No worker, raw panel or score; 16-root reservation retained and unspent by model calls.",
+    "new_countertraining192": "UNRUN after its strict 11:00 UTC deadline.",
+    "trained64_UI": "Unavailable; this proposal cannot admit or promote it.",
+    "time_authority": "No extension beyond the existing 13:00 UTC cutoff."
+  },
+  "source_inspection": {
+    "platform": "Existing localhost Python HTTP service and plain JavaScript/CSS web interface, used with desktop keyboard/pointer and compact mobile widths.",
+    "current_strengths": [
+      "A draft retains original position and selected-move context; stale drafts are identified and excluded from current-position export.",
+      "The full raw receipt and actual runtime attribution are retained. Main prose is shortened with a native disclosure, not rewritten.",
+      "Stockfish search evidence and deterministic board facts already occupy a separate panel."
+    ],
+    "concrete_gap": "Legal raw-move/critical-line labels currently sit beside completely unverified prose, with no statement-level check or explicit coverage record. A tutor must manually connect every claim to its board.",
+    "limits": "Source-only review. No live page, HTTP, server, engine, model, GPU or held-reference call was made. Palette contrast below is calculated from existing CSS values, not inferred from screenshots.",
+    "read_sources": [
+      {
+        "path": "prototype/chess_tutor_v1/coaching_jobs.py",
+        "bytes": 8148,
+        "sha256": "08a862af98ebac6e72d3cb43759fb6711a30cd1876778d8612f482defdc7563b"
+      },
+      {
+        "path": "prototype/chess_tutor_v1/queen_runtime.py",
+        "bytes": 10709,
+        "sha256": "8295ada0e368ff5810ee81b977f5dc61bc51a759e821459b3111441145ddc740"
+      },
+      {
+        "path": "prototype/chess_tutor_v1/server.py",
+        "bytes": 28830,
+        "sha256": "d3b88e9bfd184038da66c1ea7858be9b32647dd53e6974ea7a86456c6e58e2a5"
+      },
+      {
+        "path": "prototype/chess_tutor_v1/static/coaching.js",
+        "bytes": 9645,
+        "sha256": "4ca9c9850f9fc5dcbdd33e7e6accc6179c65cc2a5d2e8a942ae36f9b61fae79d"
+      },
+      {
+        "path": "prototype/chess_tutor_v1/static/coaching.css",
+        "bytes": 1455,
+        "sha256": "4643aa742d2808f9157e29f5a506a51d2536f044e37643736684f17766c4531b"
+      },
+      {
+        "path": "prototype/chess_tutor_v1/static/index.html",
+        "bytes": 6842,
+        "sha256": "5d475681cdee21d682c1a794d62183818fcaac0f5e3d3f0723c68994b979cf8c"
+      },
+      {
+        "path": "prototype/chess_tutor_v1/static/app.js",
+        "bytes": 16841,
+        "sha256": "20667639d629412e31f97632da7a544e78a07fa242fb7b88fd863a2fd567fdda"
+      },
+      {
+        "path": "scripts/chess_queen_claim_audit_v1.py",
+        "bytes": 15223,
+        "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+      },
+      {
+        "path": "scripts/chess_queen_coach_counterfactual_eval_v1.py",
+        "bytes": 7382,
+        "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+      },
+      {
+        "path": "scripts/chess_queen_coach_sft_eval_v1.py",
+        "bytes": 7354,
+        "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+      },
+      {
+        "path": "scripts/chess_queen_adapter.py",
+        "bytes": 26811,
+        "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+      }
+    ]
+  },
+  "proposed_user_flow": [
+    "The user requests a Queen explanation through the existing action. The board stays usable and existing cancellation/busy handling stays intact.",
+    "Only after the owned generation worker has ended, the service computes bounded CPU-only checks from the exact retained raw response and original saved request. No new model or engine call occurs.",
+    "A small Rule checks for this draft section appears below the existing draft preview, before advanced raw execution details. Existing unverified-draft labeling remains.",
+    "The section states its requested-position context and shows legal raw-move observations separately from any matched statements. It always states that other text is unassessed.",
+    "Recognized statement rows use Supported, Contradicted or Unassessed text. An Inspect matched statements disclosure shows exact raw excerpts, rule observations and explicit branch context.",
+    "Existing stale/return/export behavior applies to the checks and draft together. Navigation or a different selected move never rebinds checks to the new board; returning restores the original context."
+  ],
+  "scope_and_mapping": {
+    "phase1_branch": "Requested root position only: branch_uci=[] and root side to move. No automatic interpretation of later critical-line plies, conditionals, quoted variations, strategic claims or pronouns across arbitrary prose.",
+    "raw_authority": "Exact original response bytes and response.raw_text; never derive claim spans from translated decoded_text, the current visual board, an engine PV, or a replacement FEN.",
+    "strict_root_move": "Reuse the frozen native parser for BEST_MOVE and atom identity. Require one unambiguous field, a legal root move, correct mover/victim/promotion descriptors, and no accepted fallback. Duplicate/malformed fields abstain.",
+    "board_observations": "For a strictly accepted legal raw BEST_MOVE, independently replay that one move and report immediate check/checkmate and capture/victim facts. These are labeled rule-derived observations, not supported prose claims or why the move is best.",
+    "automatic_claim_grammar": "Assess check/mate and capture prose only when there is exactly one ANALYSIS section whose entire non-whitespace body is the canonical two-sentence block: The move <one native move atom> gives checkmate|gives check|does not give check. It captures <one native piece atom>. OR It does not capture a piece. No leading/trailing prose, conditional text, quotes, duplicate section, second move sentence, or unparsed native-token gaps are allowed.",
+    "why_full_block": "The existing strict scorer finds narrow grammar anywhere in ANALYSIS; that alone cannot establish that an earlier conditional branch was absent. The UI version therefore adds a full-block/root-context guard rather than inheriting the scorer as a general prose verifier.",
+    "grammar_replay": "Parse the described move from the original root, require exact legal atom identity, record its UCI/SAN, then compare only the check/mate phrase and immediately adjacent capture phrase against that replay. The ANALYSIS move is not silently replaced by BEST_MOVE or selected_uci.",
+    "selected_move_identity": "When a legal selected_uci was actually supplied, compare it with the strictly accepted raw BEST_MOVE and bind the structured BEST_MOVE span. Match is Supported and a different legal move is Contradicted for this identity check only. Illegal/ambiguous BEST_MOVE is Unassessed. Free-position mode has no supplied-move claim and displays No selected move was supplied.",
+    "independence_of_checks": "Any recognized ANALYSIS-move alignment with selected_uci is recorded separately from BEST_MOVE identity. A different ANALYSIS move is never used as an unannounced context repair.",
+    "unassessed": "Unsupported free prose and ambiguous/illegal contexts remain explicitly unassessed, including every claim after an unmapped variation. An invalid preceding branch never becomes an invented board that forces a later false verdict.",
+    "expected_coverage_limit": "Original baseline Queen prose often will not match this fixed grammar. Zero matched statements must remain a normal honest outcome. The useful default is then raw-move board observations plus explicit unassessed prose, not a quality badge.",
+    "no_whole_prose_badge": true,
+    "no_quality_percentage_or_claim_count_as_total_prose_coverage": true
+  },
+  "reuse_and_frozen_boundaries": {
+    "reuse_native_functions": "The reviewed scripts/chess_queen_adapter.py has no model-loading imports at module scope. Reuse only its finite FIELDS/MOVE/PIECES/input_packet/parse_atom/parse_output pure parsing functions through an explicit pinned module load. CPU tests will forbid Torch/transformers/bitsandbytes initialization. Do not call NativeQueen.",
+    "offline_claim_auditor": "The 38-test offline auditor correctly binds exact response bytes, spans and explicit legal branches, but requires separately reviewed manual semantic mappings and a frozen four-response pool. Do not call its CLI, reuse those annotations, or portray it as automatic NLP. Reuse its hash/span/context discipline as a design contract; its original source/protocol/measurement stay unchanged.",
+    "strict_counterfactual_scorer": "Read as the grammar/association reference only. Do not import its score/panel/trainer or open its labels/references. The new UI guard is separately versioned, not a change to any held metric.",
+    "dependency_check": "The existing original UI runtime qualification binds the native/NF4 adapter, worker and numerical protocols. Their listed kernel/parity dependency paths do not include the proposed UI/controller files. All qualified files, source manifests, data, generation settings, launcher and tuned-profile admission remain untouched.",
+    "before_any_implementation": "Recheck the listed current source hashes and coordinate any owner changes; do not patch around a source race."
+  },
+  "backend_contract": {
+    "new_record_location": "A sibling verification field on the coaching job returned by existing GET /api/coach/<request_id>. No new HTTP endpoint and no client-supplied annotations, executable paths, branch FENs or verifier settings.",
+    "record_schema": {
+      "schema": "chess.tutor-draft-checks.v1",
+      "status": "checked | unassessed | unavailable; software processing state, never whole-draft quality",
+      "bindings": "Exact response_sha256, raw_text_sha256, original saved input_sha256, verifier source/dependency hashes and original request_id.",
+      "context": "response.input.fen, original selected_uci, expected root turn, branch_uci=[], and a requested-position label; no live-board lookup.",
+      "move_observations": "Strictly parsed raw move, legal replay evidence, check/checkmate, capture/victim. Separate from claim statuses.",
+      "selected_identity": "Supplied versus strictly accepted reported move, its own raw BEST_MOVE span, status/reason.",
+      "claims": "Per matched statement: kind, exact raw code-point [start,end) span plus substring SHA-256, expected assertion, observed value, supported/contradicted/unassessed, explicit root branch and bounded reason.",
+      "unassessed_regions": "Raw ANALYSIS intervals outside accepted canonical mapping, with reasons. No inferred sentence count or total-prose-coverage percentage.",
+      "limitations": "whole_prose_assessed=false; semantic scope is fixed grammar/root mapping; no explanation quality/strategic correctness/engine-bestness/human validation."
+    },
+    "input_binding": "At job creation retain the actual saved request byte hash and immutable packet/context after existing validation, without changing its bytes or fields. The checker must require those original bindings, raw.input equality and the existing canonical runtime provenance check.",
+    "raw_binding": "Read a bounded raw response byte snapshot only after worker closure, validate duplicate/nonfinite JSON and exact raw_text shape, and ensure it corresponds to the base result before any UI decoration. Preserve that byte snapshot hash; do not mutate result.raw_text, decoded_text, parsed fields or the original response file.",
+    "completion_policy": "Phase 1 checks only completed EOS original-runtime results with valid UI provenance. Partial, failed, cancelled, fixture-only or provenance-invalid results retain raw visibility but get an explicit unassessed/unavailable reason. A later broader policy would need separate review.",
+    "bounds": "Existing 1 MiB response bound; at most 100,000 raw characters; one canonical root move and at most two prose claims plus selected-identity metadata. No branch search, history guessing, recursive parsing, network or engine calls. Prior-history validation remains bounded by the frozen parser.",
+    "failure_policy": "Any verifier parse/binding/CPU failure produces unavailable/unassessed checks, never Supported and never model-output repair or automatic regeneration. The original draft/result and board remain usable.",
+    "retention": "Save a separate create-only draft-checks-v1.json in the owned request folder when possible, with a clear retention failure if writing fails. Do not overwrite raw response, input, worker, experimental source or evidence.",
+    "export": "Existing app.js exports the current matching coaching job; adding a job sibling includes checks without changing raw data or exporter behavior. Stale jobs and checks continue to be excluded together."
+  },
+  "presentation": {
+    "main_copy": {
+      "heading": "Rule checks for this draft",
+      "scope": "Only the statements listed here were checked. Other text is unassessed.",
+      "observation_heading": "For the model’s reported move",
+      "zero_match": "No draft statements match the limited checker. Other text is unassessed.",
+      "stale": "These checks belong to the earlier requested position.",
+      "binding_failure": "Rule checks are unavailable for this draft. The original response is still available.",
+      "details": "Inspect matched statements"
+    },
+    "regular_wireframe": [
+      "Queen’s draft [existing preview/disclosure]",
+      "Rule checks for this draft",
+      "Requested position · model move Qd8#",
+      "Rule observations: checkmate; no capture",
+      "Matched statements: [Supported / Contradicted / Unassessed]",
+      "Other text is unassessed.",
+      "[Inspect matched statements]",
+      "[Raw response and actual execution]"
+    ],
+    "compact_wireframe": "Same single-column order at 390px, with wrapped labels and full-width disclosure target. No extra toolbar, modal, floating badge or second analysis dashboard.",
+    "type": "Reuse system UI font. New heading .875rem/600, body .875rem/1.6 and status labels .8125rem/600; no miniature all-caps evidence captions or new typeface.",
+    "palette": "Reuse existing surface/text/muted/accent/error tokens, with supported/contradicted/unassessed text labels. No large green success surface and no global pass icon.",
+    "calculated_existing_text_contrast_on_surface": {
+      "light": {
+        "surface": "#ffffff",
+        "text15.50": "#1e252b",
+        "muted6.12": "#59636d",
+        "accent7.88": "#175c49",
+        "contradicted6.56": "#b12828"
+      },
+      "dark": {
+        "surface": "#1e252a",
+        "text13.70": "#eff1f3",
+        "muted7.20": "#a7b2bc",
+        "accent9.39": "#9bd6b8",
+        "contradicted7.59": "#ff9999"
+      }
+    },
+    "accessibility": "Native details/summary; visible existing focus styles; at least 44px summary target; no color-only statuses; DOM textContent for all model strings; long native excerpts wrap; screen-reader order follows content. Preserve focus/disclosure state across polling instead of rebuilding it on every render. Announce completion once in a small polite status, not the full draft repeatedly.",
+    "span_rendering": "Backend indices are Python Unicode code points. Frontend uses Array.from(raw_text) for slices, never UTF-16 offset assumptions. Show exact raw excerpt in details. Human-readable UCI/SAN and predicate labels are separate display metadata, not a replacement quote or a claimed one-to-one decoded_text span.",
+    "motion": "No new animation, gesture, spring, auto-scroll or automatic board movement. Existing reduced-motion behavior remains. User chooses disclosures and return-to-position."
+  },
+  "design_basis": [
+    {
+      "source": "C:/Users/lucas/.agents/skills/apple-design/SKILL.md",
+      "applied": "Purpose, agency, restraint and web-native behavior; proportional small-panel change."
+    },
+    {
+      "source": "apple-design/references/hig/layout.md > Visual hierarchy",
+      "quote": "Use progressive disclosure to make layouts cleaner and easier to interact with.",
+      "applied": "One small section and a native disclosure, retaining board/draft hierarchy."
+    },
+    {
+      "source": "apple-design/references/hig/accessibility.md > Vision",
+      "quote": "Convey information with more than color alone.",
+      "applied": "Literal status words and visible keyboard focus."
+    },
+    {
+      "source": "apple-design/references/hig/typography.md > Ensuring legibility",
+      "quote": "In general, avoid light font weights.",
+      "applied": "Existing system type and readable regular/semibold labels."
+    },
+    {
+      "source": "apple-design/references/hig/generative-ai.md > Transparency",
+      "quote": "Set clear expectations about what your AI-powered feature can and can’t do.",
+      "applied": "Keep unassessed coverage and limited rule scope visible."
+    },
+    {
+      "source": "apple-design/references/hig/writing.md > Getting started",
+      "quote": "Be clear.",
+      "applied": "Short labels name the action/status without suggesting whole-prose verification."
+    },
+    {
+      "source": "apple-design/references/cross-platform.md",
+      "applied": "Translate typography/resize/disclosure/accessibility principles to web HTML/CSS, rather than native Apple chrome."
+    },
+    {
+      "source": "work/history-recovery/saved-writing-instructions-compact.txt",
+      "applied": "Plain precise language, no generic claims or inflated verification language."
+    }
+  ],
+  "proposed_file_ownership_if_authorized": {
+    "new": [
+      "prototype/chess_tutor_v1/draft_checks_v1.py",
+      "tests/test_chess_tutor_draft_checks_v1.py",
+      "tests/test_chess_tutor_draft_checks_ui_v1.py"
+    ],
+    "minimal_existing_edits": [
+      "prototype/chess_tutor_v1/coaching_jobs.py (input hash retention, post-generation checker, sibling public record)",
+      "prototype/chess_tutor_v1/static/coaching.js (small renderer, context-bound checks, persistent disclosure)",
+      "prototype/chess_tutor_v1/static/coaching.css (small wrapping/spacing/status styles)",
+      "prototype/chess_tutor_v1/static/index.html (verification mount only)"
+    ],
+    "no_edits": [
+      "server.py",
+      "queen_runtime.py",
+      "queen_tuned_runtime_v1.py",
+      "queen-runtime.json",
+      "queen-tuned-runtime-v1.json",
+      "launcher",
+      "static/app.js",
+      "all generator adapters/shared GPU workers",
+      "all trainer/evaluator/protocol/corpus/held-reference sources"
+    ],
+    "documentation": "A short separately versioned verifier scope note only if root assigns a new documentation path. Parent retains repository-wide docs/Git/runtime ownership."
+  },
+  "verification_before_activation": {
+    "source_review": "Exact complete source/tests/test receipts in finite bundles below30KB, split by pure checker/controller/frontend. Parent and independent reviewer inspect before deployment.",
+    "meaningful_CPU_cases": [
+      "Exact input/response/span hashes and same-path tampering; changed selected move on the same board; stale context/return/export.",
+      "White and Black native POV, quiet/check/mate, capture/victim, en passant, promotion, castling, game over, and checking move that ends an automatic draw without a forced-reply claim.",
+      "Duplicate/malformed ANALYSIS/BEST fields; illegal mover/victim/promotion atom; quote, conditional prefix, two move sentences, extra trailing prose and unassociated capture all abstain.",
+      "ANALYSIS describes a different legal move from BEST or supplied selected move: keep identity/alignment distinct and never substitute boards.",
+      "Unicode before a span, exact code-point slice/hash, translated_text differing length, XSS-like text rendered inert, and response payload-size bounds.",
+      "Checker failure/retention failure leaves raw and board available, never retries generation; Torch/transformers/bitsandbytes/model/engine entrypoints blocked during CPU checks."
+    ],
+    "browser_QA_later_root_owned": "Use a clearly labeled CPU interface fixture for 390px and desktop/200% zoom, keyboard disclosure/focus, stale navigation/selected alternative/return/export, and empty/unassessed/error states. No actual runtime call in this design lane.",
+    "actual_manual_Queen_smoke": "Only if root decides the UI wiring still needs it after CPU/browser checks, at most one fresh authored request through the original qualified manual runtime under the root-owned GPU lease. Freeze source/input/intent/output first. No fresh held comparison, trained64 admission or model-quality claim.",
+    "success_definition": "A tutor can identify what statement and requested board a rule result refers to, recover exact raw text/export, and see the unassessed remainder. Success is software inspectability, not stronger chess understanding."
+  },
+  "non_goals": [
+    "No general NLP claim extraction or manual semantic gold labels.",
+    "No material advantage, tactics, pin/defense/recapture, strategy, positional or teaching-quality verdict.",
+    "No automatic post-processing repair, suppressing false text, rewriting claims, engine-selected replacement or additional generator inputs.",
+    "No training/prompt change, evaluation redefinition, held-reference read, model reselection, scheduler or deadline extension."
+  ],
+  "decision_requested_from_parent": "Approve or narrow this ownership/scope before implementation. No production files were changed for this proposal.",
+  "actual_calls": {
+    "model": 0,
+    "GPU": 0,
+    "engine": 0,
+    "HTTP_or_browser": 0,
+    "held_reference_reads": 0,
+    "heavy_CPU": 0
+  }
+}

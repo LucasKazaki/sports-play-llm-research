@@ -117,3 +117,11 @@ research/chess-stable-engine-release-check-2026-10-16.json -text whitespace=blan
 # Frozen review bundles and literal patches retain their original blank lines.
 experiments/**/*bundle.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
 experiments/**/amendment-diff.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the reviewed limited-check implementation and exact evidence copies.
+tests/test_chess_tutor_draft_checks*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-tutor-draft-checks-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-tutor-draft-checks-v1/finite-source-review/0*.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture-review/0*.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+research/chess-cache-backbone-investigation-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-primary-refresh-2026-10-16-1144.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

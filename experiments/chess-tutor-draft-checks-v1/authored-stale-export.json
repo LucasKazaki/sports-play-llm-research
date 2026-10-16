@@ -1,0 +1,13 @@
+{
+  "fixture_only": true,
+  "origin": "Authored renderer fixture; no model/engine/production qualification or quality evidence.",
+  "study": {
+    "position": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "moves": []
+    },
+    "selectedUci": "e2e4",
+    "preview": false
+  },
+  "coaching": null
+}

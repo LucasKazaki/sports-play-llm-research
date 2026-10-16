@@ -60,7 +60,8 @@ class CoachingJobs:
                 'fixture':self.runner.fixture,'backend_label':self.runner.label,'created':time.monotonic(),
                 'input':folder/'input.json','out':folder/'response.json','worker':folder/'worker.json',
                 # The frozen NF4 child checks out.with_suffix('.CANCEL').
-                'cancel':folder/'response.CANCEL','log':folder/'controller.log','process':None,'result':None,'error':None}
+                'cancel':folder/'response.CANCEL','log':folder/'controller.log','process':None,'result':None,'error':None,
+                'request_packet':json.loads(json.dumps(packet)),'input_sha256':None,'verification':None}
             self.jobs[identifier]=job
             while len(self.jobs)>32:
                 oldest=next(iter(self.jobs))
@@ -71,6 +72,7 @@ class CoachingJobs:
             else:
                 folder.mkdir(parents=True,exist_ok=False)
                 job['input'].write_text(json.dumps(packet,indent=2),encoding='utf-8')
+                job['input_sha256']=sha(job['input'])
                 threading.Thread(target=self._watch,args=(job,),daemon=True).start()
             return self._public(job)
 
@@ -78,7 +80,30 @@ class CoachingJobs:
         return {'schema':'chess.tutor-coach-candidate.v1','request_id':job['request_id'],'status':job['status'],
             'fixture':job['fixture'],'backend_label':job['backend_label'],'context':job['context'],
             'elapsed_seconds':round(time.monotonic()-job['created'],1),'result':job['result'],'error':job['error'],
+            'verification':job['verification'],
             'poll_url':'/api/coach/'+job['request_id']}
+
+    def _draft_checks(self,job,result,worker,base_result):
+        """Separate CPU evidence after worker closure; never alter the raw result."""
+        from draft_checks_v1 import audit_bytes, original_profile, unavailable
+        try:
+            qualified=(job['status']=='completed' and original_profile(result,worker or {},
+                job['fixture'],Path(getattr(self.runner,'qualification_path','')).name))
+            def bounded(path):
+                with path.open('rb') as handle:return handle.read(1_048_577)
+            value=audit_bytes(bounded(job['out']),bounded(job['input']),job['input_sha256'],
+                job['request_packet'],job['context'],base_result,qualified=qualified)
+        except Exception as error:
+            value=unavailable('The draft or request could not be bound for rule checks.')
+            value['error_type']=type(error).__name__
+        value['request_id']=job['request_id']
+        try:
+            with job['out'].with_name('draft-checks-v1.json').open('x',encoding='utf-8',newline='\n') as handle:
+                handle.write(json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False)+'\n')
+        except OSError:
+            value=unavailable('Rule checks could not be retained. The original draft is still available.')
+            value['request_id']=job['request_id']
+        return value
 
     def get(self,identifier):
         with self.lock:
@@ -120,7 +145,7 @@ class CoachingJobs:
                     break
                 time.sleep(.05)
             output.close()
-            result=read_record(job['out']);worker=read_record(job['worker'])
+            result=read_record(job['out']);worker=read_record(job['worker']);base_result=result
             if result and hasattr(self.runner,'decorate_result'):
                 result=self.runner.decorate_result(job,result)
             with self.lock:
@@ -131,6 +156,8 @@ class CoachingJobs:
                 elif result and result.get('status')=='partial':job['status']='partial'
                 else:
                     job['status']='failed';job['error']=job['error'] or (result or {}).get('error') or 'The local model could not finish this request.'
+                if result:
+                    job['verification']=self._draft_checks(job,result,worker,base_result)
                 error=(str((result or {}).get('error',''))+' '+str(job['error'] or '')).lower()
                 if any(marker in error for marker in ('resource reserve','out of memory','cuda error')):
                     self.blocked='Local coaching is unavailable until this runtime resource failure is reviewed.'

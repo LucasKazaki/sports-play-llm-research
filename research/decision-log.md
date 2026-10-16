@@ -577,3 +577,42 @@ and publishes the reviewed source, readiness, software and failure evidence to
 the existing draft. The trained profile stays disabled. The overall coaching
 capability and shareable-candidate gates remain unmet; the 13:00 UTC cutoff and
 hourly follow-up boundary are unchanged.
+
+## Limited interface and backbone cycle — October 16, 12:09 UTC
+
+The seven-path post-generation draft checker and display passed full independent
+source review and 100 relevant CPU/UI checks (one real-engine check deselected).
+Raw input/output/parsed fields remain unchanged. BEST board observations,
+supplied-move identity and up to two canonical ANALYSIS check/capture statements
+have separate scopes; ordinary prose remains unassessed. The trained profile
+stays disabled and no quality or formal commentary promotion follows.
+
+Root inspected five authored rendering states, exact-span disclosure, stale
+export exclusion and return, light/dark presentation and 390-pixel layout with
+200% text sizing. Those records are fictional software fixtures, not model
+answers. The reviewed code is loaded in the live tutor; actual Stockfish 19,
+restored CPU forecasting and evidence export worked on the illustrative opening.
+The three legal raw forecast moves were c3, Bb6, d4, with a one-half-move shared
+prefix for this engine search. This is an exploration, not a benchmark.
+
+Strict older-response compatibility failed before the checker because the old
+response's input-hash field did not bind its saved input-file bytes. No expected
+hash was reconstructed. A proposed actual Queen UI smoke was not admitted below
+the unchanged 10 GiB startup commit reserve. It created no worker, request,
+response or model call. The first failing resource sample was not retained; the
+separate timestamped follow-up sample is context only. New-controller actual
+model completion remains unverified. Both failed/unadmitted attempts are retained.
+
+An independently reviewed backbone source investigation and standard-library
+probe narrow possible cache-failure causes without implementing a repair or
+measuring numerical behavior or speed. Conditional quantized dispatch under
+authored device properties cannot identify the prior BF16 failure's cause.
+The 11:44 public Queen code/model refresh retained the same revisions; reading
+depth and the bounded literature-search scope remain explicit.
+
+Evidence: experiments/chess-tutor-draft-checks-v1/ and
+research/chess-cache-backbone-investigation-2026-10-16/. No expired TRAIN192 or
+fresh96 comparison was restarted, no deadline or reserve changed, no creator
+media entered training and no contact or institutional approval is claimed.
+The overall coaching and shareable-candidate gates remain unmet. The 13:00 UTC
+cutoff still ends overnight experiments and the hourly heartbeat.

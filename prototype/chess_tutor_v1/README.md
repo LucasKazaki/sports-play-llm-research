@@ -24,8 +24,10 @@ Queen is the separately versioned `queen-pawn-8/native-nf4-v2` candidate. Every
 request starts a short-lived process through the existing shared GPU lease.
 The frozen settings are deterministic no-cache/math attention, 1,024 new tokens
 and 240 seconds of generation, with 4 GiB physical/commit and 1 GiB GPU running
-reserves. The wrapper has a 270-second deadline. A busy lease starts no model;
-there is no queue, automatic retry or fallback. Cancellation writes only this
+reserves. The wrapper has a 270-second deadline. A busy lease starts no model.
+Startup also requires 6 GiB available RAM, 10 GiB commit headroom and 10 GiB free
+GPU memory. These startup limits are distinct from the running reserves.
+There is no queue, automatic retry or fallback. Cancellation writes only this
 request's `response.CANCEL` and stays stopping until the process exits.
 
 `queen-runtime.json` binds the actual matching kernel/protocol, no-cache
@@ -89,3 +91,21 @@ on the resulting board and omit pinned movers; they do not claim a material win.
 Verification uses `.venv-soccernet/Scripts/python.exe -m pytest
 tests/test_chess_tutor_v1.py -q`. Software tests and browser QA demonstrate this
 interface's behavior, not chess expertise, model calibration, or teaching value.
+
+The new `draft_checks_v1.py` adds separate post-generation evidence for complete
+original-profile drafts. Only a whole canonical two-sentence ANALYSIS statement
+about its own root move can receive check/mate and capture verdicts. Immediate
+BEST_MOVE board observations and supplied-move identity are shown separately.
+Ordinary prose commonly matches zero statements; other text stays unassessed.
+The checks never change the prompt, raw output, parsed result or model choice.
+Evidence includes exact saved request/response hashes and Unicode raw-text spans;
+a separate create-only `draft-checks-v1.json` retains the result after worker exit.
+
+The implementation and independent review passed 100 relevant CPU/UI checks,
+with the existing real-engine check deselected. Clearly authored rendering
+fixtures cover supported, contradicted, unassessed, zero-match and unavailable
+states. A saved-response compatibility attempt failed its original file-byte
+binding, and a proposed actual new-controller Queen smoke was not admitted at
+the unchanged startup memory reserve. No actual new-controller model completion
+or explanation-quality result is claimed. Full evidence and limits are in
+`experiments/chess-tutor-draft-checks-v1/`. The default CPU classifier is restored.

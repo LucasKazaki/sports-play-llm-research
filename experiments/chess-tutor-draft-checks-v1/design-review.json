@@ -1,0 +1,41 @@
+{
+  "status": "passed_bounded_design_with_incorporated_clarifications",
+  "created_utc": "2026-10-16T11:42:09.409268+00:00",
+  "proposal": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\proposal.json",
+    "bytes": 22661,
+    "sha256": "67ead67890042b7d9eeb1db28e8c806ce95f9480dde799321866b238c1ebedd7"
+  },
+  "full_read": "Complete22661byteproposal read, plus exact frozen nativeFIELDS/parse_atom/parse_output/input_packet source contract inspected.",
+  "assessment": "Coherent narrowpostgeneration inspectability feature. Rule-derived observations, canonicalrootstatement checks, selectedfollowingidentity and unassessed prose stay separate. No model training/strength or wholeexplanation validation implied.",
+  "implementation_clarifications": [
+    {
+      "issue": "FullANALYSISbody alone doesnot exclude conditional framing in rawtext BEFOREheader, which native FIELDS.finditer ignores.",
+      "resolution_owner_acknowledged": "Require ANALYSISfirst and whitespace-onlyprefix; substantive/unknownprefix abstains. Add conditionalprefix regression."
+    },
+    {
+      "issue": "CanonicalANALYSIS can describe a different legalmove fromBEST or selected; a globalBESTmove heading could misattribute statement verdicts.",
+      "resolution_owner_acknowledged": "Every claimrow visibly names its ownANALYSIS SAN/UCI; BESTobservations and suppliedidentity remainseparate. Add differentlegalmoves regression."
+    },
+    {
+      "issue": "Ordinary check is true duringcheckmate.",
+      "resolution_owner_acknowledged": "givescheck uses after.is_check(); strongercheckmatephrase uses after.is_checkmate()."
+    }
+  ],
+  "blocking_design_findings_remaining": [],
+  "source_review_required": "Full exact checker/controller/frontend/test/receipt finitebundles beforeactivation; no source/HTTP/browser/modelactivation GO from thisdesignreview.",
+  "presentation_assessment": "Smallweb-native disclosure and literal statuses preserve hierarchy/accessibility/useragency. Keep allothertextunassessed visiblypresent, including0matchedcases; do notaddaggregatepassbadge or percentages.",
+  "requirements": [
+    "OriginalqualifiedmanualNF4runtime only; tuned64unavailable. No prompt/settings/generator/evaluator/corpus changes.",
+    "Postworkerclosure only, exactsavedinput/responsebytes/raw_text codepointspanhashes, no translatedoffsetmapping or currentboard substitution.",
+    "Failure/partial/cancel/provenance-invalid cases retainrawresponse but checkerunavailable/unassessed, no regeneration/repair.",
+    "Checkonlycurrentrootcanonical2sentenceblock atmost2proseclaims; arbitraryconditional/strategic/otherprose unassessed.",
+    "Keep stale/return/export binding and actualrawreceipt unchanged. CPUbound/pinnedpureparser/backendforbidden contracts; rootbrowserQA later."
+  ],
+  "limits": [
+    "This is design/source-contract critique only; no implementation code/testresult or currentvisualrender is accepted yet.",
+    "Expected sparsecanonicalgrammar coverage is normal; legalrawmoveobservations do not verify its accompanying explanation or enginebestness.",
+    "No model/engine/GPU/HTTP/browser or fresh/oldheld-reference calls/reads performed."
+  ],
+  "followUpTasks": []
+}

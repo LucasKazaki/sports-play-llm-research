@@ -1,5 +1,65 @@
 # Archit + Lucas requirements and research radar
 
+
+## Current local working state — October 16, 11:45 UTC
+
+This dated supplement supersedes active-run language in earlier entries;
+historical soccer evidence and formal promotion requirements remain intact.
+
+| Requirement | Current evidence and remaining work |
+| --- | --- |
+| Chess-first tutor prototype | Local FEN/PGN study, legal replay, Stockfish alternatives, separately attributed CPU forecasts and manual Queen drafts are available. Default CPU forecasting was restored after model maintenance. Current engineering evidence is in draft PR #14; coaching/shareable promotion remains unmet. |
+| Actually trained models | The coaching v2 run completed 256 updates and 2,048 backward passes over 1,024 games, with 1,916,928 adapter parameters and unchanged frozen storage. Development selected step 64; five of twelve recognized narrow facts were false. Its fresh comparison failed before any trained-panel call. No broad coaching gain is established. Other completed move/check experiments retain their measured, limited results. |
+| Fresh, trustworthy data | Independent audit checked 1,056 retained positions and 3,168 engine targets; complete CPU tokenization passed for 1,536 training and 96 development examples. No king moves were selected. New 192-update learning remained unrun after its strict 11:00 UTC admission. |
+| Reliable execution and fair evaluation | After three preserved monitor failures, original-SFT cold qualification passed two used development requests with source/input/storage/resource/exit audit. This is software-only. A fixed old trained 256-versus-64 fresh comparison missed its 11:30 whole-phase admission; all 96 responses are unrun, no score exists and the reservation is retained. No deadline was extended or trained UI enabled. |
+| Current research and clear interface | The dated primary radar distinguishes raw move prediction, supplied-move following, rules, explanations and human usefulness. Official Queen revisions remain unchanged in the 11:44 public API check. A bounded post-generation rule-check UI is under implementation/review; it leaves ordinary prose unassessed and changes no generator input. |
+| Archit and UMD research review | Provenance, AI assistance, rights, failures, reproducibility and evidence limits remain explicit. No human chess-expert validation, institutional approval or formal commentator/shareable-candidate promotion is claimed. Creator media and recovered chats stay private and unused for training; no contact was sent. |
+
+Source records: [research radar](chess-research-radar-2026-10-16.md),
+[UMD research fit](chess-umd-research-readiness-2026-10-16.md),
+[counterfactual preparation and outcomes](../experiments/chess-queen-coach-counterfactual-v1/README.md),
+[unrun fixed-checkpoint comparison](../experiments/chess-queen-existing-checkpoint-comparison-v1/README.md),
+[draft PR #14](https://github.com/LucasKazaki/sports-play-llm-research/pull/14).
+
+## Limited interface and backbone cycle — October 16, 12:09 UTC
+
+The seven-path post-generation draft checker and display passed full independent
+source review and 100 relevant CPU/UI checks (one real-engine check deselected).
+Raw input/output/parsed fields remain unchanged. BEST board observations,
+supplied-move identity and up to two canonical ANALYSIS check/capture statements
+have separate scopes; ordinary prose remains unassessed. The trained profile
+stays disabled and no quality or formal commentary promotion follows.
+
+Root inspected five authored rendering states, exact-span disclosure, stale
+export exclusion and return, light/dark presentation and 390-pixel layout with
+200% text sizing. Those records are fictional software fixtures, not model
+answers. The reviewed code is loaded in the live tutor; actual Stockfish 19,
+restored CPU forecasting and evidence export worked on the illustrative opening.
+The three legal raw forecast moves were c3, Bb6, d4, with a one-half-move shared
+prefix for this engine search. This is an exploration, not a benchmark.
+
+Strict older-response compatibility failed before the checker because the old
+response's input-hash field did not bind its saved input-file bytes. No expected
+hash was reconstructed. A proposed actual Queen UI smoke was not admitted below
+the unchanged 10 GiB startup commit reserve. It created no worker, request,
+response or model call. The first failing resource sample was not retained; the
+separate timestamped follow-up sample is context only. New-controller actual
+model completion remains unverified. Both failed/unadmitted attempts are retained.
+
+An independently reviewed backbone source investigation and standard-library
+probe narrow possible cache-failure causes without implementing a repair or
+measuring numerical behavior or speed. Conditional quantized dispatch under
+authored device properties cannot identify the prior BF16 failure's cause.
+The 11:44 public Queen code/model refresh retained the same revisions; reading
+depth and the bounded literature-search scope remain explicit.
+
+Evidence: experiments/chess-tutor-draft-checks-v1/ and
+research/chess-cache-backbone-investigation-2026-10-16/. No expired TRAIN192 or
+fresh96 comparison was restarted, no deadline or reserve changed, no creator
+media entered training and no contact or institutional approval is claimed.
+The overall coaching and shareable-candidate gates remain unmet. The 13:00 UTC
+cutoff still ends overnight experiments and the hourly heartbeat.
+
 ## September 17 chess-first delivery reconciliation
 
 The user has directed a new chess-first board-game track, with a reviewable

@@ -1,0 +1,194 @@
+{
+  "status": "passed_source_report_only",
+  "reviewed_at_utc": "2026-10-16T12:00:27.949686+00:00",
+  "scope": "Complete finite report/probe/result read, independent cited local source excerpts and hashes, closed numerical metadata readback, standard-library probe replay, three public exact-copy checks. No cache repair or model execution authorized.",
+  "blocking_findings": [],
+  "bundle": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\finite-review-bundle.txt",
+    "bytes": 27790,
+    "sha256": "20440bf7239a7a2fe3613aea9c3906601ed7abf7006d04a419c5caee3fc82ae5"
+  },
+  "report": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\findings-and-prospective-plan.json",
+    "bytes": 19549,
+    "sha256": "197c19863ff7893da4c15bde6e9c3a2ad9b5caa89539f5af7490bf58ae860eec"
+  },
+  "verified_source_and_closed_receipt_bindings": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-source\\models\\flamingo.py",
+      "bytes": 25545,
+      "sha256": "7757093bdb2187085e57dcebf2925ece7471475768a2f93f9b683fd49a903ab1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\models\\smollm3\\modeling_smollm3.py",
+      "bytes": 21964,
+      "sha256": "56ad67011d2abc78665fe47b6870dffeb11ba1256fa10bc063497e0441d80dd3"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-v1\\pawn-8\\config.json",
+      "bytes": 1873,
+      "sha256": "429ae56bb00f5c6727807112608e0df3d6c934683c22f69739e1eb238d289fe4"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\cache_utils.py",
+      "bytes": 107721,
+      "sha256": "abdcb0ae88aa5b924ef7d76879db680e9af8f3ec1dafbba7ce446ecb521a944b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\masking_utils.py",
+      "bytes": 80642,
+      "sha256": "af3d84dfe82a0b57c40625c89fb32b2cd6bf7351432ee5e76a9e8eac4289575b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\integrations\\sdpa_attention.py",
+      "bytes": 9385,
+      "sha256": "0523b9e7b375941b91c226aa850ffc18af709d8f697701fd16f2babaec32f23f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\bitsandbytes\\nn\\modules.py",
+      "bytes": 45482,
+      "sha256": "89025479d330abe35003eb46ea0a911992978bd408e515bdf602088b6112c250"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\bitsandbytes\\autograd\\_functions.py",
+      "bytes": 18191,
+      "sha256": "9b1e2132a2f210cfe4ecb927b52b9ac4e6d35233a6a1936d240414e52a24fc6c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\bitsandbytes\\backends\\cuda\\ops.py",
+      "bytes": 43795,
+      "sha256": "b378955fbedf2ea78d1b7b4e24487245bc72f215d0d4f94bf763100de824be51"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-v1\\parity-authored-v5-1.json",
+      "bytes": 8595,
+      "sha256": "11259bfcfe6b271c3c71754419272a8ed237204682f1de572d736bc55b454e1b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-v1\\parity-authored-v4-1.json",
+      "bytes": 7321,
+      "sha256": "aae1519db4a8746b7fd6a647eed5026aaec84394022a1b6c30f4344e47526f21"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\parity-2.json",
+      "bytes": 15731,
+      "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\parity-protocol-v3.json",
+      "bytes": 4282,
+      "sha256": "6287196f26689aedcb5d8a314330ed26ff96cff5569e7f4b80073ebe3babe244"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source_math_probe.py",
+      "bytes": 3892,
+      "sha256": "d161338879b5862cdaa722652af0e4d9fa9e072d5443e37eac14a394d459e724"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source-math-result.json",
+      "bytes": 3998,
+      "sha256": "a503cc5fc9752cc3820fb4edb01d504d8b83ebb182a5e15b434949c332d95384"
+    }
+  ],
+  "checks": {
+    "closed_numerical_trace": "BF16 v5 retains failed status and exact three max/mean/cosine/top1 rows and frozen thresholds; four manual/full-prefix errors are exactly zero. V4 first-cache values match. NF4 receipt is two full-prefix same-quantized-decoder comparisons, all three vocabulary scopes exact max error zero, with no cached result.",
+    "source_trace": "Inspected cited pre-hooks, request generation and precision context; DenseXAttn normalization/projections over tokens and fixed board keys; installed SmolLM3 position/mask setup; DynamicLayer append/length; SDPA mask-skip/causal condition; Linear4bit and row-count dispatch/fallback. These are consistent with the stated source interpretation.",
+    "plain_probe": "Exact source copied to an independent review directory and run with the project Python. Parsed output equals the retained result. No Torch/Transformers/bitsandbytes imports, model/kernel call or hardware query. It demonstrates mathematical last-row mask geometry and conditional dispatch under authored SM properties only.",
+    "limits": "Report distinguishes source-based hypothesis, retained measured logits, authored device properties and future experiment. Source does not localize or prove numerical causality. Prospective NF4 tests are not evidence about prior BF16 causality. Current cached production path stays unqualified.",
+    "public_package": "Three public files byte-identical to original frozen work artifacts. README/copy-manifest correctly state no implemented repair, numerical reproduction, measured speedup or chess/coaching quality result."
+  },
+  "nonblocking_interpretive_limits": [
+    "The phrase most plausible is a source-based ranking, not measured causal identification. First divergent operation and actual cached positions/masks were not retained.",
+    "The dispatch probe substitutes authored 84-SM/SM120 properties and strips the pure function decorator. It neither observes actual hardware nor guarantees every caller/kernel-selection precondition.",
+    "A future NF4 divergence experiment can diagnose the production candidate but cannot alone attribute the earlier unquantized BF16 failure.",
+    "The prospective diagnostic needs its own finite source, meaningful CPU contracts, frozen protocol, independent review and root dispatch; this report is not execution GO.",
+    "The board-side 8 MiB calculation is a tensor-size estimate, not peak memory or measured latency. No speed benefit is established.",
+    "I checked installed local sources; linked web documentation was not independently refreshed in this source-only review."
+  ],
+  "independent_probe": {
+    "exit_code": 0,
+    "copied_source": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cache-source-review\\source_math_probe.py",
+      "bytes": 3892,
+      "sha256": "d161338879b5862cdaa722652af0e4d9fa9e072d5443e37eac14a394d459e724"
+    },
+    "result": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cache-source-review\\source-math-result.json",
+      "bytes": 3998,
+      "sha256": "a503cc5fc9752cc3820fb4edb01d504d8b83ebb182a5e15b434949c332d95384"
+    },
+    "matches_original_parsed_result": true
+  },
+  "public_exact_copies": [
+    {
+      "original": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\findings-and-prospective-plan.json",
+        "bytes": 19549,
+        "sha256": "197c19863ff7893da4c15bde6e9c3a2ad9b5caa89539f5af7490bf58ae860eec"
+      },
+      "public": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-cache-backbone-investigation-2026-10-16\\findings-and-prospective-plan.json",
+        "bytes": 19549,
+        "sha256": "197c19863ff7893da4c15bde6e9c3a2ad9b5caa89539f5af7490bf58ae860eec"
+      },
+      "byte_identical": true
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source_math_probe.py",
+        "bytes": 3892,
+        "sha256": "d161338879b5862cdaa722652af0e4d9fa9e072d5443e37eac14a394d459e724"
+      },
+      "public": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-cache-backbone-investigation-2026-10-16\\source_math_probe.py",
+        "bytes": 3892,
+        "sha256": "d161338879b5862cdaa722652af0e4d9fa9e072d5443e37eac14a394d459e724"
+      },
+      "byte_identical": true
+    },
+    {
+      "original": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source-math-result.json",
+        "bytes": 3998,
+        "sha256": "a503cc5fc9752cc3820fb4edb01d504d8b83ebb182a5e15b434949c332d95384"
+      },
+      "public": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-cache-backbone-investigation-2026-10-16\\source-math-result.json",
+        "bytes": 3998,
+        "sha256": "a503cc5fc9752cc3820fb4edb01d504d8b83ebb182a5e15b434949c332d95384"
+      },
+      "byte_identical": true
+    }
+  ],
+  "public_metadata": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-cache-backbone-investigation-2026-10-16\\README.md",
+      "bytes": 1417,
+      "sha256": "17def9340a80df999707213841ddabf0c10e3cf7dc83f6474ad6af613c944cd0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-cache-backbone-investigation-2026-10-16\\copy-manifest.json",
+      "bytes": 1692,
+      "sha256": "fbfef74842e62ed9e439a9134df44d23f12953f458b30ed451c55bc653c79706"
+    }
+  ],
+  "execution_restrictions": {
+    "model_calls": 0,
+    "engine_calls": 0,
+    "gpu_calls": 0,
+    "held_reference_opens": 0,
+    "qualified_runtime_edits": 0
+  },
+  "review_process_note": "One source-excerpt print failed with a Windows cp1252 UnicodeEncodeError; rerun with UTF-8 stdout succeeded. It did not execute any backend or alter sources.",
+  "followUpTasks": []
+}

@@ -1,0 +1,288 @@
+{
+  "schema": "chess.tutor-draft-checks-public-copies.v1",
+  "copied_files": 40,
+  "all_byte_identical": true,
+  "files": [
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/design.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\proposal.json",
+      "bytes": 22661,
+      "sha256": "67ead67890042b7d9eeb1db28e8c806ce95f9480dde799321866b238c1ebedd7",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/design-review.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tutor-draft-checks-design-v1-review.json",
+      "bytes": 3302,
+      "sha256": "5d91869285e734b745f7b305db3b90936836c861ece10330ca9e638321c2ae12",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/source-review.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tutor-draft-checks-v1-source-review.json",
+      "bytes": 10833,
+      "sha256": "85e0dff0eaf0bb8586bb8d86760abe802783991437da6344fa9f02d50d679790",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/independent-cpu-result.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tutor-draft-checks-v1-independent-cpu-result.txt",
+      "bytes": 249,
+      "sha256": "4fb8628a522584c458336fcb621126a8c4384a3c7c14b4cf8eea1d9216e95cfd",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-browser-observations.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-fixture-browser-observations.json",
+      "bytes": 2862,
+      "sha256": "0735af82fcc3aae1cf43bc92789a16c76620e8b5b370f7f798fd78c71b317af4",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/live-browser-observations.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-live-browser-observations.json",
+      "bytes": 835,
+      "sha256": "288f18a92c2a0007e502ecd179b50b843b9fa77a81b05e54fb282bed595edac7",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-stale-export.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-authored-stale-export.json",
+      "bytes": 332,
+      "sha256": "85ad83cab8c6927308bb6f14f2b33044b2fd99582198044bda23dffc6e55a191",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-current-export.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-authored-current-export.json",
+      "bytes": 4602,
+      "sha256": "04440fd6fc632d57b23d783c80a082d54bd45336d5b8f125f4c1ba5e9f8309b3",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/retained-unexecuted-or-failed/check-saved-ui-drafts-v1.py",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\check_saved_ui_drafts.py",
+      "bytes": 4374,
+      "sha256": "138193687cd5ec9615b1471a9c181d5a6b616da1f4dbb44c3a2612c814bcf8fb",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/retained-unexecuted-or-failed/saved-compatibility-failure-v1.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-saved-receipts-v1\\failure-v1.json",
+      "bytes": 1023,
+      "sha256": "279e17d94392e1bd7d179a8980a1897e617bdc900a604c0bcdfec6954bc063ed",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/retained-unexecuted-or-failed/prepare-authored-ui-smoke-v1.py",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\prepare_draft_checks_ui_smoke.py",
+      "bytes": 3558,
+      "sha256": "7229738a1c7610a832c672c57d45dd1de83596cd3885f517bb062db719e1e886",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/retained-unexecuted-or-failed/authored-ui-smoke-unadmitted.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\draft-checks-authored-ui-smoke-unadmitted.json",
+      "bytes": 1285,
+      "sha256": "c50985176940188fb669b6d8c7b6601c9f2a9ef810a4b4a0dc4ef24f3ded082e",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/live-position-export.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\outputs\\chess-tutor-final-evidence.json",
+      "bytes": 17307,
+      "sha256": "1573fc0b7219585df85caa18de802ecca1dd2746c9410db7de21c11de6ec1d63",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/live-desktop.jpg",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\outputs\\chess-tutor-final-desktop.jpg",
+      "bytes": 172623,
+      "sha256": "4c2cd6042a074e969ae1980394c0576651ac97145d259fa6574525e275e4841e",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/live-mobile.jpg",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\outputs\\chess-tutor-final-mobile.jpg",
+      "bytes": 137130,
+      "sha256": "e669666ca39b6de4c89ada984dc1c46829e5f1566692f0113757c0a091e5ecdc",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-desktop.jpg",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\outputs\\chess-draft-checks-authored-desktop.jpg",
+      "bytes": 132055,
+      "sha256": "6c72267edc38f3bbe722e3d51ab8a6a9cef81107db10a56c3dc8b4a1ff93c927",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-mobile-200pct-text.jpg",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\outputs\\chess-draft-checks-authored-mobile-200pct.jpg",
+      "bytes": 257243,
+      "sha256": "b6f84376fd7196abd71b12f7057ebe9507877bfdc32286f1366163f6bafc9544",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/01-pure-checker-and-tests.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\01-pure-checker-and-tests.txt",
+      "bytes": 23712,
+      "sha256": "17d33a113eeb5e7a03406e875e8a3bc7c2fa38a5bf71c6ac8aff54afd175d97a",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/02-controller-and-contract.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\02-controller-and-contract.txt",
+      "bytes": 18543,
+      "sha256": "b6f1557fd1d76bce84106da877d89a1ff78281eb66ab9c0548462afaa1a01890",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/03-frontend-and-actual-ui-tests.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\03-frontend-and-actual-ui-tests.txt",
+      "bytes": 22278,
+      "sha256": "c18978269f79cee8777bcfd27e3472847983ed32430b212aed04a80f2291a9c6",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/04-markup-and-styles.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\04-markup-and-styles.txt",
+      "bytes": 10005,
+      "sha256": "5ea91a08ab982923e71efee1e430f166cc2f8d9d1db4287ea2cb9845a1886529",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/bundle-index.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\bundle-index.json",
+      "bytes": 3189,
+      "sha256": "ce411995e9db509d0675188513d93ee51e2a7d3e4554a60c3aed7542fe7ed9ff",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/manifest.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\manifest.json",
+      "bytes": 2703,
+      "sha256": "d0bbfbe868277299231b269e9712ff10ae4700ffd87da0979017a1c0c3483960",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/test-output.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\test-output.txt",
+      "bytes": 194,
+      "sha256": "b2bd728bb91dd820a380433c9ec13ed5c8df8a472db3e784f88dfce7efcf8e79",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/boundary-verification.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\boundary-verification.json",
+      "bytes": 1415,
+      "sha256": "ee12edd922ffb2a70423c916e0781fa63271f4cecb1719602470e5e10701e639",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/finite-source-review/handoff-notes.md",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\handoff-notes.md",
+      "bytes": 3529,
+      "sha256": "64d57efe7d5df016856f862518cad30a363f2bba9174b0e300ef4baf4a73499f",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/coaching.css",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/fixture.css",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\fixture.css",
+      "bytes": 1383,
+      "sha256": "623f6e39b99c7e8a531c233b6753217c0b48c742739b21021dd8917efadba204",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/fixture.js",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\fixture.js",
+      "bytes": 2670,
+      "sha256": "d0ec58c4b86df59a74523e7c13a6a64b808c832c07dfbef4e8732fe4b37c2374",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/fixtures.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\fixtures.json",
+      "bytes": 19719,
+      "sha256": "b15749ccd1b232b1fb95059d342ca10f71d7552fa315f75a7a40774a48ddc7e1",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/index.html",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\index.html",
+      "bytes": 2265,
+      "sha256": "fac17555e595af1a1bd609d0cad8e4d39c95e9dfcb22c6f55951d060b3e5fd8a",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/manifest.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\manifest.json",
+      "bytes": 2768,
+      "sha256": "b7bb2581cc60c94e0610fecdeeb29fb80949768daa1f1775421b78291edbd7cb",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/README.md",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\README.md",
+      "bytes": 2211,
+      "sha256": "b2252571df8950297f7f79cdd1070b8ad77b37854fb4067ed83cdd4d0403a7b6",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/renderer.js",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\renderer.js",
+      "bytes": 5462,
+      "sha256": "8817c3f104571465169b48ab11f3a9b82ab83c5fcbee0aa6600681247051e5b8",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/serve.py",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\serve.py",
+      "bytes": 2276,
+      "sha256": "e3f55d6bacb6b7712c4ecd79fe433bda85e9362549e43067fb8d0263c7f975e5",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture/style.css",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\style.css",
+      "bytes": 11590,
+      "sha256": "6aa7990ba9b04d8753c8e381a6225d1c916f7e034ab7de3d9461fc1dde216681",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture-review/01-fixture-source-and-instructions.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review-v2\\01-fixture-source-and-instructions.txt",
+      "bytes": 15128,
+      "sha256": "f42845d4b8efcbc98b8e6d12a0e0ea5fd43651783cb63d77bc724db5387b0f4a",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture-review/02-all-authored-records.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review-v2\\02-all-authored-records.txt",
+      "bytes": 19982,
+      "sha256": "267252df3d5feafe62591ce7a152fa2df38dbe6e25e42c0bfd0ddd2b9e7bb614",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture-review/03-exact-renderer-and-style-snapshots.txt",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review-v2\\03-exact-renderer-and-style-snapshots.txt",
+      "bytes": 20364,
+      "sha256": "edda241b1dc63f773046dab32196fb521a7a31201392695c710504bbcc3a7cf8",
+      "byte_identical": true
+    },
+    {
+      "path": "experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture-review/verification.json",
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review-v2\\verification.json",
+      "bytes": 2454,
+      "sha256": "ccaba53687c7d94b9bbb68176bbf01ab94caab94789b4b1065b340e7b58a87f9",
+      "byte_identical": true
+    }
+  ],
+  "limits": "Source/software/interface evidence only. Authored records are fictional. Saved-receipt compatibility failed before checker call; actual new-controller Queen smoke was not admitted. No model-quality result, new training, repaired prose or tuned-profile activation."
+}

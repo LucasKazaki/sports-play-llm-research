@@ -1,0 +1,15 @@
+{
+  "status": "failed_original_input_byte_binding_before_checker_call",
+  "tool_chunk": "022088",
+  "time_utc": "2026-10-16T11:59:29.323449+00:00",
+  "script_sha256": "138193687cd5ec9615b1471a9c181d5a6b616da1f4dbb44c3a2612c814bcf8fb",
+  "original_response_sha256": "8f597eb9f26053f9d58d80e861600ab06b40f2742e40db2d3385379972128064",
+  "closed_qa_response_sha256": "8f597eb9f26053f9d58d80e861600ab06b40f2742e40db2d3385379972128064",
+  "original_response_input_sha256_field": "5284f66597ca7599b3292f1f404aaf979f86c917b7ef292cb10b2e004f9bae4e",
+  "observed_saved_input_byte_sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7",
+  "new_model_calls": 0,
+  "new_engine_calls": 0,
+  "checker_calls": 0,
+  "expected_hash_reconstructed": false,
+  "limit": "The old response input hash does not bind the saved input file bytes. Hash semantics have not been established by this attempt; compatibility is not passed. Original files unchanged; no invented expected hash or fallback serialization."
+}

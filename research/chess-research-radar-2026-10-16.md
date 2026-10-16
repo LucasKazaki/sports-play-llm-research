@@ -114,3 +114,19 @@ or updating a dependency. Preserve pinned versions during a run, log material
 deltas, and verify rights and compatibility before acquisition or execution.
 Hourly follow-ups retain the existing October 16, 09:00 Eastern cutoff; this
 steering adds no new scheduler or indefinite extension.
+
+
+## 11:44 UTC freshness and reading-depth supplement
+
+Fresh public API responses still report the same Queen code and model revisions;
+Stockfish 19 remains marked latest. The new receipt retains response hashes and
+locally saved public metadata bodies. No dependency, weight or running source
+changed. The bounded search is not an exhaustive field survey.
+
+Selected full-text review of the [strategic-reasoning map](https://arxiv.org/html/2609.18286v1)
+adds an evaluation caution: engine agreement, explanation faithfulness and human
+assistance answer different questions. The preprint reports 84 core study
+families and lacks complete independent duplicate coding. Our later tutor work
+should keep its baselines explicit; no new model-quality or institutional claim
+follows from this reading. It was already in the discovery ledger, so this
+updates reading depth rather than inflating the paper count.

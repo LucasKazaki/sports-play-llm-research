@@ -1,0 +1,451 @@
+
+===== C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\prototype\chess_tutor_v1\draft_checks_v1.py =====
+Bytes: 10253; SHA-256: 668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a
+"""Post-generation, root-only rule checks. No model, engine or prose repair.
+
+Exact spans address response.raw_text in Unicode code points, not translated
+display text or response-file bytes. Other prose is always unassessed.
+"""
+from functools import lru_cache
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import re
+
+import chess
+
+SCHEMA = 'chess.tutor-draft-checks.v1'
+NATIVE_SHA256 = 'e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0'
+QUALIFICATION_SHA256 = '0a17fcaa72bef97eec28e4bec0e245c4c42a28219dcf5da6d8c06f807278188d'
+MAX_BYTES = 1_048_576
+ROOT = Path(__file__).resolve().parents[2]
+
+
+class BindingError(ValueError):
+    pass
+
+
+def digest(raw):
+    return hashlib.sha256(raw).hexdigest()
+
+
+def decode(raw):
+    if type(raw) is not bytes or not 0 < len(raw) <= MAX_BYTES:
+        raise BindingError('Expected bounded JSON bytes.')
+    def pairs(items):
+        result = {}
+        for key, value in items:
+            if key in result:
+                raise BindingError('Duplicate JSON field.')
+            result[key] = value
+        return result
+    def nonfinite(_):
+        raise BindingError('Nonfinite JSON value.')
+    try:
+        result = json.loads(raw.decode('utf-8'), object_pairs_hook=pairs, parse_constant=nonfinite)
+        if type(result) is not dict:
+            raise BindingError('Expected a JSON object.')
+        return result
+    except (ValueError, UnicodeError) as error:
+        raise BindingError('Invalid or ambiguous JSON.') from error
+
+
+@lru_cache(maxsize=1)
+def _load_parser(path):
+    spec = importlib.util.spec_from_file_location('_tutor_draft_native_parser_v1', path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def parser():
+    path = ROOT / 'scripts/chess_queen_adapter.py'
+    if digest(path.read_bytes()) != NATIVE_SHA256:
+        raise BindingError('The pinned move parser changed.')
+    return _load_parser(str(path))
+
+
+def span(text, start, end):
+    return {'start': start, 'end': end, 'unit': 'unicode_code_points',
+            'sha256': digest(text[start:end].encode('utf-8'))}
+
+
+def unavailable(reason):
+    return {'schema': SCHEMA, 'status': 'unavailable', 'reason': reason,
+            'whole_prose_assessed': False, 'claims': [], 'unassessed_regions': []}
+
+
+def original_profile(result, worker, fixture, qualification_name):
+    execution = result.get('execution', {})
+    return (not fixture and qualification_name == 'queen-runtime.json'
+            and execution.get('qualification_sha256') == QUALIFICATION_SHA256
+            and execution.get('canonical_provenance', {}).get('response_binding_verified') is True
+            and not result.get('ui_validation_error')
+            and worker.get('status') == 'completed' and worker.get('exit_code') == 0
+            and worker.get('child_exited_before_lease_release') is True)
+
+
+def _victim(board, move):
+    piece = chess.Piece(chess.PAWN, not board.turn) if board.is_en_passant(move) else board.piece_at(move.to_square)
+    return None if piece is None else {'color': chess.COLOR_NAMES[piece.color], 'piece': chess.piece_name(piece.piece_type)}
+
+
+def _move_record(board, move):
+    victim = _victim(board, move)
+    after = board.copy(stack=True)
+    san = board.san(move)
+    after.push(move)
+    return after, {'move_uci': move.uci(), 'move_san': san, 'gives_check': after.is_check(),
+                   'gives_checkmate': after.is_checkmate(), 'captures': victim is not None,
+                   'victim': victim, 'branch_uci': [], 'turn': chess.COLOR_NAMES[board.turn],
+                   'scope': 'Immediate legal replay only; no forced reply, bestness or prose-quality verdict.'}
+
+
+def audit_bytes(response_bytes, input_bytes, input_sha256, packet, context, base_result, *, qualified):
+    """Hard reject binding failures; never turn them into supported statements."""
+    if digest(input_bytes) != input_sha256:
+        raise BindingError('The saved request bytes changed.')
+    saved = decode(input_bytes)
+    response = decode(response_bytes)
+    if saved != packet or response.get('input') != packet or response != base_result:
+        raise BindingError('The draft no longer matches its original request or result.')
+    text = response.get('raw_text')
+    if type(text) is not str or len(text) > 100_000:
+        raise BindingError('The exact raw draft is unavailable or too large.')
+    try:
+        text_hash = digest(text.encode('utf-8'))
+    except UnicodeError as error:
+        raise BindingError('The draft text is not valid Unicode.') from error
+    out = {'schema': SCHEMA, 'status': 'unassessed',
+           'response_sha256': digest(response_bytes), 'raw_text_sha256': text_hash,
+           'input_sha256': input_sha256, 'verifier_sha256': digest(Path(__file__).read_bytes()),
+           'parser_sha256': NATIVE_SHA256, 'whole_prose_assessed': False,
+           'claims': [], 'unassessed_regions': [], 'engine_calls': 0, 'generator_repairs': 0,
+           'mapping_scope': 'Exact canonical grammar at the requested root only; other prose is unassessed.'}
+    if not qualified or response.get('status') != 'completed' or response.get('finish_reason') != 'eos':
+        out['reason'] = 'These checks apply only to complete drafts from the original manual model. Other text is unassessed.'
+        return out
+    native = parser()
+    try:
+        _, board = native.input_packet(packet)
+    except (ValueError, TypeError) as error:
+        raise BindingError('Invalid original request.') from error
+    if context.get('fen') != board.fen() or context.get('selected_uci') != packet.get('selected_uci'):
+        raise BindingError('The requested board or selected move changed.')
+    out['context'] = {'fen': board.fen(), 'selected_uci': packet.get('selected_uci'),
+                      'branch_uci': [], 'turn': chess.COLOR_NAMES[board.turn]}
+    if board.is_game_over(claim_draw=False):
+        out['reason'] = 'The requested game was already over.'
+        return out
+    # History was validated above. Parsing the same current root needs no second history walk.
+    parsed = native.parse_output({'fen': board.fen()}, text)
+    fields = list(native.FIELDS.finditer(text))
+    best_fields = [row for row in fields if row['name'] == 'BEST_MOVE']
+    best_span = span(text, best_fields[0].start('body'), best_fields[0].end('body')) if len(best_fields) == 1 else None
+    best = parsed['accepted_move_uci']
+    selected = packet.get('selected_uci')
+    identity = {'status': 'unassessed', 'supplied_uci': selected, 'reported_uci': best,
+                'span': best_span, 'scope': 'Structured BEST_MOVE identity only, not a prose claim.'}
+    if selected is None:
+        identity['reason'] = 'No selected move was supplied.'
+    elif best is None:
+        identity['reason'] = 'The reported move is illegal, malformed or ambiguous.'
+    else:
+        identity['status'] = 'supported' if best == selected else 'contradicted'
+    out['selected_identity'] = identity
+    if best:
+        _, observation = _move_record(board, chess.Move.from_uci(best))
+        out['move_observations'] = {'status': 'observed', **observation}
+    else:
+        out['move_observations'] = {'status': 'unassessed', 'reason': parsed['move_rejection']}
+    analyses = [row for row in fields if row['name'] == 'ANALYSIS']
+    # A conditional prefix outside FIELDS would otherwise be silently ignored.
+    root_framing = (best is not None and len(best_fields) == 1 and len(analyses) == 1
+                    and fields[0] is analyses[0] and not text[:analyses[0].start()].strip())
+    pattern = re.compile(r'\s*The move\s+(?P<move>' + native.MOVE.pattern
+                         + r')\s+(?P<check_claim>gives checkmate|gives check|does not give check)\.'
+                         + r'\s+(?P<capture_claim>It captures\s+<PIECE_(?P<cap_side>[MO])(?P<cap_piece>[PNBRQK])>\.|It does not capture a piece\.)\s*')
+    match = pattern.fullmatch(analyses[0]['body']) if root_framing else None
+    if match is None:
+        out['reason'] = 'No draft statements match the limited checker. Other text is unassessed.'
+        out['unassessed_regions'] = [span(text, row.start('body'), row.end('body')) for row in analyses]
+        return out
+    analysis = analyses[0]
+    move, error = native.parse_atom(match, board, board.turn)
+    after, move_info = _move_record(board, move) if move is not None and error is None else (None, None)
+    for kind, group in (('check_or_mate', 'check_claim'), ('capture', 'capture_claim')):
+        row = {'kind': kind, 'span': span(text, analysis.start('body') + match.start(group),
+                                         analysis.start('body') + match.end(group)),
+               'exact_raw_text': match[group], 'branch_uci': [], 'turn': chess.COLOR_NAMES[board.turn],
+               'analysis_move_uci': move.uci() if move else None,
+               'analysis_move_san': move_info['move_san'] if move_info else None,
+               'status': 'unassessed'}
+        if after is None:
+            row['reason'] = error or 'No legal root move was mapped.'
+        else:
+            if kind == 'check_or_mate':
+                phrase = match[group]
+                expected = True
+                observed = after.is_checkmate() if phrase == 'gives checkmate' else after.is_check() if phrase == 'gives check' else not after.is_check()
+            else:
+                expected = None if match['cap_piece'] is None else {
+                    'color': chess.COLOR_NAMES[board.turn if match['cap_side'] == 'M' else not board.turn],
+                    'piece': chess.piece_name(native.PIECES[match['cap_piece']])}
+                observed = move_info['victim']
+            row.update(expected=expected, observed=observed,
+                       status='supported' if expected == observed else 'contradicted')
+        out['claims'].append(row)
+    out['analysis_alignment'] = {'analysis_move_uci': move.uci() if move else None,
+        'selected_uci': selected, 'status': 'unassessed' if after is None or selected is None else 'supported' if move.uci() == selected else 'contradicted',
+        'scope': 'ANALYSIS move versus supplied move; independent of BEST_MOVE identity.'}
+    out['status'] = 'checked'
+    return out
+
+===== END COMPLETE FILE =====
+
+===== C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\tests\test_chess_tutor_draft_checks_v1.py =====
+Bytes: 12492; SHA-256: a1e9e233ba4cf16d7a5cabb0d6f828e25e917681decd53acfd5e7df24428cced
+"""Authored software fixtures only: no models, engines or quality measurements."""
+import copy
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import subprocess
+import sys
+
+import chess
+import pytest
+
+ROOT = Path(__file__).resolve().parents[1]
+PROTO = ROOT / 'prototype/chess_tutor_v1'
+sys.path.insert(0, str(PROTO))
+import draft_checks_v1 as audit
+import coaching_jobs as jobs
+
+
+def encoded(value):
+    return json.dumps(value, ensure_ascii=False).encode('utf-8')
+
+
+def atom(board, uci):
+    move = chess.Move.from_uci(uci)
+    def square(s):
+        return '<SQUARE_' + str((s if board.turn else s ^ 56) + 1) + '>'
+    def piece(p):
+        return '<PIECE_' + ('M' if p.color == board.turn else 'O') + p.symbol().upper() + '>'
+    victim = chess.Piece(chess.PAWN, not board.turn) if board.is_en_passant(move) else board.piece_at(move.to_square)
+    return piece(board.piece_at(move.from_square)) + square(move.from_square) + (piece(victim) if victim else '') + square(move.to_square) + (piece(chess.Piece(move.promotion, board.turn)) if move.promotion else '')
+
+
+def fixture(fen=chess.STARTING_FEN, move='e2e4', phrase='does not give check', capture=None, *, selected=None, best=None, prefix='', suffix=''):
+    board = chess.Board(fen)
+    packet = {'fen': board.fen()}
+    if selected:
+        packet['selected_uci'] = selected
+    captured = audit._victim(board, chess.Move.from_uci(move))
+    if capture is None:
+        cap = 'It does not capture a piece.' if captured is None else 'It captures <PIECE_O' + captured['piece'][0].upper().replace('K', 'N') + '>.'
+        if captured and captured['piece'] == 'king':
+            cap = 'It captures <PIECE_OK>.'
+    else:
+        cap = capture
+    raw = prefix + 'ANALYSIS:\nThe move ' + atom(board, move) + ' ' + phrase + '. ' + cap + suffix + '\nBEST_MOVE: ' + atom(board, best or move) + '\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed'
+    response = {'status': 'completed', 'finish_reason': 'eos', 'input': packet, 'raw_text': raw,
+                'decoded_text': 'Different translated display text: 😀', 'parsed': {'untouched': ['exact', 1]}}
+    context = {'fen': board.fen(), 'selected_uci': selected}
+    return packet, response, context
+
+
+def run_case(values, **changes):
+    packet, response, context = values
+    input_bytes = encoded(packet)
+    arguments = dict(response_bytes=encoded(response), input_bytes=input_bytes,
+                     input_sha256=audit.digest(input_bytes), packet=packet, context=context,
+                     base_result=copy.deepcopy(response), qualified=True)
+    arguments.update(changes)
+    return audit.audit_bytes(**arguments)
+
+
+@pytest.mark.parametrize('fen,move,phrase', [
+    (chess.STARTING_FEN, 'e2e4', 'does not give check'),
+    (chess.STARTING_FEN.replace(' w ', ' b '), 'e7e5', 'does not give check'),
+    ('6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1', 'g5d8', 'gives checkmate'),
+    ('6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1', 'g5d8', 'gives check'),
+    ('4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 2', 'e5d6', 'does not give check'),
+    ('4k3/P7/8/8/8/8/8/4K3 w - - 0 1', 'a7a8q', 'gives check'),
+    ('r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1', 'e1g1', 'does not give check'),
+    ('7k/8/8/8/8/8/R7/K7 w - - 149 76', 'a2a8', 'gives check'),
+    ('4k3/8/8/3p4/4P3/8/8/4K3 w - - 0 1', 'e4d5', 'does not give check'),
+    ('4k3/8/8/8/8/8/4B3/4R1K1 w - - 0 1', 'e2b5', 'gives check'),
+])
+def test_legal_root_facts_black_pov_and_special_moves(fen, move, phrase):
+    values = fixture(fen, move, phrase)
+    result = run_case(values)
+    assert result['status'] == 'checked'
+    assert [row['status'] for row in result['claims']] == ['supported', 'supported']
+    assert result['move_observations']['move_uci'] == move
+    assert result['whole_prose_assessed'] is False
+    raw = values[1]['raw_text']
+    for row in result['claims']:
+        s = row['span']
+        assert s['unit'] == 'unicode_code_points'
+        assert raw[s['start']:s['end']] == row['exact_raw_text']
+        assert audit.digest(row['exact_raw_text'].encode()) == s['sha256']
+
+
+def test_contradictions_do_not_repair_raw_or_confuse_analysis_best_and_selected():
+    values = fixture(move='g1f3', phrase='gives checkmate', capture='It captures <PIECE_OQ>.', selected='e2e4', best='e2e4')
+    original = copy.deepcopy(values[1])
+    result = run_case(values)
+    assert [r['status'] for r in result['claims']] == ['contradicted', 'contradicted']
+    assert all(r['analysis_move_uci'] == 'g1f3' and r['analysis_move_san'] == 'Nf3' for r in result['claims'])
+    assert result['selected_identity']['status'] == 'supported'
+    assert result['analysis_alignment']['status'] == 'contradicted'
+    assert result['move_observations']['move_uci'] == 'e2e4'
+    assert values[1] == original
+    other = run_case(fixture(selected='d2d4'))
+    assert other['selected_identity']['status'] == 'contradicted'
+
+
+@pytest.mark.parametrize('prefix,suffix', [
+    ('If a different variation occurs then\n', ''), ('<script>untrusted</script>\n', ''),
+    ('A note before the section.\n', ''), ('', ' If a reply changes the position.'),
+    ('', ' The move is only a hypothetical alternative.'), ('', ' "Quoted claim."'),
+])
+def test_unknown_prefix_conditional_and_extra_prose_abstain(prefix, suffix):
+    result = run_case(fixture(prefix=prefix, suffix=suffix))
+    assert result['claims'] == [] and result['unassessed_regions']
+    assert result['status'] == 'unassessed'
+    assert result['move_observations']['status'] == 'observed'
+
+
+@pytest.mark.parametrize('alter', [
+    lambda text: text + '\nANALYSIS: another section',
+    lambda text: text + '\nBEST_MOVE: <PIECE_MP><SQUARE_13><SQUARE_29>',
+    lambda text: text.replace('The move ', 'The move <PIECE_MX>'),
+    lambda text: text.replace('<SQUARE_29>', '<SQUARE_37>'),
+    lambda text: text.replace('<PIECE_MP>', '<PIECE_MN>'),
+    lambda text: text.replace('It does not capture a piece.', 'Other text. It does not capture a piece.'),
+])
+def test_ambiguous_or_invalid_descriptions_never_gain_supported_claims(alter):
+    values = fixture()
+    values[1]['raw_text'] = alter(values[1]['raw_text'])
+    result = run_case(values)
+    assert not any(row['status'] == 'supported' for row in result['claims'])
+
+
+@pytest.mark.parametrize('change', ['input_hash', 'same_path_bytes', 'packet', 'context_fen', 'context_selected', 'response_snapshot', 'duplicate_json', 'nonfinite_json'])
+def test_binding_failures_hard_reject(change):
+    values = fixture()
+    kwargs = {}
+    if change == 'input_hash': kwargs['input_sha256'] = '0'*64
+    elif change == 'same_path_bytes': kwargs['input_bytes'] = encoded({'fen': chess.STARTING_FEN, 'unexpected': True})
+    elif change == 'packet': kwargs['packet'] = {'fen': 'changed'}
+    elif change == 'context_fen': kwargs['context'] = {'fen': 'changed', 'selected_uci': None}
+    elif change == 'context_selected': kwargs['context'] = {'fen': chess.STARTING_FEN, 'selected_uci': 'd2d4'}
+    elif change == 'response_snapshot': kwargs['response_bytes'] = encoded({**values[1], 'raw_text': 'changed'})
+    elif change == 'duplicate_json': kwargs['response_bytes'] = b'{"status":"a","status":"b"}'
+    elif change == 'nonfinite_json': kwargs['response_bytes'] = b'{"value":NaN}'
+    with pytest.raises(audit.BindingError): run_case(values, **kwargs)
+
+
+def test_noncompleted_unqualified_and_terminal_drafts_are_not_assessed():
+    assert run_case(fixture(), qualified=False)['claims'] == []
+    values = fixture(); values[1]['status'] = 'partial'
+    assert run_case(values)['status'] == 'unassessed'
+    board = chess.Board('7k/5Q2/6K1/8/8/8/8/8 b - - 0 1')
+    packet = {'fen': board.fen()}; response = {'status': 'completed', 'finish_reason': 'eos', 'input': packet, 'raw_text': 'ANALYSIS: Unsupported'}
+    result = run_case((packet, response, {'fen': board.fen(), 'selected_uci': None}))
+    assert result['status'] == 'unassessed' and 'already over' in result['reason']
+
+
+def test_unicode_span_is_not_a_byte_or_utf16_offset():
+    text = '😀 gives check'
+    value = audit.span(text, 2, len(text))
+    assert value['start'] == 2 and text[value['start']:value['end']] == 'gives check'
+    assert value['sha256'] == audit.digest(b'gives check')
+
+
+def test_parser_pin_failure_is_not_silently_accepted(monkeypatch):
+    monkeypatch.setattr(audit, 'NATIVE_SHA256', '0'*64)
+    with pytest.raises(audit.BindingError, match='parser changed'): run_case(fixture())
+
+
+def test_prior_automatic_draw_history_never_receives_root_claim_verdicts():
+    board = chess.Board(); history = []
+    for uci in ['g1f3', 'g8f6', 'f3g1', 'f6g8']*4:
+        history.append(board.fen()); board.push_uci(uci)
+    assert board.is_fivefold_repetition()
+    packet = {'fen': board.fen(), 'history': history}
+    response = {'status': 'completed', 'finish_reason': 'eos', 'input': packet, 'raw_text': 'ANALYSIS: No claim'}
+    result = run_case((packet, response, {'fen': board.fen(), 'selected_uci': None}))
+    assert result['claims'] == [] and 'already over' in result['reason']
+
+
+def test_wrong_promotion_identity_abstains():
+    values = fixture('4k3/P7/8/8/8/8/8/4K3 w - - 0 1', 'a7a8q', 'gives check')
+    values[1]['raw_text'] = values[1]['raw_text'].replace('<PIECE_MQ>', '<PIECE_OQ>')
+    assert not run_case(values)['claims']
+
+
+def test_original_profile_admission_is_separate_from_trained_or_fixture():
+    result = {'execution': {'qualification_sha256': audit.QUALIFICATION_SHA256, 'canonical_provenance': {'response_binding_verified': True}}}
+    worker = {'status': 'completed', 'exit_code': 0, 'child_exited_before_lease_release': True}
+    assert audit.original_profile(result, worker, False, 'queen-runtime.json')
+    assert not audit.original_profile(result, worker, True, 'queen-runtime.json')
+    assert not audit.original_profile(result, worker, False, 'queen-tuned-runtime-v1.json')
+    assert not audit.original_profile(result, {**worker, 'status': 'failed'}, False, 'queen-runtime.json')
+
+
+def test_controller_keeps_raw_bytes_and_exports_sibling_evidence(tmp_path):
+    packet, response, context = fixture(selected='e2e4')
+    input_path = tmp_path/'input.json'; output = tmp_path/'response.json'
+    input_path.write_bytes(encoded(packet)); output.write_bytes(encoded(response))
+    before = output.read_bytes(); original = copy.deepcopy(response)
+    runner = type('AuthoredFakeRunner', (), {'qualification_path': Path('queen-runtime.json')})()
+    controller = jobs.CoachingJobs(tmp_path, None, runner)
+    job = {'status': 'completed', 'fixture': False, 'request_id': 'authored-software-fixture', 'out': output,
+           'input': input_path, 'input_sha256': audit.digest(input_path.read_bytes()),
+           'request_packet': packet, 'context': context}
+    decorated = {**response, 'execution': {'qualification_sha256': audit.QUALIFICATION_SHA256, 'canonical_provenance': {'response_binding_verified': True}}}
+    worker = {'status': 'completed', 'exit_code': 0, 'child_exited_before_lease_release': True}
+    result = controller._draft_checks(job, decorated, worker, response)
+    assert result['status'] == 'checked' and result['request_id'] == job['request_id']
+    assert output.read_bytes() == before and response == original
+    assert json.loads((tmp_path/'draft-checks-v1.json').read_bytes()) == result
+    # Create-only retention refuses overwrite and leaves raw/old metadata intact.
+    assert controller._draft_checks(job, decorated, worker, response)['status'] == 'unavailable'
+    assert output.read_bytes() == before
+
+
+def test_parser_and_full_check_can_run_with_heavy_backends_forbidden():
+    program = '''
+import builtins,sys
+sys.path.insert(0,sys.argv[1])
+old=builtins.__import__
+def guarded(name,*a,**kw):
+ if name.split('.')[0] in {'torch','transformers','bitsandbytes'} or name=='chess.engine':raise AssertionError(name)
+ return old(name,*a,**kw)
+builtins.__import__=guarded
+import draft_checks_v1
+import json
+packet,response,context=json.loads(sys.argv[2])
+ib=json.dumps(packet,ensure_ascii=False).encode()
+rb=json.dumps(response,ensure_ascii=False).encode()
+result=draft_checks_v1.audit_bytes(rb,ib,draft_checks_v1.digest(ib),packet,context,response,qualified=True)
+assert result['status']=='checked' and all(r['status']=='supported' for r in result['claims'])
+assert not any(n.split('.')[0] in {'torch','transformers','bitsandbytes'} for n in sys.modules)
+'''
+    subprocess.run([sys.executable, '-c', program, str(PROTO), json.dumps(fixture())], check=True, capture_output=True, text=True)
+
+===== END COMPLETE FILE =====
+
+===== C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\tutor-draft-checks-design-v1\source-review\test-output.txt =====
+Bytes: 194; SHA-256: b2bd728bb91dd820a380433c9ec13ed5c8df8a472db3e784f88dfce7efcf8e79
+........................................................................ [ 72%]
+............................                                             [100%]
+100 passed, 1 deselected in 4.54s
+
+===== END COMPLETE FILE =====

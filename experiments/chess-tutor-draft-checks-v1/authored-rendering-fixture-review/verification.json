@@ -1,0 +1,50 @@
+{
+  "status": "passed_static_checks_not_a_runtime_or_model_qualification",
+  "fixture_only": true,
+  "previous_unexecuted_bundles_retained": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review",
+  "fixture_directory": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture",
+  "manifest_sha256": "b7bb2581cc60c94e0610fecdeeb29fb80949768daa1f1775421b78291edbd7cb",
+  "root_start_command": "<repo>/.venv-soccernet/Scripts/python.exe C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\browser-fixture\\serve.py --port 8794",
+  "root_browser_url": "http://127.0.0.1:8794",
+  "agent_launched_or_HTTP_called": false,
+  "checks": [
+    "Exact production renderer prefix and style snapshots.",
+    "Every source/file byte hash matches; Python compile and both JS syntax checks pass.",
+    "Five synthetic scenarios; persistent fixture/no-model banner.",
+    "Normal visible fixture-only theme and 100%/200% text-size selectors.",
+    "Seven production/test paths remain frozen; no other source edited."
+  ],
+  "bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review-v2\\01-fixture-source-and-instructions.txt",
+      "bytes": 15128,
+      "sha256": "f42845d4b8efcbc98b8e6d12a0e0ea5fd43651783cb63d77bc724db5387b0f4a",
+      "complete_files": [
+        "serve.py",
+        "index.html",
+        "fixture.js",
+        "fixture.css",
+        "README.md",
+        "manifest.json"
+      ]
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review-v2\\02-all-authored-records.txt",
+      "bytes": 19982,
+      "sha256": "267252df3d5feafe62591ce7a152fa2df38dbe6e25e42c0bfd0ddd2b9e7bb614",
+      "complete_files": [
+        "fixtures.json"
+      ]
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\fixture-review-v2\\03-exact-renderer-and-style-snapshots.txt",
+      "bytes": 20364,
+      "sha256": "edda241b1dc63f773046dab32196fb521a7a31201392695c710504bbcc3a7cf8",
+      "complete_files": [
+        "renderer.js",
+        "style.css",
+        "coaching.css"
+      ]
+    }
+  ]
+}

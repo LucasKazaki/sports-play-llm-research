@@ -1,0 +1,45 @@
+{
+  "status": "ready_for_independent_source_review_no_activation",
+  "bundles": [
+    {
+      "file": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\01-pure-checker-and-tests.txt",
+      "bytes": 23712,
+      "sha256": "17d33a113eeb5e7a03406e875e8a3bc7c2fa38a5bf71c6ac8aff54afd175d97a",
+      "complete_files": [
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\draft_checks_v1.py",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_tutor_draft_checks_v1.py",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\test-output.txt"
+      ]
+    },
+    {
+      "file": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\02-controller-and-contract.txt",
+      "bytes": 18543,
+      "sha256": "b6f1557fd1d76bce84106da877d89a1ff78281eb66ab9c0548462afaa1a01890",
+      "complete_files": [
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\coaching_jobs.py",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\handoff-notes.md",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\boundary-verification.json",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\manifest.json"
+      ]
+    },
+    {
+      "file": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\03-frontend-and-actual-ui-tests.txt",
+      "bytes": 22278,
+      "sha256": "c18978269f79cee8777bcfd27e3472847983ed32430b212aed04a80f2291a9c6",
+      "complete_files": [
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.js",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_tutor_draft_checks_ui_v1.py",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\test-output.txt"
+      ]
+    },
+    {
+      "file": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\04-markup-and-styles.txt",
+      "bytes": 10005,
+      "sha256": "5ea91a08ab982923e71efee1e430f166cc2f8d9d1db4287ea2cb9845a1886529",
+      "complete_files": [
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\index.html",
+        "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.css"
+      ]
+    }
+  ]
+}
