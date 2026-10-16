@@ -1,0 +1,48 @@
+{
+  "status": "awaiting_independent_source_review_not_execution_authorized",
+  "sources": [
+    {
+      "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\run_cpu_once.py",
+      "sha256": "2e818e86b1d7af254138ed31f9a6da7761863aa365e12c675e5821bd0543760e",
+      "bytes": 22945
+    },
+    {
+      "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\build_protocol.py",
+      "sha256": "801e11df5c4b3682ca12498b00b3cb0fcd4cf1c908b99571d3c2a1205e47f44e",
+      "bytes": 3864
+    }
+  ],
+  "tests": {
+    "path": "tests\\test_chess_counterfactual_recovery_v2.py",
+    "sha256": "aca85e0cb439282c1bd2baf15d48887a3091ed086acb25dace51ac81df2b69b5",
+    "bytes": 17867
+  },
+  "protocol": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\protocol.json",
+    "sha256": "3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b",
+    "bytes": 7353
+  },
+  "receipt": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\software-tests.json",
+    "sha256": "4a906f9eb8269170f3cd2a7c17f5b380c1ef7c5c705825de72bb173eab975fb9",
+    "bytes": 2072
+  },
+  "bundles": [
+    {
+      "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\driver-bundle.txt",
+      "sha256": "5d61fcd1318fd17d298549483d7c4d2e305b030fcdcdc34e2503e136455bb4cf",
+      "bytes": 23100
+    },
+    {
+      "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\operational-metadata-bundle.txt",
+      "sha256": "d51b7defbceeee8f1e6b99fa56882a79b7cdae13ff4968ad8d3595d2e7bf64a3",
+      "bytes": 19780
+    },
+    {
+      "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\tests-bundle.txt",
+      "sha256": "30e53938a3afa1210347cee6856259d2d51c12afe5d96bc85068fb68c3e65367",
+      "bytes": 20224
+    }
+  ],
+  "actual_recovery_dispatches": 0
+}

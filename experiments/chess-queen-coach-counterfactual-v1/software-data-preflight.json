@@ -1,0 +1,40 @@
+{
+  "status": "passed",
+  "tests": 18,
+  "elapsed_seconds": 0.47,
+  "CPU_only": true,
+  "source_rows_constructed": 0,
+  "teacher_or_model_calls": 0,
+  "held_coach_reference_reads": 0,
+  "reserved_games": 109096,
+  "reserved_board_keys": 251151,
+  "protocol_sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a",
+  "source_sha256": "3f0e7ab1cfed89d1ebf5c09ed44c7eac850688d628f3af89241dc9f1b2e5f09c",
+  "teacher_sha256": "2cda3bc89ad0a5e2d7ef0a5dbce52f507cadad6ad83bad92d6fe271cc18db489",
+  "audit": {
+    "head_initial": {
+      "games": 107208,
+      "board_keys": 242535
+    },
+    "coach_initial": {
+      "games": 107464,
+      "board_keys": 243835
+    },
+    "head_dataset": {
+      "games": 8576,
+      "board_keys": 34304
+    },
+    "queen_pool": {
+      "games": 96,
+      "board_keys": 192
+    },
+    "coach_dataset": {
+      "games": 1568,
+      "board_keys": 3136
+    },
+    "reserved_totals": {
+      "games": 109032,
+      "board_keys": 250895
+    }
+  }
+}

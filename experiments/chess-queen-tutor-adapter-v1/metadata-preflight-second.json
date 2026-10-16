@@ -1,0 +1,13 @@
+{
+  "schema": "chess.tuned-tutor-metadata-preflight-failure.v1",
+  "status": "failed_before_any_model_call",
+  "execution_chunk_id": "0ff2b4",
+  "stage": "verify_protocol external source file bindings",
+  "error": "ValueError: External dependency is not an exact pinned source-manifest file.",
+  "cause": "The fixed diagnostic pins utils/instance_format.py, which is in the official pinned checkout but not the earlier inference-only source manifest file inventory.",
+  "preserved": "preflight-draft-2 holds exact entrypoint/protocol/tests before adding the explicit diagnostic formatter digest; no pretrained call occurred.",
+  "repair_scope": "Allow only utils/instance_format.py with exact frozen diagnostic digest daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc inside the pinned checkout, beyond the already listed source files.",
+  "model_calls": 0,
+  "GPU_calls": 0,
+  "engine_calls": 0
+}

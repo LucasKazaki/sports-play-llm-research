@@ -1,0 +1,44 @@
+{
+  "schema": "chess.counterfactual-recovery-software-tests.v2",
+  "status": "passed",
+  "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_counterfactual_recovery_v2.py -q",
+  "execution_tool": "exec_command",
+  "chunk_id": "5d9ef9",
+  "exit_code": 0,
+  "tests": 35,
+  "elapsed_seconds": 6.59,
+  "stdout": "................................... [100%]\n35 passed in6.59s",
+  "driver": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\run_cpu_once.py",
+    "sha256": "2e818e86b1d7af254138ed31f9a6da7761863aa365e12c675e5821bd0543760e",
+    "bytes": 22945
+  },
+  "builder": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\build_protocol.py",
+    "sha256": "801e11df5c4b3682ca12498b00b3cb0fcd4cf1c908b99571d3c2a1205e47f44e",
+    "bytes": 3864
+  },
+  "tests_source": {
+    "path": "tests\\test_chess_counterfactual_recovery_v2.py",
+    "sha256": "aca85e0cb439282c1bd2baf15d48887a3091ed086acb25dace51ac81df2b69b5",
+    "bytes": 17867
+  },
+  "operational_protocol": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\protocol.json",
+    "sha256": "3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b",
+    "bytes": 7353
+  },
+  "metadata_only_protocol_build": {
+    "execution": "build_protocol.py immediately before this package; exact tool chunk recorded in source handoff message",
+    "exit_code": 0,
+    "verified": "Exact reviewed old source/protocol, eight failed-attempt receipts, closed failed held worker and root context metadata."
+  },
+  "preexecution_draft": "preexecution-draft-1 preserves exact c12dd driver/298c7d operational protocol/31-test receipt before both narrow durability repairs; zero actual recovery calls.",
+  "scope": "Authored fake corpus/teacher/process/clock tests. Actual closed-worker/source metadata hashing only.",
+  "actual_recovery_dispatches": 0,
+  "real_corpus_rows_constructed": 0,
+  "engine_calls": 0,
+  "model_GPU_calls": 0,
+  "current_held_response_reference_quality_reads": 0,
+  "old_scientific_source_edits": 0
+}

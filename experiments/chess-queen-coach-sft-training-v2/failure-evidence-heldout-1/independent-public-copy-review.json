@@ -1,0 +1,41 @@
+{
+  "schema": "chess.independent-coach-held-failure-public-copy-review.v1",
+  "status": "passed",
+  "reviewed_at": "2026-10-16T10:39:41.642637+00:00",
+  "scope": "Complete26,305-byte public report/provenance bundle read, exact10copy and2hash-only checks, derived aggregate projection compared to sealed prior audit. No raw response/input/reference or score reads; no models/engines/GPU calls.",
+  "checks": {
+    "exact_metadata_copies": 4,
+    "exact_code_test_copies": 6,
+    "hash_only_execution_snapshots": 2,
+    "all_copies_byte_identical_to_declared_originals": true,
+    "all_8_frozen_snapshots_match": true,
+    "summary_counts_provenance_resources_memory_equal_bound_audit": true,
+    "no_per_case_or_generated_content_in_aggregate_projection": true,
+    "docs_explain_incomplete_comparison_and_no_quality_result": true,
+    "exposure_and_missing_postrun_storage_verification_disclosed": true,
+    "process_vs_global_memory_attribution_limits_preserved": true,
+    "same_case_retry_and_tuned_profile_ineligible_preserved": true
+  },
+  "blocking_findings": [],
+  "manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\evidence-manifest.json",
+    "bytes": 7528,
+    "sha256": "7a0dc5e50b80b9ddcafbdc013e8a7c3e6ecfaabbaee26a87432f926c2cd886f4"
+  },
+  "summary": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\summary.json",
+    "bytes": 4670,
+    "sha256": "e42577725221c38811162fcdbf5f78fff7b3bbb1070b8f65d0ac172218b04d9b"
+  },
+  "README": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\README.md",
+    "bytes": 3536,
+    "sha256": "c4be3ccba168e15194c2f8bf8dc2ec96328b23bfc01ab64c6a255fb8572f55ac"
+  },
+  "bundle": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\report-and-provenance-bundle.txt",
+    "bytes": 26305,
+    "sha256": "cfd249725d5eee2efa18db1d5de6ddb126a3c4f1541c90505e0244384a54a19d"
+  },
+  "followUpTasks": []
+}

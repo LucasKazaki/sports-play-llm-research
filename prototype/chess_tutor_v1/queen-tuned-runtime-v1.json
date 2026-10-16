@@ -1,0 +1,22 @@
+{
+  "schema": "chess.tuned-tutor-ui-qualification.v1",
+  "availability": false,
+  "status": "not_admitted",
+  "profile_id": "coach-v2-step64",
+  "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+  "runner_sha256": "fc5ab69c2832f5497b3c2ee5797c31d41af3ab867f9295bea1e39bec41760095",
+  "bindings": {
+    "protocol": {
+      "path": "experiments/chess-queen-tutor-adapter-v1/protocol.json",
+      "sha256": "3d0672eae40cd3543ef838c0a3bba1aadccea1a44b59b62803b776c9f8f3477c"
+    }
+  },
+  "missing": [
+    "closed held quality audit binding",
+    "explicit optional-local-demo eligibility decision",
+    "actual entrypoint EOS and owned-cancellation qualifications",
+    "independent actual entrypoint audit"
+  ],
+  "expert_human_semantic_validation": false,
+  "scope": "Disabled placeholder only. No server/launcher/frontend change. A future complete qualification needs a new exact caller-supplied hash."
+}

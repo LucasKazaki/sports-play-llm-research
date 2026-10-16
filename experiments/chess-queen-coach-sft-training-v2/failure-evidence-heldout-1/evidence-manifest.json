@@ -1,0 +1,169 @@
+{
+  "schema": "chess.coach-heldout-v2-public-failure-manifest.v1",
+  "status": "prepared_for_root_review",
+  "source_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\coach-heldout-v2-failure-closed-review.json",
+    "bytes": 53324,
+    "sha256": "40cf8ac906ab2543a6768e438c4043fb313aa8f495927f4ad578f5414efeb4c9"
+  },
+  "exact_copies": [
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\heldout-1-worker.json",
+        "bytes": 620,
+        "sha256": "f443d8fa2ac23a38477413528949f086d27432523fb25b1a81910574ebd5dd60"
+      },
+      "copy": "worker.json",
+      "sha256": "f443d8fa2ac23a38477413528949f086d27432523fb25b1a81910574ebd5dd60",
+      "bytes": 620,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\heldout-1\\failure.json",
+        "bytes": 199,
+        "sha256": "5fc258eec94a03128453121ec8c38a4a0a301c6cfd7c1c737e3f2c5df333b2ab"
+      },
+      "copy": "failure.json",
+      "sha256": "5fc258eec94a03128453121ec8c38a4a0a301c6cfd7c1c737e3f2c5df333b2ab",
+      "bytes": 199,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\coach-held-failure-owner-closed.json",
+        "bytes": 1088,
+        "sha256": "e7777a4a59004c8df9031d446e6d925527c0f86e3c4ddaacbb323a6758582526"
+      },
+      "copy": "owner-closure.json",
+      "sha256": "e7777a4a59004c8df9031d446e6d925527c0f86e3c4ddaacbb323a6758582526",
+      "bytes": 1088,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-heldout-v2-source-1\\manifest.json",
+        "bytes": 3028,
+        "sha256": "c3633d7e2e9ccee84537e7c82d65f73f733d0eb9347362d38172fa19063211f8"
+      },
+      "copy": "execution-snapshot-manifest.json",
+      "sha256": "c3633d7e2e9ccee84537e7c82d65f73f733d0eb9347362d38172fa19063211f8",
+      "bytes": 3028,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-heldout-v2-source-1\\chess_queen_coach_sft_train_v2.py",
+        "bytes": 23708,
+        "sha256": "bc56efd3f2fe839859e1a0411bb11608a8e57f283c4f2f0add1b5ba4fb234c63"
+      },
+      "copy": "source\\chess_queen_coach_sft_train_v2.py",
+      "sha256": "bc56efd3f2fe839859e1a0411bb11608a8e57f283c4f2f0add1b5ba4fb234c63",
+      "bytes": 23708,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-heldout-v2-source-1\\chess_queen_coach_sft_runtime_v2.py",
+        "bytes": 12874,
+        "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+      },
+      "copy": "source\\chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349",
+      "bytes": 12874,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-heldout-v2-source-1\\chess_queen_coach_sft_eval_v1.py",
+        "bytes": 7354,
+        "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+      },
+      "copy": "source\\chess_queen_coach_sft_eval_v1.py",
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe",
+      "bytes": 7354,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-heldout-v2-source-1\\chess_queen_nf4_adapter_v2.py",
+        "bytes": 21493,
+        "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+      },
+      "copy": "source\\chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8",
+      "bytes": 21493,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-heldout-v2-source-1\\gpu_worker.py",
+        "bytes": 11825,
+        "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+      },
+      "copy": "source\\gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0",
+      "bytes": 11825,
+      "kind": "exact_copy"
+    },
+    {
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-heldout-v2-source-1\\test_chess_queen_coach_sft_train_v2.py",
+        "bytes": 9773,
+        "sha256": "9f62af5af7443282f3b0ae00dacd79fa4de5c84e5545642498f265cdd3fabd4b"
+      },
+      "copy": "source\\test_chess_queen_coach_sft_train_v2.py",
+      "sha256": "9f62af5af7443282f3b0ae00dacd79fa4de5c84e5545642498f265cdd3fabd4b",
+      "bytes": 9773,
+      "kind": "exact_copy"
+    }
+  ],
+  "hash_only_execution_snapshots": [
+    {
+      "snapshot": "protocol.json",
+      "original": "experiments/chess-queen-coach-sft-training-v2/protocol.json",
+      "sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168",
+      "bytes": 11018,
+      "copy_published": false,
+      "reason": "Contains development group identities or development-selection quality fields; hash-only in this failure package."
+    },
+    {
+      "snapshot": "selection.json",
+      "original": "data/private/chess-queen-coach-sft-training-v2/train-1/selection.json",
+      "sha256": "79abaea0cba0a292ef17e2686dbb69c72e568bdefb61848d64a38cc6ee15e714",
+      "bytes": 55684,
+      "copy_published": false,
+      "reason": "Contains development group identities or development-selection quality fields; hash-only in this failure package."
+    }
+  ],
+  "all_8_source_snapshots_verified": true,
+  "derived_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\summary.json",
+      "bytes": 4670,
+      "sha256": "e42577725221c38811162fcdbf5f78fff7b3bbb1070b8f65d0ac172218b04d9b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\README.md",
+      "bytes": 3536,
+      "sha256": "c4be3ccba168e15194c2f8bf8dc2ec96328b23bfc01ab64c6a255fb8572f55ac"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\prepare_public.py",
+      "bytes": 9900,
+      "sha256": "02de267409db027c04273b22030af2162536b1bd9976fb6ddaeb876b55aac2b8"
+    }
+  ],
+  "not_published": [
+    "held response/input/reference data",
+    "per-case IDs and status records",
+    "raw prose and token arrays",
+    "complete private audit",
+    "quality metrics",
+    "weights",
+    "held worker log"
+  ],
+  "no_frozen_TRAIN_copy_edits": true,
+  "model_engine_GPU_calls": 0,
+  "new_held_raw_content_reads": 0
+}

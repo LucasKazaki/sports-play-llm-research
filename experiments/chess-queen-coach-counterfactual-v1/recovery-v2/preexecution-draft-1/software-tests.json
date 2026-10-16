@@ -1,0 +1,43 @@
+{
+  "schema": "chess.counterfactual-recovery-software-tests.v2",
+  "status": "passed",
+  "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_counterfactual_recovery_v2.py -q",
+  "execution_tool": "exec_command",
+  "chunk_id": "2d5450",
+  "exit_code": 0,
+  "tests": 31,
+  "elapsed_seconds": 5.82,
+  "stdout": "............................... [100%]\n31 passed in5.82s",
+  "driver": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\run_cpu_once.py",
+    "sha256": "c12dd5ae65375f95f307bd88fc0b1fd7e37f21e55dc4ac80f6d76162aa2b77ae",
+    "bytes": 22542
+  },
+  "builder": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\build_protocol.py",
+    "sha256": "801e11df5c4b3682ca12498b00b3cb0fcd4cf1c908b99571d3c2a1205e47f44e",
+    "bytes": 3864
+  },
+  "tests_source": {
+    "path": "tests\\test_chess_counterfactual_recovery_v2.py",
+    "sha256": "c1c3e97e386795063419789dfab73d9720163e7910286ad509475f0d7553f627",
+    "bytes": 16159
+  },
+  "operational_protocol": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\protocol.json",
+    "sha256": "298c7d7946cb3001fa7a655070a958913a6108688f819f667d3b272ca087ed32",
+    "bytes": 7353
+  },
+  "metadata_only_protocol_build": {
+    "chunk_id": "ea7e48",
+    "exit_code": 0,
+    "verified": "Exact reviewed old source/protocol, eight failed-attempt receipts, closed failed held worker and root context metadata."
+  },
+  "scope": "Authored fake corpus/teacher/process/clock tests. Actual closed-worker/source metadata hashing only.",
+  "actual_recovery_dispatches": 0,
+  "real_corpus_rows_constructed": 0,
+  "engine_calls": 0,
+  "model_GPU_calls": 0,
+  "current_held_response_reference_quality_reads": 0,
+  "old_scientific_source_edits": 0
+}

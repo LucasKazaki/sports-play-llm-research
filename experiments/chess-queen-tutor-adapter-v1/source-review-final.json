@@ -1,0 +1,93 @@
+{
+  "schema": "chess.independent-tuned-tutor-source-review.v2",
+  "status": "passed_for_root_authored_software_qualification_only",
+  "reviewed_at": "2026-10-16T10:09:10.950937+00:00",
+  "scope": "Complete three finite amended source/test/protocol bundles, README, supplemental manifest and qualification design-v2 read. Metadata-only verification and authored CPU tests; no actual runtime/model/engine/GPU/HTTP/browser calls.",
+  "implementation": [
+    {
+      "path": "scripts/chess_queen_coach_tutor_v1.py",
+      "sha256": "90f35841b875853f5572ed9a7a5439565277a81ba0b08d493423992569bcc697",
+      "bytes": 17502
+    },
+    {
+      "path": "prototype/chess_tutor_v1/queen_tuned_runtime_v1.py",
+      "sha256": "fc5ab69c2832f5497b3c2ee5797c31d41af3ab867f9295bea1e39bec41760095",
+      "bytes": 12900
+    }
+  ],
+  "tests_source": {
+    "path": "tests/test_chess_queen_coach_tutor_v1.py",
+    "sha256": "1b29468144483b0479b5227e40a4b06cc2189ec6b1ea976ffef10c2a6d6c3fd8",
+    "bytes": 26278
+  },
+  "protocol": {
+    "path": "experiments/chess-queen-tutor-adapter-v1/protocol.json",
+    "sha256": "3d0672eae40cd3543ef838c0a3bba1aadccea1a44b59b62803b776c9f8f3477c",
+    "bytes": 6654
+  },
+  "bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tuned-tutor-source-review\\entrypoint-bundle.txt",
+      "sha256": "c43c4997d0758bbac7676d5dda4a0228705f29b5f4ebeeba00b72b24855af5ca",
+      "bytes": 25623
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tuned-tutor-source-review\\runner-bundle.txt",
+      "sha256": "438e46c78bff222faeb7516cffce931bd848fdab0c430a772165d97951872fad",
+      "bytes": 14256
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tuned-tutor-source-review\\tests-bundle.txt",
+      "sha256": "9f8c17482eaab4218af3877496f79ff84449f5511e1d67cc227d5fff2d0b3cb6",
+      "bytes": 29621
+    }
+  ],
+  "tests": {
+    "passed": 47,
+    "elapsed_seconds": 11.14,
+    "exit_code": 0,
+    "skipped": 0
+  },
+  "blocking_findings": [],
+  "resolved_findings": [
+    {
+      "id": "T1",
+      "result": "Input bytes are now read/hash-snapshotted once; the same SHA reaches intent and outer envelope including failures with raw_response null. Completion/cancellation admission and ordinary result decoration require that exact hash. Same-path byte mutation regressions reject even when updated admission/audit metadata is rebound."
+    },
+    {
+      "id": "T2",
+      "result": "Admission now requires exact independent actual qualification-audit wrapper linked to original report, source/protocol and both input-envelope-worker trios. Eligibility cites the audit SHA. Observed EOS/storage, selected-load completion, infer entry, owned stop and closed children are required declarations. Canceled envelope is validated, including returned raw if any."
+    }
+  ],
+  "metadata_verification": {
+    "all_current_bindings_and_installed_versions_verified": true,
+    "backend_imports": [],
+    "qualification_design_source_and_authored_input_bindings_verified": true,
+    "both_future_worker_argument_hashes_recomputed": true,
+    "shipped_availability_false": true
+  },
+  "limits": [
+    "Source GO authorizes only root-dispatched authored software qualification after the current heldout and fixed-head jobs close, their audits and the exclusive lease prerequisites are satisfied. No automatic dispatch or activation.",
+    "The new code uses the fixed development-selected step64 adapter and untouched runtime. Model quality and whole-prose correctness remain unqualified; no human expert validation.",
+    "Audit wrappers are exact root-approved metadata declarations linked to independent originals, not an OS authority or cryptographic proof of report meaning.",
+    "Cancellation may occur on the first cooperative check after inference entry and produce zero tokens. Report actual phase; do not claim mid-token interruption without evidence.",
+    "Cold load and full frozen-storage hashing share the 210-second outer lifetime. Passing CPU tests does not guarantee actual EOS within that cap.",
+    "No corpus/held semantic content or active quality was opened by this source review."
+  ],
+  "qualification_design": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tuned-tutor-source-review\\preactivation-qualification-plan-v2.json",
+    "bytes": 23544,
+    "sha256": "f4bf1ca44df3746a4cd0d04647c4de75262483efb5116092021f1c883368c21e"
+  },
+  "disabled_qualification": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\queen-tuned-runtime-v1.json",
+    "bytes": 925,
+    "sha256": "ec3085263ec62bda5b68499663d7e0bad29557353c80f35e7996324948bc17bd"
+  },
+  "prior_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tuned-tutor-v1-source-review-pre-repair.json",
+    "bytes": 4302,
+    "sha256": "124c594a9ae8cbaa767613d61a2a8f9b400cca54f4e6a336934ccf78316d0ed4"
+  },
+  "followUpTasks": []
+}

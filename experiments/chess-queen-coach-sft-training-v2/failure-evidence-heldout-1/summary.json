@@ -1,0 +1,108 @@
+{
+  "schema": "chess.coach-heldout-v2-public-failure-projection.v1",
+  "status": "closed_failed_incomplete_quality_evaluation",
+  "projected_at_utc": "2026-10-16T10:37:05.029118+00:00",
+  "source_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\coach-heldout-v2-failure-closed-review.json",
+    "bytes": 53324,
+    "sha256": "40cf8ac906ab2543a6768e438c4043fb313aa8f495927f4ad578f5414efeb4c9"
+  },
+  "audit_verdict": "passed_failure_accounting_not_a_completed_quality_evaluation",
+  "denominators": {
+    "planned": 64,
+    "baseline": {
+      "completed": 28,
+      "partial": 2,
+      "failed": 1,
+      "not_run": 1
+    },
+    "selected": {
+      "completed": 0,
+      "partial": 0,
+      "failed": 0,
+      "not_run": 32
+    },
+    "total": {
+      "completed": 28,
+      "partial": 2,
+      "failed": 1,
+      "not_run": 33
+    },
+    "raw_receipts": 31,
+    "unknown_after_interruption": 0,
+    "completed_definition": "Returned EOS only; no correctness or coaching-quality meaning."
+  },
+  "provenance": {
+    "all_31_raw_input_packet_prompt_source_settings_inventory_and_checkpoint_bindings_match": true,
+    "all_31_response_bytes_match_full_ledger": true,
+    "all_8_execution_snapshots_match_current_and_manifest": true,
+    "baseline_actual_step": 0,
+    "selected_step64_planned_but_not_loaded_or_called": true,
+    "both_32_row_conditions_prewritten_before_setup_by_frozen_source": true,
+    "transient_call_started_intents_are_panel_overwrites_not_an_append_only_call_journal": true,
+    "worker_arguments_sha256": "7332676ba8d11d61637c4e50176f7204dd08bbb2df1e9129f42ba1db0b7adad1",
+    "frozen_protocol_sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168",
+    "selection_sha256": "79abaea0cba0a292ef17e2686dbb69c72e568bdefb61848d64a38cc6ee15e714",
+    "no_postrun_frozen_storage_verification": true
+  },
+  "resources": {
+    "samples": 2270,
+    "journal_equals_final_resource_array": true,
+    "start_available": {
+      "physical_available_bytes": 11592691712,
+      "commit_headroom_bytes": 17118949376,
+      "gpu_free_bytes": 14849933312
+    },
+    "last_available": {
+      "physical_available_bytes": 8277176320,
+      "commit_headroom_bytes": 3964276736,
+      "gpu_free_bytes": 9687793664
+    },
+    "running_floors": {
+      "physical_available_bytes": 4294967296,
+      "commit_headroom_bytes": 4294967296,
+      "gpu_free_bytes": 1073741824
+    },
+    "physical_min_bytes": 7387762688,
+    "gpu_free_min_bytes": 8663334912
+  },
+  "memory_observations": {
+    "events": 64,
+    "completed_cleanup_boundaries": 32,
+    "unchanged_live_cuda_allocation_across_each_cleanup": true,
+    "failed_request_has_no_returned_generation_cleanup": true,
+    "growth": {
+      "cleanup_post_private_start_bytes": 5976150016,
+      "cleanup_post_private_last_bytes": 7173713920,
+      "cleanup_post_private_delta_bytes": 1197563904,
+      "global_commit_delta_first_to_failure_bytes": 13154672640,
+      "private_last_observation_seconds_before_failure": 107.50916790962219
+    }
+  },
+  "interpretation": "The recorded stop is a global commit-headroom reserve breach. Different process/global counters, sparse process samples and stable live CUDA storage do not identify an exclusive cause, prove a leak or establish a guaranteed repair. No completed matched comparison or quality result.",
+  "exposure_disclosure": {
+    "auditor_parsed_raw_JSON_for_metadata": 31,
+    "accidental_display": "An earlier baseline decoded response was displayed, as were the failed response empty text field and token IDs. None of that content is reproduced here.",
+    "semantic_analysis_or_prose_scoring_performed": false,
+    "held_references_or_scores_opened": false,
+    "correction": "Subsequent audit reads used a positive metadata allowlist.",
+    "root_observation": "Root reports seeing no decoded prose.",
+    "not_a_zero_raw_exposure_phase": true,
+    "successor_source_design_frozen_before_exposure": true,
+    "successor_intake_excludes_all_prior_reserved_games": 512
+  },
+  "disposition": {
+    "same_held_case_retry_authorized": false,
+    "trained_tutor_profile_eligible": false,
+    "selected_panel_actual_calls": 0,
+    "quality_metrics_published": false,
+    "future_work": "Separate pre-frozen source-disjoint cohort and independent corpus/source review; no silent retry, case substitution or current-protocol change."
+  },
+  "packaging_scope": {
+    "current_held_raw_input_reference_files_opened": 0,
+    "model_engine_GPU_calls": 0,
+    "complete_audit_copied": false,
+    "per_case_metadata_copied": false,
+    "raw_prose_or_token_content_copied": false
+  }
+}

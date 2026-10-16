@@ -1,0 +1,28 @@
+{
+  "schema": "chess.closed-owner-and-changed-context.v1",
+  "observed_at": "2026-10-16T10:16:43.586566+00:00",
+  "worker": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\heldout-1-worker.json",
+  "worker_sha256": "f443d8fa2ac23a38477413528949f086d27432523fb25b1a81910574ebd5dd60",
+  "worker_status": "failed",
+  "exit_code": 1,
+  "child_pid": 53276,
+  "child_pid_absent_OpenProcess_error": 87,
+  "child_exited_before_lease_release": true,
+  "lease_probe_free": true,
+  "CPU_samples": [
+    {
+      "at": "2026-10-16T10:16:42.461805+00:00",
+      "source_ordinal": -1,
+      "physical_available_bytes": 10893475840,
+      "commit_headroom_bytes": 14503428096
+    },
+    {
+      "at": "2026-10-16T10:16:43.567666+00:00",
+      "source_ordinal": -1,
+      "physical_available_bytes": 10943455232,
+      "commit_headroom_bytes": 14558846976
+    }
+  ],
+  "GPU_model_calls": 0,
+  "claim": "Changed operational context only; no held quality or reference content read."
+}

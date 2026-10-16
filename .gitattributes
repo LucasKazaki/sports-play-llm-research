@@ -98,3 +98,13 @@ scripts/chess_queen_coach_tutor_v1.py -text whitespace=blank-at-eol,blank-at-eof
 tests/test_chess_queen_coach_tutor_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_tutor_tuned_runtime_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 experiments/chess-queen-tutor-adapter-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_generalization_eval_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_generalization_eval_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-counterfactual-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_counterfactual*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_counterfactual*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_counterfactual_recovery_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chessqa-source-audit-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Frozen review bundles and literal patches retain their original blank lines.
+experiments/**/*bundle.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+experiments/**/amendment-diff.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
