@@ -1,6 +1,22 @@
 # Research Action Plan
 
-## Current continuation — October 16, 19:56 UTC
+## Current continuation — October 16, 21:44 UTC
+
+The full 96-response model comparison missed its 20:30 UTC admission and is permanently UNRUN today, with zero new scientific-panel model requests. There is no smaller substitute, reopening or fresh matched improvement estimate. Completed training, repeated development scores and two cold software checks remain separate evidence.
+
+Retain the prepared sixteen-game reservation and private references for a future prospectively admitted comparison. Keep the seven unknown historical successor sets explicit. The king-evasion package has reviewed source and 22 authored operational checks, but actual generation remains UNRUN: its unchanged 390-minute contract cannot fit today.
+
+The overall human-authorized window remains ACTIVE until 22:00 UTC today. Prepared data does not reopen the missed model comparison. No future live-preview window or automatic extension is granted.
+
+## Historical continuation — October 16, 20:30 UTC
+
+The full 96-response comparison missed its fixed 20:30 UTC admission and remains UNRUN, with zero new scientific comparison requests for this panel. There is no smaller substitute, same-panel replay or admission extension. Completed training, repeated development scores and two successful cold software checks remain valid within their respective scopes; they provide no fresh matched improvement estimate.
+
+Finish the separately reviewed capacity correction and retain its actual outcome. Continue bounded source/backbone research within the remaining authority; prepare any future comparison as a new prospective plan rather than shrinking or reopening today's missed panel.
+
+The overall human-authorized window remains active until 22:00 UTC. Remaining source/backbone research and bounded repairs may continue under their own reviewed gates; the missed comparison admission is not reopened. Every historical failure, reservation and planned denominator remains intact.
+
+## Historical continuation — October 16, 19:56 UTC
 
 Both 192-step adapters completed training and passed saved-weight and cold-reload audits. The [conditional-line record](chess-conditional-line-development-2026-10-16.md) contains the measured development results and limitations.
 

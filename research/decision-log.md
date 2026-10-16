@@ -1,5 +1,21 @@
 # Decision Log
 
+## October 16, 21:44 UTC — Reserve prepared games without reopening the model comparison
+
+The full 96-response model comparison missed its 20:30 UTC admission and is permanently UNRUN today, with zero new scientific-panel model requests. There is no smaller substitute, reopening or fresh matched improvement estimate. Completed training, repeated development scores and two cold software checks remain separate evidence.
+
+Accept CPU2 only as audited metadata/schema/provenance preparation. Keep its sixteen games reserved, all 512 games outside training, the first failed attempt intact and all seven unknown successor sets visible. No reference scoring or independent semantic rerun occurred.
+
+The overall human-authorized window remains ACTIVE until 22:00 UTC today. Prepared data does not reopen the missed model comparison. No future live-preview window or automatic extension is granted.
+
+## 2026-10-16 20:30 UTC — Retain the full comparison as unrun
+
+The full 96-response comparison missed its fixed 20:30 UTC admission and remains UNRUN, with zero new scientific comparison requests for this panel. There is no smaller substitute, same-panel replay or admission extension. Completed training, repeated development scores and two successful cold software checks remain valid within their respective scopes; they provide no fresh matched improvement estimate.
+
+Do not treat an oversized, correctly merged exposure draft as assembled input or fresh-data readiness. Resolve the separate capacity boundary only through a versioned source, actual closure and independent audit.
+
+The overall human-authorized window remains active until 22:00 UTC. Remaining source/backbone research and bounded repairs may continue under their own reviewed gates; the missed comparison admission is not reopened. Every historical failure, reservation and planned denominator remains intact.
+
 ## 2026-10-16 — Compare both trained models before claiming a coaching gain
 
 Keep the completed current192 adapter as control and the prospectively fixed conditional terminal192 adapter as treatment. Training and exact-weight cold checks passed, but the repeated development panel shows a tradeoff: stronger recognized conditional facts and weaker free three-ply agreement relative to original64 step0. The [experiment record](chess-conditional-line-development-2026-10-16.md) retains both observations.

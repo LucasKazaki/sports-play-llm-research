@@ -32,23 +32,24 @@
     "chess-queen-coach-conditional-line-v1/qualification-1-software-only",
     "chess-tutor-daytime192-v1/ui-wiring-1-engineering-only",
     "chess-queen-coach-conditional-line-v1/conditional-train-3-independent-closed-audit",
-    "chess-queen-coach-conditional-comparison-v1/qualification-1-two-identities-software-only"
+    "chess-queen-coach-conditional-comparison-v1/qualification-1-two-identities-software-only",
+    "chess-queen-coach-fresh-held-v1/CPU2-metadata-schema-provenance-audited"
   ],
   "cutoff": "2026-10-16T18:00:00-04:00",
   "commentary_gate": "not_achieved",
   "schema": "sportsplay.native-chess-loop.v1",
   "next_actions": [
-    "Freeze and audit the latest complete exposure inventory, retaining all earlier spent comparison games and all512 TRAIN exclusions.",
-    "After independent fresh16 selection and exact prospective plan review, run both48-response arms before any reference scoring.",
-    "Report repeated DEV grammar facts separately from matched fresh results, whole-prose factuality, chess strength and tutor acceptance.",
-    "Close owned work and deactivate existing heartbeat at22UTC; no model/service/experiment runs beyond the human-authorized window."
+    "Preserve the new16 reservation/private48 references and all512 TRAIN exclusions; no new scientific model calls or reference scoring today.",
+    "Keep seven historical unknown-successor sets/manual-prose limits; data audit does not prove complete novelty or unseen pretraining.",
+    "Keep source-ready king-evasion actualUNRUN;390-minute contract cannot fit today.",
+    "Close owned work and deactivate existing heartbeat at22UTC; no automatic window extension or trained-preview restart."
   ],
   "external_contact_sent": false,
-  "active_experiment": "Conditional TRAIN3 completed and independently audited: fresh original64/fresh optimizer/full192; exact current192 and conditional192 cold checks passed. Fresh16/full96 matched comparison pending.",
+  "active_experiment": "CPU2 prepared/audited metadata:16 reserved games/48 inputs/48 private references,0 model/engine. Full96 permanentlyUNRUN after20:30. Global window ACTIVE until22UTC.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T19:57:34.797107+00:00",
+  "updated_at": "2026-10-16T21:44:20.284538+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
-  "secondary_work": "Earlier192 actual completion/stale/restored audit passed; previewoff. Presentationv3 source review,4 authored Python/Node tests andzero-LM desktop/phone closed browser audit passed;8796off. Fresh96 remains pending.",
+  "secondary_work": "Saved192 response/PDF support exploratory tutor review. Presentation-v3 engineering audits passed; trained previews off. Start Chess Study opens earlier manual8793 only. Future trained live use requires valid window/reviewed admission. Queen upstream unchanged20:59.",
   "failed_evidence": [
     "chess-queen-coach-sft-training-v2/heldout-1",
     "chess-queen-coach-counterfactual-v1/startup-admission",
@@ -67,5 +68,17 @@
     "chess-queen-coach-conditional-line-v1/conditional-train-2-167updates-write-failure"
   ],
   "closeout": "research/chess-overnight-closeout-2026-10-16.json",
-  "daytime_authority": "research/chess-daytime-window-2026-10-16.json"
+  "daytime_authority": "research/chess-daytime-window-2026-10-16.json",
+  "unrun_evidence": [
+    "chess-queen-coach-conditional-comparison-v1/fresh96-admission-missed20:30UTC"
+  ],
+  "prepared_data_limits": {
+    "projected_slots": 759,
+    "known_exclusion_keys": 617,
+    "historical_unknown_successor_sets": 7,
+    "selected_reserved_games": 16,
+    "private_unscored_references": 48,
+    "new_scientific_model_calls": 0,
+    "semantic_audit_rerun": false
+  }
 }

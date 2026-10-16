@@ -1,10 +1,60 @@
 # Chess research radar: October 16, 2026
 
-## Current state — 19:56 UTC
+## Current evidence and source status — October 16, 21:44 UTC
+
+The full 96-response model comparison missed its 20:30 UTC admission and is permanently UNRUN today, with zero new scientific-panel model requests. There is no smaller substitute, reopening or fresh matched improvement estimate. Completed training, repeated development scores and two cold software checks remain separate evidence.
+
+CPU2 prepared sixteen reserved games and 48 input/reference pairs with zero model/engine calls. Its audit covers metadata/schema/provenance, not reference quality; seven unknown historical successor sets and manual-prose limits persist. The source-ready king-evasion curriculum remains actually UNRUN because its 390-minute contract cannot fit today.
+
+The [20:59 official upstream record](chess-primary-refresh-2026-10-16-2059.json) still pins Queen code `c372da22…` and model `5027687f…`, unchanged. This was repository/model-card/revision metadata reading, not a model upgrade or local capability result. The prompt-optimization note below records selected methods passages, not a full-paper or appendix review.
+
+The overall human-authorized window remains ACTIVE until 22:00 UTC today. Prepared data does not reopen the missed model comparison. No future live-preview window or automatic extension is granted.
+
+## Historical state — 19:56 UTC
 
 Both 192-step models completed training and cold-reload checks. In the conditional run, later-move grammar facts improved on two repeated development games, while exact free three-ply agreement fell from 2/2 at original64 step0 to 1/2 at terminal192. These observations support measuring factual descriptions and move prediction separately; they do not establish generalization or strategic understanding.
 
-The [conditional-line record](chess-conditional-line-development-2026-10-16.md) contains exact counts, identities and the pending fresh96 design. The bounded primary-source refresh remains the 18:12 UTC check recorded below. Interface checks are engineering evidence, and formal Archit/UMD approval has not been established. The current work window ends at 22:00 UTC.
+The [conditional-line record](chess-conditional-line-development-2026-10-16.md) contains exact counts, identities and the pending fresh96 design. The 20:09 UTC version check and 20:21 UTC abstract-level supplement are recorded below. Interface checks are engineering evidence, and formal Archit/UMD approval has not been established. The current work window ends at 22:00 UTC.
+
+## Bounded primary-source refresh — October 16, 20:21 UTC
+
+This supplement checks official abstracts and submission histories, not full
+papers or a comprehensive literature search. It adds one paper to this radar;
+the strategic map and ChessQA were already recorded. Earlier selected full-text
+and rights audits retain their own reading depth and limitations.
+
+- [Prompt optimization, v1 September 30, 2026](https://arxiv.org/abs/2610.00416v1):
+  the abstract describes 1,118 Lichess puzzles, six prompt-search methods and
+  eight target models whose weights stay frozen. It includes engine scoring
+  of alternative moves and renewable datasets. Our inference: a later matched
+  prompt-only control could separate prompt effects from adapter effects;
+  these reported results do not validate this local model or current protocol.
+
+  Selected-methods supplement (passages in §§3–4; not a full-paper or appendix review): inputs include FEN and an explicit legal-move list. Each reference-solution position is queried independently, unlike an autoregressive three-ply rollout. The authors cannot exclude pretraining exposure to public puzzles and use standard optimizer settings rather than equal compute budgets. Our local inputs omit a legal-move list, and base-model pretraining exposure remains unknown. We cannot transfer the paper’s accuracy to our task or call local positions unseen during pretraining. A future prompt comparison would need matched inputs, rollout rules and budgets. [Selected methods](https://arxiv.org/html/2610.00416v1).
+
+- [Strategic-reasoning mapping, v1 September 16, 2026](https://arxiv.org/abs/2609.18286v1):
+  the abstract distinguishes improved human performance from demonstrated
+  human–AI synergy. This refresh confirms the already-recorded version, rather
+  than adding another study. Our implication remains to keep model behavior,
+  explanation evaluation and eventual human tutoring outcomes separate.
+- [ChessQA, v1 October 28, 2025](https://arxiv.org/abs/2510.23948v1):
+  the abstract separates Structural, Motifs, Short Tactics, Position Judgment
+  and Semantic tasks. Our diagnostic categories should stay separate too;
+  this is not evidence that our model covers them. The existing
+  [source/rights audit](chessqa-source-audit-2026-10-16/recommendation.md)
+  still governs any future use, especially commentary material.
+
+The retained 20:09 UTC version/release check found no change from 18:12 for
+[Queen](https://arxiv.org/abs/2610.03695),
+[explanation faithfulness](https://arxiv.org/abs/2609.22245),
+[Chess-World-Model](https://arxiv.org/abs/2605.30100) or
+[Stockfish's latest stable release](https://github.com/official-stockfish/Stockfish/releases/latest).
+The first three still show v1 and the release resolves to `sf_19`.
+That is an attributed metadata observation, not a new full-paper review or
+continuous monitoring claim. No source, weights, prompts, data or experiment
+protocol changed, and no new acquisition or rights clearance follows. These
+future-method implications are ours; fresh local comparison and human utility
+remain separate evidence requirements under the unchanged 22:00 UTC cutoff.
 
 ## Historical state — 19:11 UTC
 

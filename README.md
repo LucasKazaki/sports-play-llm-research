@@ -1,5 +1,21 @@
 # SportsPlayLLMResearch
 
+## Coaching research update — October 16, 2026
+
+Two local coaching variants completed 192-update training runs and independent
+engineering audits. On two repeatedly used development games, the later-move
+variant improved recognized check/capture descriptions but reduced free
+three-ply teacher agreement from 2/2 to 1/2. These observations do not establish
+fresh generalization or teaching quality. The planned 96-response fresh
+comparison missed its 20:30 UTC admission and remains **UNRUN**.
+
+See the [training and evaluation record](research/chess-conditional-line-development-2026-10-16.md)
+and [current research radar](research/chess-research-radar-2026-10-16.md).
+The [separate trained presentation](prototype/chess_tutor_daytime192_presentation_v3/README.md)
+passed authored and desktop/phone browser checks and is currently off. The study
+below uses the earlier manual draft profile; keep those model identities
+separate when collecting tutor feedback.
+
 ## Live chess study candidate — October 16, 2026
 
 The [new local tutor view](prototype/chess_tutor_v1/README.md) imports FEN/PGN,

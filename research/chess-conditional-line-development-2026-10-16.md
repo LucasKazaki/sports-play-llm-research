@@ -1,5 +1,25 @@
 # Conditional-line coaching experiment
 
+## Current prepared-data outcome — October 16, 21:44 UTC
+
+The full 96-response model comparison missed its 20:30 UTC admission and is permanently UNRUN today, with zero new scientific-panel model requests. There is no smaller substitute, reopening or fresh matched improvement estimate. Completed training, repeated development scores and two cold software checks remain separate evidence.
+
+The first CPU attempt remains preserved: 132 metadata projections completed, one computationally unknown and 626 not run before selection, with no new cohort or exports. Four missing proof links referred to three unique already-spent input byte sequences. A separately reviewed metadata repair preceded the distinct successful attempt; these are metadata outcomes, not new model requests.
+
+A distinct CPU preparation completed at 21:35 UTC and passed independent metadata/schema/provenance audit. All 759 exposure slots were projected, retaining 617 known exclusion keys. The 512 reserve roots comprise 289 short or invalid references, 16 spent games, 16 selected games and 191 eligible unused games. The selected roots are the first sixteen of 207 eligible roots in fixed source order. It exported 48 inputs and 48 private references across three modes, with zero model and zero engine calls. The references remain unscored.
+
+The selected games are fresh relative to audited retained projections and fixed exclusions, not proven unseen during base-model pretraining or all earlier continuations. Seven historical unknown-successor sets and limited manual-prose mapping remain. All 512 games stay excluded from training; the new sixteen stay privately reserved. This audit checked recorded bytes, schema, provenance and successful source guards, without independently rerunning chess/novelty semantics or scoring factual references.
+
+The overall human-authorized window remains ACTIVE until 22:00 UTC today. Prepared data does not reopen the missed model comparison. No future live-preview window or automatic extension is granted.
+
+## Historical comparison outcome — October 16, 20:30 UTC
+
+The full 96-response comparison missed its fixed 20:30 UTC admission and remains UNRUN, with zero new scientific comparison requests for this panel. There is no smaller substitute, same-panel replay or admission extension. Completed training, repeated development scores and two successful cold software checks remain valid within their respective scopes; they provide no fresh matched improvement estimate.
+
+The first exposure-record merge completed and independent review verified all 7,704 call locators (5,584 completed presentations and 2,120 not-run presentations), 212 distinct decoded slots and 19 original scopes. Its 15,361,556-byte draft exceeds the old 8 MiB limit. A separately versioned 15 MiB capacity correction is being prepared; no new assembly or fresh-data readiness is claimed before its actual closure and audit. These are metadata-accounting facts, not language-model evaluation results.
+
+The overall human-authorized window remains active until 22:00 UTC. Remaining source/backbone research and bounded repairs may continue under their own reviewed gates; the missed comparison admission is not reopened. Every historical failure, reservation and planned denominator remains intact.
+
 ## Completed training and remaining comparison — October 16, 19:48 UTC
 
 The fresh conditional-line run completed all 192 updates and 1,536 training presentations, with all 384 development loss requests and 24 generated development responses completed. Independent closed review passed. It started from the unchanged original step-64 adapter with a fresh optimizer; terminal step 192 was fixed in advance. The failed 167-update attempt remains preserved and was not resumed.

@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-10-16T20:59:33.794935+00:00",
+  "scope": "Read-only public official upstream revisions; no asset acquisition, dependency update or local model-quality inference.",
+  "observations": [
+    {
+      "name": "queen-code",
+      "url": "https://github.com/queen-project/queen",
+      "transport": "git ls-remote HEAD refs/heads/master",
+      "revision": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+      "unchanged_since_1328": true
+    },
+    {
+      "name": "queen-model",
+      "url": "https://huggingface.co/api/models/princeton-nlp/queen_pawn-8",
+      "resolved_url": "https://huggingface.co/api/models/princeton-nlp/queen_pawn-8",
+      "status": 200,
+      "bytes": 8050,
+      "sha256": "08efc9c983b615dda333eec3e0325a4559ab5f3faa9f67b636731131ed5e1074",
+      "etag": "W/\"1f72-ACYG1Kg+Z6Hy2D/L3uUQYP5fKFg\"",
+      "revision": "5027687fac08b64b2403b13aca5b198e68294fe9",
+      "last_modified": "2026-10-04T23:10:27.000Z",
+      "revision_and_response_bytes_identical_since_1328": true
+    }
+  ],
+  "earlier_public_record": "chess-primary-refresh-2026-10-16-1328.json",
+  "reading_depth": "Official repository README, model card and revision metadata only; not an additional full-paper review.",
+  "source_model_card": "https://huggingface.co/princeton-nlp/queen_pawn-8",
+  "web_api_limitation": "The browsing tool could not open the public revision APIs; bounded direct official HTTPS and Git ref queries supplied revision metadata.",
+  "new_assets_or_dependency_changes": false
+}
