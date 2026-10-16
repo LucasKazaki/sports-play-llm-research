@@ -1,0 +1,271 @@
+{
+  "status": "reviewed_source_publication_inventory_v2_static_only",
+  "base_inventory": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\direct-route-publication-inventory\\inventory.json",
+    "bytes": 33730,
+    "sha256": "8d4c75aab5d4c53e32ff5e42d84f95eae99788aa0a3bb7a71c183b9a3fa6ff3f"
+  },
+  "base_inventory_rows_exactly_preserved": true,
+  "added_file": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\probe_process_observer.py",
+    "bytes": 10368,
+    "sha256": "8cab822b8d7ab8fe0867e40a3966a6a7aa743e749bab996fc2c44afaf0d9a2c6",
+    "repository_path": "experiments/chess-queen-coach-daytime-v1/probe_process_observer.py",
+    "role": "reviewed_historical_source_support",
+    "review": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+      "bytes": 14541,
+      "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+    },
+    "already_in_index": false,
+    "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/probe_process_observer.py -text",
+    "source_must_remain_unchanged": true,
+    "reason": "Imported by test_observer_probe and read by new test_direct_observer for AST preservation. Approved retained predecessor; not an authorized current dispatch entrypoint."
+  },
+  "files": 31,
+  "total_bytes": 252905,
+  "historical_source_support_count": 1,
+  "static_scope": "AST imports and existing .py literals for every proposed source/test, including the added predecessor. No private JSON contents were opened. This is not dynamic import closure.",
+  "static_missing_source_check": {
+    "all_other_local_dependencies_already_in_index": true,
+    "unique_dependencies": [
+      {
+        "dependency": "experiments/chess-queen-coach-daytime-v1/owned_worker_v2.py",
+        "already_in_index": true,
+        "dependents": [
+          "direct_launch_contract.py",
+          "prepare_direct_protocols_v3.py",
+          "test_qualify_training_direct_v1.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed"
+        ]
+      },
+      {
+        "dependency": "experiments/chess-queen-v1/gpu_worker.py",
+        "already_in_index": true,
+        "dependents": [
+          "prepare_observer_protocols.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_native_resources.py",
+        "already_in_index": true,
+        "dependents": [
+          "cold_eval_v6.py",
+          "cold_eval_v7.py",
+          "prepare_observer_protocols.py",
+          "probe_observer_child.py",
+          "probe_process_observer.py",
+          "probe_process_observer_v2.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed",
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_counterfactual_cold_child_v1.py",
+        "already_in_index": true,
+        "dependents": [
+          "build_protocols.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_counterfactual_cold_eval_v5.py",
+        "already_in_index": true,
+        "dependents": [
+          "build_protocols.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed",
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_counterfactual_contract_v1.py",
+        "already_in_index": true,
+        "dependents": [
+          "daytime_train.py"
+        ],
+        "kinds": [
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_counterfactual_eval_v1.py",
+        "already_in_index": true,
+        "dependents": [
+          "daytime_train.py"
+        ],
+        "kinds": [
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_counterfactual_runtime_v1.py",
+        "already_in_index": true,
+        "dependents": [
+          "build_protocols.py",
+          "daytime_train.py",
+          "qualify_training.py",
+          "qualify_training_direct_v1.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed",
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_counterfactual_train_v1.py",
+        "already_in_index": true,
+        "dependents": [
+          "cold_eval_v6.py",
+          "cold_eval_v7.py"
+        ],
+        "kinds": [
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_counterfactual_train_v2.py",
+        "already_in_index": true,
+        "dependents": [
+          "qualify_training.py",
+          "qualify_training_direct_v1.py",
+          "test_daytime.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed",
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_coach_sft_train_v2.py",
+        "already_in_index": true,
+        "dependents": [
+          "daytime_train.py"
+        ],
+        "kinds": [
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "scripts/chess_queen_process_lineage_v4.py",
+        "already_in_index": true,
+        "dependents": [
+          "prepare_observer_protocols.py",
+          "process_lineage_v5.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed",
+          "static_local_import"
+        ]
+      },
+      {
+        "dependency": "tests/test_chess_queen_coach_counterfactual_cold_eval_v5.py",
+        "already_in_index": true,
+        "dependents": [
+          "test_cold_eval_v6.py"
+        ],
+        "kinds": [
+          "static_existing_py_path_literal_not_proven_executed"
+        ]
+      }
+    ]
+  },
+  "additional_existing_dependency_hashes": [
+    {
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/owned_worker_v2.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\owned_worker_v2.py",
+      "bytes": 13520,
+      "sha256": "fe4ce0abb0f6be934f2b78681115ec0aa0c9c85e2ef54a6955dc2e6778103ae8"
+    },
+    {
+      "repository_path": "experiments/chess-queen-v1/gpu_worker.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "repository_path": "scripts/chess_native_resources.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_native_resources.py",
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_cold_child_v1.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_cold_child_v1.py",
+      "bytes": 5225,
+      "sha256": "e901e78c468754e952c4b1c7f9d3dbf2a165c66d29f86cb46ea53b235a15544b"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_cold_eval_v5.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_cold_eval_v5.py",
+      "bytes": 18883,
+      "sha256": "7a826b3faa9eae9c09684565986afbabd7f9c474ffc829f5cfcb4561c2e2d87c"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_contract_v1.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_contract_v1.py",
+      "bytes": 1185,
+      "sha256": "b6caead2313327138c067c86b6514b57046d08b623a70315e0e2b7fb1f130051"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_eval_v1.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_runtime_v1.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_runtime_v1.py",
+      "bytes": 2287,
+      "sha256": "29f148855279fe0243bb4fbedac12057ab9d43cd6fe1c12a904606d4ca8f460b"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_train_v1.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_train_v1.py",
+      "bytes": 21067,
+      "sha256": "6185ba3dbb146d4a3d2b76e59e7611e8f69a386ae27564bfa08562afdee3b34b"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_train_v2.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_train_v2.py",
+      "bytes": 21155,
+      "sha256": "98623ce21801896b3139395355dc41d4580e3ec2707cbaf0a43e6741be170714"
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_sft_train_v2.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_train_v2.py",
+      "bytes": 23708,
+      "sha256": "bc56efd3f2fe839859e1a0411bb11608a8e57f283c4f2f0add1b5ba4fb234c63"
+    },
+    {
+      "repository_path": "scripts/chess_queen_process_lineage_v4.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_process_lineage_v4.py",
+      "bytes": 14457,
+      "sha256": "47e2b3d14bbb04db4ec408df6d09a1147162b0c09774efeebddee6c3dc640192"
+    },
+    {
+      "repository_path": "tests/test_chess_queen_coach_counterfactual_cold_eval_v5.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_counterfactual_cold_eval_v5.py",
+      "bytes": 14441,
+      "sha256": "3291392f64fc87c9ad78e67eb56e93919f69d22056cfb86aabbfbd374c86b862"
+    }
+  ],
+  "private_protocol_and_asset_dependence": "Some tests and metadata builders read retained historical protocol JSON and bind local private source/data/tokenizer/weight paths. Public sources alone do not make those private assets available or prove whole-suite standalone portability. No private row/reference/weight or protocol content was opened for this inventory.",
+  "gitattributes_rule": "Parent should add exact-byte -text rules before staging and verify index-byte hashes. This lane made no attribute/index edit.",
+  "no_source_protocol_index_shared_doc_changes": true,
+  "detailed_inventory_optional": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\direct-route-publication-inventory-v2\\inventory.json",
+    "bytes": 81896,
+    "sha256": "f2fb503cf2f0ee3dd38a06fe5d46f4396f6556551e397c3263c746046d505927"
+  }
+}
