@@ -1,0 +1,127 @@
+{
+  "schema": "chess.queen-assets-pin.v1",
+  "model_id": "princeton-nlp/queen_pawn-8",
+  "revision": "5027687fac08b64b2403b13aca5b198e68294fe9",
+  "files": {
+    "README.md": {
+      "sha256": "b66ed5fd09bdcb002fcb08cbcb5581287d598e2dc93a673963e5208678518de9",
+      "bytes": 3062
+    },
+    "VALIDATION.json": {
+      "sha256": "515d6f0e1725c4eb4b0d3d7388f70098714d053c15c35d38ccd8ae43adca6c0b",
+      "bytes": 2176
+    },
+    "chat_template.jinja": {
+      "sha256": "69650a344de9a33971f463750410208cb35e4bf351eb4af422ffb695bc6c8847",
+      "bytes": 5588
+    },
+    "config.json": {
+      "sha256": "429ae56bb00f5c6727807112608e0df3d6c934683c22f69739e1eb238d289fe4",
+      "bytes": 1873
+    },
+    "generation_config.json": {
+      "sha256": "498405f42999236f9f554e54d47240e41f6de6a1bf23191214fd2a5b5c52b4ea",
+      "bytes": 177
+    },
+    "infer.py": {
+      "sha256": "33528daef24893a032275522df25808b3a60b82c761401b5681882bd55d1ded4",
+      "bytes": 5002
+    },
+    "lc0/config.json": {
+      "sha256": "0a5690de151cdea61d669ca4a10a9fde103232800073250fe210421608ff664a",
+      "bytes": 23567
+    },
+    "lc0/hf_model.py": {
+      "sha256": "049d0f0f2169b6f02e7fd7656f337a388a0547544e116174f8148bfdd60ef692",
+      "bytes": 42680
+    },
+    "lc0/model.safetensors": {
+      "sha256": "a72807f43a9b7e89b143bd6e25067315a0a4312a1340c865141ae763f393862e",
+      "bytes": 953302616
+    },
+    "model-00001-of-00002.safetensors": {
+      "sha256": "fdba4c2a0ccfc376eff02fa02de1bc07b29978b1a338c6d813e47e3644ae9df7",
+      "bytes": 4966630656
+    },
+    "model-00002-of-00002.safetensors": {
+      "sha256": "fb27874f38daba2d4204c22fb7584c1b7f83fcf1f63ce049b692e9f4e7bcc3fa",
+      "bytes": 1183919744
+    },
+    "model.safetensors.index.json": {
+      "sha256": "b790e655af54a70b233bb824a95472808bcdad61b8a75761b96fe3a088f577bc",
+      "bytes": 26899
+    },
+    "models/__init__.py": {
+      "sha256": "89924c2daf399f5b21af9e632de1bb7e8746720a53c3872de2b8253da2e01f5e",
+      "bytes": 44
+    },
+    "models/encoder.py": {
+      "sha256": "049d0f0f2169b6f02e7fd7656f337a388a0547544e116174f8148bfdd60ef692",
+      "bytes": 42680
+    },
+    "models/vllm/__init__.py": {
+      "sha256": "89924c2daf399f5b21af9e632de1bb7e8746720a53c3872de2b8253da2e01f5e",
+      "bytes": 44
+    },
+    "models/vllm/flamingo.py": {
+      "sha256": "9b699ba070a976e279c7da392517fee0bbe1c005aa39ec917aad601c34de6430",
+      "bytes": 16771
+    },
+    "models/vllm/flamingo_generate.py": {
+      "sha256": "7c32e93a99d9042264ffced188c88d1c6f2a1f99f80357d14744ecd20277e50f",
+      "bytes": 10797
+    },
+    "requirements-inference.txt": {
+      "sha256": "9b04e0b3d40fb036f4bd95649ab17cfc222e7a9a5d0c6af6a8141e4a634492c1",
+      "bytes": 4250
+    },
+    "special_tokens_map.json": {
+      "sha256": "12403efb970f069ba62ddf3b66166a27254be4a198166b61ad1ee604bd3a4515",
+      "bytes": 289
+    },
+    "tokenizer.json": {
+      "sha256": "c2786337a78babe4fa37aea5f1b8492bcdd4ac7f307f6f014a634c9981b6aa81",
+      "bytes": 17223270
+    },
+    "tokenizer_config.json": {
+      "sha256": "29ba0f7b8ec803909d29713b01870acc5e4309b601fc1838bfa870d2f97b0aaa",
+      "bytes": 64068
+    },
+    "utils/__init__.py": {
+      "sha256": "89924c2daf399f5b21af9e632de1bb7e8746720a53c3872de2b8253da2e01f5e",
+      "bytes": 44
+    },
+    "utils/lc0_planes.py": {
+      "sha256": "af02414bea369f2a3fd29df8a90f51e24695b9aafcfad8128ebc637afe008960",
+      "bytes": 6949
+    },
+    "utils/translate_helpers.py": {
+      "sha256": "6edbc5482970d27e94238c483a6cf5c3d6f47407c6035e81505d03434d920d61",
+      "bytes": 6417
+    },
+    "utils/tree_parser.py": {
+      "sha256": "b6040491c793d93cd21855b6cd1442032c645951ad7f1abfa4e8d36528ab5561",
+      "bytes": 8644
+    },
+    "utils/utils.py": {
+      "sha256": "7fa7bb6547709b073f482e8c25c82381a2e9d5991515b097936c37dd31899fa4",
+      "bytes": 9735
+    },
+    "xattn.pt": {
+      "sha256": "ffa0290b85be67d4a760e82c01641680f394003e1b5995de157fd1d39c916b68",
+      "bytes": 1879756403
+    },
+    "utils/analysis.py": {
+      "sha256": "2a3fecedea8073bc8f809167f4cedd96fa365403fb5ae967ffa089cada2be983",
+      "bytes": 14700
+    },
+    "inference_config.json": {
+      "sha256": "cbd62c6bb927eb9bfe4a60baf11c524397c9775e11894fd389613f5f6bced2ac",
+      "bytes": 428
+    },
+    "utils/eval_policy.py": {
+      "sha256": "db012d227ee6029be9ca9b844eca2ccd1f716b7719d22cca96acb384355f7132",
+      "bytes": 997
+    }
+  }
+}

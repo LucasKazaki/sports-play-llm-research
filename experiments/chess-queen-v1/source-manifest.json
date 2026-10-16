@@ -1,0 +1,49 @@
+{
+  "schema": "chess.queen-source-pin.v1",
+  "repository": "https://github.com/queen-project/queen",
+  "revision": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+  "checkout": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source",
+  "license": "Apache-2.0",
+  "files": {
+    "models/base.py": {
+      "bytes": 8979,
+      "sha256": "bc74975b7c3b17689f863de78bed254a5761a8c64ea68998ca784ac856cd7fce"
+    },
+    "models/flamingo.py": {
+      "bytes": 25545,
+      "sha256": "7757093bdb2187085e57dcebf2925ece7471475768a2f93f9b683fd49a903ab1"
+    },
+    "models/encoder.py": {
+      "bytes": 43771,
+      "sha256": "2fbf9494f20e9ccf957aa88753f6276a139c5476de9e1444857f709c3b44eb9a"
+    },
+    "models/adapters/__init__.py": {
+      "bytes": 2751,
+      "sha256": "46ede8aaf46b3c14c1bb9debfd8b19a3303c42a313e9886e1b31670bb14a7462"
+    },
+    "models/adapters/base.py": {
+      "bytes": 6941,
+      "sha256": "9daed331d08b92e3a60fc2178945e18857e54d3831e7db1561fdb69504a36cd4"
+    },
+    "models/adapters/smollm.py": {
+      "bytes": 3664,
+      "sha256": "1ecafe62de6aa810fd2da4fedc78a7c90ee6685dbd0769405e4f39984ce1babb"
+    },
+    "utils/lc0_planes.py": {
+      "bytes": 7165,
+      "sha256": "767bf0e89b2e0934e0f0f94909d10b1c46123eae055b6ce544b4082cca772e4c"
+    },
+    "utils/utils.py": {
+      "bytes": 9991,
+      "sha256": "cd95b1011626bf8291db3eaaa527599bfa40e6f2c71e97e989787d3c15dfcebc"
+    },
+    "utils/translate_helpers.py": {
+      "bytes": 6581,
+      "sha256": "5179a5b18d8d7c6923c63a7cff178cfef41d4e2972eb7591265e9734a13aad12"
+    },
+    "LICENSE": {
+      "bytes": 11562,
+      "sha256": "f2ffa5942b316849be283deaeb2912e2e5b5b17e91012bede8210210ff3e91e7"
+    }
+  }
+}

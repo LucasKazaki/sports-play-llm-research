@@ -1,0 +1,41 @@
+{
+  "schema": "chess.queen-execution-amendment.v5",
+  "adapter_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+  "worker_sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0",
+  "parity_v5_sha256": "bcf705e685faab0eb7305f9d68b923a57f9b5ea016c9122e0af729ddef2a2166",
+  "prior_numerical_failure": {
+    "path": "data/private/chess-queen-v1/parity-authored-v4-1.json",
+    "sha256": "aae1519db4a8746b7fd6a647eed5026aaec84394022a1b6c30f4344e47526f21",
+    "full_prefix_hook_max_absolute_error": 0.0,
+    "cache_step1_max_absolute_error": 0.546875,
+    "cache_step1_mean_absolute_error": 0.08681423217058182,
+    "cache_step1_cosine_similarity": 0.9992588758468628,
+    "all_three_cache_top_tokens_equal": true,
+    "peak_cuda_allocated_bytes": 7598151168,
+    "interpretation": "Failed frozen cache tolerance; no memory failure. Exact full-prefix parity does not establish chess capability."
+  },
+  "hypothesis": "Shape-dependent BF16 arithmetic or automatic SDPA kernel selection contributes to cached/full-prefix drift; not established until measured.",
+  "primary_sources": [
+    "https://docs.pytorch.org/docs/2.8/generated/torch.nn.functional.scaled_dot_product_attention.html",
+    "https://docs.pytorch.org/docs/2.8/notes/numerical_accuracy.html"
+  ],
+  "precision_profile": {
+    "name": "math_sdpa_fp32_reduction",
+    "sdpa_backend": "MATH only",
+    "allow_bf16_reduced_precision_reduction": false,
+    "allow_tf32": false,
+    "allow_fp16_bf16_reduction_math_sdp": false,
+    "scope": "Encoder/manual/native/cache under one context; prior process settings restored in finally."
+  },
+  "numerical_tolerances_changed": false,
+  "resource_reserves_changed": false,
+  "running_reserves_gib": {"physical": 4, "commit": 4, "gpu": 1},
+  "qualification": {
+    "primary": "Cache versus full-prefix, same frozen limits and3steps.",
+    "secondary": "Three full-prefix native/upstream-manual comparisons under the same profile, using unchanged0.01max-error/finite/top1/cosine requirements.",
+    "overall_status": "Pass only if both components pass; a positive uncached component never converts cache failure into cache success."
+  },
+  "candidate_generation_default": {"mode": "no_cache", "precision_profile": "math_sdpa_fp32_reduction"},
+  "validation_before_actual_run": {"focused_cpu_tests_passed": 33, "gpu_tensor_allocations_or_forwards": 0, "pretrained_forwards": 0},
+  "stop_rule": "No numeric tolerance relaxation and no further reserve-floor reductions. Real OOM or more than1GiB kernel growth requires a memory fix."
+}

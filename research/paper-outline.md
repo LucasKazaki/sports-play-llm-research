@@ -156,3 +156,8 @@ Runtime observation preserves goal-d71b7571e8c51d0eeddb09366df2b02563e4a61e7188b
 ## September 15 engineering boundary
 The bounded query safeguards, independent 1,029-test verification, actual Luna-v3 then Terra-v2 acceptance and direct v2 browser observations are internal software evidence only; see state/supervisor-final-milestone-2026-09-15.md. The accepted review covers the supplied participant delta, not a full-source or manuscript audit. This work adds no learned-weight, recognition-accuracy, cohort, annotation, coach-utility or publication-readiness result. Existing scientific methods and promotion requirements remain open.
 
+
+## October 16 chess evidence boundary
+
+New experiments provide mixed move-policy results and a narrowly positive learned check-discrimination result, with full raw outcomes and independent audits. They do not establish explanation factuality, professional coaching, Elo or sports transfer. [Current evidence and limitations](chess-overnight-checkpoint-2026-10-16.md).
+

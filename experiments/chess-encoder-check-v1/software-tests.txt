@@ -1,0 +1,6 @@
+Command: .venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_encoder_check_v1.py tests/test_chess_queen_materialize.py tests/test_chess_check_balanced_v2.py -q
+.........................................                                [100%]
+41 passed in 2.73s
+
+25 encoder-head checks, four stable-loader checks and 12 retained balanced-check checks.
+No pretrained encoder, actual cohort, GPU or capability measurement was used.

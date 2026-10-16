@@ -1,0 +1,1028 @@
+{
+  "rows": [
+    {
+      "case_id": "check-v2-0ElIU-h7h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0ElIU-h7h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0FCNx-e7h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0FCNx-e7b7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0FJ5J-f4f8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0FJ5J-f4g4",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0FTFZ-c7c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0FTFZ-c7c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0FU8Q-g2g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0FU8Q-g2g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Fh2T-e1e8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Fh2T-e1g1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Fo0d-h5g3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Fo0d-h5f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Fu7r-f5h6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Fu7r-f5h4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0FwA9-d6g3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0FwA9-d6e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0G7sN-c2h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0G7sN-c2e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0GAAc-e6c5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0GAAc-e6f8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0GPSf-h7e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0GPSf-h7g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0GT9r-c2a3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0GT9r-c2e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0GehK-d1g1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0GehK-d1h1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0GjXX-f7f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0GjXX-f7d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Glma-g5a5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Glma-g5g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0GrSV-e5g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0GrSV-e5e3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0GvGz-a5a4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0GvGz-a5c5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0H8up-c2c4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0H8up-c2c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0HBGk-e4e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0HBGk-e4h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0HDVl-f4e2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0HDVl-f4d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0HMdh-g4h3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0HMdh-g4e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0HO0Z-h3f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0HO0Z-h3f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0HYZG-b3b4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0HYZG-b3e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0HaJU-d4g1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0HaJU-d4b4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0HbWu-d5d4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0HbWu-d5f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Hd8q-b7a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Hd8q-b7g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Hm22-f6a1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Hm22-f6g5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0I0bA-c8d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0I0bA-c8c7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0I0qt-f4g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0I0qt-f4h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0I76Y-d5e4",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0I76Y-d5f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0IDPe-a3b3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0IDPe-a3a2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0IO3v-e8g8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0IO3v-e8e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Ia1O-h5g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Ia1O-h5h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0IdRS-f6d4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0IdRS-f6d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Ipw1-d1d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Ipw1-d1c1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Ipwi-b7b5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Ipwi-b7h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0It22-c8e8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0It22-c8g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Iuob-e4d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Iuob-e4f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0IxiQ-h6h5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0IxiQ-h6g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0JAap-a3c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0JAap-a3a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0JHAZ-f3f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0JHAZ-f3b7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0JIDu-b7d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0JIDu-b7e4",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0JW5z-e2h5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0JW5z-e2e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0JgbT-f7f1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0JgbT-f7g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Jhbc-e2e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Jhbc-e2e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Jif5-g6g3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Jif5-g6g7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0JyVU-d8d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0JyVU-d8e8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0K3B5-d3g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0K3B5-d3e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0K50s-c2c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0K50s-c2c7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0K52j-b7a7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0K52j-b7b1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0K5P2-f8a8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0K5P2-f8e8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0K7vK-f7f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0K7vK-f7f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0K87Y-h7h3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0K87Y-h7b7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0K9ae-a3b2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0K9ae-a3b4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KAh7-d2h6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KAh7-d2b2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KBBW-h7h4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KBBW-h7g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KFbp-g6g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KFbp-g6g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KFod-e3g3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KFod-e3h3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KGyj-h3h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KGyj-h3g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KHB8-a7a8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KHB8-a7a5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KHJo-f1f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KHJo-f1a1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KIZ9-e8h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KIZ9-e8e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KIf7-g4c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KIf7-g4g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KJBA-d6d2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KJBA-d6d3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KKKb-f5d6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KKKb-f5h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KLFW-f4d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KLFW-f4f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KLM2-c8e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KLM2-c8f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KMxC-f8f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KMxC-f8f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KOQ7-e1f1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KOQ7-e1e8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KOmv-f6e7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KOmv-f6e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KQ2S-d8h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KQ2S-d8c7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KQx0-h7g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KQx0-h7h8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KR02-b6h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KR02-b6d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KRKL-g6g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KRKL-g6g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KS5H-f1f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KS5H-f1f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KWFC-f7c7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KWFC-f7f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KWSP-b2b5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KWSP-b2b1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KWdo-e6a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KWdo-e6g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KWiT-a2g2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KWiT-a2h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KYrR-b3g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KYrR-b3b5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KYrq-f4f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KYrq-f4c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Ka29-f5h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Ka29-f5b1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kasx-g5f3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kasx-g5h3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kb2F-h1h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kb2F-h1h4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KbkP-g7d4",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KbkP-g7c3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KcU0-d5g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KcU0-d5d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KfFa-g7g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KfFa-g7g5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kfrm-d3d7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kfrm-d3d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KiZf-b2b5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KiZf-b2c1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kj2m-g6g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kj2m-g6e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KjXE-f4f2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KjXE-f4f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KmoV-b5d7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KmoV-b5f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Knu9-d6d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Knu9-d6e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kpqu-c4c2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kpqu-c4f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kpyl-b8b1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kpyl-b8c8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KqNR-e2e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KqNR-e2h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KqUR-f1f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KqUR-f1f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KqWA-f1f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KqWA-f1f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Krdp-h7h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Krdp-h7g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Ksng-d3a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Ksng-d3f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kugo-f5h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kugo-f5f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kv5P-g5d8",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0Kv5P-g5c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KvbB-c3d2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KvbB-c3e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kvh3-b4g4",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0Kvh3-b4e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KvrY-c7g3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0KvrY-c7c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KwXX-b7d7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0KwXX-b7b2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0L13K-g3d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0L13K-g3g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0L34t-e6d7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0L34t-e6d5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0L3x5-a6e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0L3x5-a6a5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0L6Qa-h6a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0L6Qa-h6d2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0L6jE-e5e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0L6jE-e5e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0L9GP-c2d2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0L9GP-c2h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LBYJ-c6c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LBYJ-c6c2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LCTP-f2g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LCTP-f2e2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LDXU-e4d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LDXU-e4g3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LIcT-c8c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LIcT-c8c4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LJIP-g4h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LJIP-g4g3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LJrU-h6g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LJrU-h6f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LL3G-d6h2",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LL3G-d6b8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LMEz-f5h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LMEz-f5g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LPhq-a4h4",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LPhq-a4a3",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LQSI-c1c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LQSI-c1d1",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LSuK-f7d7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LSuK-f7b7",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LTc1-e7g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LTc1-e7c5",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LThB-g4f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LThB-g4f3",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LZ10-h4h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "check-v2-0LZ10-h4d4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LZBt-h5h4",
+      "gives_check": false
+    },
+    {
+      "case_id": "check-v2-0LZBt-h5f7",
+      "gives_check": true
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "schema": "chess.encoder-check.v1",
+  "frozen_at": "2026-10-16T06:50:34.224662+00:00",
+  "implementation_sha256": "416e602001ad7fc3a915b84054fb459d53401f35e5eefdd3fe794cfc1ca4dbe4",
+  "hypothesis": "A small trained selected-move head can learn check discrimination from frozen expert current-board LC0 features more reliably than majority-false or an untrained head.",
+  "source": {
+    "path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+    "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "license": "CC0-1.0; retained pinned local source; no new data acquisition",
+    "upstream": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet"
+  },
+  "known_registry": {
+    "path": "experiments/chess-matched-check-v1/archive/v2/known-history-exclusions-v2.json",
+    "sha256": "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb"
+  },
+  "excluded_cohorts": [
+    {
+      "path": "data/private/chess-matched-check-diagnostic-v1/cohort/dataset.json",
+      "sha256": "ae305d86cf415f2b48bd3cde7a36bd022cf43da567c019a4f8d8bb17b8c34a18"
+    },
+    {
+      "path": "data/private/chess-check-balanced-v2/cohort/dataset.json",
+      "sha256": "d90fedb8ee93a7f92ab73e071ed3eb8022c35ed00dc8f77ba8b9ed54c2d64216"
+    },
+    {
+      "path": "data/private/chess-move-policy-v5/dataset.json",
+      "sha256": "be5c1b051fb6c0153e683816af51d9c2d190d8f56189ffc363724463cd38a6a8"
+    },
+    {
+      "path": "data/private/chess-move-policy-v6/dataset.json",
+      "sha256": "7891cb1fbbc175085310428eceff453cca88b3a24a79fa03c5ac8cce1582cf06"
+    }
+  ],
+  "queen_benchmark": {
+    "path": "data/private/chess-queen-benchmark-v1/dataset.json",
+    "sha256": "2a7e6d660d1fc28c3b34e99c5dcd29dc8441fad30664e7d2690e6e812277c8cf"
+  },
+  "queen_pool_protocol_sha256": "19d48f385a97583f5c577a4e918b36cdffc5fcba0f7a1daaec2281ff83147e8a",
+  "reused_dataset": {
+    "path": "data/private/chess-check-balanced-v2/cohort/dataset.json",
+    "sha256": "d90fedb8ee93a7f92ab73e071ed3eb8022c35ed00dc8f77ba8b9ed54c2d64216"
+  },
+  "reuse": {
+    "train_inputs": {
+      "path": "data/private/chess-check-balanced-v2/cohort/train-inputs.json",
+      "sha256": "da6103e37c87b4433d81dbe97d2e544b9b9d96f900660cd926a9d182160e5e82"
+    },
+    "train_labels": {
+      "path": "data/private/chess-check-balanced-v2/cohort/train-labels.json",
+      "sha256": "016d9a0650b1c1d3c168af33e82d841721276f79ebbfbae5c9a8df36bc619379"
+    },
+    "dev_inputs": {
+      "path": "data/private/chess-check-balanced-v2/cohort/dev-inputs.json",
+      "sha256": "9c8de1bfba76fa52271cf614ad0ccd8199abc561711b3145d423069e46b71f48"
+    },
+    "dev_labels": {
+      "path": "data/private/chess-check-balanced-v2/cohort/dev-labels.json",
+      "sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+    }
+  },
+  "reused_pairs": {
+    "train": 8192,
+    "dev": 128
+  },
+  "holdout_pairs": 256,
+  "seed": 4082071,
+  "source_row_cap": 500000,
+  "intake": "Exact balanced-v2 TRAIN/dev rows and labels only. New heldout256 original games in deterministic source order, one matched same-piece/capture-category checking/nonchecking pair per game. Consume source setup token only. Exclude all registered historical games/before/current and selected-successor boards, all V5 roots, all V6 new roots including every unused reservoir candidate, and all96 Queen pool games/before/current boards. No old heldout training reuse.",
+  "encoder": {
+    "model_id": "princeton-nlp/queen_pawn-8",
+    "model_revision": "5027687fac08b64b2403b13aca5b198e68294fe9",
+    "source_revision": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+    "directory": "data/private/chess-queen-v1/pawn-8/lc0",
+    "weights": {
+      "path": "data/private/chess-queen-v1/pawn-8/lc0/model.safetensors",
+      "sha256": "a72807f43a9b7e89b143bd6e25067315a0a4312a1340c865141ae763f393862e"
+    },
+    "config": {
+      "path": "data/private/chess-queen-v1/pawn-8/lc0/config.json",
+      "sha256": "0a5690de151cdea61d669ca4a10a9fde103232800073250fe210421608ff664a"
+    },
+    "source": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/encoder.py",
+      "sha256": "2fbf9494f20e9ccf957aa88753f6276a139c5476de9e1444857f709c3b44eb9a"
+    },
+    "planes_source": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/lc0_planes.py",
+      "sha256": "767bf0e89b2e0934e0f0f94909d10b1c46123eae055b6ce544b4082cca772e4c"
+    },
+    "precision": "All floating buffers explicitly BF16, policy_index_map int64, target-only meta materialization; encoder eval/frozen. No language decoder or bridge instantiated.",
+    "rights": "Queen source Apache-2.0. Publisher asserts no blanket combined-weights license; LC0 component terms retained. Private local experimentation only; no redistribution claim."
+  },
+  "features": "Current six-field FEN + selected legal UCI only. No history/postboard/PV/answer fields. Empty history uses pinned upstream FEN-only synthesis. Deduplicate exact canonical current FEN for one encoder forward per board; retain every requested move identity. Cache FP32 current-state mean/source/target vectors3072 + native POV source/target/promotion indices; label-free manifest. No policy/value/engine outputs. Heldout extraction only after saved dev selection and training-feature hash check.",
+  "head": "Learned source64x32/target64x32/promotion5x8 embeddings. Concatenate to3072 frozen features,3144->512ReLU->128ReLU->1. Exactly1680169 trainable head parameters. Raw logit>=0 check prediction; no class mask or rule replacement.",
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rate": 0.001,
+    "weight_decay": 0.01,
+    "batch_size": 256,
+    "epochs": 8,
+    "checkpoint_epochs": [
+      0,
+      1,
+      2,
+      4,
+      8
+    ],
+    "seed": 4082072,
+    "planned_optimizer_updates": 512,
+    "gradient_clip": 1.0,
+    "objective": "FP32 binary_cross_entropy_with_logits on exactly16384 reused TRAIN moves per epoch. All encoder buffers remain frozen; only the1680169-parameter head learns."
+  },
+  "selection": "Highest development number correct, then most complete two-move pairs correct, then earliest epoch including0. Save selection and checkpoint hashes before any heldout pretrained call.",
+  "evaluation": "Full512 fresh heldout moves/256pairs remain denominators. Report TP/TN/FP/FN, checking/nonchecking recall, pair correctness, invalid/unknown/failed/notrun; same-panel majority-false, actual saved untrained head and selected head. Alias selected0 without replay. First backend failure stops further calls/conditions. Per-batch durable intent/results and full ledgers; recovery never makes model calls.",
+  "maximum_seconds": 5400,
+  "resources": "Root-owned CUDA only. Start>=6GiB physical/8GiB commit/4GiB GPU available; running>=4GiB physical/6GiB commit/512MiB GPU. Read-only samples at most once per second, cooperative before each encoder call and per64optimizer updates; owned CANCEL/deadline checks. No settings changes.",
+  "dependencies": [
+    {
+      "path": "scripts/chess_board_fact_core.py",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "scripts/chess_check_balanced_v2.py",
+      "sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5"
+    },
+    {
+      "path": "scripts/chess_fact_sft_common.py",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    {
+      "path": "scripts/chess_fact_sft_intake.py",
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "scripts/chess_board_fact_diagnostic.py",
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    {
+      "path": "scripts/chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "path": "scripts/chess_queen_adapter.py",
+      "sha256": "036eab0cc223d962b44e0901ae7f551ba5cf812944ba37f68cf270f10b55bb70"
+    },
+    {
+      "path": "tests/test_chess_encoder_check_v1.py",
+      "sha256": "ca8fdeb41a4974f8e205172cdbfa37d376b6cb5c6c464d52d85741425a9657ed"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/encoder.py",
+      "sha256": "2fbf9494f20e9ccf957aa88753f6276a139c5476de9e1444857f709c3b44eb9a"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/lc0_planes.py",
+      "sha256": "767bf0e89b2e0934e0f0f94909d10b1c46123eae055b6ce544b4082cca772e4c"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/LICENSE",
+      "sha256": "f2ffa5942b316849be283deaeb2912e2e5b5b17e91012bede8210210ff3e91e7"
+    },
+    {
+      "path": "data/private/chess-queen-v1/pawn-8/lc0/config.json",
+      "sha256": "0a5690de151cdea61d669ca4a10a9fde103232800073250fe210421608ff664a"
+    }
+  ],
+  "native_environment": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "safetensors": "0.8.0",
+    "accelerate": "1.15.0",
+    "peft": "0.21.2",
+    "bitsandbytes": "0.50.2"
+  },
+  "limitations": [
+    "Check discrimination only; not explanation quality, language understanding, move strength or Elo.",
+    "Matched tactical same-piece pairs; promotions/castling/en passant not covered by this real cohort.",
+    "Unknown overlap with original encoder pretraining. Reused development set is not fresh evidence.",
+    "Synthetic software tests do not establish actual model learning."
+  ],
+  "primary_sources": [
+    "https://huggingface.co/princeton-nlp/queen_pawn-8",
+    "https://github.com/queen-project/queen/tree/c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+    "https://database.lichess.org/"
+  ]
+}

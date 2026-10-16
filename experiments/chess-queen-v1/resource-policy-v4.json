@@ -1,0 +1,33 @@
+{
+  "schema": "chess.queen-resource-amendment.v4",
+  "scope": "Final authorized inference-only commit floor after observed model forwards; numerical parity requirements unchanged.",
+  "adapter_sha256": "945cf2ce010074d780bb2b66a468dfed3f078a8545a682345446662f88622ea3",
+  "parity_v3_sha256": "ac80e082548f1545d24eeafaf4c4270dc7f751c1bdd2af23068b128e51ac6e36",
+  "parity_v4_sha256": "d8bd169864830b5783b19c6a6aa0295af1288ce598bf1cfbcfe5443e50009034",
+  "worker_sha256": "a28e6415c437e0646908ffb70102cfae7bcfbe46b913750cc91a5535ba2713bc",
+  "prior_attempts": [
+    {"path": "data/private/chess-queen-v1/parity-authored-v2-1.json", "sha256": "49c59e9b7652ceb71ceb2e9337f0da30d7dee0fc65027be516852650aa9f26be"},
+    {"path": "data/private/chess-queen-v1/parity-authored-v2-2.json", "sha256": "a9d0ba7acceace068efa7039e92c3fbaf76a3d41ddfce0e1025ea5257e50b3db"},
+    {"path": "data/private/chess-queen-v1/parity-authored-v3-1.json", "sha256": "523e932c3e48308e524d1c76fdf5c022c7c3450bfca53554b47ea8533fea7b50"}
+  ],
+  "observed_postforward": {
+    "encoder_shape": [1, 16, 64, 1024],
+    "hook_max_absolute_error": 0.0,
+    "hook_cosine_similarity": 1.0,
+    "hook_top1_equal": true,
+    "commit_headroom_bytes": 5168066560,
+    "physical_available_bytes": 10890092544,
+    "gpu_free_bytes": 6924795904,
+    "commit_growth_from_loaded_model_bytes": 1231974400,
+    "scope": "One authored numerical path comparison, stopped before cache checks; not chess capability."
+  },
+  "prior_running_commit_reserve_bytes": 5368709120,
+  "final_running_commit_floor_bytes": 4294967296,
+  "observed_slack_above_final_floor_bytes": 873099264,
+  "unchanged_start_reserves_gib": {"physical": 6, "commit": 10, "gpu": 10},
+  "unchanged_running_reserves_gib": {"physical": 4, "gpu": 1},
+  "reason": "The observed encoder/manual/native forward footprint remained far above physical/GPU floors but crossed the commit reserve. Root authorized this final4GiB inference-only floor based on that measured footprint, without an optimizer or large generation in parity.",
+  "validation": {"focused_cpu_tests_passed": 28, "gpu_calls_this_amendment": 0, "pretrained_forwards_this_amendment": 0},
+  "next_receipt": "data/private/chess-queen-v1/parity-authored-v4-1.json",
+  "stop_rule": "A real OOM or more than1GiB further kernel growth requires a memory/quantization fix; no further reserve-floor reduction or blind retries."
+}

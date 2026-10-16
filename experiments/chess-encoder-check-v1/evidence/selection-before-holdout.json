@@ -1,0 +1,50 @@
+{
+  "protocol_sha256": "a72ffa9df05d1622688bfba2b9a749db2dfc157ea618c803e0f7a3800fff567a",
+  "feature_manifest_sha256": "53f03fe222f10f2018c2ddec8092e4053ba510626c3d83f0fcd87400cf741c0f",
+  "selected": {
+    "epoch": 4,
+    "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-4.pt",
+    "sha256": "9db9f9d9789d466a3942c2c02b8c18010f6b60a1d1185bf80e123b13b867b306",
+    "correct": 235,
+    "pairs_correct": 108
+  },
+  "candidates": [
+    {
+      "epoch": 0,
+      "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-0.pt",
+      "sha256": "f8f51b69dc2a3f7882bd20a3f1cd763cd200dbc28d49f51e8a1325a9ff992fd2",
+      "correct": 113,
+      "pairs_correct": 6
+    },
+    {
+      "epoch": 1,
+      "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-1.pt",
+      "sha256": "b0a7ed3f0a1aa22687fb6bf9628ba6ab667cc0319b3b6d3944036037b22f7e7d",
+      "correct": 228,
+      "pairs_correct": 101
+    },
+    {
+      "epoch": 2,
+      "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-2.pt",
+      "sha256": "aabf4e758db48cc11c24d34b30bffdbd038b73dd4292689ece3b5cd94d1291a8",
+      "correct": 232,
+      "pairs_correct": 104
+    },
+    {
+      "epoch": 4,
+      "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-4.pt",
+      "sha256": "9db9f9d9789d466a3942c2c02b8c18010f6b60a1d1185bf80e123b13b867b306",
+      "correct": 235,
+      "pairs_correct": 108
+    },
+    {
+      "epoch": 8,
+      "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-8.pt",
+      "sha256": "2167c6f91ca406e80dd04cf65c40aa0da711a4e97505ddddcb70f596a2f35025",
+      "correct": 230,
+      "pairs_correct": 104
+    }
+  ],
+  "actual_updates": 512,
+  "heldout_learned_calls_before_selection": 0
+}

@@ -1,0 +1,10 @@
+{
+  "status": "exact_function_ast_equivalence",
+  "comparison": "Full function including signature, docstring and body; location attributes excluded",
+  "adapter_path": "scripts\\chess_queen_adapter.py",
+  "adapter_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+  "helper_path": "scripts\\chess_queen_materialize.py",
+  "helper_sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac",
+  "function_ast_sha256": "5de91741283a0c7771c36445e41c7e528f3309c3762d1e8a2b0a405b8f200c4a",
+  "model_calls": 0
+}

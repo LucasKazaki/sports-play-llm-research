@@ -434,3 +434,7 @@ Job e943df82-a2d7-40fd-9162-551a5fe8bc03 passed 11 focused validator tests after
 ## D-045 — Bind the evidence-only CLI to the abstention contract
 
 Job 295fcd04-06d1-4c6e-a3e3-021c45b75b02 reproduced the real CLI payload defect: its successful abstention output failed the validator with `abstain_must_be_boolean`. Repair job 1ece129f-123c-4f89-aaa8-e184b5af334f added the explicit boolean abstention flag plus empty concepts and separately attributable empty engine/commentary references; its focused CLI suite passed 3 tests. This makes the absence of a configured generator inspectable. It does not make the displayed board evidence legal replay, make engine candidates executed or explanatory, grant commentary rights, verify chess concepts, or support a human/FIDE-quality claim.
+
+## October 16: preserve flat policies and isolate the learned check result
+
+The move-policy successors remain unpromoted after mixed or flat heldout results. A new frozen-encoder head reaches458/512 versus235/512 for its untrained baseline, supporting only check discrimination. Keep cached Queen inference disabled after numerical failures and require separate NF4 qualification. [Evidence and next actions](chess-overnight-checkpoint-2026-10-16.md).
