@@ -1,0 +1,38 @@
+{
+  "schema": "chess.queen-coach-memory-result.v1",
+  "status": "passed",
+  "actual_receipt": {
+    "path": "data/private/chess-queen-coach-sft-training-v2/memory-qualification-1/qualification.json",
+    "sha256": "a063811d5a0165f31d6016ff263423b9b8584578a2f8d58a145560d562c035cc"
+  },
+  "closed_worker": {
+    "path": "data/private/chess-queen-coach-sft-training-v2/memory-qualification-1-worker.json",
+    "sha256": "6e2145868ec8a3c09711a42bd63f7af3d5ac1cca30033e4f7118bfdaf9e0db55"
+  },
+  "updates_completed": 32,
+  "presentations_completed": 256,
+  "stress_generated_tokens": 1024,
+  "stress_finish": "Expected token-limit partial, not a quality failure",
+  "checks": {
+    "updates_complete": true,
+    "presentations_complete": true,
+    "full_prefix_exercised": true,
+    "no_unknown_or_missing": true,
+    "all_optimizer_calls_complete": true,
+    "frozen_storage_identical": true,
+    "adapter_changed": true,
+    "two_cleanups_preserve_live_tensors": true,
+    "all_guards_passed": true,
+    "process_tail_plateau": true,
+    "cuda_allocated_tail_plateau": true,
+    "cuda_reserved_tail_plateau": true
+  },
+  "last8_update_spans": {
+    "process_private_usage_bytes": 5959680,
+    "cuda_allocated_bytes": 0,
+    "cuda_reserved_bytes": 0
+  },
+  "minimum_global_commit_headroom_bytes": 8253722624,
+  "preservation_checks": 2,
+  "limitations": "Software memory qualification only; discarded32-update adapter. Same4GiBcommit/physical stopfloors.32updates does not establish256-update stability or chess capability. The owned tutor was restarted with its optional CPU classifier disabled; retain this operational condition."
+}

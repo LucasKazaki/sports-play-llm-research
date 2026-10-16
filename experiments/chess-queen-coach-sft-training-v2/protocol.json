@@ -1,0 +1,206 @@
+{
+  "schema": "chess.queen-coach-sft-training-protocol.v2",
+  "frozen_at": "2026-10-16T08:46:21.860803+00:00",
+  "implementation_sha256": "bc56efd3f2fe839859e1a0411bb11608a8e57f283c4f2f0add1b5ba4fb234c63",
+  "kind": "Learned local decoder LoRA on real game-disjoint CC0 tactical roots. No general coaching/Elo claim.",
+  "successful_diagnostic": {
+    "path": "data/private/chess-queen-qlora-v1/diagnostic-2.json",
+    "sha256": "99616936dc5caae3bf2424932b174f91cc7616c40a3e3f50013f0fb20b3fa979"
+  },
+  "diagnostic_protocol": {
+    "path": "experiments/chess-queen-qlora-v1/diagnostic-protocol-v2.json",
+    "sha256": "32568dfddf9ee999b64294d8d260dfe6b68b188c445702c69104599c124a2a7f"
+  },
+  "kernel_protocol": {
+    "path": "experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+    "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+  },
+  "kernel_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/kernel-2.json",
+    "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+  },
+  "corpus_manifest": {
+    "path": "data/private/chess-queen-coach-sft-v1/manifest.json",
+    "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077"
+  },
+  "cpu_preflight": {
+    "path": "data/private/chess-queen-coach-sft-v1/tokenizer-preflight.json",
+    "sha256": "3e078fc3e3ff28570b201f9129ad6b2da1b5289ecfb3cc031105239504aba4b7"
+  },
+  "data": {
+    "train": {
+      "path": "data/private/chess-queen-coach-sft-v1/train.jsonl",
+      "sha256": "fbdbe243c52089e3a3c098a6cd7d4e64980a6b1c5740f9c9dd6d98c8b457b177"
+    },
+    "development": {
+      "path": "data/private/chess-queen-coach-sft-v1/development.jsonl",
+      "sha256": "fdd8f41880ada0efbaafa211f25f3a2ec8cf06090399614135d94f93c5737a49"
+    },
+    "development_references": {
+      "path": "data/private/chess-queen-coach-sft-v1/development-references.jsonl",
+      "sha256": "f9cab2f6426215ffcd1abf50be37151f116baa008f7568ba851836874d226687"
+    },
+    "heldout_inputs": {
+      "path": "data/private/chess-queen-coach-sft-v1/heldout-inputs.jsonl",
+      "sha256": "ac19c249b5f168290482ba8102cec93712856816a840584892555097a43a0f25"
+    },
+    "heldout_references": {
+      "path": "data/private/chess-queen-coach-sft-v1/heldout-references.jsonl",
+      "sha256": "404f782d4eaac07dba285b49c23d057b537badc2d40cc66478a5d0c433870dca"
+    }
+  },
+  "development_raw_groups": [
+    "PzsCDbPb",
+    "qkaykA26",
+    "1LOlKaIv",
+    "FrE6YlJF"
+  ],
+  "training": {
+    "seed": 4082083,
+    "updates": 256,
+    "batch_size": 1,
+    "gradient_accumulation": 8,
+    "presentations": 2048,
+    "learning_rate": 0.0001,
+    "warmup_updates": 16,
+    "scheduler": "linearwarmup,cosine to10percentLR",
+    "optimizer": "AdamW betas0.9/0.999 eps1e-8 decay0.01 foreachFalse, adapterFP32only",
+    "gradient_clip_norm": 1.0,
+    "max_total_tokens": 512,
+    "checkpoints": [
+      0,
+      64,
+      128,
+      256
+    ],
+    "objective": "Full128333-vocabulary shiftedCE, completeassistant/EOSonly; meanexampleloss/8 peraccumulation.",
+    "order": "One seededPythonRandom permutation of all2048 TRAINrecords, one epoch; neverdrop/replacerecords.",
+    "frozen": "ActualbaseNF4/encoder/bridges/BF16tiedvocabulary, exactstoragehash before/after includingnestedquantstates."
+  },
+  "generation": {
+    "max_new_tokens": 1024,
+    "maximum_seconds": 180,
+    "temperature": 0,
+    "seed": 20260823,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "selection_method": "Prefer8/8strictacceptedlegalBEST; thenFREE3plyrootteacherprefixagreement; thenFREEBESTteacheragreement; thenlowestfull64recordresponse-tokenNLL; earliestcheckpointincl0. Ifnone8/8,mostacceptedlegalfirst. Requireall64NLL/8rawrequests complete; semanticpartialraw remainscounted, failuresnotrescued.",
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "phase_maximum_seconds": {
+    "training": 10800,
+    "heldout": 5400
+  },
+  "resources": "ExactlyreviewedNF4start6GiBphysical/10GiBcommit/10GiBGPU,stop4GiBphysical/4GiBcommit/1GiBGPU. Rootexclusivelease/ownedWindowsjob,cooperativeguardsandhardworker/cutoff. Noreservechange/offload/packageupgrade.",
+  "failure_policy": "Firstbackend/resource/cancel/phase/globalcutoff stopsallfurthercalls. Prewriteallfuturedevelopment/heldoutrows;fsyncmicro/optimizer/NLLintents; retainunknowninflightandnotrunremaining. Nosilentaccumulationresume or repeatedattempt.",
+  "heldout": "Aftercompletedsaveddevselection, freshlyloadbothbaselinecheckpoint0andselectedactualadapters; both32pendinginputrowswrittenbeforemodel/resource setup. Noheldtarget/referencecontentopensuntilall64rawresponsesretained. Reportmatched16games/2modeswithfullfailures.",
+  "metrics": "RawBESTlegality/strictdescription/teacheragreement andindependentCRITICAL_LINE1/2/3prefixagreement, nativebest/lineconsistency, EOS/partial separately. Recognizedadjacentcheck/captureclaims have separatetruth/completenesscounts; unknownotherproseremainsunaudited. Selected-givenrootcopyisnotunpromptedprediction.",
+  "claims": "Teacheragreementisnotchesscorrectness/Elo. Fixed3plyeligibletyped16gamepanelandLichesspuzzlesdonotestablishgeneralquiet/positionalcoaching. Concisetemplatefacttargets are supervisedtraining, notproofopenendedexplanationquality. Preserveoriginalpublisher/NF4baselineandallfailures.",
+  "dependencies": [
+    {
+      "path": "scripts/chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_eval_v1.py",
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "scripts/chess_queen_qlora_v2.py",
+      "sha256": "958089517018cbbf2b22fcb878f2ba054419b41b5a9053fd0003b81c526f0bd9"
+    },
+    {
+      "path": "scripts/chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "path": "scripts/chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "scripts/chess_queen_materialize.py",
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "d5fce78a9fc7ed58db393e44338c0d943687520ef0226635504b9862c328c99d"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_sft_train_v2.py",
+      "sha256": "9f62af5af7443282f3b0ae00dacd79fa4de5c84e5545642498f265cdd3fabd4b"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_sft_eval_v1.py",
+      "sha256": "f82164310cbb5ae09c2dc00ad4e4c6682cc259d7087a8c93efc86a98be520fba"
+    },
+    {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "path": "data/private/chess-queen-qlora-v1/diagnostic-worker-2.json",
+      "sha256": "42a5548365287e495471477666c0fc880dd02b079007fdcff66b89a7db413bd7"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/cpu_preflight.py",
+      "sha256": "e65c97bd7df80135933ddc4fd61c8dda9b0e3cda1fd060728a0c13ac8f9b86e8"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/train-references.jsonl",
+      "sha256": "de6f03d50eb0765901f9e4980f43dd928e114b48c5ce7e631885717ad51455e7"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/manifest.json",
+      "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/tokenizer-preflight.json",
+      "sha256": "3e078fc3e3ff28570b201f9129ad6b2da1b5289ecfb3cc031105239504aba4b7"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_train_v1.py",
+      "sha256": "0a99081ba35de8b45d386ce8c81466c3cdf4cf08997933e44ce7cd4737128d4e"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_runtime_v1.py",
+      "sha256": "de97771900ca67803c6138415627aeea42c5236982575d57c91153d7896abb7e"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1/failure.json",
+      "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1/training-calls.jsonl",
+      "sha256": "d1368094576d1302c5ef86c8e23c56cb0609e1b8c2d63ee20391c96aabf6681b"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1-worker.json",
+      "sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31"
+    }
+  ],
+  "prior_protocol": {
+    "path": "experiments/chess-queen-coach-sft-training-v1/protocol.json",
+    "sha256": "5a1013b8e8baf44c0abd0e3ade6eb012777e75b7bbdb38da2487f3d79056a0e2"
+  },
+  "successful_memory_qualification": {
+    "path": "data/private/chess-queen-coach-sft-training-v2/memory-qualification-1/qualification.json",
+    "sha256": "a063811d5a0165f31d6016ff263423b9b8584578a2f8d58a145560d562c035cc"
+  },
+  "closed_memory_worker": {
+    "path": "data/private/chess-queen-coach-sft-training-v2/memory-qualification-1-worker.json",
+    "sha256": "6e2145868ec8a3c09711a42bd63f7af3d5ac1cca30033e4f7118bfdaf9e0db55"
+  },
+  "memory_protocol": {
+    "path": "experiments/chess-queen-coach-sft-training-v2/memory-protocol.json",
+    "sha256": "418e4b13fed39d821b30ebc7b44a4b1ccc1da4661eb4e5b202688d975ec2fc69"
+  },
+  "memory_implementation": {
+    "path": "experiments/chess-queen-coach-sft-training-v2/memory_qualification_v1.py",
+    "sha256": "8da53d0f3efa64659324c23a284bdfaa9d919542269ea17a4327a0d1a13402c1"
+  },
+  "restart": "Fresh publisher/NF4 base and exactoriginalseededzero-BLoRA/freshAdamW; no resume of failed20confirmedupdates/160confirmedpresentations+oneunknownmicro or discarded32qualificationupdates.",
+  "memory_lifetime": "After each returned generation/NLL/loss-backward call has been retained, synchronize/gc.collect/empty_cache/synchronize withactualprocessPrivateUsage/CUDAallocated-reserved journal; after optimizer+zero_grad likewise. No objective/weight/gradient/mask/numerical-kernel change. Loss AST identical tooriginal.",
+  "operational_condition": "Root retired only the owned idle model worker and restarted UI server with no model loaded before this condition; preserve original global memory failure. No unrelated process/OS/resourcefloor change.",
+  "repeated_train_development": "Explicitly reuse sameTRAIN/dev after failed attempt and software qualification. Original8rawdev outcomes and qualification1spentdev outcome remain visible; samefixedselector, no held calls or references opened.",
+  "monitoring": "Full256 stability is not established by32update software qualification; retain unchangedcooperativefloors andstopfirstfailure throughout. No automatic UIpromotion."
+}

@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T08:38:11.142856+00:00",
+  "script": "experiments\\chess-queen-coach-sft-training-v2\\memory_qualification_v1.py",
+  "arguments_sha256": "e79ede1056fd5f87ac75785c39457e833ba37dd4cc3b299a39cb1b82777d7219",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "completed",
+  "child_pid": 12024,
+  "exit_code": 0,
+  "log": "data\\private\\chess-queen-coach-sft-training-v2\\memory-qualification-1-worker.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 311.5320000000065
+}

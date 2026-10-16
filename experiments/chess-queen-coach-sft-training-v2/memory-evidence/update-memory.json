@@ -1,0 +1,418 @@
+[
+  {
+    "at": "2026-10-16T08:40:42.896841+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7590158336,
+      "working_set_bytes": 2276917248,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:40:47.629490+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7594811392,
+      "working_set_bytes": 2281365504,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:40:54.043883+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7595491328,
+      "working_set_bytes": 2282106880,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:40:58.700578+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7595491328,
+      "working_set_bytes": 2282344448,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:05.047790+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7595610112,
+      "working_set_bytes": 2282582016,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:09.722107+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7595610112,
+      "working_set_bytes": 2282729472,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:14.376882+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7596023808,
+      "working_set_bytes": 2283151360,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:19.114376+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7597342720,
+      "working_set_bytes": 2283524096,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:23.776160+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7595241472,
+      "working_set_bytes": 2283622400,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:28.433934+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7595376640,
+      "working_set_bytes": 2283884544,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:33.128490+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7593242624,
+      "working_set_bytes": 2283999232,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:37.763728+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7593242624,
+      "working_set_bytes": 2284142592,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:42.741153+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7593242624,
+      "working_set_bytes": 2284236800,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:47.726882+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7591141376,
+      "working_set_bytes": 2284351488,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:52.466785+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7591174144,
+      "working_set_bytes": 2284511232,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:41:57.319259+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7591174144,
+      "working_set_bytes": 2284609536,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:02.120978+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7589068800,
+      "working_set_bytes": 2284728320,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:07.196548+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7589068800,
+      "working_set_bytes": 2284904448,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:12.742550+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7590166528,
+      "working_set_bytes": 2284789760,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:17.667526+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7588130816,
+      "working_set_bytes": 2284949504,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:22.537997+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7586164736,
+      "working_set_bytes": 2285215744,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:27.740123+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7584063488,
+      "working_set_bytes": 2285379584,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:32.467410+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7584337920,
+      "working_set_bytes": 2285666304,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:37.923378+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7584337920,
+      "working_set_bytes": 2285854720,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:42.788215+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7584473088,
+      "working_set_bytes": 2286157824,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:47.478269+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7584473088,
+      "working_set_bytes": 2286411776,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:52.376647+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7582781440,
+      "working_set_bytes": 2286710784,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:42:57.491878+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7580815360,
+      "working_set_bytes": 2287005696,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:43:02.169676+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7582273536,
+      "working_set_bytes": 2287415296,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:43:06.872544+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7580581888,
+      "working_set_bytes": 2287865856,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:43:11.896944+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7580614656,
+      "working_set_bytes": 2288103424,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  },
+  {
+    "at": "2026-10-16T08:43:18.632244+00:00",
+    "process": {
+      "available": true,
+      "private_usage_bytes": 7578513408,
+      "working_set_bytes": 2288328704,
+      "peak_working_set_bytes": 2755846144
+    },
+    "cuda_allocated_bytes": 3445597696,
+    "cuda_reserved_bytes": 3464495104,
+    "cuda_peak_allocated_bytes": 3673571840,
+    "cuda_peak_reserved_bytes": 5649727488
+  }
+]
