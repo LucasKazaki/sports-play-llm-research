@@ -1,0 +1,339 @@
+{
+  "schema": "chess.independent-cold-qualification-attempt1-failure-review.v1",
+  "status": "passed_closed_failure_accounting_not_qualified",
+  "reviewed_at": "2026-10-16T10:51:37.990208+00:00",
+  "scope": "Closed software qualification metadata/source/resource/lineage audit only. Raw JSON parsed solely for explicit metadata checks; no decoded/raw prose, accepted moves, accuracy, explanations or held references assessed.",
+  "denominators": {
+    "planned_software_requests": 2,
+    "outer_panel_failed": 1,
+    "not_run": 1,
+    "actual_generation_calls": 1,
+    "actual_child_EOS": 1,
+    "actual_child_passed_storage_and_resource": 1,
+    "outer_completed_children_counter": 0,
+    "unknown": 0
+  },
+  "failure": {
+    "outer_error": "RuntimeError: Cold child/process/postprocessing failed",
+    "all_postprocessing_predicates": {
+      "process_exit_zero": true,
+      "spawned_process_closed": true,
+      "child_passed": true,
+      "frozen_storage_identical": true,
+      "in_ancestor_job": true,
+      "raw_exists": true,
+      "case_identity": true,
+      "adapter_identity": true,
+      "receipt_pid_equals_spawned_pid": false,
+      "receipt_parent_equals_outer": false,
+      "protocol_hash": true,
+      "input_hash": true,
+      "child_source_hash": true,
+      "raw_hash": true
+    },
+    "observed_topology": {
+      "outer_pid": 36740,
+      "Popen_pid": 32424,
+      "Popen_parent_pid": 36740,
+      "receipt_pid": 37440,
+      "receipt_parent_pid": 32424
+    },
+    "interpretation": "The observed chain is outer36740 -> Popen32424 -> delegate37440. The frozen source required a direct child identity and therefore rejected the retained successful child. Windows virtualenv redirector is the parent/operator hypothesis, requiring the proposed actual CPU topology probe before a new source accepts it.",
+    "no_resource_backend_or_timeout_failure_in_actual_child": true
+  },
+  "positive_raw_metadata": {
+    "status": "completed",
+    "finish_reason": "eos",
+    "generated_token_count": 88,
+    "source_runtime_native_NF4_kernel_publisher_inventory_and_settings_match": true,
+    "raw_sha256": "87040eea8a3885639b4b6b4e3925304b31ada982dfb7e4a50544274e7a2d8733",
+    "trained_step": 64,
+    "child_load_seconds": 20.484000000025844,
+    "child_generation_seconds": 9.234000000025844,
+    "child_elapsed_seconds": 33.32799999997951,
+    "spawned_process_elapsed_seconds": 34.546999999991385
+  },
+  "storage": {
+    "before": {
+      "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+      "tensor_count": 2268,
+      "bytes_hashed": 3393484936
+    },
+    "after": {
+      "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+      "tensor_count": 2268,
+      "bytes_hashed": 3393484936
+    },
+    "identical": true
+  },
+  "resources": {
+    "samples": 19,
+    "all_start_running_floors_passed": true,
+    "cleanup_events": 4,
+    "outer_postexit_commit_samples": 0,
+    "postexit1GiB_growth_criterion": "Not reached: outer topology rejection occurred before its post-child sample. Not passed or inferred."
+  },
+  "closure": {
+    "worker": {
+      "schema": "chess.gpu-worker.v1",
+      "started_at": "2026-10-16T10:46:23.927471+00:00",
+      "script": "scripts\\chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "arguments_sha256": "68720c176e590f57beaf347dcf31a659620c8d402c0ac5d3bd59950d07c76080",
+      "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+      "status": "failed",
+      "child_pid": 23080,
+      "exit_code": 1,
+      "log": "data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1-worker.log",
+      "child_exited_before_lease_release": true,
+      "elapsed_seconds": 34.969000000011874
+    },
+    "spawned_process_closed": {
+      "pid": 32424,
+      "exit_code": 0,
+      "child_exited_before_next_request": true,
+      "elapsed_seconds": 34.546999999991385,
+      "cancelled": false
+    },
+    "delegate_OS_exit_independently_observed_by_this_auditor": false,
+    "root_worker_reports_child_exit_before_lease_release": true
+  },
+  "limits": [
+    "One retained EOS software output is spent, even though the outer status is failed. It supplies no accuracy or teaching-quality result.",
+    "The second planned software request was not called. This attempt does not meet the two-request software qualification or postexit memory threshold.",
+    "Actual venv redirector topology needs a separately reviewed bounded CPU probe/design and new immutable source/protocol/attempt decision. No automatic retry or source mutation is authorized by this audit.",
+    "No new training or fresh held dispatch is admitted by this failure accounting. Original sources/protocol/receipts must remain preserved."
+  ],
+  "worker_receipt": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1-worker.json",
+    "bytes": 656,
+    "sha256": "f2e0d5eb391f0a663a4497f64a431bc54031dc7c55f6e8139a84b2d3156181e8"
+  },
+  "protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-qualification-protocol-v3.json",
+    "bytes": 11245,
+    "sha256": "e11c7c843adee222c2b289b29f486911bded0d9fbbaaf0dee355bec35c89e9e2"
+  },
+  "sealed_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\calls.jsonl",
+      "bytes": 1071,
+      "sha256": "facfd0dd45a1dfe97f6152bb7749ed8be356529730fc975eb6d63f09d1691365"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\closed.json",
+      "bytes": 361,
+      "sha256": "e729ed156719bcd4ea90865358216994863c0a517af7a750fc8ffcdcb372fcc7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\00-chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "bytes": 15437,
+      "sha256": "6fe1ddd1e3df037a87bc91b79872ddff514235e4cfd0d788928fb91fddbcc3e9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\01-cold-qualification-protocol-v3.json",
+      "bytes": 11245,
+      "sha256": "e11c7c843adee222c2b289b29f486911bded0d9fbbaaf0dee355bec35c89e9e2"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\02-chess_queen_coach_sft_runtime_v2.py",
+      "bytes": 12874,
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\03-chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\04-chess_queen_qlora_v2.py",
+      "bytes": 18463,
+      "sha256": "958089517018cbbf2b22fcb878f2ba054419b41b5a9053fd0003b81c526f0bd9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\05-chess_queen_nf4_adapter_v2.py",
+      "bytes": 21493,
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\06-chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\07-chess_queen_materialize.py",
+      "bytes": 1273,
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\08-test_chess_queen_coach_sft_runtime_v2.py",
+      "bytes": 4321,
+      "sha256": "d5fce78a9fc7ed58db393e44338c0d943687520ef0226635504b9862c328c99d"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\09-test_chess_queen_coach_sft_train_v2.py",
+      "bytes": 9773,
+      "sha256": "9f62af5af7443282f3b0ae00dacd79fa4de5c84e5545642498f265cdd3fabd4b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\10-test_chess_queen_coach_sft_eval_v1.py",
+      "bytes": 5096,
+      "sha256": "f82164310cbb5ae09c2dc00ad4e4c6682cc259d7087a8c93efc86a98be520fba"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\11-gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\12-diagnostic-worker-2.json",
+      "bytes": 602,
+      "sha256": "42a5548365287e495471477666c0fc880dd02b079007fdcff66b89a7db413bd7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\13-cpu_preflight.py",
+      "bytes": 3729,
+      "sha256": "e65c97bd7df80135933ddc4fd61c8dda9b0e3cda1fd060728a0c13ac8f9b86e8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\14-train-references.jsonl",
+      "bytes": 3164018,
+      "sha256": "de6f03d50eb0765901f9e4980f43dd928e114b48c5ce7e631885717ad51455e7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\15-manifest.json",
+      "bytes": 2190,
+      "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\16-tokenizer-preflight.json",
+      "bytes": 1453,
+      "sha256": "3e078fc3e3ff28570b201f9129ad6b2da1b5289ecfb3cc031105239504aba4b7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\17-chess_queen_coach_sft_train_v1.py",
+      "bytes": 18408,
+      "sha256": "0a99081ba35de8b45d386ce8c81466c3cdf4cf08997933e44ce7cd4737128d4e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\18-chess_queen_coach_sft_runtime_v1.py",
+      "bytes": 9396,
+      "sha256": "de97771900ca67803c6138415627aeea42c5236982575d57c91153d7896abb7e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\19-failure.json",
+      "bytes": 13847,
+      "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\20-training-calls.jsonl",
+      "bytes": 38765,
+      "sha256": "d1368094576d1302c5ef86c8e23c56cb0609e1b8c2d63ee20391c96aabf6681b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\21-train-1-worker.json",
+      "bytes": 617,
+      "sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\22-chess_queen_coach_counterfactual_runtime_v1.py",
+      "bytes": 2287,
+      "sha256": "29f148855279fe0243bb4fbedac12057ab9d43cd6fe1c12a904606d4ca8f460b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\23-chess_queen_coach_counterfactual_cold_child_v1.py",
+      "bytes": 5225,
+      "sha256": "e901e78c468754e952c4b1c7f9d3dbf2a165c66d29f86cb46ea53b235a15544b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\24-chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "bytes": 15437,
+      "sha256": "6fe1ddd1e3df037a87bc91b79872ddff514235e4cfd0d788928fb91fddbcc3e9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\25-test_chess_queen_coach_counterfactual_cold_child_v1.py",
+      "bytes": 2905,
+      "sha256": "0cd151d10b398a6c14e142d14d310c5d645014cd786adcaa75577fd6c13b2ab1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\26-test_chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "bytes": 13205,
+      "sha256": "6a4a195e8aaf87631d318ad700a501ad3ddb5775e42f857748541acb5d57c10c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\27-prepare_cold_qualification_protocol_v3.py",
+      "bytes": 6919,
+      "sha256": "c713d408c74db80a900c6cdd4af7731d6e8258d7b759a181800acd079dfdecca"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\executed-sources\\manifest.json",
+      "bytes": 8160,
+      "sha256": "d8219ca906d9dda6df30b407bc662dcecc6f9b606b519d9a715190298a2310eb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\resources.json",
+      "bytes": 344,
+      "sha256": "7f22bb677ba3751eadd64bb2ed9afe1c7e29ad9dade5e52bfbca3b201a073c62"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\child\\closed.json",
+      "bytes": 2119,
+      "sha256": "e84382a4fb9c83f2f92308607e721aac757b157facde779a9955dc30e4227155"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\child\\memory-lifetime.jsonl",
+      "bytes": 2434,
+      "sha256": "7893d46217141368a830b31e29287e14a5cc5ecf247ebf7ccaa72e44571e4ce8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\child\\raw.json",
+      "bytes": 20287,
+      "sha256": "87040eea8a3885639b4b6b4e3925304b31ada982dfb7e4a50544274e7a2d8733"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\child\\request.resources.jsonl",
+      "bytes": 4852,
+      "sha256": "9a5b2e7b536933e9650b82cb23105d3422aa70b6c5af8527febbddc2da585e4c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\child\\resources.json",
+      "bytes": 5674,
+      "sha256": "10e75a02d3be8dde35286abf961da3df840b39d1928d043a2272a61e52fd2ef0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\process-closed.json",
+      "bytes": 151,
+      "sha256": "39da40976e694f46aef8f11c3c4477d4ade17ec1401cf2ffbb80c4b64d0ebc01"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\process.json",
+      "bytes": 1242,
+      "sha256": "072fe4e999fd71ee7d3ebd9579a364bfb6f9764410ba00a6d70f16d1de9d2c12"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\process.log",
+      "bytes": 2228,
+      "sha256": "bba0dfc781fea2dc62c5af14681bf93abb4bf64accda9055593d3d036391ee18"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software-000\\request.json",
+      "bytes": 820,
+      "sha256": "b18333fb00a0628ad08322beed925ee0a1949a42a6dbf04e4065b264c50cb6ab"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\software.json",
+      "bytes": 1863,
+      "sha256": "3e364b8d8a2d70b3df4e4fcabc3baa83f225fbbe2f609820fe7e4536e4235641"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1-worker.json",
+      "bytes": 656,
+      "sha256": "f2e0d5eb391f0a663a4497f64a431bc54031dc7c55f6e8139a84b2d3156181e8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1-worker.log",
+      "bytes": 1530,
+      "sha256": "ab2e2e2cb8b893f87beb2070e63fd12534baec6f4f09df92eabb7399ded25e32"
+    }
+  ],
+  "followUpTasks": []
+}

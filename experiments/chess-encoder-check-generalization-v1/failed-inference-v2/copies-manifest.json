@@ -1,0 +1,72 @@
+{
+  "schema": "chess.metadata-only-public-evidence-copies.v1",
+  "scope": "Closed failed evaluation accounting only; no case inputs, references, logits, or numerical tensor storage.",
+  "exact_copies": [
+    {
+      "file": "independent-failure-review.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\encoder-generalization-v2-failure-closed-review.json",
+      "bytes": 24419,
+      "sha256": "9bed6c3d5b2791a631f592865ff17933bf656ff119e0852edea77ed9434832be",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "independent-failure-review.md",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\encoder-generalization-v2-failure-closed-review.md",
+      "bytes": 2883,
+      "sha256": "a5f74dd6d956eba32130ed9ca2868af0086a9e0ba7b63e8b86e49dc8c4de5063",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "worker.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1-worker.json",
+      "bytes": 643,
+      "sha256": "a3fb354622f25ca61dbb59a242efb5ae486deca80826f3209b843afd66eea413",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "failure.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\failure.json",
+      "bytes": 276,
+      "sha256": "011076f74b061ec598b9bdc53af5fd6951faf0ac38f1119e6956381b48c427c8",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "resources.jsonl",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\resources.jsonl",
+      "bytes": 766,
+      "sha256": "f985d1690562e09de6addb90c15ee50c2f0a20ee7cd0b9c0e31fc2af9efad8f6",
+      "copy": "exact_bytes"
+    }
+  ],
+  "new_metadata_files": [
+    {
+      "file": "README.md",
+      "bytes": 2158,
+      "sha256": "64cb992421c41bd9b8a8fb1ba1a66aedd1f18035b05454883e11d1f664e315a3",
+      "copy": "new_metadata_summary_or_projection"
+    },
+    {
+      "file": "root-operational-context-addendum.json",
+      "bytes": 1150,
+      "sha256": "ceee07e2307066ffc93b0c649ec1ea6f65abe2f65ce41c6420ca514ebb635fdb",
+      "copy": "new_metadata_summary_or_projection"
+    },
+    {
+      "file": "source-snapshot-index.json",
+      "bytes": 6271,
+      "sha256": "50d728a3d3d76aa9d3de34991ab43893593cdda66daf3079cf3efe07e65cc830",
+      "copy": "new_metadata_summary_or_projection"
+    }
+  ],
+  "manifest_self_hash": "Not embedded to avoid a circular hash; final package verification receipt binds this manifest.",
+  "no_actual_calls_during_packaging": true,
+  "private_payloads_not_copied": [
+    "individual case records",
+    "positions",
+    "game IDs",
+    "input/reference contents",
+    "raw generated prose or tokens",
+    "numerical features/model tensors"
+  ],
+  "existing_files_unchanged": true
+}

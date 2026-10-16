@@ -1,0 +1,75 @@
+{
+  "schema": "chess.metadata-only-cold-qualification-failure-copies.v1",
+  "scope": "Two closed failed software qualifications; exact metadata only, no payloads or quality claim.",
+  "exact_copies": [
+    {
+      "file": "attempt-1-independent-review.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-cold-qualification-attempt1-failure-review.json",
+      "bytes": 21271,
+      "sha256": "18c7f7b6679a707415d31e47623d3b5e31d1506725862ffc8fe28bd0349d5102",
+      "copy": "exact_original_bytes"
+    },
+    {
+      "file": "attempt-2-main-result.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-qualification-attempt2-failure-main-result.json",
+      "bytes": 16013,
+      "sha256": "cb0accb41e876cf1763185c3f201e021bc39b01bc4b29732fdfe9df177f9630d",
+      "copy": "exact_original_bytes"
+    },
+    {
+      "file": "attempt-2-root-owner-closed.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\cold-sft-qualification-attempt2-root-closed.json",
+      "bytes": 1295,
+      "sha256": "d885d41d6d6415b89fcebb6f29472a719d2aa5ad8b287c2629c992d85d044b3b",
+      "copy": "exact_original_bytes"
+    },
+    {
+      "file": "attempt-1-worker.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1-worker.json",
+      "bytes": 656,
+      "sha256": "f2e0d5eb391f0a663a4497f64a431bc54031dc7c55f6e8139a84b2d3156181e8",
+      "copy": "exact_original_bytes"
+    },
+    {
+      "file": "attempt-1-closed.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-1\\closed.json",
+      "bytes": 361,
+      "sha256": "e729ed156719bcd4ea90865358216994863c0a517af7a750fc8ffcdcb372fcc7",
+      "copy": "exact_original_bytes"
+    },
+    {
+      "file": "attempt-2-worker.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-2-worker.json",
+      "bytes": 746,
+      "sha256": "d4307b83bbb2ea3886f3d85626de3d7bdd29ffe66828d8b3d6387ec49ad5fe22",
+      "copy": "exact_original_bytes"
+    },
+    {
+      "file": "attempt-2-closed.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-2\\closed.json",
+      "bytes": 596,
+      "sha256": "4757648fe1b7e157f8aef9229f78ef841dd9e822ff4708956d7317aed19f4c33",
+      "copy": "exact_original_bytes"
+    }
+  ],
+  "new_metadata_files": [
+    {
+      "file": "README.md",
+      "bytes": 3388,
+      "sha256": "ef82cb55d5a7009e9d4cb63f177351ff5cbacdb153e4b3595cedd2dc8265f6b2",
+      "kind": "new_claim_summary"
+    }
+  ],
+  "private_payloads_excluded": [
+    "decoded/raw prose",
+    "token-ID arrays",
+    "input positions and input payloads",
+    "reference contents",
+    "numerical tensor storage",
+    "larger private attempt-2 reviews"
+  ],
+  "allowed_metadata": "Spent software-case identifiers, scalar token counts, process/resource observations, and hash/path identities.",
+  "self_hash": "Bound by the separate final verification receipt; not embedded here.",
+  "originals_unchanged": true,
+  "actual_calls_during_packaging": 0
+}

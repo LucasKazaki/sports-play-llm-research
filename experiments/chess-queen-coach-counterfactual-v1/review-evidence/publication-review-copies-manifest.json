@@ -1,0 +1,18 @@
+{
+  "schema": "chess.publication-copy-review-exact-copies.v1",
+  "files": [
+    {
+      "file": "final-metadata-publication-copy-review.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\final-metadata-publication-copy-review.json",
+      "bytes": 8709,
+      "sha256": "283c7a09be4ce3a54f0c93d60b3674b010e445b41a204d58177b29bf86e806e5"
+    },
+    {
+      "file": "final-metadata-publication-latest-three-copy-addendum.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\final-metadata-publication-latest-three-copy-addendum.json",
+      "bytes": 3493,
+      "sha256": "331fcec814b071c3174e20c323a381afe7e53fd50affe7f49a3105bf55f6a99f"
+    }
+  ],
+  "scope": "42evidencecopiesverified; Gitindex-byteverificationseparatelyroot-owned, no new quality or promotion."
+}

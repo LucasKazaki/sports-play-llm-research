@@ -1,0 +1,60 @@
+{
+  "schema": "chess.metadata-only-public-evidence-copies.v1",
+  "scope": "Aggregate closed corpus/software readiness only; no individual cases, game IDs, inputs, references, corpus manifest content, or model tensors.",
+  "exact_copies": [
+    {
+      "file": "independent-corpus-main-result.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-recovery-v2-corpus-main-result.json",
+      "bytes": 7474,
+      "sha256": "5ab5e97f1c325fdb9a612de4827072530c8ef295c277553fdf483c37e20e29fe",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "tokenizer-preflight.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\tokenizer-preflight.json",
+      "bytes": 1520,
+      "sha256": "995397bac354b4b9a1a840e30bcfb73893b9713478dd3ebf4f86d57f611303a3",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "operational-closed.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2-operational-closed.json",
+      "bytes": 1887,
+      "sha256": "4a4e3b8784d936aa2bdab8b51496bf0e04301e3f74041650de2f683ddec4ae03",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "operational-provenance.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\operational-provenance.json",
+      "bytes": 1887,
+      "sha256": "4a4e3b8784d936aa2bdab8b51496bf0e04301e3f74041650de2f683ddec4ae03",
+      "copy": "exact_bytes"
+    },
+    {
+      "file": "root-owner-closed.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\counterfactual-recovery-v2-owner-closed.json",
+      "bytes": 578,
+      "sha256": "05bc2fd7e56aa182267ab609073d80a173388f8f53e10ae458f2ef761da3be55",
+      "copy": "exact_bytes"
+    }
+  ],
+  "new_metadata_files": [
+    {
+      "file": "README.md",
+      "bytes": 2714,
+      "sha256": "7cc359f22eef134cdbdc53204a39c99e5b648a0d2bf0cbdff20fb18a6b575982",
+      "copy": "new_metadata_summary_or_projection"
+    }
+  ],
+  "manifest_self_hash": "Not embedded to avoid a circular hash; final package verification receipt binds this manifest.",
+  "no_actual_calls_during_packaging": true,
+  "private_payloads_not_copied": [
+    "individual case records",
+    "positions",
+    "game IDs",
+    "input/reference contents",
+    "raw generated prose or tokens",
+    "numerical features/model tensors"
+  ],
+  "existing_files_unchanged": true
+}

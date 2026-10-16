@@ -1,0 +1,25 @@
+{
+  "status": "SOURCE_ONLY_EIGHT_CPU_CHECKS_PASSED",
+  "tests": 8,
+  "elapsed_seconds": 0.36,
+  "tool_chunk": "aee818",
+  "model_GPU_calls": 0,
+  "protocol_not_frozen_pending_actual_qualification": true,
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\prepare_protocol.py",
+      "bytes": 6598,
+      "sha256": "532ecdc5050aed4ab6a35a75b4c308e9d06e43525d10909d20b356d02d35d622"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_existing_checkpoint_comparison_v1.py",
+      "bytes": 6442,
+      "sha256": "f63b060d1c92f8473eb2f678d862fb62890c27fa4e2c5ebb95db4d504bc36d89"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan.json",
+      "bytes": 6818,
+      "sha256": "852782e2a7a49d105bec4545be47e936a800edbbfacefb8bdfd81d7da4b793b3"
+    }
+  ]
+}

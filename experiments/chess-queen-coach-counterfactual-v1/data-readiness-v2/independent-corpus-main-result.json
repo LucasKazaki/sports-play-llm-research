@@ -1,0 +1,151 @@
+{
+  "schema": "chess.independent-counterfactual-recovery-closed-corpus-review.v1",
+  "status": "passed",
+  "reviewed_at": "2026-10-16T10:48:46.159486+00:00",
+  "blocking_findings": [],
+  "scope": "Actual closed changed-context CPU intake/3168teachers/export and actual CPU tokenizer receipt; all new construction references permitted by parent. No old held content, learned forward, model/GPU or real engine invoked by reviewer.",
+  "counts": {
+    "train_roots": 512,
+    "development_roots": 32,
+    "reserve_roots": 512,
+    "total_roots": 1056,
+    "teachers_planned": 3168,
+    "teachers_completed": 3168,
+    "failed_unknown_notrun": 0,
+    "train_examples": 1536,
+    "development_examples": 96,
+    "held_inputs": 48,
+    "held_roots": 16,
+    "reserved_games_total": 110152,
+    "reserved_board_keys_total": 260681
+  },
+  "source_audit": {
+    "retained_locations_checked": 1056,
+    "all_first_setup_tokens_before_current_valid_nonterminal": true,
+    "all_seeded_pair_choices_recomputed_in_accepted_source_order": true,
+    "four_role_distinct_board_keys": 4224,
+    "same_origin_pairs": {
+      "True": 1025,
+      "False": 31
+    },
+    "moved_piece_counts_two_candidates_per_root": {
+      "queen": 1054,
+      "knight": 282,
+      "rook": 560,
+      "bishop": 162,
+      "pawn": 54
+    },
+    "scanned_rows": 109990,
+    "first_selected_ordinal": 107820,
+    "last_selected_ordinal": 109989,
+    "all_historical_and_cross_split_games_and_registered_board_paths_disjoint": true
+  },
+  "teacher_audit": {
+    "unique_intents": 3168,
+    "unique_completed_outcomes": 3168,
+    "all_incoming_UCI_lines_checked": 223662,
+    "last_same_score_event_PV_finalbest_and_forced_selected_move_match": true,
+    "all_legal_reference_paths_and_score_bounds_verified": true,
+    "all_cross_split_teacher_paths_disjoint": true,
+    "historical_teacher_tail_overlap_keys": 0,
+    "outgoing_searchmoves_not_directly_logged": "IncomingUCI only; outgoing root_moves/searchmoves follows pinned executed python-chess call/source. No outgoing-wire transcript is claimed."
+  },
+  "exports": {
+    "all_six_files_byte_hashes_and_row_counts_match": true,
+    "all_targets_and_references_recreated_exactly": true,
+    "independent_rule_check_capture_mate_facts_verified": true,
+    "selected_PROMISING_empty_and_forced_not_global_best": true,
+    "inputs_label_free_current_FEN_optional_given_UCI": true,
+    "all512_reservoir_and_paths_reserved": true,
+    "first16_source_order_full3ply_eligible_held_and_first2_devraw_recomputed": true
+  },
+  "operational": {
+    "status": "completed",
+    "elapsed_seconds": 604.3280000000086,
+    "all8_phases_intent_complete": true,
+    "authorization_precedes_dispatch": true,
+    "owned_engine_pid": 636,
+    "owned_engine_parent": 50732,
+    "engine_exit_before_export_and_lease_release_verified": true,
+    "owner_absent_error87_and_lease_free_bound": true,
+    "all_scientific_and_operational_snapshots_exact": true,
+    "scientific_CPU_samples": 473,
+    "minimum_physical_bytes": 10219028480,
+    "minimum_commit_headroom_bytes": 6955147264,
+    "all_reserves_passed": true
+  },
+  "tokenizer": {
+    "receipt": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\tokenizer-preflight.json",
+      "bytes": 1520,
+      "sha256": "995397bac354b4b9a1a840e30bcfb73893b9713478dd3ebf4f86d57f611303a3"
+    },
+    "exact_source_formatter_and_tokenizer_asset_bindings": true,
+    "cuda_initialized": false,
+    "model_weights_loaded": false,
+    "learned_forward_calls": 0,
+    "splits": {
+      "train": {
+        "records": 1536,
+        "groups": 512,
+        "minimum_total_tokens": 139,
+        "maximum_total_tokens": 160,
+        "total_supervised_tokens": 95633,
+        "exact_integer_prefix_mask_eos_no_truncation": true
+      },
+      "development": {
+        "records": 96,
+        "groups": 32,
+        "minimum_total_tokens": 139,
+        "maximum_total_tokens": 159,
+        "total_supervised_tokens": 5954,
+        "exact_integer_prefix_mask_eos_no_truncation": true
+      }
+    },
+    "reviewer_retokenized": false,
+    "actual_source_contract_validated_against_closed_receipt": true
+  },
+  "limits": [
+    "All1056 retained source locations and seeded pair choices were checked. This audit did not rerun selection across every rejected source-prefix row, so first-eligible prefix behavior also depends on the exact reviewed/snapshotted intake source and retained scan/rejection accounting.",
+    "Engine outcomes are node-limited teachers, not human labels or perfect chess. Selected moves are forced candidates and their first ply is supplied, not predicted.",
+    "CPU tokenizer receipt is an exact actual execution observation; this reviewer validated its bindings/counts/context proof without repeating tokenization or initializing CUDA.",
+    "New construction references were opened under explicit audit authorization before new learned calls. No old failed-held reference or raw content was reopened.",
+    "This is corpus/software readiness only. Final exact training protocol and root source/plan GO remain required; no model quality, coaching/Elo or UI activation claim."
+  ],
+  "manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\manifest.json",
+    "bytes": 2167,
+    "sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854"
+  },
+  "scientific_protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\intake-protocol.json",
+    "bytes": 9758,
+    "sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a"
+  },
+  "operational_protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\protocol.json",
+    "bytes": 7353,
+    "sha256": "3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b"
+  },
+  "operational_closed": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2-operational-closed.json",
+    "bytes": 1887,
+    "sha256": "4a4e3b8784d936aa2bdab8b51496bf0e04301e3f74041650de2f683ddec4ae03"
+  },
+  "owner_closure": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\counterfactual-recovery-v2-owner-closed.json",
+    "bytes": 578,
+    "sha256": "05bc2fd7e56aa182267ab609073d80a173388f8f53e10ae458f2ef761da3be55"
+  },
+  "followUpTasks": [],
+  "projection_origin": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-recovery-v2-corpus-closed-review.json",
+    "bytes": 39750,
+    "sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462"
+  },
+  "sealed_index": {
+    "entries": 98,
+    "canonical_json_sha256": "689aeca0500ce1ff7326f8244f3aa637bac91862ba433611406defefdff714fb",
+    "contents": "Complete index remains in original immutable review; no new semantic reads."
+  }
+}

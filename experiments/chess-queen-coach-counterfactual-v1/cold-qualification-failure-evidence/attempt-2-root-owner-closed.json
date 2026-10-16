@@ -1,0 +1,49 @@
+{
+  "schema": "chess.root-owned-closure.v1",
+  "created_utc": "2026-10-16T11:17:43.999083+00:00",
+  "worker": "data/private/chess-queen-coach-counterfactual-cold-qualification-v1/attempt-2-worker.json",
+  "worker_exit_code": 1,
+  "all_prior_owned_PIDs_absent": [
+    {
+      "pid": 42492,
+      "OpenProcess_error": 87,
+      "absent": true
+    },
+    {
+      "pid": 22412,
+      "OpenProcess_error": 87,
+      "absent": true
+    },
+    {
+      "pid": 43148,
+      "OpenProcess_error": 87,
+      "absent": true
+    },
+    {
+      "pid": 49212,
+      "OpenProcess_error": 87,
+      "absent": true
+    },
+    {
+      "pid": 33612,
+      "OpenProcess_error": 87,
+      "absent": true
+    },
+    {
+      "pid": 13496,
+      "OpenProcess_error": 87,
+      "absent": true
+    }
+  ],
+  "shared_lease_free": true,
+  "host_sample": {
+    "physical_total_bytes": 33458073600,
+    "physical_available_bytes": 11175772160,
+    "commit_limit_bytes": 50637942784,
+    "commit_total_bytes": 39187087360,
+    "gpu_total_bytes": 17094934528,
+    "gpu_free_bytes": 14766047232,
+    "utc": "2026-10-16T11:17:44.035095+00:00"
+  },
+  "cause": "Process-image AccessDenied. Transient-exit hypothesis unproven becauseoriginalfailedobservation lackedPID/EXIT context."
+}

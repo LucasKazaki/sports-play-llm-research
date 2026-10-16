@@ -1,0 +1,29 @@
+{
+  "schema": "chess.public-source-audit-copy.v1",
+  "copied_at": "2026-10-16T10:35:20.386506+00:00",
+  "files": [
+    {
+      "path": "recommendation.md",
+      "bytes": 4474,
+      "sha256": "84b82570efdc790a254db9ab2a4e29a7bb20578f1d39522ef8c08f86613397d0"
+    },
+    {
+      "path": "claim-source-ledger.json",
+      "bytes": 7947,
+      "sha256": "da46d250da2d699458b16169cfc144e4429e0c8c607d7822986f392744867a58"
+    },
+    {
+      "path": "official-metadata.json",
+      "bytes": 6473,
+      "sha256": "5ed9b76f16c717914ac5e9c1acbd4fa588b9a39416a73ff2f4a10f9a749c33d8"
+    },
+    {
+      "path": "official-document-receipts.json",
+      "bytes": 3612,
+      "sha256": "2347f4675c83810418b9eea07a0c327b14fa1a03c0eef0a5e6b9c2f6cb5fba3e"
+    }
+  ],
+  "original_manifest_sha256": "b11323e4accbd3477e883075c3d3ddb4fe40fb2baeae038e6ae8b80d7b96453e",
+  "scope": "Exact copies of bounded primary-source research notes and projected observations. Original HTTP responses not retained; response byte hashes/headers are observations, not archival copies. No corpus acquired or model calls.",
+  "independent_review": "No separate full source research review; root read notes/ledger/projections and directly checked official pinned README/paper."
+}

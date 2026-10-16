@@ -1,0 +1,88 @@
+[
+  {
+    "id": "github-readme",
+    "url": "https://raw.githubusercontent.com/CSSLab/chessqa-benchmark/7b656c3316b5266acc596124610fa084f58ee717/README.md",
+    "retrieved_at_utc": "2026-10-16T10:09:55.778045+00:00",
+    "raw_response_retained": false,
+    "scope": "Pinned documentation or source text only; never executed.",
+    "status": 200,
+    "bytes": 7171,
+    "sha256": "47a8b1b587948ad86f7f68273608cd98f0662d1bb8073cd133c2f1d068418aaa",
+    "date": "Fri, 16 Oct 2026 10:09:55 GMT",
+    "etag": "\"418ee428e95fa7896ce197d52304a459e1ee37b8dda0579a4c747d73799c9ce7\"",
+    "observed": {
+      "code_license_scoped": true,
+      "data_retains_source_terms": true,
+      "chessbase_purchase_source": true,
+      "shared_semantic_base": true
+    }
+  },
+  {
+    "id": "github-license",
+    "url": "https://raw.githubusercontent.com/CSSLab/chessqa-benchmark/7b656c3316b5266acc596124610fa084f58ee717/LICENSE",
+    "retrieved_at_utc": "2026-10-16T10:09:55.956642+00:00",
+    "raw_response_retained": false,
+    "scope": "Pinned documentation or source text only; never executed.",
+    "status": 200,
+    "bytes": 1063,
+    "sha256": "8b28faf9bc904f18d031f842460ad445d7a24a03b521258ec9c3d20636fda0d9",
+    "date": "Fri, 16 Oct 2026 10:09:55 GMT",
+    "etag": "\"1b22a1e1759e0562e12d02d16dec23251db9651a31a4149c6737178233400811\"",
+    "observed": {
+      "license_title": "MIT License",
+      "copyright_csslab_2025": true
+    }
+  },
+  {
+    "id": "github-semantic-builder",
+    "url": "https://raw.githubusercontent.com/CSSLab/chessqa-benchmark/7b656c3316b5266acc596124610fa084f58ee717/dataset/05_semantic.py",
+    "retrieved_at_utc": "2026-10-16T10:09:56.130108+00:00",
+    "raw_response_retained": false,
+    "scope": "Pinned documentation or source text only; never executed.",
+    "status": 200,
+    "bytes": 17651,
+    "sha256": "fda36faecb59c7ceb03fb6592fa461c2264d017f1b14c4a059dee1a8c9033d60",
+    "date": "Fri, 16 Oct 2026 10:09:55 GMT",
+    "etag": "\"078e77a1d13db85f8093cb1a772ca8f97da5adcf9b106224cc499e381130d844\"",
+    "observed": {
+      "has_base_example_id": true,
+      "metadata_has_future_fen": true,
+      "metadata_has_answer_text": true,
+      "task_target_is_source_record": true
+    }
+  },
+  {
+    "id": "hf-readme",
+    "url": "https://huggingface.co/datasets/wieeii/ChessQA-Benchmark/resolve/18c5a789c6b358db1191642d31414a8bac540809/README.md",
+    "retrieved_at_utc": "2026-10-16T10:09:56.213640+00:00",
+    "raw_response_retained": false,
+    "scope": "Pinned documentation or source text only; never executed.",
+    "status": 200,
+    "bytes": 7536,
+    "sha256": "a0acd60f7f030f744580613ac13d7e3e3d0cdb7348aad948e7707b5a8270700c",
+    "date": "Thu, 15 Oct 2026 10:58:36 GMT",
+    "etag": "\"c3caea7337f4dc80f5e5b41401009f01857a41f3\"",
+    "observed": {
+      "metadata_license": "mit",
+      "metadata_expert_generated": true,
+      "explicit_source_terms_section": false,
+      "answer_column_documented": true
+    }
+  },
+  {
+    "id": "hf-license",
+    "url": "https://huggingface.co/datasets/wieeii/ChessQA-Benchmark/resolve/18c5a789c6b358db1191642d31414a8bac540809/LICENSE",
+    "retrieved_at_utc": "2026-10-16T10:09:56.324677+00:00",
+    "raw_response_retained": false,
+    "scope": "Pinned documentation or source text only; never executed.",
+    "status": 200,
+    "bytes": 1063,
+    "sha256": "8b28faf9bc904f18d031f842460ad445d7a24a03b521258ec9c3d20636fda0d9",
+    "date": "Fri, 16 Oct 2026 10:09:55 GMT",
+    "etag": "\"2d9b542e4601312dee757c5202eaa3df5bb8b063\"",
+    "observed": {
+      "license_title": "MIT License",
+      "copyright_csslab_2025": true
+    }
+  }
+]

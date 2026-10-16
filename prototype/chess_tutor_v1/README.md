@@ -33,7 +33,9 @@ canonical parity/protocol, four complete authored EOS responses, closed worker
 receipts, source and publisher manifests. Metadata/source verification runs
 before each launch without importing a model. These are runtime software checks,
 not proof of playing strength or teaching value. The actual authored mate draft
-already includes a false pawn-protection claim and an illegal prose alternative.
+already includes an unsupported pawn-protection claim and an illegal prose
+alternative. The offline claim audit leaves the protection statement unassessed
+because its preceding variation is illegal; no replacement board is invented.
 The first structured move is legal; that does not validate its explanation.
 
 The move classifier is loaded lazily on CPU with two threads and only audited

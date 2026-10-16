@@ -1,0 +1,21 @@
+{
+  "status": "CPU_SOURCE_CHECKS_PASSED_NOT_EXECUTION_GO",
+  "tests": 25,
+  "elapsed_seconds": 0.55,
+  "new_guard_setup_failures": "Trainfull1536notrun+4x96NLL/6rawplans+failedrun/resources; heldboth48pending+failure/resources before anymodel, no truth opened",
+  "bindings": [
+    {
+      "path": "scripts\\chess_queen_coach_counterfactual_train_v1.py",
+      "bytes": 20919,
+      "sha256": "865500dc8165f650e379e0f9beba47643b4dc3827779f9d26144fe3b79897c7b"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_counterfactual_train_v1.py",
+      "bytes": 7933,
+      "sha256": "e624d5517dfd3f176ac8b49d787ad9d9f194396c45dbabd404c42a3529850b61"
+    }
+  ],
+  "source_bundle_bytes": 29425,
+  "old_draft_preserved": "archive/unexecuted-model-draft-v1",
+  "actual_cpu_tokenizer_receipt": "Must be separately executed on NEW closedTRAIN/dev and pinned/audited in finalprotocol before rootGPU. Runtime tokenization afterload is not that preflight."
+}

@@ -41,43 +41,63 @@ automatically a compatible or better experimental condition.
 [Official code](https://github.com/queen-project/queen),
 [official model](https://huggingface.co/princeton-nlp/queen_pawn-8).
 
-The standing [SoccerMaster watch](soccermaster-watch-2026-10-16.md) also records
-an unchanged visible paper/checkpoint and an additional direct metadata check
-confirming the prior code HEAD. This preserves the sports research radar;
-chess remains the only active capability domain and no sports result follows.
+The October 16 release check also identifies Stockfish 19 as the latest stable
+release, tagged `sf_19` and announced on September 5, 2026. The recorded local
+engine uses that version. This checks the version label, not the binary's byte
+identity; all experimental binary pins remain in force. No engine was acquired
+or upgraded. [Official release](https://github.com/official-stockfish/Stockfish/releases/tag/sf_19),
+[official release date](https://stockfishchess.org/blog/).
 
 ## Current cycle and next experiments
 
-The first coaching pilot completes 20 confirmed optimizer updates and 160
-confirmed backward passes, then stops at the unchanged 4 GiB Windows commit
-reserve. A following microbatch has a persisted start intent but an unknown
-backward outcome. There is no saved post-training checkpoint, selection or
-held-out inference. Eight baseline development answers and 64 loss calculations
-are retained. This is a resource/debugging result, not a model improvement.
+The full coaching v2 pilot completed 256 updates and 2,048 backward passes.
+Independent review verified its frozen storage and development-only step-64
+selection. Five of twelve recognized development claims were false. Its fresh
+comparison then stopped at the unchanged commit reserve: 28 completed,
+two partial, one failed and 33 unrun responses out of 64, including zero calls
+to the trained panel. There is no matched quality result or trained UI admission.
 
-1. **Backend reliability:** test a separately versioned memory-lifetime change
-   with process-private and CUDA allocated/reserved observations, a spent long
-   development request, and a fixed multi-update training qualification. Release
-   only inactive cache; preserve live weights, gradients and all reserves. The
-   optional demo CPU classifier is temporarily disabled to reduce owned memory.
-   Do not close unrelated applications or silently resume the failed attempt.
-2. **Learning:** only after qualification and independent review, start a
-   separately identified full pilot from the original base with the same frozen
-   train/development data and untouched held references. Save development-only
-   selection before matched evaluation. All original failures remain visible.
-3. **Factuality:** extend evaluation beyond the present exact check/capture
-   grammar to branch-bound occupation, material and protection assertions, with
-   explicit abstention for unresolved references. Reuse the existing evaluator
-   kernels where sound; do not treat a keyword match or legal main line as full
-   prose verification. Begin with known authored failures, not held-out answers.
-4. **Coverage and teaching:** plan fresh quiet/positional, defensive and endgame
-   cases and later expert review. The current 16-game tactical-source panel
-   includes useful move types but cannot establish broad coaching competence.
+The move-conditioned check/capture curriculum completed 3,168 engine requests
+over 1,056 retained positions. Independent corpus review and complete CPU
+tokenization passed for 1,536 training and 96 development examples. No new
+counterfactual training ran: the strict 11:00 UTC admission expired during
+Windows process-controller debugging. The retained curriculum has no selected
+king moves and cannot establish broad chess coverage.
 
-The [UMD research-fit note](chess-umd-research-readiness-2026-10-16.md) records
-official guidance, source dates and unresolved institutional questions. Current
-work can support research review; neither institutional approval nor the
-repository's commentary/shareable-candidate gate has been granted.
+After three preserved monitor failures, a separately versioned cold controller
+passed two spent-development requests and independent software audit. Three
+initially live, image-unverified handles later signalled EXIT during a bounded
+wait. Their identities remain unknown. This qualifies the original SFT runtime
+profile on two used requests, not a new counterfactual-trained model, chess
+quality or 96-request stability. The proposed fixed old trained checkpoint-256
+versus checkpoint-64 comparison was not admitted before 11:30 UTC; all 96
+responses remain unrun, with its reservation retained and no score.
+
+The fixed encoder-head generalization attempt stopped at its unchanged commit
+reserve after two frozen-encoder forwards and before any head prediction.
+Concurrent CPU analysis is recorded as unquantified context; no exclusive cause
+is assigned. No broader generalization result or same-cohort retry follows.
+Whole-prose factuality, quiet and positional coverage, endgames and qualified
+tutor usefulness remain open. The next independent work improves transparent
+UI verification and retains the tested source, data and failure evidence.
+
+The [UMD research-fit note](chess-umd-research-readiness-2026-10-16.md) records official
+guidance and unresolved institutional questions. No institutional approval or
+repository commentary/shareable-candidate promotion is claimed.
+
+## ChessQA source and rights check
+
+The October 16 official-source check pins code `7b656c3` and dataset `18c5a789`
+separately. The Semantic task selects one source comment from four choices;
+its 100 base examples recur across four variants. It cannot establish accurate
+free-form coaching, and variants must remain grouped in any later evaluation.
+The repository scopes MIT to code and preserves data-source terms. The older
+dataset card does not resolve training or redistribution rights for purchased
+ChessBase commentary. That text stays outside this project's training; the
+current experiment continues with the recorded CC0 source. This is an unresolved
+rights assessment, not legal clearance or a finding of prohibition.
+[Pinned official provenance and audit notes](https://github.com/CSSLab/chessqa-benchmark/blob/7b656c3316b5266acc596124610fa084f58ee717/README.md),
+[paper](https://arxiv.org/html/2510.23948).
 
 ## Rule for the next iteration
 

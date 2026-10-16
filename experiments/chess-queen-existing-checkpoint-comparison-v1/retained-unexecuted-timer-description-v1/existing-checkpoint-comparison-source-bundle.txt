@@ -1,0 +1,338 @@
+FILE C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\experiments\chess-queen-existing-checkpoint-comparison-v1\prepare_protocol.py
+"""Freeze a no-training comparison of two previously trained SFT checkpoints."""
+from pathlib import Path
+from datetime import datetime, timezone
+import argparse
+import json
+import sys
+
+ROOT=Path(__file__).resolve().parents[2]
+sys.path.insert(0,str(ROOT/'scripts'))
+import chess_queen_coach_counterfactual_cold_eval_v3 as outer
+
+
+def bind(path):
+    path=Path(path)
+    if not path.is_absolute():path=ROOT/path
+    return {'path':str(path),'sha256':outer.digest(path)}
+
+
+def prepare(design_path,qualification_protocol,qualification,worker,audit,spent_intent,out):
+    design=outer.read(design_path)
+    if (design.get('schema')!='chess.existing-coach-checkpoint-fresh-comparison-design.v1'
+        or design['planned']!=96 or design['records_per_condition']!=48
+        or design['source_game_groups']!=16 or design['reserved_source_games']!=512
+        or design['condition_order']!=['baseline','selected'] or not design['no_new_training']
+        or design['whole_phase_admission_latest_utc']!='2026-10-16T11:30:00+00:00'
+        or design['cutoff_utc']!='2026-10-16T13:00:00+00:00'
+        or design['phase_maximum_seconds']!=4500 or design['effective_request_guard_seconds']!=120
+        or design['child_outer_maximum_seconds']!=210):
+        raise ValueError('Exact prospective no-training comparison design required')
+    expected={
+        'baseline':(256,'bd8a7b886f94c1199e2fc0a14481dc0603f72fe9503a562a82cf12ba0bf8059e'),
+        'selected':(64,'73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e')}
+    for key,(step,sha) in expected.items():
+        identity=design['conditions'][key]
+        metadata=outer.read(outer.bound(design['checkpoint_metadata'][key]))
+        if (metadata!=identity or identity['step']!=step or identity['sha256']!=sha
+            or identity['candidate_id']!='queen-pawn-8/nf4-coach-sft-v2'
+            or identity['source_sha256']!='7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349'
+            or outer.digest(Path(identity['path']))!=sha):
+            raise ValueError('Previously fixed old-SFT checkpoint identity differs')
+    corpus=outer.read(outer.bound(design['closed_corpus_audit']))
+    original=outer.read(outer.bound(design['closed_original_training_audit']))
+    if corpus.get('status')!='passed' or not original.get('verdict','').startswith('PASS:'):
+        raise ValueError('Actual closed corpus and original training audits required')
+    inputs=outer.bound(design['inputs'])
+    rows=[json.loads(line)for line in inputs.read_text().splitlines()if line.strip()]
+    if len(rows)!=48 or len({r['group_id']for r in rows})!=16:
+        raise ValueError('Full frozen48input/16group cohort required')
+    for row in rows:
+        if set(row)!={'case_id','group_id','mode','input'} or set(row['input'])not in({'fen'},{'fen','selected_uci'}):
+            raise ValueError('Label-free current-only rows required')
+    spent=outer.read(spent_intent)
+    if (spent.get('schema')!='chess.once-only-fresh-cohort-reservation.v1'
+        or spent.get('design_sha256')!=outer.digest(design_path)
+        or spent.get('input_sha256')!=design['inputs']['sha256']
+        or spent.get('group_ids')!=sorted({r['group_id']for r in rows})
+        or spent.get('all512_reserved_from_future_training')is not True
+        or spent.get('these16_forbidden_for_future_evaluation')is not True):
+        raise ValueError('Separate exact cohort reservation required before dispatch')
+    outer.bound(design['references'])  # Bytes only; never parse held reference content.
+    outer.bound(design['reserved_exclusions'])
+    qplan=outer.read(qualification_protocol)
+    outer.verify(qplan)
+    if (qplan['model_runtime']['generation']!=design['generation']
+        or qplan['raw_provenance']['candidate_id']!='queen-pawn-8/nf4-coach-sft-v2'
+        or qplan['raw_provenance']['schema']!='chess.queen-coach-sft-output.v2'
+        or qplan['raw_provenance']['adapter_sha256']!='7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349'):
+        raise ValueError('Actual qualified direct old-SFT profile required')
+    plan=dict(qplan)
+    names=[outer.bound(item)for item in qplan['dependencies']]
+    names += [Path(__file__),ROOT/'tests/test_chess_existing_checkpoint_comparison_v1.py',Path(design_path),
+              Path(qualification_protocol),Path(qualification),Path(worker),Path(audit),Path(spent_intent)]
+    for item in ('closed_original_training_audit','closed_corpus_audit'):
+        names.append(outer.bound(design[item]))
+    names += [ROOT/'scripts/chess_queen_coach_counterfactual_train_v1.py',
+              ROOT/'scripts/chess_queen_coach_counterfactual_eval_v1.py']
+    plan.update(schema='chess.existing-coach-checkpoint-fresh-comparison.v1',mode='heldout',
+        frozen_at=datetime.now(timezone.utc).isoformat(),design=bind(design_path),
+        input_rows=design['inputs'],heldout_references=design['references'],
+        conditions={name:design['conditions'][name]for name in design['condition_order']},
+        condition_labels=design['condition_labels'],condition_order=design['condition_order'],
+        planned=96,source_game_groups=16,reserved_source_games=512,no_new_training=True,
+        phase_maximum_seconds=4500,admission_latest_utc=design['whole_phase_admission_latest_utc'],
+        cutoff_utc=design['cutoff_utc'],effective_request_guard_seconds=120,
+        spent_cohort_intent=bind(spent_intent),
+        qualification_protocol=bind(qualification_protocol),successful_qualification=bind(qualification),
+        closed_qualification_worker=bind(worker),qualification_audit=bind(audit),
+        qualification_worker_script=qplan['expected_worker_script'],
+        qualification_worker_arguments=qplan['expected_worker_arguments'],
+        future_spent_policy=design['future_spent_policy'],
+        interpretation=design['claims'],metrics=design['metrics'],
+        dependencies=[bind(p)for p in dict.fromkeys(names)])
+    outer.verify(plan)  # Requires actual2request software success and its exact independent audit.
+    with Path(out).open('x',encoding='utf-8')as stream:
+        json.dump(plan,stream,indent=2,allow_nan=False);stream.write('\n')
+    return bind(out)
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__)
+    for name in ('design','qualification-protocol','qualification','worker','audit','spent-intent','out'):
+        parser.add_argument('--'+name,type=Path,required=True)
+    args=parser.parse_args()
+    print(json.dumps(prepare(args.design,args.qualification_protocol,args.qualification,args.worker,args.audit,args.spent_intent,args.out)))
+
+
+FILE C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\tests\test_chess_existing_checkpoint_comparison_v1.py
+"""Authored metadata checks; no models, real corpus or held reference parsing."""
+from pathlib import Path
+import importlib.util
+import json
+import sys
+import pytest
+
+ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'scripts'))
+spec=importlib.util.spec_from_file_location('existing_compare_builder',ROOT/'experiments/chess-queen-existing-checkpoint-comparison-v1/prepare_protocol.py')
+subject=importlib.util.module_from_spec(spec)
+spec.loader.exec_module(subject)
+
+
+def fixture(tmp_path,monkeypatch):
+    def save(name,value):
+        p=tmp_path/name;p.write_text(json.dumps(value),encoding='utf-8');return p
+    source='7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349'
+    checkpoints={}
+    for key,step,sha in [('baseline',256,'bd8a7b886f94c1199e2fc0a14481dc0603f72fe9503a562a82cf12ba0bf8059e'),
+                         ('selected',64,'73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e')]:
+        checkpoints[key]={'step':step,'sha256':sha,'path':str(tmp_path/(key+'.pt')),
+            'candidate_id':'queen-pawn-8/nf4-coach-sft-v2','source_sha256':source}
+    actual_digest=subject.outer.digest
+    def digest(path):
+        for identity in checkpoints.values():
+            if Path(path)==Path(identity['path']):return identity['sha256']
+        return actual_digest(path)
+    monkeypatch.setattr(subject.outer,'digest',digest)
+    metadata={key:subject.bind(save(key+'.json',value))for key,value in checkpoints.items()}
+    inputs=tmp_path/'inputs.jsonl'
+    rows=[{'case_id':str(i),'group_id':str(i//3),'mode':('free','selected_a','selected_b')[i%3],
+        'input':{'fen':'authored fixture',**({'selected_uci':'e2e4'}if i%3 else{})}}for i in range(48)]
+    inputs.write_text(''.join(json.dumps(row)+'\n'for row in rows),encoding='utf-8')
+    refs=tmp_path/'references';refs.write_text('Deliberately not JSON: never parse evaluator truth.',encoding='utf-8')
+    reserve=save('reserved.json',{'never_train':True})
+    corpus=save('corpus-audit.json',{'status':'passed'})
+    training=save('original-training-audit.json',{'verdict':'PASS: authored metadata'})
+    design={'schema':'chess.existing-coach-checkpoint-fresh-comparison-design.v1',
+        'planned':96,'records_per_condition':48,'source_game_groups':16,'reserved_source_games':512,
+        'condition_order':['baseline','selected'],'no_new_training':True,
+        'whole_phase_admission_latest_utc':'2026-10-16T11:30:00+00:00','cutoff_utc':'2026-10-16T13:00:00+00:00',
+        'phase_maximum_seconds':4500,'effective_request_guard_seconds':120,'child_outer_maximum_seconds':210,
+        'conditions':checkpoints,'checkpoint_metadata':metadata,'closed_corpus_audit':subject.bind(corpus),
+        'closed_original_training_audit':subject.bind(training),'inputs':subject.bind(inputs),
+        'references':subject.bind(refs),'reserved_exclusions':subject.bind(reserve),
+        'generation':{'same':'frozen'},'condition_labels':{'baseline':'Trained terminal256','selected':'Trained dev-selected64'},
+        'future_spent_policy':'All512 never train; these16 never evaluate again.',
+        'claims':'Old-SFT only, no learning or reselection.','metrics':'Fixed strict scorer.'}
+    proposal=save('design.json',design)
+    qplan=save('qualification-plan.json',{'model_runtime':{'generation':design['generation']},
+        'raw_provenance':{'candidate_id':'queen-pawn-8/nf4-coach-sft-v2','schema':'chess.queen-coach-sft-output.v2','adapter_sha256':source},
+        'dependencies':[],'expected_worker_script':'scripts/outer.py','expected_worker_arguments':['scripts/outer.py','--protocol','fixed']})
+    spent=save('spent.json',{'schema':'chess.once-only-fresh-cohort-reservation.v1',
+        'design_sha256':subject.outer.digest(proposal),'input_sha256':design['inputs']['sha256'],
+        'group_ids':sorted({r['group_id']for r in rows}),
+        'all512_reserved_from_future_training':True,'these16_forbidden_for_future_evaluation':True})
+    args=[proposal,qplan,save('qualified.json',{'status':'passed'}),save('worker.json',{'status':'completed'}),save('audit.json',{'status':'passed'}),spent,tmp_path/'protocol.json']
+    calls=[]
+    monkeypatch.setattr(subject.outer,'verify',lambda plan:calls.append(plan['mode']if'mode'in plan else'qualification'))
+    read=subject.outer.read
+    def embargo(path):
+        if Path(path)==refs:raise AssertionError('Held reference semantics opened')
+        return read(path)
+    monkeypatch.setattr(subject.outer,'read',embargo)
+    return args,design,calls
+
+
+def test_freeze_fixed_trained256_then64_without_opening_references(tmp_path,monkeypatch):
+    args,design,calls=fixture(tmp_path,monkeypatch)
+    subject.prepare(*args)
+    plan=json.loads(args[-1].read_text())
+    assert list(plan['conditions'])==['baseline','selected']
+    assert [x['step']for x in plan['conditions'].values()]==[256,64]
+    assert plan['no_new_training'] and plan['planned']==96 and plan['phase_maximum_seconds']==4500
+    assert plan['admission_latest_utc'].endswith('11:30:00+00:00')
+    assert calls==['qualification','heldout']
+
+
+@pytest.mark.parametrize('key,value',[('planned',95),('condition_order',['selected','baseline']),('no_new_training',False),
+    ('whole_phase_admission_latest_utc','2026-10-16T11:31:00+00:00'),('effective_request_guard_seconds',180)])
+def test_changed_quota_order_learning_or_budget_fails_before_output(tmp_path,monkeypatch,key,value):
+    args,design,calls=fixture(tmp_path,monkeypatch);design[key]=value;args[0].write_text(json.dumps(design))
+    with pytest.raises(ValueError,match='Exact prospective'):subject.prepare(*args)
+    assert not args[-1].exists()and not calls
+
+
+def test_missing_actual_qualification_blocks_final_freeze(tmp_path,monkeypatch):
+    args,design,calls=fixture(tmp_path,monkeypatch)
+    def verify(plan):
+        if plan.get('mode')=='heldout':raise ValueError('Actual matching software qualification required')
+    monkeypatch.setattr(subject.outer,'verify',verify)
+    with pytest.raises(ValueError,match='Actual matching'):subject.prepare(*args)
+    assert not args[-1].exists()
+
+
+def test_missing_spent_cohort_group_blocks_freeze(tmp_path,monkeypatch):
+    args,design,calls=fixture(tmp_path,monkeypatch)
+    spent=json.loads(args[-2].read_text());spent['group_ids'].pop();args[-2].write_text(json.dumps(spent))
+    with pytest.raises(ValueError,match='reservation'):subject.prepare(*args)
+    assert not args[-1].exists()and not calls
+
+
+FILE C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\chess-existing-checkpoint-comparison-plan.json
+{
+  "schema": "chess.existing-coach-checkpoint-fresh-comparison-design.v1",
+  "frozen_at": "2026-10-16T11:02:35.052060+00:00",
+  "status": "DESIGN_ONLY_NO_MODEL_DISPATCH",
+  "hypothesis": "On a fresh move-conditioned check/noncheck cohort, the development forecast-selected step64 and fixed terminal step256 may differ in immediate-fact accuracy and free three-ply teacher agreement. Lower development NLL at256 does not establish better forecasting or coaching.",
+  "reason": "New counterfactual TRAIN missed its strict11:00 admission during repair of an actual Windows process-topology failure. This separate no-training question uses completed old SFT checkpoints and preserves that unrun training plan.",
+  "condition_order": [
+    "baseline",
+    "selected"
+  ],
+  "condition_labels": {
+    "baseline": "Fixed terminal old SFT checkpoint256; trained comparison, NOT untrained baseline",
+    "selected": "Fixed old development-selected SFT checkpoint64; selection remains unchanged"
+  },
+  "conditions": {
+    "baseline": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0256/adapter.pt",
+      "sha256": "bd8a7b886f94c1199e2fc0a14481dc0603f72fe9503a562a82cf12ba0bf8059e",
+      "step": 256,
+      "presentations": 2048,
+      "parameter_count": 1916928,
+      "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+      "source_sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    "selected": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0064/adapter.pt",
+      "sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e",
+      "step": 64,
+      "presentations": 512,
+      "parameter_count": 1916928,
+      "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+      "source_sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    }
+  },
+  "checkpoint_metadata": {
+    "baseline": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0256\\metadata.json",
+      "sha256": "c205a72318170e32d8c771df05d39425c5fd682bb3064e30ea402489d28d024c"
+    },
+    "selected": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\metadata.json",
+      "sha256": "5e23549b1f748f8c4b126873744444f584e802c72cba62c122736e62168b61b4"
+    }
+  },
+  "closed_original_training_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\queen-coach-sft-training-v2-closed-review.json",
+    "sha256": "6d6e98d80313f8650aea84c5e4c8ee12e0a012c916aafe72e519f88595a8a301"
+  },
+  "closed_corpus_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-recovery-v2-corpus-closed-review.json",
+    "sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462"
+  },
+  "inputs": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\heldout-inputs.jsonl",
+    "sha256": "bb8cd76f985069d4e6c33c6e9147402b188d5a9309a61934368d726cebed8b59"
+  },
+  "references": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\heldout-references.jsonl",
+    "sha256": "afd60d4cedd9026cd7fb7c82dc368dffcdc4982627c6e2721a4bbed6b378337d"
+  },
+  "reserved_exclusions": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\reserved-exclusions.json",
+    "sha256": "ea83e3d4db60f3f8bf4924c46dd291510116776a49830b7995be674ad665f05d"
+  },
+  "cohort": "Already frozen first16source-order full-three-ply eligible reserve games;48label-free inputs:FREE+selected_a+selected_b. No quality-based selection or replacement.",
+  "planned": 96,
+  "records_per_condition": 48,
+  "source_game_groups": 16,
+  "reserved_source_games": 512,
+  "no_new_training": true,
+  "source_truthful_profile": "NEW cold child imports exact original SFT Runtime2 directly; output candidate/schema/adapter source remain old-SFTv2 and conditions retain actual old checkpoint identities. No counterfactual-trained relabelling.",
+  "generation": {
+    "max_new_tokens": 1024,
+    "maximum_seconds": 180,
+    "temperature": 0,
+    "seed": 20260823,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "effective_request_guard_seconds": 120,
+  "child_outer_maximum_seconds": 210,
+  "phase_maximum_seconds": 4500,
+  "whole_phase_admission_latest_utc": "2026-10-16T11:30:00+00:00",
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "metrics": "Same strict immediate-fact scorer:EOS,legal accepted BEST,unambiguous ANALYSIS identity/check/capture and paired supplied success;FREE1/2/3teacher prefix. Supplied first ply never independent prediction. All recognized spans,unknown/partial/notrun and full game-group denominator retained. Other prose and teaching usefulness unscored.",
+  "embargo": "Both48raw conditions close without backend/process/resource failure before scoring references. No early quality inspection/reselection. Original failed held cases remain excluded; no retry,repair or legal mask.",
+  "future_spent_policy": "These16game groups become spent upon any actual comparison call and cannot be reused for independent future evaluation. All512reserved groups/registered boards remain excluded from future TRAIN. Persist separate spent-cohort receipt before dispatch without rewriting original reservations.",
+  "prerequisites": [
+    "Independent design/source/final exact protocol GO",
+    "Actual NEW direct-SFT-profile two-spent-development-request cold qualification PASS and independent audit",
+    "Stable owned process/job/exit proof; prior children gone and lease free",
+    "Root-only serialized GPU; no heavy CPU analysis concurrently",
+    "Plausible full96-call timing and complete phase admitted before11:30; otherwise not_run"
+  ],
+  "claims": "Descriptive fresh comparison of two already trained old checkpoints only. Does not reproduce failed untrained-versus-selected test,isolate causal training gains,select a new checkpoint,establish whole-prose coaching/Elo or enable UI automatically."
+}
+
+
+FILE C:\Users\lucas\Documents\Codex\2026-10-15\go\work\repos\sports-play-llm-research\experiments\chess-queen-existing-checkpoint-comparison-v1\source-tests.json
+{
+  "status": "SOURCE_ONLY_EIGHT_CPU_CHECKS_PASSED",
+  "tests": 8,
+  "elapsed_seconds": 0.36,
+  "tool_chunk": "aee818",
+  "model_GPU_calls": 0,
+  "protocol_not_frozen_pending_actual_qualification": true,
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\prepare_protocol.py",
+      "bytes": 6598,
+      "sha256": "532ecdc5050aed4ab6a35a75b4c308e9d06e43525d10909d20b356d02d35d622"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_existing_checkpoint_comparison_v1.py",
+      "bytes": 6442,
+      "sha256": "f63b060d1c92f8473eb2f678d862fb62890c27fa4e2c5ebb95db4d504bc36d89"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan.json",
+      "bytes": 6818,
+      "sha256": "852782e2a7a49d105bec4545be47e936a800edbbfacefb8bdfd81d7da4b793b3"
+    }
+  ]
+}
+
+

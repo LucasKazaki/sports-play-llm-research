@@ -1,0 +1,62 @@
+{
+  "status": "passed_final_protocol_v2_review",
+  "created_utc": "2026-10-16T11:29:53.597883+00:00",
+  "protocol_sha256": "fd6808215566a3a93370a4bee44462d970cf5e2e0b972a48c652da919060944d",
+  "protocol_bytes": 28362,
+  "worker_arguments_sha256": "711eacea349d06ed0e8cdcceebbbdea7c303303c40f1bb17bfe8e9b9c4ba7f74",
+  "changed_keys_complete": {
+    "root_dispatch": {
+      "before": "OneouterGPUworker/lease/job, no nestedlease, serializedinheritedchildren. NoagentGPU/modelcalls. Wholephase450s/perchild210s/global13UTC. No oldheldinputs/references or repeatedoldheldcandidate.",
+      "after": "One root-owned outer GPUworker/lease/job, serial cold children, no concurrent heavyCPU. Complete96requests/4500s phase/210s children/global13UTC, strict wholephase admission before11:30. Stopfirstbackendfailure, no retry/repair/shrink."
+    },
+    "frozen_at": {
+      "before": "2026-10-16T11:28:06.522905+00:00",
+      "after": "2026-10-16T11:29:15.351225+00:00"
+    },
+    "acceptance": {
+      "before": "Exactly2closedchildren, samefixed64, inheritedownedjob, actualexitbefore next, exactrawinput/checkpoint/settings/sourceSHA, rawsavedbeforecleanup/storage, unchangedfrozenstorage, outerneverTorch, noresource/backend/timeoutfailure. Postexitglobalcommit growth<=1GiB frominitialouterbaseline aftereachchild. No accuracycriterion and no claim96request stability.",
+      "after": "Both complete48raw panels close without backend/process/resource failure before held reference scoring; retain partial/unknown/notrun/full96denominator. Same strict recognized immediate facts and FREE1/2/3teacher agreement. No whole-prose/Elo/UI gate pass."
+    },
+    "profile": {
+      "before": "Original SFT-v2 fixed64 software qualification; no counterfactual training or identity.",
+      "after": "Fresh fixed OLD TRAINED terminal256 versus OLD TRAINED development-selected64 comparison. No new learning/reselection or untrained control."
+    },
+    "guard_limit": {
+      "before": "Policy metadata maximum_owned_request_seconds remains120, but unchanged nf4.guard_for calls reserve-only reasons() and does not enforce that elapsed timer. Actual unchanged limits: generator180s, child cumulative210s, outer qualification450s, global13UTC. Cooperative resource checks remain unchanged; no claimed active120s bound.",
+      "after": "Resource reserve guard only; Policy120 is inactive timer metadata. Active generation180s/child210s/comparisonphase4500s/global13UTC unchanged."
+    },
+    "superseded_documentation_protocol": {
+      "before": null,
+      "after": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\protocol.json",
+        "sha256": "c25397d5cef7e85252dc1199d7b3b28acbe8c6a215eae811b1b8242fb1783bc2",
+        "reason": "Correct inherited software-qualifier prose/general workerargs only. Executable mode96/conditions/inputs/references/settings/resources/deadlines/actualqualification bindings unchanged."
+      }
+    },
+    "selection": {
+      "before": "Firstsourceorder alreadyspent step64DEVFREE, then firstsourceorder spentDEVselected fromdifferentgroup. No outputquality or references used. Bothinputs stripped to case/group/mode/currentFEN+optionalgivenmove only.",
+      "after": "Frozen first16source-order full-three-ply eligible reserve game groups;48label-free FREE/selected_a/selected_b inputs, sameinbothconditions. No output-quality selection/replacement."
+    },
+    "expected_worker_arguments": {
+      "before": [
+        "scripts/chess_queen_coach_counterfactual_cold_eval_v5.py",
+        "--protocol",
+        "experiments/chess-queen-coach-counterfactual-v1/cold-sft-qualification-protocol-v6.json",
+        "--out",
+        "data/private/chess-queen-coach-counterfactual-cold-qualification-v1/attempt-4"
+      ],
+      "after": [
+        "scripts/chess_queen_coach_counterfactual_cold_eval_v5.py",
+        "--protocol",
+        "experiments/chess-queen-existing-checkpoint-comparison-v1/protocol-v2.json",
+        "--out",
+        "data/private/chess-queen-existing-checkpoint-comparison-v1/comparison-1"
+      ]
+    }
+  },
+  "independent_verify": "passed backendfree; only8documentation/dispatchdescription keys differ from complete28099Bpriorwholeprotocolread; all executable/science/qualifiedproof/data/conditions/reserves/deadlines bytevalues unchanged",
+  "go": "Root may dispatch exactfixed256vs64 comparison ONCE ONLY if actualwholephaseadmission is strictlybefore11:30UTC; else96notrun.4500phase/13global unchanged.",
+  "no_model_engine_gpu_or_fresh_quality_reads": true,
+  "supersedes_prepared_review": "9fbd5567e417c99b27ba793a79c7cb000795f933e9d32ea42a3852de3316478a",
+  "followUpTasks": []
+}

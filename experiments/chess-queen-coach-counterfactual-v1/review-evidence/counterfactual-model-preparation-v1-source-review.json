@@ -1,0 +1,72 @@
+{
+  "schema": "chess.independent-counterfactual-model-source-preparation-review.v1",
+  "status": "passed_source_preparation_only",
+  "reviewed_at": "2026-10-16T10:26:01.638953+00:00",
+  "scope": "Complete runtime/scorer/tests and amended trainer/tests finite bundles. Source-only verdict for TRAIN/runtime/strict scoring. No frozen actual model protocol or closed corpus has been accepted.",
+  "blocking_findings": [],
+  "tests": {
+    "passed": 25,
+    "elapsed_seconds": 0.63,
+    "exit_code": 0
+  },
+  "checks": [
+    "Warm start is exact old selected64 checkpoint; same qualified full-vocabulary loss, target-only encoder, cleanup, strict144FP32 adapter load and base-storage verifier are inherited.",
+    "New candidate and wrapper provenance are distinct from qualified parent runtime; checkpoint metadata retains parent learning and warm-start effective hash.",
+    "One epoch1536 presentations/192updates\u00d78, fresh optimizer, seed4082086, warmup16/cosine schedule, gradient clipping and raw0/48/96/192 dev selection are explicit.",
+    "All1536 TRAIN denominators and four96NLL/sixraw future panels are durable before guard/backend setup. Guard-construction failure finalizes failedrun/resources/notrun ledgers.",
+    "Selection prioritizes allsix legal accepted BEST then free3ply/freeBEST/NLL/earliest including warm baseline; facts are not a hidden checkpoint selector.",
+    "Strict recognized check/capture facts preserve exact spans, duplicates, contradictory and unassociated clauses; selected joint success requires EOS plus unique acceptedBEST and unique recognizedANALYSIS move both equal supplied move.",
+    "Pair metric requires both selected contrasts; all modes/conditions share source-game uncertainty. Supplied first ply is never counted as independent prediction.",
+    "Per-phase admission is before11:15UTC, with13:00UTC global cutoff; phase-specific resource/deadline guard is inherited without altered floors."
+  ],
+  "limits": [
+    "Embedded single-process heldout() was read and its failure-denominator tests passed, but it is UNEXECUTED and NOT authorized for dispatch. The parent is preparing a separately reviewed cold-per-request implementation after the failed old heldout operational evidence.",
+    "This review ran only authored CPU tests. It did not invoke actual verify_protocol(), intake, teacher, model, GPU, scorer on old held content, or old/fresh held-reference access.",
+    "Final model protocol must bind the actual separately reviewed changed-admission corpus/provenance/audit, all exact source/dependency hashes, tokenizer preflight, warm-start checkpoint and generated budgets before any training.",
+    "Only exact immediate check/capture grammar is measured. Other generated prose including strategic why-best, extra unrecognized checker assertions and teaching usefulness remains unassessed.",
+    "No source-only result demonstrates a repair for cumulative process/global commit growth or admits tuned UI activation."
+  ],
+  "sources_and_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_runtime_v1.py",
+      "bytes": 2287,
+      "sha256": "29f148855279fe0243bb4fbedac12057ab9d43cd6fe1c12a904606d4ca8f460b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_train_v1.py",
+      "bytes": 20919,
+      "sha256": "865500dc8165f650e379e0f9beba47643b4dc3827779f9d26144fe3b79897c7b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_counterfactual_runtime_v1.py",
+      "bytes": 2908,
+      "sha256": "f5f602eeefdc71ff7c69b20b743c01478f192c68eff34096827ec07633129c3e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 4569,
+      "sha256": "36d2b0a96376bdf80514b92371e66e2f6fbe54f81014b9e08dd35df8ce69c7ee"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_counterfactual_train_v1.py",
+      "bytes": 7933,
+      "sha256": "e624d5517dfd3f176ac8b49d787ad9d9f194396c45dbabd404c42a3529850b61"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-runtime-eval-source-bundle.txt",
+      "bytes": 17677,
+      "sha256": "58bda8833b92515d82abf795b4238d7a53e25111520226b163ef113098a717cb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-training-source-bundle-v2.txt",
+      "bytes": 29425,
+      "sha256": "c9b6d9f381efaa358dd9de610ab732cc4082548b52d2f1b94194cfaac7310f3d"
+    }
+  ],
+  "followUpTasks": []
+}

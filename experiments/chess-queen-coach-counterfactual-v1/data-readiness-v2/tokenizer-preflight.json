@@ -1,0 +1,45 @@
+{
+  "status": "passed",
+  "source_sha256": "18ca7b0e181a1c6a0a692a9bd55d131d7f70d40065dba2e4370ac0403e139f4c",
+  "manifest_sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854",
+  "tokenizer_bindings": {
+    "chat_template.jinja": {
+      "sha256": "69650a344de9a33971f463750410208cb35e4bf351eb4af422ffb695bc6c8847",
+      "bytes": 5588
+    },
+    "special_tokens_map.json": {
+      "sha256": "12403efb970f069ba62ddf3b66166a27254be4a198166b61ad1ee604bd3a4515",
+      "bytes": 289
+    },
+    "tokenizer.json": {
+      "sha256": "c2786337a78babe4fa37aea5f1b8492bcdd4ac7f307f6f014a634c9981b6aa81",
+      "bytes": 17223270
+    },
+    "tokenizer_config.json": {
+      "sha256": "29ba0f7b8ec803909d29713b01870acc5e4309b601fc1838bfa870d2f97b0aaa",
+      "bytes": 64068
+    }
+  },
+  "official_formatter_sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc",
+  "model_weights_loaded": false,
+  "learned_forward_calls": 0,
+  "splits": {
+    "train": {
+      "records": 1536,
+      "groups": 512,
+      "minimum_total_tokens": 139,
+      "maximum_total_tokens": 160,
+      "total_supervised_tokens": 95633,
+      "exact_integer_prefix_mask_eos_no_truncation": true
+    },
+    "development": {
+      "records": 96,
+      "groups": 32,
+      "minimum_total_tokens": 139,
+      "maximum_total_tokens": 159,
+      "total_supervised_tokens": 5954,
+      "exact_integer_prefix_mask_eos_no_truncation": true
+    }
+  },
+  "cuda_initialized": false
+}

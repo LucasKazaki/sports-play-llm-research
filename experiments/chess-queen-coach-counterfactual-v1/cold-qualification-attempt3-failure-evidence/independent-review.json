@@ -1,0 +1,93 @@
+{
+  "status": "passed_closed_failure_accounting_not_qualified",
+  "created_utc": "2026-10-16T11:23:52.762298+00:00",
+  "protocol_sha256": "9dcb467c8de9a0609c5433af3962b5d71ed1cd43638fd7e1b24d4c1e8454a0be",
+  "qualification_sha256": "165bb716905015b2e7cabc7ef2f3c4c53e8c365471fcea230f275479515d0dda",
+  "worker_sha256": "4d268bf75d8a1ea9165a59181b0d76148edb742d29eb03de812214eda75eb6e7",
+  "scope": "Closed metadata/source/resource/monitor failure audit only. No raw output exists; no prose/moves/fresh inputs/references/old held refs inspected, no model/engine/GPU calls.",
+  "denominator": {
+    "planned": 2,
+    "completed": 0,
+    "active_unknown": 1,
+    "not_run": 1,
+    "failed_panel_rows": 0,
+    "generation_requests_started": 0,
+    "retained_raw_outputs": 0,
+    "second_request_dispatched": false
+  },
+  "failure": {
+    "phase": "model_load_started",
+    "observation": {
+      "pid": 50288,
+      "parent_pid": 41500,
+      "created": 134366232978979791,
+      "in_job": true,
+      "image": null,
+      "image_query_winerror": 5,
+      "stable_handle_exited": false
+    },
+    "interpretation": "Stable handle was LIVE at WinError5 image query failure. Correct fail-closed rejection of unknownLIVE; no executable identity established. Do not call it nvidia or an already-exited race.",
+    "observed_exit_at_error": false
+  },
+  "resources": {
+    "child_samples": 2,
+    "minimum_available_bytes": {
+      "physical": 11256946688,
+      "commit": 11546791936,
+      "gpu": 14757658624
+    },
+    "all_observed_reserves_pass": true,
+    "outer_samples": 1,
+    "postexit_growth_criterion_reached": false,
+    "final_child_resource_array": false,
+    "frozen_storage_after_hash": false
+  },
+  "closure": {
+    "worker_child_pid": 12400,
+    "worker_exit_code": 1,
+    "worker_child_exited_before_lease_release": true,
+    "elapsed_seconds": 6.405999999988126,
+    "launcher_exit_code": 2,
+    "retained_cleanup_reports_exit": true,
+    "complete_lineage_proof": false,
+    "root_postclosure": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\cold-sft-qualification-attempt3-root-closed.json",
+      "bytes": 1303,
+      "sha256": "2957b2c6f481ff4f35619afc705808a0cc856d3093c90024a9ab000508d6bb7e"
+    },
+    "root_all7PIDs_absent87_and_lease_free": true,
+    "later_absence_does_not_establish_image_or_EXIT_at_error": true
+  },
+  "provenance": {
+    "protocol": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-sft-qualification-protocol-v5.json",
+      "bytes": 16503,
+      "sha256": "9dcb467c8de9a0609c5433af3962b5d71ed1cd43638fd7e1b24d4c1e8454a0be"
+    },
+    "child_receipt": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-3\\software-000\\child\\closed.json",
+      "bytes": 1466,
+      "sha256": "d3f2a672dda2a5d9ceaa36a5415ad9ad8851c5e7ef64c661845267585801bfd3"
+    },
+    "observation_error": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-3\\software-000\\process-observation-error.json",
+      "bytes": 459,
+      "sha256": "563ec69446ff0ea0dafd51a5d981b2e8e901840b8cbea742d32ca202fa931759"
+    },
+    "source_snapshots_exact": 36,
+    "sealed_files": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-qualification-attempt3-sealed-files.json",
+      "bytes": 17740,
+      "sha256": "3c07938860247f33430b5c7d4f5947dd8636753d1cf47fa25207a9b2bd4e59e6"
+    },
+    "sealed_file_count": 51
+  },
+  "verdict": "NOT software-qualified; fresh fixedcheckpoint comparison remains unadmitted. Bounded-wait proposal is separate and requires exact review before any actual qualification.",
+  "limits": [
+    "No generation intent/forward established; model setup began so no claim zero model-weight allocation.",
+    "No retry, floor/deadline change or quality admission granted. TRAIN11:00 remains expired/unrun, fresh11:30/global13 unchanged.",
+    "Policy120seconds metadata is not active elapsedtimer; actual180generator/210child/450qualification bounds unchanged."
+  ],
+  "reviewer_debugging_note": "Initial reviewer-only metadata assertion assumed an earlier root-receipt key; failed before report output, corrected to exact all_observed_pids_absent and reran. Experiment bytes/calls unchanged.",
+  "followUpTasks": []
+}

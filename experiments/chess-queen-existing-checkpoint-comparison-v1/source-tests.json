@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "checks": 10,
+  "seconds": 0.47,
+  "tool_chunk": "df4f22",
+  "model_calls": 0,
+  "notes": "Authored metadata checks; no real corpus or held labels opened."
+}

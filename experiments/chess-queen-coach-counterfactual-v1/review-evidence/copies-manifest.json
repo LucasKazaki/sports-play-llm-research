@@ -1,0 +1,54 @@
+{
+  "schema": "chess.source-only-review-exact-copies.v1",
+  "files": [
+    {
+      "copy": "counterfactual-model-preparation-v1-source-review.json",
+      "sha256": "a0192194dea23c55efa1f1cfdbd3ad1cc31e4b246c9aeea5a376f4210d5fb4f8",
+      "bytes": 5319,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-model-preparation-v1-source-review.json"
+    },
+    {
+      "copy": "counterfactual-tokenizer-preflight-source-review.json",
+      "sha256": "3ae5add5d7e5a7fef002e740e718d4e2ec2e0a2f95531cfad682508eb898f959",
+      "bytes": 4258,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-tokenizer-preflight-source-review.json"
+    },
+    {
+      "copy": "counterfactual-operational-train-v2-source-review.json",
+      "sha256": "211b6538eecaac5d204ab6fdc0f0bf1ae2296839b6547501bedb7c694e4c0518",
+      "bytes": 3779,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-operational-train-v2-source-review.json"
+    },
+    {
+      "copy": "cold-sft-sampler-topology-qualification-source-review.json",
+      "sha256": "f3d88c96120821ef1dcd857b97ab5fd1d0e50286dd29a1722ffff7e2b58e16b2",
+      "bytes": 6845,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-sampler-topology-qualification-source-review.json"
+    },
+    {
+      "copy": "cold-sft-transient-topology-qualification-source-review.json",
+      "sha256": "892d9b576fc4b172f18edfd2fc69a54b7211d64d86114b518d50842029bec226",
+      "bytes": 5659,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-transient-topology-qualification-source-review.json"
+    },
+    {
+      "copy": "cold-request-deadline-clarification-review.json",
+      "sha256": "39e4a1f5abba80f92d566c9adb275a4cbce2322c39e79e005119bd7a6b42fa86",
+      "bytes": 2015,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-request-deadline-clarification-review.json"
+    },
+    {
+      "copy": "existing-checkpoint-comparison-source-review-v2.json",
+      "sha256": "e8a39e7973c9d561f896edf4506a4af28194ccba7f91cef5dee822668ed0b016",
+      "bytes": 3392,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-source-review-v2.json"
+    },
+    {
+      "copy": "existing-checkpoint-comparison-builder-v2-source-review.json",
+      "sha256": "2cfbdea4ad44bf2c672b05aceca870a4dc2d7e5f89b5ea2cb9dd2d1ca7123591",
+      "bytes": 2520,
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-builder-v2-source-review.json"
+    }
+  ],
+  "claims": "Exact engineering source-review bytes only. Doesnotqualify failedactualruns, authorizeexpiredtraining, establishmodelquality or promoteUI."
+}

@@ -1,0 +1,84 @@
+{
+  "status": "passed_source_review",
+  "created_utc": "2026-10-16T11:21:10.643882+00:00",
+  "protocol_sha256": "9dcb467c8de9a0609c5433af3962b5d71ed1cd43638fd7e1b24d4c1e8454a0be",
+  "worker_arguments_sha256": "e5028761bad95627a64b081f367d965f459ea05800f9c264741b805f482a8f91",
+  "complete_files_and_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-sft-qualification-protocol-v5.json",
+      "bytes": 16503,
+      "sha256": "9dcb467c8de9a0609c5433af3962b5d71ed1cd43638fd7e1b24d4c1e8454a0be"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_process_lineage_v3.py",
+      "bytes": 13247,
+      "sha256": "062c8202b01c247c3b71127c2fe7907e2cedf346ad1fc440b8a7012b8bf75934"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_cold_eval_v4.py",
+      "bytes": 18483,
+      "sha256": "cfc65a2541aff87a48745352b14ab2b5ae9174c66f729e2f56a6905f83b2b6cd"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-venv-sampler-topology-probe-v3\\closed.json",
+      "bytes": 2624,
+      "sha256": "b45cdacd9bac41d9eee1c4d7b0d56dbb78e7b26f84f30241572a80656f7251ad"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-transient-helper-source-v3.txt",
+      "bytes": 13380,
+      "sha256": "e471dfbc296de1e97611225924126cdbe6b4c310eb9fd2886463a1f75f6feb2e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-transient-helper-tests-probe-v3.txt",
+      "bytes": 13489,
+      "sha256": "d98333b5d8ff19e086acf61c169838bd5489b946c749cba2be077e42809aa25f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-transient-outer-source-v4.txt",
+      "bytes": 18631,
+      "sha256": "cfcb20d155af9d34e2901716686c53648bf6a1d75d04e8f1bec2d58c3c085389"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-transient-outer-tests-v4.txt",
+      "bytes": 13726,
+      "sha256": "6c2e55c4f845b6a3cdfcda9d2b75ccb0ccb11d0e936ac5789221d952bfa17895"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-transient-plan-v5.txt",
+      "bytes": 27023,
+      "sha256": "5b07348026e1ac940b0276e17cba4e035f73421510a5474dcf6948cac8143569"
+    }
+  ],
+  "scope": "All5finite complete source/tests/probe/builder/plan bundles read, unchanged directSFT child reused from prior full review.63pureCPUcontracts run; no actual model/engine/GPU calls or active/fresh quality reads.",
+  "cpu_tests": {
+    "passed": 63,
+    "seconds": 1.51,
+    "tool_chunk": "ff50b7"
+  },
+  "metadata_verify": "passed; all exact dependencies/probe/executable/failure-audit bindings verify with noTorch import",
+  "source_change": "Only monitor: creation/job sampled beforeimage query; WinError5 on successfully retained alreadyEXIT handle under knownruntime may be kept as separate unverified_exited_transient. Never known-image/nvidia/runtime/ancestryparent/termination target. Handles retained untilclose, allExitrequired; LIVEunknown/OpenProcessfailure/othererrorreject. Outer retains failure observation details.",
+  "scientific_invariants": "Independent equality checks against retainedv4 confirm exactsame model runtime/old64 identity/current-only software inputs/rawprovenance/generation/resources/timers/budgets/admissions.",
+  "actual_cpu_probe": {
+    "sha256": "b45cdacd9bac41d9eee1c4d7b0d56dbb78e7b26f84f30241572a80656f7251ad",
+    "six_windows_sample_calls": true,
+    "all6knownqueries_and3launcher_delegate_console_handles_exited": true,
+    "unverified_transient_count": 0,
+    "branch_coverage_limit": "Actual CPU probe did not naturally trigger imageQuery-error transient branch; that branch has authored fake WinAPI and tracker regressions."
+  },
+  "blocking_findings": [],
+  "go_scope": "Root may dispatch exactly this NEW2spentDEV software qualification attempt3 under frozen fullworkerargs. No fresh comparison, retry, training or UI admission granted by source review.",
+  "requirements": [
+    "Actual same-source2request PASS and independent closed audit must precede fresh comparison.",
+    "Future comparison builder must import exact outerv4 and bind same helper/profile/protocol/actual result/audit/worker; frozen final96-call plan requires readback review.",
+    "TRAIN11:00 remains expired/unrun; wholefreshadmission remains strictly11:30/cutoff13 without extension."
+  ],
+  "limits": [
+    "The previous attempt2 failure did not retain failed PID orEXIT state; an exited-process race remains a hypothesis. New logic does not relabel that failure as passed.",
+    "An unverified exited transient has no verified executable identity; reports must keep it separate from known nvidia queries.",
+    "Snapshot/OpenProcess failure still fails closed; no claim all possible races or96request stability solved.",
+    "Job identity derives from membership+reviewed parent noBREAKAWAY chain; OS commandline is not queried, arguments derive from pinned sampler source.",
+    "Policy120seconds remains unused timer metadata; actual180generator/210child/450qualification/13global bounds unchanged."
+  ],
+  "followUpTasks": []
+}

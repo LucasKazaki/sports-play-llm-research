@@ -13,21 +13,29 @@
     "chess-queen-coach-sft-training-v2/memory-qualification-1",
     "chess-queen-claim-audit-v1/closed-four-response-diagnostic",
     "chess-queen-coach-sft-training-v2/train-1",
-    "chess-encoder-check-generalization-v1/cpu-cohort"
+    "chess-encoder-check-generalization-v1/cpu-cohort",
+    "chess-queen-coach-counterfactual-v1/data-readiness-v2"
   ],
   "cutoff": "2026-10-16T09:00:00-04:00",
   "commentary_gate": "not_achieved",
   "schema": "sportsplay.native-chess-loop.v1",
   "next_actions": [
-    "Monitor the one current fresh fullv2 pilot; original reserve floors and13UTCcutoff unchanged.",
-    "After complete256updates/2048presentations+dev-onlyselection and closed worker, independently audit training/selection before root-heldout dispatch.",
-    "After both matched heldout ledgers close, independently review raw results before any quality or UI promotion.",
-    "Keep dated research and official UMD guidance current; restore optional CPU classifier after training maintenance."
+    "Preserve unadmittedTRAIN192 and freshcomparison96; no deadlineextension.",
+    "Improve transparent currentUI/backbone verification with reviewed source and truthfulrawoutputs.",
+    "Publish reviewed data/source/failure/softwarequalification/currentresearch toexistingdraftPR14.",
+    "Restore optionalCPUclassifier;13UTCclose/report/deactivateexistingheartbeat. Capabilitygoalunmet."
   ],
   "external_contact_sent": false,
-  "active_experiment": "coach-sft-training-v2/heldout-1 active",
+  "active_experiment": "No activeGPU. Cold software qualifier4 PASS only; newTRAIN192 and freshcomparison96 remained unadmitted. UI/backbone verification design and evidence publication.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T09:46:17.892896+00:00",
+  "updated_at": "2026-10-16T11:33:31.654783+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
-  "secondary_work": "Fixed-checkpoint generalization cohort and inference source passed review; no learned diagnostic calls yet. New tuned entrypoint remains unavailable; next counterfactual data design uses closed development only."
+  "secondary_work": "Data/tokenizer actualauditPASS; two software requests qualify coldlifecycle, not coaching. No new learnedadapter or freshmatchedqualityresult.",
+  "failed_evidence": [
+    "chess-queen-coach-sft-training-v2/heldout-1",
+    "chess-queen-coach-counterfactual-v1/startup-admission",
+    "chess-encoder-check-generalization-v1/failed-inference-v2",
+    "chess-queen-coach-counterfactual-cold-qualification-v1/attempt-1",
+    "chess-queen-coach-counterfactual-cold-qualification-v1/attempt-2"
+  ]
 }

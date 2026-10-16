@@ -1,0 +1,112 @@
+{
+  "status": "passed_source_review",
+  "created_utc": "2026-10-16T11:12:28.753087+00:00",
+  "protocol_sha256": "8eed0e30695c3f78861da210a8e7eeb20d10c987b19c7de3f8372c04b23961c5",
+  "worker_arguments_sha256": "a21241fed2c3659d712cf0c91b6222317ec96af9cf1d8d44b8fbfe2c0b65cf19",
+  "complete_files_and_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-sft-qualification-protocol-v4.json",
+      "bytes": 15484,
+      "sha256": "8eed0e30695c3f78861da210a8e7eeb20d10c987b19c7de3f8372c04b23961c5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_process_lineage_v2.py",
+      "bytes": 11114,
+      "sha256": "d2e480c695cace7d3ae43cab0d6bf62f7b7c64c77a34ea541585d789ff081fe4"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_cold_eval_v3.py",
+      "bytes": 18194,
+      "sha256": "e95a897adf5807f27227be34fc4a8daeb69391c6c690a8c23af2646028278a30"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_compare_cold_child_v1.py",
+      "bytes": 5214,
+      "sha256": "bdeef688546269e89a836707cf43ebb4385e4165e25ac61cf4aee3e01b89d997"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-venv-sampler-topology-probe-v1\\closed.json",
+      "bytes": 2536,
+      "sha256": "9ec10548a54ecb9679050bb3b6b7cd659e6c64bf07e54abeb089088aa1c01da1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-sampler-helper-bundle-v2.txt",
+      "bytes": 21531,
+      "sha256": "1c76ff71b21c6e8aecdf697959f3e2e2571cc0844080539a94666a3dce97b62b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-sampler-outer-source-bundle-v3.txt",
+      "bytes": 18342,
+      "sha256": "8a9a41d4e770a0464e7457a765e27b6b48ec9ef948ae3584806ccf47fa535e49"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-sampler-outer-tests-bundle-v3.txt",
+      "bytes": 13726,
+      "sha256": "485344f9203c5b40101f6cd72dd7f86ea7c5e0d02dd3a2d3bfc479e9041739c1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-sampler-plan-bundle-v3.txt",
+      "bytes": 24983,
+      "sha256": "39e98103f0b1a13eae9ead1d2fc2fdceffafcba905b1ac2c704fc486f11bdd51"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-sampler-plan-bundle-v4.txt",
+      "bytes": 25321,
+      "sha256": "bfa2bd0cbd28ec9d6c497aca17ccad47b1b2ed00e294d15eb1811926bf85a8c5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-sft-child-bundle-v1.txt",
+      "bytes": 8409,
+      "sha256": "5d8c3aca1ff81aa38aa210287c34b37a87319ad63f45cb41216c7b1085593d24"
+    }
+  ],
+  "scope": "Complete new sampler-aware helper/outer/tests/probe/builder/plans plus unchanged directSFT child independently read. CPU tests/metadata verification only.",
+  "cpu_tests": {
+    "passed": 55,
+    "seconds": 1.85,
+    "tool_chunk": "613b50"
+  },
+  "backend_free_verify": "passed; all source/runtime/probe/dependency/executable identities checked, noTorch imported",
+  "sampler_hold_resolved": "Exact resolved and hashed nvidia-smi executable is permitted only as a direct runtime child, creation-bound stable handle/job/EXIT required; cannot serve as runtime. Other descendants/additional Python hops fail.",
+  "prior_hold": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-topology-qualification-pre-dispatch-hold.json",
+    "bytes": 1321,
+    "sha256": "5705a42cb55cc48c966df24297ec306951ab90d62a4bea30ca5cef34967da9f2"
+  },
+  "deadline_clarification": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-request-deadline-clarification-review.json",
+    "bytes": 2015,
+    "sha256": "39e4a1f5abba80f92d566c9adb275a4cbce2322c39e79e005119bd7a6b42fa86"
+  },
+  "actual_cpu_probe": {
+    "sha256": "9ec10548a54ecb9679050bb3b6b7cd659e6c64bf07e54abeb089088aa1c01da1",
+    "known_query_processes": 6,
+    "observed_total_processes": 9,
+    "all_observed_handles_exited": true,
+    "job_membership_required_in_probe": false,
+    "actual_model_qualification_must_require_job_membership": true
+  },
+  "timer_documentation_only_v4": "Independent comparison confirms all scientific/runtime/source/input/condition/resource settings unchanged from retainedv3; only timing-description keys/timestamp/selfbuilder/protocolfilename changed. Policy120 is metadata, not an active timer.",
+  "enforced_bounds": {
+    "generator_seconds": 180,
+    "child_cumulative_seconds": 210,
+    "qualification_phase_seconds": 450,
+    "global_cutoff": "13:00UTC"
+  },
+  "blocking_findings": [],
+  "go_scope": "Root may dispatch exactly the2 already-spent development requests once under this frozen protocol/worker argument vector. This sourceGO does not qualify software or authorize fresh comparison, learning, UI admission or any deadline extension.",
+  "conditions": [
+    "Actual matching-profile software result must PASS and undergo independent closed audit before any fresh comparison.",
+    "Future comparison must use reviewed fixed oldterminal256 vs olddev64 identities and new exact frozen96-call plan; no new checkpoint selection/training.",
+    "TRAIN11:00 admission expired and remains unrun."
+  ],
+  "limitations": [
+    "CPU probe used5ms polling while model outer uses50ms. A rapidly exited process may be missed or race between snapshot/OpenProcess; unknown or unverifiable observed topology fails closed. No96request stability guarantee.",
+    "IsProcessInJob(None) proves membership in some job; same-root inheritance follows reviewed no-BREAKAWAY parent chain, not a queried named-job identity.",
+    "OS commandlines were not inspected. Resource-query arguments derive from exact pinned windows_sample source and fixed executable identity.",
+    "Every retained known process must signal EXIT before next request, but live snapshots cannot attest absence of every already-exited transient descendant.",
+    "No chess/prose/accuracy or new held-reference content inspected for this source review."
+  ],
+  "reviewer_model_engine_gpu_calls": 0,
+  "followUpTasks": []
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "chess.root-operational-context-addendum.v1",
+  "recorded_at_utc": "2026-10-16T10:57:17.556500+00:00",
+  "provenance": "Parent root agent coordination message for this packaging task; operational context, not an amendment to the independent closed-failure audit.",
+  "frozen_review_sha256": "9bed6c3d5b2791a631f592865ff17933bf656ff119e0852edea77ed9434832be",
+  "frozen_brief_sha256": "a5f74dd6d956eba32130ed9ca2868af0086a9e0ba7b63e8b86e49dc8c4de5063",
+  "root_reported_context": {
+    "authorized_cpu_corpus_audit_overlapped_encoder_gpu_diagnostic": true,
+    "audit_activity": "Parquet/source and exclusion verification by the independent corpus-review agent, permitted by root.",
+    "auditor_process_private_usage_sampled": false,
+    "auditor_process_now_exited_as_reported": true,
+    "contribution_to_global_commit_growth": "Unquantified. The evidence neither assigns nor excludes a causal contribution."
+  },
+  "operational_follow_up": "Root will serialize future heavy CPU analysis with GPU work; metadata and light checks remain allowed.",
+  "automatic_retry_authorized": false,
+  "original_review_and_brief_unchanged": true
+}

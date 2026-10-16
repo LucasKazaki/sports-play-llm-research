@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "error": "RuntimeError: First feature failure; no subsequent backend calls: RuntimeError: Resource reserve: commit_headroom_bytes_below_reserve",
+  "planned_actual_moves_per_condition": 128,
+  "source_requested_move_slots": 128,
+  "no_retry": true
+}

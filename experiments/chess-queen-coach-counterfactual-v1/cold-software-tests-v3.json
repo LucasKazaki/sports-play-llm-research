@@ -1,0 +1,8 @@
+{
+  "tests": 28,
+  "elapsed_seconds": 1.39,
+  "outer_sha256": "6fe1ddd1e3df037a87bc91b79872ddff514235e4cfd0d788928fb91fddbcc3e9",
+  "test_sha256": "6a4a195e8aaf87631d318ad700a501ad3ddb5775e42f857748541acb5d57c10c",
+  "protocol_sha256": "e11c7c843adee222c2b289b29f486911bded0d9fbbaaf0dee355bec35c89e9e2",
+  "worker_canonicalization_test": "Actual frozen gpu_worker.run_worker invoked on authoredbusy FileLock branch only; no child/process/GPU call. Actualheader hash proves fullscript-prefixed JSONarguments vector, not suffix."
+}

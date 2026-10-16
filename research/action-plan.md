@@ -1,5 +1,22 @@
 # Research Action Plan
 
+## October 16 current chess frontier
+
+The full coaching v2 run and fixed development selection passed closed audit.
+Its once-only matched fresh test is active; do not inspect partial responses or
+references to revise the next experiment. Development still contains five false
+among twelve recognized narrow claims; broad teaching quality is unmeasured.
+
+Next: complete and audit that test; strengthen the unexecuted fixed-head coverage
+diagnostic to a1GiB GPU reserve in a separate version; then score its64fresh
+pairs with the original epoch0/4 heads. A warm-started paired checking/nonchecking
+coaching curriculum is approved for source implementation only after independent
+design corrections. Collection, teachers and learned calls each await exact
+source/protocol review. The optional tuned UI components remain disabled.
+Maintain current source dates, rights, AI disclosure and UMD research-owner
+questions. No professional or institutional approval claim follows from these
+internal checks. The13UTC overnight cutoff and all resource floors remain fixed.
+
 ## Native chess experiments — October 15, 2026
 
 [Two completed weight-training pilots](../reports/chess-training-2026-10-15.md)
@@ -380,3 +397,115 @@ reproduces 9 supported, 4 contradicted and 5 unassessed among 18 purposive agent
 annotations. These are software/debugging results, not whole-prose quality.
 Next coverage work freezes a fresh fixed-checkpoint diagnostic for king/pawn
 moves and discovered/double checks; no scoring or new training has occurred.
+
+
+## October 16, 10:35 UTC: close the failed comparison and start a targeted data cycle
+
+The coaching comparison stopped at its unchanged Windows commit reserve. Of
+64 planned responses, the baseline condition returned 28 complete responses and
+two partial responses; one request failed. The remaining 33 responses, including
+all 32 planned trained-model responses, never ran. No matched quality result
+exists, and the trained tutor remains ineligible. The observed global and
+process memory counters do not establish an exclusive cause of the stop.
+
+The closed audit retains an exposure disclosure: metadata inspection
+accidentally displayed one baseline decoded answer and the failed response's
+empty text field and token IDs. No semantic analysis or reference scoring
+followed; the root reports seeing no decoded prose. The successor curriculum
+was frozen before that exposure and excludes all 512 previously reserved games.
+
+The first new CPU intake stopped before source iteration at its unchanged
+8 GiB startup commit reserve. Its source and receipts remain intact. After the
+previous GPU worker exited, a separate operational recovery passed independent
+review and 35 CPU checks. As of 10:35 UTC, one authorized CPU sequence has passed
+admission, completed intake and begun generating engine targets under the same
+scientific protocol. No new model calls have run. A closed corpus audit,
+verification of owned engine exit, complete CPU tokenization and final model
+protocol review remain prerequisites for learning.
+
+The next experiment tests whether additional move-conditioned supervision
+improves check grounding. It pairs checking and nonchecking moves on the same
+board, matching piece type and capture properties. Inputs contain only the
+current FEN and an optional legal move. A separate process for each evaluation
+request is a resource-containment hypothesis; it needs software qualification
+on two previously used development requests before fresh evaluation. More
+training or lower loss alone cannot establish coaching quality.
+
+The [ChessQA source audit](chessqa-source-audit-2026-10-16/recommendation.md) pins current code and the older dataset
+separately. Choosing a source comment from several options does not measure
+whether a model can write accurate coaching. Training and redistribution rights
+for that commentary remain unresolved, so the text has not entered training.
+The UMD readiness and AI-assistance records remain working research materials;
+no institutional approval or professional coaching claim is made. This entry
+supersedes active-run statements in the earlier chronological entries.
+
+
+## October 16, 11:19 UTC: verified data; training admission expired
+
+The changed-context CPU recovery completed 3,168 engine requests over 1,056
+retained source positions. Independent audit verified the retained positions,
+paired moves, engine targets, cross-split exclusions and exports. Complete CPU
+tokenization passed for 1,536 training and 96 development examples, without
+truncation or model forward passes. The corpus contains no selected king moves;
+it is a targeted grounding curriculum rather than broad chess coverage.
+
+The new 192-update training plan remains unrun. Its stricter 11:00 UTC admission
+expired while the Windows cold-process controller was being repaired. No new
+adapter or learning result exists for this curriculum. The frozen plan and its
+independent source review remain available for a later, explicitly versioned
+cycle; this overnight run does not extend its deadline.
+
+A repaired two-request software qualification used the fixed existing step-64
+adapter on already-used development inputs. The first child completed and
+exited. A process-image query returned Windows Access Denied during the second
+child, so the overall qualification failed. The original sources, first topology
+failure and this second failure remain intact. A separate fix is under review;
+there is no successful qualification or fresh quality comparison yet.
+
+A separate proposed comparison would evaluate the fixed old trained terminal
+checkpoint 256 against the fixed old development-selected checkpoint 64 on 16
+fresh game groups, with 48 responses per condition. Both models are trained.
+This cannot estimate an untrained-to-trained gain or select a new checkpoint.
+It requires actual software qualification and independent review before its
+11:30 UTC admission, with the unchanged 13:00 UTC global cutoff. Otherwise all
+96 responses remain unrun. The trained tutor stays disabled.
+
+The resource-policy value of 120 seconds is metadata, not an enforced elapsed
+timer in the unchanged NF4 resource guard. Actual unchanged limits are 180
+seconds for generation and 210 seconds per child, with separate phase and global
+deadlines. The correction changes descriptions only. Heavy CPU analysis will
+be serialized with GPU work after the earlier encoder diagnostic stopped at its
+commit reserve while CPU analysis was also running; its contribution is unknown.
+
+This entry supersedes active-run and admission statements in earlier dated
+entries. No whole-prose coaching, playing-strength or institutional approval
+claim follows from data readiness or software checks.
+
+
+## October 16, 11:35 UTC: software qualified; both new scientific phases unrun
+
+The cold controller's fourth attempt completed both already-used development
+requests and passed independent closed software review. Exact inputs, source,
+checkpoint and generation settings matched. Frozen storage remained identical
+for all 2,268 tensors before and after each request. Resource floors and the
+1 GiB post-exit commit-growth criterion passed. Three initially live handles
+with image-query errors later signalled EXIT during the bounded observation;
+their executable identities remain explicitly unknown. This qualifies the
+original SFT software profile on two used requests only, with no new-model,
+coaching-quality or long-run stability claim. The three failures remain intact.
+
+The prepared counterfactual 192-update training phase was not admitted before
+11:00 UTC. A separate no-training comparison fixed the old trained terminal
+checkpoint 256 against the old trained development-selected checkpoint 64.
+Its final protocol review was conditional on whole-phase admission before
+11:30 UTC; that admission did not occur in time. All 96 responses remain unrun,
+with no worker, raw answer or score. Its sixteen-game reservation remains intact
+and no model call spent the cohort. Both unadmitted ledgers are planning records,
+not fabricated execution receipts. No deadline was extended.
+
+The corpus and complete CPU tokenization remain independently checked. The
+remaining cycle improves transparency in the current UI and verification tools,
+and publishes the reviewed source, readiness, software and failure evidence to
+the existing draft. The trained profile stays disabled. The overall coaching
+capability and shareable-candidate gates remain unmet; the 13:00 UTC cutoff and
+hourly follow-up boundary are unchanged.

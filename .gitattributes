@@ -85,7 +85,7 @@ tests/test_chess_tutor_coaching_prose.py -text whitespace=blank-at-eol,blank-at-
 experiments/chess-queen-claim-audit-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/chess_queen_claim_audit_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_queen_claim_audit_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
-research/chess-research-radar-2026-10-16.md -text
+research/chess-research-radar-2026-10-16.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chess-research-refresh-2026-10-16.json -text
 research/chess-research-refresh-date-audit-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chess-ai-assistance-and-data-stewardship-2026-10-16.md -text
@@ -105,6 +105,15 @@ scripts/chess_queen_coach_counterfactual*.py -text whitespace=blank-at-eol,blank
 tests/test_chess_queen_coach_counterfactual*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_counterfactual_recovery_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chessqa-source-audit-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Preserve exact reviewed process-controller and comparison source bytes.
+scripts/chess_queen_process_lineage_v*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_process_lineage_v*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_sft_compare_cold_child_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_sft_compare_cold_child_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-existing-checkpoint-comparison-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_existing_checkpoint_comparison_v*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-stable-engine-release-check-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
 # Frozen review bundles and literal patches retain their original blank lines.
 experiments/**/*bundle.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
 experiments/**/amendment-diff.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol

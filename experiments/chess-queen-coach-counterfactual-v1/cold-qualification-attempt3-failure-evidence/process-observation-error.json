@@ -1,0 +1,12 @@
+{
+  "error": "ObservationError: Image query failed; unknown process not admitted: {'pid': 50288, 'parent_pid': 41500, 'created': 134366232978979791, 'in_job': True, 'image': None, 'image_query_winerror': 5, 'stable_handle_exited': False}",
+  "observation": {
+    "pid": 50288,
+    "parent_pid": 41500,
+    "created": 134366232978979791,
+    "in_job": true,
+    "image": null,
+    "image_query_winerror": 5,
+    "stable_handle_exited": false
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "scripts/chess_queen_coach_counterfactual_cold_eval_v1.py": "6fe1ddd1e3df037a87bc91b79872ddff514235e4cfd0d788928fb91fddbcc3e9",
+  "tests/test_chess_queen_coach_counterfactual_cold_eval_v1.py": "c709564c33be1be80c6e342adcdd2ab2c481b9e25dd1d5feac196935ee7e5187",
+  "experiments/chess-queen-coach-counterfactual-v1/cold-qualification-protocol-v2.json": "aa93f7e60aca401c939db910c145c210f22bf8e0485a8889169b70f0d145fb5a",
+  "experiments/chess-queen-coach-counterfactual-v1/cold-software-tests-v2.json": "3fb58575e9122ac4e220e815b57baae96b8ba80dd4d1a503d53dcc5e0ea1022f",
+  "experiments/chess-queen-coach-counterfactual-v1/prepare_cold_qualification_protocol_v2.py": "b1ffafd1b47ad878c8b540152b591ebfd81f401cf60a63a9c6627dd7190ef485"
+}

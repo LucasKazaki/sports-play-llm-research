@@ -1,0 +1,35 @@
+{
+  "reason": "Retain unexecuted documentation draft falsely treating Policy120 metadata as active elapsed timer. No model calls used these descriptions.",
+  "files": [
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\prepare_protocol.py",
+      "copy": "prepare_protocol.py",
+      "sha256": "532ecdc5050aed4ab6a35a75b4c308e9d06e43525d10909d20b356d02d35d622"
+    },
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_existing_checkpoint_comparison_v1.py",
+      "copy": "test_chess_existing_checkpoint_comparison_v1.py",
+      "sha256": "f63b060d1c92f8473eb2f678d862fb62890c27fa4e2c5ebb95db4d504bc36d89"
+    },
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\source-tests.json",
+      "copy": "source-tests.json",
+      "sha256": "996d65a87781f7aedb4f1d1b43a8c9b1e6a771b8f1ebc1918e038a7340ab69f4"
+    },
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\existing-checkpoint-comparison-source-bundle.txt",
+      "copy": "existing-checkpoint-comparison-source-bundle.txt",
+      "sha256": "d5eecbb57e12f435d893a89653df8e360077fd853a098a85941250ec88d891e6"
+    },
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan.json",
+      "copy": "chess-existing-checkpoint-comparison-plan.json",
+      "sha256": "852782e2a7a49d105bec4545be47e936a800edbbfacefb8bdfd81d7da4b793b3"
+    },
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-design-review.json",
+      "copy": "existing-checkpoint-comparison-design-review.json",
+      "sha256": "674f82916675c8f7bed0908e4fb5c055116066a53d904ebd5d618b45e47ccdf5"
+    }
+  ]
+}

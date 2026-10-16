@@ -1,0 +1,17 @@
+{
+  "schema": "chess.root-recovery-owner-closure.v1",
+  "observed_at": "2026-10-16T10:44:01.700913+00:00",
+  "CPU_exec_session": 27816,
+  "CPU_exit_code": 0,
+  "closed_sha256": "4a4e3b8784d936aa2bdab8b51496bf0e04301e3f74041650de2f683ddec4ae03",
+  "manifest_sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854",
+  "engine_observations": [
+    {
+      "pid": 636,
+      "absent_OpenProcess_error": 87
+    }
+  ],
+  "lease_probe_free": true,
+  "no_GPU_or_model_calls": true,
+  "scientific_acceptance": "Actual corpus audit remains pending"
+}

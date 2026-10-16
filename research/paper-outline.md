@@ -1,5 +1,18 @@
 # Paper Outline
 
+## October 16 native learning evidence and limits
+
+The current chess companion has actual local training and independent closed
+engineering audits, including256coaching updates. The development-selected
+step64 still makes incorrect check claims. Its fresh matched test is pending;
+no general explanation, teaching, Elo or sports-transfer result is established.
+The next paired curriculum tests additional move-conditioned supervision from
+that fixed adapter. It is not a pairing-only causal ablation. Keep learned
+outputs, engine references, deterministic facts, agent annotations and expert
+human assessment distinct; no expert assessment has occurred. Read the dated
+research radar and AI-assistance/data-stewardship record for source scope and
+remaining research-owner decisions.
+
 ## 2026-09-22 internal software-control evidence
 
 The development claim experiment in research/chess-factuality-experiment-2026-09-22.md is a bounded software/provenance control using8 real boards and deliberately mutated claims. It is not a model benchmark, human explanation-quality result or sports-transfer evidence. The reference-only comparison is intentionally weak; no independent statistical-sample claim is justified. Preserve all broader evaluation gates.
@@ -175,3 +188,45 @@ The [AI/data working record](chess-ai-assistance-and-data-stewardship-2026-10-16
 identifies model, engine, rule and reviewer roles, private-data boundaries,
 reproduction artifacts and unresolved human ownership/venue requirements.
 Canonical paper versions replace mislabelled paper-index update dates.
+
+
+## October 16, 10:35 UTC: current coaching limits
+
+The full coaching v2 pilot completed 256 updates and passed its closed training
+and development-selection audit. Its matched held evaluation then stopped at
+the unchanged commit reserve: 28 responses completed, two were partial, one
+failed and 33 never ran, including the entire trained-model condition. No
+matched coaching-quality result is available, and the trained tutor remains
+disabled. A fresh counterfactual CPU sequence is generating engine targets;
+corpus audit, tokenization and a reviewed model protocol must precede learning.
+The earlier 20-update failure remains separate evidence. Whole-prose quality,
+expert tutor usefulness and institutional research approval remain unresolved.
+
+
+## October 16, 11:35 UTC: software qualified; both new scientific phases unrun
+
+The cold controller's fourth attempt completed both already-used development
+requests and passed independent closed software review. Exact inputs, source,
+checkpoint and generation settings matched. Frozen storage remained identical
+for all 2,268 tensors before and after each request. Resource floors and the
+1 GiB post-exit commit-growth criterion passed. Three initially live handles
+with image-query errors later signalled EXIT during the bounded observation;
+their executable identities remain explicitly unknown. This qualifies the
+original SFT software profile on two used requests only, with no new-model,
+coaching-quality or long-run stability claim. The three failures remain intact.
+
+The prepared counterfactual 192-update training phase was not admitted before
+11:00 UTC. A separate no-training comparison fixed the old trained terminal
+checkpoint 256 against the old trained development-selected checkpoint 64.
+Its final protocol review was conditional on whole-phase admission before
+11:30 UTC; that admission did not occur in time. All 96 responses remain unrun,
+with no worker, raw answer or score. Its sixteen-game reservation remains intact
+and no model call spent the cohort. Both unadmitted ledgers are planning records,
+not fabricated execution receipts. No deadline was extended.
+
+The corpus and complete CPU tokenization remain independently checked. The
+remaining cycle improves transparency in the current UI and verification tools,
+and publishes the reviewed source, readiness, software and failure evidence to
+the existing draft. The trained profile stays disabled. The overall coaching
+capability and shareable-candidate gates remain unmet; the 13:00 UTC cutoff and
+hourly follow-up boundary are unchanged.
