@@ -1,0 +1,120 @@
+{
+  "schema": "chess.queen-claim-annotations.v1",
+  "response_sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223",
+  "raw_text_sha256": "4193b5c8bb34585a7abf2329fbe58e254ea9442868a711b4fc4379cfffcbd9ed",
+  "claims": [
+    {
+      "claim_id": "midgame_extra_pawn_unsupported",
+      "span": {
+        "start": 49,
+        "end": 130,
+        "sha256": "5aa5668fb53f2c8caa1e85eb834819776024aab3a642b6fce02d8463830e8414"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "relative_pawn_advantage",
+        "expected": 1
+      }
+    },
+    {
+      "claim_id": "midgame_initial_bishop_pair",
+      "span": {
+        "start": 49,
+        "end": 130,
+        "sha256": "5aa5668fb53f2c8caa1e85eb834819776024aab3a642b6fce02d8463830e8414"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "bishop",
+        "expected": 2
+      }
+    },
+    {
+      "claim_id": "midgame_knight_attacks_bishop",
+      "span": {
+        "start": 606,
+        "end": 699,
+        "sha256": "26d549d25aa4fdb1437efa18f5d097f2b22bf49696711da4f715379959be7d78"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "b3c5"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "geometric_attacks_square",
+        "piece": {
+          "color": "white",
+          "type": "knight"
+        },
+        "from_square": "c5",
+        "target_square": "e6",
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "midgame_main_critical_legal",
+      "span": {
+        "start": 5092,
+        "end": 5214,
+        "sha256": "0709b87ca89fb6b861b77330b1c9a01081a207e6867db72c332d752c413cfdc4"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "b3c5",
+          "e6a2",
+          "c5a4"
+        ],
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "midgame_later_bishop_return_legal",
+      "span": {
+        "start": 2003,
+        "end": 2082,
+        "sha256": "0f2e562417a90426599d3c204f5c9ed4e8d097b6dd3fb1b7128a8d21e8cebad2"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "b3c5",
+          "e6a2",
+          "c5a4",
+          "d8d7",
+          "a4b6",
+          "d7b7",
+          "b6a8",
+          "f8a8",
+          "f1c4"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "a2e6"
+        ],
+        "expected": true
+      }
+    }
+  ]
+}

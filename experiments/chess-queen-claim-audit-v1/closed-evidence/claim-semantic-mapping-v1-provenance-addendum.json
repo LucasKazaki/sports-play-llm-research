@@ -1,0 +1,40 @@
+{
+  "schema": "chess.claim-semantic-review-provenance-addendum.v1",
+  "verdict": "GO; exact 18 semantic mappings unchanged and approved only as AI-authored/AI-reviewed engineering annotations",
+  "mapping_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\claim-semantic-mapping-v1-review.json",
+    "bytes": 15175,
+    "sha256": "3cc75aa602f5982b7b446a2b7266032ea03fa65e9d7453e8b3896ca3d9cdf96a"
+  },
+  "mapping_candidate": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\semantic-mapping-candidate-v1.json",
+    "bytes": 17583,
+    "sha256": "4c306b38950a459477eb75b984b4241397fb395fd4204287de939064545e4c04"
+  },
+  "annotation_origin_addendum": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\annotation-origin-v1.json",
+    "bytes": 541,
+    "sha256": "73495060a53f3da594ae05524592d436c6c80c46cb582f08b117899fbcbffe5e"
+  },
+  "annotation_origin": "Codex/root",
+  "independent_review": "Separate local AI agent /root/check_review",
+  "expert_human_semantic_validation": false,
+  "final_source_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\claim-audit-source-v1-final-review.json",
+    "bytes": 4973,
+    "sha256": "3791576f33473e82f4a22d09782a0ff4e7146c288806e2918e47e8196437bf0e"
+  },
+  "current_protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-claim-audit-v1\\protocol.json",
+    "bytes": 5036,
+    "sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9"
+  },
+  "supersedes_source_wording_binding_only": "Original semantic report references prewording protocol3a811480; exact old source/protocol remain in premeasurement-draft-2. Current635259b1 changes provenance wording only; all 18 claims/spans/branches and annotation hashes remain unchanged.",
+  "actual_audit_implementation_invocations_by_reviewer": 0,
+  "limits": [
+    "Codex-authored, local-agent-reviewed mappings are not human gold labels or expert validation.",
+    "Eighteen purposive annotations from four spent examples do not measure representative prose coverage, teaching quality, Elo or heldout gain.",
+    "Keep illegal-context protection and unsupported relative/evaluative predicates unassessed.",
+    "No audited output may feed the generator, active training corpus or heldout metrics."
+  ]
+}

@@ -82,3 +82,13 @@ tests/test_chess_queen_qlora*.py -text whitespace=blank-at-eol,blank-at-eof,spac
 tests/test_chess_queen_coach_sft*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_queen_coach_memory_qualification_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_tutor_coaching_prose.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-claim-audit-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_claim_audit_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_claim_audit_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-research-radar-2026-10-16.md -text
+research/chess-research-refresh-2026-10-16.json -text
+research/chess-research-refresh-date-audit-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-ai-assistance-and-data-stewardship-2026-10-16.md -text
+experiments/chess-encoder-check-generalization-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_generalization_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_generalization_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

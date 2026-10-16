@@ -1,0 +1,157 @@
+{
+  "schema": "chess.queen-claim-annotations.v1",
+  "response_sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91",
+  "raw_text_sha256": "9665a5296c5be0cbef3ece8f84e5b1314cd871ce2a6d39776257f31bc5de25ea",
+  "claims": [
+    {
+      "claim_id": "mate_white_queen_count",
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "queen",
+        "expected": 1
+      }
+    },
+    {
+      "claim_id": "mate_white_pawn_count",
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "pawn",
+        "expected": 3
+      }
+    },
+    {
+      "claim_id": "mate_black_pawn_count",
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "black",
+        "piece_type": "pawn",
+        "expected": 3
+      }
+    },
+    {
+      "claim_id": "mate_main_move_legal",
+      "span": {
+        "start": 477,
+        "end": 562,
+        "sha256": "f7884d32c354953257a656eb0b3a6ee051586145e831bf8c16d7f9292ac8b8aa"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "g5d8"
+        ],
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "mate_alternative_line_legal",
+      "span": {
+        "start": 1207,
+        "end": 1349,
+        "sha256": "fa44234e63770aa8ddd4a30784b3d2b86251d169d92f938fb6f86958289d85d3"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7"
+        ],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "d8h5"
+        ],
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "mate_protection_after_illegal_branch",
+      "span": {
+        "start": 1529,
+        "end": 1584,
+        "sha256": "2f7ee5a64c9574b98046ea8dae1bf511120de281ea61f07626b420c3a44a5c08"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7",
+          "d8h5",
+          "h7g8",
+          "h5e8"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "geometric_attacks_square",
+        "piece": {
+          "color": "white",
+          "type": "pawn"
+        },
+        "from_square": "f2",
+        "target_square": "e8",
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "mate_advantage_unsupported",
+      "span": {
+        "start": 10,
+        "end": 54,
+        "sha256": "61c89f08099228ae1d30f692a2879fd1ff15ebd4206c90fbff81a3c1f448a912"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "strategic_material_advantage",
+        "expected": "decisive"
+      }
+    }
+  ]
+}

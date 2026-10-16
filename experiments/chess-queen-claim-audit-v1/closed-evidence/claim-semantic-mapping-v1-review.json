@@ -1,0 +1,334 @@
+{
+  "schema": "chess.independent-claim-semantic-mapping-review.v1",
+  "verdict": "GO for exact 18 annotations after completed software GO; no mapping changes required",
+  "reviewed_at_utc": "2026-10-16T09:08:43.334709+00:00",
+  "scope": "Full decoded raw_text and input of four closed authored responses, all four annotation files and complete master mapping; metadata only for model records. No actual audit implementation invoked on these responses.",
+  "method": [
+    "Manual full prose/branch/side correspondence review; native square1=a1 through64=h8 and M=original side to move, all White.",
+    "Independent python-chess CPU replay for each context; stop first illegal or automatic-terminal ply. No engine or learned calls.",
+    "Exact response/raw-text/span hashes, master-to-annotation identity, private/public byte identity, and native coordinate decoding for all variation spans."
+  ],
+  "reviewed_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\semantic-mapping-candidate-v1.json",
+      "bytes": 17583,
+      "sha256": "4c306b38950a459477eb75b984b4241397fb395fd4204287de939064545e4c04"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-0-annotations-v1.json",
+      "bytes": 3962,
+      "sha256": "c4973eae14437455c6cd44ec1dcb7a08a0ba70f22d8f90cdb6e76b015b650c25"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-1-annotations-v1.json",
+      "bytes": 3024,
+      "sha256": "6f513a6433829bedbec88f627ed30b11c0368362fe70749437e529ca60314239"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-2-annotations-v1.json",
+      "bytes": 2047,
+      "sha256": "c196b985c406df8a76a69a7c51b8b0cbf3bf5e1f005d6362444a368c8f24a566"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-3-annotations-v1.json",
+      "bytes": 2081,
+      "sha256": "275bd042e66e74992d999ff2aeef560f7d5baff1d9b5133435707f9096fb9122"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-0.json",
+      "bytes": 40623,
+      "sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-1.json",
+      "bytes": 69108,
+      "sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-2.json",
+      "bytes": 55081,
+      "sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-3.json",
+      "bytes": 59375,
+      "sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\claim-audit-source-v1-review.json",
+      "bytes": 3792,
+      "sha256": "67c2d083998ac629f6395527a5182d8d1f85e7e4194854bf79ed267cc721377d"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-claim-audit-v1\\protocol.json",
+      "bytes": 4819,
+      "sha256": "3a81148028b8903302e1ae5fbd5aebfe3b6e2a116b4114e01ad7b173df8fb225"
+    }
+  ],
+  "claim_mapping_count": 18,
+  "response_claim_counts": [
+    7,
+    5,
+    3,
+    3
+  ],
+  "mappings": [
+    {
+      "response_index": 0,
+      "claim_id": "mate_white_queen_count",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Literal singular own queen in initial material span; M=White. No advantage predicate inferred."
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_white_pawn_count",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Literal three own pawns in initial span, with native14/15/16=f2/g2/h2."
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_black_pawn_count",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Literal three opposing pawns in initial span, native54/55/56=f7/g7/h7."
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_main_move_legal",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": [
+        "g5d8"
+      ],
+      "manual_semantic_note": "Explicit own Qg5-d8. Legality-only mapping excludes mate, bestness and entire rank-control claims."
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_alternative_line_legal",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": [
+        "d8h5"
+      ],
+      "manual_semantic_note": "Explicit Qd8xh5 assertion belongs after Qg5-d5,h7-h5,Qd5-d8,Kg8-h7. The coordinate move itself is the claim, not fabricated context."
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_protection_after_illegal_branch",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": {
+        "ply": 5,
+        "uci": "d8h5",
+        "turn": "white",
+        "reason": "illegal_move",
+        "legal_prefix_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7"
+        ]
+      },
+      "all_context_plies_legal": false,
+      "context_turn_verified": false,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Explicit later protection assertion belongs after complete earlier alternative through Qd8xh5 and Qh5-e8. Context already fails at fifth ply d8h5; must remain unassessed. Do not evaluate f2-to-e8 on a substituted root/fictional board or equate geometry with legal recapture."
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_advantage_unsupported",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Decisive material advantage is an unsupported evaluative predicate; do not replace with counts."
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_extra_pawn_unsupported",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Extra own pawn is relative material, not an absolute pawn count; unsupported predicate retained."
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_initial_bishop_pair",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Own bishop-pair component only, initial White-to-move state; same span also contains unsupported extra-pawn/material-edge claims."
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_knight_attacks_bishop",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Immediately after Nb3-c5, explicitly named own knight c5 attacks opposing bishop e6; geometric component only, not pressure/outpost quality."
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_main_critical_legal",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": [
+        "b3c5",
+        "e6a2",
+        "c5a4"
+      ],
+      "manual_semantic_note": "Native structured three-ply line maps exactly to b3c5/e6a2/c5a4; legality only."
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_later_bishop_return_legal",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": [
+        "a2e6"
+      ],
+      "manual_semantic_note": "Later black Ba2-e6 belongs after exact nine-ply main prose branch through Bf1-c4. All nine context plies legally replay; structured three-ply line does not validate later return."
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_material_equality_unsupported",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Equal-material comparison retained unsupported; no invented complete single-side inventory assertion."
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_main_critical_legal",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": [
+        "d2d3",
+        "d7d6",
+        "e1g1",
+        "g8f6",
+        "c2c3",
+        "e8g8",
+        "b1d2",
+        "c8e6",
+        "h2h3",
+        "d8d7"
+      ],
+      "manual_semantic_note": "Exact ten-ply structured native line, independent of later prose alternatives; legality only."
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_alternative_white_bishop_pair",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Third candidate branch starts c2c3 and includes white Be3, black Bxe3, white f2xe3. Player=White; only bishop-pair component mapped, no doubled-pawn/open-file claim."
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_material_equality_unsupported",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Equal-material comparison retained unsupported; initial FEN remains White to move."
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_main_critical_legal",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": [
+        "c2c3",
+        "d7d6",
+        "e1g1",
+        "g8f6",
+        "f1e1",
+        "e8g8",
+        "d2d3",
+        "c8e6",
+        "c4e6",
+        "f7e6",
+        "b1d2"
+      ],
+      "manual_semantic_note": "Exact eleven-ply structured native line. c2c3 was supplied in input; line legality cannot be called independent best-move prediction."
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_main_black_bishop_pair",
+      "mapping_verdict": "approved for this narrow predicate only",
+      "exact_span_and_all_hashes_match": true,
+      "context_first_failure": null,
+      "all_context_plies_legal": true,
+      "context_turn_verified": true,
+      "decoded_claim_coordinates": null,
+      "manual_semantic_note": "Main selected-move prose through black f7xe6. Opponent=Black; bishop-pair component only, no doubled-pawn/file/advantage inference."
+    }
+  ],
+  "blocking_findings": [],
+  "required_reporting_limits": [
+    "Keep protection-after-illegal-prefix unassessed; never fabricate its board.",
+    "Retain all unsupported comparative/evaluative predicates as unassessed; no complete-inventory inference.",
+    "Geometric attack is not legal recapture, successful defense or king safety.",
+    "Variation legality excludes mate, bestness, forcedness and strategic quality.",
+    "Selected c2c3 is supplied information, not independent prediction.",
+    "Eighteen purposive annotations are not exhaustive or representative prose coverage; report all annotations and abstentions, no whole-prose accuracy.",
+    "Evaluator-only outputs must not feed generator, live training or heldout metrics."
+  ],
+  "actual_audit_implementation_invocations": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "held_reference_content_opened": false
+}

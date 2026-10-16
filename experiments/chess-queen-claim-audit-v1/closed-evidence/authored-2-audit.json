@@ -1,0 +1,128 @@
+{
+  "schema": "chess.queen-claim-audit.v1",
+  "evaluation_only": true,
+  "response_sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0",
+  "raw_text_sha256": "e98499349517fc8f7f16e3f6d1105bde58d1721f6590b1b7782fe5155bae5a9c",
+  "response_status": "completed",
+  "root_fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+  "claims": [
+    {
+      "claim_id": "opening_material_equality_unsupported",
+      "span": {
+        "start": 10,
+        "end": 77,
+        "sha256": "05263541c115f2e153e92765468db81923bbc20202c9dfc956710d3408fbafc0"
+      },
+      "exact_raw_text": "The position is a quiet Italian Game structure with equal material.",
+      "claim": {
+        "kind": "material_equality",
+        "expected": true
+      },
+      "status": "unassessed",
+      "reason": "unsupported_claim_kind",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+      }
+    },
+    {
+      "claim_id": "opening_main_critical_legal",
+      "span": {
+        "start": 3608,
+        "end": 3949,
+        "sha256": "b09304711b4d4694780fc03dfbe97d75e9e0d80892d5c7501aed3c44a64311e0"
+      },
+      "exact_raw_text": "CRITICAL_LINE: <PIECE_MP><SQUARE_12><SQUARE_20> <PIECE_OP><SQUARE_52><SQUARE_44> <PIECE_MK><SQUARE_5><SQUARE_7> <PIECE_ON><SQUARE_63><SQUARE_46> <PIECE_MP><SQUARE_11><SQUARE_19> <PIECE_OK><SQUARE_61><SQUARE_63> <PIECE_MN><SQUARE_2><SQUARE_12> <PIECE_OB><SQUARE_59><SQUARE_45> <PIECE_MP><SQUARE_16><SQUARE_24> <PIECE_OQ><SQUARE_60><SQUARE_52>",
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "d2d3",
+          "d7d6",
+          "e1g1",
+          "g8f6",
+          "c2c3",
+          "e8g8",
+          "b1d2",
+          "c8e6",
+          "h2h3",
+          "d8d7"
+        ],
+        "expected": true
+      },
+      "status": "supported",
+      "expected": true,
+      "observed": true,
+      "variation": {
+        "legal": true,
+        "plies": 10,
+        "fen_after": "r4rk1/pppq1ppp/2npbn2/2b1p3/2B1P3/2PP1N1P/PP1N1PP1/R1BQ1RK1 w - - 1 9"
+      },
+      "scope": "This explicitly annotated variation only. No forcedness, quality, engine attribution or whole-prose validity.",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+      }
+    },
+    {
+      "claim_id": "opening_alternative_white_bishop_pair",
+      "span": {
+        "start": 3333,
+        "end": 3450,
+        "sha256": "040a2a83962356b94e5f94cec57ed25bef40d6674c40701229c2dd15585969fd"
+      },
+      "exact_raw_text": "the player accepts doubled <SQUARE_61>-<SQUARE_5>-pawns but gains the open <SQUARE_62>-<SQUARE_6> and the bishop pair",
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "bishop",
+        "expected": 2
+      },
+      "status": "contradicted",
+      "expected": 2,
+      "observed": 1,
+      "scope": "Literal current-board count only.",
+      "context": {
+        "branch_uci": [
+          "c2c3",
+          "g8f6",
+          "e1g1",
+          "e8g8",
+          "d2d3",
+          "d7d6",
+          "c1e3",
+          "c5e3",
+          "f2e3"
+        ],
+        "turn": "black",
+        "fen": "r1bq1rk1/ppp2ppp/2np1n2/4p3/2B1P3/2PPPN2/PP4PP/RN1Q1RK1 b - - 0 8"
+      }
+    }
+  ],
+  "summary": {
+    "annotated": 3,
+    "supported": 1,
+    "contradicted": 1,
+    "unassessed": 1,
+    "assessed_annotation_fraction": 0.6666666666666666,
+    "supported_fraction_among_assessed": 0.5
+  },
+  "semantic_mapping_automatically_verified": false,
+  "whole_prose_coverage_established": false,
+  "limitations": [
+    "Python Unicode code points; zero-based [start,end); SHA-256 of exact UTF-8 substring",
+    "response.input.fen only; no annotator replacement FEN",
+    "Explicit legal branch replay and expected side to move; ambiguous or invalid context is unassessed",
+    "Independent semantic correspondence review is required separately; hashes do not establish it",
+    "Counts of pawn/knight/bishop/rook/queen by one side; not piece values or advantage",
+    "Occupancy-aware attack geometry includes pinned pieces; never legal recapture or tactical success",
+    "Explicit asserted line only; no engine attribution or whole-prose inference",
+    "Standalone current FEN and explicit branch only; prior repetition is not inferred",
+    "Evaluator only; never generator input, repair, training target or current heldout metric"
+  ],
+  "implementation_sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529",
+  "protocol_sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9",
+  "annotations_sha256": "c196b985c406df8a76a69a7c51b8b0cbf3bf5e1f005d6362444a368c8f24a566",
+  "response_pool_index": 2
+}

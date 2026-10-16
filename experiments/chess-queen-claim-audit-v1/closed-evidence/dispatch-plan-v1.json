@@ -1,0 +1,50 @@
+{
+  "schema": "chess.claim-audit-dispatch-plan.v1",
+  "status": "prepared_waiting_final_amended_source_review",
+  "implementation_sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529",
+  "protocol_sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9",
+  "annotation_origin_sha256": "73495060a53f3da594ae05524592d436c6c80c46cb582f08b117899fbcbffe5e",
+  "planned_response_audits": 4,
+  "planned_annotations": 18,
+  "new_model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "cases": [
+    {
+      "index": 0,
+      "response": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-0.json",
+      "response_sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91",
+      "annotations": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-0-annotations-v1.json",
+      "annotations_sha256": "c4973eae14437455c6cd44ec1dcb7a08a0ba70f22d8f90cdb6e76b015b650c25",
+      "output": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-0-audit.json",
+      "status": "not_run"
+    },
+    {
+      "index": 1,
+      "response": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-1.json",
+      "response_sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223",
+      "annotations": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-1-annotations-v1.json",
+      "annotations_sha256": "6f513a6433829bedbec88f627ed30b11c0368362fe70749437e529ca60314239",
+      "output": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-1-audit.json",
+      "status": "not_run"
+    },
+    {
+      "index": 2,
+      "response": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-2.json",
+      "response_sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0",
+      "annotations": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-2-annotations-v1.json",
+      "annotations_sha256": "c196b985c406df8a76a69a7c51b8b0cbf3bf5e1f005d6362444a368c8f24a566",
+      "output": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-2-audit.json",
+      "status": "not_run"
+    },
+    {
+      "index": 3,
+      "response": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-3.json",
+      "response_sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea",
+      "annotations": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\authored-3-annotations-v1.json",
+      "annotations_sha256": "275bd042e66e74992d999ff2aeef560f7d5baff1d9b5133435707f9096fb9122",
+      "output": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-3-audit.json",
+      "status": "not_run"
+    }
+  ]
+}

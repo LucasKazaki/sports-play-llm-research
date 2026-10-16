@@ -1,0 +1,74 @@
+{
+  "schema": "chess.claim-audit-attempt.v1",
+  "started_utc": "2026-10-16T09:11:41.039076+00:00",
+  "status": "completed",
+  "plan_sha256": "afe31dcbe65bdb481720974cffc9e6c29564398134f24a4542b5a62cd8f60516",
+  "planned_audits": 4,
+  "completed_audits": 4,
+  "failed_audits": 0,
+  "unknown_audits": 0,
+  "not_run_audits": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "expert_human_semantic_validation": false,
+  "cases": [
+    {
+      "index": 0,
+      "status": "completed",
+      "returncode": 0,
+      "output_sha256": "07750c4f166b7028a46e81f1759c9a0afd52bb33cfc841cfdeabe230284f7eb2",
+      "summary": {
+        "annotated": 7,
+        "supported": 4,
+        "contradicted": 1,
+        "unassessed": 2,
+        "assessed_annotation_fraction": 0.7142857142857143,
+        "supported_fraction_among_assessed": 0.8
+      }
+    },
+    {
+      "index": 1,
+      "status": "completed",
+      "returncode": 0,
+      "output_sha256": "364d1a3df6db58c1014603953077163670f65e16ceffd39fef5fb6a6051f753a",
+      "summary": {
+        "annotated": 5,
+        "supported": 3,
+        "contradicted": 1,
+        "unassessed": 1,
+        "assessed_annotation_fraction": 0.8,
+        "supported_fraction_among_assessed": 0.75
+      }
+    },
+    {
+      "index": 2,
+      "status": "completed",
+      "returncode": 0,
+      "output_sha256": "6ab24c6a3bae50851116487bb0d0a0b707dd9493bfdac59ee9228a108aa3dd8c",
+      "summary": {
+        "annotated": 3,
+        "supported": 1,
+        "contradicted": 1,
+        "unassessed": 1,
+        "assessed_annotation_fraction": 0.6666666666666666,
+        "supported_fraction_among_assessed": 0.5
+      }
+    },
+    {
+      "index": 3,
+      "status": "completed",
+      "returncode": 0,
+      "output_sha256": "0dca54e3358476f94fe9424652eff76a77454c0060f0aeb8284c762d3719483f",
+      "summary": {
+        "annotated": 3,
+        "supported": 1,
+        "contradicted": 1,
+        "unassessed": 1,
+        "assessed_annotation_fraction": 0.6666666666666666,
+        "supported_fraction_among_assessed": 0.5
+      }
+    }
+  ],
+  "closed_utc": "2026-10-16T09:11:41.550701+00:00"
+}

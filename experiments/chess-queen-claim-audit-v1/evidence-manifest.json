@@ -1,0 +1,128 @@
+{
+  "schema": "chess.queen-claim-audit-public-evidence.v1",
+  "copies_byte_exact": true,
+  "expert_human_semantic_validation": false,
+  "scope": "Closed evaluator engineering diagnostic on four already-spent authored demonstrations, not a whole-prose benchmark.",
+  "files": [
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/annotation-origin-v1.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/annotation-origin-v1.json",
+      "bytes": 541,
+      "sha256": "73495060a53f3da594ae05524592d436c6c80c46cb582f08b117899fbcbffe5e"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/attempt.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/attempt.json",
+      "bytes": 2199,
+      "sha256": "0bda103ea763e08805a9b0b1dd0d298e3cfbc73353a0d01e140569512c74bcfb"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-0-annotations-v1.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-0-annotations-v1.json",
+      "bytes": 3962,
+      "sha256": "c4973eae14437455c6cd44ec1dcb7a08a0ba70f22d8f90cdb6e76b015b650c25"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-0-audit.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-0-audit.json",
+      "bytes": 7820,
+      "sha256": "07750c4f166b7028a46e81f1759c9a0afd52bb33cfc841cfdeabe230284f7eb2"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-1-annotations-v1.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-1-annotations-v1.json",
+      "bytes": 3024,
+      "sha256": "6f513a6433829bedbec88f627ed30b11c0368362fe70749437e529ca60314239"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-1-audit.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-1-audit.json",
+      "bytes": 6620,
+      "sha256": "364d1a3df6db58c1014603953077163670f65e16ceffd39fef5fb6a6051f753a"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-2-annotations-v1.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-2-annotations-v1.json",
+      "bytes": 2047,
+      "sha256": "c196b985c406df8a76a69a7c51b8b0cbf3bf5e1f005d6362444a368c8f24a566"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-2-audit.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-2-audit.json",
+      "bytes": 4863,
+      "sha256": "6ab24c6a3bae50851116487bb0d0a0b707dd9493bfdac59ee9228a108aa3dd8c"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-3-annotations-v1.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-3-annotations-v1.json",
+      "bytes": 2081,
+      "sha256": "275bd042e66e74992d999ff2aeef560f7d5baff1d9b5133435707f9096fb9122"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/authored-3-audit.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/authored-3-audit.json",
+      "bytes": 4944,
+      "sha256": "0dca54e3358476f94fe9424652eff76a77454c0060f0aeb8284c762d3719483f"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/calls.jsonl",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/calls.jsonl",
+      "bytes": 5622,
+      "sha256": "4a90feca6684d291c5b7cd73d566bd7301aeef1ac0a32065e03ba7ca7c1d3c63"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/chess_queen_claim_audit_v1.py",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/claim-audit-source-v1-final-review.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/claim-audit-source-v1-final-review.json",
+      "bytes": 4973,
+      "sha256": "3791576f33473e82f4a22d09782a0ff4e7146c288806e2918e47e8196437bf0e"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/claim-semantic-mapping-v1-provenance-addendum.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/claim-semantic-mapping-v1-provenance-addendum.json",
+      "bytes": 2598,
+      "sha256": "f8ad060bee615b509b1410ceb402274faa9c194e35d34757c3149cb2fc5b666a"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/claim-semantic-mapping-v1-review.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/claim-semantic-mapping-v1-review.json",
+      "bytes": 15175,
+      "sha256": "3cc75aa602f5982b7b446a2b7266032ea03fa65e9d7453e8b3896ca3d9cdf96a"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/dispatch-plan-v1.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/dispatch-plan-v1.json",
+      "bytes": 3614,
+      "sha256": "afe31dcbe65bdb481720974cffc9e6c29564398134f24a4542b5a62cd8f60516"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/protocol.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/protocol.json",
+      "bytes": 5036,
+      "sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9"
+    },
+    {
+      "private_source": "data/private/chess-queen-claim-audit-v1/attempt-1/semantic-mapping-candidate-v1.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/semantic-mapping-candidate-v1.json",
+      "bytes": 17583,
+      "sha256": "4c306b38950a459477eb75b984b4241397fb395fd4204287de939064545e4c04"
+    },
+    {
+      "source": "currenttask/work/queen-review/claim-audit-closed-v1-review.json",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/claim-audit-closed-v1-review.json",
+      "bytes": 16813,
+      "sha256": "dfe38212f4ea2bbd6082e6b07e9a90168a6aff73155a8d5a9299553096251a9c"
+    },
+    {
+      "source": "Exact README at final source review and actual dispatch, before result pointer added.",
+      "public_copy": "experiments/chess-queen-claim-audit-v1/closed-evidence/premeasurement-readme-final.md",
+      "bytes": 6969,
+      "sha256": "c8bb981c519bc15dfbc7821c6a3d663634e15c2daca2e422a874b2484143d176"
+    }
+  ]
+}

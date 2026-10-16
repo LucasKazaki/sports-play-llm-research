@@ -1,0 +1,27 @@
+{
+  "schema": "chess.queen-claim-audit-software-tests.v1",
+  "execution": {
+    "tool": "exec_command",
+    "chunk_id": "91dc14",
+    "exit_code": 0,
+    "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_claim_audit_v1.py -q",
+    "stdout": "...................................... [100%]\n38 passed in 0.19s\n"
+  },
+  "implementation": {
+    "path": "scripts/chess_queen_claim_audit_v1.py",
+    "bytes": 15205,
+    "sha256": "0c5f7f3dd90bbadc621a8ef3f6945d5a00137e6a662b62e217dbe09e85b8f118"
+  },
+  "tests": {
+    "path": "tests/test_chess_queen_claim_audit_v1.py",
+    "bytes": 14378,
+    "sha256": "06a4bddcd90f96b79bdc5fbe41d4d11fd59a0065e94ce199d8338f7d89a5a7b7"
+  },
+  "fixture_scope": "Authored software fixtures created in tests; no real learned response or heldout content opened.",
+  "actual_authored_claim_audits": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "prior_software_iteration": "software-tests-first.json and protocol-software-draft-1.json retain the 37-pass premeasurement draft; self-review then added closed-pool enforcement before any authored audit.",
+  "limitation": "Software execution is not independent source review, semantic mapping acceptance or factuality measurement."
+}

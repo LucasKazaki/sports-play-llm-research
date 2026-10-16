@@ -689,3 +689,15 @@ Completed source-bound V5, balanced-check retry, V6 legality and encoder-check t
 ## October 16: current research refresh and train1 failure closure
 
 Checked current primary chess literature and official UMD research guidance. Current Queen code HEAD and PAWN-8 model SHA still match the pinned local revisions. First coach pilot closed at 20 confirmed updates / 160 backward passes plus one unknown micro, below its fixed commit reserve;zero held-out calls, no selection or post-training checkpoint. Owned tutor server restarted with optional CPU classifier disabled, reducing measured global commit to 33.24 GB; unrelated processes untouched. Separate memory qualification is in preparation. [Research/next cycle](research/chess-research-radar-2026-10-16.md).
+
+## October 16: closed offline factuality cycle
+
+Implemented and independently reviewed a bounded branch-bound claim checker;
+38 CPU fixture tests pass. Four actual offline audits completed with no failed,
+unknown or never-run calls. Independent replay confirms 9 supported, 4 contradicted
+and 5 unassessed among 18 purposive Codex annotations, without human expert
+validation. Source, annotations, raw outputs and closed review have exact public
+copies. Corrected four paper revision dates against canonical arXiv histories;
+index metadata remains preserved. Added AI-assistance/data-stewardship working
+record. Fresh full coaching v2 training remains active; no heldout result or
+professional-coaching promotion is claimed.

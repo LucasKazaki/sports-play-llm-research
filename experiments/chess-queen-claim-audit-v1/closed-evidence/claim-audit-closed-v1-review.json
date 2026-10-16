@@ -1,0 +1,387 @@
+{
+  "schema": "chess.independent-claim-audit-closed-review.v1",
+  "verdict": "PASS: closed execution, bindings and all 18 narrow annotation verdicts independently reproduced",
+  "reviewed_at_utc": "2026-10-16T09:14:14.798160+00:00",
+  "reviewer": "/root/check_review, local AI agent",
+  "annotation_origin": "Codex/root",
+  "expert_human_semantic_validation": false,
+  "method": "Read all four retained audit outputs; independent python-chess rule replay/count/geometry checks. Did not import/run the audited implementation or CLI and created no new attempt.",
+  "scope": {
+    "planned_audits": 4,
+    "completed": 4,
+    "failed": 0,
+    "unknown": 0,
+    "not_run": 0,
+    "annotations": 18,
+    "supported": 9,
+    "contradicted": 4,
+    "unassessed": 5
+  },
+  "denominator_limit": "9 supported, 4 contradicted and 5 unassessed only among 18 purposively chosen, AI-authored/AI-reviewed annotations in four already spent demonstrations. No whole-prose, representative factuality, human-gold, teaching-quality, Elo or heldout claim.",
+  "cases": [
+    {
+      "index": 0,
+      "status": "completed",
+      "summary": {
+        "annotated": 7,
+        "supported": 4,
+        "contradicted": 1,
+        "unassessed": 2,
+        "assessed_annotation_fraction": 0.7142857142857143,
+        "supported_fraction_among_assessed": 0.8
+      },
+      "output": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-0-audit.json",
+        "bytes": 7820,
+        "sha256": "07750c4f166b7028a46e81f1759c9a0afd52bb33cfc841cfdeabe230284f7eb2"
+      }
+    },
+    {
+      "index": 1,
+      "status": "completed",
+      "summary": {
+        "annotated": 5,
+        "supported": 3,
+        "contradicted": 1,
+        "unassessed": 1,
+        "assessed_annotation_fraction": 0.8,
+        "supported_fraction_among_assessed": 0.75
+      },
+      "output": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-1-audit.json",
+        "bytes": 6620,
+        "sha256": "364d1a3df6db58c1014603953077163670f65e16ceffd39fef5fb6a6051f753a"
+      }
+    },
+    {
+      "index": 2,
+      "status": "completed",
+      "summary": {
+        "annotated": 3,
+        "supported": 1,
+        "contradicted": 1,
+        "unassessed": 1,
+        "assessed_annotation_fraction": 0.6666666666666666,
+        "supported_fraction_among_assessed": 0.5
+      },
+      "output": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-2-audit.json",
+        "bytes": 4863,
+        "sha256": "6ab24c6a3bae50851116487bb0d0a0b707dd9493bfdac59ee9228a108aa3dd8c"
+      }
+    },
+    {
+      "index": 3,
+      "status": "completed",
+      "summary": {
+        "annotated": 3,
+        "supported": 1,
+        "contradicted": 1,
+        "unassessed": 1,
+        "assessed_annotation_fraction": 0.6666666666666666,
+        "supported_fraction_among_assessed": 0.5
+      },
+      "output": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-3-audit.json",
+        "bytes": 4944,
+        "sha256": "0dca54e3358476f94fe9424652eff76a77454c0060f0aeb8284c762d3719483f"
+      }
+    }
+  ],
+  "independent_rows": [
+    {
+      "response_index": 0,
+      "claim_id": "mate_white_queen_count",
+      "independent_status": "supported",
+      "observed": 1,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_white_pawn_count",
+      "independent_status": "supported",
+      "observed": 3,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_black_pawn_count",
+      "independent_status": "supported",
+      "observed": 3,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_main_move_legal",
+      "independent_status": "supported",
+      "observed": true,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_alternative_line_legal",
+      "independent_status": "contradicted",
+      "observed": false,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_protection_after_illegal_branch",
+      "independent_status": "unassessed",
+      "observed": null,
+      "first_context_failure": {
+        "legal": false,
+        "failed_ply": 5,
+        "uci": "d8h5",
+        "reason": "move_not_legal",
+        "turn": "white",
+        "fen_before_failure": "3Q4/5ppk/8/7p/8/8/5PPP/6K1 w - - 2 3",
+        "legal_prefix_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7"
+        ]
+      }
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_advantage_unsupported",
+      "independent_status": "unassessed",
+      "observed": null,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_extra_pawn_unsupported",
+      "independent_status": "unassessed",
+      "observed": null,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_initial_bishop_pair",
+      "independent_status": "supported",
+      "observed": 2,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_knight_attacks_bishop",
+      "independent_status": "supported",
+      "observed": true,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_main_critical_legal",
+      "independent_status": "supported",
+      "observed": true,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_later_bishop_return_legal",
+      "independent_status": "contradicted",
+      "observed": false,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_material_equality_unsupported",
+      "independent_status": "unassessed",
+      "observed": null,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_main_critical_legal",
+      "independent_status": "supported",
+      "observed": true,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_alternative_white_bishop_pair",
+      "independent_status": "contradicted",
+      "observed": 1,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_material_equality_unsupported",
+      "independent_status": "unassessed",
+      "observed": null,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_main_critical_legal",
+      "independent_status": "supported",
+      "observed": true,
+      "first_context_failure": null
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_main_black_bishop_pair",
+      "independent_status": "contradicted",
+      "observed": 1,
+      "first_context_failure": null
+    }
+  ],
+  "chronology": {
+    "source_review_utc": "2026-10-16T09:10:53.454118+00:00",
+    "mapping_review_utc": "2026-10-16T09:08:43.334709+00:00",
+    "attempt_started_utc": "2026-10-16T09:11:41.039076+00:00",
+    "first_call_intent_utc": "2026-10-16T09:11:41.039473+00:00",
+    "last_call_return_utc": "2026-10-16T09:11:41.541775+00:00",
+    "closed_utc": "2026-10-16T09:11:41.550701+00:00",
+    "reviews_precede_dispatch": true,
+    "events": 8,
+    "ordered_unique_intents": 4,
+    "ordered_unique_returns": 4
+  },
+  "durability_evidence": {
+    "eight_closed_events_independently_observed": true,
+    "output_flush_fsync": "Verified in exact pre-reviewed CLI source and executed source copy.",
+    "outer_journal_flush_fsync": "Root reports exact executed inline exec_command chunk75dedf calls flush and os.fsync before subprocess and after return. This is operator/tool-transcript evidence, not a prebound saved dispatcher-source snapshot; retained file bytes alone cannot prove those syscalls.",
+    "no_retrospective_source_proof_claim": true
+  },
+  "confirmed_restrictions": [
+    "No new learned/model/GPU/engine calls; only offline rule evaluation.",
+    "Mate later protection remains unassessed after illegal fifth context ply d8h5; no fabricated board/observed false.",
+    "Two illegal claimed moves are Qd8-h5 and later Ba2-e6; both retain their own legally replayed contexts.",
+    "The White third-branch and Black selected-mainline bishop-pair claims each have one remaining bishop, contradicting two.",
+    "All four unsupported relative/evaluative claims retained unassessed.",
+    "Geometric attack scope explicitly excludes legal recapture, tactical success and king safety.",
+    "Supplied c2c3 is not independent prediction.",
+    "All outputs evaluation_only=true and semantic_mapping_automatically_verified=false, whole_prose_coverage_established=false; generator/training/heldout boundary retained."
+  ],
+  "source_response_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-0.json",
+      "bytes": 40623,
+      "sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-1.json",
+      "bytes": 69108,
+      "sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-2.json",
+      "bytes": 55081,
+      "sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\evidence\\authored-3.json",
+      "bytes": 59375,
+      "sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea"
+    }
+  ],
+  "closed_package_seals": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\annotation-origin-v1.json",
+      "bytes": 541,
+      "sha256": "73495060a53f3da594ae05524592d436c6c80c46cb582f08b117899fbcbffe5e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\attempt.json",
+      "bytes": 2199,
+      "sha256": "0bda103ea763e08805a9b0b1dd0d298e3cfbc73353a0d01e140569512c74bcfb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-0-annotations-v1.json",
+      "bytes": 3962,
+      "sha256": "c4973eae14437455c6cd44ec1dcb7a08a0ba70f22d8f90cdb6e76b015b650c25"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-0-audit.json",
+      "bytes": 7820,
+      "sha256": "07750c4f166b7028a46e81f1759c9a0afd52bb33cfc841cfdeabe230284f7eb2"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-1-annotations-v1.json",
+      "bytes": 3024,
+      "sha256": "6f513a6433829bedbec88f627ed30b11c0368362fe70749437e529ca60314239"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-1-audit.json",
+      "bytes": 6620,
+      "sha256": "364d1a3df6db58c1014603953077163670f65e16ceffd39fef5fb6a6051f753a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-2-annotations-v1.json",
+      "bytes": 2047,
+      "sha256": "c196b985c406df8a76a69a7c51b8b0cbf3bf5e1f005d6362444a368c8f24a566"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-2-audit.json",
+      "bytes": 4863,
+      "sha256": "6ab24c6a3bae50851116487bb0d0a0b707dd9493bfdac59ee9228a108aa3dd8c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-3-annotations-v1.json",
+      "bytes": 2081,
+      "sha256": "275bd042e66e74992d999ff2aeef560f7d5baff1d9b5133435707f9096fb9122"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\authored-3-audit.json",
+      "bytes": 4944,
+      "sha256": "0dca54e3358476f94fe9424652eff76a77454c0060f0aeb8284c762d3719483f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\calls.jsonl",
+      "bytes": 5622,
+      "sha256": "4a90feca6684d291c5b7cd73d566bd7301aeef1ac0a32065e03ba7ca7c1d3c63"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\claim-audit-source-v1-final-review.json",
+      "bytes": 4973,
+      "sha256": "3791576f33473e82f4a22d09782a0ff4e7146c288806e2918e47e8196437bf0e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\claim-semantic-mapping-v1-provenance-addendum.json",
+      "bytes": 2598,
+      "sha256": "f8ad060bee615b509b1410ceb402274faa9c194e35d34757c3149cb2fc5b666a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\claim-semantic-mapping-v1-review.json",
+      "bytes": 15175,
+      "sha256": "3cc75aa602f5982b7b446a2b7266032ea03fa65e9d7453e8b3896ca3d9cdf96a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\dispatch-plan-v1.json",
+      "bytes": 3614,
+      "sha256": "afe31dcbe65bdb481720974cffc9e6c29564398134f24a4542b5a62cd8f60516"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\protocol.json",
+      "bytes": 5036,
+      "sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-claim-audit-v1\\attempt-1\\semantic-mapping-candidate-v1.json",
+      "bytes": 17583,
+      "sha256": "4c306b38950a459477eb75b984b4241397fb395fd4204287de939064545e4c04"
+    }
+  ],
+  "files_unchanged_during_review": 18,
+  "blocking_findings": [],
+  "audited_cli_reruns": 0,
+  "new_attempts": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "held_reference_content_opened": false,
+  "auditor": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\audit-claim-closed-v1.py",
+    "bytes": 15495,
+    "sha256": "95af4a50bef659fabf6ec16762b939c4b5917e5b1a5f1266b30a89c11ef50378"
+  }
+}

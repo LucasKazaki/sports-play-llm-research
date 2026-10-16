@@ -9,7 +9,9 @@
     "chess-queen-nf4-v1/software-and-authored",
     "chess-queen-qlora-v1/diagnostic-2",
     "chess-queen-coach-sft-v1/corpus",
-    "chess-tutor-v1/manual-queen-browser-qa"
+    "chess-tutor-v1/manual-queen-browser-qa",
+    "chess-queen-coach-sft-training-v2/memory-qualification-1",
+    "chess-queen-claim-audit-v1/closed-four-response-diagnostic"
   ],
   "cutoff": "2026-10-16T09:00:00-04:00",
   "commentary_gate": "not_achieved",
@@ -23,6 +25,7 @@
   "external_contact_sent": false,
   "active_experiment": "coach-sft-training-v2/train-1 active",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T08:50:38.0190180Z",
-  "origin": "Native Codex repository checkout; no Studio runtime identity"
+  "updated_at": "2026-10-16T09:16:50.417680+00:00",
+  "origin": "Native Codex repository checkout; no Studio runtime identity",
+  "secondary_work": "Fresh fixed-checkpoint encoder coverage diagnostic in source preparation; no data intake or scoring yet."
 }

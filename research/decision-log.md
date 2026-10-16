@@ -442,3 +442,14 @@ The move-policy successors remain unpromoted after mixed or flat heldout results
 ## October 16: preserve experimental failures and repeat evidence-led iterations
 
 The user's current steering requires repeated research, plan, implementation and debugging across the UI, backbone, models and data. Keep primary research current before each bounded methodological change. Train1's 20 confirmed updates / 160 backward passes and one unknown micro are resource/debugging evidence only. Preserve its original sources and reserves; require a separately versioned memory qualification before a new run. [Plan](chess-research-radar-2026-10-16.md).
+
+## October 16: check exact prose branches and preserve annotation provenance
+
+The separately reviewed offline checker binds response bytes, exact raw text
+spans and explicit legal branches. Four closed audits reproduce 9 supported,
+4 contradicted and 5 unassessed among 18 selected annotations. An illegal earlier
+prefix forces later abstention; a legal main line cannot validate a prose
+alternative. Agent-authored/agent-reviewed mappings are engineering diagnostics,
+not human gold labels. No output enters active training, generator inputs or
+heldout metrics. A separate source-stage proposal addresses absent king/pawn and
+discovered/double coverage with explicit matching contrasts and shortages.

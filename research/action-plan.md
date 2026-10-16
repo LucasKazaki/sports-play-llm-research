@@ -369,3 +369,14 @@ See [the current native checkpoint](chess-overnight-checkpoint-2026-10-16.md). N
 ## October 16 repeated iteration cycle
 
 Follow the [current research/test/debug plan](chess-research-radar-2026-10-16.md) and [cycle log](chess-iteration-log-2026-10-16.jsonl). The first coaching pilot is closed after a commit-reserve stop, with no selected trained checkpoint or held evaluation. Next: independently review and execute a distinct memory qualification, then condition further training on actual qualification. Keep data provenance, UI clarity, backend reliability, raw model skills and whole-prose evaluation separate.
+
+## October 16: qualified memory, factual debugging and fresh coverage
+
+The separate memory qualification passed all 12 checks and independent closed
+review. A fresh full coaching pilot is active from the original base; audit its
+complete training and development-only selection before any matched heldout run.
+The [offline claim diagnostic](../experiments/chess-queen-claim-audit-v1/RESULTS.md)
+reproduces 9 supported, 4 contradicted and 5 unassessed among 18 purposive agent
+annotations. These are software/debugging results, not whole-prose quality.
+Next coverage work freezes a fresh fixed-checkpoint diagnostic for king/pawn
+moves and discovered/double checks; no scoring or new training has occurred.

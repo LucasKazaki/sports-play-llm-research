@@ -165,3 +165,13 @@ New experiments provide mixed move-policy results and a narrowly positive learne
 ## October 16 current related work and reproducibility
 
 Use the [dated primary-source radar](chess-research-radar-2026-10-16.md) for Queen, atomic factuality, faithfulness, brittleness and state-tracking context. Report the failed 20-update pilot and unknown final micro, not a trained coaching gain. The [UMD working note](chess-umd-research-readiness-2026-10-16.md) covers AI disclosure, accountable human review, data/code provenance and unresolved institutional questions. No publication or professional-coaching gate is passed.
+
+## October 16: claim-audit and disclosure boundary
+
+Report the [18-annotation debugging inventory](../experiments/chess-queen-claim-audit-v1/RESULTS.md)
+separately from any fresh matched coaching evaluation. Its mappings are
+Codex-authored and independently agent-reviewed, without expert human validation.
+The [AI/data working record](chess-ai-assistance-and-data-stewardship-2026-10-16.md)
+identifies model, engine, rule and reviewer roles, private-data boundaries,
+reproduction artifacts and unresolved human ownership/venue requirements.
+Canonical paper versions replace mislabelled paper-index update dates.

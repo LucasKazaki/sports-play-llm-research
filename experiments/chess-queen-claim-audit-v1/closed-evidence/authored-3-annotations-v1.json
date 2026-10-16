@@ -1,0 +1,84 @@
+{
+  "schema": "chess.queen-claim-annotations.v1",
+  "response_sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea",
+  "raw_text_sha256": "1553e87f55ee439bd10fd62e092bff6fe5346b2c6360315ba282ca7306c9426f",
+  "claims": [
+    {
+      "claim_id": "selected_material_equality_unsupported",
+      "span": {
+        "start": 10,
+        "end": 77,
+        "sha256": "05263541c115f2e153e92765468db81923bbc20202c9dfc956710d3408fbafc0"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "material_equality",
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "selected_main_critical_legal",
+      "span": {
+        "start": 3865,
+        "end": 4257,
+        "sha256": "67928e92de52070808e5d9496edf8b9209a7a52158bd4258d7f74c821075dd01"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "c2c3",
+          "d7d6",
+          "e1g1",
+          "g8f6",
+          "f1e1",
+          "e8g8",
+          "d2d3",
+          "c8e6",
+          "c4e6",
+          "f7e6",
+          "b1d2"
+        ],
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "selected_main_black_bishop_pair",
+      "span": {
+        "start": 1911,
+        "end": 2030,
+        "sha256": "af27de55cb940ed856408bed285bf86c9b8d4fc72c49d6b1ccff8ed5b2ab770a"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "c2c3",
+          "d7d6",
+          "e1g1",
+          "g8f6",
+          "f1e1",
+          "e8g8",
+          "d2d3",
+          "c8e6",
+          "c4e6",
+          "f7e6"
+        ],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "black",
+        "piece_type": "bishop",
+        "expected": 2
+      }
+    }
+  ]
+}

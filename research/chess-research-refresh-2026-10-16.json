@@ -108,5 +108,39 @@
       "created": "Thu, 28 May 2026 15:43:31 GMT",
       "updated": "2026-05-29"
     }
-  ]
+  ],
+  "metadata_semantics": "The metadata array retains original paper-index observations. Its created/updated or nested createdDate/updateDate fields are not canonical arXiv revision dates.",
+  "canonical_arxiv_versions": [
+    {
+      "id": "arxiv:2608.04240",
+      "version": "v1",
+      "submitted_utc": "2026-08-04T21:31:01Z",
+      "url": "https://arxiv.org/abs/2608.04240v1"
+    },
+    {
+      "id": "arxiv:2610.03695",
+      "version": "v1",
+      "submitted_utc": "2026-10-02T17:54:22Z",
+      "url": "https://arxiv.org/abs/2610.03695v1"
+    },
+    {
+      "id": "arxiv:2609.22245",
+      "version": "v1",
+      "submitted_utc": "2026-09-05T11:36:59Z",
+      "url": "https://arxiv.org/abs/2609.22245v1"
+    },
+    {
+      "id": "arxiv:2605.30100",
+      "version": "v1",
+      "submitted_utc": "2026-05-28T15:43:31Z",
+      "url": "https://arxiv.org/abs/2605.30100v1"
+    }
+  ],
+  "source_date_correction": {
+    "checked_on": "2026-10-16",
+    "source": "Canonical arXiv abstract pages and Submission history sections, directly read.",
+    "error": "Paper-index updateDate values were previously described as paper revision dates.",
+    "correction": "The four directly checked submission histories each show only v1. Preserve index dates as index observations, not evidence of a paper revision.",
+    "scope": "Source metadata correction only; no experimental source, frozen protocol, data, model or result changed."
+  }
 }

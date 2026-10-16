@@ -1,0 +1,113 @@
+{
+  "schema": "chess.queen-claim-audit-protocol.v1",
+  "frozen_before_authored_claim_measurement": true,
+  "implementation_sha256": "e919a2a9c1f635408792841d13a5d44dd6fd4a0a31d2024cc1dbd17d4f6fedd1",
+  "tests_sha256": "fcb2a3df3d644f8827cf4a9b47883bb6fe8c7ab2140dd25d9670a07bbccbf7fb",
+  "contract": {
+    "span_indexing": "Python Unicode code points; zero-based [start,end); SHA-256 of exact UTF-8 substring",
+    "root": "response.input.fen only; no annotator replacement FEN",
+    "context": "Explicit legal branch replay and expected side to move; ambiguous or invalid context is unassessed",
+    "mapping": "Human semantic correspondence is required separately; hashes do not establish it",
+    "material": "Counts of pawn/knight/bishop/rook/queen by one side; not piece values or advantage",
+    "geometry": "Occupancy-aware attack geometry includes pinned pieces; never legal recapture or tactical success",
+    "variation": "Explicit asserted line only; no engine attribution or whole-prose inference",
+    "history": "Standalone current FEN and explicit branch only; prior repetition is not inferred",
+    "purpose": "Evaluator only; never generator input, repair, training target or current heldout metric"
+  },
+  "manual_semantic_review_before_authored_measurement": true,
+  "independent_full_source_test_review_before_authored_measurement": true,
+  "research_basis": {
+    "title": "Hallucinations on the Board: Tool-Augmented Evaluation of LLM Chess Commentary",
+    "url": "https://arxiv.org/abs/2608.04240v1",
+    "version": "v1",
+    "submitted": "2026-08-04",
+    "reading_scope": "Official abstract and framework outline; local deterministic/manual subset, not ACT-Eval reproduction."
+  },
+  "response_pool": {
+    "ledger": {
+      "path": "data/private/chess-queen-nf4-v1/authored-outcomes.json",
+      "sha256": "058f964e69930755dbca654bbac8a77912f2eb2a95cf32f515cab05e4922ff84"
+    },
+    "kind": "Four already spent authored software demonstrations; not heldout or representative commentary benchmark.",
+    "responses": [
+      {
+        "index": 0,
+        "path": "data/private/chess-queen-nf4-v1/authored-0.json",
+        "sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91"
+      },
+      {
+        "index": 1,
+        "path": "data/private/chess-queen-nf4-v1/authored-1.json",
+        "sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223"
+      },
+      {
+        "index": 2,
+        "path": "data/private/chess-queen-nf4-v1/authored-2.json",
+        "sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0"
+      },
+      {
+        "index": 3,
+        "path": "data/private/chess-queen-nf4-v1/authored-3.json",
+        "sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea"
+      }
+    ]
+  },
+  "selection": "Manual inventory of explicit narrow candidate claims in these four raw responses; bind spans/predicates/branches, retain unsupported or ambiguous entries. Root/reviewer must approve semantic correspondence before actual audit; no cherry-picked whole-prose rate.",
+  "annotation_header": [
+    "schema",
+    "response_sha256",
+    "raw_text_sha256",
+    "claims"
+  ],
+  "annotation_row": [
+    "claim_id",
+    "span",
+    "context",
+    "claim"
+  ],
+  "context": {
+    "resolution": [
+      "explicit",
+      "ambiguous"
+    ],
+    "branch_uci": "0..64 standard coordinate plies from response.input.fen",
+    "expected_turn": [
+      "white",
+      "black"
+    ]
+  },
+  "span": {
+    "start": "integer Unicode code-point offset inclusive",
+    "end": "integer Unicode code-point offset exclusive",
+    "sha256": "exact UTF-8 substring digest"
+  },
+  "supported_claim_kinds": [
+    "piece_count",
+    "material_count",
+    "geometric_attacks_square",
+    "legal_variation"
+  ],
+  "status": [
+    "supported",
+    "contradicted",
+    "unassessed"
+  ],
+  "hard_reject": [
+    "response byte hash mismatch",
+    "raw_text hash mismatch",
+    "any bad span/hash",
+    "ambiguous JSON or malformed annotation envelope"
+  ],
+  "reporting": "Counts and fractions among manual annotations/assessed annotations only. Unsupported/ambiguous items retained. No whole-prose coverage, strength, pedagogy, forcedness, strategic value, or heldout quality claim.",
+  "execution": {
+    "response_bytes_limit": 2097152,
+    "annotation_bytes_limit": 2097152,
+    "max_claims": 256,
+    "max_branch_or_variation_plies": 64,
+    "create_only_output": true,
+    "model_calls": 0,
+    "engine_calls": 0,
+    "gpu_calls": 0
+  },
+  "generator_boundary": "Evaluator outputs, replayed FENs, branch failures and repaired claims must never feed the generator, current training corpus, or heldout metrics."
+}

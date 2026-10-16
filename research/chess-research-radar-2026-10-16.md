@@ -13,13 +13,22 @@ arXiv availability alone does not establish peer review.
 
 | Primary source | Evidence and implication for this project |
 | --- | --- |
-| [Queen](https://arxiv.org/abs/2610.03695), updated October 5 | An expert board encoder, staged grounding curriculum and iterative explanation distillation address different weaknesses. The local NF4 port and narrow LoRA pilot are separate experiments, not reproductions of the paper's training or strength. Keep the encoder benefit, but test generated claims and alternatives independently. |
-| [ACT-Eval](https://arxiv.org/abs/2608.04240), updated August 6 | Commentary evaluation separates factual correctness, expert-concept coverage and move-quality judgment. It checks claims against the appropriate replayed board. Next evaluation work should bind each claim to its actual branch and state, retain unsupported claims, and report coverage alongside factual precision. Its fallible judge and limited human calibration do not certify every claim. |
-| [Explanation faithfulness](https://arxiv.org/abs/2609.22245), updated September 22 | Move recoverability changes when explicit hints are masked and when the decoder changes. A supplied-move explanation is not independent move prediction, and a plausible narrative does not establish faithful reasoning. Keep these modes and scores separate; later faithfulness tests need predeclared controls. |
+| [Queen](https://arxiv.org/abs/2610.03695v1), v1 October 2 | An expert board encoder, staged grounding curriculum and iterative explanation distillation address different weaknesses. The local NF4 port and narrow LoRA pilot are separate experiments, not reproductions of the paper's training or strength. Keep the encoder benefit, but test generated claims and alternatives independently. |
+| [ACT-Eval](https://arxiv.org/abs/2608.04240v1), v1 August 4 | Commentary evaluation separates factual correctness, expert-concept coverage and move-quality judgment. It checks claims against the appropriate replayed board. Next evaluation work should bind each claim to its actual branch and state, retain unsupported claims, and report coverage alongside factual precision. Its fallible judge and limited human calibration do not certify every claim. |
+| [Explanation faithfulness](https://arxiv.org/abs/2609.22245v1), v1 September 5 | Move recoverability changes when explicit hints are masked and when the decoder changes. A supplied-move explanation is not independent move prediction, and a plausible narrative does not establish faithful reasoning. Keep these modes and scores separate; later faithfulness tests need predeclared controls. |
 | [ChessQA](https://arxiv.org/abs/2510.23948) | Structural knowledge, motifs, short tactics, position judgment and semantic descriptions require different tests. The current direct-check head and tactical puzzle panel cover only part of that spectrum. Add fresh diagnostics by category before claiming general understanding. |
 | [Brittleness testing / GAMBIT](https://arxiv.org/abs/2605.17565) | Puzzle scores can conceal fragile pattern matching. Compare legal distribution shifts and counterfactual positions under a separate protocol. Verifier-assisted gains must stay distinct from raw model behavior. |
-| [Chess-World-Model](https://arxiv.org/abs/2605.30100), updated May 29 | Exact state tracking over real games and random legal play tests rule generalization. Add long-history and out-of-distribution state probes rather than extrapolating from one-step check recognition. The paper's architecture comparison does not justify swapping this project's backbone without a matched local experiment. |
+| [Chess-World-Model](https://arxiv.org/abs/2605.30100v1), v1 May 28 | Exact state tracking over real games and random legal play tests rule generalization. Add long-history and out-of-distribution state probes rather than extrapolating from one-step check recognition. The paper's architecture comparison does not justify swapping this project's backbone without a matched local experiment. |
 | [Strategy verbalization](https://arxiv.org/abs/2607.11486) | Main-line play and concept labels alone do not cover strategic explanations. A later research panel should include alternatives and qualified human usefulness judgments. No copyrighted commentary corpus is acquired from this discovery. |
+
+## Source-date correction
+
+Direct arXiv submission-history checks on October 16 show only v1 for Queen
+(October 2), ACT-Eval (August 4), the faithfulness study (September 5) and
+Chess-World-Model (May 28). Earlier notes incorrectly used the paper index's
+`updateDate` values as revision dates. The ledger preserves those values as
+index observations; the table now links to the checked paper versions. This
+metadata correction changes no frozen experiment or result.
 
 ## Official release check
 
