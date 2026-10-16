@@ -22,6 +22,9 @@ import chess.engine
 import chess.pgn
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from coaching_jobs import CoachingJobs, JobBusy, Unavailable
+
 STATIC = Path(__file__).resolve().parent / "static"
 DEFAULT_ENGINE = ROOT / "data/private/chess-distill-v1/tools/stockfish/stockfish-windows-x86-64-universal.exe"
 MAX_BODY = 32_768
@@ -353,7 +356,36 @@ class Tutor:
                 "engine": engine, "model": model, "limitations": ["Research candidate for chess tutor feedback; teaching quality has not been established.", "Explanations below are deterministic board facts and bounded engine observations. They do not establish a local model's strategic understanding.", "The move model is a classifier, not a prose coach. Three plies mean three individual half-moves, not three full turns.", "Loading or playing positions here is exploration, not held-out evaluation or training."]}
 
 
-def handler_for(tutor):
+def coach_packet(payload):
+    """Derive only the current board, actual prior boards and optional legal move."""
+    if type(payload) is not dict or set(payload)-{'position','selected_uci','selected_move_origin'}:
+        raise InputError('Use the current position and an optional selected legal move.')
+    position=payload.get('position')
+    if type(position) is not dict or set(position)-{'fen','moves'} or 'fen' not in position:
+        raise InputError('The coaching position allows only a root FEN and its played moves.')
+    board,history,ply,_=parse_position(position)
+    packet={'fen':board.fen(),'history':[row['fen'] for row in history[:ply]]}
+    selected=payload.get('selected_uci');origin=payload.get('selected_move_origin','unknown')
+    if type(origin) is not str or origin not in {'user','stockfish_selection','unknown'}:
+        raise InputError('Unknown selected move origin.')
+    if selected is not None:
+        if type(selected) is not str or not re.fullmatch(r'[a-h][1-8][a-h][1-8][qrbn]?',selected):
+            raise InputError('Choose a legal coordinate move.')
+        if chess.Move.from_uci(selected) not in board.legal_moves or board.is_game_over(claim_draw=False):
+            raise InputError('The selected move must be legal in this position.')
+        packet['selected_uci']=selected
+    elif 'selected_move_origin' in payload:
+        raise InputError('A move origin needs a selected move.')
+    context={'position':{'fen':history[0]['fen'],'moves':[row['uci'] for row in history[1:ply+1]]},
+        'fen':board.fen(),'kind':'selected_move' if selected is not None else 'position',
+        'selected_uci':selected,'selected_move_origin':origin if selected else None,
+        'selected_san':board.san(chess.Move.from_uci(selected)) if selected else None,
+        'origin_scope':'Caller-reported metadata; never included in the model packet.'}
+    return packet,context,board.is_game_over(claim_draw=False)
+
+
+def handler_for(tutor, coaching=None):
+    coaching = coaching or CoachingJobs(ROOT/'data/private/chess-tutor-v1/coaching',coach_packet)
     class Handler(BaseHTTPRequestHandler):
         server_version = "ChessStudy/1"
 
@@ -389,9 +421,14 @@ def handler_for(tutor):
                 return
             path = self.path.split("?", 1)[0]
             if path == "/api/health":
-                self._send(200, {"schema_version": SCHEMA, "status": "ready", "model_configured": tutor.classifier.path is not None, "engine_available": tutor.engine.path.is_file()})
+                self._send(200, {"schema_version": SCHEMA, "status": "ready", "model_configured": tutor.classifier.path is not None, "engine_available": tutor.engine.path.is_file(), "coaching": coaching.health()})
                 return
-            files = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/style.css": ("style.css", "text/css")}
+            match = re.fullmatch(r'/api/coach/([0-9a-f]{32})',path)
+            if match:
+                try: self._send(200,coaching.get(match[1]))
+                except KeyError: self._send(404,{'error':'That coaching request is not available.'})
+                return
+            files = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/style.css": ("style.css", "text/css"), "/coaching.js": ("coaching.js", "text/javascript"), "/coaching.css": ("coaching.css", "text/css")}
             if path not in files:
                 self._send(404, {"error": "Page not found."})
                 return
@@ -401,7 +438,8 @@ def handler_for(tutor):
         def do_POST(self):
             if not self._local():
                 return
-            if self.path != "/api/analyze":
+            cancel_match = re.fullmatch(r'/api/coach/([0-9a-f]{32})/cancel',self.path)
+            if self.path not in {"/api/analyze", "/api/coach"} and not cancel_match:
                 self._send(404, {"error": "Page not found."})
                 return
             if self.headers.get_content_type() != "application/json":
@@ -413,9 +451,22 @@ def handler_for(tutor):
                     self._send(413, {"error": "The position exceeds the 32 KB request limit."})
                     return
                 payload = json.loads(self.rfile.read(size))
-                self._send(200, tutor.analyze(payload))
+                if self.path == '/api/coach':
+                    job=coaching.start(payload)
+                    self._send(200 if job['status']=='terminal' else 202,job)
+                elif cancel_match:
+                    if payload != {}: raise InputError('Cancellation has no request fields.')
+                    self._send(202,coaching.cancel(cancel_match[1]))
+                else:
+                    self._send(200, tutor.analyze(payload))
             except (InputError, UnicodeError, json.JSONDecodeError, ValueError) as exc:
                 self._send(400, {"error": str(exc)[:280]})
+            except JobBusy as exc:
+                self._send(409, {"error": str(exc)})
+            except Unavailable as exc:
+                self._send(503, {"error": str(exc)})
+            except KeyError:
+                self._send(404, {'error':'That coaching request is not available.'})
 
         def log_message(self, fmt, *args):
             # Do not log user-supplied PGN or position bodies.
@@ -429,13 +480,19 @@ def main():
     parser.add_argument("--engine", type=Path, default=DEFAULT_ENGINE)
     parser.add_argument("--model-dir", type=Path, help="Explicit local native classifier checkpoint. Omit to keep inference off.")
     parser.add_argument("--nodes", type=int, default=30_000)
+    parser.add_argument("--queen", action="store_true", help="Enable manually requested, hash-qualified Queen draft explanations. No model loads until requested.")
     args = parser.parse_args()
     if not 1024 <= args.port <= 65535:
         parser.error("Use a port between 1024 and 65535.")
     if not args.engine.is_file():
         parser.error("The local Stockfish executable was not found. Supply --engine.")
     tutor = Tutor(Engine(args.engine, args.nodes), Classifier(args.model_dir))
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), handler_for(tutor))
+    runner = None
+    if args.queen:
+        from queen_runtime import QueenRunner
+        runner = QueenRunner(ROOT)
+    coaching = CoachingJobs(ROOT/'data/private/chess-tutor-v1/coaching',coach_packet,runner)
+    server = ThreadingHTTPServer(("127.0.0.1", args.port), handler_for(tutor,coaching))
     server.daemon_threads = True
     print(f"Chess study candidate: http://127.0.0.1:{args.port}/", flush=True)
     try:
@@ -443,6 +500,7 @@ def main():
     except KeyboardInterrupt:
         pass
     finally:
+        coaching.close()
         server.server_close()
 
 

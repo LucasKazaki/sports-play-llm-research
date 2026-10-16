@@ -1,0 +1,165 @@
+{
+  "schema": "chess.queen-ui-live-qa-closed.v1",
+  "scope": "Authored browser/software integration; no accuracy or prose-quality benchmark",
+  "planned_requests": 3,
+  "closed_requests": 3,
+  "requests": [
+    {
+      "index": 0,
+      "request_id": "cbb9c594219b4a0582ac1951e1c35df3",
+      "status": "completed",
+      "generated_tokens": 527,
+      "owned_cancel": false,
+      "closed_worker": {
+        "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-tutor-v1/coaching/cbb9c594219b4a0582ac1951e1c35df3/worker.json",
+        "bytes": 725,
+        "sha256": "f6519babab2f1b9e2db21f7880afa1457ad9d06375b6f553c4cd593ca71f2f7f"
+      },
+      "response": {
+        "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-tutor-v1/coaching/cbb9c594219b4a0582ac1951e1c35df3/response.json",
+        "bytes": 40633,
+        "sha256": "8f597eb9f26053f9d58d80e861600ab06b40f2742e40db2d3385379972128064"
+      }
+    },
+    {
+      "index": 1,
+      "request_id": "e10815b501fe46c5a1edf9104c34beac",
+      "status": "failed",
+      "generated_tokens": 0,
+      "owned_cancel": true,
+      "closed_worker": {
+        "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-tutor-v1/coaching/e10815b501fe46c5a1edf9104c34beac/worker.json",
+        "bytes": 721,
+        "sha256": "fe2676f7b0a15afaf1a861edbf5bc7b30812562fbc5d72fa0edd7d91327f6e4d"
+      },
+      "response": {
+        "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-tutor-v1/coaching/e10815b501fe46c5a1edf9104c34beac/response.json",
+        "bytes": 3348,
+        "sha256": "d10f91bd3d5a40bf79c2dd2ad7837fa00777d3692ea89c68894278331ba3d483"
+      }
+    },
+    {
+      "index": 2,
+      "request_id": "b7d8135984dd400cb61ec05d76629464",
+      "status": "completed",
+      "generated_tokens": 527,
+      "owned_cancel": false,
+      "closed_worker": {
+        "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-tutor-v1/coaching/b7d8135984dd400cb61ec05d76629464/worker.json",
+        "bytes": 724,
+        "sha256": "9a8f9648d9b2a231e19da08b175effc2b9a7a310a66beb80ed31f5553bfcf987"
+      },
+      "response": {
+        "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-tutor-v1/coaching/b7d8135984dd400cb61ec05d76629464/response.json",
+        "bytes": 40635,
+        "sha256": "9fa92dcc09b32cc8b366fdb3aab2309f192e404e6f97decf8aa5001a5b491a7f"
+      }
+    }
+  ],
+  "observed": {
+    "real_manual_completion": true,
+    "board_usable_during_inference": true,
+    "stale_draft_scoped_to_requested_position": true,
+    "stale_export_coaching_null": true,
+    "explicit_return_restores_original_view_without_inference": true,
+    "owned_cancel_worker_closed_before_release": true,
+    "full_explanation_disclosure_open_close": true,
+    "exact_raw_record_preserved_in_export": true,
+    "no_automatic_retry": true,
+    "mobile": {
+      "viewport_width": 390,
+      "viewport_height": 844,
+      "scroll_width": 390,
+      "board_width": 358,
+      "coach_button_height": 44,
+      "full_explanation_summary_height": 44,
+      "temporary_viewport_reset": true
+    }
+  },
+  "sources": [
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/server.py",
+      "bytes": 28830,
+      "sha256": "d3b88e9bfd184038da66c1ea7858be9b32647dd53e6974ea7a86456c6e58e2a5"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/coaching_jobs.py",
+      "bytes": 8148,
+      "sha256": "08a862af98ebac6e72d3cb43759fb6711a30cd1876778d8612f482defdc7563b"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/queen_runtime.py",
+      "bytes": 10709,
+      "sha256": "8295ada0e368ff5810ee81b977f5dc61bc51a759e821459b3111441145ddc740"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/queen-runtime.json",
+      "bytes": 4791,
+      "sha256": "0a17fcaa72bef97eec28e4bec0e245c4c42a28219dcf5da6d8c06f807278188d"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/static/app.js",
+      "bytes": 16841,
+      "sha256": "20667639d629412e31f97632da7a544e78a07fa242fb7b88fd863a2fd567fdda"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/static/index.html",
+      "bytes": 6842,
+      "sha256": "5d475681cdee21d682c1a794d62183818fcaac0f5e3d3f0723c68994b979cf8c"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/static/coaching.js",
+      "bytes": 9645,
+      "sha256": "4ca9c9850f9fc5dcbdd33e7e6accc6179c65cc2a5d2e8a942ae36f9b61fae79d"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/prototype/chess_tutor_v1/static/coaching.css",
+      "bytes": 1455,
+      "sha256": "4643aa742d2808f9157e29f5a506a51d2536f044e37643736684f17766c4531b"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/tests/test_chess_tutor_v1.py",
+      "bytes": 32260,
+      "sha256": "39e91fe38ed9dde91277263db5a800556ee82dd8c7b13c14b5f9d1250eb37d2a"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/tests/test_chess_tutor_coaching_prose.py",
+      "bytes": 1475,
+      "sha256": "b0d67b150036d9064ccda1b467a7a2beeb3d4ccef3b7ac40f0614ac763ecdb7f"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/scripts/start-chess-tutor.ps1",
+      "bytes": 1092,
+      "sha256": "095104c6147faeb94ef29d293fd5f1fc4610474827e9ca0a5b5d11bed21384de"
+    }
+  ],
+  "exports": [
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-ui-stale-export.json",
+      "bytes": 13476,
+      "sha256": "64529b96d1b264008939a7c2f02021818255993d01fffb5bbd643985d26afd30"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/outputs/chess-tutor-queen-evidence.json",
+      "bytes": 69639,
+      "sha256": "98d15a95a5474123d2e10f2c608c872f180334d0f5d8976e68fe84a8a3e9fd5e"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/outputs/chess-tutor-queen-desktop.jpg",
+      "bytes": 206847,
+      "sha256": "ea0ef6633d50e0ff5fdbe0dd940406ac68bf450f5ff0b5d1b82505bfb4b67a8a"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/outputs/chess-tutor-queen-mobile.jpg",
+      "bytes": 174330,
+      "sha256": "31594c81430af26c476e32f73a699996c71cef7938cc1d274f331b32fe6be3ad"
+    }
+  ],
+  "limitations": [
+    "Known false side-variation and protection claims remain visible.",
+    "No claim of whole-prose correctness or teaching quality.",
+    "No fresh chess benchmark performed by this browser QA."
+  ]
+}

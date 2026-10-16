@@ -308,3 +308,253 @@ def test_real_engine_legally_replays_every_returned_variation():
             replay.push(move)
             assert replay.fen() == step["fen"]
         assert all(fact["type"] == "board_fact" for fact in row["facts"])
+
+
+# Async controller fixtures run only a short standard-library child process.
+import copy
+import sys
+import time
+from types import SimpleNamespace
+import coaching_jobs as jobs_module
+import queen_runtime as queen_runtime
+
+FIXTURE_WORKER = '"""CPU-only interface fixture. Never imports a model, engine or GPU library."""\nimport argparse\nimport json\nfrom pathlib import Path\nimport time\n\n\ndef main():\n    parser=argparse.ArgumentParser()\n    for name in (\'input\',\'out\',\'cancel\',\'receipt\'):parser.add_argument(\'--\'+name,type=Path,required=True)\n    parser.add_argument(\'--scenario\',required=True);parser.add_argument(\'--delay\',type=float,default=.25)\n    args=parser.parse_args()\n    if args.scenario==\'busy\':args.receipt.write_text(\'{"status":"busy","child_pid":null}\');return\n    args.receipt.write_text(\'{"status":"running"}\')\n    finish=time.monotonic()+min(5,max(0,args.delay))\n    while time.monotonic()<finish:\n        if args.cancel.exists():\n            args.out.write_text(\'{"status":"failed","error":"owned cancellation","raw_text":"CPU interface fixture stopped."}\')\n            args.receipt.write_text(\'{"status":"failed","child_exited_before_lease_release":true}\');return\n        time.sleep(.02)\n    packet=json.loads(args.input.read_text())\n    result={\'status\':\'partial\' if args.scenario==\'partial\' else \'failed\' if args.scenario==\'resource\' else \'completed\',\n        \'finish_reason\':\'token_limit\' if args.scenario==\'partial\' else \'error\' if args.scenario==\'resource\' else \'eos\',\n        \'input\':packet,\'model_id\':\'CPU interface fixture; no model inference\',\n        \'raw_text\':\'ANALYSIS: Interface fixture only. <script>This is inert text.</script>\',\n        \'decoded_text\':\'ANALYSIS: This is a CPU interface fixture, not a model response. It tests the reading layout and status behavior.\',\n        \'settings\':{\'backend\':\'CPU interface fixture\',\'generation_mode\':\'fixture\',\'precision_profile\':\'fixture\',\'quantization\':\'fixture\'},\n        \'parsed\':{\'raw_choice_uci\':\'e2e5\' if args.scenario==\'illegal\' else None,\'raw_choice_is_legal\':False,\n            \'accepted_move_uci\':None,\'move_rejection\':\'illegal_move\' if args.scenario==\'illegal\' else \'missing_or_ambiguous_best_move\',\n            \'critical_line\':{\'legal_prefix_plies\':0,\'steps\':[],\'failure\':{\'reason\':\'fixture\'}}},\n        \'generation_timing\':{\'decode_seconds\':args.delay,\'tokens_per_decode_second\':0},\'generated_tokens\':[]}\n    if args.scenario==\'resource\':result[\'error\']=\'RuntimeError: resource reserve: commit_headroom_bytes_below_reserve\'\n    args.out.write_text(json.dumps(result),encoding=\'utf-8\')\n    args.receipt.write_text(\'{"status":"completed","child_exited_before_lease_release":true}\')\n\n\nif __name__==\'__main__\':main()\n'
+
+
+class UIFixtureRunner:
+    fixture=True
+    label='CPU interface fixture'
+    def __init__(self,scenario='completed',delay=.25):
+        self.scenario=scenario;self.delay=delay;self.maximum_seconds=5
+    def verify(self):pass
+    def command(self,job):
+        script=job['input'].with_name('cpu-fixture.py');script.write_text(FIXTURE_WORKER,encoding='utf-8')
+        return [sys.executable,str(script),'--scenario',self.scenario,'--delay',str(self.delay),
+            '--input',str(job['input']),'--out',str(job['out']),'--cancel',str(job['cancel']),
+            '--receipt',str(job['worker'])]
+
+
+class CoachEngineFixture:
+    path=Path(__file__)
+    def analyze(self,board):
+        return {'status':'test_fixture','alternatives':[]}
+
+
+server=SimpleNamespace(app=app,coach_packet=app.coach_packet,handler_for=app.handler_for,
+    EngineFixture=CoachEngineFixture,ThreadingHTTPServer=app.ThreadingHTTPServer)
+
+def payload():return {'position':{'fen':chess.STARTING_FEN,'moves':['e2e4','e7e5']}}
+
+
+def completed(jobs,identifier):
+    deadline=time.monotonic()+6
+    while time.monotonic()<deadline:
+        result=jobs.get(identifier)
+        if result['status'] not in jobs_module.ACTIVE:return result
+        time.sleep(.02)
+    pytest.fail('CPU fixture did not reach a terminal state.')
+
+
+def test_packet_has_only_current_fen_prior_history_and_explicit_selected_move():
+    packet,context,terminal=server.coach_packet({**payload(),'selected_uci':'g1f3','selected_move_origin':'stockfish_selection'})
+    assert set(packet)=={'fen','history','selected_uci'} and len(packet['history'])==2
+    board=chess.Board();assert packet['history'][0]==board.fen();board.push_uci('e2e4')
+    assert packet['history'][1]==board.fen();board.push_uci('e7e5');assert packet['fen']==board.fen()
+    assert context['position']==payload()['position'] and context['selected_move_origin']=='stockfish_selection'
+    assert terminal is False
+
+
+@pytest.mark.parametrize('bad',[
+    {**payload(),'pv':['g1f3']}, {'position':{'fen':chess.STARTING_FEN,'engine':{}}},
+    {'position':{'pgn':'1.e4 e5 *','ply':0}}, {**payload(),'selected_uci':'e2e5'},
+    {**payload(),'selected_move_origin':'stockfish_selection'},
+    {**payload(),'selected_uci':'g1f3','selected_move_origin':[]},
+    {'position':{'fen':chess.STARTING_FEN,'moves':['0000']}},
+])
+def test_rejects_future_evaluator_unknown_or_illegal_data_before_process_launch(tmp_path,bad):
+    jobs=jobs_module.CoachingJobs(tmp_path/'jobs',server.coach_packet,UIFixtureRunner())
+    with pytest.raises((ValueError,server.app.InputError)):jobs.start(bad)
+    assert not (tmp_path/'jobs').exists()
+
+
+@pytest.mark.parametrize('scenario,status',[('completed','completed'),('partial','partial'),('illegal','completed'),('busy','busy')])
+def test_async_mock_outputs_preserve_actual_mode_raw_failure_and_busy(tmp_path,scenario,status):
+    jobs=jobs_module.CoachingJobs(tmp_path,server.coach_packet,UIFixtureRunner(scenario))
+    first=jobs.start(payload());assert first['status']=='starting'
+    result=completed(jobs,first['request_id']);assert result['status']==status and result['fixture'] is True
+    assert not any(key in result for key in ('process','input','out','worker','log'))
+    if status=='busy':assert result['result'] is None
+    else:
+        assert '<script>' in result['result']['raw_text']
+        assert result['result']['settings']['generation_mode']=='fixture'
+        if scenario=='illegal':assert result['result']['parsed']['accepted_move_uci'] is None
+    jobs.close()
+
+
+def test_one_owned_request_cancel_waits_for_process_exit_and_does_not_cancel_unknown_ids(tmp_path):
+    jobs=jobs_module.CoachingJobs(tmp_path,server.coach_packet,UIFixtureRunner(delay=2))
+    first=jobs.start(payload())
+    with pytest.raises(jobs_module.JobBusy):jobs.start(payload())
+    with pytest.raises(KeyError):jobs.cancel('0'*32)
+    deadline=time.monotonic()+3
+    while jobs.get(first['request_id'])['status']=='starting' and time.monotonic()<deadline:time.sleep(.02)
+    assert jobs.cancel(first['request_id'])['status']=='stopping'
+    result=completed(jobs,first['request_id']);assert result['status']=='cancelled'
+    assert jobs.jobs[first['request_id']]['process'].poll() is not None
+    second=jobs.start(payload());assert second['request_id']!=first['request_id']
+    jobs.cancel(second['request_id']);completed(jobs,second['request_id']);jobs.close()
+
+
+def test_resource_failure_retains_partial_raw_and_blocks_automatic_or_manual_relaunch(tmp_path):
+    jobs=jobs_module.CoachingJobs(tmp_path,server.coach_packet,UIFixtureRunner('resource'))
+    first=jobs.start(payload());result=completed(jobs,first['request_id'])
+    assert result['status']=='failed' and result['result']['raw_text']
+    assert jobs.health()['status']=='blocked'
+    with pytest.raises(jobs_module.Unavailable):jobs.start(payload())
+    assert len(list(tmp_path.iterdir()))==1
+
+
+def test_automatic_fivefold_terminal_never_starts_fixture_process(tmp_path):
+    jobs=jobs_module.CoachingJobs(tmp_path,server.coach_packet,UIFixtureRunner())
+    result=jobs.start({'position':{'fen':chess.STARTING_FEN,'moves':['g1f3','g8f6','f3g1','f6g8']*4}})
+    assert result['status']=='terminal' and result['result']['finish_reason']=='game_over'
+    assert not tmp_path.exists() or not list(tmp_path.iterdir())
+
+
+def test_worker_record_waits_for_partial_json_but_rejects_nonfinite_or_wrong_shape(tmp_path):
+    path=tmp_path/'response.json';path.write_text('{"status":')
+    assert jobs_module.read_record(path) is None
+    path.write_text('{"value":NaN}')
+    with pytest.raises(ValueError):jobs_module.read_record(path)
+    path.write_text('[]')
+    with pytest.raises(ValueError):jobs_module.read_record(path)
+
+
+def qualified_response_fixture():
+    runner=queen_runtime.QueenRunner.__new__(queen_runtime.QueenRunner)
+    names=('adapter','kernel_protocol','kernel_receipt','base_adapter','asset_manifest','source_manifest','parity_protocol','parity_receipt')
+    runner.plan={'candidate_id':'fixture-only','bindings':{name:{'sha256':str(i)*64} for i,name in enumerate(names,1)}}
+    bindings=runner.plan['bindings'];packet={'fen':chess.STARTING_FEN,'history':[]}
+    response={'status':'completed','raw_text':'<script>retained raw fixture</script>','decoded_text':'Unverified fixture prose.',
+        'input':packet,'candidate_id':'fixture-only','adapter_sha256':bindings['adapter']['sha256'],
+        'nf4_protocol_sha256':bindings['kernel_protocol']['sha256'],
+        'diagnostic_receipt_sha256':bindings['kernel_receipt']['sha256'],
+        'base_adapter_sha256':bindings['base_adapter']['sha256'],
+        'asset_manifest_sha256':bindings['asset_manifest']['sha256'],
+        'source_manifest_sha256':bindings['source_manifest']['sha256'],
+        'settings':{**queen_runtime.EXPECTED_SETTINGS,'use_kv_cache':False,'backend':'CPU metadata fixture'},
+        'no_forward_input_audit':{'passed':True,'engine_evaluation_or_pv_input':False,'selected_move_supplied':False},
+        'quantization':{'status':'loaded_and_verified','actual_decoder_inventory':{'linear4bit_count':252}},
+        'resource_policy':dict(queen_runtime.RESOURCE_FLOORS)}
+    return runner,packet,response
+
+
+@pytest.mark.parametrize('field,value',[
+    ('candidate_id','other-model'),('nf4_protocol_sha256','wrong'),
+    ('input',{'fen':'another position'}),('settings',{'generation_mode':'cached'}),
+    ('no_forward_input_audit',{'passed':True,'engine_evaluation_or_pv_input':True}),
+    ('quantization',{'status':'not_loaded'}),('resource_policy',{}),
+])
+def test_unqualified_worker_output_keeps_raw_but_never_receives_verified_ui_provenance(tmp_path,field,value):
+    runner,packet,response=qualified_response_fixture();response[field]=value
+    source=tmp_path/'input.json';source.write_text(json.dumps(packet))
+    decorated=runner.decorate_result({'input':source},response)
+    assert decorated['status']=='failed' and decorated['ui_validation_error']
+    assert decorated['raw_text']==response['raw_text']
+    assert decorated['execution']['canonical_provenance']['response_binding_verified'] is False
+
+
+def test_selected_move_origin_stays_metadata_and_verified_execution_is_a_separate_view(tmp_path):
+    runner,packet,response=qualified_response_fixture()
+    packet['selected_uci']='e2e4';response['no_forward_input_audit']['selected_move_supplied']=True
+    source=tmp_path/'input.json';source.write_text(json.dumps(packet))
+    before=copy.deepcopy(response);decorated=runner.decorate_result({'input':source},response)
+    assert response==before and 'execution' not in response
+    assert decorated['execution']['canonical_provenance']['response_binding_verified'] is True
+    assert decorated['execution']['generation_mode']=='no_cache'
+    assert 'selected_move_origin' not in packet
+
+
+def test_changed_qualification_source_fails_before_any_process_or_candidate_import(tmp_path,monkeypatch):
+    child=tmp_path/'child.py';child.write_text('raise AssertionError("must not execute")')
+    plan={'status':'approved_for_authored_ui','bindings':{'adapter':{'path':'child.py','sha256':jobs_module.sha(child)}}}
+    qualification=tmp_path/'qualification.json';qualification.write_text(json.dumps(plan))
+    monkeypatch.setattr(queen_runtime,'QUALIFICATION_SHA256',jobs_module.sha(qualification))
+    child.write_text('changed after qualification')
+    runner=queen_runtime.QueenRunner.__new__(queen_runtime.QueenRunner)
+    runner.repo=tmp_path;runner.qualification_path=qualification
+    monkeypatch.setattr(jobs_module.subprocess,'Popen',lambda *a,**k:pytest.fail('No process may start.'))
+    with pytest.raises(jobs_module.Unavailable,match='qualified runtime file changed'):runner.verify()
+
+
+def test_canonical_parity_requires_each_finite_scope_and_both_frozen_prefixes():
+    plan={'thresholds':{'max_absolute_error':.01,'mean_absolute_error':.001,'minimum_cosine_similarity':.9999}}
+    value={'finite':True,'top1_equal':True,'max_absolute_error':0.,'mean_absolute_error':0.,'cosine_similarity':1.}
+    receipt={'status':'passed','thresholds':dict(plan['thresholds']),'comparisons':[
+        {'kind':kind,**{scope:dict(value) for scope in ('all_logits','original_vocab_logits','added_vocab_logits')}}
+        for kind in ('base_prompt','synthetic_vocabulary_suffix')]}
+    assert queen_runtime.parity_passed(receipt,plan)
+    receipt['comparisons'][1]['added_vocab_logits']['mean_absolute_error']=.002
+    assert not queen_runtime.parity_passed(receipt,plan)
+    receipt['comparisons'][1]['added_vocab_logits']['mean_absolute_error']=float('nan')
+    assert not queen_runtime.parity_passed(receipt,plan)
+    receipt['comparisons'].pop()
+    assert not queen_runtime.parity_passed(receipt,plan)
+
+
+def test_http_origin_allowlist_and_async_endpoint_with_cpu_fixture(tmp_path):
+    jobs=jobs_module.CoachingJobs(tmp_path,server.coach_packet,UIFixtureRunner())
+    tutor=server.app.Tutor(server.EngineFixture(),server.app.Classifier(None))
+    http=server.ThreadingHTTPServer(('127.0.0.1',0),server.handler_for(tutor,jobs))
+    thread=threading.Thread(target=http.serve_forever,daemon=True);thread.start();base=f'http://127.0.0.1:{http.server_port}'
+    def request(path,body=None,origin=None):
+        headers={'Content-Type':'application/json'}
+        if origin:headers['Origin']=origin
+        return urlopen(Request(base+path,data=None if body is None else json.dumps(body).encode(),headers=headers),timeout=4)
+    try:
+        with pytest.raises(HTTPError) as error:request('/api/coach',payload(),'https://example.com')
+        assert error.value.code==403
+        with pytest.raises(HTTPError) as error:request('/data/private/model.safetensors')
+        assert error.value.code==404
+        response=request('/api/coach',payload());assert response.status==202
+        job=json.load(response);result=completed(jobs,job['request_id'])
+        response=request(job['poll_url']);assert json.load(response)['status']==result['status']=='completed'
+        assert request('/coaching.js').headers['X-Content-Type-Options']=='nosniff'
+    finally:jobs.close();http.shutdown();http.server_close();thread.join(timeout=3)
+
+
+def test_actual_frontend_selected_move_matching_and_exact_saved_view_restore_without_fetch():
+    import shutil
+    import subprocess
+    node=shutil.which('node')
+    if node is None:pytest.skip('Node is unavailable for the bounded frontend regression.')
+    script=r'''
+const fs=require('fs'),vm=require('vm'),assert=require('assert');
+const app=fs.readFileSync(process.argv[1],'utf8'),coach=fs.readFileSync(process.argv[2],'utf8');
+const matching=coach.slice(coach.indexOf('function coachingContextMatches('),coach.indexOf('(() =>'));
+const dom={'position-label':{textContent:'SOURCE POSITION'},'use-model':{checked:true},promotion:{hidden:false},'input-error':{hidden:false}};
+const state={structuredClone,$:id=>dom[id],result:{board:{fen:'original'},engine:{alternatives:[{move_uci:'e2e4'},{move_uci:'d2d4'}]}},
+  timeline:[{fen:'root',uci:null},{fen:'after',uci:'e2e4'}],index:1,candidate:1,busy:false,preview:null,selection:'e2',pendingPromotion:'a7a8',
+  render(){},navigation(){},notice(){}};
+vm.createContext(state);vm.runInContext(matching,state);
+const position={fen:'root',moves:['e2e4']},study={position,selectedUci:'d2d4',preview:false};
+const context={position,kind:'selected_move',selected_uci:'d2d4'};
+assert.equal(state.coachingContextMatches(context,study),true);
+assert.equal(state.coachingContextMatches(context,{...study,selectedUci:'e2e4'}),false);
+assert.equal(state.coachingContextMatches(context,{...study,preview:true}),false);
+assert.equal(state.coachingContextMatches(context,{...study,position:{fen:'root',moves:[]}}),false);
+assert.equal(state.coachingContextMatches({...context,kind:'position'},{...study,selectedUci:'e2e4'}),true);
+const restore=app.slice(app.indexOf('function captureCoachingStudy('),app.indexOf("$('flip').addEventListener"));
+vm.runInContext(restore,state);const saved=state.captureCoachingStudy();
+state.result.board.fen='later-board';state.result.engine.alternatives=[];state.candidate=0;state.timeline=[];
+state.restoreCoachingStudy(saved);
+assert.equal(state.result.board.fen,'original');assert.equal(state.candidate,1);
+assert.equal(state.result.engine.alternatives[state.candidate].move_uci,'d2d4');assert.equal(state.timeline.length,2);
+assert.equal(state.pendingPromotion,null);assert.equal(dom.promotion.hidden,true);
+assert.equal(typeof state.fetch,'undefined');
+'''
+    result=subprocess.run([node,'-e',script,str(app.STATIC/'app.js'),str(app.STATIC/'coaching.js')],
+        capture_output=True,text=True,timeout=5)
+    assert result.returncode==0,result.stdout+result.stderr
+
+

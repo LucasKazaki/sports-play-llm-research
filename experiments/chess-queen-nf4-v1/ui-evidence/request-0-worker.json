@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T07:57:22.197924+00:00",
+  "script": "scripts\\chess_queen_nf4_adapter_v2.py",
+  "arguments_sha256": "10848335aed9eb5756efa4e4be9c958b31fae59d8c510e32883c3c197206e804",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "completed",
+  "child_pid": 52360,
+  "exit_code": 0,
+  "log": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\cbb9c594219b4a0582ac1951e1c35df3\\worker.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 59.171999999991385
+}

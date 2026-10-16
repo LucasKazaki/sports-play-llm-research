@@ -45,3 +45,5 @@ From the repository root, after the final protocol and review exist:
 ```
 
 The optional phases `features --scope training`, `train`, `features --scope holdout` and `evaluate` permit separate root-owned processes. `run` follows that same order. The `recover` phase only finalizes saved head-evaluation journals and makes no model calls. Check detection alone establishes neither explanation factuality nor move strength, Elo or chess tutor readiness.
+
+Post-hoc coverage audit: all 256 positive heldout moves are direct checks; there are no discovered or double checks. The 512 moves cover queens (268), rooks (156), knights (64) and bishops (24), with no pawn or king moves. Correctness on this restricted panel does not establish those missing skills. Queens account for 31 of the 54 errors. The independently recounted details are in posthoc-coverage.json; this spent-panel analysis generates future hypotheses and is not new acceptance evidence.

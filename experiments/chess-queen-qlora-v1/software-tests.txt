@@ -1,0 +1,7 @@
+2026-10-16 authored one-update software diagnostic, before actual learned calls
+.venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_qlora_v1.py -q
+22 passed in0.29s
+
+Pure CPU checks: import has no Torch/PEFT/bnb side effects; authored target mechanically replays to mate and strict native parse; exact prompt masking/EOS and no truncation; exact144FP32q/vA/B tensor inventory and1,916,928parameter count; unintended trainables/dtype/rank/device/missing/duplicate rejection; all explicit gradient/unchangedweight/update gates required; failedsetup retains planned1/completed0/create-only receipt.
+
+No GPU/model/teacher call by this implementation agent. Actual backward/resource feasibility remains unmeasured until root dispatch.

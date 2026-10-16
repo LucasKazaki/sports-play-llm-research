@@ -1,0 +1,28 @@
+{
+  "active_domain": "chess",
+  "status": "active",
+  "completed_evidence": [
+    "chess-move-policy-v5",
+    "chess-check-balanced-v2/run-2",
+    "chess-move-policy-v6-run2",
+    "chess-encoder-check-v1",
+    "chess-queen-nf4-v1/software-and-authored",
+    "chess-queen-qlora-v1/diagnostic-2",
+    "chess-queen-coach-sft-v1/corpus",
+    "chess-tutor-v1/manual-queen-browser-qa"
+  ],
+  "cutoff": "2026-10-16T09:00:00-04:00",
+  "commentary_gate": "not_achieved",
+  "schema": "sportsplay.native-chess-loop.v1",
+  "next_actions": [
+    "Monitor the one active serialized256-update coach pilot; preserve resources and cutoff.",
+    "After complete dev-only selection, dispatch separate64-response closed heldout phase within13:00UTC.",
+    "Independently audit closed learning/evaluation before any promotion.",
+    "Retain hourly checks through9AMEastern and prepare honest final report."
+  ],
+  "external_contact_sent": false,
+  "active_experiment": "chess-queen-coach-sft-training-v1/train-1",
+  "model_weights_private": true,
+  "updated_at": "2026-10-16T08:16:17.8719630Z",
+  "origin": "Native Codex repository checkout; no Studio runtime identity"
+}

@@ -1,0 +1,108 @@
+{
+  "schema": "chess.queen-benchmark.v1",
+  "frozen_at": "2026-10-16T06:47:19.8913875Z",
+  "implementation_sha256": "bbdc41749dacdb1c75d239c5ed44a1127a3d7d1624716ded8e17d737e781804a",
+  "generation_allowed": false,
+  "phase_scope": "CPU cohort selection and one bounded engine teacher per root only; no learned model calls.",
+  "counts": {
+    "train": 0,
+    "development": 32,
+    "holdout": 64,
+    "rollout": 0
+  },
+  "seed": 4082061,
+  "source_row_cap": 500000,
+  "source": {
+    "path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+    "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "upstream": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet",
+    "license": "CC0-1.0; reuse retained294920084-byte source; no new acquisition"
+  },
+  "prior_protocol": {
+    "path": "experiments/chess-move-policy-v6/protocol-v2.json",
+    "sha256": "b2eda0acf707b475cab8968991afc53fb46de426fced8e8e0084b4c38f7edfc4"
+  },
+  "v6_dataset": {
+    "path": "data/private/chess-move-policy-v6/dataset.json",
+    "sha256": "7891cb1fbbc175085310428eceff453cca88b3a24a79fa03c5ac8cce1582cf06"
+  },
+  "authored_packets": [
+    {
+      "path": "experiments/chess-queen-v1/authored-mate.json",
+      "sha256": "cacd2cfa6212959b97f583a39218d7d158e40be91c98ec078dd6f0fafd3831e4"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-midgame.json",
+      "sha256": "9f9e8f428684214c3ecf1b7811a2505bd4ccd7d752d314a1e8dc1c3b223885ca"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-opening.json",
+      "sha256": "9624697eef4f8da67c03ab4fb59240a10556318d1a12451e898d81a0aa394d43"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-selected-c3.json",
+      "sha256": "cc639d6d2fc1bdf0b88c847201b6caebd5324e214e1ff22fbf117c1296be6b2c"
+    }
+  ],
+  "authored_responses": [],
+  "teacher": {
+    "binary": {
+      "path": "data/private/chess-distill-v1/tools/stockfish/stockfish-windows-x86-64-universal.exe",
+      "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0"
+    },
+    "workers": 1,
+    "threads_per_worker": 1,
+    "hash_mb": 32,
+    "nodes": 50000,
+    "multipv": 1,
+    "new_game_each_root": true,
+    "score_perspective": "side_to_move",
+    "resource_rule": "One sequential CPU Stockfish worker, one thread and32MB hash; no learned calls. Coordinator owns exclusive teacher attempt."
+  },
+  "dependencies": [
+    {
+      "path": "scripts/chess_fact_sft_common.py",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    {
+      "path": "scripts/chess_fact_sft_intake.py",
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "scripts/chess_move_policy_v5.py",
+      "sha256": "17ce1bbf1f31d750c13709def6a88e2de43a014ad849dc0304c9bbdd7bf55193"
+    },
+    {
+      "path": "scripts/chess_classifier_adapter.py",
+      "sha256": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d"
+    },
+    {
+      "path": "scripts/chess_classifier_experiment_v3.py",
+      "sha256": "1d9f7f9378eb6d92251de0d8d144bd71a63b7ac95f6ab46b2b54892e760b3506"
+    },
+    {
+      "path": "scripts/chess_board_fact_core.py",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "scripts/chess_stockfish_distill.py",
+      "sha256": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7"
+    },
+    {
+      "path": "scripts/chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    }
+  ],
+  "selection": "Pinned CC0 parquet, first legal setup token only; no source answer tails/themes. Source-order SHA buckets using frozen seed. Reuse audited v5 selector with all quotas except32development/64holdout set to zero. Exclude original-game/current-before/successor registry plus allv5/v6 fresh/reused sourcegames, everyv6 unused reservoir root, and all authored/parity current-board keys. No learned response or teacher score used for cohort selection.",
+  "future_generation": "Any later generation protocol must bind this exact dataset, labels, intake-protocol and executed-source manifests, and be frozen before its model calls. Later authored generated prefixes must have zero board collision with the fixed roots; collision aborts generation without adaptive replacement.",
+  "limitations": [
+    "Tactical puzzle convenience sample, not general-play Elo or natural prevalence.",
+    "Original Queen/LC0/SmolLM pretraining overlap is unknown.",
+    "Authored software fixtures have no original-game identity, so only their board keys can be excluded.",
+    "No model strength, prose correctness or teaching quality is measured by this CPU-only plan."
+  ],
+  "preparation_amendment": {
+    "reason": "CPU intake now imports no Queen adapter and validates authored FEN exclusions directly. Model runtime is being repaired independently; no quota, source, exclusion identity or teacher setting changes. Generation remains disabled before any model import/setup.",
+    "prior_unexecuted_plan_sha256": "bbf7927e734229eec5d095db23e24acdcd607759ef051ea213bbaa6bcd60d455"
+  }
+}

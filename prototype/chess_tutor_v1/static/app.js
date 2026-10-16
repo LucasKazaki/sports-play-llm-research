@@ -13,6 +13,7 @@ function setBusy(value) {
   busy=value; $('load').disabled=value; $('load').textContent=value?'Analyzing…':'Load position';
   for(const id of ['previous','next','reset','sample','promote','use-model']) $(id).disabled=value;
   if(!value) navigation();
+  window.dispatchEvent(new Event('study-position-change'));
 }
 async function analyze(payload, mode='load', label, targetIndex) {
   if(busy) return;
@@ -71,6 +72,7 @@ function renderBoard() {
   const turn=fen.split(' ')[1]==='w'?'White':'Black';
   $('turn').textContent=preview?`${turn} to move · preview`:result.board.terminal?`${result.board.status} · ${result.board.result}`:`${turn} to move${result.board.status==='Check'?' · in check':''}`;
   $('board-hint').textContent=preview?'Stockfish continuation preview. Return to the analyzed position to play.':result.board.terminal?'The game is over. Return to an earlier position to explore.':selection?`Selected ${selection}. Legal destinations: ${[...new Set(legal.map(move=>move.uci.slice(2,4)))].join(', ')||'none'}. Escape clears selection.`:'Select a piece, then a highlighted destination.';
+  window.dispatchEvent(new Event('study-position-change'));
 }
 function squareClick(square) {
   if(!result||busy) return;
@@ -143,6 +145,15 @@ function renderModel() {
   if(model.comparison_scope)raw.append(el('p',model.comparison_scope));
 }
 function render(){renderBoard();renderTimeline();renderEngine();renderModel();}
+function coachingStudySnapshot(){return result?{position:linePayload(),fen:result.board.fen,terminal:result.board.terminal,preview:!!preview,busy,selectedUci:result.engine.alternatives?.[candidate]?.move_uci}:null;}
+function captureCoachingStudy(){return result?{result:structuredClone(result),timeline:structuredClone(timeline),index,candidate,label:$('position-label').textContent,useModel:$('use-model').checked}:null;}
+function restoreCoachingStudy(saved){
+  if(!saved||busy)return;
+  result=structuredClone(saved.result);timeline=structuredClone(saved.timeline);index=saved.index;candidate=saved.candidate;
+  preview=null;selection=null;pendingPromotion=null;$('promotion').hidden=true;$('input-error').hidden=true;
+  $('position-label').textContent=saved.label;$('use-model').checked=saved.useModel;render();navigation();
+  notice('Returned to the retained position and selected move used for this draft.');
+}
 $('flip').addEventListener('click',()=>{flipped=!flipped;renderBoard();});
 $('previous').addEventListener('click',()=>navigate(index-1));$('next').addEventListener('click',()=>navigate(index+1));
 $('reset').addEventListener('click',()=>analyze({},'load','START POSITION'));
@@ -153,6 +164,6 @@ $('use-model').addEventListener('change',()=>{if(result)analyze(linePayload(),'n
 $('return-position').addEventListener('click',()=>{preview=null;renderBoard();renderEngine();notice('Returned to the analyzed position.');});
 $('promote').addEventListener('click',()=>{if(pendingPromotion)play(pendingPromotion+$('promotion-piece').value);});
 $('cancel-promotion').addEventListener('click',()=>{pendingPromotion=null;$('promotion').hidden=true;});
-$('export').addEventListener('click',()=>{if(!result)return;const blob=new Blob([JSON.stringify({...result,session_history:timeline,session_selected_ply:index},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download='archit-chess-position-evidence.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Position evidence saved. This is an exploration record, not an evaluation result.');});
+$('export').addEventListener('click',()=>{if(!result)return;const blob=new Blob([JSON.stringify({...result,session_history:timeline,session_selected_ply:index,session_selected_engine_move:result.engine.alternatives?.[candidate]?.move_uci??null,coaching:window.coachingEvidenceForCurrentPosition?.()??null},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=el('a');a.href=url;a.download='archit-chess-position-evidence.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);notice('Position evidence saved. This is an exploration record, not an evaluation result.');});
 document.addEventListener('keydown',e=>{if(['INPUT','TEXTAREA','SELECT','BUTTON','SUMMARY'].includes(document.activeElement.tagName))return;if(e.key==='ArrowLeft'){e.preventDefault();navigate(index-1);}if(e.key==='ArrowRight'){e.preventDefault();navigate(index+1);}});
 (async()=>{try{const response=await fetch('/api/health');const health=await response.json();$('use-model').checked=health.model_configured;}catch{}await analyze({pgn:opening},'load','ILLUSTRATIVE OPENING');})();

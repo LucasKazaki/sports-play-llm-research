@@ -1,0 +1,21 @@
+# Queen coach decoder pilot
+
+The pilot is now running locally after independent review of the source, closed corpus, tokenizer preflight and bound protocol. No training outcome is accepted yet. The earlier authored QLoRA diagnostic completed one real update with finite loss and gradients, changed adapter storage, and byte-identical frozen weights; it established software feasibility only.
+
+The new run trains 1,916,928 FP32 q/v LoRA parameters over the frozen NF4 Queen decoder. The BF16 board encoder, cross-attention bridges and full tied 128,333-token vocabulary remain frozen. The official manual Flamingo implementation uses nonreentrant bridge/layer checkpoints and full-vocabulary assistant/EOS loss. Only the current board is encoded, without encoder gradients. Target facts and future continuations never enter model input.
+
+## Frozen design
+
+The corpus contains 1,024 fresh training games with paired free and selected-move tasks, 32 development games, and a fixed 16-game held-out panel from a 512-game reservoir. All prior registries and the entire unused reservoir remain excluded. These are Lichess tactical puzzle positions; a quiet best move in this source does not establish broad positional-coaching coverage.
+
+Training uses 256 updates, microbatch 1 and accumulation 8: one seeded pass over all 2,048 records. Checkpoints 0, 64, 128 and 256 each measure all 64 development targets and the same four development games in both modes. Selection prefers all eight strictly accepted legal best moves, then free three-ply teacher-prefix agreement, free best-move agreement, lower response-token loss, and the earliest checkpoint. If none reaches eight accepted moves, the highest count comes first. The unchanged starting model remains eligible.
+
+The selected adapter bytes and selection evidence must be saved before held-out generation. Both held-out conditions have 32 pending rows before setup. All 64 responses use the same 1,024-token, 180-second deterministic no-cache/math limits. Held-out reference content opens only after the prediction ledgers close.
+
+Raw legality, native descriptions, teacher agreement, critical-line prefix agreement, EOS completion and partial responses remain separate. Exact adjacent check/capture sentences can be scored mechanically; other prose remains unaudited. Selected-move consistency is assisted by its supplied move and is separate from free prediction. Neither a correct move nor a fluent template establishes explanation quality, coaching quality or Elo.
+
+## Execution and evidence
+
+The root alone dispatches GPU work through the shared lease and owned Windows worker. The 4 GiB commit reserve stays unchanged. Cooperative guards enforce a three-hour training phase, a 90-minute held-out phase and the absolute October 16 cutoff of 13:00 UTC. First backend, resource, cancellation or cutoff failure stops subsequent calls. Create-only attempts retain pending cases, fsynced call intents, completed backward passes and updates, partial accumulation and unknown interruptions. No automatic resume or blind retry occurs.
+
+Before dispatch, the CPU preflight checked every actual training and development target with the pinned official tokenizer and formatter while CUDA initialization was forbidden. All 2,112 targets passed; complete token lengths were 139 to 166. The final protocol binds the corpus, receipt, current sources and tests, successful diagnostic, and exact software dependencies. Independent review passed 22 CPU checks and the complete source/data/protocol audit. Private run files and adapter weights remain under `data/private/chess-queen-coach-sft-training-v1/` until closed results are reviewed and summarized here.

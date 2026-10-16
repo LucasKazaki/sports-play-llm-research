@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "new_model_calls": 0,
+  "new_engine_calls": 0,
+  "protocol_sha256": "d02c7af50f3f41d76606b6070d4be35725b521a42b0ecc3e6d5401234e1ed9b1",
+  "dataset_sha256": "362393d1fb7cef900966728aec9441dc3eb2f8db860f37702ff776740331cc98",
+  "teachers_sha256": "d3f86ba1b44d5347e85d1fa4a844d436aa4b9cc757c7516be0ed33bfd7b9d344",
+  "manifest_sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077",
+  "planned_teacher_outcomes": 1568,
+  "durable_teacher_intents": 1568,
+  "raw_uci_lines": 131664,
+  "source_rows_checked": 1568,
+  "unique_games": 1568,
+  "old_exclusion_games": 107464,
+  "old_exclusion_boards": 243835,
+  "input_counts": {
+    "train": 2048,
+    "development": 64,
+    "heldout": 32
+  },
+  "held_strata": {
+    "pawn_mover": 2,
+    "direct_check": 4,
+    "king_mover": 2,
+    "discovered_or_double_check": 2,
+    "noncheck_capture": 2,
+    "quiet": 4
+  },
+  "fixed_raw_dev_groups": [
+    "PzsCDbPb",
+    "qkaykA26",
+    "1LOlKaIv",
+    "FrE6YlJF"
+  ],
+  "old_board_successor_revisits": 0,
+  "historical_scope": "Only new before/current roots are excluded from all historical roles; future teacher successors may revisit older boards.",
+  "stable_files": 49
+}

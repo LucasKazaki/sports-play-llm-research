@@ -1,0 +1,109 @@
+{
+  "schema": "chess.queen-nf4-kernel-result.v1",
+  "status": "passed",
+  "phase": "completed",
+  "started_at": "2026-10-16T07:24:16.918173+00:00",
+  "protocol_sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c",
+  "source_sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8",
+  "kind": "Synthetic software diagnostic; no pretrained model or chess capability measurement",
+  "pretrained_model_calls": 0,
+  "publisher_model_id": "princeton-nlp/queen_pawn-8",
+  "publisher_model_revision": "5027687fac08b64b2403b13aca5b198e68294fe9",
+  "publisher_asset_manifest_sha256": "dc909eca4d0e0b17b2b2d188f55e461c18121516d62d1fc8062fd33c81620ad3",
+  "publisher_source_manifest_sha256": "22ef4c5ecf7f7f79848eb3b261f74cee96296614ae99e38d3f16bdca06da08ff",
+  "wheel_sha256": "c697963c8fda3dcd0d7ebd9b5211ae4067feef7cd06e0350d4e816a434fe683d",
+  "frozen_tolerances": {
+    "forward": {
+      "max_absolute_error": 0.0625,
+      "relative_l2_error": 0.02
+    },
+    "input_backward": {
+      "max_absolute_error": 0.03125,
+      "relative_l2_error": 0.02
+    }
+  },
+  "runtime_versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "llm_int8_skip_modules": [
+      "lm_head"
+    ]
+  },
+  "resource_policy": {
+    "start_physical_available_bytes": 6442450944,
+    "start_commit_headroom_bytes": 10737418240,
+    "start_gpu_free_bytes": 10737418240,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 4294967296,
+    "stop_gpu_free_bytes": 1073741824,
+    "maximum_owned_request_seconds": 120.0,
+    "maximum_sample_gap_seconds": 3.0
+  },
+  "device_name": "NVIDIA GeForce RTX 5080",
+  "compute_capability": [
+    12,
+    0
+  ],
+  "torch_cuda": "12.8",
+  "metrics": {
+    "forward": {
+      "max_absolute_error": 0.015625,
+      "relative_l2_error": 0.003846516905234079
+    },
+    "input_backward": {
+      "max_absolute_error": 0.0,
+      "relative_l2_error": 0.0
+    }
+  },
+  "checks": {
+    "forward": true,
+    "input_backward": true
+  },
+  "all_checks_passed": true,
+  "quantized_weight_dtype": "torch.uint8",
+  "compute_dtype": "torch.bfloat16",
+  "nested_quantization": true,
+  "frozen_quantized_weight_requires_grad": false,
+  "peak_cuda_allocated_bytes": 17086464,
+  "peak_cuda_reserved_bytes": 23068672,
+  "resource_samples": [
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 11639549952,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 35532689408,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 14832107520,
+      "utc": "2026-10-16T07:24:17.151548+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 11246190592,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 37232201728,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 14832107520,
+      "utc": "2026-10-16T07:24:20.508540+00:00"
+    },
+    {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 10756882432,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 38194139136,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 14482931712,
+      "utc": "2026-10-16T07:24:20.917088+00:00"
+    }
+  ],
+  "elapsed_seconds": 4.0
+}

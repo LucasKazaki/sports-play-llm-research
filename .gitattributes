@@ -46,7 +46,8 @@ scripts/chess_move_policy_v5.py -text
 scripts/start-chess-tutor.ps1 -text
 tests/test_chess_check_balanced_v2.py -text
 tests/test_chess_move_policy_v5.py -text
-tests/test_chess_tutor_v1.py -text
+# Retain the reviewed test's exact trailing blank line for source-bound receipts.
+tests/test_chess_tutor_v1.py -text whitespace=blank-at-eol,space-before-tab,cr-at-eol,-blank-at-eof
 
 # Successor experiments bind exact executed bytes across Windows checkouts.
 experiments/chess-move-policy-v6/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
@@ -71,3 +72,11 @@ scripts/chess_queen_nf4_adapter*.py -text whitespace=blank-at-eol,blank-at-eof,s
 tests/test_chess_queen_nf4*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/chess_queen_benchmark_nf4_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_queen_benchmark_nf4_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-qlora-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-sft-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-sft-training-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_qlora*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_sft*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_qlora*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_sft*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_tutor_coaching_prose.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

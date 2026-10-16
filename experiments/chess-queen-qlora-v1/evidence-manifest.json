@@ -1,0 +1,41 @@
+{
+  "schema": "chess.public-evidence-copy.v1",
+  "source": "Root-owned actual closed local attempts; private weights and media excluded",
+  "files": [
+    {
+      "path": "experiments/chess-queen-qlora-v1/evidence/diagnostic-1.json",
+      "bytes": 12988,
+      "sha256": "211498096150c1669b5667ed9e8cac9d4af6b2175f49dda1ada5bcaf36dc893f"
+    },
+    {
+      "path": "experiments/chess-queen-qlora-v1/evidence/diagnostic-1.resources.jsonl",
+      "bytes": 1536,
+      "sha256": "81f27c8afb13584111f0e83461bb93900f16d1afd1ced6223aa76c83064f1091"
+    },
+    {
+      "path": "experiments/chess-queen-qlora-v1/evidence/diagnostic-worker-1.json",
+      "bytes": 600,
+      "sha256": "c8eaeacec9b5bf73e4f2b40520810a49d1c19b4c171966046487c5cb9cf23e50"
+    },
+    {
+      "path": "experiments/chess-queen-qlora-v1/evidence/diagnostic-2.json",
+      "bytes": 33690,
+      "sha256": "99616936dc5caae3bf2424932b174f91cc7616c40a3e3f50013f0fb20b3fa979"
+    },
+    {
+      "path": "experiments/chess-queen-qlora-v1/evidence/diagnostic-2.resources.jsonl",
+      "bytes": 3321,
+      "sha256": "6740cf7dfaf1ca8c2ee551093ab33b1106b46a66e64c2bc63525f29bea196096"
+    },
+    {
+      "path": "experiments/chess-queen-qlora-v1/evidence/diagnostic-worker-2.json",
+      "bytes": 602,
+      "sha256": "42a5548365287e495471477666c0fc880dd02b079007fdcff66b89a7db413bd7"
+    },
+    {
+      "path": "experiments/chess-queen-qlora-v1/evidence/tokenizer-cpu-v2.json",
+      "bytes": 960,
+      "sha256": "d5e2176ecc894af5cb65a245de780627b10fdbcc4295ee9d704bce70352d81bd"
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "schema": "chess.queen-nf4-qlora-design-draft.v1",
+  "written_at": "2026-10-16T07:30:46.237952+00:00",
+  "status": "PROPOSAL ONLY: no trainer implemented, source cohort selected, teacher requested or model called by this design",
+  "prerequisite": "Actual NF4 authored full generation must work and be parseable. Freeze implementation, tests, data exclusions and protocol before source intake; independent review before root-owned software backward and training dispatch.",
+  "hypothesis": "A small decoder LoRA can improve learned immediate board-fact explanations and legal native3ply continuations over the same frozen NF4 publisher-weight baseline. Fixed supervised prose establishes a bounded fact/continuation experiment; it does not establish open-ended strategic coaching quality.",
+  "preserve": [
+    "Original publisher assets and BF16 candidate/partial resource failure",
+    "Executed NF4v1/v2 sources and all passed/failed software receipts",
+    "Unadapted NF4v2 actual baseline on the exact future heldout inputs",
+    "No full-weights save or redistribution; save only the separately identified LoRA and optimizer/checkpoint metadata"
+  ],
+  "native_format_findings": {
+    "data": "Official standardized fields are fen, history, prompt, response and extra. LC0 sees only fen/history. Evaluator extra is carried outside the model.",
+    "tokenization": "Use pinned tokenizer.apply_chat_template for user+assistant with enable_thinking=False. Verify exact generation-prefix equality, mask the full user/assistant-prefix span to-100, supervise response and closing/EOS tokens. Do not silently truncate targets or train a prefix-only answer.",
+    "prompt": "Use exact existing prompt_for(currentFEN, optional selectedUCI) for paired task variants; no target/prose/PV/engine fields enter the prompt.",
+    "output": "Native headings ANALYSIS, BEST_MOVE, CRITICAL_LINE, PROMISING_MOVES, EVALUATION with root-POV piece and square tokens. Correct captures, en passant, castling and promotion must replay and round-trip under the existing strict parser.",
+    "training_forward": "Use the pinned official Flamingo manual hidden-state walk with the same full merged128333 vocabulary. Construct with n_new_tokens=0 and lora_rank=0 so a pre-injected LoRA is not refrozen or doubled. Replace its meta-created bridges with actual frozen pinned BF16 bridges; optimize only validated LoRA names.",
+    "checkpointing": "Official manual rl_activation_checkpointing wraps each bridge+decoder-layer closure with use_reentrant=False and preserve_rng_state=False. Use LoRA dropout0, disable duplicate HF-layer checkpointing, keep model use_cache=False. Frozen bridge operations must remain in autograd to transmit gradients to earlier LoRA layers; only the frozen encoder runs under no_grad.",
+    "loss": "Shifted next-token cross entropy across the entire128333 unmasked vocabulary, assistant/EOS tokens only. Use official chunked LM-head loss with logit_chunk_size32 and FP32 CE accumulation. No legal-token masking or teacher-forced loss may be substituted for raw generated evaluation."
+  },
+  "memory_traps": [
+    "Native generate() is inference_mode and cannot be reused as a training forward.",
+    "Installed PEFT0.21.2 prepare_model_for_kbit_training casts every non-Params4bit BF16/FP16 PARAMETER toFP32, including the tied128333x2048 embedding/head. That alone adds525651968bytes; calling it on the combined Queen wrapper also upcasts frozen bridges. Propose explicit reviewed equivalent preparation: freeze all base params, retain BF16 embedding/head/bridges, retain existing stable native norms, inject FP32 trainable LoRA only and use nonreentrant manual checkpointing. Do not call the generic bulk-upcast helper blindly.",
+    "Calling Flamingo with lora_rank<0 after injecting PEFT freezes the LoRA. Positive rank would inject another adapter. Constructor rank0 plus exact named trainable inventory avoids both.",
+    "Hooks installed only for a forward and removed before checkpoint backward can omit conditioning on recomputation. The official manual closure explicitly includes each bridge inside its checkpoint; prefer that for training, then independently verify zero-adapter/manual/native equality.",
+    "Generic .to(dtype) on the combined quantized model can corrupt quantization/tied weights or create host allocations. Preserve explicit cuda0 Params4bit and stable target-only BF16 component loader.",
+    "Do not keep all corpus hidden states or logits in RAM, use optimizer foreach=False to avoid large temporary lists, and do not use generation KV cache, torch.compile, Triton/Liger, offload or package upgrades in this first run."
+  ],
+  "candidate_trainable_spec": {
+    "base": {
+      "path": "scripts/chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    "lora": {
+      "r": 8,
+      "lora_alpha": 16,
+      "target_modules": [
+        "q_proj",
+        "v_proj"
+      ],
+      "lora_dropout": 0,
+      "bias": "none",
+      "task_type": "CAUSAL_LM",
+      "initialization": "PEFT default zero-B no-op initialization",
+      "adapter_dtype": "FP32"
+    },
+    "expected_trainable_parameters": 1916928,
+    "parameter_count_derivation": "36layers *8 *[(2048+2048)q +(2048+512)v]",
+    "frozen": [
+      "All252 original nestedNF4 linears",
+      "Full tied BF16 embedding/lm_head",
+      "LC0 encoder including policy map",
+      "All16BF16 cross-attention bridges"
+    ],
+    "trainable_inventory_gate": "Exactly q/v LoRA A/B matrices in all36layers, no other gradients or optimizer parameters; verify nonzero finite adapter gradients and actual changed saved adapter after root smoke."
+  },
+  "new_data_proposal": {
+    "source": {
+      "path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+      "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+      "rights": "CC0-1.0 retained294920084-byte Lichess source; no further acquisition"
+    },
+    "selection": "Deterministic source order, first original setup ply only. One root per canonical original game. Source solutions/themes/tails discarded before model or engine use. Split assignment by predeclared original-game hash.",
+    "exclusions": "Union all historical game/FEN registries plus every current v5/v6 root including unused reservoirs, balanced-v2 all splits, all encoder-head TRAIN/dev/newheld roots, all96Queen benchmark roots, all authored/UI fixtures and any newer root cohort created before freeze. Exclude before/current and retained successor boards. Bind exact manifests and computed complete union before intake.",
+    "train_source_games": 2048,
+    "train_records": 4096,
+    "paired_train_tasks": "Two records per train game: currentFEN only best-move/analysis, and currentFEN+Stockfish selected legal move explanation. Both remain in TRAIN; equal deterministic sampling. Selected-given BEST_MOVE copying is reported separately and is not move-prediction evidence.",
+    "development": {
+      "fixed_teacher_reservoir_games": 256,
+      "selected_three_ply_games": 64,
+      "raw_generation_selector_games": 16,
+      "rule": "After retained teachers, earliest64 roots with3legally replayable nonterminal PV plies. First16 of those fixed before any model call serve raw generation selection; all64 support response-token NLL. Retain every reservoir rejection/error/unused eligible row."
+    },
+    "fresh_heldout": {
+      "fixed_teacher_reservoir_games": 512,
+      "selected_three_ply_games": 128,
+      "rule": "Earliest128 complete legal3-PV roots chosen before any learned call. If insufficient, stop and retain insufficient cohort rather than adapt reservoir. These measures apply to3-ply-eligible tactical roots and explicitly exclude short/mate-in1 reference roots."
+    },
+    "teacher": "Reuse reviewed streaming same-event score/PV and final-bestmove coherence. Stockfish50knodes,1thread/worker,32MBhash, at most6CPUworkers chosen before launch from frozen resource policy. Durable create-only intent/chunk journals preserve all actual requests/failures; no hidden relabel attempt.",
+    "input_seal": "Label-free current FEN/actual validated history/optional selected UCI only. No PV, postboard, score, gives_check, reply or evaluator labels in generator inputs or board encoder. Separate target/evaluator files with bound identities.",
+    "verified_target": "Bounded fluent ANALYSIS states actual mover/source/destination, capture/en-passant/promotion/castling facts, gives-check/checkmate and exact checking pieces when present. Native BEST_MOVE/CRITICAL_LINE/PROMISING_MOVES use teacher bestmove and verified3-PV prefix, stopping at automatic game over. EVALUATION may supervise coherent bounded Stockfish score as an uncertain learned estimate. No unsupported fork/plan/positional advantage prose or external LLM teacher.",
+    "target_quality": "CPU-round-trip every native move, every immediate fact and complete EOS-bearing tokenization\u2264512total tokens. Freeze deterministic short prose before intake; reject/retain malformed rows without replacing selected games based on model performance. No silent truncation.",
+    "encoder_work": "Current-FEN encoder only, no_grad, online bounded batch1. Optional dedup/cache is a later separate implementation choice requiring an explicit label-free cache contract; do not change frozen method midrun."
+  },
+  "training_budget_proposal": {
+    "seed": 4082082,
+    "optimizer": "AdamW LoRA only; lr0.0001, betas0.9/0.999,eps1e-8,weight_decay0.01,foreachFalse",
+    "batch_size": 1,
+    "gradient_accumulation": 8,
+    "optimizer_updates": 512,
+    "maximum_presentations": 4096,
+    "max_total_tokens": 512,
+    "gradient_clip_norm": 1,
+    "schedule": "16update linear warmup then cosine to10percent LR",
+    "checkpoints": [
+      0,
+      64,
+      128,
+      256,
+      512
+    ],
+    "maximum_owned_training_seconds": 10800,
+    "resource_policy": "Keep current NF4 start6GiBphysical/10GiBcommit/10GiBGPU and stop4GiBphysical/4GiBcommit/1GiBGPU; same read-only sampling/cancel guard. Check before every microbatch and after backward/optimizer; shared root-owned lease/Windows job. Any backend/resource failure stops further model calls; retain terminal failure and all pending denominators.",
+    "time_budget": "Graceful walltime exit may retain completed scheduled checkpoints as a predeclared partial run, with actual updates/presentations explicit. A resource/backend failure does not trigger a resumed or silently lower-resource heldout run.",
+    "software_gate_first": "After CPU/source review, root-only4TRAIN-record forward/backward/update smoke under a separate optimizer/checkpoint condition. Verify nonzero finite LoRA gradients/change, no base/bridge gradient/change, input-only NF4 backward and zero-adapter equality. Discard smoke adapter and fresh-seed optimizer for actual run. Root software throughput/peak commit determine whether the frozen full run is feasible before any heldout model call."
+  },
+  "dev_only_selection_proposal": {
+    "conditions": "Same NF4 unadapted checkpoint0 plus each completed scheduled adapter; no fresh-heldout content inspected for selection.",
+    "raw_selector": "On fixed16development roots run both selected/unselected modes, max384newtokens/120s each, deterministic no_cache/math. Preserve32denominator and all finish/parse failures.",
+    "ordering": [
+      "Most complete responses with strict valid bestmove, legal3ply line and all requested immediate facts correct on fixed raw-dev rows",
+      "Most exact3ply teacher-prefix agreements in unselected mode",
+      "Lowest mean supervised response/EOS NLL over all128paired dev records",
+      "Earliest checkpoint"
+    ],
+    "baseline_candidate": "Checkpoint0 remains eligible and wins any tie; save selection with model/data/source hashes before heldout generation."
+  },
+  "fresh_evaluation_proposal": {
+    "conditions": "Unadapted NF4 baseline and saved selected adapter once on each128fresh roots in both modes; order predeclared. Full512 planned generated responses retained.",
+    "limits": "Same384tokens/120s no_cache/math in both conditions. Invalid/missing/illegal/truncated outputs count in full denominators; never rule/engine-repair moves.",
+    "reports": [
+      "Immediate-fact exact counts and every error category, selected/unselected modes separately",
+      "Strict structured-output completion and3ply raw legality counts",
+      "Independent unselected first/2/3-prefix agreement with50knode root reference on128eligible roots",
+      "Selected-given firstmove consistency separately;2/3-ply continuation agreement may be measured but must not be called unprompted move prediction",
+      "Full raw text/token IDs, source/model hashes, timing/peak commit/GPU and all notrun/unknown/failure reasons"
+    ],
+    "guardrails": "Teacher agreement is not chess correctness or Elo. Mechanically generated targets support a bounded factuality/continuation claim only. Coach-facing quality still needs blind expert inspection of actual unseen outputs; no promotion based on fluent templates or training loss alone."
+  },
+  "inspected_primary_local_files": [
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/instance_format.py",
+      "sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/training_utils.py",
+      "sha256": "265013bc87894fa58f7c86e83e21a019b07511aac4e9876a8111e5e17fd78325"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/base.py",
+      "sha256": "bc74975b7c3b17689f863de78bed254a5761a8c64ea68998ca784ac856cd7fce"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/flamingo.py",
+      "sha256": "7757093bdb2187085e57dcebf2925ece7471475768a2f93f9b683fd49a903ab1"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/adapters/smollm.py",
+      "sha256": "1ecafe62de6aa810fd2da4fedc78a7c90ee6685dbd0769405e4f39984ce1babb"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/datagen/self_distill/analysis.py",
+      "sha256": "fc2e7e8dfd138630c65a5485ed4e7855adbea1f180d24dfa25024615bd6a164a"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/pack_self_distill.py",
+      "sha256": "9a5b77d6d3e1cc693782cc848cade3e51dad06bb0551e486ec82470a4377e60d"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/peft/utils/other.py",
+      "sha256": "6b87957915ba399bfb6bbd57b9404aa12f0e9f4e27b19ef1b6c68ac052148f9b"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/peft/peft_model.py",
+      "sha256": "d22a1c50dea7a046ce28e71a79dfc20b1d96a2d238a9b457be6a88b6068e04d5"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/transformers/modeling_layers.py",
+      "sha256": "ee84c7229582bc2f47bac19327ac2d96530bf94a182b5366d72d10330da99df4"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/transformers/models/smollm3/modeling_smollm3.py",
+      "sha256": "56ad67011d2abc78665fe47b6870dffeb11ba1256fa10bc063497e0441d80dd3"
+    }
+  ],
+  "primary_sources": [
+    "https://huggingface.co/docs/peft/developer_guides/quantization",
+    "https://huggingface.co/docs/peft/v0.21.0/package_reference/lora",
+    "https://github.com/queen-project/queen/tree/c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+    "https://huggingface.co/docs/transformers/v5.19.0/quantization/bitsandbytes"
+  ]
+}

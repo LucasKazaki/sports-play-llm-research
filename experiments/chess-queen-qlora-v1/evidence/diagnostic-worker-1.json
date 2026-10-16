@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T07:44:09.597147+00:00",
+  "script": "scripts\\chess_queen_qlora_v1.py",
+  "arguments_sha256": "86817eb7fc5c5d7c088929ee52d1225bdeb3e9cda3078d9105f0e580d73b00d8",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "failed",
+  "child_pid": 50100,
+  "exit_code": 2,
+  "log": "data\\private\\chess-queen-qlora-v1\\diagnostic-worker-1.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 22.905999999988126
+}

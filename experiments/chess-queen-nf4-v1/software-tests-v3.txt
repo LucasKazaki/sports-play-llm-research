@@ -1,0 +1,13 @@
+Separately named TF5 optional-device-map compatibility repair,2026-10-16
+
+Original executed adapter, parity source and all protocols/actual receipts preserved.
+Candidate0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8
+Kernel-v2 protocol515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c
+New adapter test52bcbf579b44392a37c39180716db305ba7f379135d3edf80594496b06fffa1a
+
+.venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_nf4_adapter.py tests/test_chess_queen_nf4_parity.py tests/test_chess_queen_nf4_adapter_v2.py tests/test_chess_queen_nf4_parity_v2.py -q
+74 passed in0.92s
+
+Six added placement regressions require actual CUDA0 tensors despite absent/None device-map metadata, reject actual CPU/CUDA1/meta tensors despite claimed CUDA0 metadata, and reject malformed present metadata.
+Tiny numerical method/tolerances and quantization remain unchanged. A matching NEW root-owned CUDA diagnostic is required because the actual source identity changed.
+No GPU/model calls by the implementation agent.

@@ -1,0 +1,14 @@
+Pure CPU finite-output repair verification, 2026-10-16, before pretrained NF4 calls
+
+.venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_nf4_adapter.py tests/test_chess_queen_nf4_parity.py -q
+34 passed in0.36s
+
+Four added CPU contracts verify NaN/Inf logits stop before metrics while preserving a serializable failed receipt; nonfinite derived metrics never enter the result; nonfinite manual logits stop before native forward.
+Fresh-process verify_plan(parity-protocol-v2.json, kernel-1.json) passed all exact bindings with no torch/bitsandbytes import.
+
+Candidate source32899086467e42a8d0988f05ce6acd9416216a6e6c83a502cce25b3cc28970fc unchanged
+Kernel protocolf2e41e4e10889f791b11c149b636a5dcc18e724d37e5b2981eb7117a0249df6c unchanged
+Parity sourcea6259851e6fe5e782dce35a9dfb6cfd09d002870d78c48e324e5fff5f3016e98
+Parity-v2 protocol14a5b78f91cb7620034fafaef85646abdf519cc2e465b05b3ccd692785a5783b
+Parity testfeff35b19ee41c290b1877a1f6db1cce1d06bd3ec425a6804e1ea7ca656aa1d9
+No pretrained model call was made by this authoring agent.

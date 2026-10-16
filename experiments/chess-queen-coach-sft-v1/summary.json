@@ -1,0 +1,165 @@
+{
+  "schema": "chess.queen-coach-sft-corpus-summary.v1",
+  "prepared_at": "2026-10-16T08:16:46.532525+00:00",
+  "status": "closed_independently_audited",
+  "protocol": "protocol-v3.json",
+  "independent_corpus_audit": {
+    "status": "passed",
+    "files": {
+      "coaching-corpus-completed-result.json": "c2c82a65206bff52156827f21244ad7b09d95f0249c28e45571aa110372176b7",
+      "review-coaching-corpus-completed.md": "7803101ccd10c2ef57802bda5f7fad0a5e72957ab450d8525b4a6a991a7a6302",
+      "audit-coaching-corpus.py": "a113177309a0f837fb5f8d48cc6c1aea145b03441565c5428c91098830e26c64"
+    },
+    "source_rows_checked": 1568,
+    "raw_uci_lines": 131664,
+    "historical_teacher_successor_revisits_observed": 0,
+    "scope": "Closed corpus readiness only; no learned call, playing strength or coaching acceptance."
+  },
+  "protocol_sha256": "d02c7af50f3f41d76606b6070d4be35725b521a42b0ecc3e6d5401234e1ed9b1",
+  "source_bytes": 294920084,
+  "source_sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+  "source_license": "CC0-1.0",
+  "source_games": {
+    "train": 1024,
+    "development": 32,
+    "heldout_reservoir": 512,
+    "rollout": 0
+  },
+  "selection": {
+    "scanned": 140963,
+    "rejections": {
+      "excluded_game": 106597,
+      "bucket_full": 32754,
+      "excluded_board_or_terminal": 44
+    }
+  },
+  "initial_exclusions": {
+    "games": 107464,
+    "board_keys": 243835
+  },
+  "teacher": {
+    "engine": "pinned Stockfish19",
+    "workers": 3,
+    "threads_per_worker": 1,
+    "nodes_per_root": 50000,
+    "deadline_seconds_per_root": 30,
+    "requested": 1568,
+    "completed": 1568,
+    "failed": 0,
+    "active_unknown": 0,
+    "not_run": 0
+  },
+  "teacher_journals": [
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-journals/worker-0.jsonl",
+      "sha256": "02d96593486737f6d24bd7cc7b1f39994e8cf937c66c15f8b571cda75e43584b",
+      "bytes": 7428797,
+      "events": {
+        "engine_opened": 1,
+        "intent": 523,
+        "uci_line": 42710,
+        "outcome": 523
+      },
+      "outcomes": {
+        "completed": 523
+      }
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-journals/worker-1.jsonl",
+      "sha256": "7a95b9d61cb92193d0792145bf64a8f4ed575bbeb7e255ed055e320af9be8296",
+      "bytes": 7908092,
+      "events": {
+        "engine_opened": 1,
+        "intent": 523,
+        "uci_line": 45386,
+        "outcome": 523
+      },
+      "outcomes": {
+        "completed": 523
+      }
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-journals/worker-2.jsonl",
+      "sha256": "db2358d70eabdb394c599ec091157ed7db705f8ead6a2b524fd1864cd040b59c",
+      "bytes": 7543190,
+      "events": {
+        "engine_opened": 1,
+        "intent": 522,
+        "uci_line": 43568,
+        "outcome": 522
+      },
+      "outcomes": {
+        "completed": 522
+      }
+    }
+  ],
+  "case_counts": {
+    "train": 2048,
+    "development": 64,
+    "heldout_inputs": 32
+  },
+  "held_selection": {
+    "root_games": 16,
+    "full_legal_reference_plies": 3,
+    "strata": {
+      "pawn_mover": 2,
+      "direct_check": 4,
+      "king_mover": 2,
+      "discovered_or_double_check": 2,
+      "noncheck_capture": 2,
+      "quiet": 4
+    },
+    "unused_reservoir_games": 496,
+    "full_reservoir_excluded_from_future_work": true
+  },
+  "development_raw_selection": "First4 full3-ply development roots in frozen source order, two modes each; IDs remain in private manifest for trainer binding.",
+  "files": {
+    "train.jsonl": {
+      "sha256": "fbdbe243c52089e3a3c098a6cd7d4e64980a6b1c5740f9c9dd6d98c8b457b177",
+      "rows": 2048
+    },
+    "train-references.jsonl": {
+      "sha256": "de6f03d50eb0765901f9e4980f43dd928e114b48c5ce7e631885717ad51455e7",
+      "rows": 2048
+    },
+    "development.jsonl": {
+      "sha256": "fdd8f41880ada0efbaafa211f25f3a2ec8cf06090399614135d94f93c5737a49",
+      "rows": 64
+    },
+    "development-references.jsonl": {
+      "sha256": "f9cab2f6426215ffcd1abf50be37151f116baa008f7568ba851836874d226687",
+      "rows": 64
+    },
+    "heldout-inputs.jsonl": {
+      "sha256": "ac19c249b5f168290482ba8102cec93712856816a840584892555097a43a0f25",
+      "rows": 32
+    },
+    "heldout-references.jsonl": {
+      "sha256": "404f782d4eaac07dba285b49c23d057b537badc2d40cc66478a5d0c433870dca",
+      "rows": 32
+    }
+  },
+  "reserved_exclusions_sha256": "a5162e0404ef8935369445c8d8ec7417f8002f02ecdb32796e7a206dd9252249",
+  "checks": {
+    "all_planned_teacher_outcomes_completed": true,
+    "native_target_roundtrip": true,
+    "new_cross_split_root_and_successor_overlap_rejected": true,
+    "input_reference_separation": true
+  },
+  "known_scope": "Prior registry/head/Queen/authored role exclusions apply to candidate before/current root boards. Future teacher successors may revisit older spent boards. New cross-split successor overlap was rejected before export.",
+  "language_targets": "Deterministic verified immediate check/mate/capture grammar plus at most3 legal teacher plies. No why-best rationale, speculative alternatives or engine score supplied.",
+  "heldout_policy": "Only input records may enter generation. Private heldout references are evaluator-only after completed prediction ledgers; this packaging step hashes reference bytes without semantic inspection.",
+  "software_tests": {
+    "command": ".venv-soccernet/Scripts/python.exe -B -m pytest tests/test_chess_queen_coach_sft_intake_v1.py -q",
+    "observed_stdout": "21 passed in0.18s",
+    "independent_review": "21 passed; metadata-only pre-intake/teacher GO received before dispatch"
+  },
+  "preserved_pre_execution_corrections": [
+    "An initial synthetic fixture used a URL instead of the frozen native GameId syntax; no cohort calls occurred.",
+    "Reviewer caught setup-finalizer gap; protocol-v2 and regression preserved.",
+    "Protocol-v3 predeclared first4 full3-ply development raw groups and explicit historical root-input scope before any intake."
+  ],
+  "model_or_gpu_calls": 0,
+  "model_training_updates": 0,
+  "claim_boundary": "This is a closed supervision corpus and software/runtime evidence, not trained-model performance or accepted chess coaching."
+}
