@@ -92,3 +92,9 @@ research/chess-ai-assistance-and-data-stewardship-2026-10-16.md -text
 experiments/chess-encoder-check-generalization-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 scripts/chess_encoder_check_generalization_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 tests/test_chess_encoder_check_generalization_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_generalization_eval_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_generalization_eval_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_tutor_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_tutor_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_tutor_tuned_runtime_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-tutor-adapter-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

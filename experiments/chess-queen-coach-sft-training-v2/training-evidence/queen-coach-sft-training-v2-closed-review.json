@@ -1,0 +1,1281 @@
+{
+  "schema": "chess.independent-queen-coach-training-v2-closed-review.v1",
+  "verdict": "PASS: exact full256-update training, complete development panels and dev-only savedstep64 selection; ready for separately authorized frozen heldout execution",
+  "reviewed_at_utc": "2026-10-16T09:31:48.380625+00:00",
+  "protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\protocol.json",
+    "bytes": 11018,
+    "sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168"
+  },
+  "worker": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1-worker.json",
+    "bytes": 621,
+    "sha256": "2cad9978cd1025863586f31572b98e141cbc956994bcc965e62922f82f1b4152"
+  },
+  "worker_status": {
+    "schema": "chess.gpu-worker.v1",
+    "started_at": "2026-10-16T08:47:22.350188+00:00",
+    "script": "scripts\\chess_queen_coach_sft_train_v2.py",
+    "arguments_sha256": "a24556a6589a8e47cb6332fac5981d3197d7e4f9063f1d8bfc3d5da6bb2cfde1",
+    "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+    "status": "completed",
+    "child_pid": 52316,
+    "exit_code": 0,
+    "log": "data\\private\\chess-queen-coach-sft-training-v2\\train-1-worker.log",
+    "child_exited_before_lease_release": true,
+    "elapsed_seconds": 2169.9689999999828
+  },
+  "training": {
+    "updates": 256,
+    "confirmed_backwards": 2048,
+    "planned": 2048,
+    "active_unknown": 0,
+    "not_run": 0,
+    "journal_events": 4608,
+    "finite_losses": 2048,
+    "first_optimizer_mean_loss": 2.0949013978242874,
+    "last_optimizer_mean_loss": 0.03349866074859165,
+    "seeded_one_epoch_order_exact": true,
+    "fresh_zero_B_and_fresh_optimizer_savedstep0": true
+  },
+  "development": [
+    {
+      "step": 0,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 2.112202738717412,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 7,
+        "accepted_best_legal": 7,
+        "teacher_best_agreement": 7,
+        "complete_eos": 6,
+        "critical_3ply_legal": 7,
+        "critical_prefix_matches": {
+          "1": 7,
+          "2": 3,
+          "3": 2
+        },
+        "recognized_fact_claims": 0,
+        "false_recognized_claims": 0,
+        "grammar_complete_rows": 0,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 1,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        false,
+        7,
+        1,
+        4,
+        -2.112202738717412,
+        0
+      ]
+    },
+    {
+      "step": 64,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 0.12344497649364494,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 8,
+        "accepted_best_legal": 8,
+        "teacher_best_agreement": 8,
+        "complete_eos": 8,
+        "critical_3ply_legal": 8,
+        "critical_prefix_matches": {
+          "1": 8,
+          "2": 6,
+          "3": 6
+        },
+        "recognized_fact_claims": 12,
+        "false_recognized_claims": 5,
+        "grammar_complete_rows": 6,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 3,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        true,
+        8,
+        3,
+        4,
+        -0.12344497649364494,
+        -64
+      ]
+    },
+    {
+      "step": 128,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 0.042657997244055515,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 8,
+        "accepted_best_legal": 8,
+        "teacher_best_agreement": 8,
+        "complete_eos": 8,
+        "critical_3ply_legal": 6,
+        "critical_prefix_matches": {
+          "1": 8,
+          "2": 4,
+          "3": 2
+        },
+        "recognized_fact_claims": 16,
+        "false_recognized_claims": 2,
+        "grammar_complete_rows": 8,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 1,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        true,
+        8,
+        1,
+        4,
+        -0.042657997244055515,
+        -128
+      ]
+    },
+    {
+      "step": 256,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 0.03617206557556924,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 8,
+        "accepted_best_legal": 8,
+        "teacher_best_agreement": 8,
+        "complete_eos": 8,
+        "critical_3ply_legal": 6,
+        "critical_prefix_matches": {
+          "1": 8,
+          "2": 4,
+          "3": 2
+        },
+        "recognized_fact_claims": 16,
+        "false_recognized_claims": 2,
+        "grammar_complete_rows": 8,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 1,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        true,
+        8,
+        1,
+        4,
+        -0.03617206557556924,
+        -256
+      ]
+    }
+  ],
+  "selected": {
+    "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0064/adapter.pt",
+    "sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e",
+    "step": 64,
+    "presentations": 512,
+    "parameter_count": 1916928,
+    "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+    "source_sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+  },
+  "baseline": {
+    "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0000/adapter.pt",
+    "sha256": "5a6947f4cab791256e59b1b2a2364118f88c7e6bb2504c61119116be4fb0b403",
+    "step": 0,
+    "presentations": 0,
+    "parameter_count": 1916928,
+    "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+    "source_sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+  },
+  "selection": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\selection.json",
+    "bytes": 55684,
+    "sha256": "79abaea0cba0a292ef17e2686dbb69c72e568bdefb61848d64a38cc6ee15e714"
+  },
+  "heldout_opened": false,
+  "raw_development_responses": [
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:PzsCDbPb:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 723,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\000.json",
+        "bytes": 33515,
+        "sha256": "72be15ef752a5760c33a2b0cba6cd55b70807328da36d52a0bd6ca5c41fbdc1a"
+      }
+    },
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:PzsCDbPb:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 784,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\001.json",
+        "bytes": 37370,
+        "sha256": "dead60b1a134843ae2ec5ec0c5260d7fa8297f76f0f3ad40ad3aada116f3117f"
+      }
+    },
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:qkaykA26:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 451,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\002.json",
+        "bytes": 26415,
+        "sha256": "6e6e1e64ac9e4d8cfe246b4917e6a97b9d478c4749116143010a86aeaf44f1b3"
+      }
+    },
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:qkaykA26:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 500,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\003.json",
+        "bytes": 27142,
+        "sha256": "d76357ad0d26d5f49bcc8d592d10d3780df5825a3a9a13b1492b2ff894f7058a"
+      }
+    },
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:1LOlKaIv:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 493,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\004.json",
+        "bytes": 27539,
+        "sha256": "e1621055d9e0f81f37740e31428c7605e88d3d02c3501b5ecb564f0edf2c0420"
+      }
+    },
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:1LOlKaIv:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 670,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\005.json",
+        "bytes": 30935,
+        "sha256": "ded29796d79166daced32156bc768344077d583768aa0a0e55581e9ff4a74faf"
+      }
+    },
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:FrE6YlJF:free",
+      "status": "partial",
+      "finish_reason": "token_limit",
+      "tokens": 1024,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\006.json",
+        "bytes": 38665,
+        "sha256": "21fcbe3ee8864aa01b6854587d29555cc0d2dce99806080d07dcd18ff7f77c5d"
+      }
+    },
+    {
+      "step": 0,
+      "case_id": "queen-coach-v1:FrE6YlJF:selected",
+      "status": "partial",
+      "finish_reason": "token_limit",
+      "tokens": 1024,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\007.json",
+        "bytes": 38077,
+        "sha256": "d7a7236257b2251c8bb71cd5265f2e2c1a6c882fe57d96db26ae40fe311fe9d7"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:PzsCDbPb:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 88,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\000.json",
+        "bytes": 19666,
+        "sha256": "250555f63134404eacbb33b8e7fcc26e10be3b50d56504bb0f1cd80ae2a0aca1"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:PzsCDbPb:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 82,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\001.json",
+        "bytes": 19668,
+        "sha256": "4cdb313f6c5e361e590c21985831c0a7584c7c15d3a5bb7753bf730f1f2f399e"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:qkaykA26:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 66,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\002.json",
+        "bytes": 18278,
+        "sha256": "4cdbb0faa59888c24b8f946d1e65ba7120c5c47854ee387dc8d4e3f08cf6a907"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:qkaykA26:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 66,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\003.json",
+        "bytes": 18391,
+        "sha256": "e11e89ccb568d2971b93c18d90c8bff81818af16b1352964b7023cf5c1fc25e1"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:1LOlKaIv:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 68,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\004.json",
+        "bytes": 18391,
+        "sha256": "d428451eaf7399d77deb6e6fb121c2eee20a33bba844e45bcd2ea2d3b0eb90e1"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:1LOlKaIv:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 68,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\005.json",
+        "bytes": 18504,
+        "sha256": "b40d66cd0916d9afedb9ba3335cab30880b45d6eb7cc96ca3a0e6ce063e52472"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:FrE6YlJF:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 72,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\006.json",
+        "bytes": 18862,
+        "sha256": "677aa44826cbd741f5ba4c06e0f8e5994799ac9fce7068eec364ae8ca741a010"
+      }
+    },
+    {
+      "step": 64,
+      "case_id": "queen-coach-v1:FrE6YlJF:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 70,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\007.json",
+        "bytes": 18938,
+        "sha256": "ecfae7cec60783149cd78bb2330139f75e62838b01e594ba2da7cd5cf0f54023"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:PzsCDbPb:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 67,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\000.json",
+        "bytes": 18536,
+        "sha256": "16b6a10f39f8e676e939aec94ffcb54ba423f865818c5c0a0c4ee301dce2997f"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:PzsCDbPb:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 67,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\001.json",
+        "bytes": 18650,
+        "sha256": "e4ff6885d266ba22bb8dec10c7a076e34ebb9ed3132e5afbc9f4f5ab74121e75"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:qkaykA26:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 64,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\002.json",
+        "bytes": 18244,
+        "sha256": "ae32b3b325121faa3f059229f20f2bceb02cda6a46a9bd756a3267e4511e8a28"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:qkaykA26:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 64,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\003.json",
+        "bytes": 18357,
+        "sha256": "70e25aed49d96e349787d6cc51b25daa47bf42d7e076f4e547e3127d2735235b"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:1LOlKaIv:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 65,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\004.json",
+        "bytes": 18301,
+        "sha256": "3e63c3d293d2b8f3f9b8eac9f26de1e9bd3969db42733062acc5414b875f7580"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:1LOlKaIv:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 65,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\005.json",
+        "bytes": 18414,
+        "sha256": "4ef39d0a6cca0dccc8b211b4d4a51df26adc6a766c2fd95565f11d54dd80f369"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:FrE6YlJF:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 60,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\006.json",
+        "bytes": 17860,
+        "sha256": "5a720af5202bd9c2a4309d7edbb6046ce3c1e31534e6b7eaef44327f04a9e21f"
+      }
+    },
+    {
+      "step": 128,
+      "case_id": "queen-coach-v1:FrE6YlJF:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 60,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\007.json",
+        "bytes": 17972,
+        "sha256": "b6664f5e2b35deb42677f0152390c53df2ddfa7eea0729ad6fa5756bbc3e3a7b"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:PzsCDbPb:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 67,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\000.json",
+        "bytes": 18536,
+        "sha256": "c60aa864756c237341cef795d4c1e0d0d3ab08ff1899dec001cce0b3cf2f76dd"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:PzsCDbPb:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 67,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\001.json",
+        "bytes": 18650,
+        "sha256": "bb34ab45aca0af03e17f875c51f945ba057588cbb04656d0bfb2b4a37c6ce656"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:qkaykA26:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 64,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\002.json",
+        "bytes": 18245,
+        "sha256": "ca2e5b8faf2515cdb1075b85d100eb8a68f99422e89ebef942a48c602ff599bd"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:qkaykA26:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 64,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\003.json",
+        "bytes": 18356,
+        "sha256": "ac72359bfe2dceffa86a58af7b26d66503bd37cad2eb230ba997cd076aa7e76e"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:1LOlKaIv:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 65,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\004.json",
+        "bytes": 18302,
+        "sha256": "e0958587818973ac6b3f1849d7ddb68c3be0ac53a782629acb59214bb22319b6"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:1LOlKaIv:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 65,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\005.json",
+        "bytes": 18414,
+        "sha256": "80a73df16b90061f2d03b243d09148924701c6343207d67bb4875b3b99e93e3e"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:FrE6YlJF:free",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 60,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\006.json",
+        "bytes": 17859,
+        "sha256": "f933aef9cfeff1aa40635f7627abb9659e23f3650b6ca44b881be41f086ce4c1"
+      }
+    },
+    {
+      "step": 256,
+      "case_id": "queen-coach-v1:FrE6YlJF:selected",
+      "status": "completed",
+      "finish_reason": "eos",
+      "tokens": 60,
+      "response": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\007.json",
+        "bytes": 17960,
+        "sha256": "6554b49bf8cdeeb44a773b1b710bf14f6fff29277ab1cca950bdbad83735569e"
+      }
+    }
+  ],
+  "checkpoint_CPU_tensor_inspection": [
+    {
+      "step": 0,
+      "adapter": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0000\\adapter.pt",
+        "bytes": 7715359,
+        "sha256": "5a6947f4cab791256e59b1b2a2364118f88c7e6bb2504c61119116be4fb0b403"
+      },
+      "optimizer": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0000\\optimizer.pt",
+        "bytes": 1849,
+        "sha256": "1e547b34bb0bd8610c5dd1dbeef2dec1de0f0cac3710f1590a61a196d5819a8a"
+      },
+      "tensor_count": 144,
+      "parameters": 1916928,
+      "dtype": "float32",
+      "changed_tensors_vs_zero_step": 0,
+      "nonzero_B_tensors": 0,
+      "optimizer_state_tensors": 0,
+      "saved_learning_rate": 0.0001
+    },
+    {
+      "step": 64,
+      "adapter": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\adapter.pt",
+        "bytes": 7715359,
+        "sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e"
+      },
+      "optimizer": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\optimizer.pt",
+        "bytes": 15456715,
+        "sha256": "0eff96a803fd44cd8896c25fc27a9a26cac925e9621a11c2590c383ba92be492"
+      },
+      "tensor_count": 144,
+      "parameters": 1916928,
+      "dtype": "float32",
+      "changed_tensors_vs_zero_step": 144,
+      "nonzero_B_tensors": 72,
+      "optimizer_state_tensors": 144,
+      "saved_learning_rate": 9.140576474687264e-05
+    },
+    {
+      "step": 128,
+      "adapter": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0128\\adapter.pt",
+        "bytes": 7715359,
+        "sha256": "b6b8c23dd050ce8e496659933a8b993f3a1032646dd1914666630bf95a30a94f"
+      },
+      "optimizer": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0128\\optimizer.pt",
+        "bytes": 15456715,
+        "sha256": "02f205a3065f467745557b22f66f78b8077175fbf3e1c5c58e0687e64f90cfab"
+      },
+      "tensor_count": 144,
+      "parameters": 1916928,
+      "dtype": "float32",
+      "changed_tensors_vs_zero_step": 144,
+      "nonzero_B_tensors": 72,
+      "optimizer_state_tensors": 144,
+      "saved_learning_rate": 5.970378084704441e-05
+    },
+    {
+      "step": 256,
+      "adapter": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0256\\adapter.pt",
+        "bytes": 7715359,
+        "sha256": "bd8a7b886f94c1199e2fc0a14481dc0603f72fe9503a562a82cf12ba0bf8059e"
+      },
+      "optimizer": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0256\\optimizer.pt",
+        "bytes": 15456715,
+        "sha256": "f4dd10f4664e4b325de338ffa5fcd3f57527369e3cce8f90e3e4a1acd784169e"
+      },
+      "tensor_count": 144,
+      "parameters": 1916928,
+      "dtype": "float32",
+      "changed_tensors_vs_zero_step": 144,
+      "nonzero_B_tensors": 72,
+      "optimizer_state_tensors": 144,
+      "saved_learning_rate": 1e-05
+    }
+  ],
+  "frozen_storage": {
+    "before": {
+      "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+      "tensor_count": 2268,
+      "bytes_hashed": 3393484936
+    },
+    "after": {
+      "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+      "tensor_count": 2268,
+      "bytes_hashed": 3393484936
+    },
+    "identical": true
+  },
+  "frozen_storage_limit": "Independent equality/count/hash readback of executed receipts and reviewed hashing source, not a second CPU copy/re-hash of all3.39GB original model tensors.",
+  "resources": {
+    "samples": 1920,
+    "journal_matches_saved_samples": true,
+    "all_recorded_start_and_running_floors_pass": true,
+    "minimum_physical_available_bytes": 8852148224,
+    "minimum_commit_headroom_bytes": 8116699136,
+    "minimum_gpu_free_bytes": 8866758656,
+    "peak_cuda_allocated_bytes": 3679693824,
+    "peak_cuda_reserved_bytes": 5813305344,
+    "cleanup_boundaries": 2593,
+    "cleanup_events": 5186,
+    "exact_expected_phase_order": true
+  },
+  "source_snapshots": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-train-v2-source-1\\chess_queen_coach_sft_train_v2.py",
+      "bytes": 23708,
+      "sha256": "bc56efd3f2fe839859e1a0411bb11608a8e57f283c4f2f0add1b5ba4fb234c63"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-train-v2-source-1\\chess_queen_coach_sft_runtime_v2.py",
+      "bytes": 12874,
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-train-v2-source-1\\chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-train-v2-source-1\\test_chess_queen_coach_sft_train_v2.py",
+      "bytes": 9773,
+      "sha256": "9f62af5af7443282f3b0ae00dacd79fa4de5c84e5545642498f265cdd3fabd4b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-train-v2-source-1\\protocol.json",
+      "bytes": 11018,
+      "sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168"
+    }
+  ],
+  "snapshot_manifest_limit": "Five exact pre-dispatch snapshots equal current protocol-pinned sources. Operator retained no separate prebound snapshot manifest; do not invent one after execution.",
+  "dispatch_evidence": {
+    "records": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-train-v2-source-1\\exact-dispatch-tool-records.jsonl",
+      "bytes": 3782,
+      "sha256": "d01fe86f9072f58baf2476e69492dd0488a2b28f5adb0de6340043775ae8e741"
+    },
+    "provenance": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-coach-train-v2-source-1\\exact-dispatch-provenance.json",
+      "bytes": 435,
+      "sha256": "7748848b72cea66dedef67929ba90f39cc51f977d45466f0cd13abc627011466"
+    },
+    "actual_worker_arguments": [
+      "scripts/chess_queen_coach_sft_train_v2.py",
+      "train",
+      "--out",
+      "data/private/chess-queen-coach-sft-training-v2/train-1"
+    ],
+    "arguments_sha256_matches_worker": true,
+    "post_execution_extraction_not_reconstruction": true,
+    "scope": "Exact submitted copy/dispatch command and returned live session67336; terminal worker receipt separately binds final completion."
+  },
+  "verified_current_protocol_bindings": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-qlora-v1\\diagnostic-2.json",
+      "bytes": 33690,
+      "sha256": "99616936dc5caae3bf2424932b174f91cc7616c40a3e3f50013f0fb20b3fa979"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-qlora-v1\\diagnostic-protocol-v2.json",
+      "bytes": 11135,
+      "sha256": "32568dfddf9ee999b64294d8d260dfe6b68b188c445702c69104599c124a2a7f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\kernel-protocol-v2.json",
+      "bytes": 8418,
+      "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\kernel-2.json",
+      "bytes": 3673,
+      "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\manifest.json",
+      "bytes": 2190,
+      "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\tokenizer-preflight.json",
+      "bytes": 1453,
+      "sha256": "3e078fc3e3ff28570b201f9129ad6b2da1b5289ecfb3cc031105239504aba4b7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\train.jsonl",
+      "bytes": 1082004,
+      "sha256": "fbdbe243c52089e3a3c098a6cd7d4e64980a6b1c5740f9c9dd6d98c8b457b177"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\development.jsonl",
+      "bytes": 33828,
+      "sha256": "fdd8f41880ada0efbaafa211f25f3a2ec8cf06090399614135d94f93c5737a49"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\development-references.jsonl",
+      "bytes": 99216,
+      "sha256": "f9cab2f6426215ffcd1abf50be37151f116baa008f7568ba851836874d226687"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\heldout-inputs.jsonl",
+      "bytes": 5628,
+      "sha256": "ac19c249b5f168290482ba8102cec93712856816a840584892555097a43a0f25"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_runtime_v2.py",
+      "bytes": 12874,
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_qlora_v2.py",
+      "bytes": 18463,
+      "sha256": "958089517018cbbf2b22fcb878f2ba054419b41b5a9053fd0003b81c526f0bd9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_nf4_adapter_v2.py",
+      "bytes": 21493,
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_materialize.py",
+      "bytes": 1273,
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_sft_runtime_v2.py",
+      "bytes": 4321,
+      "sha256": "d5fce78a9fc7ed58db393e44338c0d943687520ef0226635504b9862c328c99d"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_sft_train_v2.py",
+      "bytes": 9773,
+      "sha256": "9f62af5af7443282f3b0ae00dacd79fa4de5c84e5545642498f265cdd3fabd4b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_sft_eval_v1.py",
+      "bytes": 5096,
+      "sha256": "f82164310cbb5ae09c2dc00ad4e4c6682cc259d7087a8c93efc86a98be520fba"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-qlora-v1\\diagnostic-worker-2.json",
+      "bytes": 602,
+      "sha256": "42a5548365287e495471477666c0fc880dd02b079007fdcff66b89a7db413bd7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v1\\cpu_preflight.py",
+      "bytes": 3729,
+      "sha256": "e65c97bd7df80135933ddc4fd61c8dda9b0e3cda1fd060728a0c13ac8f9b86e8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\train-references.jsonl",
+      "bytes": 3164018,
+      "sha256": "de6f03d50eb0765901f9e4980f43dd928e114b48c5ce7e631885717ad51455e7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\manifest.json",
+      "bytes": 2190,
+      "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\tokenizer-preflight.json",
+      "bytes": 1453,
+      "sha256": "3e078fc3e3ff28570b201f9129ad6b2da1b5289ecfb3cc031105239504aba4b7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_train_v1.py",
+      "bytes": 18408,
+      "sha256": "0a99081ba35de8b45d386ce8c81466c3cdf4cf08997933e44ce7cd4737128d4e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_runtime_v1.py",
+      "bytes": 9396,
+      "sha256": "de97771900ca67803c6138415627aeea42c5236982575d57c91153d7896abb7e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v1\\train-1\\failure.json",
+      "bytes": 13847,
+      "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v1\\train-1\\training-calls.jsonl",
+      "bytes": 38765,
+      "sha256": "d1368094576d1302c5ef86c8e23c56cb0609e1b8c2d63ee20391c96aabf6681b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v1\\train-1-worker.json",
+      "bytes": 617,
+      "sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v1\\protocol.json",
+      "bytes": 7899,
+      "sha256": "5a1013b8e8baf44c0abd0e3ade6eb012777e75b7bbdb38da2487f3d79056a0e2"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\memory-qualification-1\\qualification.json",
+      "bytes": 82926,
+      "sha256": "a063811d5a0165f31d6016ff263423b9b8584578a2f8d58a145560d562c035cc"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\memory-qualification-1-worker.json",
+      "bytes": 667,
+      "sha256": "6e2145868ec8a3c09711a42bd63f7af3d5ac1cca30033e4f7118bfdaf9e0db55"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\memory-protocol.json",
+      "bytes": 4891,
+      "sha256": "418e4b13fed39d821b30ebc7b44a4b1ccc1da4661eb4e5b202688d975ec2fc69"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\memory_qualification_v1.py",
+      "bytes": 11333,
+      "sha256": "8da53d0f3efa64659324c23a284bdfaa9d919542269ea17a4327a0d1a13402c1"
+    }
+  ],
+  "held_reference_binding_not_reopened": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-v1\\heldout-references.jsonl",
+      "bound_sha256": "404f782d4eaac07dba285b49c23d057b537badc2d40cc66478a5d0c433870dca",
+      "not_reopened": true
+    }
+  ],
+  "scope_limits": [
+    "Development consists of only four fixed raw games/eight requests and64 response-NLL records, reused after failure/qualification; no heldout outcome known here.",
+    "Selectedstep64 improves this tiny development continuation panel but still has5 false claims among12 exact recognized adjacent claims; other prose remains unaudited.",
+    "Teacher agreement is bounded search agreement, not Elo, bestness, student learning or expert coaching validation.",
+    "Lowest developmentNLL occurs later; frozen selector correctly prefersstep64 based on legal/continuation criteria. No retrospective checkpoint change.",
+    "Saved adapters/optimizer state were inspected on CPU with CUDA initialization forbidden. Fresh heldout reload remains a future operation under the existing frozen protocol.",
+    "Recorded resource floors passing does not prove unobserved between-sample headroom; native guards and worker terminal evidence retained."
+  ],
+  "closed_run_file_seals": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0000\\adapter.pt",
+      "bytes": 7715359,
+      "sha256": "5a6947f4cab791256e59b1b2a2364118f88c7e6bb2504c61119116be4fb0b403"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0000\\metadata.json",
+      "bytes": 471,
+      "sha256": "e176622bf62ab562bc5c73f91ca7b0d5fd4085e5fb297806a94ed48945b57c96"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0000\\optimizer.pt",
+      "bytes": 1849,
+      "sha256": "1e547b34bb0bd8610c5dd1dbeef2dec1de0f0cac3710f1590a61a196d5819a8a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\adapter.pt",
+      "bytes": 7715359,
+      "sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\metadata.json",
+      "bytes": 474,
+      "sha256": "5e23549b1f748f8c4b126873744444f584e802c72cba62c122736e62168b61b4"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\optimizer.pt",
+      "bytes": 15456715,
+      "sha256": "0eff96a803fd44cd8896c25fc27a9a26cac925e9621a11c2590c383ba92be492"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0128\\adapter.pt",
+      "bytes": 7715359,
+      "sha256": "b6b8c23dd050ce8e496659933a8b993f3a1032646dd1914666630bf95a30a94f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0128\\metadata.json",
+      "bytes": 476,
+      "sha256": "332ec7dd1aac5f85884ab62e2738ac13d4a1330d5537da19121eb22b43d95a4c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0128\\optimizer.pt",
+      "bytes": 15456715,
+      "sha256": "02f205a3065f467745557b22f66f78b8077175fbf3e1c5c58e0687e64f90cfab"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0256\\adapter.pt",
+      "bytes": 7715359,
+      "sha256": "bd8a7b886f94c1199e2fc0a14481dc0603f72fe9503a562a82cf12ba0bf8059e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0256\\metadata.json",
+      "bytes": 476,
+      "sha256": "c205a72318170e32d8c771df05d39425c5fd682bb3064e30ea402489d28d024c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0256\\optimizer.pt",
+      "bytes": 15456715,
+      "sha256": "f4dd10f4664e4b325de338ffa5fcd3f57527369e3cce8f90e3e4a1acd784169e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-0000.json",
+      "bytes": 11717,
+      "sha256": "2e269cba63018b7e3fad07d5c0761e428bbe986684ed55f38224612d7970dc2f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-0064.json",
+      "bytes": 11790,
+      "sha256": "219c964d397add220e8b14319a43e1bbb022ff62b8731d5be66ec833a985333f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-0128.json",
+      "bytes": 11847,
+      "sha256": "da83e482631ced2e8b4ddcaab8c2d632f0ad38b45b090de0f5a827a32fb1d2e9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-0256.json",
+      "bytes": 11857,
+      "sha256": "97f49aeb3388bb855dbff9f6bca7a1361036f5dd419f1c77b825cc4e8ce1a9ea"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-calls.jsonl",
+      "bytes": 56673,
+      "sha256": "7e312d1eea903e7ee6c91a9fed9de38d1ada00a833c5daa78a3aca12356d622c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-score-0000.json",
+      "bytes": 11678,
+      "sha256": "2759342f19cca7328e2fcd35fcf659fa01a633aa2fcd1f78a68ebc9a281b8636"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-score-0064.json",
+      "bytes": 14372,
+      "sha256": "1282e7c264692a89816287455656105c3505e12be881ee9369e1d523fddf954e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-score-0128.json",
+      "bytes": 15299,
+      "sha256": "51e08d59afeba0e386b9f19de20e3a6a6c243e00ade092eae3e23b6b896b0d51"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\development-score-0256.json",
+      "bytes": 15299,
+      "sha256": "51e08d59afeba0e386b9f19de20e3a6a6c243e00ade092eae3e23b6b896b0d51"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\memory-lifetime.jsonl",
+      "bytes": 3196619,
+      "sha256": "183f99d6407090b9362289da8fb385e8c4078b11e124c6f721c2ca147d03f6bd"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\000.json",
+      "bytes": 33515,
+      "sha256": "72be15ef752a5760c33a2b0cba6cd55b70807328da36d52a0bd6ca5c41fbdc1a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\001.json",
+      "bytes": 37370,
+      "sha256": "dead60b1a134843ae2ec5ec0c5260d7fa8297f76f0f3ad40ad3aada116f3117f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\002.json",
+      "bytes": 26415,
+      "sha256": "6e6e1e64ac9e4d8cfe246b4917e6a97b9d478c4749116143010a86aeaf44f1b3"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\003.json",
+      "bytes": 27142,
+      "sha256": "d76357ad0d26d5f49bcc8d592d10d3780df5825a3a9a13b1492b2ff894f7058a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\004.json",
+      "bytes": 27539,
+      "sha256": "e1621055d9e0f81f37740e31428c7605e88d3d02c3501b5ecb564f0edf2c0420"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\005.json",
+      "bytes": 30935,
+      "sha256": "ded29796d79166daced32156bc768344077d583768aa0a0e55581e9ff4a74faf"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\006.json",
+      "bytes": 38665,
+      "sha256": "21fcbe3ee8864aa01b6854587d29555cc0d2dce99806080d07dcd18ff7f77c5d"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000\\007.json",
+      "bytes": 38077,
+      "sha256": "d7a7236257b2251c8bb71cd5265f2e2c1a6c882fe57d96db26ae40fe311fe9d7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0000.json",
+      "bytes": 5014,
+      "sha256": "2463f6c19f36554583201a7ee902f82a9c0692362634b11d485149c988eb8f96"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\000.json",
+      "bytes": 19666,
+      "sha256": "250555f63134404eacbb33b8e7fcc26e10be3b50d56504bb0f1cd80ae2a0aca1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\001.json",
+      "bytes": 19668,
+      "sha256": "4cdb313f6c5e361e590c21985831c0a7584c7c15d3a5bb7753bf730f1f2f399e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\002.json",
+      "bytes": 18278,
+      "sha256": "4cdbb0faa59888c24b8f946d1e65ba7120c5c47854ee387dc8d4e3f08cf6a907"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\003.json",
+      "bytes": 18391,
+      "sha256": "e11e89ccb568d2971b93c18d90c8bff81818af16b1352964b7023cf5c1fc25e1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\004.json",
+      "bytes": 18391,
+      "sha256": "d428451eaf7399d77deb6e6fb121c2eee20a33bba844e45bcd2ea2d3b0eb90e1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\005.json",
+      "bytes": 18504,
+      "sha256": "b40d66cd0916d9afedb9ba3335cab30880b45d6eb7cc96ca3a0e6ce063e52472"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\006.json",
+      "bytes": 18862,
+      "sha256": "677aa44826cbd741f5ba4c06e0f8e5994799ac9fce7068eec364ae8ca741a010"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064\\007.json",
+      "bytes": 18938,
+      "sha256": "ecfae7cec60783149cd78bb2330139f75e62838b01e594ba2da7cd5cf0f54023"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0064.json",
+      "bytes": 5022,
+      "sha256": "dca25077c8024af8c11afe84d808e65784533706f7b916fd05881254ebd29d40"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\000.json",
+      "bytes": 18536,
+      "sha256": "16b6a10f39f8e676e939aec94ffcb54ba423f865818c5c0a0c4ee301dce2997f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\001.json",
+      "bytes": 18650,
+      "sha256": "e4ff6885d266ba22bb8dec10c7a076e34ebb9ed3132e5afbc9f4f5ab74121e75"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\002.json",
+      "bytes": 18244,
+      "sha256": "ae32b3b325121faa3f059229f20f2bceb02cda6a46a9bd756a3267e4511e8a28"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\003.json",
+      "bytes": 18357,
+      "sha256": "70e25aed49d96e349787d6cc51b25daa47bf42d7e076f4e547e3127d2735235b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\004.json",
+      "bytes": 18301,
+      "sha256": "3e63c3d293d2b8f3f9b8eac9f26de1e9bd3969db42733062acc5414b875f7580"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\005.json",
+      "bytes": 18414,
+      "sha256": "4ef39d0a6cca0dccc8b211b4d4a51df26adc6a766c2fd95565f11d54dd80f369"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\006.json",
+      "bytes": 17860,
+      "sha256": "5a720af5202bd9c2a4309d7edbb6046ce3c1e31534e6b7eaef44327f04a9e21f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128\\007.json",
+      "bytes": 17972,
+      "sha256": "b6664f5e2b35deb42677f0152390c53df2ddfa7eea0729ad6fa5756bbc3e3a7b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0128.json",
+      "bytes": 5025,
+      "sha256": "1d8b59422882bde37c882ea50002e0758cc7fb5ea6ab13632f332124fe090b01"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\000.json",
+      "bytes": 18536,
+      "sha256": "c60aa864756c237341cef795d4c1e0d0d3ab08ff1899dec001cce0b3cf2f76dd"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\001.json",
+      "bytes": 18650,
+      "sha256": "bb34ab45aca0af03e17f875c51f945ba057588cbb04656d0bfb2b4a37c6ce656"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\002.json",
+      "bytes": 18245,
+      "sha256": "ca2e5b8faf2515cdb1075b85d100eb8a68f99422e89ebef942a48c602ff599bd"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\003.json",
+      "bytes": 18356,
+      "sha256": "ac72359bfe2dceffa86a58af7b26d66503bd37cad2eb230ba997cd076aa7e76e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\004.json",
+      "bytes": 18302,
+      "sha256": "e0958587818973ac6b3f1849d7ddb68c3be0ac53a782629acb59214bb22319b6"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\005.json",
+      "bytes": 18414,
+      "sha256": "80a73df16b90061f2d03b243d09148924701c6343207d67bb4875b3b99e93e3e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\006.json",
+      "bytes": 17859,
+      "sha256": "f933aef9cfeff1aa40635f7627abb9659e23f3650b6ca44b881be41f086ce4c1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256\\007.json",
+      "bytes": 17960,
+      "sha256": "6554b49bf8cdeeb44a773b1b710bf14f6fff29277ab1cca950bdbad83735569e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\raw-development-0256.json",
+      "bytes": 5025,
+      "sha256": "75ccdcee6785d716cbfb611a57609a240702b444323b947aeca22a35bc10aec0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\resources.json",
+      "bytes": 572135,
+      "sha256": "affd4b3d97e8d87a2b36232d981b7d80f4c8bb5aad1cc37b0798fbeccd6800ee"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\run.json",
+      "bytes": 55183,
+      "sha256": "8c8a19d63d34f49a4bdd9895cd65001e2cc39f48761761b431c0398336da6c3c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\selection.json",
+      "bytes": 55684,
+      "sha256": "79abaea0cba0a292ef17e2686dbb69c72e568bdefb61848d64a38cc6ee15e714"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\training-calls.jsonl",
+      "bytes": 504053,
+      "sha256": "01984ade30b643a38476cbcf4f43bded6a79e5b82f0612d1d38e9c52a16cbcfb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\training-denominator.json",
+      "bytes": 368042,
+      "sha256": "989557be9d52cf33562d16608a4d9440ea17c4e2ffaec3fe66e758cd56734a48"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\training-plan.json",
+      "bytes": 214219,
+      "sha256": "cd66900a552e82c4945b49b0c1a9b03cc840317e1aa67105d6cb51b7aeeabef9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\training.resources.jsonl",
+      "bytes": 489570,
+      "sha256": "c67d6dc5fe0888ad8a165d30ee03299f986c15a8fd162fbdda37fd880ffa8886"
+    }
+  ],
+  "files_unchanged_during_review": 65,
+  "blocking_findings": [],
+  "auditor": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\audit-coach-training-v2.py",
+    "bytes": 24065,
+    "sha256": "81ecf29f5605a0262f55a3ba821e327753e498e3c9253bce2986d9f7db83968c"
+  },
+  "new_model_forwards": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "held_reference_content_opened": false
+}

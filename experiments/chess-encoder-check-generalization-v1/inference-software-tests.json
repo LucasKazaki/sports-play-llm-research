@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_encoder_check_generalization_eval_v1.py tests/test_chess_encoder_check_generalization_v1.py -q",
+  "stdout": "26 passed in 0.40s",
+  "inference_source_sha256": "921cfffa395738c51a5ef209533a4b7700d06edc9dc3b5e2671a9e26b9a2ce24",
+  "inference_tests_sha256": "460b689fe6e98c0a07253acd4dfa962d9ab15ebbe18857990fa75ee93275fcaf",
+  "actual_learned_calls": 0,
+  "coach_held_reference_reads": 0
+}

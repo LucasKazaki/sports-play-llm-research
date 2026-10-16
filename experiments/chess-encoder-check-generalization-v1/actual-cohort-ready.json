@@ -1,0 +1,627 @@
+{
+  "status": "closed_ready_for_independent_audit",
+  "exec_session_id": 62315,
+  "exec_exit_code": 0,
+  "closed_receipt": {
+    "path": "data/private/chess-encoder-check-generalization-v1/closed.json",
+    "sha256": "a275762d265c4934ec8c946e9003bdfca36ff7d1cd213ed3ad00c68575f54279"
+  },
+  "dataset": {
+    "path": "data/private/chess-encoder-check-generalization-v1/dataset.json",
+    "sha256": "50a2046969610c94e42d87a6e70c2689016c78b620134800cfc5fa8bf28b9dbb"
+  },
+  "inputs": {
+    "path": "data/private/chess-encoder-check-generalization-v1/inputs.json",
+    "sha256": "2c3ed07eba8d8fe9d92aa5f38aa7c39859f1478e671d811a1e07827c55b0e519"
+  },
+  "labels": {
+    "path": "data/private/chess-encoder-check-generalization-v1/labels.json",
+    "sha256": "4410de98c8bf713bd222e05f332c70939a8c76a63e05151560bd20de3633483f"
+  },
+  "constructed_pairs": 64,
+  "constructed_moves": 128,
+  "allocations": {
+    "pawn_mover": 16,
+    "double_check": 16,
+    "king_mover": 16,
+    "remaining_discovered_check": 16
+  },
+  "game_count": 64,
+  "path_board_count": 256,
+  "source_ordinal_range": [
+    108209,
+    172642
+  ],
+  "source_scanned_rows": 172643,
+  "source_locations": [
+    {
+      "game_id": "957GR23H",
+      "puzzle_id": "15cRz",
+      "source_ordinal": 108209,
+      "row_group": 0,
+      "row_in_group": 108209,
+      "allocation": "pawn_mover",
+      "slot": 1
+    },
+    {
+      "game_id": "sGa1DD3t",
+      "puzzle_id": "15d8y",
+      "source_ordinal": 108233,
+      "row_group": 0,
+      "row_in_group": 108233,
+      "allocation": "pawn_mover",
+      "slot": 2
+    },
+    {
+      "game_id": "1cOJ0jtC",
+      "puzzle_id": "15keJ",
+      "source_ordinal": 108426,
+      "row_group": 0,
+      "row_in_group": 108426,
+      "allocation": "pawn_mover",
+      "slot": 3
+    },
+    {
+      "game_id": "emEwJf9h",
+      "puzzle_id": "15tpD",
+      "source_ordinal": 108660,
+      "row_group": 0,
+      "row_in_group": 108660,
+      "allocation": "pawn_mover",
+      "slot": 4
+    },
+    {
+      "game_id": "mzP08vaB",
+      "puzzle_id": "15yRM",
+      "source_ordinal": 108779,
+      "row_group": 0,
+      "row_in_group": 108779,
+      "allocation": "pawn_mover",
+      "slot": 5
+    },
+    {
+      "game_id": "51gjJ7VJ",
+      "puzzle_id": "16304",
+      "source_ordinal": 108917,
+      "row_group": 0,
+      "row_in_group": 108917,
+      "allocation": "pawn_mover",
+      "slot": 6
+    },
+    {
+      "game_id": "nyZXJubc",
+      "puzzle_id": "1652Y",
+      "source_ordinal": 108974,
+      "row_group": 0,
+      "row_in_group": 108974,
+      "allocation": "double_check",
+      "slot": 1
+    },
+    {
+      "game_id": "K6FmW0Wx",
+      "puzzle_id": "16AJS",
+      "source_ordinal": 109119,
+      "row_group": 0,
+      "row_in_group": 109119,
+      "allocation": "pawn_mover",
+      "slot": 7
+    },
+    {
+      "game_id": "3ecQ4lbx",
+      "puzzle_id": "16DNG",
+      "source_ordinal": 109195,
+      "row_group": 0,
+      "row_in_group": 109195,
+      "allocation": "pawn_mover",
+      "slot": 8
+    },
+    {
+      "game_id": "bf6HjYkx",
+      "puzzle_id": "16GxK",
+      "source_ordinal": 109293,
+      "row_group": 0,
+      "row_in_group": 109293,
+      "allocation": "pawn_mover",
+      "slot": 9
+    },
+    {
+      "game_id": "fP63uZhZ",
+      "puzzle_id": "16MfV",
+      "source_ordinal": 109442,
+      "row_group": 0,
+      "row_in_group": 109442,
+      "allocation": "pawn_mover",
+      "slot": 10
+    },
+    {
+      "game_id": "tMX9cShY",
+      "puzzle_id": "16NOm",
+      "source_ordinal": 109461,
+      "row_group": 0,
+      "row_in_group": 109461,
+      "allocation": "double_check",
+      "slot": 2
+    },
+    {
+      "game_id": "RV8C8aZp",
+      "puzzle_id": "16Rtl",
+      "source_ordinal": 109568,
+      "row_group": 0,
+      "row_in_group": 109568,
+      "allocation": "pawn_mover",
+      "slot": 11
+    },
+    {
+      "game_id": "bRCaaltj",
+      "puzzle_id": "16S0V",
+      "source_ordinal": 109572,
+      "row_group": 0,
+      "row_in_group": 109572,
+      "allocation": "pawn_mover",
+      "slot": 12
+    },
+    {
+      "game_id": "uDbW48YZ",
+      "puzzle_id": "16TGQ",
+      "source_ordinal": 109612,
+      "row_group": 0,
+      "row_in_group": 109612,
+      "allocation": "pawn_mover",
+      "slot": 13
+    },
+    {
+      "game_id": "dW7tRWTH",
+      "puzzle_id": "16VcE",
+      "source_ordinal": 109682,
+      "row_group": 0,
+      "row_in_group": 109682,
+      "allocation": "king_mover",
+      "slot": 1
+    },
+    {
+      "game_id": "rC0nKoMk",
+      "puzzle_id": "16XJp",
+      "source_ordinal": 109722,
+      "row_group": 0,
+      "row_in_group": 109722,
+      "allocation": "pawn_mover",
+      "slot": 14
+    },
+    {
+      "game_id": "2yw808zO",
+      "puzzle_id": "16dK0",
+      "source_ordinal": 109870,
+      "row_group": 0,
+      "row_in_group": 109870,
+      "allocation": "pawn_mover",
+      "slot": 15
+    },
+    {
+      "game_id": "LI0JAu1f",
+      "puzzle_id": "16o0o",
+      "source_ordinal": 110148,
+      "row_group": 0,
+      "row_in_group": 110148,
+      "allocation": "pawn_mover",
+      "slot": 16
+    },
+    {
+      "game_id": "gqIB63KW",
+      "puzzle_id": "17Ep4",
+      "source_ordinal": 110853,
+      "row_group": 0,
+      "row_in_group": 110853,
+      "allocation": "remaining_discovered_check",
+      "slot": 1
+    },
+    {
+      "game_id": "sKWfU0HQ",
+      "puzzle_id": "17KVp",
+      "source_ordinal": 111009,
+      "row_group": 0,
+      "row_in_group": 111009,
+      "allocation": "double_check",
+      "slot": 3
+    },
+    {
+      "game_id": "QA75gwY2",
+      "puzzle_id": "17TnK",
+      "source_ordinal": 111259,
+      "row_group": 0,
+      "row_in_group": 111259,
+      "allocation": "double_check",
+      "slot": 4
+    },
+    {
+      "game_id": "7QXKcDiK",
+      "puzzle_id": "17X7G",
+      "source_ordinal": 111361,
+      "row_group": 0,
+      "row_in_group": 111361,
+      "allocation": "double_check",
+      "slot": 5
+    },
+    {
+      "game_id": "O3GpYvld",
+      "puzzle_id": "17bJa",
+      "source_ordinal": 111476,
+      "row_group": 0,
+      "row_in_group": 111476,
+      "allocation": "remaining_discovered_check",
+      "slot": 2
+    },
+    {
+      "game_id": "HDjmecUe",
+      "puzzle_id": "18TkA",
+      "source_ordinal": 112868,
+      "row_group": 0,
+      "row_in_group": 112868,
+      "allocation": "double_check",
+      "slot": 6
+    },
+    {
+      "game_id": "cDnJI1pf",
+      "puzzle_id": "18hCA",
+      "source_ordinal": 113225,
+      "row_group": 0,
+      "row_in_group": 113225,
+      "allocation": "king_mover",
+      "slot": 2
+    },
+    {
+      "game_id": "A652dgRP",
+      "puzzle_id": "18sUW",
+      "source_ordinal": 113541,
+      "row_group": 0,
+      "row_in_group": 113541,
+      "allocation": "king_mover",
+      "slot": 3
+    },
+    {
+      "game_id": "BYuuHh6C",
+      "puzzle_id": "18wVe",
+      "source_ordinal": 113633,
+      "row_group": 0,
+      "row_in_group": 113633,
+      "allocation": "double_check",
+      "slot": 7
+    },
+    {
+      "game_id": "jhOOjyrZ",
+      "puzzle_id": "18zAW",
+      "source_ordinal": 113696,
+      "row_group": 0,
+      "row_in_group": 113696,
+      "allocation": "double_check",
+      "slot": 8
+    },
+    {
+      "game_id": "cDdHfta1",
+      "puzzle_id": "197gS",
+      "source_ordinal": 113912,
+      "row_group": 0,
+      "row_in_group": 113912,
+      "allocation": "remaining_discovered_check",
+      "slot": 3
+    },
+    {
+      "game_id": "GD3avCCy",
+      "puzzle_id": "19YIo",
+      "source_ordinal": 114569,
+      "row_group": 0,
+      "row_in_group": 114569,
+      "allocation": "double_check",
+      "slot": 9
+    },
+    {
+      "game_id": "lpVMhdpx",
+      "puzzle_id": "19cob",
+      "source_ordinal": 114689,
+      "row_group": 0,
+      "row_in_group": 114689,
+      "allocation": "remaining_discovered_check",
+      "slot": 4
+    },
+    {
+      "game_id": "Gh1pc06X",
+      "puzzle_id": "1ANnd",
+      "source_ordinal": 115945,
+      "row_group": 0,
+      "row_in_group": 115945,
+      "allocation": "remaining_discovered_check",
+      "slot": 5
+    },
+    {
+      "game_id": "3bCumO9r",
+      "puzzle_id": "1Ayib",
+      "source_ordinal": 116925,
+      "row_group": 0,
+      "row_in_group": 116925,
+      "allocation": "remaining_discovered_check",
+      "slot": 6
+    },
+    {
+      "game_id": "sNaiNS5r",
+      "puzzle_id": "1BekD",
+      "source_ordinal": 117978,
+      "row_group": 0,
+      "row_in_group": 117978,
+      "allocation": "double_check",
+      "slot": 10
+    },
+    {
+      "game_id": "yZHokgpD",
+      "puzzle_id": "1E04W",
+      "source_ordinal": 121796,
+      "row_group": 0,
+      "row_in_group": 121796,
+      "allocation": "double_check",
+      "slot": 11
+    },
+    {
+      "game_id": "uDRwsIVo",
+      "puzzle_id": "1E2f3",
+      "source_ordinal": 121860,
+      "row_group": 0,
+      "row_in_group": 121860,
+      "allocation": "remaining_discovered_check",
+      "slot": 7
+    },
+    {
+      "game_id": "h7N2zhCE",
+      "puzzle_id": "1E6RI",
+      "source_ordinal": 121957,
+      "row_group": 0,
+      "row_in_group": 121957,
+      "allocation": "remaining_discovered_check",
+      "slot": 8
+    },
+    {
+      "game_id": "FHAEM7tQ",
+      "puzzle_id": "1EaXT",
+      "source_ordinal": 122767,
+      "row_group": 0,
+      "row_in_group": 122767,
+      "allocation": "double_check",
+      "slot": 12
+    },
+    {
+      "game_id": "CMi9HEXv",
+      "puzzle_id": "1Epql",
+      "source_ordinal": 123142,
+      "row_group": 0,
+      "row_in_group": 123142,
+      "allocation": "remaining_discovered_check",
+      "slot": 9
+    },
+    {
+      "game_id": "kGZ5C1D8",
+      "puzzle_id": "1F4Xa",
+      "source_ordinal": 123513,
+      "row_group": 0,
+      "row_in_group": 123513,
+      "allocation": "double_check",
+      "slot": 13
+    },
+    {
+      "game_id": "uue4J9Ek",
+      "puzzle_id": "1FJc8",
+      "source_ordinal": 123892,
+      "row_group": 0,
+      "row_in_group": 123892,
+      "allocation": "king_mover",
+      "slot": 4
+    },
+    {
+      "game_id": "GmKBc5s0",
+      "puzzle_id": "1FeZY",
+      "source_ordinal": 124461,
+      "row_group": 0,
+      "row_in_group": 124461,
+      "allocation": "double_check",
+      "slot": 14
+    },
+    {
+      "game_id": "k5b1TgYg",
+      "puzzle_id": "1FiHK",
+      "source_ordinal": 124552,
+      "row_group": 0,
+      "row_in_group": 124552,
+      "allocation": "remaining_discovered_check",
+      "slot": 10
+    },
+    {
+      "game_id": "k5lCUrOp",
+      "puzzle_id": "1G3oQ",
+      "source_ordinal": 125115,
+      "row_group": 0,
+      "row_in_group": 125115,
+      "allocation": "remaining_discovered_check",
+      "slot": 11
+    },
+    {
+      "game_id": "ABWFMCxL",
+      "puzzle_id": "1G4wN",
+      "source_ordinal": 125138,
+      "row_group": 0,
+      "row_in_group": 125138,
+      "allocation": "king_mover",
+      "slot": 5
+    },
+    {
+      "game_id": "qEPDSf4T",
+      "puzzle_id": "1GBm2",
+      "source_ordinal": 125316,
+      "row_group": 0,
+      "row_in_group": 125316,
+      "allocation": "double_check",
+      "slot": 15
+    },
+    {
+      "game_id": "2yxUGha0",
+      "puzzle_id": "1GJRX",
+      "source_ordinal": 125476,
+      "row_group": 0,
+      "row_in_group": 125476,
+      "allocation": "double_check",
+      "slot": 16
+    },
+    {
+      "game_id": "62mxzO83",
+      "puzzle_id": "1Gk5x",
+      "source_ordinal": 126140,
+      "row_group": 0,
+      "row_in_group": 126140,
+      "allocation": "remaining_discovered_check",
+      "slot": 12
+    },
+    {
+      "game_id": "6GYQVsGk",
+      "puzzle_id": "1HI5H",
+      "source_ordinal": 126946,
+      "row_group": 0,
+      "row_in_group": 126946,
+      "allocation": "remaining_discovered_check",
+      "slot": 13
+    },
+    {
+      "game_id": "Q4f4soGD",
+      "puzzle_id": "1HWcj",
+      "source_ordinal": 127292,
+      "row_group": 0,
+      "row_in_group": 127292,
+      "allocation": "remaining_discovered_check",
+      "slot": 14
+    },
+    {
+      "game_id": "6UT6pjBQ",
+      "puzzle_id": "1HYob",
+      "source_ordinal": 127342,
+      "row_group": 0,
+      "row_in_group": 127342,
+      "allocation": "king_mover",
+      "slot": 6
+    },
+    {
+      "game_id": "X0Dh2EVS",
+      "puzzle_id": "1HboR",
+      "source_ordinal": 127423,
+      "row_group": 0,
+      "row_in_group": 127423,
+      "allocation": "remaining_discovered_check",
+      "slot": 15
+    },
+    {
+      "game_id": "2BnPGJCX",
+      "puzzle_id": "1HrNw",
+      "source_ordinal": 127878,
+      "row_group": 0,
+      "row_in_group": 127878,
+      "allocation": "remaining_discovered_check",
+      "slot": 16
+    },
+    {
+      "game_id": "JiU7ugOR",
+      "puzzle_id": "1Ic1B",
+      "source_ordinal": 129097,
+      "row_group": 0,
+      "row_in_group": 129097,
+      "allocation": "king_mover",
+      "slot": 7
+    },
+    {
+      "game_id": "B8q2BVkQ",
+      "puzzle_id": "1JyFw",
+      "source_ordinal": 131231,
+      "row_group": 0,
+      "row_in_group": 131231,
+      "allocation": "king_mover",
+      "slot": 8
+    },
+    {
+      "game_id": "oSkqfhPo",
+      "puzzle_id": "1K94G",
+      "source_ordinal": 131534,
+      "row_group": 0,
+      "row_in_group": 131534,
+      "allocation": "king_mover",
+      "slot": 9
+    },
+    {
+      "game_id": "57l042K2",
+      "puzzle_id": "1LOb3",
+      "source_ordinal": 133515,
+      "row_group": 0,
+      "row_in_group": 133515,
+      "allocation": "king_mover",
+      "slot": 10
+    },
+    {
+      "game_id": "IRhRVQ5V",
+      "puzzle_id": "1MrtH",
+      "source_ordinal": 135885,
+      "row_group": 0,
+      "row_in_group": 135885,
+      "allocation": "king_mover",
+      "slot": 11
+    },
+    {
+      "game_id": "CsYp0kim",
+      "puzzle_id": "1R9jc",
+      "source_ordinal": 142760,
+      "row_group": 0,
+      "row_in_group": 142760,
+      "allocation": "king_mover",
+      "slot": 12
+    },
+    {
+      "game_id": "l7P2CW4A",
+      "puzzle_id": "1RWmf",
+      "source_ordinal": 143336,
+      "row_group": 0,
+      "row_in_group": 143336,
+      "allocation": "king_mover",
+      "slot": 13
+    },
+    {
+      "game_id": "KiJOeyxw",
+      "puzzle_id": "1bPP3",
+      "source_ordinal": 159016,
+      "row_group": 0,
+      "row_in_group": 159016,
+      "allocation": "king_mover",
+      "slot": 14
+    },
+    {
+      "game_id": "QAWksfno",
+      "puzzle_id": "1fswu",
+      "source_ordinal": 166156,
+      "row_group": 0,
+      "row_in_group": 166156,
+      "allocation": "king_mover",
+      "slot": 15
+    },
+    {
+      "game_id": "BeNKKcjf",
+      "puzzle_id": "1juqA",
+      "source_ordinal": 172642,
+      "row_group": 0,
+      "row_in_group": 172642,
+      "allocation": "king_mover",
+      "slot": 16
+    }
+  ],
+  "resource_samples": 127,
+  "minimum_commit_headroom_bytes": 16336240640,
+  "minimum_physical_available_bytes": 11665821696,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "coach_held_reference_reads": 0,
+  "claim": "Actual CPU cohort construction only, no model score or new learning.",
+  "shortages": {
+    "king_mover": 0,
+    "pawn_mover": 0,
+    "double_check": 0,
+    "remaining_discovered_check": 0
+  }
+}

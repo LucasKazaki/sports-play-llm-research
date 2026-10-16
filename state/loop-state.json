@@ -11,7 +11,9 @@
     "chess-queen-coach-sft-v1/corpus",
     "chess-tutor-v1/manual-queen-browser-qa",
     "chess-queen-coach-sft-training-v2/memory-qualification-1",
-    "chess-queen-claim-audit-v1/closed-four-response-diagnostic"
+    "chess-queen-claim-audit-v1/closed-four-response-diagnostic",
+    "chess-queen-coach-sft-training-v2/train-1",
+    "chess-encoder-check-generalization-v1/cpu-cohort"
   ],
   "cutoff": "2026-10-16T09:00:00-04:00",
   "commentary_gate": "not_achieved",
@@ -23,9 +25,9 @@
     "Keep dated research and official UMD guidance current; restore optional CPU classifier after training maintenance."
   ],
   "external_contact_sent": false,
-  "active_experiment": "coach-sft-training-v2/train-1 active",
+  "active_experiment": "coach-sft-training-v2/heldout-1 active",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T09:16:50.417680+00:00",
+  "updated_at": "2026-10-16T09:46:17.892896+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
-  "secondary_work": "Fresh fixed-checkpoint encoder coverage diagnostic in source preparation; no data intake or scoring yet."
+  "secondary_work": "Fixed-checkpoint generalization cohort and inference source passed review; no learned diagnostic calls yet. New tuned entrypoint remains unavailable; next counterfactual data design uses closed development only."
 }

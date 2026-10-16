@@ -701,3 +701,15 @@ copies. Corrected four paper revision dates against canonical arXiv histories;
 index metadata remains preserved. Added AI-assistance/data-stewardship working
 record. Fresh full coaching v2 training remains active; no heldout result or
 professional-coaching promotion is claimed.
+
+## October 16: full coaching pilot and fresh coverage panel
+
+Full coaching v2 closed 256 updates and 2,048 confirmed backward passes; all
+training outcomes, four development panels, saved tensors, frozen storage and
+resource observations passed independent review. The development-only selector
+chose step 64; five of twelve recognized narrow development claims remain false.
+The once-only matched fresh64-response test is active, without accepted quality
+results or UI promotion. The separate CPU coverage intake closed64fresh pairs
+(16 each king/pawn/double/discovered),128 legal moves and zero shortages; exact
+source locations and exclusions passed review. Its fixed epoch0/4 inference-only
+plan passed26 combined CPU tests and source review, but has made no model calls.

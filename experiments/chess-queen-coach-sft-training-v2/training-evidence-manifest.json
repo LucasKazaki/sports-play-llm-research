@@ -1,0 +1,23 @@
+{
+  "schema": "chess.queen-coach-sft-training-public-copies.v2",
+  "exact_copies": [
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\queen-coach-sft-training-v2-closed-review.json",
+      "copy": "experiments/chess-queen-coach-sft-training-v2/training-evidence/queen-coach-sft-training-v2-closed-review.json",
+      "sha256": "6d6e98d80313f8650aea84c5e4c8ee12e0a012c916aafe72e519f88595a8a301",
+      "bytes": 63630
+    },
+    {
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1-worker.json",
+      "copy": "experiments/chess-queen-coach-sft-training-v2/training-evidence/train-1-worker.json",
+      "sha256": "2cad9978cd1025863586f31572b98e141cbc956994bcc965e62922f82f1b4152",
+      "bytes": 621
+    }
+  ],
+  "raw_records_or_weights_copied": false,
+  "compact_result": {
+    "path": "experiments/chess-queen-coach-sft-training-v2/training-result.json",
+    "sha256": "e9043e2acfc76001d693f02534540eb7f47bc28369a6a8d970118d6112926ea3"
+  },
+  "documentation_debug": "One initial packaging command tried a nonexistent standalone frozen-storage.json before writing the result; the actual unchanged before/after digest is embedded in run/review records. No experiment replay or evidence substitution occurred."
+}

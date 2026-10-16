@@ -1,0 +1,154 @@
+{
+  "schema": "chess.independent-encoder-generalization-preintake-review.v1",
+  "verdict": "GO for exact CPU-only intake; no scoring, model, feature extraction or GPU authorization",
+  "reviewed_at_utc": "2026-10-16T09:24:15.857260+00:00",
+  "full_finite_read": {
+    "source": true,
+    "tests": true,
+    "protocol": true,
+    "protocol_preparer": true,
+    "retained_software_result": true,
+    "exclusion_preflight": true,
+    "bundles": [
+      {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-generalization-v2-review-1.txt",
+        "bytes": 27348,
+        "sha256": "b8e108b16f0de60b893d9b365e6aeede142fdf7a9e78e0f4b189bb2f65370d14"
+      },
+      {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-generalization-v2-review-2.txt",
+        "bytes": 16857,
+        "sha256": "1a33d661d2a16403a1e13d6a9a924f1a895e49ea0151299f6af69adb9cd7dc81"
+      }
+    ]
+  },
+  "execution_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_encoder_check_generalization_v1.py",
+      "bytes": 17873,
+      "sha256": "5f9e1b34a575aef39419adfba0851f215492f4608617949013e465018e5595bf"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_encoder_check_generalization_v1.py",
+      "bytes": 8057,
+      "sha256": "1ec26412f80a507f79b6dfd93f90451a67730c6bc4b4e4b736f3c58775b46239"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\protocol-v2.json",
+      "bytes": 8594,
+      "sha256": "476fff21b7697e0e847b6e8c859e599bb448473589eb94a8652501f6b4f99273"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\prepare_protocol.py",
+      "bytes": 7071,
+      "sha256": "e5eb5c416d6effe8f7c027812ad9434c4946b64a2c7b3f553e2ad715ce66ee1d"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\software-tests-v2.json",
+      "bytes": 556,
+      "sha256": "194d9eb2fa6b9a4340b1b5f3963e7ed6840c462e3406750c96e78fa36d9645e6"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\exclusion-preflight.json",
+      "bytes": 678,
+      "sha256": "0ba4e26c57c0cd93a186722e8a52af0892f78b8490467758348256dbf32876fc"
+    }
+  ],
+  "prior_unexecuted_protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\protocol.json",
+    "bytes": 7887,
+    "sha256": "78f922786f66fe884068ce6c06b3ba327c51514e1d7b755c045721ec4c6a11e7"
+  },
+  "preserved_prior_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\archive\\draft-v1\\manifest.json",
+    "bytes": 938,
+    "sha256": "dff924040099939f2d9427479a53a11a201be3a266a5cf924861a19cd8a2c9b0"
+  },
+  "science_fields_unchanged_by_guard_repair": [
+    "stage",
+    "source",
+    "source_row_cap",
+    "seed",
+    "quotas",
+    "planned_pairs",
+    "planned_move_slots",
+    "allocation_priority",
+    "matching",
+    "matching_amendment",
+    "flags",
+    "source_consumption",
+    "shortages",
+    "old_head_protocol",
+    "old_selection",
+    "selected",
+    "original_untrained",
+    "expected_reserved_counts",
+    "exclusions",
+    "exclusion_scope",
+    "maximum_cpu_seconds",
+    "cpu_physical_bytes",
+    "cpu_start_commit_bytes",
+    "cpu_running_commit_bytes",
+    "resources",
+    "future_evaluation",
+    "limits"
+  ],
+  "independent_checks": [
+    {
+      "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_encoder_check_generalization_v1.py -q",
+      "result": "14 passed in0.12s",
+      "exit_code": 0,
+      "chunk_id": "9579ba"
+    },
+    {
+      "scope": "Additional independent authored fixtures only",
+      "result": "No king-discovered positive relabelled after king quota closes; before/current checkmate and automatic75-move terminal rejection, four cases; exact final metadata verification under backend-import guards.",
+      "exit_code": 0,
+      "chunk_id": "7c307d"
+    }
+  ],
+  "metadata_preflight": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\encoder-generalization-metadata-preflight.json",
+    "bytes": 3051,
+    "sha256": "20f1c2dad6b2b9d8374cd22ee991b5175add8e6416208e9127b3a13c02e7a0f3"
+  },
+  "final_metadata_superset": {
+    "games": 109032,
+    "board_keys": 250895,
+    "all512_coach_reservoir_games_before_current_keys": true,
+    "torch_pyarrow_bnb_transformers_peft_imported": false,
+    "coach_teacher_or_held_reference_content_opened": false
+  },
+  "resolved_finding": {
+    "function": "intake/select_rows",
+    "old_defect": "First Parquet batch was advanced before declared startup reserve sample.",
+    "repair": "Owned try now creates guard and executesguard(-1) before parquet_rows(source); select_rows also checks before __iter__/next. ForbiddenSource regression passes.",
+    "new_science_or_resource_thresholds": false
+  },
+  "confirmed_contract": [
+    "Positive allocation fixed king>pawn>double>remaining discovered; all overlap flags retained. Closed priority quota does not relabel a positive.",
+    "King/pawn same board and exact same origin/type/capture/victim; double/discovered negative uses distinct same-type instance with same capture/victim; explicitly different matching strength.",
+    "Historical and newly selected game/before/current/both successor keys excluded; allfour roles distinct in each pair.",
+    "Valid orthodox nonterminal before/current; only first source setup token; answer tail/themes ignored and castling/enpassant/promotion candidates excluded.",
+    "Fixed64pair/128move slots; shortages explicit source coverage absence, not fake input or model error; cap500000 and frozen deterministic tie-break.",
+    "Only currentFEN+selectedUCI+caseID in inference packets; gives_check, flags, successors and source provenance evaluator-only.",
+    "Fixed original selectedepoch4 vsuntrainedepoch0 file identities, no newselection/training path.",
+    "SingleCPUprocess, PyArrow4096batch/use_threadsFalse, host counters only, commitstart8GiB/run6GiB andphysical4GiB; deadline1200seconds/CANCEL stop ownlane.",
+    "Selected source journal flushes/fsyncs each retained pair; create-only owned attempt and failure receipt; no hidden replay."
+  ],
+  "blocking_findings": [],
+  "limitations": [
+    "This is a deliberately targeted small panel, not prevalence, Elo, move strength or coaching quality.",
+    "Different-origin negatives for lasttwo strata prevent a same-origin claim there.",
+    "Source exhaustion can leave shortages under the fixed cap; no replenishment or relabelling permitted.",
+    "Exclusions cover frozen registered history/reservations, not unknown publisher pretraining or future unregistered generated paths.",
+    "Standalone FEN cannot reconstruct repetition before the source position.",
+    "Setup before the owned try block can stop before a failure receipt or selected journal exists; any created directory remains create-only. During selection, retained pair journals survive failure. This CPU intake never calls inference.",
+    "Actual constructed source locations/labels/novelty require a separate closed cohort audit before any root-only scoring plan."
+  ],
+  "real_source_rows_constructed_by_reviewer": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "coach_held_reference_content_opened": false
+}
