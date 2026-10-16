@@ -138,3 +138,4 @@ experiments/chess-tutor-draft-checks-daytime-v1/** -text whitespace=blank-at-eol
 research/chess-daytime-window-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chess-primary-refresh-2026-10-16-1328.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 research/chessarena-primary-review-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-daytime-launch-diagnostic-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

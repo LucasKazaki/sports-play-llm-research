@@ -20,21 +20,22 @@
     "chess-cache-backbone-investigation-2026-10-16/source-only",
     "chess-counterfactual-train-dev-coverage-2026-10-16/descriptive-only",
     "chess-tutor-draft-checks-daytime-v1/one-actual-manual-UI-integration",
-    "chess-queen-coach-daytime-v1/warm-qualification-1-software-only"
+    "chess-queen-coach-daytime-v1/warm-qualification-1-software-only",
+    "chess-queen-coach-daytime-v1/explicit-job-diagnostic-1-descriptive-only"
   ],
   "cutoff": "2026-10-16T18:00:00-04:00",
   "commentary_gate": "not_achieved",
   "schema": "sportsplay.native-chess-loop.v1",
   "next_actions": [
-    "Review separately versioned measured-absence observer and bounded CPU lifecycle probe; preserve cold1failed records.",
-    "After new source/probe review, run two-request counterfactual cold software qualification and independently audit actual results.",
+    "Review new direct-base worker/parity and direct-context/observer sources; root actual CPU qualification, then independent closed audits.",
+    "Only after actual new CPU passes freeze/review/run fresh warm8/cold2 model qualifiers; no global environment/model/data/floor change.",
     "Only after actual dual qualifier audits, freeze/review full192-update plan from unchanged original64/fresh optimizer, then fixed96 cold evaluation.",
     "Retain actual UI/helper/public-metadata scopes; no quality/trained admission. Replenish broad factuality frontier; stop/close/report/deactivate22UTC."
   ],
   "external_contact_sent": false,
-  "active_experiment": "GPU idle. Actual manual UI integration and disposable warm qualification passed closed independent audits; cold1 failed OpenProcess87 before generation. New observer source/probe preparation next.",
+  "active_experiment": "GPU idle. New observer CPUprobe failed before4cases; explicit creator-job diagnostic completed descriptively with delegate outside that particular ownerjob. New direct-base environment/ownership qualification source in preparation; no new model call.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T13:57:36.306247+00:00",
+  "updated_at": "2026-10-16T14:43:38.9554031Z",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
   "secondary_work": "TRAIN FREE has4 king targets; selected TRAIN and all DEV have0. All544 audited roots start outside check. Aggregate coverage is not learning or coaching evidence; no new counterfactual adapter exists.",
   "failed_evidence": [
@@ -46,7 +47,8 @@
     "chess-queen-coach-counterfactual-cold-qualification-v1/attempt-3",
     "chess-tutor-draft-checks-v1/saved-compatibility-input-byte-binding",
     "chess-tutor-draft-checks-v1/authored-smoke-unadmitted",
-    "chess-queen-coach-daytime-v1/cold-qualification-1-OpenProcess87"
+    "chess-queen-coach-daytime-v1/cold-qualification-1-OpenProcess87",
+    "chess-queen-coach-daytime-v1/observer-cpu-1-before4cases"
   ],
   "closeout": "research/chess-overnight-closeout-2026-10-16.json",
   "daytime_authority": "research/chess-daytime-window-2026-10-16.json"

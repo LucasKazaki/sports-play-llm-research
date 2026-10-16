@@ -738,3 +738,26 @@ metadata, UI/checker and warm software success establish no broad chess-coaching
 quality, professional use, human validation or institutional approval. Selected
 ChessArena v4 methods were added to the bounded primary-source radar; its data
 and weights were not acquired and the current scientific design did not change.
+
+## Daytime launch diagnosis — October 16, 14:40 UTC
+
+The new observer passed77 authored checks and full source review, but its actual
+CPU probe failed before all4 cases. Initial parent/job observations were not
+retained, so that attempt's cause remains unknown. A later, separately reviewed
+no-model launch diagnostic completed one case and20 durable observations. In
+that instrumented launch, the launcher belonged to the creator's actual Windows
+job and the base interpreter did not. Both known retained handles signalled
+EXIT before/after close; the creator job was empty. Independent closed review
+accepted these descriptive observations only. Added timing prevents a historical
+cause/rate claim, and no parent-death test or indirect-cleanup failure is proved.
+
+The next implementation uses a separately versioned direct-base launch, followed
+by exact venv/package-path parity and explicit ownership checks. Actual new CPU
+qualifications and independent closed audits precede fresh small warm8/cold2
+model qualifiers. Only those actual passes can admit the unchanged192-update
+scientific run and fixed96-response comparison. Both full phases remain unrun;
+the same16 held roots have0 generation calls and all512 reserves remain excluded
+from TRAIN. Existing software-test weights remain disposable. User authority
+continues through22UTC/18:00Eastern. See
+`research/chess-daytime-launch-diagnostic-2026-10-16.json` for exact audit hashes
+and selected official API/CPython source basis. No capability promotion follows.
