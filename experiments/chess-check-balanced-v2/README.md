@@ -11,13 +11,25 @@ checkpoint scored 137/256 individual moves and 21/128 complete matched pairs.
 No held-out generation occurred, no checkpoint was finally selected, and all
 2,304 planned evaluation outcomes remain recorded, including not-run cases.
 
-A separately frozen [warm retry](training-protocol-run-2-v2.json) continues the
+A separately frozen [warm retry](training-protocol-run-2-v2.json) completed from the
 saved update-512 adapter with a fresh optimizer for 4,096 new updates. This is
 not an exact optimizer resume. Its selector retains the unchanged warm adapter,
 the disabled base, and new checkpoints. The retry requires 6 GiB of available
 physical memory and 6 GiB of commit headroom during execution, compared with
 the first run's 4/8 GiB reserves. GPU work is serialized with the move-policy
 experiment. Original source, protocols and interruption evidence are preserved.
+
+Development selected new update 2,048: 145/256 moves and 30/128 matched pairs.
+The fresh held-out comparison scored **289/512 moves (56.45%) and 67/256 fully
+correct pairs**, with 182 true positives, 107 true negatives, 149 false positives
+and 74 false negatives. The disabled base scored 256/512 and zero complete pairs.
+All raw outputs were Boolean tokens; no legal mask or conditional-probability
+rescue was used. An independent file-only audit verified all 4,096 finite
+optimizer updates, exact warm weights, development selection before holdout,
+and all 2,816 retained evaluation outcomes. Full logits were not saved, so this
+audit checks retained raw token IDs against the pinned source and tokenizer.
+See the [result](run-2-summary.json) and [public evidence manifest](evidence/run-2/manifest.json).
+This modest discrimination is insufficient for dependable check recognition.
 
 The retained CC0 Lichess shard supplies 8,192 training games, 128 development
 games and 256 held-out games. Each contributes two legal moves, with exactly
@@ -30,7 +42,7 @@ The [training amendment](training-protocol.json), frozen before any model call,
 adds durable interrupted-outcome accounting without changing the cohort or
 the learning task. Exact original intake source and plan are archived.
 An independent full-cohort audit verifies all 17,152 examples and zero known
-historical or cross-split game/position overlap. Eleven software tests pass.
+historical or cross-split game/position overlap. Twelve software tests pass.
 Those checks establish dataset and implementation integrity, not learning.
 
 The initial training plan uses fresh rank-16 LoRA weights, 2,048 updates and native

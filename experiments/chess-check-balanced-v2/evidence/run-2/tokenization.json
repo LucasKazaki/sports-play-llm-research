@@ -1,0 +1,6 @@
+{
+  "count": 16384,
+  "min": 107,
+  "max": 226,
+  "target_tokens_per_example": 1
+}

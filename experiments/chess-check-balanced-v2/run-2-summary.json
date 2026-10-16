@@ -1,0 +1,201 @@
+{
+  "schema": "chess.check-balanced.v2",
+  "status": "completed_candidate",
+  "completed_updates": 4096,
+  "selection": {
+    "step": 2048,
+    "scores": [
+      {
+        "step": 0,
+        "schema": "chess.check-balanced.v2",
+        "planned": 256,
+        "confusion": {
+          "tp": 128,
+          "tn": 0,
+          "fp": 128,
+          "fn": 0,
+          "invalid_positive": 0,
+          "invalid_negative": 0
+        },
+        "correct": 128,
+        "pairs_correct": 0,
+        "positive_support": 128,
+        "negative_support": 128,
+        "balanced_accuracy": 0.5,
+        "raw_sha256": "5cf740a81f9e22c02bbfd429edd9a914603baae62c0fc2892a9fe0c404d8e8e8",
+        "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+      },
+      {
+        "step": -1,
+        "schema": "chess.check-balanced.v2",
+        "planned": 256,
+        "confusion": {
+          "tp": 45,
+          "tn": 92,
+          "fp": 36,
+          "fn": 83,
+          "invalid_positive": 0,
+          "invalid_negative": 0
+        },
+        "correct": 137,
+        "pairs_correct": 21,
+        "positive_support": 128,
+        "negative_support": 128,
+        "balanced_accuracy": 0.53515625,
+        "raw_sha256": "492cbba6321e8ebe48c34e68721d67d3918cce177f46226919a243b860d4174c",
+        "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+      },
+      {
+        "step": 256,
+        "schema": "chess.check-balanced.v2",
+        "planned": 256,
+        "confusion": {
+          "tp": 0,
+          "tn": 128,
+          "fp": 0,
+          "fn": 128,
+          "invalid_positive": 0,
+          "invalid_negative": 0
+        },
+        "correct": 128,
+        "pairs_correct": 0,
+        "positive_support": 128,
+        "negative_support": 128,
+        "balanced_accuracy": 0.5,
+        "raw_sha256": "85f121f13dc66a2e38b4944172e22f38d1ee649dea8d164bb092566f05ff9ca0",
+        "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+      },
+      {
+        "step": 512,
+        "schema": "chess.check-balanced.v2",
+        "planned": 256,
+        "confusion": {
+          "tp": 2,
+          "tn": 123,
+          "fp": 5,
+          "fn": 126,
+          "invalid_positive": 0,
+          "invalid_negative": 0
+        },
+        "correct": 125,
+        "pairs_correct": 2,
+        "positive_support": 128,
+        "negative_support": 128,
+        "balanced_accuracy": 0.48828125,
+        "raw_sha256": "41c0d41979bf7886446e016e1debbbee0c7a5eb8320d3aaf4c9dde6f9c11cdfa",
+        "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+      },
+      {
+        "step": 1024,
+        "schema": "chess.check-balanced.v2",
+        "planned": 256,
+        "confusion": {
+          "tp": 121,
+          "tn": 9,
+          "fp": 119,
+          "fn": 7,
+          "invalid_positive": 0,
+          "invalid_negative": 0
+        },
+        "correct": 130,
+        "pairs_correct": 9,
+        "positive_support": 128,
+        "negative_support": 128,
+        "balanced_accuracy": 0.5078125,
+        "raw_sha256": "70f82b32ed387280c1fb2bc9056ac4b81a9b240f4be8be97c9096bd4b3ee5ab6",
+        "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+      },
+      {
+        "step": 2048,
+        "schema": "chess.check-balanced.v2",
+        "planned": 256,
+        "confusion": {
+          "tp": 104,
+          "tn": 41,
+          "fp": 87,
+          "fn": 24,
+          "invalid_positive": 0,
+          "invalid_negative": 0
+        },
+        "correct": 145,
+        "pairs_correct": 30,
+        "positive_support": 128,
+        "negative_support": 128,
+        "balanced_accuracy": 0.56640625,
+        "raw_sha256": "1bcad7d0220a7ecc7e195214b14d4b0088c457b283e1cc43508a6dbf1271e7ad",
+        "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+      },
+      {
+        "step": 4096,
+        "schema": "chess.check-balanced.v2",
+        "planned": 256,
+        "confusion": {
+          "tp": 0,
+          "tn": 128,
+          "fp": 0,
+          "fn": 128,
+          "invalid_positive": 0,
+          "invalid_negative": 0
+        },
+        "correct": 128,
+        "pairs_correct": 0,
+        "positive_support": 128,
+        "negative_support": 128,
+        "balanced_accuracy": 0.5,
+        "raw_sha256": "585ed8608261a14625a17445c281c441ba9e1eea8850848d1f9a3d063730ed2e",
+        "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+      }
+    ],
+    "holdout_opened": false,
+    "adapter_sha256": "52f281db52f5f1922ec6db872f61a128000f61da85bb78ad7be2f96f600b92be",
+    "step_identity": "-1 means unchanged warm-start adapter;0 means disabled base;positive means new optimizer updates"
+  },
+  "base": {
+    "schema": "chess.check-balanced.v2",
+    "planned": 512,
+    "confusion": {
+      "tp": 256,
+      "tn": 0,
+      "fp": 256,
+      "fn": 0,
+      "invalid_positive": 0,
+      "invalid_negative": 0
+    },
+    "correct": 256,
+    "pairs_correct": 0,
+    "positive_support": 256,
+    "negative_support": 256,
+    "balanced_accuracy": 0.5,
+    "raw_sha256": "9a01d6d59889d84873447b11cb95a29c62c3d38d2531d7c0ef6bdd39e41e9453",
+    "labels_sha256": "401ed1db8b92f9fe5c3c84bb25a971ceb3cf87401df0dcad629e82b7e423dae5"
+  },
+  "selected": {
+    "schema": "chess.check-balanced.v2",
+    "planned": 512,
+    "confusion": {
+      "tp": 182,
+      "tn": 107,
+      "fp": 149,
+      "fn": 74,
+      "invalid_positive": 0,
+      "invalid_negative": 0
+    },
+    "correct": 289,
+    "pairs_correct": 67,
+    "positive_support": 256,
+    "negative_support": 256,
+    "balanced_accuracy": 0.564453125,
+    "raw_sha256": "95b9810e346954b234c03524793f678d69cecf6ed15c5afa86f0a6e3b347c78a",
+    "labels_sha256": "401ed1db8b92f9fe5c3c84bb25a971ceb3cf87401df0dcad629e82b7e423dae5"
+  },
+  "elapsed_seconds": 1473.6719999999914,
+  "protocol_sha256": "a787c2931fa45a283e9cc22467d0339f2cf0b63486f49f84319803fcceb7724e",
+  "limitations": [
+    "Balanced same-piece tactical pairs are not a natural prevalence sample.",
+    "Binary check discrimination only; no Elo, move-quality or coaching-understanding claim.",
+    "Raw full-vocabulary token choices scored; conditional binary probabilities are separate.",
+    "Historical games excluded; upstream model pretraining overlap is unknown."
+  ],
+  "public_evidence": "evidence/run-2/manifest.json",
+  "acceptance": "Not accepted as reliable check recognition or chess coaching."
+}

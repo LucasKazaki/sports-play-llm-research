@@ -1,0 +1,13 @@
+{
+  "schema": "chess.check-balanced.v2",
+  "pid": 12636,
+  "python": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+  "gpu": "NVIDIA GeForce RTX 5080",
+  "torch": "2.8.0+cu128",
+  "transformers": "5.19.0",
+  "peft": "0.21.2",
+  "trainable_parameters": 10092544,
+  "protocol_sha256": "a787c2931fa45a283e9cc22467d0339f2cf0b63486f49f84319803fcceb7724e",
+  "frozen_data_sha256": "292b142a8e8f062259d07f7c12ed0765f55feff3cfa22141c15b264cb7378c3c",
+  "source_snapshot_sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5"
+}
