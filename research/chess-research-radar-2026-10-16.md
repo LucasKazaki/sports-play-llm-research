@@ -1,5 +1,55 @@
 # Chess research radar: October 16, 2026
 
+## Current state — 19:56 UTC
+
+Both 192-step models completed training and cold-reload checks. In the conditional run, later-move grammar facts improved on two repeated development games, while exact free three-ply agreement fell from 2/2 at original64 step0 to 1/2 at terminal192. These observations support measuring factual descriptions and move prediction separately; they do not establish generalization or strategic understanding.
+
+The [conditional-line record](chess-conditional-line-development-2026-10-16.md) contains exact counts, identities and the pending fresh96 design. The bounded primary-source refresh remains the 18:12 UTC check recorded below. Interface checks are engineering evidence, and formal Archit/UMD approval has not been established. The current work window ends at 22:00 UTC.
+
+## Historical state — 19:11 UTC
+
+The direct user extension runs until 18:00 Eastern (22:00 UTC) today. The earlier
+09:00 Eastern cutoff and unrun-phase statements below describe their dated
+checkpoints; they do not describe the current operating window.
+
+The first daytime counterfactual run completed all 192 updates and 1,536 training
+presentations, with independent review. Its saved terminal checkpoint has passed
+actual cold reload and preview completion/cancellation checks. Its first reserved
+comparison failed after nine accepted baseline completions and one uncertain
+completion; the trained arm never ran. No matched improvement result follows,
+and those 16 source games remain spent.
+
+The conditional-line curriculum retains the current inputs, source groups,
+order and stored lines, adding later-move capture/check descriptions. Complete
+tokenization and the small learning/save/reload check passed. Its first full
+attempt failed before training at a six-versus-96 reference mismatch; its
+second stopped after 167 updates at a denied progress-file replacement. Both
+failures and complete planned denominators are preserved. After 15 save and 9
+operating-contract checks, a distinct full run began at 19:07:56 UTC from the
+original step 64 with a fresh optimizer. Its result is pending. The terminal step 192
+selection is fixed; longer-target loss cannot be compared across formats.
+
+The earlier step-192 preview's actual browser request and desktop/mobile evidence
+passed engineering review. Its separate service is now off. The matched
+comparison software passed 26 authored checks; fresh selection, exact cold
+loads and the full 96 response comparison remain pending.
+
+A bounded primary-source refresh at 18:12 UTC still found only v1 in the
+[Queen](https://arxiv.org/abs/2610.03695),
+[explanation-faithfulness](https://arxiv.org/abs/2609.22245) and
+[Chess-World-Model](https://arxiv.org/abs/2605.30100) submission histories.
+[Stockfish's official latest stable release](https://github.com/official-stockfish/Stockfish/releases/latest)
+still resolves to `sf_19`. This refresh read abstract/history metadata and the
+release surface; it adds no full-paper review or local quality result. The
+existing source and weight pins remain fixed. The direct retrieval is retained
+in the local daytime research receipt `research-primary-refresh-1812-v1.json`.
+
+The next checks are actual training closure, identity-specific cold reload,
+and a fully accounted fresh paired comparison. Any later preview of a new
+model needs its own qualification and browser evidence.
+Broad coaching quality, explanation faithfulness, human usefulness and formal
+Archit/UMD approval remain unestablished.
+
 This refresh supports the user's repeated research, plan, implement, test and
 debug cycle. Two paper-index searches cover July–October 2026 explanation work
 and 2025–2026 state tracking, evaluation and brittleness. The retained JSON

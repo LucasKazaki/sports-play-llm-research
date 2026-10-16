@@ -1,5 +1,44 @@
 # Archit + Lucas requirements and research radar
 
+## Current chess reconciliation — October 16, 19:56 UTC
+
+The requested local chess study now has two completed 192-step coaching adapters and audited fresh-process reloads. The [experiment record](chess-conditional-line-development-2026-10-16.md) distinguishes repeated development results from the still-pending fresh comparison. The interface supports exploratory tutor feedback; neither model has established reliable coaching or broad chess understanding.
+
+The next evidence needed is a complete comparison on fresh games, followed by a chess tutor's assessment of explanations and failures. Source ownership, data rights, disclosure and any Archit/UMD study approval remain separate requirements. No external contact or institutional approval has occurred. Autonomous work is authorized through 22:00 UTC today.
+
+## Historical chess reconciliation — October 16, 19:11 UTC
+
+The second conditional-line attempt failed after 167 updates and 1,336
+training presentations when Windows denied replacement of its progress file.
+Its primary failure record and append-only journal establish 167; the stale
+progress file reports 166. Independent failure audit passed. Only checkpoints
+0, 48 and 96 were saved; no terminal checkpoint, selection or final frozen-base
+proof exists. Preserve the complete 1,536/384/24 planned denominators and the
+unrun 200 training presentations, 96 development loss calls and six raw calls.
+
+The additive bounded-save repair passed 15 checks, including actual temporary
+and persistent Windows sharing denial. Nine operating-contract checks passed.
+A fresh full attempt began at 19:07:56 UTC under an independently reviewed
+protocol. It starts from the original step-64 adapter and a fresh optimizer;
+the full 192 updates and fixed terminal selection remain unchanged. It does
+not resume the partial run. Its result is pending, and the global user cutoff
+remains 22:00 UTC.
+
+The saved earlier step-192 model completed its separate browser request.
+Independent engineering review verified exact response/current/restored
+exports, stale coaching exclusion, keyboard navigation, and desktop/mobile
+layouts. The separate preview service closed normally; existing port 8793
+keeps its earlier manual profile. Actual 200% zoom and alternate motion or
+appearance settings remain unverified. The three recorded presentation issues
+do not establish or change model quality.
+
+The matched-comparison software passed 26 authored checks. Actual exact-weight
+cold qualification, the latest source-bound exposure inventory, fresh16
+selection and all96 paired responses remain future gates. Both48-response arms
+must close before reference scoring. Narrow recognized facts, raw move/PV
+agreement and whole-prose/human teaching judgments remain separate. The failed
+old16 stay spent and all512 reserve games stay excluded from training.
+
 
 ## Human-authorized daytime continuation — October 16, 13:23 UTC
 

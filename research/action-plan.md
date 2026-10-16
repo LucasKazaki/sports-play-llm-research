@@ -1,6 +1,50 @@
 # Research Action Plan
 
-## October 16 current chess frontier
+## Current continuation — October 16, 19:56 UTC
+
+Both 192-step adapters completed training and passed saved-weight and cold-reload audits. The [conditional-line record](chess-conditional-line-development-2026-10-16.md) contains the measured development results and limitations.
+
+1. Finish the complete record of prior model exposures, including failed and unrun requests, then independently select sixteen fresh source games. Keep all 512 reserve games outside training and the earlier failed comparison's sixteen games spent.
+2. Run the fixed current192 and conditional192 conditions for 48 responses each. Close all 96 requests before opening references; retain the full denominator if execution fails.
+3. Report legal continuations, engine-line agreement and recognized facts separately. Keep whole-prose accuracy and tutor usefulness unassessed until they are actually reviewed.
+
+The presentation fixes passed four authored checks, including Node renderer tests. A separate desktop/phone browser check completed with zero language-model requests; its closed audit is pending. Stop owned work by 22:00 UTC today.
+
+## Historical continuation — October 16, 19:11 UTC
+
+The second conditional-line attempt failed after 167 updates and 1,336
+training presentations when Windows denied replacement of its progress file.
+Its primary failure record and append-only journal establish 167; the stale
+progress file reports 166. Independent failure audit passed. Only checkpoints
+0, 48 and 96 were saved; no terminal checkpoint, selection or final frozen-base
+proof exists. Preserve the complete 1,536/384/24 planned denominators and the
+unrun 200 training presentations, 96 development loss calls and six raw calls.
+
+The additive bounded-save repair passed 15 checks, including actual temporary
+and persistent Windows sharing denial. Nine operating-contract checks passed.
+A fresh full attempt began at 19:07:56 UTC under an independently reviewed
+protocol. It starts from the original step-64 adapter and a fresh optimizer;
+the full 192 updates and fixed terminal selection remain unchanged. It does
+not resume the partial run. Its result is pending, and the global user cutoff
+remains 22:00 UTC.
+
+The saved earlier step-192 model completed its separate browser request.
+Independent engineering review verified exact response/current/restored
+exports, stale coaching exclusion, keyboard navigation, and desktop/mobile
+layouts. The separate preview service closed normally; existing port 8793
+keeps its earlier manual profile. Actual 200% zoom and alternate motion or
+appearance settings remain unverified. The three recorded presentation issues
+do not establish or change model quality.
+
+The matched-comparison software passed 26 authored checks. Actual exact-weight
+cold qualification, the latest source-bound exposure inventory, fresh16
+selection and all96 paired responses remain future gates. Both48-response arms
+must close before reference scoring. Narrow recognized facts, raw move/PV
+agreement and whole-prose/human teaching judgments remain separate. The failed
+old16 stay spent and all512 reserve games stay excluded from training.
+
+
+## Historical October 16 chess frontier
 
 The full coaching v2 run and fixed development selection passed closed audit.
 Its once-only matched fresh test is active; do not inspect partial responses or

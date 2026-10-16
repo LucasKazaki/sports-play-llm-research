@@ -1,5 +1,35 @@
 # Decision Log
 
+## 2026-10-16 — Compare both trained models before claiming a coaching gain
+
+Keep the completed current192 adapter as control and the prospectively fixed conditional terminal192 adapter as treatment. Training and exact-weight cold checks passed, but the repeated development panel shows a tradeoff: stronger recognized conditional facts and weaker free three-ply agreement relative to original64 step0. The [experiment record](chess-conditional-line-development-2026-10-16.md) retains both observations.
+
+Require a complete fresh 48-plus-48 comparison before judging the intervention. Preserve earlier failed games as spent, all 512 reserve games outside training, and every failed, unknown and unrun request in the denominator. Whole-prose accuracy, tutor usefulness and Archit/UMD approval remain unestablished. Stop owned work at 22:00 UTC.
+
+## 2026-10-16 — Preserve the failed167 attempt and qualify a fresh full run
+
+The second conditional-line attempt failed after 167 updates and 1,336
+training presentations when Windows denied replacement of its progress file.
+Its primary failure record and append-only journal establish 167; the stale
+progress file reports 166. Independent failure audit passed. Only checkpoints
+0, 48 and 96 were saved; no terminal checkpoint, selection or final frozen-base
+proof exists. Preserve the complete 1,536/384/24 planned denominators and the
+unrun 200 training presentations, 96 development loss calls and six raw calls.
+
+The additive bounded-save repair passed 15 checks, including actual temporary
+and persistent Windows sharing denial. Nine operating-contract checks passed.
+A fresh full attempt began at 19:07:56 UTC under an independently reviewed
+protocol. It starts from the original step-64 adapter and a fresh optimizer;
+the full 192 updates and fixed terminal selection remain unchanged. It does
+not resume the partial run. Its result is pending, and the global user cutoff
+remains 22:00 UTC.
+
+The save helper retries only bounded Windows sharing/access errors. It does
+not establish the historical locker or turn an OS call into a hard deadline.
+The root will monitor the append-only journal with delete-sharing allowed,
+without opening atomically replaced progress files while the run is active.
+
+
 ## 2026-09-22 — Exact implementation after failed planner handoffs
 
 Preserve malformed/missing-source proposals and failed jobs; supply a bounded native implementation with meaningful tests rather than an unchanged planner retry. The new evaluator distinguishes legal asserted variations from exact retained engine PV attribution. Full typed receipts remain evaluator-only. Correct the old assisted-generation instructions to the current strict no-forward contract. Record local independent-review failure separately from code-test success; a bundle of exact source/log bytes repairs the finite read-packet mismatch without changing budgets or model routing.

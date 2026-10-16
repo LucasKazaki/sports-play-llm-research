@@ -25,23 +25,30 @@
     "chess-queen-coach-daytime-v1/direct-base-environment-parity-1-CPU-only",
     "chess-queen-coach-daytime-v1/observer-cpu-direct-1-CPU-only",
     "chess-queen-coach-daytime-v1/train-1-independent-closed-audit",
-    "chess-king-evasion-operational-v2/authored22-only"
+    "chess-king-evasion-operational-v2/authored22-only",
+    "chess-tutor-daytime192-v1/qualification-1-actual-engineering",
+    "chess-queen-coach-flat-v1/qualification-2-actual-engineering",
+    "chess-queen-coach-conditional-line-v1/targets-2-tokenizer-1-audited",
+    "chess-queen-coach-conditional-line-v1/qualification-1-software-only",
+    "chess-tutor-daytime192-v1/ui-wiring-1-engineering-only",
+    "chess-queen-coach-conditional-line-v1/conditional-train-3-independent-closed-audit",
+    "chess-queen-coach-conditional-comparison-v1/qualification-1-two-identities-software-only"
   ],
   "cutoff": "2026-10-16T18:00:00-04:00",
   "commentary_gate": "not_achieved",
   "schema": "sportsplay.native-chess-loop.v1",
   "next_actions": [
-    "Review versioned monitor repair and actual lifecycle/cold qualification.",
-    "Separately admit fresh16/96 comparison with latest ownership-aware exclusions; all512TRAIN exclusions remain.",
-    "Qualify actual192 preview completion and cancellation before any private local activation.",
-    "Close owned jobs and deactivate hourly heartbeat22UTC; preserve failed and unrun records."
+    "Freeze and audit the latest complete exposure inventory, retaining all earlier spent comparison games and all512 TRAIN exclusions.",
+    "After independent fresh16 selection and exact prospective plan review, run both48-response arms before any reference scoring.",
+    "Report repeated DEV grammar facts separately from matched fresh results, whole-prose factuality, chess strength and tutor acceptance.",
+    "Close owned work and deactivate existing heartbeat at22UTC; no model/service/experiment runs beyond the human-authorized window."
   ],
   "external_contact_sent": false,
-  "active_experiment": "Completed192TRAIN/selected192 independently audited. Fresh96 comparison failed in observer after9accepted+1unknown baseline; no selected calls or scores.",
+  "active_experiment": "Conditional TRAIN3 completed and independently audited: fresh original64/fresh optimizer/full192; exact current192 and conditional192 cold checks passed. Fresh16/full96 matched comparison pending.",
   "model_weights_private": true,
-  "updated_at": "2026-10-16T16:27:52.601619+00:00",
+  "updated_at": "2026-10-16T19:57:34.797107+00:00",
   "origin": "Native Codex repository checkout; no Studio runtime identity",
-  "secondary_work": "New192 adapter exists; broad coaching quality remains unproven. Additive identity-aware monitor repair and separately disabled research preview are in progress.",
+  "secondary_work": "Earlier192 actual completion/stale/restored audit passed; previewoff. Presentationv3 source review,4 authored Python/Node tests andzero-LM desktop/phone closed browser audit passed;8796off. Fresh96 remains pending.",
   "failed_evidence": [
     "chess-queen-coach-sft-training-v2/heldout-1",
     "chess-queen-coach-counterfactual-v1/startup-admission",
@@ -53,7 +60,11 @@
     "chess-tutor-draft-checks-v1/authored-smoke-unadmitted",
     "chess-queen-coach-daytime-v1/cold-qualification-1-OpenProcess87",
     "chess-queen-coach-daytime-v1/observer-cpu-1-before4cases",
-    "chess-queen-coach-daytime-v1/held-1-nine-completed-one-unknown"
+    "chess-queen-coach-daytime-v1/held-1-nine-completed-one-unknown",
+    "chess-queen-coach-daytime-v1/observer-cpu-identity-3",
+    "chess-queen-coach-conditional-line-v1/conditional-targets-1",
+    "chess-queen-coach-conditional-line-v1/conditional-train-1-initial-monitor",
+    "chess-queen-coach-conditional-line-v1/conditional-train-2-167updates-write-failure"
   ],
   "closeout": "research/chess-overnight-closeout-2026-10-16.json",
   "daytime_authority": "research/chess-daytime-window-2026-10-16.json"

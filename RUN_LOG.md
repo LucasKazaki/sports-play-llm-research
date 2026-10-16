@@ -1,5 +1,75 @@
 # Run Log
 
+## 2026-10-16 19:48 UTC — Full conditional192 training and two closed cold checks
+
+The fresh conditional-line run completed all 192 updates and 1,536 training presentations, with all 384 development loss requests and 24 generated development responses completed. Independent closed review passed. It started from the unchanged original step-64 adapter with a fresh optimizer; terminal step 192 was fixed in advance. The failed 167-update attempt remains preserved and was not resumed.
+
+On the same two repeatedly used development games (six presentations), the terminal adapter produced 24 recognized true conditional claims and zero false claims; all six met the narrow joint grammar criterion. Within this run, FREE exact three-ply teacher agreement changed from 2/2 at the original64 starting checkpoint to 1/2 at terminal192. This is not a comparison with the fixed current192 control, fresh evaluation, whole-prose factuality or teaching quality.
+
+The fixed current192 control (`27d6b171…`) and conditional192 treatment (`b31c68d7…`) then completed two separate cold software requests in 69.44 seconds. Independent closed engineering review passed. Both used the unchanged inference path; the two already-spent development requests had no quality threshold and consumed no fresh comparison games.
+
+The latest exposure inventory, selection of sixteen unused source games and the full 96-response matched comparison remain pending. Both 48-response arms must close before reference scoring. Earlier failed comparison games stay spent, and all 512 reserved games remain excluded from training. The work window ends at 22:00 UTC today; no model, service or experiment runs beyond that authority.
+
+Closed TRAIN review SHA256: `d51b7aa610754387f0f2d852aac58a5a5a70edf05b77c1cfe5342059e9c5ba80`. Closed two-request software review SHA256: `9f7f8121ccf2824aafaf6610d32f323f392e605105fa21c19e350f6c21910a8a`. All earlier dated run entries remain historical evidence.
+
+## 2026-10-16 19:11 UTC — Conditional write failure and fresh full training
+
+The second conditional-line attempt failed after 167 updates and 1,336
+training presentations when Windows denied replacement of its progress file.
+Its primary failure record and append-only journal establish 167; the stale
+progress file reports 166. Independent failure audit passed. Only checkpoints
+0, 48 and 96 were saved; no terminal checkpoint, selection or final frozen-base
+proof exists. Preserve the complete 1,536/384/24 planned denominators and the
+unrun 200 training presentations, 96 development loss calls and six raw calls.
+
+The additive bounded-save repair passed 15 checks, including actual temporary
+and persistent Windows sharing denial. Nine operating-contract checks passed.
+A fresh full attempt began at 19:07:56 UTC under an independently reviewed
+protocol. It starts from the original step-64 adapter and a fresh optimizer;
+the full 192 updates and fixed terminal selection remain unchanged. It does
+not resume the partial run. Its result is pending, and the global user cutoff
+remains 22:00 UTC.
+
+The saved earlier step-192 model completed its separate browser request.
+Independent engineering review verified exact response/current/restored
+exports, stale coaching exclusion, keyboard navigation, and desktop/mobile
+layouts. The separate preview service closed normally; existing port 8793
+keeps its earlier manual profile. Actual 200% zoom and alternate motion or
+appearance settings remain unverified. The three recorded presentation issues
+do not establish or change model quality.
+
+The matched-comparison software passed 26 authored checks. Actual exact-weight
+cold qualification, the latest source-bound exposure inventory, fresh16
+selection and all96 paired responses remain future gates. Both48-response arms
+must close before reference scoring. Narrow recognized facts, raw move/PV
+agreement and whole-prose/human teaching judgments remain separate. The failed
+old16 stay spent and all512 reserve games stay excluded from training.
+
+
+## 2026-10-16 18:20 UTC — Conditional targets and preserved scoring failure
+
+The corrected conditional export completed all 1,632 examples and the real
+tokenizer check completed without truncation (maximum 226 tokens). Independent
+combined data audit `11be73b5…` passed. Actual eight-micro learning qualification
+completed eight backwards, one disposable update and strict save/reload in
+47.266 internal seconds; independent closed review `4c7147f6…` passed. The
+canonical 2,268 frozen tensor storages remained unchanged.
+
+Full conditional attempt 1 started at 18:13:25 UTC and exited at 18:15:00 after
+the initial monitor failed with `Full panel/reference denominator required`.
+It completed no training update. Root closure `24575649…` retained 153 files,
+empty explicit owned job/stable child exit, three known PID numbers absent and
+a free shared lease. The independent failure/count audit is pending. Preserve
+the attempt; repair the six-row monitor caller separately, retain the strict
+scorer, and freeze any successor before dispatch. No result on fresh positions
+or general chess understanding follows.
+
+The saved earlier daytime step-192 model has independently audited actual
+reload/completion/cancellation and two flat cold-path requests. Its browser
+wiring test remains pending. Existing port 8793 stays untouched. The current
+user window still ends at 22:00 UTC; source-only preparation does not admit an
+expired phase or alter memory reserves.
+
 ## 2026-09-22 20:29 UTC — No-forward input boundary
 
 Native implementation 0e757be8-e16c-4416-b683-558c9dee60cb passed 120 focused tests including 50 new cases. Full verification 4f81184f-d9a8-436a-bcd1-16150dafe1c6 passed 1375 tests with one existing host-permission skip. Eight source-bound real-development inputs were retained with zero model/engine calls. Review 0323eb3c-b0af-42d2-9fcf-05a705ab01ca read the full mandatory source/test bundle and passed; earlier summary-only review 69901eca-a97d-4605-ba3a-085213ee12df is not accepted source inspection. Current evidence and next requirement: research/chess-no-forward-input-2026-09-22.md.
