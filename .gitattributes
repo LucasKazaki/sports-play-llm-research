@@ -49,18 +49,18 @@ tests/test_chess_move_policy_v5.py -text
 tests/test_chess_tutor_v1.py -text
 
 # Successor experiments bind exact executed bytes across Windows checkouts.
-experiments/chess-move-policy-v6/** -text
-experiments/chess-move-policy-v6-run2/** -text
-experiments/chess-queen-v1/** -text
-experiments/chess-queen-benchmark-v1/** -text
-experiments/chess-encoder-check-v1/** -text
-scripts/chess_move_policy_v6.py -text
-scripts/chess_move_policy_v6_run2.py -text
-scripts/chess_queen_adapter.py -text
-scripts/chess_queen_benchmark_v1.py -text
-scripts/chess_encoder_check_v1.py -text
-tests/test_chess_move_policy_v6.py -text
-tests/test_chess_move_policy_v6_run2.py -text
-tests/test_chess_queen_adapter.py -text
-tests/test_chess_queen_benchmark_v1.py -text
-tests/test_chess_encoder_check_v1.py -text
+experiments/chess-move-policy-v6/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-move-policy-v6-run2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-benchmark-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-encoder-check-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_move_policy_v6.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_move_policy_v6_run2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_adapter.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_benchmark_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_move_policy_v6.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_move_policy_v6_run2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_adapter.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_benchmark_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

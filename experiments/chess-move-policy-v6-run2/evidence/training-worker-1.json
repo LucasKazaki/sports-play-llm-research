@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T06:31:38.931776+00:00",
+  "script": "scripts\\chess_move_policy_v6_run2.py",
+  "arguments_sha256": "40392e019539e79bd96d934f0ad8db40f97ac0def4b71aba94def7b8200f1170",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "completed",
+  "child_pid": 17320,
+  "exit_code": 0,
+  "log": "data\\private\\chess-move-policy-v6-run2\\training-worker-1.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 219.61000000001513
+}

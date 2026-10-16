@@ -1,0 +1,55 @@
+{
+  "cohorts": {
+    "step-0-development": {
+      "planned": 512,
+      "retained_evaluation_sha256": "a18fb77b39867c4009cbaf1a81ea948df171e284e8c0ff45169e1311e66d9881",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "step-256-development": {
+      "planned": 512,
+      "retained_evaluation_sha256": "eedc33922a83089e46143cb6c4dcfede532fb1e1d373b45475471bb24d33a3ca",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "step-512-development": {
+      "planned": 512,
+      "retained_evaluation_sha256": "974fb79f02d3d7aaa8922c2f22ed593ab4c4cb55c666b9d599db0007ee2ea255",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "step-1024-development": {
+      "planned": 512,
+      "retained_evaluation_sha256": "3aed20c33b5ed3fa9c93ccd6a85b22df3c4316c9814482fd15b7be985b0c3d64",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "step-2048-development": {
+      "planned": 512,
+      "retained_evaluation_sha256": "3316d58e804dea0497bfc405f3ed2732d502569dfdf2d2cc8fa8297101848056",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "step-4096-development": {
+      "planned": 512,
+      "retained_evaluation_sha256": "5f5f5e0da424d80c97ae82bc10d632337c9bdbfbfe5878b832a3796bc30b7c99",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "starting-holdout": {
+      "planned": 512,
+      "retained_evaluation_sha256": "e15c4deb4fbef124c43e19ca457a348bf447410867caf0912a485a30c74bc55a",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "starting-rollout-raw": {
+      "planned": 128,
+      "retained_evaluation_sha256": "88631cf1264de99ef51117be0f336a3719aeb018dc9234c03a7995e80aab4a09",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "selected-holdout": {
+      "planned": 512,
+      "retained_evaluation_sha256": "f2343636238dbac4dd387eacf65a6cd76dc98d47aadb88476d664384aa854f68",
+      "status": "retained; inspect per-case raw records and failure counts"
+    },
+    "selected-rollout-raw": {
+      "planned": 128,
+      "retained_evaluation_sha256": "f5d934bc58a1f0d7256e534a9e15f29edbf553481440ba13198902b0d4d5d1fb",
+      "status": "retained; inspect per-case raw records and failure counts"
+    }
+  },
+  "limitations": "Retained per-case records are authoritative; unrecorded active requests remain unknown."
+}

@@ -1,0 +1,1278 @@
+{
+  "rows": [
+    {
+      "id": "policy-v5-0kGEJ",
+      "predicted": [
+        "g4g6",
+        "g8h8",
+        "g6g7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0ksjr",
+      "predicted": [
+        "b3b7",
+        "e7f6",
+        "b7h7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0leqw",
+      "predicted": [
+        "d4f5",
+        "e4a4",
+        "d1e1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0lvCv",
+      "predicted": [
+        "d6b4",
+        "c4f7",
+        "g8f7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0lwzI",
+      "predicted": [
+        "f2e3",
+        "c1b1",
+        "e3e6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0mGKR",
+      "predicted": [
+        "d2b2",
+        "b3b2",
+        "g6g4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0mJTX",
+      "predicted": [
+        "e4e5",
+        "f6e5",
+        "g2b7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0mVBm",
+      "predicted": [
+        "e4g3",
+        "h1g1",
+        "g3e2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0mXau",
+      "predicted": [
+        "d3e4",
+        "h4e4",
+        "d1b3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0nDh3",
+      "predicted": [
+        "f6g6",
+        "e3g3"
+      ],
+      "legal_plies": 1,
+      "status": "illegal_move"
+    },
+    {
+      "id": "policy-v5-0nkr2",
+      "predicted": [
+        "e2h5",
+        "h3g2",
+        "e8e2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0npaw",
+      "predicted": [
+        "e7e8",
+        "a8e8",
+        "e2e8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0nplw",
+      "predicted": [
+        "b5a6",
+        "c8b8",
+        "c1c3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0nr6T",
+      "predicted": [
+        "d5b4",
+        "c6b6",
+        "b4c2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0ntrc",
+      "predicted": [
+        "f2f1",
+        "b1f1",
+        "f8c5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0oMdk",
+      "predicted": [
+        "a2a1",
+        "d3b1",
+        "d4c4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0oOzi",
+      "predicted": [
+        "h4f6",
+        "h8g8",
+        "f6g7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0ov91",
+      "predicted": [
+        "a2a1",
+        "f7h6",
+        "g8h8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0ozlM",
+      "predicted": [
+        "c5d7",
+        "e5f4",
+        "d1d4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0pKAW",
+      "predicted": [
+        "d6d1",
+        "c2b2",
+        "d8d2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0pUds",
+      "predicted": [
+        "d3d2",
+        "e5e6",
+        "d2d1q"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0phaL",
+      "predicted": [
+        "a1d1",
+        "d7d1"
+      ],
+      "legal_plies": 2,
+      "status": "game_over"
+    },
+    {
+      "id": "policy-v5-0qH2m",
+      "predicted": [
+        "b3h3",
+        "f6h6",
+        "h3h6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0qHqi",
+      "predicted": [
+        "f6e7",
+        "f8e8",
+        "e7d8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0r3qG",
+      "predicted": [
+        "g4g5",
+        "h6g5",
+        "h4g5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0rN6X",
+      "predicted": [
+        "f4f5",
+        "f3d5",
+        "d4d5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0rWNT",
+      "predicted": [
+        "e4e5",
+        "g7e6",
+        "d4f5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0sFTV",
+      "predicted": [
+        "d4f6",
+        "e7f6",
+        "f1f6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0sKYA",
+      "predicted": [
+        "e8g8",
+        "g7f6",
+        "c8d8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0ssYd",
+      "predicted": [
+        "a5a1",
+        "d4a1",
+        "a7a1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0t22t",
+      "predicted": [
+        "e7g5",
+        "f4g5",
+        "d8g5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0t4Da",
+      "predicted": [
+        "a2b2",
+        "b4a5",
+        "b2b7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0tfQH",
+      "predicted": [
+        "f8b4",
+        "c1c3",
+        "e5d3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0uE4Q",
+      "predicted": [
+        "d7c5",
+        "c2c5",
+        "d5c5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0uU9p",
+      "predicted": [
+        "d1f1",
+        "g1f1",
+        "d8f6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0udNS",
+      "predicted": [
+        "f6e4",
+        "d2d1",
+        "e4c3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0unQs",
+      "predicted": [
+        "d1d8",
+        "g8h7"
+      ],
+      "legal_plies": 1,
+      "status": "illegal_move"
+    },
+    {
+      "id": "policy-v5-0upKK",
+      "predicted": [
+        "f4h3",
+        "g2h3",
+        "f8f3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0uwR1",
+      "predicted": [
+        "a1a8",
+        "c8b7",
+        "a8g8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0vEZA",
+      "predicted": [
+        "f6f7",
+        "f8f7",
+        "f2f7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0vGnA",
+      "predicted": [
+        "b4e7",
+        "f8e7",
+        "g5g7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0vZCl",
+      "predicted": [
+        "e5f3",
+        "e1f1",
+        "e7e1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0w4cI",
+      "predicted": [
+        "e5f3",
+        "g1h1",
+        "f3g5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0wEJ4",
+      "predicted": [
+        "e4c6",
+        "b7c6",
+        "c2g6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0wYco",
+      "predicted": [
+        "c4e4",
+        "e2e4",
+        "d1c1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0wpxv",
+      "predicted": [
+        "c3c8",
+        "g8h7",
+        "g2e4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0wyOy",
+      "predicted": [
+        "h6f7",
+        "h8g7",
+        "h5h6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0xLGy",
+      "predicted": [
+        "b6f2",
+        "h4h5",
+        "g2h3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0xQqz",
+      "predicted": [
+        "f7f5",
+        "d3c4",
+        "g8h8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0xRaD",
+      "predicted": [
+        "e5f6",
+        "c7a5",
+        "b3b4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0xnmv",
+      "predicted": [
+        "c2g6",
+        "d6g6",
+        "g4g6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0xzLQ",
+      "predicted": [
+        "g4f2",
+        "f1f2",
+        "d8d1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0yLvo",
+      "predicted": [
+        "g6c6",
+        "h4d8",
+        "c6b6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0yXjW",
+      "predicted": [
+        "d8h4",
+        "f3h3",
+        "h4f2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0yhx1",
+      "predicted": [
+        "f7f1",
+        "f8f1"
+      ],
+      "legal_plies": 1,
+      "status": "illegal_move"
+    },
+    {
+      "id": "policy-v5-0yscI",
+      "predicted": [
+        "e4f5",
+        "d6d5",
+        "f5f6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0ywCl",
+      "predicted": [
+        "a4a2",
+        "b1a2",
+        "c4e5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0z9gy",
+      "predicted": [
+        "d2b3",
+        "d4g4",
+        "b3c5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-0zGVj",
+      "predicted": [
+        "f4f5",
+        "e6f5",
+        "h7h6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-10cpC",
+      "predicted": [
+        "f5f4",
+        "g3f4",
+        "g4g3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-111bl",
+      "predicted": [
+        "g8g3",
+        "h2g3",
+        "h4g3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-11bRn",
+      "predicted": [
+        "f4e2",
+        "f3e2",
+        "f8f4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-11cER",
+      "predicted": [
+        "d3g3",
+        "h2h1",
+        "g3h3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-11can",
+      "predicted": [
+        "c3c1",
+        "d2d1",
+        "g7c3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-11hGA",
+      "predicted": [
+        "a2a1",
+        "e2e1",
+        "a1e1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-11hxn",
+      "predicted": [
+        "c4c8",
+        "f5c8",
+        "a1c1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-11kDC",
+      "predicted": [
+        "c1c4",
+        "b5c4",
+        "d4c4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-12Xkz",
+      "predicted": [
+        "b6b7",
+        "e4e1"
+      ],
+      "legal_plies": 2,
+      "status": "game_over"
+    },
+    {
+      "id": "policy-v5-12fQt",
+      "predicted": [
+        "c3a1",
+        "d2d1",
+        "a1d1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-137Sa",
+      "predicted": [
+        "a7c7",
+        "c8c7",
+        "b6c7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-13Ejq",
+      "predicted": [
+        "d1d8",
+        "f5f8",
+        "d8f8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-13JpV",
+      "predicted": [
+        "d6h2",
+        "g1h1",
+        "e8e4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-13WKe",
+      "predicted": [
+        "a3c5",
+        "d6d3",
+        "c5b6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-13if2",
+      "predicted": [
+        "c4f7",
+        "g8f8",
+        "c1c7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-13irr",
+      "predicted": [
+        "b3f7",
+        "g8h8",
+        "f7g7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-140Ah",
+      "predicted": [
+        "f3f7",
+        "g8h8",
+        "f7f8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1410F",
+      "predicted": [
+        "f6g4",
+        "h3g4",
+        "f2f1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-147eV",
+      "predicted": [
+        "g6e5",
+        "d7c7",
+        "e5c4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-15SBF",
+      "predicted": [
+        "d1d8",
+        "f8d8",
+        "c3f6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-15wVh",
+      "predicted": [
+        "h5h6",
+        "f6g5",
+        "h6c6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-16lHe",
+      "predicted": [
+        "d3h7",
+        "f6h7",
+        "d1d4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-16mdr",
+      "predicted": [
+        "d7d8",
+        "e7e8",
+        "d8e8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-171RS",
+      "predicted": [
+        "e3e8",
+        "d8e8",
+        "c7e7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-17EPE",
+      "predicted": [
+        "e5f3",
+        "d5f3",
+        "d8e7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-17Hph",
+      "predicted": [
+        "c4c3",
+        "e4g4",
+        "g7f8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-183gi",
+      "predicted": [
+        "d6d1",
+        "f1d1",
+        "d7e5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-186q5",
+      "predicted": [
+        "h4e1",
+        "f5f1",
+        "f6f1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-187M3",
+      "predicted": [
+        "g4g5",
+        "f6g5",
+        "g7g5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-18Y7E",
+      "predicted": [
+        "f6d8",
+        "f8g7",
+        "h5h6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-18zqp",
+      "predicted": [
+        "a5a4",
+        "d1a4",
+        "b5a4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-195oS",
+      "predicted": [
+        "b3b1",
+        "c4c1",
+        "b1c1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-19QId",
+      "predicted": [
+        "f5f6",
+        "g7g6",
+        "d5e7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-19XCN",
+      "predicted": [
+        "f4f5",
+        "d7e6",
+        "f5e6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-19am2",
+      "predicted": [
+        "b7g2",
+        "h1g2",
+        "f7a7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-19hPd",
+      "predicted": [
+        "d4f6",
+        "g7f6",
+        "b5d4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1APM3",
+      "predicted": [
+        "a5b3",
+        "c1c2",
+        "d8d2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1AQzs",
+      "predicted": [
+        "c7a7",
+        "d4a7",
+        "g3g2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1Adbs",
+      "predicted": [
+        "c6d7",
+        "d8d7",
+        "c1b2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1Aj0D",
+      "predicted": [
+        "f4e2",
+        "h6h7"
+      ],
+      "legal_plies": 2,
+      "status": "game_over"
+    },
+    {
+      "id": "policy-v5-1Awh9",
+      "predicted": [
+        "b2g2",
+        "g1h1",
+        "e4f2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1BO2d",
+      "predicted": [
+        "e5h2",
+        "g1h1",
+        "h8f8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1BSQh",
+      "predicted": [
+        "f3f7",
+        "f8f7",
+        "f1f7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1BrOL",
+      "predicted": [
+        "f4f7",
+        "g8h8",
+        "f7f8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1BuOG",
+      "predicted": [
+        "c5f2",
+        "g1h1",
+        "e2d1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1CJJa",
+      "predicted": [
+        "g4h4",
+        "f2h4",
+        "g5g4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1COJu",
+      "predicted": [
+        "g4f2",
+        "h1g1",
+        "f2d1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1CWoh",
+      "predicted": [
+        "f2f1",
+        "e1f1",
+        "f8f1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1CoiQ",
+      "predicted": [
+        "c7c8q",
+        "h3c8",
+        "b7c8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1D6CB",
+      "predicted": [
+        "e1c1",
+        "c8b8",
+        "a1a5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1DBn1",
+      "predicted": [
+        "d2c2",
+        "c4d3",
+        "c2c3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1DFma",
+      "predicted": [
+        "b5a7",
+        "b8a7",
+        "e3b6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1DYb8",
+      "predicted": [
+        "f3d1",
+        "d6b5",
+        "c7d7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1EBaf",
+      "predicted": [
+        "d1d8",
+        "c8d8",
+        "f5c2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1EE4f",
+      "predicted": [
+        "c4c1",
+        "a1c1",
+        "c8c1"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1EJ2c",
+      "predicted": [
+        "d5e7",
+        "g8h8",
+        "h1h2"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1EMHj",
+      "predicted": [
+        "e5b8",
+        "g8g7",
+        "b8e5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1EMR3",
+      "predicted": [
+        "a3c1",
+        "h1h2",
+        "c1f4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1Edx9",
+      "predicted": [
+        "g4f3",
+        "e3f3",
+        "h3f3"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1Ejpp",
+      "predicted": [
+        "e1e8",
+        "g7f8",
+        "b6d7"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1EuiQ",
+      "predicted": [
+        "b7f7",
+        "f8f7",
+        "a6a8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1F0sb",
+      "predicted": [
+        "e5f6",
+        "d5f6",
+        "g3g6"
+      ],
+      "legal_plies": 2,
+      "status": "illegal_move"
+    },
+    {
+      "id": "policy-v5-1F3Uf",
+      "predicted": [
+        "d8c8",
+        "f6f7",
+        "e3f4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1FAfb",
+      "predicted": [
+        "h4e1",
+        "c4f1",
+        "d6c5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1FBJ1",
+      "predicted": [
+        "c4g8",
+        "g4d1",
+        "g8e6"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1FJMz",
+      "predicted": [
+        "g5d5",
+        "g8g7",
+        "d5e4"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1FTkq",
+      "predicted": [
+        "d2b4",
+        "f8g8",
+        "c4d5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1FqGP",
+      "predicted": [
+        "f4f7",
+        "g8h8",
+        "f7f8"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    },
+    {
+      "id": "policy-v5-1GsY3",
+      "predicted": [
+        "b4d3",
+        "e1e2",
+        "d3c5"
+      ],
+      "legal_plies": 3,
+      "status": "completed"
+    }
+  ]
+}
