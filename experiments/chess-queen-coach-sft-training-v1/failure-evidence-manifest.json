@@ -1,0 +1,41 @@
+{
+  "schema": "chess.failed-training-public-evidence.v1",
+  "scope": "Closed v1 failure; no trained model result, saved post-training weights or held inference. Unknown final micro retained.",
+  "files": [
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/failure-evidence/failure.json",
+      "bytes": 13847,
+      "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/failure-evidence/worker.json",
+      "bytes": 617,
+      "sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/failure-evidence/training-calls.jsonl",
+      "bytes": 38765,
+      "sha256": "d1368094576d1302c5ef86c8e23c56cb0609e1b8c2d63ee20391c96aabf6681b"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/failure-evidence/training.resources.jsonl",
+      "bytes": 158687,
+      "sha256": "5a5408dec8cd3fb353a636a3930c6566161c80e67ada953a77ee9aace29e8e17"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/failure-evidence/independent-result.json",
+      "bytes": 1954,
+      "sha256": "cb30659cb62c78bd53eab3d30475e0647e0ba4a33db088617e5e436720cb166c"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/failure-evidence/independent-review.md",
+      "bytes": 2799,
+      "sha256": "15875780ba3dad3b14727a3e6ee339bf6c549ed88ad3045fb630121b1ea7e492"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v1/failure-evidence/independent-audit.py",
+      "bytes": 8354,
+      "sha256": "ae1d10fa19bdc67bc95d2881fac36f2a0625e98ad7562dd250a56a4a50111703"
+    }
+  ]
+}

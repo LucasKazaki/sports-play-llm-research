@@ -1,5 +1,36 @@
 # SportsPlayLLMResearch
 
+## Coaching research update — October 16, 2026
+
+Two local coaching variants completed 192-update training runs and independent
+engineering audits. On two repeatedly used development games, the later-move
+variant improved recognized check/capture descriptions but reduced free
+three-ply teacher agreement from 2/2 to 1/2. These observations do not establish
+fresh generalization or teaching quality. The planned 96-response fresh
+comparison missed its 20:30 UTC admission and remains **UNRUN**.
+
+See the [training and evaluation record](research/chess-conditional-line-development-2026-10-16.md)
+and [current research radar](research/chess-research-radar-2026-10-16.md).
+The [separate trained presentation](prototype/chess_tutor_daytime192_presentation_v3/README.md)
+passed authored and desktop/phone browser checks and is currently off. The study
+below uses the earlier manual draft profile; keep those model identities
+separate when collecting tutor feedback.
+
+## Live chess study candidate — October 16, 2026
+
+The [new local tutor view](prototype/chess_tutor_v1/README.md) imports FEN/PGN,
+plays and replays legal moves, compares Stockfish alternatives, and shows an
+independent local classifier's raw three-ply forecast. Engine continuations and
+checked board facts are clearly attributed. Run `scripts/start-chess-tutor.ps1`
+and open `http://127.0.0.1:8793/`. The interface has 32 focused software checks
+and desktop/mobile browser verification; teaching quality remains unmeasured.
+
+New experiments address the failures below: [balanced check learning](experiments/chess-check-balanced-v2/README.md)
+and [a larger move-policy distillation](experiments/chess-move-policy-v5/README.md).
+Their actual outcomes, including interruptions and regressions, are reported
+separately from interface readiness. No engine binary, model weight or creator
+video is redistributed by this source change.
+
 ## Move-only language-policy pilot v4 — October 15, 2026
 
 The [new language-policy experiment](reports/chess-move-only-lm-v4-2026-10-15.md)

@@ -1,0 +1,49 @@
+{
+  "status": "passed_source_and_design_only",
+  "created_utc": "2026-10-16T11:16:06.550142+00:00",
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan-v2.json",
+      "sha256": "6aeeec01abc898ab35d614af4b53d5f827b91e7657ad0c1c31e989f1b0189e99",
+      "bytes": 7556
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\existing-checkpoint-comparison-source-bundle-v2.txt",
+      "sha256": "a0a7c214022b7d79cc82fdff92f046d4fbc931876ff62e554c9d23bc171027a8",
+      "bytes": 22466
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\prepare_protocol.py",
+      "sha256": "e3afab7ddf2e2aa77b837e3dcfd668053fa3e119bce89ffa5a0f10e0de9aacd2",
+      "bytes": 6803
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_existing_checkpoint_comparison_v1.py",
+      "sha256": "04da8178eea017f6fe7bf99acd12f1f15ae2f1126147f5a777e2d074b6d22594",
+      "bytes": 6764
+    }
+  ],
+  "scope": "Complete22466-byte design+builder+tests+retained receipt bundle independently read,10pureCPUtests run. No actual protocol freeze or active qualification/output/quality reads.",
+  "cpu_tests": {
+    "passed": 10,
+    "seconds": 0.36,
+    "tool_chunk": "a49008"
+  },
+  "timer_correction": "Independent comparison proves all prior design cohort/checkpoint/science/settings/budget fields unchanged; only timer-description/timestamp/addendum changed.120 metadata unused; active180generator210child4500phase/11:30admission13cutoff.",
+  "blocking_source_findings": [],
+  "go_scope": "Root may prepare the exact final no-training fixedterminal256 versus devselected64 comparison protocol ONLY after successful matching actual qualification and independent closed audit exist. Frozen resulting plan still requires readback review before any fresh model call.",
+  "confirmed_contracts": [
+    "Literal fixed256/bd8a and64/73e6 identities must equal actual metadata and file bytes; direct old-SFT candidate/source provenance.",
+    "96requests/48percondition/16games,256first64second, all512reserved; separate exact spent-cohort receipt with all16groups before dispatch.",
+    "Qualifying outer verify must bind successful2requests/closed worker script+fullarguments/actual independent audit/same runtime and source.",
+    "References bytehash only during preparation; current frozen outer opens semantics only after all96raw calls close without backend failure.",
+    "No learning, selection, legal replacement or oldheld retry; no whole-prose/Elo claim."
+  ],
+  "limits": [
+    "These are two previously trained checkpoints on16matched source groups. Internalbaseline key denotes trainedterminal256 and must stay labelled accordingly in publication.",
+    "Current qualification remains active and was not inspected; this sourceGO is not a capability or dispatch GO.",
+    "Tests use authored metadata stubs; actual final protocol dependency/worker/audit hashes must be reviewed after freeze.",
+    "Phase cap may leave notrun cases; no deadline extension or rerun is implied."
+  ],
+  "followUpTasks": []
+}

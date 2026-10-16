@@ -1,0 +1,176 @@
+{
+  "schema": "chess.queen-qlora-authored-diagnostic-protocol.v1",
+  "frozen_at": "2026-10-16T07:41:37.354414+00:00",
+  "implementation_sha256": "14b0a3e17a5127d565b571d079f6d0bb84ec8adacc3b7a8c61df2addfe612e9f",
+  "kind": "One authored forward/backward/AdamW update; numerical/gradient/resource feasibility only. No source game selected and no chess-understanding or coaching quality claim.",
+  "fixture": {
+    "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1"
+  },
+  "target": "ANALYSIS:\nThe move <PIECE_MQ><SQUARE_39><SQUARE_60> gives checkmate. It does not capture a piece.\nBEST_MOVE: <PIECE_MQ><SQUARE_39><SQUARE_60>\nCRITICAL_LINE: <PIECE_MQ><SQUARE_39><SQUARE_60>\nPROMISING_MOVES: <PIECE_MQ><SQUARE_39><SQUARE_60>\nEVALUATION: Checkmate for player",
+  "input_contract": "Current FEN only. Native no-forward packet validator and exact current-only encoder. Authored verified mate appears in assistant TARGET only. Original model hallucinated prose is not used as supervision.",
+  "lora": {
+    "r": 8,
+    "lora_alpha": 16,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "lora_dropout": 0,
+    "bias": "none",
+    "task_type": "CAUSAL_LM"
+  },
+  "seed": 4082082,
+  "learning_rate": 0.0001,
+  "optimizer": {
+    "name": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.01,
+    "foreach": false,
+    "gradient_clip_norm": 1.0,
+    "updates": 1
+  },
+  "trainable": {
+    "tensor_count": 144,
+    "parameter_count": 1916928,
+    "dtype": "float32",
+    "device": "cuda0",
+    "initialization": "PEFT zero-B no-op",
+    "scope": "Onlyq/v LoRA A/B in all36decoder layers; no trained bridge/embedding/encoder/baseweight"
+  },
+  "forward": {
+    "implementation": "Exact pinned official Flamingo manual walk, actual base decoder object retained after PEFT injects in place; n_new_tokens0/lora_rank0 constructor avoids duplicate/refrozen LoRA.",
+    "conditioning": "Encoder current FEN under no_grad;16frozen BF16 bridges inside ordinary autograd/manual checkpoint closures.",
+    "checkpointing": "rl_activation_checkpointingTrue -> use_reentrantFalse/preserve_rng_stateFalse perofficialsource; HF layer checkpointing muststayoff to avoiddoublecheckpoint.",
+    "loss": "Official full128333-vocabulary shifted CE, assistant/closing tokens only; logit_chunk_size32, no truncation, context\u2264512.",
+    "precision": "Same reviewed math_sdpa_fp32_reduction; quantbaseBF16compute and frozen BF16 full tied embedding/head retained. No generic prepare_model_for_kbit_training bulkFP32 upcast.",
+    "cache": false
+  },
+  "storage_verification": "Stream exact raw storage hashes before/after for all original registered decoder/encoder/bridge params/buffers plus unregistered nestedNF4 scale/codebook tensors using\u22641MiB host chunks. Require unchanged complete frozen hash and no frozen gradients; allLoRA gradients finite/nonzeroinaggregate, LoRA storage hashchanged. No adapted weights are promoted or reused for TRAIN.",
+  "required_checks": [
+    "base_decoder_identity_preserved",
+    "bf16_tied_vocabulary_preserved",
+    "finite_loss",
+    "finite_nonzero_lora_gradients",
+    "frozen_gradients_absent",
+    "frozen_storage_exactly_unchanged",
+    "full_expected_fp32_lora_inventory",
+    "lora_storage_actually_changed"
+  ],
+  "maximum_seconds": 240,
+  "worker_deadline_seconds": 270,
+  "worker_maximum_seconds_argument": 240,
+  "resources": {
+    "start_physical_available_bytes": 6442450944,
+    "start_commit_headroom_bytes": 10737418240,
+    "start_gpu_free_bytes": 10737418240,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 4294967296,
+    "stop_gpu_free_bytes": 1073741824
+  },
+  "durability": "Create-only attempt before setup; one full planned update retained. Save intent and completion/timing per load/hash/encoder/loss/backward/update stage. Count/persist actual completed update before poststep resource guard. First exception/resource/cancel ends all further work; preserve started/unknown phases and failures, no repeat under same receipt.",
+  "interpretation": "A finite nonzero gradient and changed LoRA prove software learning machinery works on this authored target only. It cannot establish chess understanding, generalization or coaching. Fresh optimizer/seed and separately frozen source corpus/training/evaluation are needed later.",
+  "kernel_protocol": {
+    "path": "experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+    "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+  },
+  "kernel_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/kernel-2.json",
+    "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+  },
+  "authored_runtime_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/authored-0.json",
+    "sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91"
+  },
+  "runtime_versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0",
+    "numpy": "2.5.4"
+  },
+  "dependencies": [
+    {
+      "path": "scripts/chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "path": "scripts/chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "scripts/chess_queen_materialize.py",
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "scripts/chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "path": "tests/test_chess_queen_qlora_v1.py",
+      "sha256": "a01c32f416b67d8610d6bb8cfb9df75a349fe10e9100971d35e6579cff0ce4b9"
+    },
+    {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/parity-protocol-v3.json",
+      "sha256": "6287196f26689aedcb5d8a314330ed26ff96cff5569e7f4b80073ebe3babe244"
+    },
+    {
+      "path": "data/private/chess-queen-nf4-v1/parity-2.json",
+      "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4"
+    },
+    {
+      "path": "data/private/chess-queen-nf4-v1/parity-worker-2.json",
+      "sha256": "28e55981247df3b381845c831efb02b180a18992531ceda54606d2c3031a5999"
+    },
+    {
+      "path": "data/private/chess-queen-nf4-v1/authored-0-worker.json",
+      "sha256": "b83c3d67e709414854245cfb37cf2c96cf7fe2dc37cff11af5fc83c15a9ec014"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/instance_format.py",
+      "sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/base.py",
+      "sha256": "bc74975b7c3b17689f863de78bed254a5761a8c64ea68998ca784ac856cd7fce"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/flamingo.py",
+      "sha256": "7757093bdb2187085e57dcebf2925ece7471475768a2f93f9b683fd49a903ab1"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/adapters/smollm.py",
+      "sha256": "1ecafe62de6aa810fd2da4fedc78a7c90ee6685dbd0769405e4f39984ce1babb"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/peft/mapping_func.py",
+      "sha256": "c80fc5702d6df00a6f84756f3fbfdc5d495342bc8027dd03d09b993112bde8d2"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/peft/peft_model.py",
+      "sha256": "d22a1c50dea7a046ce28e71a79dfc20b1d96a2d238a9b457be6a88b6068e04d5"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/peft/utils/other.py",
+      "sha256": "6b87957915ba399bfb6bbd57b9404aa12f0e9f4e27b19ef1b6c68ac052148f9b"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/peft/tuners/lora/bnb.py",
+      "sha256": "96ed6fda63d7c67a4646faea8ba38483e8be8670059a3ac3dd740a99bdab6950"
+    },
+    {
+      "path": ".venv-soccernet/Lib/site-packages/transformers/modeling_layers.py",
+      "sha256": "ee84c7229582bc2f47bac19327ac2d96530bf94a182b5366d72d10330da99df4"
+    }
+  ],
+  "full_training_scope": "NOT FROZEN: throughput-informed pilot proposed1024freshTRAINgames/2048pairedexamples,32devNLLgames/raw4fixedgamesx2modes/checkpoint,16new3plyheldgames baseline+selectedx2modes. All generation1024tokens180s equally. No corpus selected or heldout called by this diagnostic."
+}

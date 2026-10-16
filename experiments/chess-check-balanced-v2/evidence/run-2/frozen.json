@@ -1,0 +1,22 @@
+{
+  "schema": "chess.check-balanced.v2",
+  "files_sha256": {
+    "dataset.json": "d90fedb8ee93a7f92ab73e071ed3eb8022c35ed00dc8f77ba8b9ed54c2d64216",
+    "dev-inputs.json": "9c8de1bfba76fa52271cf614ad0ccd8199abc561711b3145d423069e46b71f48",
+    "dev-labels.json": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9",
+    "holdout-inputs.json": "d80852623f9e1a80588911a9a40329a95e545a6cc5484b7332ef6efc6ce06fdc",
+    "holdout-labels.json": "401ed1db8b92f9fe5c3c84bb25a971ceb3cf87401df0dcad629e82b7e423dae5",
+    "initial-exclusions.json": "bee7aa4c9a35d60a3c8d7d04123b6f0e7fc2cb2530f7a3f5f7333a705093a3c6",
+    "protocol.json": "7c7c7c4bc05e661874468c4dcd2b219c3f2c64a87fbc953d00097cad5ba24a83",
+    "selection.jsonl": "99879de92b4c5402e30ab16d292f66307c53b54bcb210adac77e8fbd50ed9670",
+    "train-inputs.json": "da6103e37c87b4433d81dbe97d2e544b9b9d96f900660cd926a9d182160e5e82",
+    "train-labels.json": "016d9a0650b1c1d3c168af33e82d841721276f79ebbfbae5c9a8df36bc619379"
+  },
+  "protocol_sha256": "7c7c7c4bc05e661874468c4dcd2b219c3f2c64a87fbc953d00097cad5ba24a83",
+  "counts": {
+    "train": 16384,
+    "dev": 256,
+    "holdout": 512
+  },
+  "model_calls": 0
+}

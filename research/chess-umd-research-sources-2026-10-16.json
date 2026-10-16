@@ -1,0 +1,20 @@
+{
+  "reviewed_on": "2026-10-16",
+  "institution": "University of Maryland, College Park",
+  "scope": "Read-only current primary-source guidance; no institutional authorization, legal conclusion, IRB determination, contact or submission",
+  "sources": [
+    {"title": "Guidelines for Use", "url": "https://ai.umd.edu/resources-guidelines/guidelines-for-use", "visible_date": "Approved and effective 2025-01-15", "retrieval": "direct page", "use": "Scope, human oversight, transparency, research data/tool handling, venue/funder rules"},
+    {"title": "Policy on Integrity and Responsible Conduct in Scholarly Work", "url": "https://policies.umd.edu/academic-affairs/university-of-maryland-policy-on-integrity-and-responsible-conduct-in-scholarly-work", "visible_date": "Interim amendment effective 2026-01-01 pending Senate review", "retrieval": "direct page", "use": "Honesty, rigor, transparency, authorship/credit, UMD auspices boundary"},
+    {"title": "AI and Scholarly Communications: Disclosures", "url": "https://lib.guides.umd.edu/ai-scholarly-communications/disclosures", "visible_date": null, "retrieval": "official-page indexed contents; direct page HTTP429", "use": "Record and disclose AI use for methodological transparency and reproducibility"},
+    {"title": "AI and Scholarly Communications: Publisher Policies", "url": "https://lib.guides.umd.edu/ai-scholarly-communications/publisher-policies", "visible_date": null, "retrieval": "official-page indexed contents; direct retrieval incomplete/rate-limited", "use": "Venue-specific authorship/AI assistance/disclosure rules"},
+    {"title": "Data Management Planning", "url": "https://researchdata.umd.edu/plan/data-management-planning-dmp", "visible_date": null, "retrieval": "direct page", "use": "Early plan, responsibilities, data/code documentation, storage, sharing, retention, licenses"},
+    {"title": "FAIR Data Standards", "url": "https://researchdata.umd.edu/share-preserve/fair-data-standards", "visible_date": null, "retrieval": "direct page", "use": "Metadata, identifiers, repositories, licenses and provenance"},
+    {"title": "Handling Sensitive Data", "url": "https://researchdata.umd.edu/collect-manage/handling-sensitive-data", "visible_date": null, "retrieval": "direct page", "use": "Classification, consent, de-identification and access controls"},
+    {"title": "Institutional Review Board: Review Paths", "url": "https://research.umd.edu/resources/irb", "visible_date": null, "retrieval": "direct page", "use": "Official determination through Kuali-IRB when applicability is uncertain"},
+    {"title": "IRB Guidance and Best Practices: Generative AI", "url": "https://research.umd.edu/resources/irb-guidance", "visible_date": null, "retrieval": "direct page", "use": "AI service classification and participant disclosure guidance"}
+  ],
+  "not_accessed": ["active pilot development/held quality", "held-reference contents"],
+  "new_model_calls": 0,
+  "new_engine_calls": 0,
+  "source_changes": 0
+}

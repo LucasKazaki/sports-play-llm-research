@@ -1,0 +1,93 @@
+{
+  "schema": "chess.independent-generalization-inference-source-review.v1",
+  "verdict": "GO for exact frozen root-only inference protocol after coach heldout worker is terminal and shared GPU lease is free; no model execution by reviewer",
+  "reviewed_at_utc": "2026-10-16T09:38:24.731724+00:00",
+  "full_finite_read": {
+    "source": true,
+    "tests": true,
+    "retained_software_result": true,
+    "protocol": true,
+    "protocol_preparer": true,
+    "bundles": [
+      {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-generalization-inference-review-1.txt",
+        "bytes": 25679,
+        "sha256": "256e4e12f03a26fbd59ae77fb4ec2693ba18eae8e28a787c6bbd23d1e316cf16"
+      },
+      {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-generalization-inference-review-2.txt",
+        "bytes": 15592,
+        "sha256": "4252d978904d21315250cb01e70686929bee5b92da1f2c72b79b19a4645b26b1"
+      }
+    ]
+  },
+  "execution_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_encoder_check_generalization_eval_v1.py",
+      "bytes": 16441,
+      "sha256": "921cfffa395738c51a5ef209533a4b7700d06edc9dc3b5e2671a9e26b9a2ce24"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_encoder_check_generalization_eval_v1.py",
+      "bytes": 7914,
+      "sha256": "460b689fe6e98c0a07253acd4dfa962d9ab15ebbe18857990fa75ee93275fcaf"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-protocol.json",
+      "bytes": 9493,
+      "sha256": "6f55d7c7e97cee216ab433de962e80a6632452670e2f3fb8577d4affe0e7c758"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\prepare_inference_protocol.py",
+      "bytes": 5723,
+      "sha256": "ddd8abae7cb6cb43ce746c5960557fe8e61c3320bd6f4d8914088db69b560fd5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-software-tests.json",
+      "bytes": 498,
+      "sha256": "0582595dd0c238157225c69f69d0740fbef7a8f7fb7ec1c1890f71b73775ad68"
+    }
+  ],
+  "actual_cohort_independent_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\encoder-generalization-cohort-v1-closed-review.json",
+    "bytes": 27069,
+    "sha256": "cf0a77a25aa5e3dd20ea32feb04e19ec98b8784447b7b07e990d39863a9bde56"
+  },
+  "public_cohort_review_byte_exact": true,
+  "independent_CPU_test": {
+    "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_encoder_check_generalization_eval_v1.py tests/test_chess_encoder_check_generalization_v1.py -q",
+    "exit_code": 0,
+    "output": "26 passed in0.39s",
+    "chunk_id": "ca730a",
+    "scope": "Authored callbacks and chess fixtures only; no actual feature/model calls."
+  },
+  "fresh_metadata_verify": {
+    "passed": true,
+    "torch_pyarrow_bnb_transformers_peft_imported": false,
+    "constructed_pairs_bound": 64,
+    "actual_moves_per_condition": 128
+  },
+  "confirmed": [
+    "Fixed old epoch0/epoch4 identities, no optimizer/training/new checkpoint selection.",
+    "Both128-row raw ledgers,64requested pairslots/128moveslots and label-free feature manifest precede resource/backend setup.",
+    "One frozen LC0 BF16 current-FEN encode per deduplicated board; exact old3072mean/source/target features and nativePOV integer indices; encoder released before head calls.",
+    "Feature shard keys strictly features/indices; header binds protocol/input/encoderweights/encoder source/planes/oldfeature source, and every row/shard hash is checked.",
+    "Raw finite scalar logits and >=0 threshold, no legal mask, rule rescue or label input. Strict weights_onlyCPU head state loads and FP32finite/count validation.",
+    "Semantic labels and mapping/flags loaded only after both full raw condition ledgers complete. Hash binding before calls does not pass label content to encoder/head.",
+    "Durable feature/raw pre-call intents and full unknown/notrun rows; first failure stops later boards/batches/conditions.",
+    "Scores keep actual128/fullpair64 denominators and explicit requested128sourcecoverage; overlapping flags select both members of each positive-flagged pair, separately from exclusive allocations.",
+    "Majorityfalse computed only after both raw conditions close; no source replacement or newselection."
+  ],
+  "blocking_findings": [],
+  "limits": [
+    "Small targeted balanced64pair tactical classification panel is not language understanding, explanation factuality, coaching, Elo or population prevalence.",
+    "Lasttwo strata have different-instance negatives and cannot claim same-origin matching.",
+    "Any failed attempt retains full ledgers without opening labels or fabricating aggregate accuracy.",
+    "Inherited resources prose mentions optimizer updates; actual inference has zero optimizer updates and calls the guard before each encoder call/head batch. Frozen numeric floors come from the original reviewed head guard.",
+    "No UI promotion from these results; independent closed outcome audit still required."
+  ],
+  "reviewer_model_calls": 0,
+  "reviewer_engine_calls": 0,
+  "reviewer_GPU_calls": 0,
+  "coach_teacher_or_held_reference_content_read": false
+}

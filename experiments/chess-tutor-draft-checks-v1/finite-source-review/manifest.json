@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "test_exit_code": 0,
+  "executed_at_utc": "2026-10-16T11:53:17.182972+00:00",
+  "command": [
+    "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_chess_tutor_draft_checks_v1.py",
+    "tests/test_chess_tutor_draft_checks_ui_v1.py",
+    "tests/test_chess_tutor_coaching_prose.py",
+    "tests/test_chess_tutor_v1.py",
+    "-k",
+    "not real_engine",
+    "-q"
+  ],
+  "test_output": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\test-output.txt",
+    "bytes": 194,
+    "sha256": "b2bd728bb91dd820a380433c9ec13ed5c8df8a472db3e784f88dfce7efcf8e79"
+  },
+  "source_files": [
+    {
+      "path": "prototype/chess_tutor_v1/draft_checks_v1.py",
+      "bytes": 10253,
+      "sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/coaching_jobs.py",
+      "bytes": 9846,
+      "sha256": "bf8b647d6b08592429a14ca614d0dedcc9dde3b26392af12af3a64a77013fe97"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/coaching.js",
+      "bytes": 14755,
+      "sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/index.html",
+      "bytes": 6961,
+      "sha256": "b12f16e9b2b84bee9fcd50b9817cbc7e8adbbbd8a4a09e5b79dbf38683368336"
+    },
+    {
+      "path": "tests/test_chess_tutor_draft_checks_v1.py",
+      "bytes": 12492,
+      "sha256": "a1e9e233ba4cf16d7a5cabb0d6f828e25e917681decd53acfd5e7df24428cced"
+    },
+    {
+      "path": "tests/test_chess_tutor_draft_checks_ui_v1.py",
+      "bytes": 6554,
+      "sha256": "d56c6eb5545fa6554c5090655b71d627632f10df78184f877a5982cdb722137e"
+    }
+  ],
+  "test_scope": "Authored synthetic board/DOM/API fixtures and existing fake-worker/HTTP unit checks only; real-engine check deselected. No live tutor, model, GPU, engine, heavy dataset or held-reference call.",
+  "prior_development_failures": [
+    "Two initial test collection attempts caught decorator punctuation errors in the new authored test file.",
+    "One subsequent authored Unicode fixture failed after an accidental Windows encoding conversion; source encoding was restored and the exact code-point test now passes."
+  ],
+  "production_raw_or_generator_sources_modified": false,
+  "implementation_source_frozen_for_review": true
+}

@@ -1,0 +1,425 @@
+{
+  "schema": "chess.queen-nf4-authored-outcomes.v1",
+  "protocol_sha256": "9e3b0e9741505eabebf5336f0a8b82239ed65ed71a724de8ca889ce76f564d41",
+  "started_at": "2026-10-16T07:28:40.582846+00:00",
+  "planned": 4,
+  "capability_claims_allowed": false,
+  "rows": [
+    {
+      "index": 0,
+      "packet": {
+        "path": "experiments/chess-queen-v1/authored-mate.json",
+        "sha256": "cacd2cfa6212959b97f583a39218d7d158e40be91c98ec078dd6f0fafd3831e4",
+        "input_keys": [
+          "fen"
+        ],
+        "initial_status": "not_run",
+        "kind": "Authored software fixture; no source-game capability claim"
+      },
+      "status": "completed",
+      "output": "data/private/chess-queen-nf4-v1/authored-0.json",
+      "worker": "data/private/chess-queen-nf4-v1/authored-0-worker.json",
+      "intent_utc": "2026-10-16T07:28:40.679981+00:00",
+      "closed_utc": "2026-10-16T07:30:21.500939+00:00",
+      "backend_failure": false,
+      "response_sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91",
+      "worker_sha256": "b83c3d67e709414854245cfb37cf2c96cf7fe2dc37cff11af5fc83c15a9ec014",
+      "finish_reason": "eos",
+      "error": null,
+      "token_count": 527,
+      "elapsed_seconds": 58.672,
+      "parsed": {
+        "raw_best_field": "<PIECE_MQ><SQUARE_39><SQUARE_60>",
+        "raw_choice_uci": "g5d8",
+        "raw_choice_is_legal": true,
+        "description_valid": true,
+        "accepted_move_uci": "g5d8",
+        "move_rejection": null,
+        "move_source": "raw_structured_best",
+        "duplicate_sections": [],
+        "fallback_used": false,
+        "engine_interventions": 0,
+        "rule_replacements": 0,
+        "critical_line": {
+          "raw": "<PIECE_MQ><SQUARE_39><SQUARE_60>",
+          "steps": [
+            {
+              "ply": 1,
+              "raw": "<PIECE_MQ><SQUARE_39><SQUARE_60>",
+              "raw_uci": "g5d8",
+              "legal": true,
+              "error": null,
+              "san": "Qd8#",
+              "fen_after": "3Q2k1/5ppp/8/8/8/8/5PPP/6K1 b - - 1 1"
+            }
+          ],
+          "failure": null,
+          "legal_prefix_plies": 1,
+          "terminal": true,
+          "scope": "Legality checked only. Engine agreement and strategic quality are not measured."
+        }
+      },
+      "worker_exit_code": 0
+    },
+    {
+      "index": 1,
+      "packet": {
+        "path": "experiments/chess-queen-v1/authored-midgame.json",
+        "sha256": "9f9e8f428684214c3ecf1b7811a2505bd4ccd7d752d314a1e8dc1c3b223885ca",
+        "input_keys": [
+          "fen"
+        ],
+        "initial_status": "not_run",
+        "kind": "Authored software fixture; no source-game capability claim"
+      },
+      "status": "completed",
+      "output": "data/private/chess-queen-nf4-v1/authored-1.json",
+      "worker": "data/private/chess-queen-nf4-v1/authored-1-worker.json",
+      "intent_utc": "2026-10-16T07:30:57.296120+00:00",
+      "closed_utc": "2026-10-16T07:33:45.956217+00:00",
+      "backend_failure": false,
+      "response_sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223",
+      "worker_sha256": "2093974e827c6e65cbaab6773bc722139aefffb27219ac3a9e7c6b541eb7adf0",
+      "finish_reason": "eos",
+      "error": null,
+      "token_count": 982,
+      "elapsed_seconds": 116.547,
+      "parsed": {
+        "raw_best_field": "<PIECE_MN><SQUARE_18><SQUARE_35>",
+        "raw_choice_uci": "b3c5",
+        "raw_choice_is_legal": true,
+        "description_valid": true,
+        "accepted_move_uci": "b3c5",
+        "move_rejection": null,
+        "move_source": "raw_structured_best",
+        "duplicate_sections": [],
+        "fallback_used": false,
+        "engine_interventions": 0,
+        "rule_replacements": 0,
+        "critical_line": {
+          "raw": "<PIECE_MN><SQUARE_18><SQUARE_35> <PIECE_OB><SQUARE_45><PIECE_MP><SQUARE_9> <PIECE_MN><SQUARE_35><SQUARE_25>",
+          "steps": [
+            {
+              "ply": 1,
+              "raw": "<PIECE_MN><SQUARE_18><SQUARE_35>",
+              "raw_uci": "b3c5",
+              "legal": true,
+              "error": null,
+              "san": "Nc5",
+              "fen_after": "r2q1rk1/4bppp/p2pbn2/2N1p3/4P3/2Q1BP2/PPP4P/2KR1B1R b - - 1 15"
+            },
+            {
+              "ply": 2,
+              "raw": "<PIECE_OB><SQUARE_45><PIECE_MP><SQUARE_9>",
+              "raw_uci": "e6a2",
+              "legal": true,
+              "error": null,
+              "san": "Bxa2",
+              "fen_after": "r2q1rk1/4bppp/p2p1n2/2N1p3/4P3/2Q1BP2/bPP4P/2KR1B1R w - - 0 16"
+            },
+            {
+              "ply": 3,
+              "raw": "<PIECE_MN><SQUARE_35><SQUARE_25>",
+              "raw_uci": "c5a4",
+              "legal": true,
+              "error": null,
+              "san": "Na4",
+              "fen_after": "r2q1rk1/4bppp/p2p1n2/4p3/N3P3/2Q1BP2/bPP4P/2KR1B1R b - - 1 16"
+            }
+          ],
+          "failure": null,
+          "legal_prefix_plies": 3,
+          "terminal": false,
+          "scope": "Legality checked only. Engine agreement and strategic quality are not measured."
+        }
+      },
+      "worker_exit_code": 0
+    },
+    {
+      "index": 2,
+      "packet": {
+        "path": "experiments/chess-queen-v1/authored-opening.json",
+        "sha256": "9624697eef4f8da67c03ab4fb59240a10556318d1a12451e898d81a0aa394d43",
+        "input_keys": [
+          "fen"
+        ],
+        "initial_status": "not_run",
+        "kind": "Authored software fixture; no source-game capability claim"
+      },
+      "status": "completed",
+      "output": "data/private/chess-queen-nf4-v1/authored-2.json",
+      "worker": "data/private/chess-queen-nf4-v1/authored-2-worker.json",
+      "intent_utc": "2026-10-16T07:33:46.044888+00:00",
+      "closed_utc": "2026-10-16T07:35:48.175265+00:00",
+      "backend_failure": false,
+      "response_sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0",
+      "worker_sha256": "88efefde491b54cf34fa2de064ea59f7ef170540739d74a871d8e8e7b639a9cd",
+      "finish_reason": "eos",
+      "error": null,
+      "token_count": 723,
+      "elapsed_seconds": 79.704,
+      "parsed": {
+        "raw_best_field": "<PIECE_MP><SQUARE_12><SQUARE_20>",
+        "raw_choice_uci": "d2d3",
+        "raw_choice_is_legal": true,
+        "description_valid": true,
+        "accepted_move_uci": "d2d3",
+        "move_rejection": null,
+        "move_source": "raw_structured_best",
+        "duplicate_sections": [],
+        "fallback_used": false,
+        "engine_interventions": 0,
+        "rule_replacements": 0,
+        "critical_line": {
+          "raw": "<PIECE_MP><SQUARE_12><SQUARE_20> <PIECE_OP><SQUARE_52><SQUARE_44> <PIECE_MK><SQUARE_5><SQUARE_7> <PIECE_ON><SQUARE_63><SQUARE_46> <PIECE_MP><SQUARE_11><SQUARE_19> <PIECE_OK><SQUARE_61><SQUARE_63> <PIECE_MN><SQUARE_2><SQUARE_12> <PIECE_OB><SQUARE_59><SQUARE_45> <PIECE_MP><SQUARE_16><SQUARE_24> <PIECE_OQ><SQUARE_60><SQUARE_52>",
+          "steps": [
+            {
+              "ply": 1,
+              "raw": "<PIECE_MP><SQUARE_12><SQUARE_20>",
+              "raw_uci": "d2d3",
+              "legal": true,
+              "error": null,
+              "san": "d3",
+              "fen_after": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R b KQkq - 0 4"
+            },
+            {
+              "ply": 2,
+              "raw": "<PIECE_OP><SQUARE_52><SQUARE_44>",
+              "raw_uci": "d7d6",
+              "legal": true,
+              "error": null,
+              "san": "d6",
+              "fen_after": "r1bqk1nr/ppp2ppp/2np4/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 0 5"
+            },
+            {
+              "ply": 3,
+              "raw": "<PIECE_MK><SQUARE_5><SQUARE_7>",
+              "raw_uci": "e1g1",
+              "legal": true,
+              "error": null,
+              "san": "O-O",
+              "fen_after": "r1bqk1nr/ppp2ppp/2np4/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 b kq - 1 5"
+            },
+            {
+              "ply": 4,
+              "raw": "<PIECE_ON><SQUARE_63><SQUARE_46>",
+              "raw_uci": "g8f6",
+              "legal": true,
+              "error": null,
+              "san": "Nf6",
+              "fen_after": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/3P1N2/PPP2PPP/RNBQ1RK1 w kq - 2 6"
+            },
+            {
+              "ply": 5,
+              "raw": "<PIECE_MP><SQUARE_11><SQUARE_19>",
+              "raw_uci": "c2c3",
+              "legal": true,
+              "error": null,
+              "san": "c3",
+              "fen_after": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 b kq - 0 6"
+            },
+            {
+              "ply": 6,
+              "raw": "<PIECE_OK><SQUARE_61><SQUARE_63>",
+              "raw_uci": "e8g8",
+              "legal": true,
+              "error": null,
+              "san": "O-O",
+              "fen_after": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w - - 1 7"
+            },
+            {
+              "ply": 7,
+              "raw": "<PIECE_MN><SQUARE_2><SQUARE_12>",
+              "raw_uci": "b1d2",
+              "legal": true,
+              "error": null,
+              "san": "Nbd2",
+              "fen_after": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP1N1PPP/R1BQ1RK1 b - - 2 7"
+            },
+            {
+              "ply": 8,
+              "raw": "<PIECE_OB><SQUARE_59><SQUARE_45>",
+              "raw_uci": "c8e6",
+              "legal": true,
+              "error": null,
+              "san": "Be6",
+              "fen_after": "r2q1rk1/ppp2ppp/2npbn2/2b1p3/2B1P3/2PP1N2/PP1N1PPP/R1BQ1RK1 w - - 3 8"
+            },
+            {
+              "ply": 9,
+              "raw": "<PIECE_MP><SQUARE_16><SQUARE_24>",
+              "raw_uci": "h2h3",
+              "legal": true,
+              "error": null,
+              "san": "h3",
+              "fen_after": "r2q1rk1/ppp2ppp/2npbn2/2b1p3/2B1P3/2PP1N1P/PP1N1PP1/R1BQ1RK1 b - - 0 8"
+            },
+            {
+              "ply": 10,
+              "raw": "<PIECE_OQ><SQUARE_60><SQUARE_52>",
+              "raw_uci": "d8d7",
+              "legal": true,
+              "error": null,
+              "san": "Qd7",
+              "fen_after": "r4rk1/pppq1ppp/2npbn2/2b1p3/2B1P3/2PP1N1P/PP1N1PP1/R1BQ1RK1 w - - 1 9"
+            }
+          ],
+          "failure": null,
+          "legal_prefix_plies": 10,
+          "terminal": false,
+          "scope": "Legality checked only. Engine agreement and strategic quality are not measured."
+        }
+      },
+      "worker_exit_code": 0
+    },
+    {
+      "index": 3,
+      "packet": {
+        "path": "experiments/chess-queen-v1/authored-selected-c3.json",
+        "sha256": "cc639d6d2fc1bdf0b88c847201b6caebd5324e214e1ff22fbf117c1296be6b2c",
+        "input_keys": [
+          "fen",
+          "selected_uci"
+        ],
+        "initial_status": "not_run",
+        "kind": "Authored software fixture; no source-game capability claim"
+      },
+      "status": "completed",
+      "output": "data/private/chess-queen-nf4-v1/authored-3.json",
+      "worker": "data/private/chess-queen-nf4-v1/authored-3-worker.json",
+      "intent_utc": "2026-10-16T07:35:48.274793+00:00",
+      "closed_utc": "2026-10-16T07:37:39.292275+00:00",
+      "backend_failure": false,
+      "response_sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea",
+      "worker_sha256": "e3e2d55ce6078a589a067038513efb21030e1baa3d44f7bdd559dd499687943a",
+      "finish_reason": "eos",
+      "error": null,
+      "token_count": 779,
+      "elapsed_seconds": 88.016,
+      "parsed": {
+        "raw_best_field": "<PIECE_MP><SQUARE_11><SQUARE_19>",
+        "raw_choice_uci": "c2c3",
+        "raw_choice_is_legal": true,
+        "description_valid": true,
+        "accepted_move_uci": "c2c3",
+        "move_rejection": null,
+        "move_source": "raw_structured_best",
+        "duplicate_sections": [],
+        "fallback_used": false,
+        "engine_interventions": 0,
+        "rule_replacements": 0,
+        "critical_line": {
+          "raw": "<PIECE_MP><SQUARE_11><SQUARE_19> <PIECE_OP><SQUARE_52><SQUARE_44> <PIECE_MK><SQUARE_5><SQUARE_7> <PIECE_ON><SQUARE_63><SQUARE_46> <PIECE_MR><SQUARE_6><SQUARE_5> <PIECE_OK><SQUARE_61><SQUARE_63> <PIECE_MP><SQUARE_12><SQUARE_20> <PIECE_OB><SQUARE_59><SQUARE_45> <PIECE_MB><SQUARE_27><PIECE_OB><SQUARE_45> <PIECE_OP><SQUARE_54><PIECE_MB><SQUARE_45> <PIECE_MN><SQUARE_2><SQUARE_12>",
+          "steps": [
+            {
+              "ply": 1,
+              "raw": "<PIECE_MP><SQUARE_11><SQUARE_19>",
+              "raw_uci": "c2c3",
+              "legal": true,
+              "error": null,
+              "san": "c3",
+              "fen_after": "r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R b KQkq - 0 4"
+            },
+            {
+              "ply": 2,
+              "raw": "<PIECE_OP><SQUARE_52><SQUARE_44>",
+              "raw_uci": "d7d6",
+              "legal": true,
+              "error": null,
+              "san": "d6",
+              "fen_after": "r1bqk1nr/ppp2ppp/2np4/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQK2R w KQkq - 0 5"
+            },
+            {
+              "ply": 3,
+              "raw": "<PIECE_MK><SQUARE_5><SQUARE_7>",
+              "raw_uci": "e1g1",
+              "legal": true,
+              "error": null,
+              "san": "O-O",
+              "fen_after": "r1bqk1nr/ppp2ppp/2np4/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQ1RK1 b kq - 1 5"
+            },
+            {
+              "ply": 4,
+              "raw": "<PIECE_ON><SQUARE_63><SQUARE_46>",
+              "raw_uci": "g8f6",
+              "legal": true,
+              "error": null,
+              "san": "Nf6",
+              "fen_after": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQ1RK1 w kq - 2 6"
+            },
+            {
+              "ply": 5,
+              "raw": "<PIECE_MR><SQUARE_6><SQUARE_5>",
+              "raw_uci": "f1e1",
+              "legal": true,
+              "error": null,
+              "san": "Re1",
+              "fen_after": "r1bqk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQR1K1 b kq - 3 6"
+            },
+            {
+              "ply": 6,
+              "raw": "<PIECE_OK><SQUARE_61><SQUARE_63>",
+              "raw_uci": "e8g8",
+              "legal": true,
+              "error": null,
+              "san": "O-O",
+              "fen_after": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2P2N2/PP1P1PPP/RNBQR1K1 w - - 4 7"
+            },
+            {
+              "ply": 7,
+              "raw": "<PIECE_MP><SQUARE_12><SQUARE_20>",
+              "raw_uci": "d2d3",
+              "legal": true,
+              "error": null,
+              "san": "d3",
+              "fen_after": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQR1K1 b - - 0 7"
+            },
+            {
+              "ply": 8,
+              "raw": "<PIECE_OB><SQUARE_59><SQUARE_45>",
+              "raw_uci": "c8e6",
+              "legal": true,
+              "error": null,
+              "san": "Be6",
+              "fen_after": "r2q1rk1/ppp2ppp/2npbn2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQR1K1 w - - 1 8"
+            },
+            {
+              "ply": 9,
+              "raw": "<PIECE_MB><SQUARE_27><PIECE_OB><SQUARE_45>",
+              "raw_uci": "c4e6",
+              "legal": true,
+              "error": null,
+              "san": "Bxe6",
+              "fen_after": "r2q1rk1/ppp2ppp/2npBn2/2b1p3/4P3/2PP1N2/PP3PPP/RNBQR1K1 b - - 0 8"
+            },
+            {
+              "ply": 10,
+              "raw": "<PIECE_OP><SQUARE_54><PIECE_MB><SQUARE_45>",
+              "raw_uci": "f7e6",
+              "legal": true,
+              "error": null,
+              "san": "fxe6",
+              "fen_after": "r2q1rk1/ppp3pp/2nppn2/2b1p3/4P3/2PP1N2/PP3PPP/RNBQR1K1 w - - 0 9"
+            },
+            {
+              "ply": 11,
+              "raw": "<PIECE_MN><SQUARE_2><SQUARE_12>",
+              "raw_uci": "b1d2",
+              "legal": true,
+              "error": null,
+              "san": "Nbd2",
+              "fen_after": "r2q1rk1/ppp3pp/2nppn2/2b1p3/4P3/2PP1N2/PP1N1PPP/R1BQR1K1 b - - 1 9"
+            }
+          ],
+          "failure": null,
+          "legal_prefix_plies": 11,
+          "terminal": false,
+          "scope": "Legality checked only. Engine agreement and strategic quality are not measured."
+        }
+      },
+      "worker_exit_code": 0
+    }
+  ],
+  "completed_count": 4,
+  "status": "completed"
+}

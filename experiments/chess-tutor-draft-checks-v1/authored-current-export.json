@@ -1,0 +1,131 @@
+{
+  "fixture_only": true,
+  "origin": "Authored renderer fixture; no model/engine/production qualification or quality evidence.",
+  "study": {
+    "position": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "moves": []
+    },
+    "selectedUci": "d2d4",
+    "preview": false
+  },
+  "coaching": {
+    "request_id": "authored-contradicted",
+    "status": "completed",
+    "fixture": true,
+    "backend_label": "Authored renderer fixture; no model or engine",
+    "context": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "selected_uci": "d2d4",
+      "selected_san": "d4",
+      "kind": "selected_move",
+      "position": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "moves": []
+      }
+    },
+    "result": {
+      "status": "completed",
+      "finish_reason": "eos",
+      "input": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "selected_uci": "d2d4"
+      },
+      "raw_text": "ANALYSIS:\nThe move <PIECE_MN><SQUARE_7><SQUARE_22> gives checkmate. It captures <PIECE_OQ>.\nBEST_MOVE: <PIECE_MP><SQUARE_13><SQUARE_29>\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed",
+      "decoded_text": "Authored interface fixture. This is not model output.",
+      "parsed": {
+        "software_fixture": true
+      }
+    },
+    "verification": {
+      "schema": "chess.tutor-draft-checks.v1",
+      "status": "checked",
+      "response_sha256": "8de2fc545994baf6f20639583c5b733fc2be2cd37510a898de03dc2fbefbde01",
+      "raw_text_sha256": "641d21481fd4bc3fd15e4677e1c1ea2e3fc489a7b1ac709957aa95da90910931",
+      "input_sha256": "b6646141d42b0b30f23d0e8525f08784d42f253389f02f1a2e62e6ffd2918f53",
+      "verifier_sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+      "parser_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+      "whole_prose_assessed": false,
+      "claims": [
+        {
+          "kind": "check_or_mate",
+          "span": {
+            "start": 51,
+            "end": 66,
+            "unit": "unicode_code_points",
+            "sha256": "13d008e98800a80ae392fed331faf177bf7fd82663417537fc28ee3c5c6f614e"
+          },
+          "exact_raw_text": "gives checkmate",
+          "branch_uci": [],
+          "turn": "white",
+          "analysis_move_uci": "g1f3",
+          "analysis_move_san": "Nf3",
+          "status": "contradicted",
+          "expected": true,
+          "observed": false
+        },
+        {
+          "kind": "capture",
+          "span": {
+            "start": 68,
+            "end": 91,
+            "unit": "unicode_code_points",
+            "sha256": "1314e04e659cf433ade62a3fb8741679e066ce50cc957ef284d38427b0c2070e"
+          },
+          "exact_raw_text": "It captures <PIECE_OQ>.",
+          "branch_uci": [],
+          "turn": "white",
+          "analysis_move_uci": "g1f3",
+          "analysis_move_san": "Nf3",
+          "status": "contradicted",
+          "expected": {
+            "color": "black",
+            "piece": "queen"
+          },
+          "observed": null
+        }
+      ],
+      "unassessed_regions": [],
+      "engine_calls": 0,
+      "generator_repairs": 0,
+      "mapping_scope": "Exact canonical grammar at the requested root only; other prose is unassessed.",
+      "context": {
+        "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "selected_uci": "d2d4",
+        "branch_uci": [],
+        "turn": "white"
+      },
+      "selected_identity": {
+        "status": "contradicted",
+        "supplied_uci": "d2d4",
+        "reported_uci": "e2e4",
+        "span": {
+          "start": 103,
+          "end": 136,
+          "unit": "unicode_code_points",
+          "sha256": "315addf864e75ce83e5e1dd89074770dd1a9e2744bd7f9b31171975feec66a25"
+        },
+        "scope": "Structured BEST_MOVE identity only, not a prose claim."
+      },
+      "move_observations": {
+        "status": "observed",
+        "move_uci": "e2e4",
+        "move_san": "e4",
+        "gives_check": false,
+        "gives_checkmate": false,
+        "captures": false,
+        "victim": null,
+        "branch_uci": [],
+        "turn": "white",
+        "scope": "Immediate legal replay only; no forced reply, bestness or prose-quality verdict."
+      },
+      "analysis_alignment": {
+        "analysis_move_uci": "g1f3",
+        "selected_uci": "d2d4",
+        "status": "contradicted",
+        "scope": "ANALYSIS move versus supplied move; independent of BEST_MOVE identity."
+      },
+      "request_id": "authored-contradicted"
+    }
+  }
+}

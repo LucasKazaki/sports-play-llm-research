@@ -1,0 +1,17 @@
+{
+  "status": "passed_exact_copy_and_positive_projection_checks",
+  "exact_metadata_and_source_copies": 10,
+  "code_test_copies": 6,
+  "hash_only_snapshots": 2,
+  "all_8_snapshot_hashes_verified": true,
+  "outcomes_total": 64,
+  "current_held_raw_reference_reads": 0,
+  "model_engine_GPU_calls": 0,
+  "bundle": {
+    "path": "experiments\\chess-queen-coach-sft-training-v2\\failure-evidence-heldout-1\\report-and-provenance-bundle.txt",
+    "bytes": 26305,
+    "sha256": "cfd249725d5eee2efa18db1d5de6ddb126a3c4f1541c90505e0244384a54a19d"
+  },
+  "manifest_sha256": "7a0dc5e50b80b9ddcafbdc013e8a7c3e6ecfaabbaee26a87432f926c2cd886f4",
+  "summary_sha256": "e42577725221c38811162fcdbf5f78fff7b3bbb1070b8f65d0ac172218b04d9b"
+}

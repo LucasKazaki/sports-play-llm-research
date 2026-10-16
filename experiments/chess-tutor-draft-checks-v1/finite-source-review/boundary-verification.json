@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "unmodified_source_bindings": [
+    {
+      "path": "prototype/chess_tutor_v1/queen_runtime.py",
+      "bytes": 10709,
+      "sha256": "8295ada0e368ff5810ee81b977f5dc61bc51a759e821459b3111441145ddc740"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/server.py",
+      "bytes": 28830,
+      "sha256": "d3b88e9bfd184038da66c1ea7858be9b32647dd53e6974ea7a86456c6e58e2a5"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/app.js",
+      "bytes": 16841,
+      "sha256": "20667639d629412e31f97632da7a544e78a07fa242fb7b88fd863a2fd567fdda"
+    },
+    {
+      "path": "scripts/chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "scripts/chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    }
+  ],
+  "scope": "Only seven authorized production/test paths changed. No running server restart, GPU/model/engine or held data calls."
+}

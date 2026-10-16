@@ -1,0 +1,70 @@
+{
+  "schema": "chess.independent-generalization-eval-v2-source-review.v1",
+  "status": "passed",
+  "reviewed_at": "2026-10-16T10:04:48.881610+00:00",
+  "scope": "Complete finite source/tests/protocol/preparer read and independent CPU checks; root-only future inference authorization, no actual model calls.",
+  "full_bundles_read": true,
+  "blocking_findings": [],
+  "tests": {
+    "command": "python -m pytest tests/test_chess_encoder_check_generalization_eval_v2.py tests/test_chess_encoder_check_generalization_v1.py -q",
+    "exit_code": 0,
+    "passed": 36,
+    "elapsed_seconds": 0.67
+  },
+  "independent_checks": {
+    "prior_function_ASTs_identical_after_owned_guard_call_normalization": true,
+    "all_protocol_bindings_verified": true,
+    "no_torch_bnb_pyarrow_transformers_imported": true,
+    "constructed_actual_moves": 128,
+    "new_running_GPU_floor_bytes": 1073741824,
+    "all_other_start_and_running_reserves_retained": true,
+    "durable_full_denominators_before_backend": true,
+    "both_raw_conditions_complete_before_label_semantics": true,
+    "first_backend_failure_latches_later_calls": true,
+    "fixed_original_epoch0_vs_selected_epoch4_no_training_or_selection": true
+  },
+  "limitations": [
+    "Guard is cooperative, sampled at most once per second; an individual backend call is bounded by the shared parent worker and owned process lifetime.",
+    "Hash verification may read label/dataset bytes, but their semantic fields are opened only after both raw panels complete.",
+    "Small targeted tactical diagnostic; no coaching, Elo, general population or UI promotion claim. Different same-type piece instances are used for double/discovered matched negatives as disclosed.",
+    "No inference performed by this review. Parent may dispatch only after active coaching heldout phase terminates and the exclusive lease is free."
+  ],
+  "sources_and_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_encoder_check_generalization_eval_v2.py",
+      "bytes": 17580,
+      "sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_encoder_check_generalization_eval_v2.py",
+      "bytes": 9927,
+      "sha256": "83eddeee2ed3db866dafab4d79fa15af159f9eff1ffb7172f8161909d83e7631"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-protocol-v2.json",
+      "bytes": 10594,
+      "sha256": "f53d397465dd533b410ec8eb5115167f7aa3a482d87463ee6020bf53b1ade9eb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\prepare_inference_protocol_v2.py",
+      "bytes": 2826,
+      "sha256": "999a34ca053e8b64ff796aae634fe60635752f542db5b3f0bd5f0b75e3af53b5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-generalization-eval-v2-source-bundle.txt",
+      "bytes": 28179,
+      "sha256": "91cd5e5e616a3fe91f89fd1e37ae06aab14975ed630219603b7cdccd5588a701"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-generalization-eval-v2-plan-bundle.txt",
+      "bytes": 14480,
+      "sha256": "6d89073f918fd62f15b65c0d331fbfe35f3106717e4412ef8637c517f2061ccb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-gen-inference-v2-source-1\\manifest.json",
+      "bytes": 5129,
+      "sha256": "96460a2046e0e03f19aabfaea8df2f0299e6521a5944804ba8daeae4879ae801"
+    }
+  ],
+  "followUpTasks": []
+}

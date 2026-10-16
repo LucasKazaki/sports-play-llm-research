@@ -1,0 +1,40 @@
+{
+  "status": "SOURCE_PREPARATION_ONLY_NO_TRAINING_OR_INFERENCE",
+  "tests": 23,
+  "elapsed_seconds": 0.43,
+  "frozen_data_sources_untouched": true,
+  "bindings": [
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_runtime_v1.py",
+      "bytes": 2287,
+      "sha256": "29f148855279fe0243bb4fbedac12057ab9d43cd6fe1c12a904606d4ca8f460b"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_counterfactual_runtime_v1.py",
+      "bytes": 2908,
+      "sha256": "f5f602eeefdc71ff7c69b20b743c01478f192c68eff34096827ec07633129c3e"
+    },
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 4569,
+      "sha256": "36d2b0a96376bdf80514b92371e66e2f6fbe54f81014b9e08dd35df8ce69c7ee"
+    },
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_train_v1.py",
+      "bytes": 20881,
+      "sha256": "fca5d9365552d650cf18f33a19070f78e80d8b7d0dc57ff91fd63b31955185fd"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_counterfactual_train_v1.py",
+      "bytes": 6956,
+      "sha256": "83df2100e0e282d50bbd46abf104855fcca9b8cf0d1f4841ec375c87c87b4587"
+    }
+  ],
+  "future_final_protocol_blocked_on": "Actual closed recovery-v2 data manifest, operational plan/provenance/closed worker and independent audit; no old-held semantic content used",
+  "held_runtime_design": "One-process held function prepared but NOT execution-authorized; root now assessing separate cold-per-request design after old held resource failure. No frozen or executed source changed."
+}

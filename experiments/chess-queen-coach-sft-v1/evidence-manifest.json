@@ -1,0 +1,127 @@
+{
+  "schema": "chess.queen-coach-sft-evidence.v1",
+  "public_files": {
+    "protocol.json": {
+      "sha256": "a36971aca90e71375c951ca864c0bd2fd4ac9ce7db3664e64253b9049b205f56",
+      "bytes": 7243
+    },
+    "protocol-v2.json": {
+      "sha256": "1e9cb05961792ecf76516725e1450df34f1d5871be8af3aa268cb119122d8964",
+      "bytes": 7451
+    },
+    "protocol-v3.json": {
+      "sha256": "d02c7af50f3f41d76606b6070d4be35725b521a42b0ecc3e6d5401234e1ed9b1",
+      "bytes": 7949
+    },
+    "summary.json": {
+      "sha256": "4082defb2a4881d6505c9bd17d23d7c99405032a0a59c6ea6f27611f486f8f9e",
+      "bytes": 6175
+    },
+    "README.md": {
+      "sha256": "41eeb3c47d5b23b760d669e85d124d757b67870487c40d2084b6ea60e7d12e60",
+      "bytes": 4079
+    },
+    "coaching-corpus-completed-result.json": {
+      "sha256": "c2c82a65206bff52156827f21244ad7b09d95f0249c28e45571aa110372176b7",
+      "bytes": 1240
+    },
+    "review-coaching-corpus-completed.md": {
+      "sha256": "7803101ccd10c2ef57802bda5f7fad0a5e72957ab450d8525b4a6a991a7a6302",
+      "bytes": 2313
+    },
+    "audit-coaching-corpus.py": {
+      "sha256": "a113177309a0f837fb5f8d48cc6c1aea145b03441565c5428c91098830e26c64",
+      "bytes": 9370
+    }
+  },
+  "implementation": {
+    "path": "scripts/chess_queen_coach_sft_intake_v1.py",
+    "sha256": "38cef41009e069db0175045fb7fea1661604a318393a9b02a8784efca4853bbc"
+  },
+  "tests": {
+    "path": "tests/test_chess_queen_coach_sft_intake_v1.py",
+    "sha256": "acf239679d10257fa3bb4645e124075145b619ef7826ad30f320471232081bfe"
+  },
+  "private_bindings": {
+    "manifest.json": {
+      "path": "data/private/chess-queen-coach-sft-v1/manifest.json",
+      "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077",
+      "bytes": 2190
+    },
+    "dataset.json": {
+      "path": "data/private/chess-queen-coach-sft-v1/dataset.json",
+      "sha256": "362393d1fb7cef900966728aec9441dc3eb2f8db860f37702ff776740331cc98",
+      "bytes": 610112
+    },
+    "intake-completed.json": {
+      "path": "data/private/chess-queen-coach-sft-v1/intake-completed.json",
+      "sha256": "25022bf1662ac394d7d20713c32374b6956a30de7c064748ca762c1b8cc1cd95",
+      "bytes": 255
+    },
+    "teacher-attempt.json": {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-attempt.json",
+      "sha256": "156f1ee0f1caf0fcbc8e86d3a5e30d4421f5f4e52c2153bd92664ae4df46d174",
+      "bytes": 194
+    },
+    "teacher-closed.json": {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-closed.json",
+      "sha256": "87c8e47ee5e2561dcacb3ca237047eda9bda2cca4bc955ade4223e6bd0d4d3c2",
+      "bytes": 168
+    },
+    "teachers.json": {
+      "path": "data/private/chess-queen-coach-sft-v1/teachers.json",
+      "sha256": "d3f86ba1b44d5347e85d1fa4a844d436aa4b9cc757c7516be0ed33bfd7b9d344",
+      "bytes": 1272763
+    },
+    "reserved-exclusions.json": {
+      "path": "data/private/chess-queen-coach-sft-v1/reserved-exclusions.json",
+      "sha256": "a5162e0404ef8935369445c8d8ec7417f8002f02ecdb32796e7a206dd9252249",
+      "bytes": 15806565
+    }
+  },
+  "private_journals": [
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-journals/worker-0.jsonl",
+      "sha256": "02d96593486737f6d24bd7cc7b1f39994e8cf937c66c15f8b571cda75e43584b",
+      "bytes": 7428797,
+      "events": {
+        "engine_opened": 1,
+        "intent": 523,
+        "uci_line": 42710,
+        "outcome": 523
+      },
+      "outcomes": {
+        "completed": 523
+      }
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-journals/worker-1.jsonl",
+      "sha256": "7a95b9d61cb92193d0792145bf64a8f4ed575bbeb7e255ed055e320af9be8296",
+      "bytes": 7908092,
+      "events": {
+        "engine_opened": 1,
+        "intent": 523,
+        "uci_line": 45386,
+        "outcome": 523
+      },
+      "outcomes": {
+        "completed": 523
+      }
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-v1/teacher-journals/worker-2.jsonl",
+      "sha256": "db2358d70eabdb394c599ec091157ed7db705f8ead6a2b524fd1864cd040b59c",
+      "bytes": 7543190,
+      "events": {
+        "engine_opened": 1,
+        "intent": 522,
+        "uci_line": 43568,
+        "outcome": 522
+      },
+      "outcomes": {
+        "completed": 522
+      }
+    }
+  ],
+  "scope": "Metadata only. Private reference values/PGNs/model weights/media/chat history are not copied."
+}

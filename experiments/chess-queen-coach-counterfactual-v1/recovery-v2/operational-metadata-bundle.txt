@@ -1,0 +1,282 @@
+FILE experiments\chess-queen-coach-counterfactual-v1\recovery-v2\build_protocol.py SHA256 801e11df5c4b3682ca12498b00b3cb0fcd4cf1c908b99571d3c2a1205e47f44e
+"""Freeze operational metadata only; never run intake, teachers or a model."""
+import argparse
+import importlib.util
+from pathlib import Path
+
+HERE=Path(__file__).resolve().parent
+spec=importlib.util.spec_from_file_location('counterfactual_recovery_driver',HERE/'run_cpu_once.py')
+driver=importlib.util.module_from_spec(spec);spec.loader.exec_module(driver)
+TASK=Path('C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look')
+
+
+def build(out):
+    root=driver.ROOT
+    files={
+        'driver':HERE/'run_cpu_once.py','builder':Path(__file__),
+        'scientific_protocol':root/'experiments/chess-queen-coach-counterfactual-v1/intake-protocol.json',
+        'intake':root/'scripts/chess_queen_coach_counterfactual_intake_v1.py',
+        'teacher':root/'scripts/chess_queen_coach_counterfactual_teacher_v1.py',
+        'proposal':TASK/'work/chess-counterfactual-recovery-v2-proposal.json',
+        'closed_held_worker':root/'data/private/chess-queen-coach-sft-training-v2/heldout-1-worker.json',
+        'root_changed_context':TASK/'work/overnight/coach-held-failure-owner-closed.json'}
+    plan={'schema':driver.SCHEMA,'frozen_at':driver.utc(),'driver_sha256':driver.sha(files['driver']),
+        'status':'source_review_candidate_not_execution_authorization','scientific_protocol_sha256':driver.SCIENCE,
+        'bindings':{key:driver.binding(path) for key,path in files.items()},
+        'failed_attempt':driver.read(files['proposal'])['failed_attempt']['bindings'],
+        'counts':driver.COUNTS,'teacher_requests':3168,'filelock_version':'4.2.0','policy':driver.POLICY,
+        'output':str(root/'data/private/chess-queen-coach-counterfactual-recovery-v2'),
+        'lock':str(root/'data/private/chess-gpu-owner.lock'),
+        'scope':'ONE changed-context CPU sequence only. Root dispatch after independent full-source/test/protocol review. No automatic retry, source patches, lower reserves, changed sampling/targets/deadlines, new acquisition or learned calls.',
+        'changed_context':'Original guard failed at ordinal-1 while the owner was active; exact failed held worker is now terminal and root observed child absent/free lease/two passing CPU samples. Failure is not a coaching result.',
+        'admission':'Acquire existing shared lease with timeout0 across scientific work/cleanup; verify old child absent and repeat two CPU samples>=1s apart with8GiBcommit/4GiBphysical before any scientific module import. Busy/failure stops once.',
+        'readiness':'Exact512/32/512 intake; exactly3168 uniquely planned teachers all completed/coherent; observed owned Stockfish parent/PID and exit before unchanged export. All phase outcomes and unknown/not_run teacher outcomes retained.',
+        'deadlines':'Unchanged scientific1200s intake/3300s teachers/13UTC cutoff. Existing guards are cooperative; driver also verifies elapsed phase time before later phases. No claim of an OS hard deadline or unrelated process control.',
+        'provenance':'Sibling create-only intent/phases precede scientific access. Frozen sources and prior failed receipts copied into operational-sources after output creation/return or finalizer. operational-provenance.json and sibling operational-closed.json expose exact source/plan/corpus hashes, full phase statuses and observed engine exit.',
+        'future_training':'A completed CPU sequence is not independent corpus audit or model quality. New reviewed training/evaluation protocol plus explicit root dispatch still required; latest11:15UTC applies to each future GPU phase.'}
+    driver.verify(plan)
+    driver.save(out,plan)
+    return {'path':str(out),'sha256':driver.sha(out),'status':plan['status']}
+
+
+if __name__=='__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--out',type=Path,default=HERE/'protocol.json')
+    print(build(parser.parse_args().out))
+
+
+FILE experiments\chess-queen-coach-counterfactual-v1\recovery-v2\protocol.json SHA256 3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b
+{
+  "schema": "chess.counterfactual-cpu-recovery.v2",
+  "frozen_at": "2026-10-16T10:28:11.694725+00:00",
+  "driver_sha256": "2e818e86b1d7af254138ed31f9a6da7761863aa365e12c675e5821bd0543760e",
+  "status": "source_review_candidate_not_execution_authorization",
+  "scientific_protocol_sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a",
+  "bindings": {
+    "driver": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\run_cpu_once.py",
+      "sha256": "2e818e86b1d7af254138ed31f9a6da7761863aa365e12c675e5821bd0543760e"
+    },
+    "builder": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\build_protocol.py",
+      "sha256": "801e11df5c4b3682ca12498b00b3cb0fcd4cf1c908b99571d3c2a1205e47f44e"
+    },
+    "scientific_protocol": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\intake-protocol.json",
+      "sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a"
+    },
+    "intake": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_intake_v1.py",
+      "sha256": "3f0e7ab1cfed89d1ebf5c09ed44c7eac850688d628f3af89241dc9f1b2e5f09c"
+    },
+    "teacher": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_teacher_v1.py",
+      "sha256": "2cda3bc89ad0a5e2d7ef0a5dbce52f507cadad6ad83bad92d6fe271cc18db489"
+    },
+    "proposal": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-counterfactual-recovery-v2-proposal.json",
+      "sha256": "e19aff29c1f1a78467c2b89a905e0ad9eee6d7055daba5c79e64ed68afec9ad1"
+    },
+    "closed_held_worker": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\heldout-1-worker.json",
+      "sha256": "f443d8fa2ac23a38477413528949f086d27432523fb25b1a81910574ebd5dd60"
+    },
+    "root_changed_context": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\coach-held-failure-owner-closed.json",
+      "sha256": "e7777a4a59004c8df9031d446e6d925527c0f86e3c4ddaacbb323a6758582526"
+    }
+  },
+  "failed_attempt": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\intake-attempt.json",
+      "sha256": "2182d8de69d73af285146413346f83e8271f70fb99d6aad26f0c68e727f7a938",
+      "bytes": 140
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\intake-failure.json",
+      "sha256": "a105175cd00abfa7ba8bd5feb902af929e87a5318eb39e2e59ae1c245b7c4227",
+      "bytes": 173
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\cpu-resources.jsonl",
+      "sha256": "af3105dfa77d33108af0877daafba046bc353853a962e02dbb184c50cfc45081",
+      "bytes": 143
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\intake-sources\\manifest.json",
+      "sha256": "23c182483f51e1e69bd620c463c454f764cda85d195e9bc5bc2f1dd705c3e7d7",
+      "bytes": 7375
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-data-execution-intent.json",
+      "sha256": "e02ff0525e97e7c8596a40b5c3d647ee64870d504834512d8168304e36cfbe7c",
+      "bytes": 906
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-data-execution-closed.json",
+      "sha256": "8869feccc73d73896b5c8c3e6ba0d01d732ddf5dd0cea4f89ba0f473f0a4f911",
+      "bytes": 197
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-data-execution.log",
+      "sha256": "571443fb928cfb78a09d6dd95edef4ad80117b37b4c644aa0db3d28c155cb3dd",
+      "bytes": 1336
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual_data_once.py",
+      "sha256": "c2a022f11cff2209fafdfd35b83ca80ca815b06972233e126e9e783776ed0130",
+      "bytes": 5697
+    }
+  ],
+  "counts": {
+    "train": 512,
+    "development": 32,
+    "reserve": 512
+  },
+  "teacher_requests": 3168,
+  "filelock_version": "4.2.0",
+  "policy": {
+    "sample_count": 2,
+    "sample_interval_seconds": 1,
+    "commit_headroom_bytes": 8589934592,
+    "physical_available_bytes": 4294967296,
+    "intake_seconds": 1200,
+    "teacher_seconds": 3300,
+    "engine_exit_seconds": 15,
+    "cutoff_utc": "2026-10-16T13:00:00+00:00"
+  },
+  "output": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "scope": "ONE changed-context CPU sequence only. Root dispatch after independent full-source/test/protocol review. No automatic retry, source patches, lower reserves, changed sampling/targets/deadlines, new acquisition or learned calls.",
+  "changed_context": "Original guard failed at ordinal-1 while the owner was active; exact failed held worker is now terminal and root observed child absent/free lease/two passing CPU samples. Failure is not a coaching result.",
+  "admission": "Acquire existing shared lease with timeout0 across scientific work/cleanup; verify old child absent and repeat two CPU samples>=1s apart with8GiBcommit/4GiBphysical before any scientific module import. Busy/failure stops once.",
+  "readiness": "Exact512/32/512 intake; exactly3168 uniquely planned teachers all completed/coherent; observed owned Stockfish parent/PID and exit before unchanged export. All phase outcomes and unknown/not_run teacher outcomes retained.",
+  "deadlines": "Unchanged scientific1200s intake/3300s teachers/13UTC cutoff. Existing guards are cooperative; driver also verifies elapsed phase time before later phases. No claim of an OS hard deadline or unrelated process control.",
+  "provenance": "Sibling create-only intent/phases precede scientific access. Frozen sources and prior failed receipts copied into operational-sources after output creation/return or finalizer. operational-provenance.json and sibling operational-closed.json expose exact source/plan/corpus hashes, full phase statuses and observed engine exit.",
+  "future_training": "A completed CPU sequence is not independent corpus audit or model quality. New reviewed training/evaluation protocol plus explicit root dispatch still required; latest11:15UTC applies to each future GPU phase."
+}
+
+
+FILE experiments\chess-queen-coach-counterfactual-v1\recovery-v2\README.md SHA256 8e1b948cf0da2529708f2d966f89274f5534f38a8923de8a679b10b827cf9e4d
+# One-shot CPU recovery v2
+
+This is an operational recovery wrapper, pending independent source review and
+explicit root dispatch. It has not constructed a corpus or run an engine. The
+original intake, teacher and scientific protocol remain unchanged. The failed
+first attempt stopped at the startup resource guard before source iteration;
+its eight original evidence files are bound and preserved.
+
+The changed context is the closed **failed** coach-held worker, its exited child
+and the root's recorded free lease/two passing CPU observations. That failure is
+not a held-quality result or model admission. This wrapper holds the existing
+shared FileLock with zero wait as resource-context protection. It makes no GPU
+query or learned call, and releases the lease after scientific work and cleanup.
+Root defers other GPU dispatch until this driver has terminated.
+
+The driver creates a sibling operational intent and phase ledger before importing
+scientific modules or accessing the source corpus. It repeats two CPU samples at
+least one second apart, requiring 8 GiB commit headroom and 4 GiB available physical
+memory. A busy lease, live prior child, bad binding, failed sample, cancellation,
+deadline or later error stops the sequence. There is no attempt loop, retry,
+resource-floor change, source patch or adaptive cohort substitution.
+
+Exactly one old intake must produce 512 TRAIN, 32 development and 512 reservoir
+games. Only that complete intake permits the unchanged 3,168 teacher requests.
+Only coherent complete teacher journals and read-only observations of the owned
+Stockfish child and its exit permit the unchanged export. PID observation never
+kills a process; observation failure requests cancellation only through this
+attempt's `CANCEL` file. Absence of a sampled engine is not accepted as proof of
+its lifecycle. No unrelated process is stopped.
+
+Scientific guards retain 1,200 seconds for intake, 3,300 seconds for teachers and
+the 13:00 UTC cutoff. They are cooperative guards. The wrapper also checks phase
+elapsed time before permitting later work; it does not claim a hard OS deadline.
+Writing only `<output>/CANCEL` requests cancellation after that owned directory
+exists. Ctrl+C is retained as a failed operational phase. Hard process death
+leaves its durable phase intent as active/unknown, never an invented completion.
+
+`build_protocol.py` performs only source/metadata binding and freezes
+`protocol.json` create-only. Its actual metadata check read the closed worker and
+root context records, not held responses, references or quality. `run_cpu_once.py`
+is the separate root-only dispatch entrypoint. Its root call, after review, uses:
+
+```powershell
+python experiments/chess-queen-coach-counterfactual-v1/recovery-v2/run_cpu_once.py `
+  --protocol <absolute-protocol.json> --protocol-sha256 <exact-reviewed-hash>
+```
+
+The new private output is
+`data/private/chess-queen-coach-counterfactual-recovery-v2`. Create-only sibling
+files end in `-operational-intent.json`, `-operational-phases.jsonl`,
+`-operational-admission.jsonl`, `-operational-engine-pids.jsonl` and
+`-operational-closed.json`. Frozen operational sources and the prior failure
+records are copied to `operational-sources/`; partial copy failure retains its
+own manifest. Finalization also retains complete named teacher outcomes as
+`operational-teacher-outcomes.json` once intake has supplied their identities.
+Earlier failures record all 3,168 unstarted planned teacher slots without
+inventing case IDs. All original scientific raw journals remain untouched.
+
+The final output `operational-provenance.json` and sibling operational closed
+record have identical values. A future trainer must require:
+
+- `status == "completed"` and `owned_engine_exit_verified == true`;
+- exact `scientific_protocol_sha256` and `operational_protocol_sha256`;
+- `corpus_manifest_sha256` matching the actual exported `manifest.json`;
+- exact closed-held-worker/source-snapshot/phase-ledger bindings and
+  `resource_context_lease_released == true`.
+
+Those fields are not a substitute for independent closed-corpus audit, a new
+reviewed training/evaluation protocol or later explicit root GPU authorization.
+The latest 11:15 UTC start rule still applies independently to each later GPU
+phase. No source-data, corpus or current held-quality metric changes here.
+
+The software receipt records 35 CPU tests with authored fake files/functions,
+resource samples, process observations and clocks. These prove bounded software
+behavior, not real intake, engine lifecycle, chess correctness or model quality.
+
+`preexecution-draft-1/` preserves the exact previous unexecuted driver, operational
+protocol, tests, receipt and full bundles. The amended driver also closes a
+failed phase after an intent when a binding is malformed. PID observation or
+logging failure still attempts this request's cancellation even if its error
+journal cannot be written; any cancellation-write error is retained and export
+remains blocked. These repairs change no scientific source or reserve.
+
+
+FILE experiments\chess-queen-coach-counterfactual-v1\recovery-v2\package_review.py SHA256 94739f07cafa5080511ceb898a1b4645e6b2322698683ff0aacb67a301e16b71
+"""Package finite full source/test evidence; never dispatch the recovery."""
+import hashlib,json
+from pathlib import Path
+
+HERE=Path(__file__).resolve().parent;ROOT=HERE.parents[2]
+def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
+def info(path):return {'path':str(path.relative_to(ROOT)),'sha256':sha(path),'bytes':path.stat().st_size}
+def save(path,value):
+    with path.open('x',encoding='utf-8',newline='\n') as stream:stream.write(json.dumps(value,indent=2)+'\n')
+tests=ROOT/'tests/test_chess_counterfactual_recovery_v2.py'
+receipt={'schema':'chess.counterfactual-recovery-software-tests.v2','status':'passed',
+    'command':'.venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_counterfactual_recovery_v2.py -q',
+    'execution_tool':'exec_command','chunk_id':'5d9ef9','exit_code':0,'tests':35,'elapsed_seconds':6.59,
+    'stdout':'................................... [100%]\n35 passed in6.59s',
+    'driver':info(HERE/'run_cpu_once.py'),'builder':info(HERE/'build_protocol.py'),'tests_source':info(tests),
+    'operational_protocol':info(HERE/'protocol.json'),
+    'metadata_only_protocol_build':{'execution':'build_protocol.py immediately before this package; exact tool chunk recorded in source handoff message','exit_code':0,'verified':'Exact reviewed old source/protocol, eight failed-attempt receipts, closed failed held worker and root context metadata.'},
+    'preexecution_draft':'preexecution-draft-1 preserves exact c12dd driver/298c7d operational protocol/31-test receipt before both narrow durability repairs; zero actual recovery calls.',
+    'scope':'Authored fake corpus/teacher/process/clock tests. Actual closed-worker/source metadata hashing only.',
+    'actual_recovery_dispatches':0,'real_corpus_rows_constructed':0,'engine_calls':0,'model_GPU_calls':0,
+    'current_held_response_reference_quality_reads':0,'old_scientific_source_edits':0}
+save(HERE/'software-tests.json',receipt)
+groups=[('driver',[HERE/'run_cpu_once.py']),('operational-metadata',[HERE/'build_protocol.py',HERE/'protocol.json',HERE/'README.md',Path(__file__)]),
+    ('tests',[tests,HERE/'software-tests.json'])]
+bundles=[]
+for name,files in groups:
+    path=HERE/(name+'-bundle.txt')
+    with path.open('x',encoding='utf-8',newline='\n') as stream:
+        for file in files:stream.write('FILE '+str(file.relative_to(ROOT))+' SHA256 '+sha(file)+'\n'+file.read_text(encoding='utf-8')+'\n\n')
+    assert path.stat().st_size<30000
+    bundles.append(info(path))
+save(HERE/'source-handoff.json',{'status':'awaiting_independent_source_review_not_execution_authorized',
+    'sources':[info(HERE/'run_cpu_once.py'),info(HERE/'build_protocol.py')],'tests':info(tests),
+    'protocol':info(HERE/'protocol.json'),'receipt':info(HERE/'software-tests.json'),'bundles':bundles,
+    'actual_recovery_dispatches':0})
+print(json.dumps(json.loads((HERE/'source-handoff.json').read_text()),indent=2))
+
+

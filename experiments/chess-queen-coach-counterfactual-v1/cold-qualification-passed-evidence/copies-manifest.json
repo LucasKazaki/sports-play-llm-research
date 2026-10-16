@@ -1,0 +1,36 @@
+{
+  "schema": "chess.metadata-only-software-qualification-copies.v1",
+  "files": [
+    {
+      "file": "independent-main-result.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-qualification-attempt4-main-result.json",
+      "bytes": 16733,
+      "sha256": "3cdc5d317d6799ece7876817826dd16e1f63b9273dbd91b0276f34f4d42881ba"
+    },
+    {
+      "file": "root-owner-closed.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\cold-sft-qualification-attempt4-root-closed.json",
+      "bytes": 1250,
+      "sha256": "6b316171ad3967008dd5a3bfb48a3d7494e7c608a13a748a915ff9955f46de39"
+    },
+    {
+      "file": "source-review.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-bounded-wait-qualification-source-review.json",
+      "bytes": 5004,
+      "sha256": "2a883d426a69597d6177605b1fef2a0b2066d4245ddae24a250493555e7de3f6"
+    },
+    {
+      "file": "worker.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-4-worker.json",
+      "bytes": 749,
+      "sha256": "673ceeb6ec932149cf22361bf7855853baae5764e05077bfa0515250a93413f0"
+    },
+    {
+      "file": "closed.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-4\\closed.json",
+      "bytes": 880,
+      "sha256": "8d6fb4e3a701e193cfd5dc9eb056447f8777a5739a8a92d0e4cacb69f330080c"
+    }
+  ],
+  "private_raw_input_reference_token_ID_or_tensor_storage_copied": false
+}

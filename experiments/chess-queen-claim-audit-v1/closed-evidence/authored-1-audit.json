@@ -1,0 +1,187 @@
+{
+  "schema": "chess.queen-claim-audit.v1",
+  "evaluation_only": true,
+  "response_sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223",
+  "raw_text_sha256": "4193b5c8bb34585a7abf2329fbe58e254ea9442868a711b4fc4379cfffcbd9ed",
+  "response_status": "completed",
+  "root_fen": "r2q1rk1/4bppp/p2pbn2/4p3/4P3/1NQ1BP2/PPP4P/2KR1B1R w - - 0 15",
+  "claims": [
+    {
+      "claim_id": "midgame_extra_pawn_unsupported",
+      "span": {
+        "start": 49,
+        "end": 130,
+        "sha256": "5aa5668fb53f2c8caa1e85eb834819776024aab3a642b6fce02d8463830e8414"
+      },
+      "exact_raw_text": "the player holds a material edge with an extra <PIECE_MP> and the <PIECE_MB> pair",
+      "claim": {
+        "kind": "relative_pawn_advantage",
+        "expected": 1
+      },
+      "status": "unassessed",
+      "reason": "unsupported_claim_kind",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "r2q1rk1/4bppp/p2pbn2/4p3/4P3/1NQ1BP2/PPP4P/2KR1B1R w - - 0 15"
+      }
+    },
+    {
+      "claim_id": "midgame_initial_bishop_pair",
+      "span": {
+        "start": 49,
+        "end": 130,
+        "sha256": "5aa5668fb53f2c8caa1e85eb834819776024aab3a642b6fce02d8463830e8414"
+      },
+      "exact_raw_text": "the player holds a material edge with an extra <PIECE_MP> and the <PIECE_MB> pair",
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "bishop",
+        "expected": 2
+      },
+      "status": "supported",
+      "expected": 2,
+      "observed": 2,
+      "scope": "Literal current-board count only.",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "r2q1rk1/4bppp/p2pbn2/4p3/4P3/1NQ1BP2/PPP4P/2KR1B1R w - - 0 15"
+      }
+    },
+    {
+      "claim_id": "midgame_knight_attacks_bishop",
+      "span": {
+        "start": 606,
+        "end": 699,
+        "sha256": "26d549d25aa4fdb1437efa18f5d097f2b22bf49696711da4f715379959be7d78"
+      },
+      "exact_raw_text": "where it attacks the <PIECE_OB> on <SQUARE_45> and exerts pressure on the opponent's position",
+      "claim": {
+        "kind": "geometric_attacks_square",
+        "piece": {
+          "color": "white",
+          "type": "knight"
+        },
+        "from_square": "c5",
+        "target_square": "e6",
+        "expected": true
+      },
+      "status": "supported",
+      "expected": true,
+      "observed": true,
+      "attacker_is_pinned": false,
+      "target_occupant": "b",
+      "scope": "Occupancy-aware geometric attack, including pinned pieces and friendly occupied targets. Not legal capture/recapture, defense success or king safety.",
+      "context": {
+        "branch_uci": [
+          "b3c5"
+        ],
+        "turn": "black",
+        "fen": "r2q1rk1/4bppp/p2pbn2/2N1p3/4P3/2Q1BP2/PPP4P/2KR1B1R b - - 1 15"
+      }
+    },
+    {
+      "claim_id": "midgame_main_critical_legal",
+      "span": {
+        "start": 5092,
+        "end": 5214,
+        "sha256": "0709b87ca89fb6b861b77330b1c9a01081a207e6867db72c332d752c413cfdc4"
+      },
+      "exact_raw_text": "CRITICAL_LINE: <PIECE_MN><SQUARE_18><SQUARE_35> <PIECE_OB><SQUARE_45><PIECE_MP><SQUARE_9> <PIECE_MN><SQUARE_35><SQUARE_25>",
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "b3c5",
+          "e6a2",
+          "c5a4"
+        ],
+        "expected": true
+      },
+      "status": "supported",
+      "expected": true,
+      "observed": true,
+      "variation": {
+        "legal": true,
+        "plies": 3,
+        "fen_after": "r2q1rk1/4bppp/p2p1n2/4p3/N3P3/2Q1BP2/bPP4P/2KR1B1R b - - 1 16"
+      },
+      "scope": "This explicitly annotated variation only. No forcedness, quality, engine attribution or whole-prose validity.",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "r2q1rk1/4bppp/p2pbn2/4p3/4P3/1NQ1BP2/PPP4P/2KR1B1R w - - 0 15"
+      }
+    },
+    {
+      "claim_id": "midgame_later_bishop_return_legal",
+      "span": {
+        "start": 2003,
+        "end": 2082,
+        "sha256": "0f2e562417a90426599d3c204f5c9ed4e8d097b6dd3fb1b7128a8d21e8cebad2"
+      },
+      "exact_raw_text": "The opponent should preserve the bishop with 20.<PIECE_OB><SQUARE_9><SQUARE_45>",
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "a2e6"
+        ],
+        "expected": true
+      },
+      "status": "contradicted",
+      "expected": true,
+      "observed": false,
+      "variation": {
+        "legal": false,
+        "failed_ply": 1,
+        "uci": "a2e6",
+        "reason": "move_not_legal",
+        "turn": "black",
+        "fen_before_failure": "r5k1/1q2bppp/p2p1n2/4p3/2B1P3/2Q1BP2/bPP4P/2KR3R b - - 1 19",
+        "legal_prefix_uci": []
+      },
+      "scope": "This explicitly annotated variation only. No forcedness, quality, engine attribution or whole-prose validity.",
+      "context": {
+        "branch_uci": [
+          "b3c5",
+          "e6a2",
+          "c5a4",
+          "d8d7",
+          "a4b6",
+          "d7b7",
+          "b6a8",
+          "f8a8",
+          "f1c4"
+        ],
+        "turn": "black",
+        "fen": "r5k1/1q2bppp/p2p1n2/4p3/2B1P3/2Q1BP2/bPP4P/2KR3R b - - 1 19"
+      }
+    }
+  ],
+  "summary": {
+    "annotated": 5,
+    "supported": 3,
+    "contradicted": 1,
+    "unassessed": 1,
+    "assessed_annotation_fraction": 0.8,
+    "supported_fraction_among_assessed": 0.75
+  },
+  "semantic_mapping_automatically_verified": false,
+  "whole_prose_coverage_established": false,
+  "limitations": [
+    "Python Unicode code points; zero-based [start,end); SHA-256 of exact UTF-8 substring",
+    "response.input.fen only; no annotator replacement FEN",
+    "Explicit legal branch replay and expected side to move; ambiguous or invalid context is unassessed",
+    "Independent semantic correspondence review is required separately; hashes do not establish it",
+    "Counts of pawn/knight/bishop/rook/queen by one side; not piece values or advantage",
+    "Occupancy-aware attack geometry includes pinned pieces; never legal recapture or tactical success",
+    "Explicit asserted line only; no engine attribution or whole-prose inference",
+    "Standalone current FEN and explicit branch only; prior repetition is not inferred",
+    "Evaluator only; never generator input, repair, training target or current heldout metric"
+  ],
+  "implementation_sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529",
+  "protocol_sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9",
+  "annotations_sha256": "6f513a6433829bedbec88f627ed30b11c0368362fe70749437e529ca60314239",
+  "response_pool_index": 1
+}

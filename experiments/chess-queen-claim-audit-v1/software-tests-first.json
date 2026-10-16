@@ -1,0 +1,26 @@
+{
+  "schema": "chess.queen-claim-audit-software-tests.v1",
+  "execution": {
+    "tool": "exec_command",
+    "chunk_id": "6f2be5",
+    "exit_code": 0,
+    "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_claim_audit_v1.py -q",
+    "stdout": "..................................... [100%]\n37 passed in 0.19s\n"
+  },
+  "implementation": {
+    "path": "scripts/chess_queen_claim_audit_v1.py",
+    "bytes": 14260,
+    "sha256": "e919a2a9c1f635408792841d13a5d44dd6fd4a0a31d2024cc1dbd17d4f6fedd1"
+  },
+  "tests": {
+    "path": "tests/test_chess_queen_claim_audit_v1.py",
+    "bytes": 13136,
+    "sha256": "fcb2a3df3d644f8827cf4a9b47883bb6fe8c7ab2140dd25d9670a07bbccbf7fb"
+  },
+  "fixture_scope": "Authored software fixtures created in tests; no real learned response or heldout content opened.",
+  "actual_authored_claim_audits": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "limitation": "Software execution is not independent source review, semantic mapping acceptance or factuality measurement."
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "Authored presentation fixture, no model/engine or production pipeline qualification",
+  "states": [
+    {
+      "scenario": "unassessed",
+      "visibleText": "Rule checks for this draft\n\nOnly the statements listed here were checked. Other text is unassessed.\n\nFor the reported move e4 (e2e4)\n\nThe move does not give check. It does not capture a piece.\n\nBoard observations only; these do not verify the explanation.\n\nSelected-move identity: Supported The reported move matches supplied e2e4.\n\nStatements matched in the draft\n\nStatement move versus supplied move: Unassessed Statement move unmapped; supplied move e2e4.\n\nStatement about an unmapped move\nUnassessed\n\ngives check\n\nThe stated piece is not on that square.\n\nStatement about an unmapped move\nUnassessed\n\ncapture statement\n\nThe stated piece is not on that square.\n\nInspect matched statements"
+    },
+    {
+      "scenario": "zero",
+      "visibleText": "Rule checks for this draft\n\nOnly the statements listed here were checked. Other text is unassessed.\n\nFor the reported move e4 (e2e4)\n\nThe move does not give check. It does not capture a piece.\n\nBoard observations only; these do not verify the explanation.\n\nSelected-move identity: Supported The reported move matches supplied e2e4.\n\nStatements matched in the draft\n\nNo draft statements match the limited checker. Other text is unassessed."
+    },
+    {
+      "scenario": "unavailable",
+      "visibleText": "Rule checks for this draft\n\nOnly the statements listed here were checked. Other text is unassessed.\n\nAuthored fixture: rule checks are unavailable."
+    },
+    {
+      "scenario": "supported",
+      "visibleText": "Rule checks for this draft\n\nOnly the statements listed here were checked. Other text is unassessed.\n\nFor the reported move e4 (e2e4)\n\nThe move does not give check. It does not capture a piece.\n\nBoard observations only; these do not verify the explanation.\n\nSelected-move identity: Supported The reported move matches supplied e2e4.\n\nStatements matched in the draft\n\nStatement move versus supplied move: Supported Statement move e2e4; supplied move e2e4.\n\nStatement about e4 (e2e4)\nSupported\n\ndoes not give check\n\nStatement about e4 (e2e4)\nSupported\n\ndoes not capture a piece\n\nInspect matched statements"
+    }
+  ],
+  "mobile_200_percent_text": {
+    "bannerTop": 0,
+    "fontSize": "32px",
+    "scrollWidth": 375,
+    "summaryHeight": 103.1875,
+    "theme": "light",
+    "viewport": 390
+  },
+  "mobile_dark_100_percent_text": {
+    "fontSize": "16px",
+    "scrollWidth": 375,
+    "theme": "dark",
+    "viewport": 390
+  },
+  "limit": "200% text sizing rather than browser zoom. Full-page sticky banner position reflects current scroll; normal view remains scrollable. A body keyboard-scroll attempt failed; no production source changed."
+}

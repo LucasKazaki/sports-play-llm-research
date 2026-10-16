@@ -1,0 +1,61 @@
+{
+  "status": "passed_exact_copy_addendum",
+  "created_utc": "2026-10-16T11:37:45.216786+00:00",
+  "parent_publication_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\final-metadata-publication-copy-review.json",
+    "bytes": 8709,
+    "sha256": "283c7a09be4ce3a54f0c93d60b3674b010e445b41a204d58177b29bf86e806e5"
+  },
+  "manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\review-evidence\\copies-manifest.json",
+    "bytes": 925,
+    "sha256": "5c32037e7724bcf079ec7aaac66cb491ffcda2cf0184d0552b717b51db842ea7"
+  },
+  "copies_checked": [
+    {
+      "copy": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\review-evidence\\existing-checkpoint-comparison-builder-v3-source-review.json",
+        "bytes": 2150,
+        "sha256": "9b7620f419e48db6bdd30691e3b1fe2782c28f2cdae6eb9d74f4d03d8f67da4d"
+      },
+      "original": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-builder-v3-source-review.json",
+        "bytes": 2150,
+        "sha256": "9b7620f419e48db6bdd30691e3b1fe2782c28f2cdae6eb9d74f4d03d8f67da4d"
+      }
+    },
+    {
+      "copy": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\review-evidence\\existing-checkpoint-comparison-final-protocol-v2-review.json",
+        "bytes": 4814,
+        "sha256": "89935f416f3441eecd4dc2ad4a03838141ff7de9380586b193b952d821b5cd75"
+      },
+      "original": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-final-protocol-v2-review.json",
+        "bytes": 4814,
+        "sha256": "89935f416f3441eecd4dc2ad4a03838141ff7de9380586b193b952d821b5cd75"
+      }
+    },
+    {
+      "copy": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\existing-comparison-documentation-amendment.json",
+        "bytes": 584,
+        "sha256": "d8d96af188ebd0af4be175a9c6f83c82ae993d2fdcb34ef6dc165bf35af3ddda"
+      },
+      "original": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\existing-comparison-documentation-amendment.json",
+        "bytes": 584,
+        "sha256": "d8d96af188ebd0af4be175a9c6f83c82ae993d2fdcb34ef6dc165bf35af3ddda"
+      }
+    }
+  ],
+  "additional_exact_copies": 3,
+  "total_across_prior_and_addendum": 42,
+  "claims": "Historicalconditional sourceGO and prospective8keydocumentation-only protocol amendment are accurate. Strictadmissionexpired; all96unrun/no freshquality/UIpromotion.",
+  "independent_amendment_recheck": "Exact8keys rederived frombothretainedprotocols; old/new/workerargs hashes match.",
+  "limits": [
+    "Thisaddendum covers3newcopies andtheirclaims; it doesnotindependentlyattest thecomplete176-file Gitindex. Parent ownsGitstage/publish.",
+    "No model/engine/GPU, rawprose, label/reference semantics or heavyCPU work."
+  ],
+  "followUpTasks": []
+}

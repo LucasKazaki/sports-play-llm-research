@@ -1,0 +1,95 @@
+{
+  "schema": "chess.independent-counterfactual-recovery-v2-source-review.v1",
+  "status": "passed_source_and_operational_protocol_for_one_root_CPU_dispatch",
+  "reviewed_at": "2026-10-16T10:29:41.090670+00:00",
+  "scope": "All three original finite bundles read completely, then all exact amended driver/test/protocol/README deltas read. Current metadata-only verify() and authored CPU tests. No run(), source construction, real engine/model/GPU/HTTP/browser or current held quality/reference access.",
+  "tests": {
+    "passed": 35,
+    "elapsed_seconds": 6.46,
+    "exit_code": 0
+  },
+  "blocking_findings": [],
+  "resolved_findings": [
+    "Pre-try missing/null/list context bindings now initialize safely after intent, permitting typed closed verify failure.",
+    "PID-observation/error-journal failure now attempts only the owned CANCEL in a finally path; cancellation-write failure is separately retained and export blocked."
+  ],
+  "independent_checks": {
+    "exact_original_science_protocol_and_intake_teacher_bytes_unchanged": true,
+    "all_eight_failed_attempt_and_exact_closed_owner_context_bindings_verify": true,
+    "old_held_child_absence_rechecked_before_admission": true,
+    "shared_FileLock_zero_wait_resource_context_before_science_import": true,
+    "two_samples_at_least_one_second_apart_start8GiBcommit4GiBphysical": true,
+    "same_scientific_intake1200_teacher3300_global13UTC": true,
+    "full3168_unique_tasks_and_coherent_journal_before_export": true,
+    "owned_engine_parent_image_PID_and_exit_required_before_export": true,
+    "create_only_sibling_intent_phases_sources_and_final_provenance": true,
+    "full_teacher_unknown_vs_notrun_recovery_when_case_identities_exist": true,
+    "future_training_requires_actual_completed_provenance_and_independent_cohort_audit": true,
+    "no_science_or_backend_imports_in_metadata_verification": true
+  },
+  "limits": [
+    "This is one explicitly authorized changed-context operational attempt after the original pre-source admission failure. It is not adaptive cohort replacement, a lower floor or a model-quality retry.",
+    "CPU guards and phase deadlines are cooperative. The driver does not provide an OS hard timeout or kill unrelated processes.",
+    "If owned PID observation or CANCEL writing is unavailable, export remains blocked; an unwritable cancellation marker cannot guarantee immediate cessation of an already executing scientific engine call. Root must inspect actual failure/engine-exit observations before any later GPU dispatch.",
+    "On engine-exit failure the driver still releases its owned FileLock at process cleanup and records failure. A free lock alone is not proof that a previously observed engine has exited; completed status plus owned_engine_exit_verified and actual closure are required.",
+    "Snapshots follow scientific output creation/return or its failure finalizer; sibling intent and phase ledger bind the operational plan/source beforehand. Hard process death can leave active_unknown phase intent.",
+    "No actual new corpus or targets have been reviewed here. Complete CPU data still requires independent actual source-location/target/novelty audit and a separate exact training/evaluation plan before models."
+  ],
+  "sources_and_protocol": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\run_cpu_once.py",
+      "bytes": 22945,
+      "sha256": "2e818e86b1d7af254138ed31f9a6da7761863aa365e12c675e5821bd0543760e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\build_protocol.py",
+      "bytes": 3864,
+      "sha256": "801e11df5c4b3682ca12498b00b3cb0fcd4cf1c908b99571d3c2a1205e47f44e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_counterfactual_recovery_v2.py",
+      "bytes": 17867,
+      "sha256": "aca85e0cb439282c1bd2baf15d48887a3091ed086acb25dace51ac81df2b69b5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\protocol.json",
+      "bytes": 7353,
+      "sha256": "3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b"
+    }
+  ],
+  "bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\driver-bundle.txt",
+      "bytes": 23100,
+      "sha256": "5d61fcd1318fd17d298549483d7c4d2e305b030fcdcdc34e2503e136455bb4cf"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\operational-metadata-bundle.txt",
+      "bytes": 19780,
+      "sha256": "d51b7defbceeee8f1e6b99fa56882a79b7cdae13ff4968ad8d3595d2e7bf64a3"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\tests-bundle.txt",
+      "bytes": 20224,
+      "sha256": "30e53938a3afa1210347cee6856259d2d51c12afe5d96bc85068fb68c3e65367"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\amendment-diff.txt",
+      "bytes": 6655,
+      "sha256": "a78345a1f3f953256b6b1efc0818e31f60f88d864fca02fdd7c4bf5fa9276dfe"
+    }
+  ],
+  "prior_unexecuted_draft": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\preexecution-draft-1\\run_cpu_once.py",
+      "bytes": 22542,
+      "sha256": "c12dd5ae65375f95f307bd88fc0b1fd7e37f21e55dc4ac80f6d76162aa2b77ae"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\preexecution-draft-1\\protocol.json",
+      "bytes": 7353,
+      "sha256": "298c7d7946cb3001fa7a655070a958913a6108688f819f667d3b272ca087ed32"
+    }
+  ],
+  "followUpTasks": []
+}

@@ -1,0 +1,185 @@
+[
+  {
+    "url": "https://api.github.com/repos/CSSLab/chessqa-benchmark/commits/main",
+    "retrieved_at_utc": "2026-10-16T10:08:41.574149+00:00",
+    "scope": "Metadata only; no corpus row, Parquet, weights, account or terms action.",
+    "status": 200,
+    "final_url": "https://api.github.com/repos/CSSLab/chessqa-benchmark/commits/main",
+    "bytes": 9823,
+    "response_sha256": "ed0b5b52e8d2045493fa678e8392b47b3a7bcda3152ee3acf6e1e702b0bf6b55",
+    "headers": {
+      "Date": "Fri, 16 Oct 2026 10:08:41 GMT",
+      "ETag": "W/\"ed0b5b52e8d2045493fa678e8392b47b3a7bcda3152ee3acf6e1e702b0bf6b55\"",
+      "Last-Modified": "Mon, 03 Aug 2026 15:58:44 GMT"
+    },
+    "observed": {
+      "sha": "7b656c3316b5266acc596124610fa084f58ee717",
+      "html_url": "https://github.com/CSSLab/chessqa-benchmark/commit/7b656c3316b5266acc596124610fa084f58ee717",
+      "parents": [
+        {
+          "sha": "84a158969b10f97dfa6763d16bf0efa73194f89e",
+          "url": "https://api.github.com/repos/CSSLab/chessqa-benchmark/commits/84a158969b10f97dfa6763d16bf0efa73194f89e",
+          "html_url": "https://github.com/CSSLab/chessqa-benchmark/commit/84a158969b10f97dfa6763d16bf0efa73194f89e"
+        }
+      ],
+      "commit": {
+        "author": {
+          "name": "QianfengWen",
+          "date": "2026-08-03T15:58:44Z"
+        },
+        "committer": {
+          "name": "QianfengWen",
+          "date": "2026-08-03T15:58:44Z"
+        },
+        "message": "Refine Semantic analysis presentation",
+        "tree": {
+          "sha": "550ded0e69a8b37c32b3b4287b311665542bacde",
+          "url": "https://api.github.com/repos/CSSLab/chessqa-benchmark/git/trees/550ded0e69a8b37c32b3b4287b311665542bacde"
+        }
+      }
+    },
+    "raw_response_retained": false
+  },
+  {
+    "url": "https://huggingface.co/api/datasets/wieeii/ChessQA-Benchmark",
+    "retrieved_at_utc": "2026-10-16T10:08:41.839504+00:00",
+    "scope": "Metadata only; no corpus row, Parquet, weights, account or terms action.",
+    "status": 200,
+    "final_url": "https://huggingface.co/api/datasets/wieeii/ChessQA-Benchmark",
+    "bytes": 3708,
+    "response_sha256": "f5f5e1f1d1b74921416a47a6f3c92e8b2ad0a236be3925c39dc93e40cddddb65",
+    "headers": {
+      "Date": "Fri, 16 Oct 2026 10:08:41 GMT",
+      "ETag": "W/\"e7c-gY84TJn2k6oWN5T2SIPil5qr9xA\"",
+      "Last-Modified": null
+    },
+    "observed": {
+      "id": "wieeii/ChessQA-Benchmark",
+      "sha": "18c5a789c6b358db1191642d31414a8bac540809",
+      "lastModified": "2025-11-01T20:56:03.000Z",
+      "cardData": {
+        "annotations_creators": [
+          "expert-generated"
+        ],
+        "language": [
+          "en"
+        ],
+        "license": "mit",
+        "multilinguality": [
+          "monolingual"
+        ],
+        "pretty_name": "ChessQA-Benchmark",
+        "size_categories": [
+          "1K<n<10K"
+        ],
+        "source_datasets": [
+          "original"
+        ],
+        "task_categories": [
+          "question-answering"
+        ],
+        "task_ids": [
+          "multiple-choice-qa"
+        ],
+        "configs": [
+          {
+            "config_name": "structural",
+            "data_files": [
+              "data/chessqa_structural.parquet"
+            ]
+          },
+          {
+            "config_name": "motifs",
+            "data_files": [
+              "data/chessqa_motifs.parquet"
+            ]
+          },
+          {
+            "config_name": "short_tactics",
+            "data_files": [
+              "data/chessqa_short_tactics.parquet"
+            ]
+          },
+          {
+            "config_name": "position_judgement",
+            "data_files": [
+              "data/chessqa_position_judgement.parquet"
+            ]
+          },
+          {
+            "config_name": "semantic",
+            "data_files": [
+              "data/chessqa_semantic.parquet"
+            ]
+          }
+        ]
+      },
+      "siblings": [
+        {
+          "rfilename": ".gitattributes"
+        },
+        {
+          "rfilename": "ChessQA_overview.jpg"
+        },
+        {
+          "rfilename": "LICENSE"
+        },
+        {
+          "rfilename": "README.md"
+        },
+        {
+          "rfilename": "data/chessqa_motifs.parquet"
+        },
+        {
+          "rfilename": "data/chessqa_position_judgement.parquet"
+        },
+        {
+          "rfilename": "data/chessqa_semantic.parquet"
+        },
+        {
+          "rfilename": "data/chessqa_short_tactics.parquet"
+        },
+        {
+          "rfilename": "data/chessqa_structural.parquet"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d.incomplete_info.lock"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d/dataset_info.json"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d/parquet-motifs.arrow"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d/parquet-position_judgement.arrow"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d/parquet-semantic.arrow"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d/parquet-short_tactics.arrow"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d/parquet-structural.arrow"
+        },
+        {
+          "rfilename": "parquet/default-4e6607e6b9330006/0.0.0/9c460aabd2aa27d1496e5e38d2060760561f0ac2cd6a110134eefa5b3f153b8d_builder.lock"
+        },
+        {
+          "rfilename": "scripts/__init__.py"
+        },
+        {
+          "rfilename": "scripts/__pycache__/chessqa_prompt_utils.cpython-313.pyc"
+        },
+        {
+          "rfilename": "scripts/chessqa_prompt_utils.py"
+        }
+      ],
+      "gated": false,
+      "disabled": false,
+      "private": false
+    },
+    "raw_response_retained": false
+  }
+]

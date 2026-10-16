@@ -1,0 +1,80 @@
+{
+  "schema": "chess.queen-coach-memory-protocol.v1",
+  "frozen_at": "2026-10-16T08:36:00.818367+00:00",
+  "implementation_sha256": "8da53d0f3efa64659324c23a284bdfaa9d919542269ea17a4327a0d1a13402c1",
+  "pilot_protocol": {
+    "path": "experiments/chess-queen-coach-sft-training-v1/protocol.json",
+    "sha256": "5a1013b8e8baf44c0abd0e3ade6eb012777e75b7bbdb38da2487f3d79056a0e2"
+  },
+  "previous_failure": {
+    "path": "data/private/chess-queen-coach-sft-training-v1/train-1/failure.json",
+    "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+  },
+  "previous_closed_worker": {
+    "path": "data/private/chess-queen-coach-sft-training-v1/train-1-worker.json",
+    "sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31"
+  },
+  "previous_journal": {
+    "path": "data/private/chess-queen-coach-sft-training-v1/train-1/training-calls.jsonl",
+    "sha256": "d1368094576d1302c5ef86c8e23c56cb0609e1b8c2d63ee20391c96aabf6681b"
+  },
+  "previous_spent_generation": {
+    "path": "data/private/chess-queen-coach-sft-training-v1/train-1/raw-development-0000/006.json",
+    "sha256": "d2b6a6d4d06a09b2ef1ca8493ff39b51a87286393f38f19fc086e716b2e6a255"
+  },
+  "qualification": {
+    "spent_development_case_id": "queen-coach-v1:FrE6YlJF:free",
+    "generation": "Exactly one already-spent dev input, original1024tokens/180s/greedy/no-cache/math. Must actually reach1024tokens, otherwise stop as insufficient stress.",
+    "updates": 32,
+    "presentations": 256,
+    "maximum_seconds": 900,
+    "order": "First256 of original seed4082083 permutation over2048TRAINrecords; original8accumulation/optimizer/LR schedule throughstep32. Reuse declared; no held content.",
+    "maximum_private_tail_span_bytes": 536870912,
+    "maximum_cuda_tail_span_bytes": 268435456,
+    "plateau": "Over last8completed optimizer boundaries, max-minus-min ownProcessPrivateUsage<=512MiB and CUDAallocated/reserved<=256MiB. Allresourceguards retain original4GiBcommit/physical and1GiBGPU stop floors.",
+    "live_preservation": "At step1/micro7 andstep32/micro7, hashall144trainable tensors andtheir144gradients immediatelybefore/aftercleanup, requireexactequality.",
+    "cleanup": "Only after load and returned generation/loss-backward and optimizer+zero_grad: synchronize, journalactualbefore, gc.collect, cuda.empty_cache, synchronize, journalactualafter, originalguard. No cleanup duringforward/backward or zeroingofliveaccumulatedgradients.",
+    "acceptance": "Allfixedgeneration/update/presentationcallscomplete, allfinitegradients, completefrozenstoragehashidentical, LoRAhashchanged, bothlivepreservationchecksandtailplateau pass. Anyfailurehaltsremainingcalls. Discardadapter; no qualitymeasurement, checkpointselection or heldcalls.",
+    "global_cutoff_utc": "2026-10-16T13:00:00+00:00"
+  },
+  "prior_provenance": "Original attempt20confirmedupdates/160confirmedbackwardpresentations; step21/micro0 callstarted withoutcompletion isactive_unknown. Nooptimizercheckpointafterstep0. Preserveallbytes andneverresumethisstate.",
+  "scope": "A software memory experiment, not chess competence. Windowsglobalcommit includesotherprocesses; ownPrivateUsage andCUDAallocator counters distinguishmeasuredscopes. NoOSsettings/dependency/device/offload/reservechanges.",
+  "dependencies": [
+    {
+      "path": "scripts/chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "d5fce78a9fc7ed58db393e44338c0d943687520ef0226635504b9862c328c99d"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_memory_qualification_v1.py",
+      "sha256": "6c2ff599844a0ff8d807ff58eef4b9a213b440233b55e51bb8adb0f334dc352a"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_train_v1.py",
+      "sha256": "0a99081ba35de8b45d386ce8c81466c3cdf4cf08997933e44ce7cd4737128d4e"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_runtime_v1.py",
+      "sha256": "de97771900ca67803c6138415627aeea42c5236982575d57c91153d7896abb7e"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1/training.resources.jsonl",
+      "sha256": "5a5408dec8cd3fb353a636a3930c6566161c80e67ada953a77ee9aace29e8e17"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1/run.json",
+      "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1-worker.log",
+      "sha256": "7f9874c8703693c333f0a90abc49b8fc8571956e2e0d472295d051c4a93c8ead"
+    },
+    {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    }
+  ]
+}

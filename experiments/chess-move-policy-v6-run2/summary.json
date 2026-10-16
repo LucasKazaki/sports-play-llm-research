@@ -1,0 +1,148 @@
+{
+  "schema": "chess.move-policy.v6.run2",
+  "protocol_sha256": "d2b29276c4782e675fb33520869a6dedc6e529f215855a748da29ad504fa5994",
+  "labels_sha256": "2cf5f1f6efd1bd89d70df80a954ac2efb0aece0047caa9441b21b9b45d5eff90",
+  "selection_sha256": "fe335a6ac56b2bbdac22a59fe8675cd8defb38506f86fbc7d09e6935d56edcc9",
+  "selected_step": 4096,
+  "training": {
+    "precision": "FP32 full9m parameters",
+    "steps": 4096,
+    "weight_decay": 0.01,
+    "optimizer": "AdamW",
+    "learning_rate": 5e-06,
+    "batch_size": 128,
+    "gradient_clip": 1.0,
+    "checkpoints": [
+      0,
+      256,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "objective": "CE over all1968 logits plus1.0*(logsumexp(all logits)-logsumexp(deterministically legal logits)); mean per batch. No legal mask at inference.",
+    "seed": 4082053,
+    "presentations": 524288,
+    "seconds_including_evaluation": 204.48272130000987
+  },
+  "runtime": {
+    "python": "3.12.2",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "peak_cuda_allocated": 2432350720
+  },
+  "finished_at": "2026-10-16T06:35:17.859764+00:00",
+  "limitations": [
+    "Raw Stockfish agreement is one bounded teacher measurement, not mathematical correctness, Elo or teaching quality.",
+    "The source is a tactical puzzle convenience shard; original-pretraining overlap unknown.",
+    "The forecast panel is conditional on a legal50k-node teacherPV of at least3plies; shortPV/mate-in1 candidates excluded with all outcomes retained.",
+    "Legality masks appear only in the training objective; raw inference remains unrestricted.",
+    "Compare startingv5selected2048 and newlyselectedv6 on identical fresh panels; earlier v5 metrics are historical different-panel observations.",
+    "This move-only experiment does not train commentary or prove broad chess or sports understanding."
+  ],
+  "starting_weights_sha256": "5de62c0decaadd8db7d13a24bf0d2b50c77104b80b0b72b35fc833111d143aa1",
+  "selected_weights_sha256": "63264e9e925749da7d2ca147daa6c95a8ee2dcac1de3b74cccc647aec6eaa925",
+  "results": {
+    "starting": {
+      "holdout": {
+        "count": 512,
+        "encoded_count": 512,
+        "raw_legal_count": 512,
+        "raw_top1_match_count": 370,
+        "raw_top3_match_count": 463,
+        "masked_top1_match_count": 370,
+        "failure_count": 0,
+        "cross_entropy": 0.8829867193492191,
+        "model_failure_stop": null,
+        "cross_entropy_count": 512,
+        "elapsed_seconds": 0.620266999991145,
+        "logits_sha256": "c31c176c783e07bae6a7e14341fce7f83ed107396af07339db0f901ee385de00"
+      },
+      "rollout": {
+        "planned": 128,
+        "status": {
+          "completed": 121,
+          "illegal_move": 4,
+          "game_over": 3
+        },
+        "prefix": {
+          "1": {
+            "teacher_supported": 128,
+            "exact": 85,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 128
+          },
+          "2": {
+            "teacher_supported": 128,
+            "exact": 54,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 125
+          },
+          "3": {
+            "teacher_supported": 128,
+            "exact": 43,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 121
+          }
+        },
+        "raw_sha256": "88631cf1264de99ef51117be0f336a3719aeb018dc9234c03a7995e80aab4a09"
+      }
+    },
+    "selected": {
+      "holdout": {
+        "count": 512,
+        "encoded_count": 512,
+        "raw_legal_count": 511,
+        "raw_top1_match_count": 369,
+        "raw_top3_match_count": 461,
+        "masked_top1_match_count": 369,
+        "failure_count": 0,
+        "cross_entropy": 0.8726768539250429,
+        "model_failure_stop": null,
+        "cross_entropy_count": 512,
+        "elapsed_seconds": 0.6313271000108216,
+        "logits_sha256": "dd3f270cbdd381a3048848aaead37e352e4ef19f492102938b3c78066f70f554"
+      },
+      "rollout": {
+        "planned": 128,
+        "status": {
+          "completed": 122,
+          "illegal_move": 3,
+          "game_over": 3
+        },
+        "prefix": {
+          "1": {
+            "teacher_supported": 128,
+            "exact": 86,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 128
+          },
+          "2": {
+            "teacher_supported": 128,
+            "exact": 55,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 126
+          },
+          "3": {
+            "teacher_supported": 128,
+            "exact": 43,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 122
+          }
+        },
+        "raw_sha256": "f5d934bc58a1f0d7256e534a9e15f29edbf553481440ba13198902b0d4d5d1fb"
+      }
+    }
+  },
+  "claim_boundary": "Essentially flat: heldout move agreement/legality each decrease1/512; three-ply exact agreement unchanged43/128. No default promotion, Elo, broad understanding or coaching-quality claim.",
+  "prior_attempt": {
+    "completed_updates": 64,
+    "heldout_calls": 0,
+    "planned_evaluation_roots": 4352,
+    "completed_development_roots": 512,
+    "future_not_run_roots": 3840,
+    "accounting": "Future not-run roots reconstructed from frozen protocol/labels after the stop; not an original contemporaneous ledger.",
+    "failure_sha256": "e1508241716f614afe390565ecff4161da3bd999f847429f3f28fa47c91da019"
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "chess.queen-claim-annotations.v1",
+  "response_sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0",
+  "raw_text_sha256": "e98499349517fc8f7f16e3f6d1105bde58d1721f6590b1b7782fe5155bae5a9c",
+  "claims": [
+    {
+      "claim_id": "opening_material_equality_unsupported",
+      "span": {
+        "start": 10,
+        "end": 77,
+        "sha256": "05263541c115f2e153e92765468db81923bbc20202c9dfc956710d3408fbafc0"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "material_equality",
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "opening_main_critical_legal",
+      "span": {
+        "start": 3608,
+        "end": 3949,
+        "sha256": "b09304711b4d4694780fc03dfbe97d75e9e0d80892d5c7501aed3c44a64311e0"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "d2d3",
+          "d7d6",
+          "e1g1",
+          "g8f6",
+          "c2c3",
+          "e8g8",
+          "b1d2",
+          "c8e6",
+          "h2h3",
+          "d8d7"
+        ],
+        "expected": true
+      }
+    },
+    {
+      "claim_id": "opening_alternative_white_bishop_pair",
+      "span": {
+        "start": 3333,
+        "end": 3450,
+        "sha256": "040a2a83962356b94e5f94cec57ed25bef40d6674c40701229c2dd15585969fd"
+      },
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "c2c3",
+          "g8f6",
+          "e1g1",
+          "e8g8",
+          "d2d3",
+          "d7d6",
+          "c1e3",
+          "c5e3",
+          "f2e3"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "bishop",
+        "expected": 2
+      }
+    }
+  ]
+}

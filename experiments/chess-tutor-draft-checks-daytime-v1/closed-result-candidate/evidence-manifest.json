@@ -1,0 +1,32 @@
+{
+  "schema": "chess.metadata-projection-manifest.v1",
+  "scope": "New metadata projection only; zero private payload copies.",
+  "files": [
+    {
+      "location": "repo:experiments/chess-tutor-draft-checks-daytime-v1/closed-result-candidate/build_projection.py",
+      "bytes": 13815,
+      "sha256": "b81ffbdec4138a2f0f4697dd4d336a7434aa2ae9a94ad13b68b4fb4b69abb2b1"
+    },
+    {
+      "location": "repo:experiments/chess-tutor-draft-checks-daytime-v1/closed-result-candidate/README.md",
+      "bytes": 2541,
+      "sha256": "382330392814de1a4e3b9f063adb41fb26c464d96e14f3c920e8fbba284d9066"
+    },
+    {
+      "location": "repo:experiments/chess-tutor-draft-checks-daytime-v1/closed-result-candidate/result-candidate.json",
+      "bytes": 17735,
+      "sha256": "932be8802b29892b3a10c8752f2f951bee18bc67a3150b521d03858ba5184459"
+    }
+  ],
+  "private_payload_files_copied": 0,
+  "actual_model_engine_GPU_HTTP_browser_process_calls": 0,
+  "projection_source_records": [
+    "closed helper metadata",
+    "worker metadata",
+    "root closure/admission/source metadata",
+    "verification hashes/status/counts only",
+    "reviewed source/qualification metadata"
+  ],
+  "raw_input_response_export_semantic_reads": 0,
+  "pending_independent_helper_and_public_projection_review": true
+}

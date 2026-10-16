@@ -1,0 +1,292 @@
+"""Authored CPU fake process/job tests. No real child, job or model is started."""
+import copy
+import ctypes
+import importlib.util
+import io
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+from types import SimpleNamespace
+import pytest
+
+HERE = Path(__file__).resolve().parent
+sys.path.insert(0, str(HERE))
+import owned_worker_v2 as worker
+import environment_parity_v1 as parity
+
+
+class Pipe:
+    def __init__(self): self.writes = []; self.closed = False
+    def write(self, value): self.writes.append(value)
+    def flush(self): pass
+    def close(self): self.closed = True
+
+
+class Child:
+    pid = 123; _handle = 321
+    def __init__(self): self.stdin = Pipe(); self.returncode = None; self.terminated = False; self.deadline = False
+    def poll(self): return self.returncode
+    def wait(self, timeout=None):
+        if self.deadline and not self.terminated: raise subprocess.TimeoutExpired('fake', timeout)
+        self.returncode = 77 if self.terminated else 0; return self.returncode
+    def terminate(self): self.terminated = True
+    def kill(self): self.terminated = True; self.returncode = 77
+
+
+class Job:
+    handle = 456
+    def __init__(self, child): self.child = child; self.handle = 456
+    def close(self): self.handle = None
+
+
+class API:
+    def __init__(self, child):
+        self.child = child; self.k = SimpleNamespace(GetCurrentProcess=lambda: 999)
+        self.wrong_image = False; self.wrong_pid = False; self.member_false = False
+        self.creator_member = False; self.extra_pid = False; self.terminated_job = False
+    def identity(self, handle):
+        return {'pid': os.getpid() if handle == 999 else 124 if self.wrong_pid else self.child.pid,
+            'image': worker.normalized(worker.BASE) if not self.wrong_image else 'wrong.exe',
+            'created': 1 if handle == 999 else 2}
+    def pids(self, job):
+        assert job
+        if self.child.poll() is not None: return []
+        return [self.child.pid, 124] if self.extra_pid else [self.child.pid]
+    def member(self, handle, job): return self.creator_member if handle == 999 else not self.member_false
+    def exited(self, handle): return self.child.poll() is not None
+    def terminate_owned(self, job): self.terminated_job = True
+
+
+@pytest.fixture
+def fakes(monkeypatch, tmp_path):
+    child = Child(); api = API(child); state = {'lease': False, 'popen': []}
+    class Lock:
+        def __init__(self, *args, **kwargs): pass
+        def __enter__(self): state['lease'] = True
+        def __exit__(self, *args): state['lease'] = False
+    def popen(command, **kwargs): state['popen'].append((command, kwargs)); return child
+    real_save = worker.save
+    def save(path, value):
+        assert state['lease'] or value['status'] == 'busy'
+        real_save(path, value)
+    monkeypatch.setattr(worker, 'FileLock', Lock)
+    monkeypatch.setattr(worker, 'pinned_original', lambda: SimpleNamespace(OwnedWindowsJob=Job))
+    monkeypatch.setattr(worker, 'WindowsProof', lambda: api)
+    monkeypatch.setattr(worker.subprocess, 'Popen', popen)
+    monkeypatch.setattr(worker, 'save', save)
+    return child, api, state, tmp_path/'receipt.json'
+
+
+def vector(): return [str(Path(worker.__file__).relative_to(worker.ROOT)), '--fake-authored-argument']
+
+
+def test_command_direct_base_single_env_override(monkeypatch):
+    monkeypatch.setenv('AUTHORED_SENTINEL', 'unchanged')
+    before = dict(os.environ)
+    command, environment = worker.child_command(Path('example.py'), ['a'])
+    assert command == [str(worker.BASE), str(worker.ORIGINAL), '--bootstrap-script', 'example.py', '--', 'a']
+    assert dict(os.environ) == before and environment is not os.environ
+    assert {key: value for key, value in environment.items() if key != '__PYVENV_LAUNCHER__'} == {
+        key: value for key, value in before.items() if key != '__PYVENV_LAUNCHER__'}
+    assert environment['__PYVENV_LAUNCHER__'] == str(worker.VENV)
+
+
+def test_success_proves_before_go_and_exit_with_lease(fakes):
+    child, api, state, receipt = fakes
+    result = worker.run_worker(vector(), receipt, 15, receipt.parent/'fake.lock')
+    assert result['status'] == 'completed' and child.stdin.writes == [b'GO\n']
+    assert result['owned_member_before_go'] and result['owned_job_exit_verified']
+    assert result['ownership']['before_go']['child_identity']['pid'] == child.pid
+    assert result['ownership']['closure']['complete_job_pids'] == []
+    assert result['child_exited_before_lease_release'] and not state['lease']
+    command, options = state['popen'][0]
+    assert command[0] == str(worker.BASE) and options['close_fds'] is True
+    assert 'pass_fds' not in options and 'startupinfo' not in options
+    assert json.loads(receipt.read_bytes()) == result
+
+
+@pytest.mark.parametrize('broken', ['wrong_image', 'wrong_pid', 'member_false', 'creator_member', 'extra_pid'])
+def test_identity_membership_failure_never_sends_go(fakes, broken):
+    child, api, state, receipt = fakes; setattr(api, broken, True)
+    with pytest.raises(ValueError): worker.run_worker(vector(), receipt, 15, receipt.parent/'fake.lock')
+    saved = json.loads(receipt.read_bytes())
+    assert child.stdin.writes == [] and child.terminated and saved['status'] == 'failed'
+    assert not saved['owned_member_before_go'] and saved['child_exited_before_lease_release']
+
+
+def test_deadline_terminates_only_owned_child_and_records_closure(fakes):
+    child, api, state, receipt = fakes; child.deadline = True
+    result = worker.run_worker(vector(), receipt, 1, receipt.parent/'fake.lock')
+    assert result['status'] == 'deadline' and child.terminated
+    assert result['owned_job_exit_verified'] and result['exit_code'] == 77
+
+
+def test_closure_query_failure_retains_partial_and_closes_handle(fakes, monkeypatch):
+    child, api, state, receipt = fakes; original_pids = api.pids
+    def pids(job):
+        if child.poll() is not None: raise OSError('authored query failure')
+        return original_pids(job)
+    monkeypatch.setattr(api, 'pids', pids)
+    with pytest.raises(OSError): worker.run_worker(vector(), receipt, 15, receipt.parent/'fake.lock')
+    saved = json.loads(receipt.read_bytes())
+    assert saved['status'] == 'failed' and saved['ownership']['closure']['actual_job_handle_closed']
+    assert not saved['owned_job_exit_verified'] and 'closure_error' in saved
+
+
+def test_owned_descendant_cleanup_requires_empty_job(monkeypatch):
+    child = Child(); child.returncode = 0; job = Job(child); api = API(child); calls = []
+    monkeypatch.setattr(api, 'pids', lambda handle: [765] if not api.terminated_job else [])
+    result = worker.close_owned(api, child, job)
+    assert result['owned_termination_requested'] and result['complete_job_pids'] == []
+    assert result['actual_job_handle_closed'] and result['child_stable_handle_exited']
+
+
+def test_busy_never_starts_child(fakes, monkeypatch):
+    child, api, state, receipt = fakes
+    class Busy:
+        def __init__(self, *a, **k): pass
+        def __enter__(self): raise worker.Timeout('authored busy')
+        def __exit__(self, *a): pass
+    monkeypatch.setattr(worker, 'FileLock', Busy)
+    result = worker.run_worker(vector(), receipt, 15, receipt.parent/'fake.lock')
+    assert result['status'] == 'busy' and not state['popen'] and child.stdin.writes == []
+
+
+@pytest.mark.parametrize('seconds', [0, 14401, True])
+def test_invalid_deadline_no_child(fakes, seconds):
+    child, api, state, receipt = fakes
+    with pytest.raises(ValueError): worker.run_worker(vector(), receipt, seconds)
+    assert not state['popen']
+
+
+def test_create_only_no_child(fakes):
+    child, api, state, receipt = fakes; receipt.write_text('original')
+    with pytest.raises(ValueError): worker.run_worker(vector(), receipt)
+    assert receipt.read_text() == 'original' and not state['popen']
+
+
+def metadata():
+    return {'status': 'completed', 'model_calls': 0, 'engine_calls': 0, 'forbidden_framework_modules_imported': [],
+        'source_sha256': 'authored', 'environment': {'sys_path': ['a', 'b'], 'flags': {'optimize': 0},
+            'packages': {'torch': {'version': 'example', 'module_origin': 'local'}}}, 'topology': {'pid': 1}}
+
+
+def test_exact_parity_allows_only_topology_variation():
+    first = metadata(); second = copy.deepcopy(first); second['topology'] = {'pid': 2}
+    assert parity.compare(first, second)['exact_environment_equal']
+
+
+@pytest.mark.parametrize('field,value', [('sys_path', ['b', 'a']), ('flags', {'optimize': 1}),
+    ('packages', {'torch': {'version': 'changed', 'module_origin': 'local'}})])
+def test_parity_rejects_environment_drift(field, value):
+    first = metadata(); second = copy.deepcopy(first); second['environment'][field] = value
+    with pytest.raises(ValueError, match='environment parity'): parity.compare(first, second)
+
+
+def test_forbidden_framework_record_rejected():
+    first = metadata(); second = copy.deepcopy(first); second['forbidden_framework_modules_imported'] = ['torch']
+    with pytest.raises(ValueError): parity.compare(first, second)
+
+
+def test_candidate_receipt_binds_actual_child_and_parent(fakes):
+    child, api, state, receipt = fakes
+    result = worker.run_worker(vector(), receipt, 15, receipt.parent/'fake.lock')
+    payload = {'topology': {'actual_process': result['ownership']['before_go']['child_identity'],
+        'parent_pid': os.getpid(), 'immediate_current_job_pids': [child.pid]}}
+    parity.candidate_gate(result, payload)
+    bad = copy.deepcopy(payload); bad['topology']['parent_pid'] += 1
+    with pytest.raises(ValueError): parity.candidate_gate(result, bad)
+    bad = copy.deepcopy(result); bad['ownership']['closure']['complete_job_pids'] = [99]
+    with pytest.raises(ValueError): parity.candidate_gate(bad, payload)
+
+
+def test_original_source_and_interpreter_hashes_still_exact():
+    for path, expected in ((worker.ORIGINAL, worker.ORIGINAL_SHA), (worker.BASE, worker.BASE_SHA), (worker.VENV, worker.VENV_SHA)):
+        assert worker.digest(path) == expected
+
+
+def test_child_payload_source_has_no_framework_imports():
+    import ast
+    tree = ast.parse((HERE/'environment_parity_child_v1.py').read_text())
+    imports = [node for node in ast.walk(tree) if isinstance(node, (ast.Import, ast.ImportFrom))]
+    names = [name.name.split('.')[0] for node in imports if isinstance(node, ast.Import) for name in node.names]
+    names += [(node.module or '').split('.')[0] for node in imports if isinstance(node, ast.ImportFrom)]
+    assert not set(names) & {'torch', 'transformers', 'bitsandbytes', 'peft', 'chess'}
+
+
+def test_creator_creation_must_precede_exact_child():
+    child = Child(); api = API(child); original = api.identity
+    def identity(handle):
+        result = original(handle)
+        if handle == 999: result['created'] = 5
+        return result
+    api.identity = identity
+    with pytest.raises(ValueError, match='identity'): worker.before_go(api, child, Job(child))
+
+
+def test_pinned_original_rejects_changed_binary_before_import(monkeypatch):
+    monkeypatch.setattr(worker, 'digest', lambda path: 'changed')
+    with pytest.raises(ValueError, match='bytes differ'): worker.pinned_original()
+
+
+def test_actual_package_metadata_without_framework_import():
+    import environment_parity_child_v1 as payload
+    payload.no_frameworks(); before = set(sys.modules)
+    values = payload.package_metadata(); payload.no_frameworks()
+    assert set(values) == {'torch', 'transformers', 'bitsandbytes', 'peft', 'chess'}
+    assert all(row['version'] and row['module_origin'] for row in values.values())
+    assert not any(name.split('.')[0] in values for name in set(sys.modules)-before)
+
+
+def test_metadata_plan_binds_full_arguments(tmp_path):
+    import prepare_environment_parity_v1 as builder
+    plan = builder.build(tmp_path/'new-out', '2026-10-16T15:30:00+00:00')
+    assert plan['model_calls'] == plan['engine_calls'] == 0
+    assert plan['planned'] == ['original', 'candidate']
+    for name in plan['planned']:
+        row = plan['requests'][name]
+        assert row['arguments'][0].endswith('environment_parity_child_v1.py')
+        assert row['arguments_sha256'] == worker.hashlib.sha256(json.dumps(row['arguments']).encode()).hexdigest()
+
+
+def test_parity_plan_tamper_rejects_before_launch(tmp_path):
+    import prepare_environment_parity_v1 as builder
+    plan = builder.build(tmp_path/'new-out', '2026-10-16T15:30:00+00:00')
+    plan['dependencies'][0]['sha256'] = 'changed'
+    with pytest.raises(ValueError, match='dependency changed'): parity.verify(plan, tmp_path/'unused.json')
+
+
+def test_complete_job_list_reallocates_partial_api_result():
+    api = worker.WindowsProof.__new__(worker.WindowsProof); capacities = []
+    def query(job, information, buffer, length, returned):
+        capacity = (length-8)//ctypes.sizeof(ctypes.c_size_t); capacities.append(capacity)
+        ctypes.c_uint32.from_buffer(buffer, 0).value = 70
+        count = min(capacity, 70); ctypes.c_uint32.from_buffer(buffer, 4).value = count
+        if capacity < 70: ctypes.set_last_error(234); return False
+        (ctypes.c_size_t*count).from_buffer(buffer, 8)[:] = list(range(1, 71))
+        returned._obj.value = 8+count*ctypes.sizeof(ctypes.c_size_t); return True
+    api.k = SimpleNamespace(QueryInformationJobObject=query)
+    assert api.pids(456) == list(range(1, 71)) and capacities == [64, 128]
+
+
+@pytest.mark.parametrize('pids', [[123, 123], [0]])
+def test_complete_job_list_rejects_duplicate_or_zero(pids):
+    api = worker.WindowsProof.__new__(worker.WindowsProof)
+    def query(job, information, buffer, length, returned):
+        for offset in (0, 4): ctypes.c_uint32.from_buffer(buffer, offset).value = len(pids)
+        (ctypes.c_size_t*len(pids)).from_buffer(buffer, 8)[:] = pids
+        returned._obj.value = 8+len(pids)*ctypes.sizeof(ctypes.c_size_t); return True
+    api.k = SimpleNamespace(QueryInformationJobObject=query)
+    with pytest.raises(ValueError, match='Invalid owned-job'): api.pids(456)
+    with pytest.raises(ValueError, match='Explicit'): api.pids(None)
+
+
+def test_parity_failure_keeps_all_planned_rows_without_launch(tmp_path, monkeypatch):
+    output = tmp_path/'closed-failure'; protocol = tmp_path/'plan.json'; protocol.write_text('{}')
+    monkeypatch.setattr(parity, 'verify', lambda *a: (_ for _ in ()).throw(ValueError('authored invalid plan')))
+    with pytest.raises(ValueError): parity.run({'output': str(output)}, protocol, output)
+    result = json.loads((output/'closed.json').read_bytes())
+    assert result['status'] == 'failed' and result['planned'] == 2 and result['completed'] == 0
+    assert [row['status'] for row in result['rows']] == ['not_run', 'not_run']

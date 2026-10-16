@@ -1,0 +1,10 @@
+{
+  "schema": "chess.public-source-review-copy.v1",
+  "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\encoder-generalization-inference-v2-source-review.json",
+  "copy": "experiments\\chess-encoder-check-generalization-v1\\inference-source-review-v2.json",
+  "sha256": "2af7aff2553ead9e93aa5aa768fd444c03c25b42fa5ed8269ac5548226f16c62",
+  "bytes": 3956,
+  "exact_bytes": true,
+  "actual_inference_calls": 0,
+  "scope": "Source/software only; actual inference and independent result audit remain separate."
+}

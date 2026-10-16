@@ -1,0 +1,111 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-16T13:53:39.972670+00:00",
+  "scope": "Closed actual one-request original-manual UI/controller/checker/export integration only. No chess/prose/model-quality approval or tuned admission.",
+  "protocol_sha256": "459bcbf0ec8902535e8304fd8a3ea4c99be109b3baca8389c754d5d433875263",
+  "request_id": "9431d3a155a146c0851dcaa2be10e80b",
+  "closure": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\closure.json",
+    "bytes": 2704,
+    "sha256": "a4ddb6962d5075ef6a0520baa142df8aa05d0e495ac56c5316ca44b2d91fecc7"
+  },
+  "artifact_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\artifact-manifest.json",
+    "bytes": 6638,
+    "sha256": "a78108ba3b92a6c5b0d3451006305e67d131af35eb23c57d4c3b321127253641"
+  },
+  "bound_artifacts_verified": 21,
+  "admission": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\admission.json",
+    "bytes": 10015,
+    "sha256": "0bfad358b22fc356aa3ac9dc3b342ed0aa3707df0b97e75ccf47f4dcdc9378d0"
+  },
+  "intent": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\intent.json",
+    "bytes": 1003,
+    "sha256": "c5c26c9987c7919bd196427189e680d21f5b3fefba827ff66171ef9973a928d3"
+  },
+  "dispatch_link": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\dispatch-link.json",
+    "bytes": 2051,
+    "sha256": "68d273632b78a9167132159402b237a35226c8ce95b9655df6e883ba49f6e251"
+  },
+  "raw_response": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\response.json",
+    "bytes": 40634,
+    "sha256": "284a7329f97cd66db0e4992dda8359cc20aa9104d856dd6c9574d1a1ed5182a5"
+  },
+  "saved_input": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\input.json",
+    "bytes": 72,
+    "sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7"
+  },
+  "worker": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\worker.json",
+    "bytes": 724,
+    "sha256": "0baf83a8c66123e2e4a869bc3b3b6d9a4abb9c5a2671c3f0601aeea53e3403d7"
+  },
+  "verification": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\draft-checks-v1.json",
+    "bytes": 1941,
+    "sha256": "edb9bae9a8be337d8343206398bc7df0269e02ea6937e3b5fd60f5e75b06043e"
+  },
+  "counts": {
+    "planned": 1,
+    "completed": 1,
+    "partial": 0,
+    "failed": 0,
+    "active_unknown": 0,
+    "not_run": 0,
+    "actual_UI_submissions": 1,
+    "actual_worker_launches": 1,
+    "confirmed_generation_requests": 1,
+    "generated_tokens": 527,
+    "canonical_claims_matched": 0
+  },
+  "checks": {
+    "authorization_and_admission": "Exact independent prospective GO/protocol bind admission and intent before worker. Two fixed fresh samples are1.143s apart and satisfy6/10/10GiB startup floors. Original4344 process/creation and source pins match before/after; no restart/bypass is recorded.",
+    "actual_input_identity": "Actual saved72-byte input equals frozen CRLF template and pre/post hash07124a...; raw input field equals prospectively frozen60-byte canonical packet hash5284f6... . Exact packet is current FEN/history only. The checker binds actual file bytes independently; no old hash is rebound.",
+    "worker_and_profile": "Exact UUID-expanded full child arguments match worker SHA485cbf... . Original NF4 candidate/source/generation/no-forward/no-fallback metadata and canonical response validation match. Workerexit0/child-exited-before-lease is retained; original manual profile fixturefalse; no tuned profile.",
+    "actual_checker": "Terminal public job contains the exact sibling checker record, matching full raw response/raw_text/input/request/verifier/parser/context hashes. All raw dictionary fields, including parsed/raw_text/decoded_text, remain equal in public view. No unsupported statement verdict is manufactured: statusunassessed, zero canonicalclaims, wholeprosefalse, correct exact unassessed/BEST spans.",
+    "exports_and_visuals": "Current and restored export bytes are identical and preserve original job/result/checks; stale export coachingnull at another board. Current/restored screenshots are byte-identical; current and stale screenshots were viewed and show unverified prose, limited zero-match checks, and stale warning/normal return control.",
+    "preservation_and_closure": "All21 artifact manifest entries rehash exactly, and four original input/raw/worker/checker hashes remain unchanged after UI actions. Closed full denominator1complete is supported by actual artifacts. Root observations retain child absence/leasefree and no additional request folder/return call; no independent live probe by reviewer.",
+    "resources": {
+      "runtime_samples": 44,
+      "all_observed_floor_checks_pass": true,
+      "observed_minima": {
+        "physical_available_bytes": 9680089088,
+        "commit_headroom_bytes": 8700755968,
+        "gpu_free_bytes": 10827595776
+      },
+      "peak_cuda_allocated_bytes": 3509847040,
+      "peak_cuda_reserved_bytes": 3563061248,
+      "generation_seconds": 68.891,
+      "worker_seconds": 69.90599999998813
+    }
+  },
+  "deviations_and_limits": [
+    "The prospective wording said Return to this position; actual normal control says Return to that position. Root retained an initial label-wait timeout without click, then one normal observed-control click. This is no backend retry.",
+    "No-new-return model/engine calls and child-absence/lease observations are attributed to root retained observation/source behavior and one request-folder set; this reviewer made no HTTP/browser/process/lease probes.",
+    "Disk hashes/process provenance and actual captured-file/checker behavior support this integration; they do not attest every in-memory Python byte or OS-level write durability.",
+    "The527-token ordinary explanation is retained privately and unassessed. A legal BEST move, mate board observation, completed software request or zero matched canonical statements establishes no strategic/prose/teaching quality.",
+    "No public projection has been created or accepted by this closed review. All original private artifacts remain unchanged.",
+    "Old saved-byte compatibility failure and old unadmitted smoke retain their historical outcomes; this new prospectively bound completion is separate.",
+    "The later optional verify_closed.py helper and its actual closed-verification-1.json were not included in this independent audit; their separate source/result review remains pending. This review independently checked its stated integration predicates with its own JSON/hash auditor."
+  ],
+  "reviewer_execution": {
+    "light_JSON_text_hash_and_image_read_only": true,
+    "new_checker_or_test_calls": 0,
+    "model_calls": 0,
+    "engine_calls": 0,
+    "gpu_calls": 0,
+    "HTTP_or_browser_calls": 0,
+    "held_or_reserve_content_opens": 0
+  },
+  "followUpTasks": [],
+  "supersedes_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-tutor-draft-checks-integration-closed-review.json",
+    "sha256": "468fbf1546b74fded0d1ce576cb8a0797cfb4f60e7b6e87bed72f1faec152610",
+    "reason": "Correct one prose artifact-entry count: 21 bound entries plus the separately hashed manifest, not 22 entries. No actual evidence or verdict change."
+  }
+}

@@ -1,0 +1,2052 @@
+{
+  "rows": [
+    {
+      "case_id": "encoder-check-v1-13Fjl-d4a1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13Fjl-d4c5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13OBB-d1d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13OBB-d1d7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13Wuo-f3d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13Wuo-f3f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13YTQ-h2d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13YTQ-h2g1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13YWq-h6h5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13YWq-h6h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13YkO-b1b8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13YkO-b1c1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13m87-g5g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13m87-g5e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13uTH-d5a2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13uTH-d5g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13xSO-b7a8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-13xSO-b7c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13zv5-e6g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-13zv5-e6h3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-148ep-d8e8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-148ep-d8h8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14G51-c7h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14G51-c7d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14JkG-b7a8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14JkG-b7f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14L1j-b6b8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14L1j-b6a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14MZR-d6c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14MZR-d6a6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ORb-g3g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ORb-g3f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14OvH-c7c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14OvH-c7c2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14QiR-e4e5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14QiR-e4g2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14TwQ-h3f3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14TwQ-h3h4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14XBj-e1h1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14XBj-e1d1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14Ylt-a2a1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14Ylt-a2a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ZDj-e6g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ZDj-e6b6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14d7t-e7d7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14d7t-e7f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14gow-e4c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14gow-e4h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m2v-c4e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m2v-c4f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m3U-f3b3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m3U-f3g4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m4p-g8b8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m4p-g8f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m5O-c4e3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m5O-c4b2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m6L-c4f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m6L-c4d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m7F-d3h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m7F-d3a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m7l-e4e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m7l-e4e8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mG2-d8d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mG2-d8h4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mGu-b4b1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mGu-b4f8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mJA-h7h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mJA-h7g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mKa-f1e1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mKa-f1f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mOt-c7h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mOt-c7d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mc0-d6h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mc0-d6f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14meN-c5c4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14meN-c5e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mf9-g5d2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mf9-g5e3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mmS-b6e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mmS-b6b2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14msF-e6c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14msF-e6d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14muN-f2d2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14muN-f2g1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n1C-b7b4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n1C-b7b8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n1k-e5f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n1k-e5e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n4a-a4a5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n4a-a4b4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n59-a1a3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n59-a1g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n5S-g4f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n5S-g4g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n67-d1d2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n67-d1d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nAA-f2f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nAA-f2f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nEG-d3e2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nEG-d3h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nFa-a2a1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nFa-a2e2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nIZ-h4c4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nIZ-h4h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nLe-f3g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nLe-f3g1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nNV-d3g3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nNV-d3h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nP3-c8a8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nP3-c8h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nPZ-d8d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nPZ-d8d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nQd-f4f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nQd-f4e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nQz-d4g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nQz-d4f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nTE-c4e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nTE-c4c2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nTf-e7b4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nTf-e7c5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nWH-d1d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nWH-d1f1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14naZ-c5a4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14naZ-c5b3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ni0-g3g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ni0-g3h3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nlr-c1e2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nlr-c1d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ntC-a7e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ntC-a7a4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nxH-d8c8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nxH-d8a5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nxm-d5d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nxm-d5d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nyP-h5h3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nyP-h5h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14o2C-f8f7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14o2C-f8f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14o35-e2d4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14o35-e2g3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oAh-h4f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oAh-h4g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oCL-d8c8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oCL-d8d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oCZ-a4b3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oCZ-a4c6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oJS-g1h1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oJS-g1f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oJx-g5g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oJx-g5a5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oKU-d5d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oKU-d5e5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oOF-a2c2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oOF-a2a3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oPa-a6e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oPa-a6c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oPl-d3a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oPl-d3e3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ofE-e4e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ofE-e4g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ohp-f5h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ohp-f5e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ovT-d2d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ovT-d2d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ovU-h5f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ovU-h5g7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14owl-c4d4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14owl-c4f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oxt-a7a4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oxt-a7e3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ozK-e2e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ozK-e2h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14p7L-f3f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14p7L-f3g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pDC-g2g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pDC-g2g1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pDs-c2f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pDs-c2b2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pL9-g5g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pL9-g5g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pLb-d8b6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pLb-d8a5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pTk-d1g1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pTk-d1h1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pZ1-a2a5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pZ1-a2a1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pbA-h8g8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pbA-h8d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pbW-f3f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pbW-f3d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pwb-e2e4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pwb-e2e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pxL-e5f7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pxL-e5c4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14py9-g4c4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14py9-g4h5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14q0w-d5d4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14q0w-d5g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14q7O-b5d6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14q7O-b5d4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qGF-c8e8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qGF-c8g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qGG-e5d7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qGG-e5c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qHq-d5a8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qHq-d5d2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qJd-a7b7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qJd-a7a8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qLC-e8g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qLC-e8c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qMV-d3e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qMV-d3c4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qPZ-e2a6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qPZ-e2c4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qTu-d2d7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qTu-d2d3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qZT-g2g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qZT-g2g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qfC-d6b6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qfC-d6d8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qhw-h4g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qhw-h4f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qky-f6e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qky-f6f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qnd-h5f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qnd-h5h7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qoD-h1d1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qoD-h1g1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qoP-e7b7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qoP-e7e5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qs6-c6c3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qs6-c6g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qsV-e3a3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qsV-e3d3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qsa-b5d7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qsa-b5a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r02-f3e5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r02-f3e1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r6w-d3f4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r6w-d3e1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r7D-c7e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r7D-c7h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r7M-a4f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r7M-a4a1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r8P-f8d8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r8P-f8h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rAB-h5f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rAB-h5d1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rB3-g3e2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rB3-g3f1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rCB-h1h7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rCB-h1h6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rDL-d7d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rDL-d7c7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rDk-f7f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rDk-f7f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rEO-g3h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rEO-g3f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rMu-f4e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rMu-f4e2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rRH-d5h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rRH-d5d8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rSV-e3c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rSV-e3c3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rcz-a2a1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rcz-a2b2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rg4-d8b8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rg4-d8a5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rpD-f4f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rpD-f4h4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rtB-g7g1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rtB-g7g5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s05-h3h4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14s05-h3g4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s0Z-f3f8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14s0Z-f3f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s1M-e5g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s1M-e5f7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sBq-c6c5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sBq-c6c1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sBy-d1c3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sBy-d1f2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sLk-g6d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sLk-g6h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sME-h6g4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sME-h6f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sS8-f6f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sS8-f6f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sUm-h5e2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sUm-h5g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sUz-a5a4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sUz-a5a8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sXN-f7c7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sXN-f7f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sd1-h5f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sd1-h5h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sjx-e4f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sjx-e4d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14snV-g4g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14snV-g4c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sr1-d6f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sr1-d6a3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ssy-a7a4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ssy-a7f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14stR-d4c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14stR-d4f3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14stT-g2f1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14stT-g2c6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14szx-b5d6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14szx-b5a7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14t1n-f7g7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14t1n-f7c7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14t4v-d3h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14t4v-d3g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14t6I-h5f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14t6I-h5f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tE0-a7a4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tE0-a7a2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tGv-f7e7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tGv-f7f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tMn-f8g8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tMn-f8e8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tYQ-g7b7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tYQ-g7a7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tg7-f4f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tg7-f4f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tkj-e7a7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tkj-e7e8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tqy-d8d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tqy-d8c8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14txc-e4h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14txc-e4e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tzH-d7d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tzH-d7d6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u25-d4d5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u25-d4f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14u3l-c5h5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14u3l-c5f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u93-a8a5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14u93-a8g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u9e-h2g4",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u9e-h2f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uCs-e3b6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uCs-e3a7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uEb-d5e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uEb-d5f6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uFk-e2e7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uFk-e2e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uIi-g3g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uIi-g3d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uRO-e4c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uRO-e4h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uSr-f6d6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uSr-f6e6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uVJ-e5b8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uVJ-e5f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uXK-f7g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uXK-f7f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uiX-f6g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uiX-f6g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ujr-g5e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ujr-g5f7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14umo-g4f4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14umo-g4h3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14up9-h7h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14up9-h7e7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uq8-f6g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uq8-f6f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ur8-c7c3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ur8-c7e7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uvh-d5b6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uvh-d5e7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uvq-f7g7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uvq-f7b7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uy4-g6h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uy4-g6d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v1k-b6a6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v1k-b6b3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v2W-e5d3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v2W-e5f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v7P-h7h1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v7P-h7g6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v8P-h1d1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v8P-h1g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v9O-f4b8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v9O-f4g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vBe-d5b7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vBe-d5d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vDv-d2e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vDv-d2d7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vK9-c3c4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vK9-c3c7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vKO-e4h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vKO-e4c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vKy-f2e2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vKy-f2f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vQ7-c6e7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vQ7-c6d8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vRS-f6e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vRS-f6d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vVk-a2a1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vVk-a2d2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vcb-d4d2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vcb-d4a1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vpf-d3h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vpf-d3f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vvk-f5e7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vvk-f5d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vyj-g8g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vyj-g8c8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vzG-e8e3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vzG-e8e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vzt-h5f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vzt-h5f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wGX-f8e7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wGX-f8c5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wHC-e7e1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wHC-e7e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wKd-g8a8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wKd-g8e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wN5-h5h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wN5-h5g5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wQr-c3e2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wQr-c3d1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wTa-e5d7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wTa-e5g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14waq-e1e8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14waq-e1b1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wkx-e4d5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wkx-e4d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wqk-g3e2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wqk-g3h5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wvq-g2d2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wvq-g2a2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wz5-h3f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wz5-h3h1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14x1C-b3a3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14x1C-b3b1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14x6R-f6f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14x6R-f6f3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xCd-h4f2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xCd-h4h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xCy-f8f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xCy-f8f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xEb-g5f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xEb-g5e3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xFA-c6d5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xFA-c6e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xGG-e5d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xGG-e5h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xKc-e2e5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xKc-e2f1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xQ8-f3f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xQ8-f3g2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xZi-e6d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xZi-e6g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xet-c2a4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xet-c2d1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xgJ-d4a1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xgJ-d4e4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xgx-h1h7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xgx-h1h8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xkP-c7d6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xkP-c7b8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xmy-f5c5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xmy-f5f1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xnV-g1g5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xnV-g1g3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xoC-c7c8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xoC-c7d7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xoM-f4h2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xoM-f4h6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xu3-d1d5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xu3-d1b3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xw4-c5c2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xw4-c5f8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xz2-e4g6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xz2-e4f5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14y07-c2f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14y07-c2a2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14y9F-g7f6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14y9F-g7c7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yAI-e3g1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yAI-e3f2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yHg-c4f7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yHg-c4d5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yK6-e8e6",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yK6-e8a8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yKD-d5h1",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yKD-d5c6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yKN-e8c8",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yKN-e8h5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yTB-b7c7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yTB-b7b8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yWl-d1e1",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yWl-d1d8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yYW-c2d2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yYW-c2h7",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ycZ-c5b6",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ycZ-c5f2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yri-g5g2",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yri-g5f5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yyQ-d6g3",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yyQ-d6b4",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yzT-h8h7",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yzT-h8g8",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14z0D-f6g5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14z0D-f6e5",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14z1J-g3d3",
+      "gives_check": false
+    },
+    {
+      "case_id": "encoder-check-v1-14z1J-g3g5",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14z6o-e2c2",
+      "gives_check": true
+    },
+    {
+      "case_id": "encoder-check-v1-14z6o-e2f2",
+      "gives_check": false
+    }
+  ]
+}

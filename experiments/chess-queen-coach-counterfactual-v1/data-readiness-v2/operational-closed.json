@@ -1,0 +1,46 @@
+{
+  "schema": "chess.counterfactual-cpu-recovery.v2",
+  "status": "completed",
+  "error": null,
+  "owned_engine_exit_verified": true,
+  "scientific_protocol_sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a",
+  "operational_protocol_sha256": "3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b",
+  "corpus_manifest_sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854",
+  "closed_held_worker": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\heldout-1-worker.json",
+    "sha256": "f443d8fa2ac23a38477413528949f086d27432523fb25b1a81910574ebd5dd60"
+  },
+  "teacher_outcomes": {
+    "completed": 3168
+  },
+  "model_calls": 0,
+  "GPU_calls": 0,
+  "no_retry": true,
+  "phases": {
+    "verify": "completed",
+    "lease": "completed",
+    "admission": "completed",
+    "intake": "completed",
+    "provenance": "completed",
+    "teachers": "completed",
+    "engine_exit": "completed",
+    "export": "completed"
+  },
+  "owned_engine_pids": [
+    {
+      "pid": 636,
+      "parent_pid": 50732,
+      "image": "stockfish-windows-x86-64-universal.exe",
+      "observed_at": "2026-10-16T10:33:26.033554+00:00"
+    }
+  ],
+  "pid_observation_errors": [],
+  "operational_source_snapshot": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\operational-sources\\manifest.json",
+    "sha256": "4208ca828a158edf49694b3e448061217ba7253f48dcf5f0ba0d764683e6d28e"
+  },
+  "elapsed_seconds": 604.3280000000086,
+  "operational_phase_ledger_sha256": "0a2c207eb9c0dbf35385e14a7ad2245b07b7076ccbbb6e59fd3fea560c984c4f",
+  "resource_context_lease_held_through_scientific_cleanup": true,
+  "resource_context_lease_released": true
+}

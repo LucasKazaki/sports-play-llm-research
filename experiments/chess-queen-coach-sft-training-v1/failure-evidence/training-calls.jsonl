@@ -1,0 +1,361 @@
+{"step": 1, "micro": 0, "case_id": "queen-coach-v1:haxHrfgv:selected", "status": "call_started"}
+{"step": 1, "micro": 0, "case_id": "queen-coach-v1:haxHrfgv:selected", "status": "backward_completed", "loss": 2.0628206729888916}
+{"step": 1, "micro": 1, "case_id": "queen-coach-v1:TftDdIMZ:selected", "status": "call_started"}
+{"step": 1, "micro": 1, "case_id": "queen-coach-v1:TftDdIMZ:selected", "status": "backward_completed", "loss": 1.914482593536377}
+{"step": 1, "micro": 2, "case_id": "queen-coach-v1:LbE4XBTJ:free", "status": "call_started"}
+{"step": 1, "micro": 2, "case_id": "queen-coach-v1:LbE4XBTJ:free", "status": "backward_completed", "loss": 2.1017234325408936}
+{"step": 1, "micro": 3, "case_id": "queen-coach-v1:t0jrpspi:selected", "status": "call_started"}
+{"step": 1, "micro": 3, "case_id": "queen-coach-v1:t0jrpspi:selected", "status": "backward_completed", "loss": 1.912032961845398}
+{"step": 1, "micro": 4, "case_id": "queen-coach-v1:ql1DA84w:free", "status": "call_started"}
+{"step": 1, "micro": 4, "case_id": "queen-coach-v1:ql1DA84w:free", "status": "backward_completed", "loss": 2.3276515007019043}
+{"step": 1, "micro": 5, "case_id": "queen-coach-v1:CAAkkHg4:selected", "status": "call_started"}
+{"step": 1, "micro": 5, "case_id": "queen-coach-v1:CAAkkHg4:selected", "status": "backward_completed", "loss": 2.067196846008301}
+{"step": 1, "micro": 6, "case_id": "queen-coach-v1:ICvd5Ncy:selected", "status": "call_started"}
+{"step": 1, "micro": 6, "case_id": "queen-coach-v1:ICvd5Ncy:selected", "status": "backward_completed", "loss": 1.9923677444458008}
+{"step": 1, "micro": 7, "case_id": "queen-coach-v1:Kj73BhaS:free", "status": "call_started"}
+{"step": 1, "micro": 7, "case_id": "queen-coach-v1:Kj73BhaS:free", "status": "backward_completed", "loss": 2.3809354305267334}
+{"step": 1, "status": "optimizer_started"}
+{"step": 1, "status": "optimizer_completed", "mean_loss": 2.0949013978242874}
+{"step": 2, "micro": 0, "case_id": "queen-coach-v1:kyAkEvka:selected", "status": "call_started"}
+{"step": 2, "micro": 0, "case_id": "queen-coach-v1:kyAkEvka:selected", "status": "backward_completed", "loss": 2.1813395023345947}
+{"step": 2, "micro": 1, "case_id": "queen-coach-v1:kxEntre9:free", "status": "call_started"}
+{"step": 2, "micro": 1, "case_id": "queen-coach-v1:kxEntre9:free", "status": "backward_completed", "loss": 2.1861460208892822}
+{"step": 2, "micro": 2, "case_id": "queen-coach-v1:6l5J5QPk:free", "status": "call_started"}
+{"step": 2, "micro": 2, "case_id": "queen-coach-v1:6l5J5QPk:free", "status": "backward_completed", "loss": 2.327974796295166}
+{"step": 2, "micro": 3, "case_id": "queen-coach-v1:pAQg6LbF:free", "status": "call_started"}
+{"step": 2, "micro": 3, "case_id": "queen-coach-v1:pAQg6LbF:free", "status": "backward_completed", "loss": 2.2922325134277344}
+{"step": 2, "micro": 4, "case_id": "queen-coach-v1:7hxsmoHy:selected", "status": "call_started"}
+{"step": 2, "micro": 4, "case_id": "queen-coach-v1:7hxsmoHy:selected", "status": "backward_completed", "loss": 1.841459035873413}
+{"step": 2, "micro": 5, "case_id": "queen-coach-v1:27MgW21i:selected", "status": "call_started"}
+{"step": 2, "micro": 5, "case_id": "queen-coach-v1:27MgW21i:selected", "status": "backward_completed", "loss": 2.0621488094329834}
+{"step": 2, "micro": 6, "case_id": "queen-coach-v1:ubdeefTo:selected", "status": "call_started"}
+{"step": 2, "micro": 6, "case_id": "queen-coach-v1:ubdeefTo:selected", "status": "backward_completed", "loss": 1.7263679504394531}
+{"step": 2, "micro": 7, "case_id": "queen-coach-v1:vlsuNRjm:free", "status": "call_started"}
+{"step": 2, "micro": 7, "case_id": "queen-coach-v1:vlsuNRjm:free", "status": "backward_completed", "loss": 2.26692795753479}
+{"step": 2, "status": "optimizer_started"}
+{"step": 2, "status": "optimizer_completed", "mean_loss": 2.110574573278427}
+{"step": 3, "micro": 0, "case_id": "queen-coach-v1:r00SlwoS:selected", "status": "call_started"}
+{"step": 3, "micro": 0, "case_id": "queen-coach-v1:r00SlwoS:selected", "status": "backward_completed", "loss": 2.0652916431427}
+{"step": 3, "micro": 1, "case_id": "queen-coach-v1:kyAkEvka:free", "status": "call_started"}
+{"step": 3, "micro": 1, "case_id": "queen-coach-v1:kyAkEvka:free", "status": "backward_completed", "loss": 2.3653454780578613}
+{"step": 3, "micro": 2, "case_id": "queen-coach-v1:dIBSy4CN:selected", "status": "call_started"}
+{"step": 3, "micro": 2, "case_id": "queen-coach-v1:dIBSy4CN:selected", "status": "backward_completed", "loss": 2.0580615997314453}
+{"step": 3, "micro": 3, "case_id": "queen-coach-v1:sOpDBa6R:free", "status": "call_started"}
+{"step": 3, "micro": 3, "case_id": "queen-coach-v1:sOpDBa6R:free", "status": "backward_completed", "loss": 2.0180563926696777}
+{"step": 3, "micro": 4, "case_id": "queen-coach-v1:GPYVorHm:selected", "status": "call_started"}
+{"step": 3, "micro": 4, "case_id": "queen-coach-v1:GPYVorHm:selected", "status": "backward_completed", "loss": 2.146084785461426}
+{"step": 3, "micro": 5, "case_id": "queen-coach-v1:bcF3WyJp:free", "status": "call_started"}
+{"step": 3, "micro": 5, "case_id": "queen-coach-v1:bcF3WyJp:free", "status": "backward_completed", "loss": 2.4477758407592773}
+{"step": 3, "micro": 6, "case_id": "queen-coach-v1:ECZQ8d8R:selected", "status": "call_started"}
+{"step": 3, "micro": 6, "case_id": "queen-coach-v1:ECZQ8d8R:selected", "status": "backward_completed", "loss": 2.027414083480835}
+{"step": 3, "micro": 7, "case_id": "queen-coach-v1:R7PDHKDy:free", "status": "call_started"}
+{"step": 3, "micro": 7, "case_id": "queen-coach-v1:R7PDHKDy:free", "status": "backward_completed", "loss": 2.3761510848999023}
+{"step": 3, "status": "optimizer_started"}
+{"step": 3, "status": "optimizer_completed", "mean_loss": 2.1880226135253906}
+{"step": 4, "micro": 0, "case_id": "queen-coach-v1:GV7BTeS5:selected", "status": "call_started"}
+{"step": 4, "micro": 0, "case_id": "queen-coach-v1:GV7BTeS5:selected", "status": "backward_completed", "loss": 2.1502249240875244}
+{"step": 4, "micro": 1, "case_id": "queen-coach-v1:xLZNFn6P:free", "status": "call_started"}
+{"step": 4, "micro": 1, "case_id": "queen-coach-v1:xLZNFn6P:free", "status": "backward_completed", "loss": 2.4035027027130127}
+{"step": 4, "micro": 2, "case_id": "queen-coach-v1:D8bl1jTH:free", "status": "call_started"}
+{"step": 4, "micro": 2, "case_id": "queen-coach-v1:D8bl1jTH:free", "status": "backward_completed", "loss": 2.140410900115967}
+{"step": 4, "micro": 3, "case_id": "queen-coach-v1:QrYECYGR:free", "status": "call_started"}
+{"step": 4, "micro": 3, "case_id": "queen-coach-v1:QrYECYGR:free", "status": "backward_completed", "loss": 1.9660907983779907}
+{"step": 4, "micro": 4, "case_id": "queen-coach-v1:EUT9WqQQ:selected", "status": "call_started"}
+{"step": 4, "micro": 4, "case_id": "queen-coach-v1:EUT9WqQQ:selected", "status": "backward_completed", "loss": 2.157515287399292}
+{"step": 4, "micro": 5, "case_id": "queen-coach-v1:zBfbYcZT:free", "status": "call_started"}
+{"step": 4, "micro": 5, "case_id": "queen-coach-v1:zBfbYcZT:free", "status": "backward_completed", "loss": 1.8341469764709473}
+{"step": 4, "micro": 6, "case_id": "queen-coach-v1:LVMXkUqj:free", "status": "call_started"}
+{"step": 4, "micro": 6, "case_id": "queen-coach-v1:LVMXkUqj:free", "status": "backward_completed", "loss": 2.2223763465881348}
+{"step": 4, "micro": 7, "case_id": "queen-coach-v1:6800UGuy:selected", "status": "call_started"}
+{"step": 4, "micro": 7, "case_id": "queen-coach-v1:6800UGuy:selected", "status": "backward_completed", "loss": 2.1433606147766113}
+{"step": 4, "status": "optimizer_started"}
+{"step": 4, "status": "optimizer_completed", "mean_loss": 2.127203568816185}
+{"step": 5, "micro": 0, "case_id": "queen-coach-v1:PQ2Esxah:selected", "status": "call_started"}
+{"step": 5, "micro": 0, "case_id": "queen-coach-v1:PQ2Esxah:selected", "status": "backward_completed", "loss": 1.9389801025390625}
+{"step": 5, "micro": 1, "case_id": "queen-coach-v1:K7i406Qb:free", "status": "call_started"}
+{"step": 5, "micro": 1, "case_id": "queen-coach-v1:K7i406Qb:free", "status": "backward_completed", "loss": 2.449384927749634}
+{"step": 5, "micro": 2, "case_id": "queen-coach-v1:t882LBZo:selected", "status": "call_started"}
+{"step": 5, "micro": 2, "case_id": "queen-coach-v1:t882LBZo:selected", "status": "backward_completed", "loss": 2.089428424835205}
+{"step": 5, "micro": 3, "case_id": "queen-coach-v1:eJKbF5hP:free", "status": "call_started"}
+{"step": 5, "micro": 3, "case_id": "queen-coach-v1:eJKbF5hP:free", "status": "backward_completed", "loss": 1.9511679410934448}
+{"step": 5, "micro": 4, "case_id": "queen-coach-v1:tzUFOfrB:selected", "status": "call_started"}
+{"step": 5, "micro": 4, "case_id": "queen-coach-v1:tzUFOfrB:selected", "status": "backward_completed", "loss": 2.0657906532287598}
+{"step": 5, "micro": 5, "case_id": "queen-coach-v1:BxQMkYTX:free", "status": "call_started"}
+{"step": 5, "micro": 5, "case_id": "queen-coach-v1:BxQMkYTX:free", "status": "backward_completed", "loss": 2.3299219608306885}
+{"step": 5, "micro": 6, "case_id": "queen-coach-v1:W22FVlWn:free", "status": "call_started"}
+{"step": 5, "micro": 6, "case_id": "queen-coach-v1:W22FVlWn:free", "status": "backward_completed", "loss": 2.4235053062438965}
+{"step": 5, "micro": 7, "case_id": "queen-coach-v1:Gbbx50fh:selected", "status": "call_started"}
+{"step": 5, "micro": 7, "case_id": "queen-coach-v1:Gbbx50fh:selected", "status": "backward_completed", "loss": 2.077652931213379}
+{"step": 5, "status": "optimizer_started"}
+{"step": 5, "status": "optimizer_completed", "mean_loss": 2.1657290309667587}
+{"step": 6, "micro": 0, "case_id": "queen-coach-v1:Woz4t14F:free", "status": "call_started"}
+{"step": 6, "micro": 0, "case_id": "queen-coach-v1:Woz4t14F:free", "status": "backward_completed", "loss": 2.3700616359710693}
+{"step": 6, "micro": 1, "case_id": "queen-coach-v1:b6v3cv69:selected", "status": "call_started"}
+{"step": 6, "micro": 1, "case_id": "queen-coach-v1:b6v3cv69:selected", "status": "backward_completed", "loss": 2.3787546157836914}
+{"step": 6, "micro": 2, "case_id": "queen-coach-v1:aZ8FMJ0r:selected", "status": "call_started"}
+{"step": 6, "micro": 2, "case_id": "queen-coach-v1:aZ8FMJ0r:selected", "status": "backward_completed", "loss": 1.9199073314666748}
+{"step": 6, "micro": 3, "case_id": "queen-coach-v1:7vfqqco9:free", "status": "call_started"}
+{"step": 6, "micro": 3, "case_id": "queen-coach-v1:7vfqqco9:free", "status": "backward_completed", "loss": 2.1882407665252686}
+{"step": 6, "micro": 4, "case_id": "queen-coach-v1:nHsDLjF6:free", "status": "call_started"}
+{"step": 6, "micro": 4, "case_id": "queen-coach-v1:nHsDLjF6:free", "status": "backward_completed", "loss": 1.860376000404358}
+{"step": 6, "micro": 5, "case_id": "queen-coach-v1:1hnjkNI4:selected", "status": "call_started"}
+{"step": 6, "micro": 5, "case_id": "queen-coach-v1:1hnjkNI4:selected", "status": "backward_completed", "loss": 2.097386360168457}
+{"step": 6, "micro": 6, "case_id": "queen-coach-v1:g3M9ENcg:free", "status": "call_started"}
+{"step": 6, "micro": 6, "case_id": "queen-coach-v1:g3M9ENcg:free", "status": "backward_completed", "loss": 1.9808845520019531}
+{"step": 6, "micro": 7, "case_id": "queen-coach-v1:uzD5t4kH:selected", "status": "call_started"}
+{"step": 6, "micro": 7, "case_id": "queen-coach-v1:uzD5t4kH:selected", "status": "backward_completed", "loss": 1.910157561302185}
+{"step": 6, "status": "optimizer_started"}
+{"step": 6, "status": "optimizer_completed", "mean_loss": 2.088221102952957}
+{"step": 7, "micro": 0, "case_id": "queen-coach-v1:2PDpLVL7:selected", "status": "call_started"}
+{"step": 7, "micro": 0, "case_id": "queen-coach-v1:2PDpLVL7:selected", "status": "backward_completed", "loss": 2.152334213256836}
+{"step": 7, "micro": 1, "case_id": "queen-coach-v1:9VhxJE99:free", "status": "call_started"}
+{"step": 7, "micro": 1, "case_id": "queen-coach-v1:9VhxJE99:free", "status": "backward_completed", "loss": 2.241372585296631}
+{"step": 7, "micro": 2, "case_id": "queen-coach-v1:NWom3TZI:free", "status": "call_started"}
+{"step": 7, "micro": 2, "case_id": "queen-coach-v1:NWom3TZI:free", "status": "backward_completed", "loss": 2.0347349643707275}
+{"step": 7, "micro": 3, "case_id": "queen-coach-v1:9MgpCZJf:free", "status": "call_started"}
+{"step": 7, "micro": 3, "case_id": "queen-coach-v1:9MgpCZJf:free", "status": "backward_completed", "loss": 2.1600663661956787}
+{"step": 7, "micro": 4, "case_id": "queen-coach-v1:1mTga9dZ:free", "status": "call_started"}
+{"step": 7, "micro": 4, "case_id": "queen-coach-v1:1mTga9dZ:free", "status": "backward_completed", "loss": 2.262439727783203}
+{"step": 7, "micro": 5, "case_id": "queen-coach-v1:oeMjaLP1:free", "status": "call_started"}
+{"step": 7, "micro": 5, "case_id": "queen-coach-v1:oeMjaLP1:free", "status": "backward_completed", "loss": 2.223085641860962}
+{"step": 7, "micro": 6, "case_id": "queen-coach-v1:mfVPkUNQ:free", "status": "call_started"}
+{"step": 7, "micro": 6, "case_id": "queen-coach-v1:mfVPkUNQ:free", "status": "backward_completed", "loss": 2.1674790382385254}
+{"step": 7, "micro": 7, "case_id": "queen-coach-v1:DktWv6x9:free", "status": "call_started"}
+{"step": 7, "micro": 7, "case_id": "queen-coach-v1:DktWv6x9:free", "status": "backward_completed", "loss": 1.847787857055664}
+{"step": 7, "status": "optimizer_started"}
+{"step": 7, "status": "optimizer_completed", "mean_loss": 2.1361625492572784}
+{"step": 8, "micro": 0, "case_id": "queen-coach-v1:DqkQM0Dp:selected", "status": "call_started"}
+{"step": 8, "micro": 0, "case_id": "queen-coach-v1:DqkQM0Dp:selected", "status": "backward_completed", "loss": 1.9070030450820923}
+{"step": 8, "micro": 1, "case_id": "queen-coach-v1:QrYECYGR:selected", "status": "call_started"}
+{"step": 8, "micro": 1, "case_id": "queen-coach-v1:QrYECYGR:selected", "status": "backward_completed", "loss": 1.9103144407272339}
+{"step": 8, "micro": 2, "case_id": "queen-coach-v1:L9ysI9X4:free", "status": "call_started"}
+{"step": 8, "micro": 2, "case_id": "queen-coach-v1:L9ysI9X4:free", "status": "backward_completed", "loss": 1.9406803846359253}
+{"step": 8, "micro": 3, "case_id": "queen-coach-v1:2VuoRA0N:free", "status": "call_started"}
+{"step": 8, "micro": 3, "case_id": "queen-coach-v1:2VuoRA0N:free", "status": "backward_completed", "loss": 2.1975135803222656}
+{"step": 8, "micro": 4, "case_id": "queen-coach-v1:tu2bvonD:free", "status": "call_started"}
+{"step": 8, "micro": 4, "case_id": "queen-coach-v1:tu2bvonD:free", "status": "backward_completed", "loss": 2.211010694503784}
+{"step": 8, "micro": 5, "case_id": "queen-coach-v1:hj4ExQwR:free", "status": "call_started"}
+{"step": 8, "micro": 5, "case_id": "queen-coach-v1:hj4ExQwR:free", "status": "backward_completed", "loss": 1.9229646921157837}
+{"step": 8, "micro": 6, "case_id": "queen-coach-v1:gbWIgyxT:selected", "status": "call_started"}
+{"step": 8, "micro": 6, "case_id": "queen-coach-v1:gbWIgyxT:selected", "status": "backward_completed", "loss": 2.094552755355835}
+{"step": 8, "micro": 7, "case_id": "queen-coach-v1:caquVMkV:free", "status": "call_started"}
+{"step": 8, "micro": 7, "case_id": "queen-coach-v1:caquVMkV:free", "status": "backward_completed", "loss": 2.1319899559020996}
+{"step": 8, "status": "optimizer_started"}
+{"step": 8, "status": "optimizer_completed", "mean_loss": 2.0395036935806274}
+{"step": 9, "micro": 0, "case_id": "queen-coach-v1:jgwBOYAs:free", "status": "call_started"}
+{"step": 9, "micro": 0, "case_id": "queen-coach-v1:jgwBOYAs:free", "status": "backward_completed", "loss": 2.0325000286102295}
+{"step": 9, "micro": 1, "case_id": "queen-coach-v1:jews2BLU:selected", "status": "call_started"}
+{"step": 9, "micro": 1, "case_id": "queen-coach-v1:jews2BLU:selected", "status": "backward_completed", "loss": 1.8168011903762817}
+{"step": 9, "micro": 2, "case_id": "queen-coach-v1:tBJzTqOW:free", "status": "call_started"}
+{"step": 9, "micro": 2, "case_id": "queen-coach-v1:tBJzTqOW:free", "status": "backward_completed", "loss": 1.86806058883667}
+{"step": 9, "micro": 3, "case_id": "queen-coach-v1:g74xZReN:free", "status": "call_started"}
+{"step": 9, "micro": 3, "case_id": "queen-coach-v1:g74xZReN:free", "status": "backward_completed", "loss": 1.8940554857254028}
+{"step": 9, "micro": 4, "case_id": "queen-coach-v1:iewlzFE6:free", "status": "call_started"}
+{"step": 9, "micro": 4, "case_id": "queen-coach-v1:iewlzFE6:free", "status": "backward_completed", "loss": 2.379709243774414}
+{"step": 9, "micro": 5, "case_id": "queen-coach-v1:5bo2y65P:selected", "status": "call_started"}
+{"step": 9, "micro": 5, "case_id": "queen-coach-v1:5bo2y65P:selected", "status": "backward_completed", "loss": 2.0765604972839355}
+{"step": 9, "micro": 6, "case_id": "queen-coach-v1:0uH29HoS:selected", "status": "call_started"}
+{"step": 9, "micro": 6, "case_id": "queen-coach-v1:0uH29HoS:selected", "status": "backward_completed", "loss": 2.0089569091796875}
+{"step": 9, "micro": 7, "case_id": "queen-coach-v1:t882LBZo:free", "status": "call_started"}
+{"step": 9, "micro": 7, "case_id": "queen-coach-v1:t882LBZo:free", "status": "backward_completed", "loss": 2.2197341918945312}
+{"step": 9, "status": "optimizer_started"}
+{"step": 9, "status": "optimizer_completed", "mean_loss": 2.037047266960144}
+{"step": 10, "micro": 0, "case_id": "queen-coach-v1:ifomtVjd:selected", "status": "call_started"}
+{"step": 10, "micro": 0, "case_id": "queen-coach-v1:ifomtVjd:selected", "status": "backward_completed", "loss": 1.7600175142288208}
+{"step": 10, "micro": 1, "case_id": "queen-coach-v1:Q54Q77aF:selected", "status": "call_started"}
+{"step": 10, "micro": 1, "case_id": "queen-coach-v1:Q54Q77aF:selected", "status": "backward_completed", "loss": 2.175602912902832}
+{"step": 10, "micro": 2, "case_id": "queen-coach-v1:TUtQEyAl:free", "status": "call_started"}
+{"step": 10, "micro": 2, "case_id": "queen-coach-v1:TUtQEyAl:free", "status": "backward_completed", "loss": 2.1381702423095703}
+{"step": 10, "micro": 3, "case_id": "queen-coach-v1:evvuA4K1:selected", "status": "call_started"}
+{"step": 10, "micro": 3, "case_id": "queen-coach-v1:evvuA4K1:selected", "status": "backward_completed", "loss": 1.6776533126831055}
+{"step": 10, "micro": 4, "case_id": "queen-coach-v1:Clwl8cjI:free", "status": "call_started"}
+{"step": 10, "micro": 4, "case_id": "queen-coach-v1:Clwl8cjI:free", "status": "backward_completed", "loss": 2.0911145210266113}
+{"step": 10, "micro": 5, "case_id": "queen-coach-v1:icQSj2Ne:selected", "status": "call_started"}
+{"step": 10, "micro": 5, "case_id": "queen-coach-v1:icQSj2Ne:selected", "status": "backward_completed", "loss": 1.7366267442703247}
+{"step": 10, "micro": 6, "case_id": "queen-coach-v1:YOBA6UAo:selected", "status": "call_started"}
+{"step": 10, "micro": 6, "case_id": "queen-coach-v1:YOBA6UAo:selected", "status": "backward_completed", "loss": 2.013211250305176}
+{"step": 10, "micro": 7, "case_id": "queen-coach-v1:bBt0LGiI:selected", "status": "call_started"}
+{"step": 10, "micro": 7, "case_id": "queen-coach-v1:bBt0LGiI:selected", "status": "backward_completed", "loss": 1.8080939054489136}
+{"step": 10, "status": "optimizer_started"}
+{"step": 10, "status": "optimizer_completed", "mean_loss": 1.9250613003969193}
+{"step": 11, "micro": 0, "case_id": "queen-coach-v1:TIfcsQzV:free", "status": "call_started"}
+{"step": 11, "micro": 0, "case_id": "queen-coach-v1:TIfcsQzV:free", "status": "backward_completed", "loss": 2.2233619689941406}
+{"step": 11, "micro": 1, "case_id": "queen-coach-v1:wmBAVft5:selected", "status": "call_started"}
+{"step": 11, "micro": 1, "case_id": "queen-coach-v1:wmBAVft5:selected", "status": "backward_completed", "loss": 2.0816259384155273}
+{"step": 11, "micro": 2, "case_id": "queen-coach-v1:9gbblRvE:selected", "status": "call_started"}
+{"step": 11, "micro": 2, "case_id": "queen-coach-v1:9gbblRvE:selected", "status": "backward_completed", "loss": 1.8565707206726074}
+{"step": 11, "micro": 3, "case_id": "queen-coach-v1:xg3oKVhy:free", "status": "call_started"}
+{"step": 11, "micro": 3, "case_id": "queen-coach-v1:xg3oKVhy:free", "status": "backward_completed", "loss": 1.7603025436401367}
+{"step": 11, "micro": 4, "case_id": "queen-coach-v1:xbb3i5JV:free", "status": "call_started"}
+{"step": 11, "micro": 4, "case_id": "queen-coach-v1:xbb3i5JV:free", "status": "backward_completed", "loss": 2.30920672416687}
+{"step": 11, "micro": 5, "case_id": "queen-coach-v1:WFHiAQc9:free", "status": "call_started"}
+{"step": 11, "micro": 5, "case_id": "queen-coach-v1:WFHiAQc9:free", "status": "backward_completed", "loss": 2.365401029586792}
+{"step": 11, "micro": 6, "case_id": "queen-coach-v1:1s4aZwvM:free", "status": "call_started"}
+{"step": 11, "micro": 6, "case_id": "queen-coach-v1:1s4aZwvM:free", "status": "backward_completed", "loss": 2.169393301010132}
+{"step": 11, "micro": 7, "case_id": "queen-coach-v1:Tu95ksFo:free", "status": "call_started"}
+{"step": 11, "micro": 7, "case_id": "queen-coach-v1:Tu95ksFo:free", "status": "backward_completed", "loss": 1.9057689905166626}
+{"step": 11, "status": "optimizer_started"}
+{"step": 11, "status": "optimizer_completed", "mean_loss": 2.0839539021253586}
+{"step": 12, "micro": 0, "case_id": "queen-coach-v1:NWom3TZI:selected", "status": "call_started"}
+{"step": 12, "micro": 0, "case_id": "queen-coach-v1:NWom3TZI:selected", "status": "backward_completed", "loss": 1.7963594198226929}
+{"step": 12, "micro": 1, "case_id": "queen-coach-v1:YxOgYTy3:selected", "status": "call_started"}
+{"step": 12, "micro": 1, "case_id": "queen-coach-v1:YxOgYTy3:selected", "status": "backward_completed", "loss": 1.90218186378479}
+{"step": 12, "micro": 2, "case_id": "queen-coach-v1:h5SgyVvD:free", "status": "call_started"}
+{"step": 12, "micro": 2, "case_id": "queen-coach-v1:h5SgyVvD:free", "status": "backward_completed", "loss": 2.31691837310791}
+{"step": 12, "micro": 3, "case_id": "queen-coach-v1:GlowycIG:selected", "status": "call_started"}
+{"step": 12, "micro": 3, "case_id": "queen-coach-v1:GlowycIG:selected", "status": "backward_completed", "loss": 2.0854532718658447}
+{"step": 12, "micro": 4, "case_id": "queen-coach-v1:O5BRqAH4:selected", "status": "call_started"}
+{"step": 12, "micro": 4, "case_id": "queen-coach-v1:O5BRqAH4:selected", "status": "backward_completed", "loss": 2.025118827819824}
+{"step": 12, "micro": 5, "case_id": "queen-coach-v1:61Dhtpzg:selected", "status": "call_started"}
+{"step": 12, "micro": 5, "case_id": "queen-coach-v1:61Dhtpzg:selected", "status": "backward_completed", "loss": 1.7244110107421875}
+{"step": 12, "micro": 6, "case_id": "queen-coach-v1:eBtBjRUu:free", "status": "call_started"}
+{"step": 12, "micro": 6, "case_id": "queen-coach-v1:eBtBjRUu:free", "status": "backward_completed", "loss": 2.1861088275909424}
+{"step": 12, "micro": 7, "case_id": "queen-coach-v1:YWqkXBqx:selected", "status": "call_started"}
+{"step": 12, "micro": 7, "case_id": "queen-coach-v1:YWqkXBqx:selected", "status": "backward_completed", "loss": 1.662315011024475}
+{"step": 12, "status": "optimizer_started"}
+{"step": 12, "status": "optimizer_completed", "mean_loss": 1.9623583257198334}
+{"step": 13, "micro": 0, "case_id": "queen-coach-v1:BhnUG7mi:selected", "status": "call_started"}
+{"step": 13, "micro": 0, "case_id": "queen-coach-v1:BhnUG7mi:selected", "status": "backward_completed", "loss": 1.8565353155136108}
+{"step": 13, "micro": 1, "case_id": "queen-coach-v1:OR7Fhp2e:selected", "status": "call_started"}
+{"step": 13, "micro": 1, "case_id": "queen-coach-v1:OR7Fhp2e:selected", "status": "backward_completed", "loss": 1.9994661808013916}
+{"step": 13, "micro": 2, "case_id": "queen-coach-v1:0uH29HoS:free", "status": "call_started"}
+{"step": 13, "micro": 2, "case_id": "queen-coach-v1:0uH29HoS:free", "status": "backward_completed", "loss": 2.1147422790527344}
+{"step": 13, "micro": 3, "case_id": "queen-coach-v1:XhHRLYcn:free", "status": "call_started"}
+{"step": 13, "micro": 3, "case_id": "queen-coach-v1:XhHRLYcn:free", "status": "backward_completed", "loss": 2.284724473953247}
+{"step": 13, "micro": 4, "case_id": "queen-coach-v1:gKL0AQGS:free", "status": "call_started"}
+{"step": 13, "micro": 4, "case_id": "queen-coach-v1:gKL0AQGS:free", "status": "backward_completed", "loss": 2.1403441429138184}
+{"step": 13, "micro": 5, "case_id": "queen-coach-v1:lesQVI0J:selected", "status": "call_started"}
+{"step": 13, "micro": 5, "case_id": "queen-coach-v1:lesQVI0J:selected", "status": "backward_completed", "loss": 1.5683459043502808}
+{"step": 13, "micro": 6, "case_id": "queen-coach-v1:Ao3B5TBc:selected", "status": "call_started"}
+{"step": 13, "micro": 6, "case_id": "queen-coach-v1:Ao3B5TBc:selected", "status": "backward_completed", "loss": 1.7774879932403564}
+{"step": 13, "micro": 7, "case_id": "queen-coach-v1:fySjV6s2:selected", "status": "call_started"}
+{"step": 13, "micro": 7, "case_id": "queen-coach-v1:fySjV6s2:selected", "status": "backward_completed", "loss": 1.8137242794036865}
+{"step": 13, "status": "optimizer_started"}
+{"step": 13, "status": "optimizer_completed", "mean_loss": 1.9444213211536407}
+{"step": 14, "micro": 0, "case_id": "queen-coach-v1:yf9TIMtr:free", "status": "call_started"}
+{"step": 14, "micro": 0, "case_id": "queen-coach-v1:yf9TIMtr:free", "status": "backward_completed", "loss": 2.0360896587371826}
+{"step": 14, "micro": 1, "case_id": "queen-coach-v1:efhYZ8Jg:free", "status": "call_started"}
+{"step": 14, "micro": 1, "case_id": "queen-coach-v1:efhYZ8Jg:free", "status": "backward_completed", "loss": 2.0742363929748535}
+{"step": 14, "micro": 2, "case_id": "queen-coach-v1:Nb9WFpL1:free", "status": "call_started"}
+{"step": 14, "micro": 2, "case_id": "queen-coach-v1:Nb9WFpL1:free", "status": "backward_completed", "loss": 1.977163314819336}
+{"step": 14, "micro": 3, "case_id": "queen-coach-v1:Zq7mi2D5:free", "status": "call_started"}
+{"step": 14, "micro": 3, "case_id": "queen-coach-v1:Zq7mi2D5:free", "status": "backward_completed", "loss": 2.137188196182251}
+{"step": 14, "micro": 4, "case_id": "queen-coach-v1:cCCs9jTv:free", "status": "call_started"}
+{"step": 14, "micro": 4, "case_id": "queen-coach-v1:cCCs9jTv:free", "status": "backward_completed", "loss": 2.105438709259033}
+{"step": 14, "micro": 5, "case_id": "queen-coach-v1:ILtxAgS5:selected", "status": "call_started"}
+{"step": 14, "micro": 5, "case_id": "queen-coach-v1:ILtxAgS5:selected", "status": "backward_completed", "loss": 2.037599563598633}
+{"step": 14, "micro": 6, "case_id": "queen-coach-v1:BiPrkPPY:free", "status": "call_started"}
+{"step": 14, "micro": 6, "case_id": "queen-coach-v1:BiPrkPPY:free", "status": "backward_completed", "loss": 2.1223299503326416}
+{"step": 14, "micro": 7, "case_id": "queen-coach-v1:bKwd6TzE:free", "status": "call_started"}
+{"step": 14, "micro": 7, "case_id": "queen-coach-v1:bKwd6TzE:free", "status": "backward_completed", "loss": 2.0506231784820557}
+{"step": 14, "status": "optimizer_started"}
+{"step": 14, "status": "optimizer_completed", "mean_loss": 2.0675836205482483}
+{"step": 15, "micro": 0, "case_id": "queen-coach-v1:3G0MGgqI:free", "status": "call_started"}
+{"step": 15, "micro": 0, "case_id": "queen-coach-v1:3G0MGgqI:free", "status": "backward_completed", "loss": 2.2252607345581055}
+{"step": 15, "micro": 1, "case_id": "queen-coach-v1:gBRp1TPr:selected", "status": "call_started"}
+{"step": 15, "micro": 1, "case_id": "queen-coach-v1:gBRp1TPr:selected", "status": "backward_completed", "loss": 1.7011620998382568}
+{"step": 15, "micro": 2, "case_id": "queen-coach-v1:wQdHRQOe:free", "status": "call_started"}
+{"step": 15, "micro": 2, "case_id": "queen-coach-v1:wQdHRQOe:free", "status": "backward_completed", "loss": 2.072925567626953}
+{"step": 15, "micro": 3, "case_id": "queen-coach-v1:vvEJDrz7:selected", "status": "call_started"}
+{"step": 15, "micro": 3, "case_id": "queen-coach-v1:vvEJDrz7:selected", "status": "backward_completed", "loss": 1.5031485557556152}
+{"step": 15, "micro": 4, "case_id": "queen-coach-v1:7G3eW5i8:free", "status": "call_started"}
+{"step": 15, "micro": 4, "case_id": "queen-coach-v1:7G3eW5i8:free", "status": "backward_completed", "loss": 1.5537998676300049}
+{"step": 15, "micro": 5, "case_id": "queen-coach-v1:ksFm22vz:selected", "status": "call_started"}
+{"step": 15, "micro": 5, "case_id": "queen-coach-v1:ksFm22vz:selected", "status": "backward_completed", "loss": 1.8230829238891602}
+{"step": 15, "micro": 6, "case_id": "queen-coach-v1:dARjcDQ3:selected", "status": "call_started"}
+{"step": 15, "micro": 6, "case_id": "queen-coach-v1:dARjcDQ3:selected", "status": "backward_completed", "loss": 1.9492484331130981}
+{"step": 15, "micro": 7, "case_id": "queen-coach-v1:4ivolejv:selected", "status": "call_started"}
+{"step": 15, "micro": 7, "case_id": "queen-coach-v1:4ivolejv:selected", "status": "backward_completed", "loss": 1.9370464086532593}
+{"step": 15, "status": "optimizer_started"}
+{"step": 15, "status": "optimizer_completed", "mean_loss": 1.8457093238830566}
+{"step": 16, "micro": 0, "case_id": "queen-coach-v1:E5SYHHqG:free", "status": "call_started"}
+{"step": 16, "micro": 0, "case_id": "queen-coach-v1:E5SYHHqG:free", "status": "backward_completed", "loss": 2.0515596866607666}
+{"step": 16, "micro": 1, "case_id": "queen-coach-v1:NRhmgPLI:selected", "status": "call_started"}
+{"step": 16, "micro": 1, "case_id": "queen-coach-v1:NRhmgPLI:selected", "status": "backward_completed", "loss": 1.9623936414718628}
+{"step": 16, "micro": 2, "case_id": "queen-coach-v1:NjuByP1R:free", "status": "call_started"}
+{"step": 16, "micro": 2, "case_id": "queen-coach-v1:NjuByP1R:free", "status": "backward_completed", "loss": 1.6412456035614014}
+{"step": 16, "micro": 3, "case_id": "queen-coach-v1:ZNZ91IKV:selected", "status": "call_started"}
+{"step": 16, "micro": 3, "case_id": "queen-coach-v1:ZNZ91IKV:selected", "status": "backward_completed", "loss": 1.8254201412200928}
+{"step": 16, "micro": 4, "case_id": "queen-coach-v1:Bddwd2ai:selected", "status": "call_started"}
+{"step": 16, "micro": 4, "case_id": "queen-coach-v1:Bddwd2ai:selected", "status": "backward_completed", "loss": 1.9324126243591309}
+{"step": 16, "micro": 5, "case_id": "queen-coach-v1:4dSPVFiY:free", "status": "call_started"}
+{"step": 16, "micro": 5, "case_id": "queen-coach-v1:4dSPVFiY:free", "status": "backward_completed", "loss": 2.147522449493408}
+{"step": 16, "micro": 6, "case_id": "queen-coach-v1:zIeEQchs:selected", "status": "call_started"}
+{"step": 16, "micro": 6, "case_id": "queen-coach-v1:zIeEQchs:selected", "status": "backward_completed", "loss": 1.9305202960968018}
+{"step": 16, "micro": 7, "case_id": "queen-coach-v1:tRadooGh:free", "status": "call_started"}
+{"step": 16, "micro": 7, "case_id": "queen-coach-v1:tRadooGh:free", "status": "backward_completed", "loss": 1.7373616695404053}
+{"step": 16, "status": "optimizer_started"}
+{"step": 16, "status": "optimizer_completed", "mean_loss": 1.9035545140504837}
+{"step": 17, "micro": 0, "case_id": "queen-coach-v1:0Vl4y6t7:free", "status": "call_started"}
+{"step": 17, "micro": 0, "case_id": "queen-coach-v1:0Vl4y6t7:free", "status": "backward_completed", "loss": 1.8184359073638916}
+{"step": 17, "micro": 1, "case_id": "queen-coach-v1:fa2SbgWX:free", "status": "call_started"}
+{"step": 17, "micro": 1, "case_id": "queen-coach-v1:fa2SbgWX:free", "status": "backward_completed", "loss": 2.030224084854126}
+{"step": 17, "micro": 2, "case_id": "queen-coach-v1:yHf7puUu:free", "status": "call_started"}
+{"step": 17, "micro": 2, "case_id": "queen-coach-v1:yHf7puUu:free", "status": "backward_completed", "loss": 1.622635841369629}
+{"step": 17, "micro": 3, "case_id": "queen-coach-v1:2FdabRyf:free", "status": "call_started"}
+{"step": 17, "micro": 3, "case_id": "queen-coach-v1:2FdabRyf:free", "status": "backward_completed", "loss": 2.0968847274780273}
+{"step": 17, "micro": 4, "case_id": "queen-coach-v1:MiI3WMLP:selected", "status": "call_started"}
+{"step": 17, "micro": 4, "case_id": "queen-coach-v1:MiI3WMLP:selected", "status": "backward_completed", "loss": 1.9873729944229126}
+{"step": 17, "micro": 5, "case_id": "queen-coach-v1:aQY8x3Kh:free", "status": "call_started"}
+{"step": 17, "micro": 5, "case_id": "queen-coach-v1:aQY8x3Kh:free", "status": "backward_completed", "loss": 1.6495850086212158}
+{"step": 17, "micro": 6, "case_id": "queen-coach-v1:nI4Iiq8Q:selected", "status": "call_started"}
+{"step": 17, "micro": 6, "case_id": "queen-coach-v1:nI4Iiq8Q:selected", "status": "backward_completed", "loss": 1.7815184593200684}
+{"step": 17, "micro": 7, "case_id": "queen-coach-v1:4wPUA4It:free", "status": "call_started"}
+{"step": 17, "micro": 7, "case_id": "queen-coach-v1:4wPUA4It:free", "status": "backward_completed", "loss": 1.9354168176651}
+{"step": 17, "status": "optimizer_started"}
+{"step": 17, "status": "optimizer_completed", "mean_loss": 1.8652592301368713}
+{"step": 18, "micro": 0, "case_id": "queen-coach-v1:oK5Oi9DH:free", "status": "call_started"}
+{"step": 18, "micro": 0, "case_id": "queen-coach-v1:oK5Oi9DH:free", "status": "backward_completed", "loss": 1.8660484552383423}
+{"step": 18, "micro": 1, "case_id": "queen-coach-v1:yebAip5h:free", "status": "call_started"}
+{"step": 18, "micro": 1, "case_id": "queen-coach-v1:yebAip5h:free", "status": "backward_completed", "loss": 1.8923108577728271}
+{"step": 18, "micro": 2, "case_id": "queen-coach-v1:FkRmbChT:free", "status": "call_started"}
+{"step": 18, "micro": 2, "case_id": "queen-coach-v1:FkRmbChT:free", "status": "backward_completed", "loss": 2.156930446624756}
+{"step": 18, "micro": 3, "case_id": "queen-coach-v1:E2IA4qWA:free", "status": "call_started"}
+{"step": 18, "micro": 3, "case_id": "queen-coach-v1:E2IA4qWA:free", "status": "backward_completed", "loss": 1.974542260169983}
+{"step": 18, "micro": 4, "case_id": "queen-coach-v1:vLbAbvwn:selected", "status": "call_started"}
+{"step": 18, "micro": 4, "case_id": "queen-coach-v1:vLbAbvwn:selected", "status": "backward_completed", "loss": 1.4748581647872925}
+{"step": 18, "micro": 5, "case_id": "queen-coach-v1:2AkqoDJy:selected", "status": "call_started"}
+{"step": 18, "micro": 5, "case_id": "queen-coach-v1:2AkqoDJy:selected", "status": "backward_completed", "loss": 1.8230185508728027}
+{"step": 18, "micro": 6, "case_id": "queen-coach-v1:Q22dikfo:free", "status": "call_started"}
+{"step": 18, "micro": 6, "case_id": "queen-coach-v1:Q22dikfo:free", "status": "backward_completed", "loss": 1.8211495876312256}
+{"step": 18, "micro": 7, "case_id": "queen-coach-v1:2IJtUX6P:free", "status": "call_started"}
+{"step": 18, "micro": 7, "case_id": "queen-coach-v1:2IJtUX6P:free", "status": "backward_completed", "loss": 1.8450783491134644}
+{"step": 18, "status": "optimizer_started"}
+{"step": 18, "status": "optimizer_completed", "mean_loss": 1.8567420840263367}
+{"step": 19, "micro": 0, "case_id": "queen-coach-v1:zviGTcL9:free", "status": "call_started"}
+{"step": 19, "micro": 0, "case_id": "queen-coach-v1:zviGTcL9:free", "status": "backward_completed", "loss": 1.8918434381484985}
+{"step": 19, "micro": 1, "case_id": "queen-coach-v1:LB2d0Hvv:selected", "status": "call_started"}
+{"step": 19, "micro": 1, "case_id": "queen-coach-v1:LB2d0Hvv:selected", "status": "backward_completed", "loss": 1.756808876991272}
+{"step": 19, "micro": 2, "case_id": "queen-coach-v1:7bVFp2IC:selected", "status": "call_started"}
+{"step": 19, "micro": 2, "case_id": "queen-coach-v1:7bVFp2IC:selected", "status": "backward_completed", "loss": 1.7016100883483887}
+{"step": 19, "micro": 3, "case_id": "queen-coach-v1:ZyIOT2hc:free", "status": "call_started"}
+{"step": 19, "micro": 3, "case_id": "queen-coach-v1:ZyIOT2hc:free", "status": "backward_completed", "loss": 1.6870718002319336}
+{"step": 19, "micro": 4, "case_id": "queen-coach-v1:infv1yZk:selected", "status": "call_started"}
+{"step": 19, "micro": 4, "case_id": "queen-coach-v1:infv1yZk:selected", "status": "backward_completed", "loss": 1.7427873611450195}
+{"step": 19, "micro": 5, "case_id": "queen-coach-v1:zmgdiu7X:free", "status": "call_started"}
+{"step": 19, "micro": 5, "case_id": "queen-coach-v1:zmgdiu7X:free", "status": "backward_completed", "loss": 1.8315751552581787}
+{"step": 19, "micro": 6, "case_id": "queen-coach-v1:ZarK6s9T:free", "status": "call_started"}
+{"step": 19, "micro": 6, "case_id": "queen-coach-v1:ZarK6s9T:free", "status": "backward_completed", "loss": 2.0041608810424805}
+{"step": 19, "micro": 7, "case_id": "queen-coach-v1:MSyTlvMn:free", "status": "call_started"}
+{"step": 19, "micro": 7, "case_id": "queen-coach-v1:MSyTlvMn:free", "status": "backward_completed", "loss": 1.9201017618179321}
+{"step": 19, "status": "optimizer_started"}
+{"step": 19, "status": "optimizer_completed", "mean_loss": 1.816994920372963}
+{"step": 20, "micro": 0, "case_id": "queen-coach-v1:AqkqNQrz:selected", "status": "call_started"}
+{"step": 20, "micro": 0, "case_id": "queen-coach-v1:AqkqNQrz:selected", "status": "backward_completed", "loss": 1.658815622329712}
+{"step": 20, "micro": 1, "case_id": "queen-coach-v1:Zmz8X9VD:free", "status": "call_started"}
+{"step": 20, "micro": 1, "case_id": "queen-coach-v1:Zmz8X9VD:free", "status": "backward_completed", "loss": 1.7574223279953003}
+{"step": 20, "micro": 2, "case_id": "queen-coach-v1:qKgrDlrV:free", "status": "call_started"}
+{"step": 20, "micro": 2, "case_id": "queen-coach-v1:qKgrDlrV:free", "status": "backward_completed", "loss": 1.6883779764175415}
+{"step": 20, "micro": 3, "case_id": "queen-coach-v1:06VlralU:free", "status": "call_started"}
+{"step": 20, "micro": 3, "case_id": "queen-coach-v1:06VlralU:free", "status": "backward_completed", "loss": 1.7073441743850708}
+{"step": 20, "micro": 4, "case_id": "queen-coach-v1:r5MKrHxd:free", "status": "call_started"}
+{"step": 20, "micro": 4, "case_id": "queen-coach-v1:r5MKrHxd:free", "status": "backward_completed", "loss": 1.675613284111023}
+{"step": 20, "micro": 5, "case_id": "queen-coach-v1:VeYnqoyO:selected", "status": "call_started"}
+{"step": 20, "micro": 5, "case_id": "queen-coach-v1:VeYnqoyO:selected", "status": "backward_completed", "loss": 1.4515583515167236}
+{"step": 20, "micro": 6, "case_id": "queen-coach-v1:nJWLuhYU:free", "status": "call_started"}
+{"step": 20, "micro": 6, "case_id": "queen-coach-v1:nJWLuhYU:free", "status": "backward_completed", "loss": 1.7859224081039429}
+{"step": 20, "micro": 7, "case_id": "queen-coach-v1:6VwwL31U:free", "status": "call_started"}
+{"step": 20, "micro": 7, "case_id": "queen-coach-v1:6VwwL31U:free", "status": "backward_completed", "loss": 1.7324860095977783}
+{"step": 20, "status": "optimizer_started"}
+{"step": 20, "status": "optimizer_completed", "mean_loss": 1.6821925193071365}
+{"step": 21, "micro": 0, "case_id": "queen-coach-v1:UUSgwJbU:selected", "status": "call_started"}

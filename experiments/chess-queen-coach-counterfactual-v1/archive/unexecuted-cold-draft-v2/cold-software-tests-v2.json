@@ -1,0 +1,17 @@
+{
+  "tests": 27,
+  "elapsed_seconds": 1.44,
+  "status": "CPU_PASSED_NO_ACTUAL_MODEL_CALLS",
+  "raw_provenance_projection": "Exactruntime/native/NF4/kernel/publisher/asset/source/quantization identities plus cachefalse,noPVinput,selectedflag,allowedfields,norescue/interventions; falseaudit.passed cannotmask mismatch",
+  "future_qualification_gate": "Exactscript +actualgpu_worker JSONargumentSHA matchfrozenqualificationprotocol/output; sameruntime/rawprojection; independentaudit passed bindsqualprotocol/result/worker",
+  "bindings": [
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "sha256": "6fe1ddd1e3df037a87bc91b79872ddff514235e4cfd0d788928fb91fddbcc3e9"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "sha256": "c709564c33be1be80c6e342adcdd2ab2c481b9e25dd1d5feac196935ee7e5187"
+    }
+  ]
+}

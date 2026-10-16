@@ -1,0 +1,496 @@
+{
+  "fixture_only": true,
+  "origin": "Manually authored synthetic bytes; never model output, human gold or actual runtime qualification. The pure checker qualified=True is a test precondition only; production fixtures remain unassessed.",
+  "scenarios": [
+    {
+      "id": "supported",
+      "label": "Supported statements",
+      "job": {
+        "request_id": "authored-supported",
+        "status": "completed",
+        "fixture": true,
+        "backend_label": "Authored renderer fixture; no model or engine",
+        "context": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "selected_uci": "e2e4",
+          "selected_san": "e4",
+          "kind": "selected_move",
+          "position": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "moves": []
+          }
+        },
+        "result": {
+          "status": "completed",
+          "finish_reason": "eos",
+          "input": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "e2e4"
+          },
+          "raw_text": "ANALYSIS:\nThe move <PIECE_MP><SQUARE_13><SQUARE_29> does not give check. It does not capture a piece.\nBEST_MOVE: <PIECE_MP><SQUARE_13><SQUARE_29>\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed",
+          "decoded_text": "Authored interface fixture. This is not model output.",
+          "parsed": {
+            "software_fixture": true
+          }
+        },
+        "verification": {
+          "schema": "chess.tutor-draft-checks.v1",
+          "status": "checked",
+          "response_sha256": "0615d028aee1e08cb7b7fa576349c3aac593170b5991dba8470a349e4ed54cbf",
+          "raw_text_sha256": "5347c86af853f20deef767e2a4cf93b3cd8021608cb07f1a3ce45f747f31d145",
+          "input_sha256": "0a01b473ea2d50f13b1ee9962ebd36c19f8a1e0c27c89b0b426e4bdeda70df62",
+          "verifier_sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+          "parser_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+          "whole_prose_assessed": false,
+          "claims": [
+            {
+              "kind": "check_or_mate",
+              "span": {
+                "start": 52,
+                "end": 71,
+                "unit": "unicode_code_points",
+                "sha256": "d1ff2bcf11ef6000b9c204a6e245c8d08b954fa58bcabdd54981e8c63b497602"
+              },
+              "exact_raw_text": "does not give check",
+              "branch_uci": [],
+              "turn": "white",
+              "analysis_move_uci": "e2e4",
+              "analysis_move_san": "e4",
+              "status": "supported",
+              "expected": true,
+              "observed": true
+            },
+            {
+              "kind": "capture",
+              "span": {
+                "start": 73,
+                "end": 101,
+                "unit": "unicode_code_points",
+                "sha256": "202256e8f454270d60c5dfb2240b63051e50d5db0d1ea189f3c0d62d7ca9f73e"
+              },
+              "exact_raw_text": "It does not capture a piece.",
+              "branch_uci": [],
+              "turn": "white",
+              "analysis_move_uci": "e2e4",
+              "analysis_move_san": "e4",
+              "status": "supported",
+              "expected": null,
+              "observed": null
+            }
+          ],
+          "unassessed_regions": [],
+          "engine_calls": 0,
+          "generator_repairs": 0,
+          "mapping_scope": "Exact canonical grammar at the requested root only; other prose is unassessed.",
+          "context": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "e2e4",
+            "branch_uci": [],
+            "turn": "white"
+          },
+          "selected_identity": {
+            "status": "supported",
+            "supplied_uci": "e2e4",
+            "reported_uci": "e2e4",
+            "span": {
+              "start": 113,
+              "end": 146,
+              "unit": "unicode_code_points",
+              "sha256": "315addf864e75ce83e5e1dd89074770dd1a9e2744bd7f9b31171975feec66a25"
+            },
+            "scope": "Structured BEST_MOVE identity only, not a prose claim."
+          },
+          "move_observations": {
+            "status": "observed",
+            "move_uci": "e2e4",
+            "move_san": "e4",
+            "gives_check": false,
+            "gives_checkmate": false,
+            "captures": false,
+            "victim": null,
+            "branch_uci": [],
+            "turn": "white",
+            "scope": "Immediate legal replay only; no forced reply, bestness or prose-quality verdict."
+          },
+          "analysis_alignment": {
+            "analysis_move_uci": "e2e4",
+            "selected_uci": "e2e4",
+            "status": "supported",
+            "scope": "ANALYSIS move versus supplied move; independent of BEST_MOVE identity."
+          },
+          "request_id": "authored-supported"
+        }
+      }
+    },
+    {
+      "id": "contradicted",
+      "label": "Contradicted statements / different statement move",
+      "job": {
+        "request_id": "authored-contradicted",
+        "status": "completed",
+        "fixture": true,
+        "backend_label": "Authored renderer fixture; no model or engine",
+        "context": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "selected_uci": "d2d4",
+          "selected_san": "d4",
+          "kind": "selected_move",
+          "position": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "moves": []
+          }
+        },
+        "result": {
+          "status": "completed",
+          "finish_reason": "eos",
+          "input": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "d2d4"
+          },
+          "raw_text": "ANALYSIS:\nThe move <PIECE_MN><SQUARE_7><SQUARE_22> gives checkmate. It captures <PIECE_OQ>.\nBEST_MOVE: <PIECE_MP><SQUARE_13><SQUARE_29>\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed",
+          "decoded_text": "Authored interface fixture. This is not model output.",
+          "parsed": {
+            "software_fixture": true
+          }
+        },
+        "verification": {
+          "schema": "chess.tutor-draft-checks.v1",
+          "status": "checked",
+          "response_sha256": "8de2fc545994baf6f20639583c5b733fc2be2cd37510a898de03dc2fbefbde01",
+          "raw_text_sha256": "641d21481fd4bc3fd15e4677e1c1ea2e3fc489a7b1ac709957aa95da90910931",
+          "input_sha256": "b6646141d42b0b30f23d0e8525f08784d42f253389f02f1a2e62e6ffd2918f53",
+          "verifier_sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+          "parser_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+          "whole_prose_assessed": false,
+          "claims": [
+            {
+              "kind": "check_or_mate",
+              "span": {
+                "start": 51,
+                "end": 66,
+                "unit": "unicode_code_points",
+                "sha256": "13d008e98800a80ae392fed331faf177bf7fd82663417537fc28ee3c5c6f614e"
+              },
+              "exact_raw_text": "gives checkmate",
+              "branch_uci": [],
+              "turn": "white",
+              "analysis_move_uci": "g1f3",
+              "analysis_move_san": "Nf3",
+              "status": "contradicted",
+              "expected": true,
+              "observed": false
+            },
+            {
+              "kind": "capture",
+              "span": {
+                "start": 68,
+                "end": 91,
+                "unit": "unicode_code_points",
+                "sha256": "1314e04e659cf433ade62a3fb8741679e066ce50cc957ef284d38427b0c2070e"
+              },
+              "exact_raw_text": "It captures <PIECE_OQ>.",
+              "branch_uci": [],
+              "turn": "white",
+              "analysis_move_uci": "g1f3",
+              "analysis_move_san": "Nf3",
+              "status": "contradicted",
+              "expected": {
+                "color": "black",
+                "piece": "queen"
+              },
+              "observed": null
+            }
+          ],
+          "unassessed_regions": [],
+          "engine_calls": 0,
+          "generator_repairs": 0,
+          "mapping_scope": "Exact canonical grammar at the requested root only; other prose is unassessed.",
+          "context": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "d2d4",
+            "branch_uci": [],
+            "turn": "white"
+          },
+          "selected_identity": {
+            "status": "contradicted",
+            "supplied_uci": "d2d4",
+            "reported_uci": "e2e4",
+            "span": {
+              "start": 103,
+              "end": 136,
+              "unit": "unicode_code_points",
+              "sha256": "315addf864e75ce83e5e1dd89074770dd1a9e2744bd7f9b31171975feec66a25"
+            },
+            "scope": "Structured BEST_MOVE identity only, not a prose claim."
+          },
+          "move_observations": {
+            "status": "observed",
+            "move_uci": "e2e4",
+            "move_san": "e4",
+            "gives_check": false,
+            "gives_checkmate": false,
+            "captures": false,
+            "victim": null,
+            "branch_uci": [],
+            "turn": "white",
+            "scope": "Immediate legal replay only; no forced reply, bestness or prose-quality verdict."
+          },
+          "analysis_alignment": {
+            "analysis_move_uci": "g1f3",
+            "selected_uci": "d2d4",
+            "status": "contradicted",
+            "scope": "ANALYSIS move versus supplied move; independent of BEST_MOVE identity."
+          },
+          "request_id": "authored-contradicted"
+        }
+      }
+    },
+    {
+      "id": "unassessed",
+      "label": "Unassessed move description",
+      "job": {
+        "request_id": "authored-unassessed",
+        "status": "completed",
+        "fixture": true,
+        "backend_label": "Authored renderer fixture; no model or engine",
+        "context": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "selected_uci": "e2e4",
+          "selected_san": "e4",
+          "kind": "selected_move",
+          "position": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "moves": []
+          }
+        },
+        "result": {
+          "status": "completed",
+          "finish_reason": "eos",
+          "input": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "e2e4"
+          },
+          "raw_text": "ANALYSIS:\nThe move <PIECE_MN><SQUARE_13><SQUARE_29> gives check. It does not capture a piece.\nBEST_MOVE: <PIECE_MP><SQUARE_13><SQUARE_29>\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed",
+          "decoded_text": "Authored interface fixture. This is not model output.",
+          "parsed": {
+            "software_fixture": true
+          }
+        },
+        "verification": {
+          "schema": "chess.tutor-draft-checks.v1",
+          "status": "checked",
+          "response_sha256": "b4cfb607ec6fb46a564e92d3b10800790d4f8df6269d758d805dff01b80e55e1",
+          "raw_text_sha256": "477a5ac2e632e5bed6774f64bb35b9a8648187164fd6bb5e81d6eb1a353e10bb",
+          "input_sha256": "0a01b473ea2d50f13b1ee9962ebd36c19f8a1e0c27c89b0b426e4bdeda70df62",
+          "verifier_sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+          "parser_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+          "whole_prose_assessed": false,
+          "claims": [
+            {
+              "kind": "check_or_mate",
+              "span": {
+                "start": 52,
+                "end": 63,
+                "unit": "unicode_code_points",
+                "sha256": "bb80619c05e5ebf42bf7e702e59c3756652a1dd11f7f7704d074e57f5932dcba"
+              },
+              "exact_raw_text": "gives check",
+              "branch_uci": [],
+              "turn": "white",
+              "analysis_move_uci": null,
+              "analysis_move_san": null,
+              "status": "unassessed",
+              "reason": "mover_mismatch"
+            },
+            {
+              "kind": "capture",
+              "span": {
+                "start": 65,
+                "end": 93,
+                "unit": "unicode_code_points",
+                "sha256": "202256e8f454270d60c5dfb2240b63051e50d5db0d1ea189f3c0d62d7ca9f73e"
+              },
+              "exact_raw_text": "It does not capture a piece.",
+              "branch_uci": [],
+              "turn": "white",
+              "analysis_move_uci": null,
+              "analysis_move_san": null,
+              "status": "unassessed",
+              "reason": "mover_mismatch"
+            }
+          ],
+          "unassessed_regions": [],
+          "engine_calls": 0,
+          "generator_repairs": 0,
+          "mapping_scope": "Exact canonical grammar at the requested root only; other prose is unassessed.",
+          "context": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "e2e4",
+            "branch_uci": [],
+            "turn": "white"
+          },
+          "selected_identity": {
+            "status": "supported",
+            "supplied_uci": "e2e4",
+            "reported_uci": "e2e4",
+            "span": {
+              "start": 105,
+              "end": 138,
+              "unit": "unicode_code_points",
+              "sha256": "315addf864e75ce83e5e1dd89074770dd1a9e2744bd7f9b31171975feec66a25"
+            },
+            "scope": "Structured BEST_MOVE identity only, not a prose claim."
+          },
+          "move_observations": {
+            "status": "observed",
+            "move_uci": "e2e4",
+            "move_san": "e4",
+            "gives_check": false,
+            "gives_checkmate": false,
+            "captures": false,
+            "victim": null,
+            "branch_uci": [],
+            "turn": "white",
+            "scope": "Immediate legal replay only; no forced reply, bestness or prose-quality verdict."
+          },
+          "analysis_alignment": {
+            "analysis_move_uci": null,
+            "selected_uci": "e2e4",
+            "status": "unassessed",
+            "scope": "ANALYSIS move versus supplied move; independent of BEST_MOVE identity."
+          },
+          "request_id": "authored-unassessed"
+        }
+      }
+    },
+    {
+      "id": "zero",
+      "label": "Zero matched statements",
+      "job": {
+        "request_id": "authored-zero",
+        "status": "completed",
+        "fixture": true,
+        "backend_label": "Authored renderer fixture; no model or engine",
+        "context": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "selected_uci": "e2e4",
+          "selected_san": "e4",
+          "kind": "selected_move",
+          "position": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "moves": []
+          }
+        },
+        "result": {
+          "status": "completed",
+          "finish_reason": "eos",
+          "input": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "e2e4"
+          },
+          "raw_text": "ANALYSIS:\nAn authored free-prose plan with no recognized immediate claim.\nBEST_MOVE: <PIECE_MP><SQUARE_13><SQUARE_29>\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed",
+          "decoded_text": "Authored interface fixture. This is not model output.",
+          "parsed": {
+            "software_fixture": true
+          }
+        },
+        "verification": {
+          "schema": "chess.tutor-draft-checks.v1",
+          "status": "unassessed",
+          "response_sha256": "a3dfa3d4c595aa6c289442b78dbba875881e0c1ab08183c27b8ec9c330f816dd",
+          "raw_text_sha256": "578811e763fb71344ba28da29588492430391f4bd8165c0b39e124b722295a4b",
+          "input_sha256": "0a01b473ea2d50f13b1ee9962ebd36c19f8a1e0c27c89b0b426e4bdeda70df62",
+          "verifier_sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+          "parser_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+          "whole_prose_assessed": false,
+          "claims": [],
+          "unassessed_regions": [
+            {
+              "start": 10,
+              "end": 74,
+              "unit": "unicode_code_points",
+              "sha256": "71a5efbca721bae97719b7e5c606aaa59476741f3b53150230efa0e53a8fde55"
+            }
+          ],
+          "engine_calls": 0,
+          "generator_repairs": 0,
+          "mapping_scope": "Exact canonical grammar at the requested root only; other prose is unassessed.",
+          "context": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "e2e4",
+            "branch_uci": [],
+            "turn": "white"
+          },
+          "selected_identity": {
+            "status": "supported",
+            "supplied_uci": "e2e4",
+            "reported_uci": "e2e4",
+            "span": {
+              "start": 85,
+              "end": 118,
+              "unit": "unicode_code_points",
+              "sha256": "315addf864e75ce83e5e1dd89074770dd1a9e2744bd7f9b31171975feec66a25"
+            },
+            "scope": "Structured BEST_MOVE identity only, not a prose claim."
+          },
+          "move_observations": {
+            "status": "observed",
+            "move_uci": "e2e4",
+            "move_san": "e4",
+            "gives_check": false,
+            "gives_checkmate": false,
+            "captures": false,
+            "victim": null,
+            "branch_uci": [],
+            "turn": "white",
+            "scope": "Immediate legal replay only; no forced reply, bestness or prose-quality verdict."
+          },
+          "reason": "No draft statements match the limited checker. Other text is unassessed.",
+          "request_id": "authored-zero"
+        }
+      }
+    },
+    {
+      "id": "unavailable",
+      "label": "Unavailable checks",
+      "job": {
+        "request_id": "authored-unavailable",
+        "status": "completed",
+        "fixture": true,
+        "backend_label": "Authored renderer fixture; no model or engine",
+        "context": {
+          "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+          "selected_uci": "e2e4",
+          "selected_san": "e4",
+          "kind": "selected_move",
+          "position": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "moves": []
+          }
+        },
+        "result": {
+          "status": "completed",
+          "finish_reason": "eos",
+          "input": {
+            "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+            "selected_uci": "e2e4"
+          },
+          "raw_text": "ANALYSIS:\nAn authored draft remains visible when checks are unavailable.\nBEST_MOVE: <PIECE_MP><SQUARE_13><SQUARE_29>\nCRITICAL_LINE:\nPROMISING_MOVES:\nEVALUATION: Not assessed",
+          "decoded_text": "Authored interface fixture. This is not model output.",
+          "parsed": {
+            "software_fixture": true
+          }
+        },
+        "verification": {
+          "schema": "chess.tutor-draft-checks.v1",
+          "status": "unavailable",
+          "reason": "Authored fixture: rule checks are unavailable.",
+          "whole_prose_assessed": false,
+          "claims": [],
+          "unassessed_regions": [],
+          "request_id": "authored-unavailable"
+        }
+      }
+    }
+  ]
+}

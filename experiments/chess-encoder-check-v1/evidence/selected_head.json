@@ -1,0 +1,3616 @@
+{
+  "raw": [
+    {
+      "case_id": "encoder-check-v1-13Fjl-d4a1",
+      "status": "completed",
+      "logit": -4.841830253601074,
+      "probability": 0.007830790244042873,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13Fjl-d4c5",
+      "status": "completed",
+      "logit": 8.654226303100586,
+      "probability": 0.999825656414032,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-13OBB-d1d5",
+      "status": "completed",
+      "logit": -4.583798885345459,
+      "probability": 0.010112701915204525,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13OBB-d1d7",
+      "status": "completed",
+      "logit": 6.6266865730285645,
+      "probability": 0.9986771941184998,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-13Wuo-f3d5",
+      "status": "completed",
+      "logit": -1.0738521814346313,
+      "probability": 0.254671186208725,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13Wuo-f3f6",
+      "status": "completed",
+      "logit": -0.6864595413208008,
+      "probability": 0.3348211348056793,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13YTQ-h2d6",
+      "status": "completed",
+      "logit": -4.828802585601807,
+      "probability": 0.007932660169899464,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13YTQ-h2g1",
+      "status": "completed",
+      "logit": 0.07345804572105408,
+      "probability": 0.5183562636375427,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-13YWq-h6h5",
+      "status": "completed",
+      "logit": -2.0345401763916016,
+      "probability": 0.1156238541007042,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13YWq-h6h2",
+      "status": "completed",
+      "logit": 1.6919076442718506,
+      "probability": 0.8444748520851135,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-13YkO-b1b8",
+      "status": "completed",
+      "logit": 9.817338943481445,
+      "probability": 0.9999455213546753,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-13YkO-b1c1",
+      "status": "completed",
+      "logit": -4.51104211807251,
+      "probability": 0.010867602191865444,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13m87-g5g7",
+      "status": "completed",
+      "logit": -0.08168251812458038,
+      "probability": 0.4795907437801361,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13m87-g5e5",
+      "status": "completed",
+      "logit": -4.027083396911621,
+      "probability": 0.01751403696835041,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13uTH-d5a2",
+      "status": "completed",
+      "logit": -2.8944172859191895,
+      "probability": 0.052430227398872375,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13uTH-d5g2",
+      "status": "completed",
+      "logit": 8.032949447631836,
+      "probability": 0.9996755123138428,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-13xSO-b7a8",
+      "status": "completed",
+      "logit": -2.582082986831665,
+      "probability": 0.07030046731233597,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13xSO-b7c8",
+      "status": "completed",
+      "logit": -0.013201292604207993,
+      "probability": 0.4966996908187866,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13zv5-e6g8",
+      "status": "completed",
+      "logit": -0.38735654950141907,
+      "probability": 0.4043538272380829,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-13zv5-e6h3",
+      "status": "completed",
+      "logit": -4.425841808319092,
+      "probability": 0.011822687461972237,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-148ep-d8e8",
+      "status": "completed",
+      "logit": -0.9816460609436035,
+      "probability": 0.2725653052330017,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-148ep-d8h8",
+      "status": "completed",
+      "logit": -0.8420240879058838,
+      "probability": 0.3011086583137512,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14G51-c7h2",
+      "status": "completed",
+      "logit": 3.2697412967681885,
+      "probability": 0.963375985622406,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14G51-c7d6",
+      "status": "completed",
+      "logit": -5.684159755706787,
+      "probability": 0.003387871664017439,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14JkG-b7a8",
+      "status": "completed",
+      "logit": -0.4804958999156952,
+      "probability": 0.3821350038051605,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14JkG-b7f7",
+      "status": "completed",
+      "logit": 6.4975361824035645,
+      "probability": 0.9984951019287109,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14L1j-b6b8",
+      "status": "completed",
+      "logit": 7.906552314758301,
+      "probability": 0.9996317625045776,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14L1j-b6a6",
+      "status": "completed",
+      "logit": -4.793154716491699,
+      "probability": 0.008218176662921906,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14MZR-d6c6",
+      "status": "completed",
+      "logit": -3.9743454456329346,
+      "probability": 0.018444987013936043,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14MZR-d6a6",
+      "status": "completed",
+      "logit": 1.1333661079406738,
+      "probability": 0.7564595937728882,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ORb-g3g8",
+      "status": "completed",
+      "logit": 2.0609045028686523,
+      "probability": 0.8870447874069214,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ORb-g3f4",
+      "status": "completed",
+      "logit": -0.3923717439174652,
+      "probability": 0.40314650535583496,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14OvH-c7c8",
+      "status": "completed",
+      "logit": 8.49871826171875,
+      "probability": 0.9997963309288025,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14OvH-c7c2",
+      "status": "completed",
+      "logit": 0.2509985864162445,
+      "probability": 0.5624222755432129,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14QiR-e4e5",
+      "status": "completed",
+      "logit": -1.694936752319336,
+      "probability": 0.15512771904468536,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14QiR-e4g2",
+      "status": "completed",
+      "logit": 2.7186434268951416,
+      "probability": 0.9381178021430969,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14TwQ-h3f3",
+      "status": "completed",
+      "logit": 7.954959392547607,
+      "probability": 0.999649167060852,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14TwQ-h3h4",
+      "status": "completed",
+      "logit": -3.217198610305786,
+      "probability": 0.03852361440658569,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14XBj-e1h1",
+      "status": "completed",
+      "logit": 8.532515525817871,
+      "probability": 0.9998031258583069,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14XBj-e1d1",
+      "status": "completed",
+      "logit": -0.8803215622901917,
+      "probability": 0.2931111454963684,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14Ylt-a2a1",
+      "status": "completed",
+      "logit": 0.9595986008644104,
+      "probability": 0.7230414152145386,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14Ylt-a2a6",
+      "status": "completed",
+      "logit": -5.7846808433532715,
+      "probability": 0.0030648692045360804,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ZDj-e6g8",
+      "status": "completed",
+      "logit": 1.8674259185791016,
+      "probability": 0.8661601543426514,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ZDj-e6b6",
+      "status": "completed",
+      "logit": -6.699065685272217,
+      "probability": 0.0012305463897064328,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14d7t-e7d7",
+      "status": "completed",
+      "logit": -1.4831929206848145,
+      "probability": 0.18494562804698944,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14d7t-e7f7",
+      "status": "completed",
+      "logit": 10.880755424499512,
+      "probability": 0.999981164932251,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14gow-e4c6",
+      "status": "completed",
+      "logit": -0.6474080085754395,
+      "probability": 0.3435738980770111,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14gow-e4h7",
+      "status": "completed",
+      "logit": 9.654936790466309,
+      "probability": 0.9999358654022217,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m2v-c4e4",
+      "status": "completed",
+      "logit": -2.3009116649627686,
+      "probability": 0.09104748070240021,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m2v-c4f1",
+      "status": "completed",
+      "logit": 11.080025672912598,
+      "probability": 0.999984622001648,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m3U-f3b3",
+      "status": "completed",
+      "logit": -2.513821840286255,
+      "probability": 0.07489487528800964,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m3U-f3g4",
+      "status": "completed",
+      "logit": 2.733944892883301,
+      "probability": 0.9390001893043518,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m4p-g8b8",
+      "status": "completed",
+      "logit": -4.034098148345947,
+      "probability": 0.01739373989403248,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m4p-g8f8",
+      "status": "completed",
+      "logit": 0.7635315656661987,
+      "probability": 0.6821199655532837,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m5O-c4e3",
+      "status": "completed",
+      "logit": 9.197905540466309,
+      "probability": 0.9998987913131714,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m5O-c4b2",
+      "status": "completed",
+      "logit": -2.2135403156280518,
+      "probability": 0.09854113310575485,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m6L-c4f1",
+      "status": "completed",
+      "logit": 3.547285318374634,
+      "probability": 0.9720036387443542,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m6L-c4d5",
+      "status": "completed",
+      "logit": -1.007718801498413,
+      "probability": 0.2674265205860138,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m7F-d3h7",
+      "status": "completed",
+      "logit": 5.827006816864014,
+      "probability": 0.9970617890357971,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14m7F-d3a6",
+      "status": "completed",
+      "logit": -3.6288211345672607,
+      "probability": 0.025860920548439026,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m7l-e4e3",
+      "status": "completed",
+      "logit": -2.875420331954956,
+      "probability": 0.053382087498903275,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14m7l-e4e8",
+      "status": "completed",
+      "logit": 3.67294979095459,
+      "probability": 0.9752277731895447,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mG2-d8d6",
+      "status": "completed",
+      "logit": -3.6587088108062744,
+      "probability": 0.02511855959892273,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mG2-d8h4",
+      "status": "completed",
+      "logit": 3.945734739303589,
+      "probability": 0.981029748916626,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mGu-b4b1",
+      "status": "completed",
+      "logit": 3.9692673683166504,
+      "probability": 0.981462836265564,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mGu-b4f8",
+      "status": "completed",
+      "logit": -5.769224166870117,
+      "probability": 0.0031124611850827932,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mJA-h7h6",
+      "status": "completed",
+      "logit": -1.5958898067474365,
+      "probability": 0.16855685412883759,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mJA-h7g8",
+      "status": "completed",
+      "logit": 3.0137176513671875,
+      "probability": 0.95319002866745,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mKa-f1e1",
+      "status": "completed",
+      "logit": -4.235882759094238,
+      "probability": 0.014260722324252129,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mKa-f1f8",
+      "status": "completed",
+      "logit": 3.428273916244507,
+      "probability": 0.9685765504837036,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mOt-c7h2",
+      "status": "completed",
+      "logit": 4.975869655609131,
+      "probability": 0.9931448698043823,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mOt-c7d6",
+      "status": "completed",
+      "logit": -5.422571659088135,
+      "probability": 0.004396362695842981,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mc0-d6h2",
+      "status": "completed",
+      "logit": 2.7875759601593018,
+      "probability": 0.9420007467269897,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mc0-d6f4",
+      "status": "completed",
+      "logit": -5.08040189743042,
+      "probability": 0.006178992334753275,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14meN-c5c4",
+      "status": "completed",
+      "logit": -1.2705235481262207,
+      "probability": 0.21916763484477997,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14meN-c5e5",
+      "status": "completed",
+      "logit": -5.042125225067139,
+      "probability": 0.006418541073799133,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14mf9-g5d2",
+      "status": "completed",
+      "logit": 0.7121379375457764,
+      "probability": 0.6708734035491943,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mf9-g5e3",
+      "status": "completed",
+      "logit": 2.2967329025268555,
+      "probability": 0.9086061120033264,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mmS-b6e6",
+      "status": "completed",
+      "logit": 7.007139682769775,
+      "probability": 0.9990954399108887,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14mmS-b6b2",
+      "status": "completed",
+      "logit": -2.5422956943511963,
+      "probability": 0.07294578105211258,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14msF-e6c8",
+      "status": "completed",
+      "logit": 3.0608713626861572,
+      "probability": 0.955249547958374,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14msF-e6d5",
+      "status": "completed",
+      "logit": -3.006645917892456,
+      "probability": 0.04712653160095215,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14muN-f2d2",
+      "status": "completed",
+      "logit": 2.09112286567688,
+      "probability": 0.8900374174118042,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14muN-f2g1",
+      "status": "completed",
+      "logit": -1.9227523803710938,
+      "probability": 0.12755495309829712,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n1C-b7b4",
+      "status": "completed",
+      "logit": -2.628286600112915,
+      "probability": 0.06733998656272888,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n1C-b7b8",
+      "status": "completed",
+      "logit": 0.6474704146385193,
+      "probability": 0.6564401984214783,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n1k-e5f4",
+      "status": "completed",
+      "logit": -4.657276153564453,
+      "probability": 0.009403026662766933,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n1k-e5e1",
+      "status": "completed",
+      "logit": 12.966438293457031,
+      "probability": 0.999997615814209,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n4a-a4a5",
+      "status": "completed",
+      "logit": 3.5538973808288574,
+      "probability": 0.9721830487251282,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n4a-a4b4",
+      "status": "completed",
+      "logit": -4.241102695465088,
+      "probability": 0.014187530614435673,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n59-a1a3",
+      "status": "completed",
+      "logit": -2.7143373489379883,
+      "probability": 0.06213262304663658,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n59-a1g7",
+      "status": "completed",
+      "logit": 2.740018606185913,
+      "probability": 0.9393472075462341,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n5S-g4f5",
+      "status": "completed",
+      "logit": 1.628648042678833,
+      "probability": 0.8359843492507935,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n5S-g4g5",
+      "status": "completed",
+      "logit": -3.3511478900909424,
+      "probability": 0.033857595175504684,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14n67-d1d2",
+      "status": "completed",
+      "logit": 1.6196445226669312,
+      "probability": 0.8347460627555847,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14n67-d1d6",
+      "status": "completed",
+      "logit": -6.002723217010498,
+      "probability": 0.0024659154005348682,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nAA-f2f7",
+      "status": "completed",
+      "logit": 2.392164945602417,
+      "probability": 0.9162279367446899,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nAA-f2f6",
+      "status": "completed",
+      "logit": 1.1380226612091064,
+      "probability": 0.7573164701461792,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nEG-d3e2",
+      "status": "completed",
+      "logit": -3.7856390476226807,
+      "probability": 0.022190751507878304,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nEG-d3h7",
+      "status": "completed",
+      "logit": 2.415391445159912,
+      "probability": 0.9179934859275818,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nFa-a2a1",
+      "status": "completed",
+      "logit": 11.608560562133789,
+      "probability": 0.9999909400939941,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nFa-a2e2",
+      "status": "completed",
+      "logit": -1.1753597259521484,
+      "probability": 0.2358875572681427,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nIZ-h4c4",
+      "status": "completed",
+      "logit": -4.060947895050049,
+      "probability": 0.01694074273109436,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nIZ-h4h7",
+      "status": "completed",
+      "logit": 8.507920265197754,
+      "probability": 0.9997982382774353,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nLe-f3g5",
+      "status": "completed",
+      "logit": 1.6412498950958252,
+      "probability": 0.8377049565315247,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nLe-f3g1",
+      "status": "completed",
+      "logit": 2.023754119873047,
+      "probability": 0.8832686543464661,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nNV-d3g3",
+      "status": "completed",
+      "logit": -6.33189058303833,
+      "probability": 0.00177550979424268,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nNV-d3h7",
+      "status": "completed",
+      "logit": 9.78792667388916,
+      "probability": 0.9999438524246216,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nP3-c8a8",
+      "status": "completed",
+      "logit": -1.5605703592300415,
+      "probability": 0.1735648214817047,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nP3-c8h8",
+      "status": "completed",
+      "logit": 3.3436572551727295,
+      "probability": 0.965896487236023,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nPZ-d8d5",
+      "status": "completed",
+      "logit": -6.154103755950928,
+      "probability": 0.0021202394273132086,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nPZ-d8d1",
+      "status": "completed",
+      "logit": 8.659302711486816,
+      "probability": 0.9998266100883484,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nQd-f4f2",
+      "status": "completed",
+      "logit": 1.0105371475219727,
+      "probability": 0.7331252098083496,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nQd-f4e5",
+      "status": "completed",
+      "logit": -2.0133326053619385,
+      "probability": 0.11781016737222672,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nQz-d4g4",
+      "status": "completed",
+      "logit": -3.00234055519104,
+      "probability": 0.04732024669647217,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nQz-d4f2",
+      "status": "completed",
+      "logit": 1.5003869533538818,
+      "probability": 0.8176321983337402,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nTE-c4e4",
+      "status": "completed",
+      "logit": -1.094441533088684,
+      "probability": 0.2507828176021576,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nTE-c4c2",
+      "status": "completed",
+      "logit": 8.566699028015137,
+      "probability": 0.9998096823692322,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nTf-e7b4",
+      "status": "completed",
+      "logit": -3.668388605117798,
+      "probability": 0.024882612749934196,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nTf-e7c5",
+      "status": "completed",
+      "logit": 3.960826873779297,
+      "probability": 0.98130863904953,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nWH-d1d8",
+      "status": "completed",
+      "logit": 2.671205759048462,
+      "probability": 0.9353060126304626,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nWH-d1f1",
+      "status": "completed",
+      "logit": -5.599987506866455,
+      "probability": 0.0036842857953161,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14naZ-c5a4",
+      "status": "completed",
+      "logit": -3.4515421390533447,
+      "probability": 0.030722903087735176,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14naZ-c5b3",
+      "status": "completed",
+      "logit": -1.4659669399261475,
+      "probability": 0.18755638599395752,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ni0-g3g4",
+      "status": "completed",
+      "logit": -5.081391334533691,
+      "probability": 0.006172919180244207,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ni0-g3h3",
+      "status": "completed",
+      "logit": 9.196144104003906,
+      "probability": 0.9998985528945923,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nlr-c1e2",
+      "status": "completed",
+      "logit": 9.90209674835205,
+      "probability": 0.9999499320983887,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nlr-c1d3",
+      "status": "completed",
+      "logit": -1.5641708374023438,
+      "probability": 0.1730489730834961,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ntC-a7e3",
+      "status": "completed",
+      "logit": -2.061413049697876,
+      "probability": 0.11290422827005386,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ntC-a7a4",
+      "status": "completed",
+      "logit": -0.7163614630699158,
+      "probability": 0.3281947374343872,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nxH-d8c8",
+      "status": "completed",
+      "logit": -5.14662504196167,
+      "probability": 0.0057853455655276775,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nxH-d8a5",
+      "status": "completed",
+      "logit": 10.895237922668457,
+      "probability": 0.9999814033508301,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nxm-d5d3",
+      "status": "completed",
+      "logit": -1.9448646306991577,
+      "probability": 0.12511439621448517,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nxm-d5d1",
+      "status": "completed",
+      "logit": 4.374289035797119,
+      "probability": 0.9875596165657043,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14nyP-h5h3",
+      "status": "completed",
+      "logit": -5.798551082611084,
+      "probability": 0.0030227797105908394,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14nyP-h5h8",
+      "status": "completed",
+      "logit": 2.8403751850128174,
+      "probability": 0.9448190331459045,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14o2C-f8f7",
+      "status": "completed",
+      "logit": -5.015347957611084,
+      "probability": 0.006591585464775562,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14o2C-f8f1",
+      "status": "completed",
+      "logit": 4.681668758392334,
+      "probability": 0.9908214807510376,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14o35-e2d4",
+      "status": "completed",
+      "logit": 1.2173000574111938,
+      "probability": 0.7715880274772644,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14o35-e2g3",
+      "status": "completed",
+      "logit": 1.7932498455047607,
+      "probability": 0.8573252558708191,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oAh-h4f3",
+      "status": "completed",
+      "logit": -1.1313806772232056,
+      "probability": 0.2439063936471939,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oAh-h4g6",
+      "status": "completed",
+      "logit": 4.493120193481445,
+      "probability": 0.9889380931854248,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oCL-d8c8",
+      "status": "completed",
+      "logit": -4.110184192657471,
+      "probability": 0.016139980405569077,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oCL-d8d1",
+      "status": "completed",
+      "logit": 5.306030750274658,
+      "probability": 0.9950628876686096,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oCZ-a4b3",
+      "status": "completed",
+      "logit": -5.404057025909424,
+      "probability": 0.004478150047361851,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oCZ-a4c6",
+      "status": "completed",
+      "logit": 8.091941833496094,
+      "probability": 0.9996941089630127,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oJS-g1h1",
+      "status": "completed",
+      "logit": -0.8941724300384521,
+      "probability": 0.2902495265007019,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oJS-g1f2",
+      "status": "completed",
+      "logit": 2.2737743854522705,
+      "probability": 0.9066816568374634,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oJx-g5g8",
+      "status": "completed",
+      "logit": 2.7328875064849854,
+      "probability": 0.9389395713806152,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oJx-g5a5",
+      "status": "completed",
+      "logit": -2.652348756790161,
+      "probability": 0.06584439426660538,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oKU-d5d3",
+      "status": "completed",
+      "logit": -4.741783618927002,
+      "probability": 0.008647640235722065,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oKU-d5e5",
+      "status": "completed",
+      "logit": -1.975635290145874,
+      "probability": 0.12178489565849304,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oOF-a2c2",
+      "status": "completed",
+      "logit": 0.7622655630111694,
+      "probability": 0.6818454265594482,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oOF-a2a3",
+      "status": "completed",
+      "logit": 5.635547637939453,
+      "probability": 0.9964439272880554,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oPa-a6e6",
+      "status": "completed",
+      "logit": 8.708966255187988,
+      "probability": 0.9998348951339722,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oPa-a6c6",
+      "status": "completed",
+      "logit": -2.9205710887908936,
+      "probability": 0.05114597827196121,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oPl-d3a6",
+      "status": "completed",
+      "logit": -3.9782021045684814,
+      "probability": 0.018375292420387268,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oPl-d3e3",
+      "status": "completed",
+      "logit": 3.6344099044799805,
+      "probability": 0.974279522895813,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ofE-e4e1",
+      "status": "completed",
+      "logit": 11.162888526916504,
+      "probability": 0.9999858140945435,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ofE-e4g4",
+      "status": "completed",
+      "logit": -4.744659900665283,
+      "probability": 0.008623016998171806,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ohp-f5h7",
+      "status": "completed",
+      "logit": 3.1448304653167725,
+      "probability": 0.9587045311927795,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ohp-f5e4",
+      "status": "completed",
+      "logit": -3.3184144496917725,
+      "probability": 0.034944839775562286,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ovT-d2d1",
+      "status": "completed",
+      "logit": 2.4789679050445557,
+      "probability": 0.9226542115211487,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ovT-d2d3",
+      "status": "completed",
+      "logit": -0.6149070262908936,
+      "probability": 0.35094064474105835,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ovU-h5f6",
+      "status": "completed",
+      "logit": 3.6556034088134766,
+      "probability": 0.9748052954673767,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ovU-h5g7",
+      "status": "completed",
+      "logit": 0.2089553326368332,
+      "probability": 0.5520496368408203,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14owl-c4d4",
+      "status": "completed",
+      "logit": 0.26502180099487305,
+      "probability": 0.5658703446388245,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14owl-c4f1",
+      "status": "completed",
+      "logit": 10.811623573303223,
+      "probability": 0.9999798536300659,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14oxt-a7a4",
+      "status": "completed",
+      "logit": -2.2249860763549805,
+      "probability": 0.09752906113862991,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14oxt-a7e3",
+      "status": "completed",
+      "logit": -3.040515184402466,
+      "probability": 0.045628730207681656,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ozK-e2e6",
+      "status": "completed",
+      "logit": -1.122266173362732,
+      "probability": 0.2455911487340927,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ozK-e2h5",
+      "status": "completed",
+      "logit": 8.43097972869873,
+      "probability": 0.9997820258140564,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14p7L-f3f8",
+      "status": "completed",
+      "logit": 0.9660608172416687,
+      "probability": 0.724333643913269,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14p7L-f3g4",
+      "status": "completed",
+      "logit": -3.349339723587036,
+      "probability": 0.033916790038347244,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pDC-g2g4",
+      "status": "completed",
+      "logit": -3.8538594245910645,
+      "probability": 0.020757749676704407,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pDC-g2g1",
+      "status": "completed",
+      "logit": 2.379260301589966,
+      "probability": 0.9152320623397827,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pDs-c2f2",
+      "status": "completed",
+      "logit": 10.50089168548584,
+      "probability": 0.9999724626541138,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pDs-c2b2",
+      "status": "completed",
+      "logit": -3.012728452682495,
+      "probability": 0.04685414582490921,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pL9-g5g2",
+      "status": "completed",
+      "logit": 3.6076204776763916,
+      "probability": 0.9735996127128601,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pL9-g5g6",
+      "status": "completed",
+      "logit": 0.03390772268176079,
+      "probability": 0.5084761381149292,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pLb-d8b6",
+      "status": "completed",
+      "logit": -1.6571182012557983,
+      "probability": 0.1601492166519165,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pLb-d8a5",
+      "status": "completed",
+      "logit": 0.15433457493782043,
+      "probability": 0.5385072231292725,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pTk-d1g1",
+      "status": "completed",
+      "logit": -7.066712856292725,
+      "probability": 0.0008523055003024638,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pTk-d1h1",
+      "status": "completed",
+      "logit": 8.355513572692871,
+      "probability": 0.9997649788856506,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pZ1-a2a5",
+      "status": "completed",
+      "logit": 11.273903846740723,
+      "probability": 0.9999872446060181,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pZ1-a2a1",
+      "status": "completed",
+      "logit": -3.0702435970306396,
+      "probability": 0.044351499527692795,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pbA-h8g8",
+      "status": "completed",
+      "logit": -0.14388810098171234,
+      "probability": 0.46408990025520325,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pbA-h8d8",
+      "status": "completed",
+      "logit": 2.4140594005584717,
+      "probability": 0.9178931713104248,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pbW-f3f6",
+      "status": "completed",
+      "logit": 1.1476728916168213,
+      "probability": 0.7590855956077576,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pbW-f3d3",
+      "status": "completed",
+      "logit": -2.6040356159210205,
+      "probability": 0.0688791424036026,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pwb-e2e4",
+      "status": "completed",
+      "logit": 1.2127220630645752,
+      "probability": 0.7707802653312683,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pwb-e2e3",
+      "status": "completed",
+      "logit": 1.3185006380081177,
+      "probability": 0.7889321446418762,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14pxL-e5f7",
+      "status": "completed",
+      "logit": -3.373018980026245,
+      "probability": 0.033149413764476776,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14pxL-e5c4",
+      "status": "completed",
+      "logit": 11.310132026672363,
+      "probability": 0.9999877214431763,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14py9-g4c4",
+      "status": "completed",
+      "logit": 10.09707260131836,
+      "probability": 0.9999587535858154,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14py9-g4h5",
+      "status": "completed",
+      "logit": -3.8676321506500244,
+      "probability": 0.020479634404182434,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14q0w-d5d4",
+      "status": "completed",
+      "logit": 0.8011926412582397,
+      "probability": 0.6902295351028442,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14q0w-d5g2",
+      "status": "completed",
+      "logit": 2.884300947189331,
+      "probability": 0.9470648765563965,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14q7O-b5d6",
+      "status": "completed",
+      "logit": 6.145629405975342,
+      "probability": 0.9978618025779724,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14q7O-b5d4",
+      "status": "completed",
+      "logit": -1.8534818887710571,
+      "probability": 0.1354645937681198,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qGF-c8e8",
+      "status": "completed",
+      "logit": -0.2328484207391739,
+      "probability": 0.442049503326416,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qGF-c8g8",
+      "status": "completed",
+      "logit": 0.42162689566612244,
+      "probability": 0.603872537612915,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qGG-e5d7",
+      "status": "completed",
+      "logit": 1.5311095714569092,
+      "probability": 0.8221686482429504,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qGG-e5c6",
+      "status": "completed",
+      "logit": -2.773526191711426,
+      "probability": 0.05877164751291275,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qHq-d5a8",
+      "status": "completed",
+      "logit": -3.5783419609069824,
+      "probability": 0.027163498103618622,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qHq-d5d2",
+      "status": "completed",
+      "logit": 0.7390235066413879,
+      "probability": 0.6767822504043579,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qJd-a7b7",
+      "status": "completed",
+      "logit": -4.305185794830322,
+      "probability": 0.01331859827041626,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qJd-a7a8",
+      "status": "completed",
+      "logit": 11.754937171936035,
+      "probability": 0.9999921321868896,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qLC-e8g6",
+      "status": "completed",
+      "logit": 0.23280026018619537,
+      "probability": 0.5579386353492737,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qLC-e8c6",
+      "status": "completed",
+      "logit": -1.7849931716918945,
+      "probability": 0.1436876654624939,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qMV-d3e4",
+      "status": "completed",
+      "logit": -2.7686870098114014,
+      "probability": 0.05903991311788559,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qMV-d3c4",
+      "status": "completed",
+      "logit": 2.853393316268921,
+      "probability": 0.945493757724762,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qPZ-e2a6",
+      "status": "completed",
+      "logit": 11.01214599609375,
+      "probability": 0.999983549118042,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qPZ-e2c4",
+      "status": "completed",
+      "logit": -3.5252444744110107,
+      "probability": 0.028602421283721924,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qTu-d2d7",
+      "status": "completed",
+      "logit": -4.4077372550964355,
+      "probability": 0.012036081403493881,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qTu-d2d3",
+      "status": "completed",
+      "logit": 3.371152400970459,
+      "probability": 0.9667906761169434,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qZT-g2g5",
+      "status": "completed",
+      "logit": -1.4710527658462524,
+      "probability": 0.18678264319896698,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qZT-g2g7",
+      "status": "completed",
+      "logit": 4.14225435256958,
+      "probability": 0.9843614101409912,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qfC-d6b6",
+      "status": "completed",
+      "logit": 10.4269437789917,
+      "probability": 0.9999704360961914,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qfC-d6d8",
+      "status": "completed",
+      "logit": -4.523340225219727,
+      "probability": 0.010736196301877499,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qhw-h4g6",
+      "status": "completed",
+      "logit": -3.5783162117004395,
+      "probability": 0.02716417983174324,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qhw-h4f5",
+      "status": "completed",
+      "logit": 1.90073561668396,
+      "probability": 0.8699747323989868,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qky-f6e6",
+      "status": "completed",
+      "logit": -1.0568119287490845,
+      "probability": 0.25791916251182556,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qky-f6f7",
+      "status": "completed",
+      "logit": 1.674251675605774,
+      "probability": 0.84214186668396,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qnd-h5f5",
+      "status": "completed",
+      "logit": -1.3649609088897705,
+      "probability": 0.20343519747257233,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qnd-h5h7",
+      "status": "completed",
+      "logit": -3.0675623416900635,
+      "probability": 0.044465284794569016,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qoD-h1d1",
+      "status": "completed",
+      "logit": -1.8138928413391113,
+      "probability": 0.14016829431056976,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qoD-h1g1",
+      "status": "completed",
+      "logit": 2.6988441944122314,
+      "probability": 0.936958372592926,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qoP-e7b7",
+      "status": "completed",
+      "logit": -4.691695213317871,
+      "probability": 0.009087780490517616,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qoP-e7e5",
+      "status": "completed",
+      "logit": 0.12904775142669678,
+      "probability": 0.532217264175415,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qs6-c6c3",
+      "status": "completed",
+      "logit": -2.7204296588897705,
+      "probability": 0.061778560280799866,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qs6-c6g2",
+      "status": "completed",
+      "logit": 8.294079780578613,
+      "probability": 0.9997500777244568,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qsV-e3a3",
+      "status": "completed",
+      "logit": -0.3363873064517975,
+      "probability": 0.4166873097419739,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qsV-e3d3",
+      "status": "completed",
+      "logit": 3.6033527851104736,
+      "probability": 0.9734896421432495,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14qsa-b5d7",
+      "status": "completed",
+      "logit": -0.7469319701194763,
+      "probability": 0.32149019837379456,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14qsa-b5a6",
+      "status": "completed",
+      "logit": -0.36683401465415955,
+      "probability": 0.40930625796318054,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r02-f3e5",
+      "status": "completed",
+      "logit": 7.880661964416504,
+      "probability": 0.999622106552124,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r02-f3e1",
+      "status": "completed",
+      "logit": -5.364396095275879,
+      "probability": 0.004658482503145933,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r6w-d3f4",
+      "status": "completed",
+      "logit": 0.1272251456975937,
+      "probability": 0.53176349401474,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r6w-d3e1",
+      "status": "completed",
+      "logit": -2.4463376998901367,
+      "probability": 0.07970678061246872,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r7D-c7e5",
+      "status": "completed",
+      "logit": -3.62953782081604,
+      "probability": 0.025842873379588127,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r7D-c7h2",
+      "status": "completed",
+      "logit": 10.2615385055542,
+      "probability": 0.9999650716781616,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r7M-a4f4",
+      "status": "completed",
+      "logit": -1.644287109375,
+      "probability": 0.16188256442546844,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r7M-a4a1",
+      "status": "completed",
+      "logit": 3.3588922023773193,
+      "probability": 0.96639484167099,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14r8P-f8d8",
+      "status": "completed",
+      "logit": -4.011936187744141,
+      "probability": 0.017776593565940857,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14r8P-f8h8",
+      "status": "completed",
+      "logit": 9.352005958557129,
+      "probability": 0.999913215637207,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rAB-h5f5",
+      "status": "completed",
+      "logit": -2.9762990474700928,
+      "probability": 0.048508163541555405,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rAB-h5d1",
+      "status": "completed",
+      "logit": -6.562315464019775,
+      "probability": 0.0014106184244155884,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rB3-g3e2",
+      "status": "completed",
+      "logit": 2.617166519165039,
+      "probability": 0.9319581985473633,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rB3-g3f1",
+      "status": "completed",
+      "logit": 0.5422332286834717,
+      "probability": 0.6323317885398865,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rCB-h1h7",
+      "status": "completed",
+      "logit": -1.6376652717590332,
+      "probability": 0.16278299689292908,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rCB-h1h6",
+      "status": "completed",
+      "logit": -1.9379414319992065,
+      "probability": 0.12587417662143707,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rDL-d7d8",
+      "status": "completed",
+      "logit": 3.4546892642974854,
+      "probability": 0.9693706631660461,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rDL-d7c7",
+      "status": "completed",
+      "logit": -3.6085402965545654,
+      "probability": 0.02637678012251854,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rDk-f7f5",
+      "status": "completed",
+      "logit": -5.521172523498535,
+      "probability": 0.003985207993537188,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rDk-f7f8",
+      "status": "completed",
+      "logit": 7.7292656898498535,
+      "probability": 0.9995604157447815,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rEO-g3h2",
+      "status": "completed",
+      "logit": 1.8870025873184204,
+      "probability": 0.8684134483337402,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rEO-g3f4",
+      "status": "completed",
+      "logit": -4.530086994171143,
+      "probability": 0.010664775036275387,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rMu-f4e6",
+      "status": "completed",
+      "logit": -3.4434258937835693,
+      "probability": 0.030965520069003105,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rMu-f4e2",
+      "status": "completed",
+      "logit": 9.222063064575195,
+      "probability": 0.9999011754989624,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rRH-d5h5",
+      "status": "completed",
+      "logit": 11.796187400817871,
+      "probability": 0.9999924898147583,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rRH-d5d8",
+      "status": "completed",
+      "logit": -8.128108024597168,
+      "probability": 0.00029503897530958056,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rSV-e3c1",
+      "status": "completed",
+      "logit": 2.230524778366089,
+      "probability": 0.9029573202133179,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rSV-e3c3",
+      "status": "completed",
+      "logit": -3.328124761581421,
+      "probability": 0.03461884707212448,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rcz-a2a1",
+      "status": "completed",
+      "logit": 2.3470239639282227,
+      "probability": 0.9126973748207092,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rcz-a2b2",
+      "status": "completed",
+      "logit": -3.4805142879486084,
+      "probability": 0.02987177111208439,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rg4-d8b8",
+      "status": "completed",
+      "logit": -4.2350263595581055,
+      "probability": 0.01427276711910963,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rg4-d8a5",
+      "status": "completed",
+      "logit": 7.765509605407715,
+      "probability": 0.9995760321617126,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rpD-f4f3",
+      "status": "completed",
+      "logit": -2.4511468410491943,
+      "probability": 0.07935472577810287,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rpD-f4h4",
+      "status": "completed",
+      "logit": 8.088194847106934,
+      "probability": 0.9996929168701172,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14rtB-g7g1",
+      "status": "completed",
+      "logit": -2.3496875762939453,
+      "probability": 0.08709061145782471,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14rtB-g7g5",
+      "status": "completed",
+      "logit": 0.4533230662345886,
+      "probability": 0.6114290356636047,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s05-h3h4",
+      "status": "completed",
+      "logit": -6.126482963562012,
+      "probability": 0.002179489005357027,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14s05-h3g4",
+      "status": "completed",
+      "logit": -1.9741251468658447,
+      "probability": 0.12194649875164032,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14s0Z-f3f8",
+      "status": "completed",
+      "logit": 2.2674200534820557,
+      "probability": 0.9061425924301147,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s0Z-f3f7",
+      "status": "completed",
+      "logit": 2.6534476280212402,
+      "probability": 0.9342231154441833,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s1M-e5g6",
+      "status": "completed",
+      "logit": 2.964810609817505,
+      "probability": 0.9509589076042175,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14s1M-e5f7",
+      "status": "completed",
+      "logit": 2.9217212200164795,
+      "probability": 0.9489098787307739,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sBq-c6c5",
+      "status": "completed",
+      "logit": -2.3603947162628174,
+      "probability": 0.08624308556318283,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sBq-c6c1",
+      "status": "completed",
+      "logit": 7.640161991119385,
+      "probability": 0.9995194673538208,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sBy-d1c3",
+      "status": "completed",
+      "logit": 0.6855131387710571,
+      "probability": 0.6649680733680725,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sBy-d1f2",
+      "status": "completed",
+      "logit": -3.863668203353882,
+      "probability": 0.02055930346250534,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sLk-g6d3",
+      "status": "completed",
+      "logit": -4.033327102661133,
+      "probability": 0.017406921833753586,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sLk-g6h7",
+      "status": "completed",
+      "logit": 1.8509684801101685,
+      "probability": 0.8642407655715942,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sME-h6g4",
+      "status": "completed",
+      "logit": -4.847514629364014,
+      "probability": 0.007786748465150595,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sME-h6f7",
+      "status": "completed",
+      "logit": 8.755548477172852,
+      "probability": 0.9998424053192139,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sS8-f6f2",
+      "status": "completed",
+      "logit": 10.743659019470215,
+      "probability": 0.9999784231185913,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sS8-f6f5",
+      "status": "completed",
+      "logit": -2.3155202865600586,
+      "probability": 0.08984570950269699,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sUm-h5e2",
+      "status": "completed",
+      "logit": -5.451618671417236,
+      "probability": 0.004271036013960838,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sUm-h5g6",
+      "status": "completed",
+      "logit": 0.7896396517753601,
+      "probability": 0.6877539753913879,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sUz-a5a4",
+      "status": "completed",
+      "logit": -1.433394193649292,
+      "probability": 0.19257038831710815,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sUz-a5a8",
+      "status": "completed",
+      "logit": 11.641315460205078,
+      "probability": 0.9999911785125732,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sXN-f7c7",
+      "status": "completed",
+      "logit": -4.821105480194092,
+      "probability": 0.007993463426828384,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sXN-f7f8",
+      "status": "completed",
+      "logit": 3.3452351093292236,
+      "probability": 0.9659484028816223,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sd1-h5f7",
+      "status": "completed",
+      "logit": 12.715325355529785,
+      "probability": 0.9999970197677612,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sd1-h5h6",
+      "status": "completed",
+      "logit": -2.2052953243255615,
+      "probability": 0.09927597641944885,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14sjx-e4f2",
+      "status": "completed",
+      "logit": 1.5976324081420898,
+      "probability": 0.8316872715950012,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sjx-e4d6",
+      "status": "completed",
+      "logit": -0.6061460971832275,
+      "probability": 0.35293883085250854,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14snV-g4g6",
+      "status": "completed",
+      "logit": 0.6040345430374146,
+      "probability": 0.6465787887573242,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14snV-g4c8",
+      "status": "completed",
+      "logit": 2.54555082321167,
+      "probability": 0.9272740483283997,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sr1-d6f8",
+      "status": "completed",
+      "logit": 2.4692955017089844,
+      "probability": 0.9219611287117004,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14sr1-d6a3",
+      "status": "completed",
+      "logit": -4.836615085601807,
+      "probability": 0.007871413603425026,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ssy-a7a4",
+      "status": "completed",
+      "logit": -3.2060041427612305,
+      "probability": 0.03894039988517761,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ssy-a7f7",
+      "status": "completed",
+      "logit": 5.3092875480651855,
+      "probability": 0.9950789213180542,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14stR-d4c6",
+      "status": "completed",
+      "logit": -3.7471745014190674,
+      "probability": 0.023040886968374252,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14stR-d4f3",
+      "status": "completed",
+      "logit": 2.366199254989624,
+      "probability": 0.9142132997512817,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14stT-g2f1",
+      "status": "completed",
+      "logit": -5.386831760406494,
+      "probability": 0.0045556011609733105,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14stT-g2c6",
+      "status": "completed",
+      "logit": -0.1659298986196518,
+      "probability": 0.4586124122142792,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14szx-b5d6",
+      "status": "completed",
+      "logit": 8.224882125854492,
+      "probability": 0.9997321963310242,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14szx-b5a7",
+      "status": "completed",
+      "logit": -1.0578511953353882,
+      "probability": 0.25772032141685486,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14t1n-f7g7",
+      "status": "completed",
+      "logit": -3.1820356845855713,
+      "probability": 0.03984737768769264,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14t1n-f7c7",
+      "status": "completed",
+      "logit": 1.3532681465148926,
+      "probability": 0.7946633696556091,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14t4v-d3h7",
+      "status": "completed",
+      "logit": 8.78779125213623,
+      "probability": 0.999847412109375,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14t4v-d3g6",
+      "status": "completed",
+      "logit": -0.2589520812034607,
+      "probability": 0.43562132120132446,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14t6I-h5f6",
+      "status": "completed",
+      "logit": 3.080066442489624,
+      "probability": 0.956062912940979,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14t6I-h5f4",
+      "status": "completed",
+      "logit": -3.923792600631714,
+      "probability": 0.019382866099476814,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tE0-a7a4",
+      "status": "completed",
+      "logit": -3.998615026473999,
+      "probability": 0.018010688945651054,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tE0-a7a2",
+      "status": "completed",
+      "logit": 5.358418941497803,
+      "probability": 0.9953137636184692,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tGv-f7e7",
+      "status": "completed",
+      "logit": -2.760762929916382,
+      "probability": 0.0594816729426384,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tGv-f7f8",
+      "status": "completed",
+      "logit": 3.1817314624786377,
+      "probability": 0.9601410031318665,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tMn-f8g8",
+      "status": "completed",
+      "logit": -3.814540386199951,
+      "probability": 0.02157222479581833,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tMn-f8e8",
+      "status": "completed",
+      "logit": 0.9257481098175049,
+      "probability": 0.7162118554115295,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tYQ-g7b7",
+      "status": "completed",
+      "logit": 1.6203372478485107,
+      "probability": 0.8348416090011597,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tYQ-g7a7",
+      "status": "completed",
+      "logit": 0.3604101240634918,
+      "probability": 0.5891396999359131,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tg7-f4f5",
+      "status": "completed",
+      "logit": 8.71787166595459,
+      "probability": 0.9998363256454468,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tg7-f4f6",
+      "status": "completed",
+      "logit": -3.232065200805664,
+      "probability": 0.03797672316431999,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tkj-e7a7",
+      "status": "completed",
+      "logit": 11.230731010437012,
+      "probability": 0.9999867677688599,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tkj-e7e8",
+      "status": "completed",
+      "logit": -2.606273651123047,
+      "probability": 0.0687357485294342,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tqy-d8d1",
+      "status": "completed",
+      "logit": 11.673247337341309,
+      "probability": 0.9999915361404419,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14tqy-d8c8",
+      "status": "completed",
+      "logit": 0.5436959266662598,
+      "probability": 0.6326717734336853,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14txc-e4h7",
+      "status": "completed",
+      "logit": 9.55959701538086,
+      "probability": 0.9999294281005859,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14txc-e4e5",
+      "status": "completed",
+      "logit": -4.065271854400635,
+      "probability": 0.01686888188123703,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tzH-d7d5",
+      "status": "completed",
+      "logit": -1.8627192974090576,
+      "probability": 0.13438642024993896,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14tzH-d7d6",
+      "status": "completed",
+      "logit": 2.0140085220336914,
+      "probability": 0.8822600245475769,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u25-d4d5",
+      "status": "completed",
+      "logit": 1.3738529682159424,
+      "probability": 0.7980020046234131,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u25-d4f6",
+      "status": "completed",
+      "logit": 3.4494669437408447,
+      "probability": 0.9692152142524719,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u3l-c5h5",
+      "status": "completed",
+      "logit": -3.2728750705718994,
+      "probability": 0.0365135483443737,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14u3l-c5f8",
+      "status": "completed",
+      "logit": 2.8956758975982666,
+      "probability": 0.9476323127746582,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u93-a8a5",
+      "status": "completed",
+      "logit": -3.681774854660034,
+      "probability": 0.02455987222492695,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14u93-a8g8",
+      "status": "completed",
+      "logit": 2.541879415512085,
+      "probability": 0.927026093006134,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u9e-h2g4",
+      "status": "completed",
+      "logit": 11.754218101501465,
+      "probability": 0.9999921321868896,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14u9e-h2f3",
+      "status": "completed",
+      "logit": -2.702882766723633,
+      "probability": 0.06280346214771271,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uCs-e3b6",
+      "status": "completed",
+      "logit": 9.12119197845459,
+      "probability": 0.9998906850814819,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uCs-e3a7",
+      "status": "completed",
+      "logit": -3.29060435295105,
+      "probability": 0.03589492663741112,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uEb-d5e3",
+      "status": "completed",
+      "logit": -5.161979675292969,
+      "probability": 0.005697694607079029,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uEb-d5f6",
+      "status": "completed",
+      "logit": 9.186051368713379,
+      "probability": 0.9998975992202759,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uFk-e2e7",
+      "status": "completed",
+      "logit": 1.5397552251815796,
+      "probability": 0.8234291672706604,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uFk-e2e6",
+      "status": "completed",
+      "logit": -0.20361362397670746,
+      "probability": 0.4492717385292053,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uIi-g3g6",
+      "status": "completed",
+      "logit": 2.093485116958618,
+      "probability": 0.8902683854103088,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uIi-g3d3",
+      "status": "completed",
+      "logit": -3.1758077144622803,
+      "probability": 0.04008634015917778,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uRO-e4c6",
+      "status": "completed",
+      "logit": -3.0216543674468994,
+      "probability": 0.04645713418722153,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uRO-e4h7",
+      "status": "completed",
+      "logit": 10.333312034606934,
+      "probability": 0.9999674558639526,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uSr-f6d6",
+      "status": "completed",
+      "logit": 0.7984861135482788,
+      "probability": 0.6896505355834961,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uSr-f6e6",
+      "status": "completed",
+      "logit": 0.9769430160522461,
+      "probability": 0.7265012264251709,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uVJ-e5b8",
+      "status": "completed",
+      "logit": -1.5777621269226074,
+      "probability": 0.17111264169216156,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uVJ-e5f5",
+      "status": "completed",
+      "logit": 3.7470481395721436,
+      "probability": 0.976956307888031,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uXK-f7g7",
+      "status": "completed",
+      "logit": 1.76924729347229,
+      "probability": 0.8543639779090881,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uXK-f7f5",
+      "status": "completed",
+      "logit": 0.4221549928188324,
+      "probability": 0.6039987802505493,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uiX-f6g5",
+      "status": "completed",
+      "logit": -2.286288022994995,
+      "probability": 0.09226496517658234,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uiX-f6g7",
+      "status": "completed",
+      "logit": 1.0665135383605957,
+      "probability": 0.7439333200454712,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ujr-g5e6",
+      "status": "completed",
+      "logit": 0.42949339747428894,
+      "probability": 0.60575270652771,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ujr-g5f7",
+      "status": "completed",
+      "logit": -2.6598849296569824,
+      "probability": 0.06538236141204834,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14umo-g4f4",
+      "status": "completed",
+      "logit": -1.6689516305923462,
+      "probability": 0.1585640013217926,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14umo-g4h3",
+      "status": "completed",
+      "logit": -0.02804889902472496,
+      "probability": 0.4929882287979126,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14up9-h7h6",
+      "status": "completed",
+      "logit": -2.9600117206573486,
+      "probability": 0.049265455454587936,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14up9-h7e7",
+      "status": "completed",
+      "logit": 9.509305000305176,
+      "probability": 0.9999258518218994,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uq8-f6g6",
+      "status": "completed",
+      "logit": 0.9758040904998779,
+      "probability": 0.726274847984314,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uq8-f6f5",
+      "status": "completed",
+      "logit": 8.563279151916504,
+      "probability": 0.9998090863227844,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ur8-c7c3",
+      "status": "completed",
+      "logit": -2.7035813331604004,
+      "probability": 0.06276235729455948,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ur8-c7e7",
+      "status": "completed",
+      "logit": 1.4738273620605469,
+      "probability": 0.8136383891105652,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uvh-d5b6",
+      "status": "completed",
+      "logit": 2.161830186843872,
+      "probability": 0.896769106388092,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uvh-d5e7",
+      "status": "completed",
+      "logit": 8.365668296813965,
+      "probability": 0.9997673630714417,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uvq-f7g7",
+      "status": "completed",
+      "logit": 1.2218561172485352,
+      "probability": 0.7723900079727173,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uvq-f7b7",
+      "status": "completed",
+      "logit": -3.3153841495513916,
+      "probability": 0.035047177225351334,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14uy4-g6h7",
+      "status": "completed",
+      "logit": 2.323519468307495,
+      "probability": 0.9108062982559204,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14uy4-g6d6",
+      "status": "completed",
+      "logit": -3.529132127761841,
+      "probability": 0.02849460393190384,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v1k-b6a6",
+      "status": "completed",
+      "logit": -2.310076951980591,
+      "probability": 0.0902918204665184,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v1k-b6b3",
+      "status": "completed",
+      "logit": 6.011678218841553,
+      "probability": 0.9975559711456299,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v2W-e5d3",
+      "status": "completed",
+      "logit": 0.9887964725494385,
+      "probability": 0.7288501262664795,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v2W-e5f3",
+      "status": "completed",
+      "logit": 2.0661191940307617,
+      "probability": 0.8875662684440613,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v7P-h7h1",
+      "status": "completed",
+      "logit": 3.7554996013641357,
+      "probability": 0.977145791053772,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v7P-h7g6",
+      "status": "completed",
+      "logit": -5.272685527801514,
+      "probability": 0.005103635136038065,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v8P-h1d1",
+      "status": "completed",
+      "logit": -2.975964307785034,
+      "probability": 0.048523616045713425,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14v8P-h1g2",
+      "status": "completed",
+      "logit": 9.2033052444458,
+      "probability": 0.9998992681503296,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v9O-f4b8",
+      "status": "completed",
+      "logit": 1.7716379165649414,
+      "probability": 0.8546612858772278,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14v9O-f4g5",
+      "status": "completed",
+      "logit": -1.3561503887176514,
+      "probability": 0.2048666775226593,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vBe-d5b7",
+      "status": "completed",
+      "logit": -3.547325372695923,
+      "probability": 0.027995262295007706,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vBe-d5d1",
+      "status": "completed",
+      "logit": 11.9295072555542,
+      "probability": 0.9999934434890747,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vDv-d2e3",
+      "status": "completed",
+      "logit": -0.9690252542495728,
+      "probability": 0.27507483959198,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vDv-d2d7",
+      "status": "completed",
+      "logit": 11.574247360229492,
+      "probability": 0.9999905824661255,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vK9-c3c4",
+      "status": "completed",
+      "logit": -2.203763484954834,
+      "probability": 0.09941303730010986,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vK9-c3c7",
+      "status": "completed",
+      "logit": 1.008867859840393,
+      "probability": 0.7327985167503357,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vKO-e4h7",
+      "status": "completed",
+      "logit": 0.33762168884277344,
+      "probability": 0.5836126804351807,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vKO-e4c6",
+      "status": "completed",
+      "logit": -3.687286138534546,
+      "probability": 0.02442818693816662,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vKy-f2e2",
+      "status": "completed",
+      "logit": -6.092933177947998,
+      "probability": 0.0022536832839250565,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vKy-f2f1",
+      "status": "completed",
+      "logit": 4.65270471572876,
+      "probability": 0.9905542731285095,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vQ7-c6e7",
+      "status": "completed",
+      "logit": 11.559564590454102,
+      "probability": 0.9999904632568359,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vQ7-c6d8",
+      "status": "completed",
+      "logit": -1.5942775011062622,
+      "probability": 0.16878291964530945,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vRS-f6e5",
+      "status": "completed",
+      "logit": -1.2459367513656616,
+      "probability": 0.22340430319309235,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vRS-f6d8",
+      "status": "completed",
+      "logit": 1.9182400703430176,
+      "probability": 0.8719420433044434,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vVk-a2a1",
+      "status": "completed",
+      "logit": 3.4224352836608887,
+      "probability": 0.96839839220047,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vVk-a2d2",
+      "status": "completed",
+      "logit": 0.6991145610809326,
+      "probability": 0.6679913997650146,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vcb-d4d2",
+      "status": "completed",
+      "logit": -2.9620749950408936,
+      "probability": 0.0491689071059227,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vcb-d4a1",
+      "status": "completed",
+      "logit": -0.16535769402980804,
+      "probability": 0.4587545096874237,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vpf-d3h7",
+      "status": "completed",
+      "logit": 2.9633138179779053,
+      "probability": 0.9508890509605408,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vpf-d3f3",
+      "status": "completed",
+      "logit": -4.591562747955322,
+      "probability": 0.010035276412963867,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vvk-f5e7",
+      "status": "completed",
+      "logit": 1.8551268577575684,
+      "probability": 0.8647279143333435,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vvk-f5d6",
+      "status": "completed",
+      "logit": -2.7038464546203613,
+      "probability": 0.06274676322937012,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vyj-g8g6",
+      "status": "completed",
+      "logit": 1.5694676637649536,
+      "probability": 0.8277077078819275,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vyj-g8c8",
+      "status": "completed",
+      "logit": -3.4550607204437256,
+      "probability": 0.030618296936154366,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vzG-e8e3",
+      "status": "completed",
+      "logit": -4.003918170928955,
+      "probability": 0.01791713386774063,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vzG-e8e1",
+      "status": "completed",
+      "logit": 11.086981773376465,
+      "probability": 0.9999847412109375,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14vzt-h5f5",
+      "status": "completed",
+      "logit": -2.1325294971466064,
+      "probability": 0.10597509890794754,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14vzt-h5f7",
+      "status": "completed",
+      "logit": -0.5435303449630737,
+      "probability": 0.3673667013645172,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wGX-f8e7",
+      "status": "completed",
+      "logit": -4.9337077140808105,
+      "probability": 0.007148292846977711,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wGX-f8c5",
+      "status": "completed",
+      "logit": 9.118038177490234,
+      "probability": 0.9998903274536133,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wHC-e7e1",
+      "status": "completed",
+      "logit": 10.410058975219727,
+      "probability": 0.9999698400497437,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wHC-e7e5",
+      "status": "completed",
+      "logit": -4.518970012664795,
+      "probability": 0.010782710276544094,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wKd-g8a8",
+      "status": "completed",
+      "logit": -2.637373208999634,
+      "probability": 0.06677152961492538,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wKd-g8e6",
+      "status": "completed",
+      "logit": -0.8416419625282288,
+      "probability": 0.3011890649795532,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wN5-h5h8",
+      "status": "completed",
+      "logit": 2.1939003467559814,
+      "probability": 0.899700403213501,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wN5-h5g5",
+      "status": "completed",
+      "logit": -3.4499335289001465,
+      "probability": 0.030770841985940933,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wQr-c3e2",
+      "status": "completed",
+      "logit": 10.496293067932129,
+      "probability": 0.9999723434448242,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wQr-c3d1",
+      "status": "completed",
+      "logit": -1.6295769214630127,
+      "probability": 0.16388832032680511,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wTa-e5d7",
+      "status": "completed",
+      "logit": -1.4217798709869385,
+      "probability": 0.1943826973438263,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wTa-e5g6",
+      "status": "completed",
+      "logit": 10.134251594543457,
+      "probability": 0.9999603033065796,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14waq-e1e8",
+      "status": "completed",
+      "logit": 10.35138988494873,
+      "probability": 0.9999680519104004,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14waq-e1b1",
+      "status": "completed",
+      "logit": -5.779529094696045,
+      "probability": 0.0030806504655629396,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wkx-e4d5",
+      "status": "completed",
+      "logit": 7.144285678863525,
+      "probability": 0.9992111921310425,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wkx-e4d3",
+      "status": "completed",
+      "logit": -4.089788913726807,
+      "probability": 0.016467062756419182,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wqk-g3e2",
+      "status": "completed",
+      "logit": 9.83824634552002,
+      "probability": 0.9999465942382812,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wqk-g3h5",
+      "status": "completed",
+      "logit": -4.940732479095459,
+      "probability": 0.0070986091159284115,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wvq-g2d2",
+      "status": "completed",
+      "logit": 4.460872173309326,
+      "probability": 0.9885795712471008,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14wvq-g2a2",
+      "status": "completed",
+      "logit": -2.0926668643951416,
+      "probability": 0.10981161147356033,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wz5-h3f3",
+      "status": "completed",
+      "logit": -2.0480268001556396,
+      "probability": 0.11425191909074783,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14wz5-h3h1",
+      "status": "completed",
+      "logit": 3.3488004207611084,
+      "probability": 0.966065526008606,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14x1C-b3a3",
+      "status": "completed",
+      "logit": -1.9714930057525635,
+      "probability": 0.12222860753536224,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14x1C-b3b1",
+      "status": "completed",
+      "logit": 5.468081951141357,
+      "probability": 0.9957984089851379,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14x6R-f6f7",
+      "status": "completed",
+      "logit": 6.3020548820495605,
+      "probability": 0.9981708526611328,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14x6R-f6f3",
+      "status": "completed",
+      "logit": -3.4890294075012207,
+      "probability": 0.029625993221998215,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xCd-h4f2",
+      "status": "completed",
+      "logit": -4.180419445037842,
+      "probability": 0.015061764977872372,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xCd-h4h8",
+      "status": "completed",
+      "logit": 2.8925211429595947,
+      "probability": 0.9474754929542542,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xCy-f8f1",
+      "status": "completed",
+      "logit": 4.838418483734131,
+      "probability": 0.9921426773071289,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xCy-f8f5",
+      "status": "completed",
+      "logit": -4.32410192489624,
+      "probability": 0.013072291389107704,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xEb-g5f6",
+      "status": "completed",
+      "logit": -2.089414596557617,
+      "probability": 0.1101299300789833,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xEb-g5e3",
+      "status": "completed",
+      "logit": 2.542135000228882,
+      "probability": 0.9270433783531189,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xFA-c6d5",
+      "status": "completed",
+      "logit": 6.2311482429504395,
+      "probability": 0.9980366826057434,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xFA-c6e4",
+      "status": "completed",
+      "logit": -3.306440591812134,
+      "probability": 0.035350896418094635,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xGG-e5d6",
+      "status": "completed",
+      "logit": -5.733119487762451,
+      "probability": 0.00322651956230402,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xGG-e5h2",
+      "status": "completed",
+      "logit": 2.552532196044922,
+      "probability": 0.9277434349060059,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xKc-e2e5",
+      "status": "completed",
+      "logit": 5.972592830657959,
+      "probability": 0.9974588751792908,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xKc-e2f1",
+      "status": "completed",
+      "logit": -2.791973829269409,
+      "probability": 0.05775944143533707,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xQ8-f3f5",
+      "status": "completed",
+      "logit": -2.313995122909546,
+      "probability": 0.08997050672769547,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xQ8-f3g2",
+      "status": "completed",
+      "logit": -0.4747526943683624,
+      "probability": 0.38349199295043945,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xZi-e6d5",
+      "status": "completed",
+      "logit": -0.687433123588562,
+      "probability": 0.33460432291030884,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xZi-e6g8",
+      "status": "completed",
+      "logit": 2.115217447280884,
+      "probability": 0.8923735022544861,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xet-c2a4",
+      "status": "completed",
+      "logit": -1.9886305332183838,
+      "probability": 0.12040181457996368,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xet-c2d1",
+      "status": "completed",
+      "logit": 4.507020473480225,
+      "probability": 0.9890890717506409,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xgJ-d4a1",
+      "status": "completed",
+      "logit": 3.6193583011627197,
+      "probability": 0.9738995432853699,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xgJ-d4e4",
+      "status": "completed",
+      "logit": -1.4253969192504883,
+      "probability": 0.1938169002532959,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xgx-h1h7",
+      "status": "completed",
+      "logit": 0.4190801680088043,
+      "probability": 0.6032631397247314,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xgx-h1h8",
+      "status": "completed",
+      "logit": 2.8033499717712402,
+      "probability": 0.9428565502166748,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xkP-c7d6",
+      "status": "completed",
+      "logit": -2.441828489303589,
+      "probability": 0.0800381749868393,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xkP-c7b8",
+      "status": "completed",
+      "logit": -0.8445249199867249,
+      "probability": 0.3005826473236084,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xmy-f5c5",
+      "status": "completed",
+      "logit": 0.6892239451408386,
+      "probability": 0.6657942533493042,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xmy-f5f1",
+      "status": "completed",
+      "logit": 11.181836128234863,
+      "probability": 0.9999860525131226,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xnV-g1g5",
+      "status": "completed",
+      "logit": -1.2511845827102661,
+      "probability": 0.22249513864517212,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xnV-g1g3",
+      "status": "completed",
+      "logit": -5.27068567276001,
+      "probability": 0.005113799590617418,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xoC-c7c8",
+      "status": "completed",
+      "logit": 12.45361614227295,
+      "probability": 0.9999960660934448,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xoC-c7d7",
+      "status": "completed",
+      "logit": -2.821190118789673,
+      "probability": 0.05618978291749954,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xoM-f4h2",
+      "status": "completed",
+      "logit": 1.5202677249908447,
+      "probability": 0.8205779194831848,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xoM-f4h6",
+      "status": "completed",
+      "logit": -3.4438440799713135,
+      "probability": 0.030952971428632736,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xu3-d1d5",
+      "status": "completed",
+      "logit": 9.371642112731934,
+      "probability": 0.9999148845672607,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xu3-d1b3",
+      "status": "completed",
+      "logit": -3.1351797580718994,
+      "probability": 0.041679222136735916,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xw4-c5c2",
+      "status": "completed",
+      "logit": -2.204948663711548,
+      "probability": 0.09930697828531265,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14xw4-c5f8",
+      "status": "completed",
+      "logit": 3.543713331222534,
+      "probability": 0.971906304359436,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xz2-e4g6",
+      "status": "completed",
+      "logit": 2.365943193435669,
+      "probability": 0.9141931533813477,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14xz2-e4f5",
+      "status": "completed",
+      "logit": -1.939062237739563,
+      "probability": 0.12575091421604156,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14y07-c2f5",
+      "status": "completed",
+      "logit": 2.8194262981414795,
+      "probability": 0.9437165856361389,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14y07-c2a2",
+      "status": "completed",
+      "logit": -1.2550039291381836,
+      "probability": 0.22183513641357422,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14y9F-g7f6",
+      "status": "completed",
+      "logit": -1.0436705350875854,
+      "probability": 0.2604423761367798,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14y9F-g7c7",
+      "status": "completed",
+      "logit": -0.905005156993866,
+      "probability": 0.2880230247974396,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yAI-e3g1",
+      "status": "completed",
+      "logit": 2.195650815963745,
+      "probability": 0.8998582363128662,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yAI-e3f2",
+      "status": "completed",
+      "logit": -0.6143351197242737,
+      "probability": 0.35107091069221497,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yHg-c4f7",
+      "status": "completed",
+      "logit": 9.818063735961914,
+      "probability": 0.9999455213546753,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yHg-c4d5",
+      "status": "completed",
+      "logit": -3.898402690887451,
+      "probability": 0.019871391355991364,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yK6-e8e6",
+      "status": "completed",
+      "logit": 9.685585975646973,
+      "probability": 0.9999377727508545,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yK6-e8a8",
+      "status": "completed",
+      "logit": -5.162426471710205,
+      "probability": 0.0056951637379825115,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yKD-d5h1",
+      "status": "completed",
+      "logit": 12.369012832641602,
+      "probability": 0.9999957084655762,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yKD-d5c6",
+      "status": "completed",
+      "logit": -1.6862056255340576,
+      "probability": 0.15627548098564148,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yKN-e8c8",
+      "status": "completed",
+      "logit": -4.556179046630859,
+      "probability": 0.010392962023615837,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yKN-e8h5",
+      "status": "completed",
+      "logit": 6.91841983795166,
+      "probability": 0.9990115165710449,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yTB-b7c7",
+      "status": "completed",
+      "logit": 0.6051157712936401,
+      "probability": 0.6468258500099182,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yTB-b7b8",
+      "status": "completed",
+      "logit": 2.0553946495056152,
+      "probability": 0.8864915370941162,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yWl-d1e1",
+      "status": "completed",
+      "logit": -8.127890586853027,
+      "probability": 0.0002951031201519072,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yWl-d1d8",
+      "status": "completed",
+      "logit": 9.652371406555176,
+      "probability": 0.9999357461929321,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yYW-c2d2",
+      "status": "completed",
+      "logit": -5.5174360275268555,
+      "probability": 0.0040000672452151775,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yYW-c2h7",
+      "status": "completed",
+      "logit": 8.76649284362793,
+      "probability": 0.9998440742492676,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14ycZ-c5b6",
+      "status": "completed",
+      "logit": -4.695339202880859,
+      "probability": 0.009055024944245815,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14ycZ-c5f2",
+      "status": "completed",
+      "logit": 12.7471923828125,
+      "probability": 0.9999971389770508,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yri-g5g2",
+      "status": "completed",
+      "logit": -4.635227680206299,
+      "probability": 0.009610637091100216,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yri-g5f5",
+      "status": "completed",
+      "logit": 0.4667378067970276,
+      "probability": 0.6146113872528076,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yyQ-d6g3",
+      "status": "completed",
+      "logit": 6.917343616485596,
+      "probability": 0.999010443687439,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14yyQ-d6b4",
+      "status": "completed",
+      "logit": -2.477926254272461,
+      "probability": 0.0774201899766922,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yzT-h8h7",
+      "status": "completed",
+      "logit": -6.183984279632568,
+      "probability": 0.0020579511765390635,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14yzT-h8g8",
+      "status": "completed",
+      "logit": 10.72244930267334,
+      "probability": 0.9999779462814331,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14z0D-f6g5",
+      "status": "completed",
+      "logit": -2.338045358657837,
+      "probability": 0.0880206972360611,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14z0D-f6e5",
+      "status": "completed",
+      "logit": -3.051575183868408,
+      "probability": 0.04514951631426811,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14z1J-g3d3",
+      "status": "completed",
+      "logit": -3.9931061267852783,
+      "probability": 0.01810837909579277,
+      "prediction": false
+    },
+    {
+      "case_id": "encoder-check-v1-14z1J-g3g5",
+      "status": "completed",
+      "logit": 1.1914440393447876,
+      "probability": 0.7669992446899414,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14z6o-e2c2",
+      "status": "completed",
+      "logit": 9.454874038696289,
+      "probability": 0.9999216794967651,
+      "prediction": true
+    },
+    {
+      "case_id": "encoder-check-v1-14z6o-e2f2",
+      "status": "completed",
+      "logit": -1.1149523258209229,
+      "probability": 0.24694877862930298,
+      "prediction": false
+    }
+  ],
+  "score": {
+    "planned": 512,
+    "positive_support": 256,
+    "negative_support": 256,
+    "statuses": {
+      "completed": 512
+    },
+    "confusion": {
+      "tp": 230,
+      "tn": 228,
+      "fp": 28,
+      "fn": 26,
+      "invalid_positive": 0,
+      "invalid_negative": 0
+    },
+    "correct": 458,
+    "checking_recall": 0.8984375,
+    "nonchecking_recall": 0.890625,
+    "pairs_planned": 256,
+    "pairs_correct": 203
+  },
+  "checkpoint": {
+    "epoch": 4,
+    "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-4.pt",
+    "sha256": "9db9f9d9789d466a3942c2c02b8c18010f6b60a1d1185bf80e123b13b867b306",
+    "correct": 235,
+    "pairs_correct": 108
+  }
+}

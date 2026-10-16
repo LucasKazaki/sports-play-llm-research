@@ -1,0 +1,19 @@
+{
+  "schema": "chess.check-balanced.v2",
+  "planned": 256,
+  "confusion": {
+    "tp": 45,
+    "tn": 92,
+    "fp": 36,
+    "fn": 83,
+    "invalid_positive": 0,
+    "invalid_negative": 0
+  },
+  "correct": 137,
+  "pairs_correct": 21,
+  "positive_support": 128,
+  "negative_support": 128,
+  "balanced_accuracy": 0.53515625,
+  "raw_sha256": "492cbba6321e8ebe48c34e68721d67d3918cce177f46226919a243b860d4174c",
+  "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+}

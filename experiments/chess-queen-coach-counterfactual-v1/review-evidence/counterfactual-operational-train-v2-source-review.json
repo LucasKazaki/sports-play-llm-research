@@ -1,0 +1,67 @@
+{
+  "status": "passed_source_review_only",
+  "created_utc": "2026-10-16T10:59:56.423672+00:00",
+  "scope": "Complete finite source/tests/plan/builder/design read; independent CPU tests and metadata verification. No model, engine, GPU or old held-reference semantic inspection.",
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_train_v2.py",
+      "bytes": 21155,
+      "sha256": "98623ce21801896b3139395355dc41d4580e3ec2707cbaf0a43e6741be170714"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_counterfactual_train_v2.py",
+      "bytes": 1827,
+      "sha256": "274266ae792f5b47998f489dfa7139c4f165d417eaee3fd16d0330bb42b2f43c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\training-protocol-v2.json",
+      "bytes": 16794,
+      "sha256": "eb59235c2bd070656d7b1c1512809addb22f2ce18c6e4fa4848b5dd73754b33e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\prepare_training_protocol_v2.py",
+      "bytes": 8371,
+      "sha256": "287458a7d17733b2493b9ba3c968cccb57a1d4135ea9cd6829df9cfad51a6577"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-operational-train-v2-source-bundle.txt",
+      "bytes": 23267,
+      "sha256": "ca16c9649387ef3b7ad68bc0de3d7ee578a23e00a051623f2d10cb388338d6bb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-operational-train-v2-plan-bundle.txt",
+      "bytes": 27031,
+      "sha256": "0e02c2bc68ebb24a29e6b519388c2c78fb569cee66bc47ffb3c1116350e49192"
+    }
+  ],
+  "cpu_tests": {
+    "command": "python -m pytest -q tests/test_chess_queen_coach_counterfactual_train_v2.py",
+    "passed": 3,
+    "seconds": 0.11,
+    "tool_chunk": "ffdca4"
+  },
+  "metadata_verify_protocol": "passed",
+  "torch_imported": false,
+  "changed_top_level_functions": [
+    "verify_protocol",
+    "admit",
+    "main"
+  ],
+  "unchanged_science": "All other top-level functions AST-identical to preserved6185 trainer, including training/loss-input/scorer/selector/accounting/guard logic. Method, generation, data, resources and phase caps compared equal wherever present in original protocol.",
+  "admissions": {
+    "train_strict_before": "2026-10-16T11:00:00+00:00",
+    "whole_cold_held_strict_before": "2026-10-16T11:30:00+00:00",
+    "global_cutoff": "2026-10-16T13:00:00+00:00"
+  },
+  "blocking_source_findings": [],
+  "conditions": [
+    "This is not GPU dispatch authorization. Root must first obtain and independently audit actual PASS on the separately versioned topology-corrected two-request qualification.",
+    "If qualification/audit cannot finish and training cannot be admitted strictly before11:00UTC, this training plan remains unrun; no deadline extension is implied.",
+    "Preserved single-process heldout function remains unreachable from new CLI and is not an authorized held entrypoint. Separate cold-held source and frozen plan require review."
+  ],
+  "limitations": [
+    "TRAIN verification does not machine-enforce the future cold-qualification result; required operator sequencing is explicit and must be evidenced before dispatch.",
+    "Phase time caps do not guarantee completion before admission/cutoff; failures retain denominators."
+  ],
+  "followUpTasks": []
+}

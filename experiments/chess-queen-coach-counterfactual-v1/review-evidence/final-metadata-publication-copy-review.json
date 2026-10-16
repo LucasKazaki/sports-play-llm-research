@@ -1,0 +1,129 @@
+{
+  "status": "passed_metadata_publication_review",
+  "created_utc": "2026-10-16T11:36:33.829966+00:00",
+  "scope": "Finite exact-copy/hash and claim-consistency review. No model/GPU/engine calls, heavyCPU/Parquet work, new raw model-prose or fresh/oldheld-reference semantic inspection.",
+  "copy_verification": {
+    "packages": [
+      {
+        "path": "experiments\\chess-queen-coach-counterfactual-v1\\cold-qualification-passed-evidence",
+        "manifest_sha256": "aaeb1bd25ec2afdd584246acc27804a3e3e2bdfbf09793f6567d1f7f42fb4d72",
+        "exact_copies_verified": 5,
+        "new_metadata_hashes_verified": 0
+      },
+      {
+        "path": "experiments\\chess-queen-coach-counterfactual-v1\\cold-qualification-attempt3-failure-evidence",
+        "manifest_sha256": "1c0e0ad8704b3210b56d0213e00df4ac3cf20b827be6c0063be9dc72d42ffcfc",
+        "exact_copies_verified": 5,
+        "new_metadata_hashes_verified": 0
+      },
+      {
+        "path": "experiments\\chess-queen-coach-counterfactual-v1\\review-evidence",
+        "manifest_sha256": "a60c53614ec10d62a8422b250886238345147ace2d8957b3a69de6429d2d604e",
+        "exact_copies_verified": 8,
+        "new_metadata_hashes_verified": 0
+      },
+      {
+        "path": "experiments\\chess-queen-coach-counterfactual-v1\\data-readiness-v2",
+        "manifest_sha256": "272025eaaa73a7d66dd265eaa38877b8b6da328d2b180b19b7ee1fff54423cde",
+        "exact_copies_verified": 5,
+        "new_metadata_hashes_verified": 1
+      },
+      {
+        "path": "experiments\\chess-queen-coach-counterfactual-v1\\cold-qualification-failure-evidence",
+        "manifest_sha256": "455812b6a6fd169f5ac7f87de298ca5861b119fb8ace4706027fc3650d539f86",
+        "exact_copies_verified": 7,
+        "new_metadata_hashes_verified": 1
+      },
+      {
+        "path": "experiments\\chess-encoder-check-generalization-v1\\failed-inference-v2",
+        "manifest_sha256": "c26ecc58e3e04cb14e2381524e0cc3c3010de2145f9bafddde11bf4f37e9311e",
+        "exact_copies_verified": 5,
+        "new_metadata_hashes_verified": 3
+      },
+      {
+        "path": "research\\chessqa-source-audit-2026-10-16",
+        "manifest_sha256": "d38061ed8390268af1b869e6d0a0f20042556636a7030617f13734e75fec71f1",
+        "exact_copies_verified": 4,
+        "new_metadata_hashes_verified": 0
+      }
+    ],
+    "total_exact_copies": 39,
+    "forbidden_payload_keys_found": [],
+    "comparison_output_directory_exists": false,
+    "comparison_unadmitted_sha256": "59c3d6cae8d1e3a7ff57041fabc178fd6fe8a7041b3972421f8b56e14a4328c7",
+    "training_unadmitted_sha256": "2fb104a9687b3ee043e2456229fa8656088f9540c606254b4c6ba22564850629"
+  },
+  "claims_checked": {
+    "qualification4": "Exactly2spentDEVsoftware requests passed;3unknown-image initialLIVE handles laterEXIT, kept separate from knownquery processes. No chess/prose/96request-stability/UI claim.",
+    "failure3": "1active_unknown setup+1notrun,0generationintent/raw; unknowninitialLIVE imagequery error, no inferrednvidiaidentity or retrospectiveEXIT.36source snapshots exact peroriginalaudit.",
+    "training_unadmitted": "192plannedupdates/1536backwards/384devNLL/24devraw;0learning/modelcalls/newadapter according to unadmitted planningledger, no worker execution receipt invented.",
+    "comparison_unadmitted": "96notrun/0allotheroutcomes/no actualmodelrequest,worker,score or spent-by-modelcall. Exactplannedoutputdir,worker/log absent.16groupreservation retained;all512futureTRAIN exclusions intact.",
+    "encoder_failure": "2completedboardforwards4features,2failed/122notrunfeatures,256headpredictionsallnotrun;commitguardfailure not modelgeneralization score. Unsampled concurrentauditor memory contribution explicitlyunquantified.",
+    "corpus_readiness": "1056retainedroots3168teachers/1536TRAIN96dev48heldinputs;incomingUCI223662/fourboardroles4224/exact6exports/tokenizerproof match sealedaggregate. No king candidates, no wholeprefix-reselection/outgoingwire/human-gold claim.",
+    "source_reviews": "Historical exact source-only reviews do not qualify failedactualruns or override expiredadmission.",
+    "research": "4ChessQAworkingnote copies match originalmanifest/files. Recommendations distinguish selection from freecoaching, unknownrights/pretrainingoverlap and no university/expert/capability approval."
+  },
+  "read_claim_documents": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-qualification-passed-evidence\\README.md",
+      "bytes": 1477,
+      "sha256": "44f92c88e1fdd06e3cccb61d4f29377ea1f736bbccb928b0b0d7c442c323997d"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-qualification-attempt3-failure-evidence\\README.md",
+      "bytes": 1518,
+      "sha256": "88ffb04167df04f873072eca0dca803d41b2143b8fa462eba5e2a9c0451a61a3"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\data-readiness-v2\\README.md",
+      "bytes": 2714,
+      "sha256": "7cc359f22eef134cdbdc53204a39c99e5b648a0d2bf0cbdff20fb18a6b575982"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-qualification-failure-evidence\\README.md",
+      "bytes": 3388,
+      "sha256": "ef82cb55d5a7009e9d4cb63f177351ff5cbacdb153e4b3595cedd2dc8265f6b2"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\failed-inference-v2\\README.md",
+      "bytes": 2158,
+      "sha256": "64cb992421c41bd9b8a8fb1ba1a66aedd1f18035b05454883e11d1f664e315a3"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\README.md",
+      "bytes": 8352,
+      "sha256": "abc5e2dc730c49a8cb57754eca85afd969e4ba19e5cc24fe9e6dcafe79d8088d"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chessqa-source-audit-2026-10-16\\recommendation.md",
+      "bytes": 4474,
+      "sha256": "84b82570efdc790a254db9ab2a4e29a7bb20578f1d39522ef8c08f86613397d0"
+    }
+  ],
+  "source_snapshot_projection": {
+    "encoder_closed_execution_snapshots": 23,
+    "additional_source_bindings": 5,
+    "hashes_and_lengths_match_closed_originals": true,
+    "no_source_or_private_case_content_copied_by_reviewer": true
+  },
+  "blocking_findings": [],
+  "nonblocking_status_note": "Initially observed older11:23currentheader; rootreconciled before final review. Entire newREADME reread, current11:30outcome/limits correct. Datedhistoricalplans remain explicitly superseded by current/final status.",
+  "limits": [
+    "Absence checks cover the exact frozen comparison destination; zero-call unadmitted outcomes also rely on root operator records and accepted dispatch chronology, not a universal OS activity trace.",
+    "Copy verification preserves original reports and their stated audit limits; it is no new chess-quality evaluation or institutional/legal certification.",
+    "Primary research note bytecopies verified; no separate repeatwebsource/rights review performed in this metadata task. OriginalHTTPresponse bodies remain unarchived as disclosed.",
+    "Structural scan found no raw_text/decoded_text/generated_tokens/token_ids/prompt/FEN/selectedmove/teacherPV/targettext payload fields in copiedJSON. It supplements exact-byte provenance, not a general secrets certification.",
+    "This report covers8source-review copies present in the inspected manifest. Parent proposed3additional latestreview/amendment copies; those await separate verification if added after this report."
+  ],
+  "own_auditor": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\audit-final-publication-metadata.py",
+    "bytes": 4072,
+    "sha256": "a0df6996881ec6e798e592685d2046e98da60753e8a84c1cf6c8246d432f4ef9"
+  },
+  "retained_result": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\publication-copy-audit-working-result.json",
+    "bytes": 2282,
+    "sha256": "f7ad328784abf2c01a00c82285e911bd7a0c7fa031512ecc5f2a0de98659474d"
+  },
+  "followUpTasks": []
+}

@@ -1,0 +1,209 @@
+
+===== C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\tutor-draft-checks-design-v1\browser-fixture\serve.py =====
+Bytes: 2276; SHA-256: e3f55d6bacb6b7712c4ecd79fe433bda85e9362549e43067fb8d0263c7f975e5
+"""Root-launched, localhost-only authored rendering fixture. No model imports."""
+import argparse
+import hashlib
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+import json
+from pathlib import Path
+
+FOLDER=Path(__file__).resolve().parent
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--port',type=int,default=8794);args=parser.parse_args()
+    if not 1024<=args.port<=65535:raise ValueError('Choose an unprivileged local port.')
+    manifest=json.loads((FOLDER/'manifest.json').read_bytes())
+    for row in manifest['source_bindings']:
+        if hashlib.sha256(Path(row['path']).read_bytes()).hexdigest()!=row['sha256']:raise ValueError('A reviewed production renderer source changed.')
+    for row in manifest['files']:
+        if hashlib.sha256((FOLDER/row['file']).read_bytes()).hexdigest()!=row['sha256']:raise ValueError('An authored fixture file changed.')
+    routes={'/':('index.html','text/html'),'/fixture.js':('fixture.js','text/javascript'),'/renderer.js':('renderer.js','text/javascript'),'/fixtures.json':('fixtures.json','application/json'),'/style.css':('style.css','text/css'),'/coaching.css':('coaching.css','text/css'),'/fixture.css':('fixture.css','text/css')}
+    pages={url:((FOLDER/name).read_bytes(),mime)for url,(name,mime)in routes.items()}
+    class Handler(BaseHTTPRequestHandler):
+        def do_GET(self):
+            if self.headers.get('Host')not in {f'localhost:{args.port}',f'127.0.0.1:{args.port}'}:self.send_error(403);return
+            page=pages.get(self.path.split('?',1)[0])
+            if page is None:self.send_error(404);return
+            body,mime=page;self.send_response(200);self.send_header('Content-Type',mime+'; charset=utf-8');self.send_header('Content-Length',str(len(body)));self.send_header('Cache-Control','no-store');self.send_header('X-Content-Type-Options','nosniff');self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; frame-ancestors 'none'; base-uri 'none'");self.end_headers();self.wfile.write(body)
+        def log_message(self,*_):pass
+    server=ThreadingHTTPServer(('127.0.0.1',args.port),Handler)
+    try:server.serve_forever()
+    finally:server.server_close()
+
+if __name__=='__main__':main()
+
+===== END COMPLETE FILE =====
+
+===== C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\tutor-draft-checks-design-v1\browser-fixture\index.html =====
+Bytes: 2265; SHA-256: fac17555e595af1a1bd609d0cad8e4d39c95e9dfcb22c6f55951d060b3e5fd8a
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>Authored draft-check interface fixture</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/coaching.css"><link rel="stylesheet" href="/fixture.css"><script src="/renderer.js" defer></script><script src="/fixture.js" defer></script></head>
+<body><div class="fixture-banner" role="note"><strong>AUTHORED INTERFACE FIXTURE</strong><span>No model or engine runs here. These are fictional software records.</span></div><main><h1>Inspect the draft-check interface.</h1><p class="fixture-intro">Layout and interaction evidence only. This page does not qualify a model or the production pipeline.</p><section class="fixture-controls" aria-label="Fixture controls"><label for="scenario">Authored scenario</label><select id="scenario"></select><label for="fixture-theme">Fixture-only theme</label><select id="fixture-theme"><option value="system">System</option><option value="light">Light</option><option value="dark">Dark</option></select><label for="fixture-text">Fixture-only text size</label><select id="fixture-text"><option value="base">100%</option><option value="large">200%</option></select><button id="change-selected" class="quiet">Switch selected move</button><button id="change-position" class="quiet">Visit another position</button><button id="return" class="quiet">Return to requested position</button><button id="export" class="quiet">Save fixture evidence</button></section><p id="fixture-state" role="status" aria-live="polite"></p><p id="error" role="alert" hidden></p><div id="stale" class="coach-stale" hidden>This draft and its checks belong to an earlier position or selected move.</div><section class="coaching-panel"><h2>Authored draft</h2><p id="fixture-draft"></p><section id="verification" class="draft-checks" aria-label="Limited rule checks for authored draft"></section><details class="details"><summary>Exact authored raw record</summary><pre id="fixture-raw"></pre></details></section><details id="export-details" class="details"><summary>Fixture export preview</summary><pre id="export-preview"></pre></details></main></body></html>
+
+===== END COMPLETE FILE =====
+
+===== C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\tutor-draft-checks-design-v1\browser-fixture\fixture.js =====
+Bytes: 2670; SHA-256: d0ec58c4b86df59a74523e7c13a6a64b808c832c07dfbef4e8732fe4b37c2374
+"use strict";
+let scenarios=[],job=null,study=null;
+const byId=id=>document.getElementById(id);
+function resetStudy(){study={position:structuredClone(job.context.position),selectedUci:job.context.selected_uci,preview:false};}
+function draw(){
+ const matches=coachingContextMatches(job.context,study);
+ byId('stale').hidden=matches;
+ byId('fixture-state').textContent=matches?'Viewing the authored requested position and selected move.':'Viewing a different authored position or selected move. Export excludes the earlier coaching record.';
+ byId('fixture-draft').textContent=job.result.decoded_text;
+ byId('fixture-raw').textContent=JSON.stringify(job.result,null,2);
+ renderCoachingVerification(byId('verification'),job);
+}
+byId('scenario').addEventListener('change',()=>{job=structuredClone(scenarios.find(x=>x.id===byId('scenario').value).job);resetStudy();draw();});
+byId('change-selected').addEventListener('click',()=>{study.selectedUci=study.selectedUci==='e2e4'?'d2d4':'e2e4';draw();});
+byId('change-position').addEventListener('click',()=>{study.position={fen:job.context.position.fen,moves:['d2d4']};study.selectedUci='d7d5';draw();});
+byId('return').addEventListener('click',()=>{resetStudy();draw();});
+byId('export').addEventListener('click',()=>{
+ const value={fixture_only:true,origin:'Authored renderer fixture; no model/engine/production qualification or quality evidence.',study:structuredClone(study),coaching:coachingContextMatches(job.context,study)?job:null};
+ const text=JSON.stringify(value,null,2);byId('export-preview').textContent=text;byId('export-details').open=true;
+ const url=URL.createObjectURL(new Blob([text],{type:'application/json'})),a=document.createElement('a');a.href=url;a.download='archit-authored-ui-fixture.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+});
+fetch('/fixtures.json').then(r=>{if(!r.ok)throw Error('The authored fixture data could not load.');return r.json();}).then(data=>{
+ if(data.fixture_only!==true)throw Error('This page requires authored fixture data.');scenarios=data.scenarios;
+ for(const item of scenarios){const option=document.createElement('option');option.value=item.id;option.textContent=item.label;byId('scenario').append(option);}
+ job=structuredClone(scenarios[0].job);byId('scenario').value=scenarios[0].id;resetStudy();draw();
+}).catch(error=>{byId('error').hidden=false;byId('error').textContent=error.message;});
+
+byId('fixture-theme').addEventListener('change',()=>{document.documentElement.dataset.fixtureTheme=byId('fixture-theme').value;});
+byId('fixture-text').addEventListener('change',()=>{document.documentElement.dataset.fixtureText=byId('fixture-text').value;});
+
+===== END COMPLETE FILE =====
+
+===== C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\tutor-draft-checks-design-v1\browser-fixture\fixture.css =====
+Bytes: 1383; SHA-256: 623f6e39b99c7e8a531c233b6753217c0b48c742739b21021dd8917efadba204
+.fixture-banner{position:sticky;top:0;z-index:5;background:var(--surface);border-bottom:2px solid var(--warning);color:var(--text);padding:12px 20px;display:flex;gap:8px 20px;flex-wrap:wrap;font-size:.875rem}.fixture-banner strong{font-size:.8125rem}.fixture-intro{margin:12px 0 20px;color:var(--muted)}main{max-width:800px}.fixture-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:20px 0}.fixture-controls select{min-height:44px;max-width:100%;padding:8px;background:var(--surface);color:var(--text);border:1px solid var(--line);border-radius:8px}#fixture-state{margin:16px 0}#stale{margin:16px 0}pre{white-space:pre-wrap;overflow-wrap:anywhere;font-size:.8125rem}#fixture-draft{margin-top:12px}@media(max-width:500px){.fixture-controls button{width:100%}.fixture-banner{font-size:.8125rem}}
+
+:root[data-fixture-theme="light"]{color-scheme:light;--bg:#f4f5f7;--surface:#fff;--text:#1e252b;--muted:#59636d;--line:#dde1e6;--accent:#175c49;--accent-soft:#e5f1eb;--warning:#7b4c04;--error:#b12828;--focus:#0a66d6}:root[data-fixture-theme="dark"]{color-scheme:dark;--bg:#14191c;--surface:#1e252a;--text:#eff1f3;--muted:#a7b2bc;--line:#39434b;--accent:#9bd6b8;--accent-soft:#263f34;--warning:#ebbd72;--error:#ff9999;--focus:#8cbcff}:root[data-fixture-text="large"]{font-size:200%}:root[data-fixture-text="base"]{font-size:100%}.fixture-controls select{min-width:0}
+
+===== END COMPLETE FILE =====
+
+===== C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\tutor-draft-checks-design-v1\browser-fixture\README.md =====
+Bytes: 2211; SHA-256: b2252571df8950297f7f79cdd1070b8ad77b37854fb4067ed83cdd4d0403a7b6
+# Root-only CPU rendering fixture
+
+This standalone page is presentation evidence only. Its persistent authored/no-model
+banner remains visible while scrolling. Every record is synthetic, and the
+production original-profile gate still refuses interface fixtures. The pure-checker
+qualified=True used to prepare these authored bytes is only a test precondition,
+not original runtime admission. No actual response, held data or model weights
+are present. The actual production renderer/context functions are copied exactly
+from the prefix before its application controller. Styles are exact snapshots.
+
+After source review, root may start this separate owned helper from this folder:
+
+    <repo>/.venv-soccernet/Scripts/python.exe serve.py --port 8794
+
+Then open http://127.0.0.1:8794. This does not restart or modify the tutor on 8793.
+The helper validates current production source hashes and every fixture byte hash
+before serving. It has GET-only allowlisted static routes, no model imports, no
+API launch or post-generation worker, and binds only 127.0.0.1. Stop with Ctrl+C
+in its root-owned session. This agent has not launched it or made HTTP calls.
+
+Use the scenario menu for Supported, Contradicted, Unassessed, zero matched and
+unavailable states. Verify each statement's own move remains distinct from BEST
+observations. Switch the selected move or visit another position, save the fixture
+export and check coaching:null, then return and save again to recover the exact
+authored raw result plus sibling checks. Export also appears in the page preview.
+Check 390 px and desktop widths, 200% zoom, keyboard focus and disclosures, and dark/light settings. The
+full production controller's stale/return/evidence getter/disclosure caching is
+covered by the retained actual Node VM test; this fixture page itself is not a
+production API/pipeline qualification or a chess/prose-quality test.
+
+Fixture-only theme and text-size selectors are normal visible controls. They
+allow System, Light or Dark appearance and 100% or 200% text without browser
+scripting or a browser zoom setting. These overrides apply only to this authored
+fixture page; the production app's system appearance and settings are unchanged.
+
+===== END COMPLETE FILE =====
+
+===== C:\Users\lucas\Documents\Codex\2026-10-16\first-i-want-you-to-look\work\tutor-draft-checks-design-v1\browser-fixture\manifest.json =====
+Bytes: 2768; SHA-256: b7bb2581cc60c94e0610fecdeeb29fb80949768daa1f1775421b78291edbd7cb
+{
+  "fixture_only": true,
+  "no_models_or_engine": true,
+  "source_bindings": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.js",
+      "sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c",
+      "bytes": 14755
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\style.css",
+      "sha256": "6aa7990ba9b04d8753c8e381a6225d1c916f7e034ab7de3d9461fc1dde216681",
+      "bytes": 11590
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.css",
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0",
+      "bytes": 2532
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\draft_checks_v1.py",
+      "sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+      "bytes": 10253
+    }
+  ],
+  "renderer_projection": {
+    "source_sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c",
+    "prefix_bytes": 5462,
+    "prefix_sha256": "8817c3f104571465169b48ab11f3a9b82ab83c5fcbee0aa6600681247051e5b8",
+    "split_marker": "(() => {"
+  },
+  "files": [
+    {
+      "file": "coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0"
+    },
+    {
+      "file": "fixture.css",
+      "bytes": 1383,
+      "sha256": "623f6e39b99c7e8a531c233b6753217c0b48c742739b21021dd8917efadba204"
+    },
+    {
+      "file": "fixture.js",
+      "bytes": 2670,
+      "sha256": "d0ec58c4b86df59a74523e7c13a6a64b808c832c07dfbef4e8732fe4b37c2374"
+    },
+    {
+      "file": "fixtures.json",
+      "bytes": 19719,
+      "sha256": "b15749ccd1b232b1fb95059d342ca10f71d7552fa315f75a7a40774a48ddc7e1"
+    },
+    {
+      "file": "index.html",
+      "bytes": 2265,
+      "sha256": "fac17555e595af1a1bd609d0cad8e4d39c95e9dfcb22c6f55951d060b3e5fd8a"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2211,
+      "sha256": "b2252571df8950297f7f79cdd1070b8ad77b37854fb4067ed83cdd4d0403a7b6"
+    },
+    {
+      "file": "renderer.js",
+      "bytes": 5462,
+      "sha256": "8817c3f104571465169b48ab11f3a9b82ab83c5fcbee0aa6600681247051e5b8"
+    },
+    {
+      "file": "serve.py",
+      "bytes": 2276,
+      "sha256": "e3f55d6bacb6b7712c4ecd79fe433bda85e9362549e43067fb8d0263c7f975e5"
+    },
+    {
+      "file": "style.css",
+      "bytes": 11590,
+      "sha256": "6aa7990ba9b04d8753c8e381a6225d1c916f7e034ab7de3d9461fc1dde216681"
+    }
+  ]
+}
+
+===== END COMPLETE FILE =====

@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "tests": 36,
+  "test_elapsed_seconds": 0.58,
+  "actual_backend_calls": 0,
+  "scientific_function_AST_equal_to_unexecuted_v1": true,
+  "guard_checks": "750/768/1023MiB running GPU rejected; exact1GiB accepted; start6/8/4 andrunning4/6 retained; throttle/CANCEL/deadline CPU callbacks passed",
+  "protocol_sha256": "f53d397465dd533b410ec8eb5115167f7aa3a482d87463ee6020bf53b1ade9eb",
+  "source_sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0",
+  "tests_sha256": "83eddeee2ed3db866dafab4d79fa15af159f9eff1ffb7172f8161909d83e7631",
+  "backend_free_metadata_verification": true,
+  "forbidden_imports": []
+}

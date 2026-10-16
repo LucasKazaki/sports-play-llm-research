@@ -1,0 +1,50 @@
+{
+  "observed_utc": "2026-10-16T11:44:35.152881+00:00",
+  "public_metadata_only": true,
+  "bodies_retained_locally": true,
+  "observations": [
+    {
+      "name": "queen-code",
+      "url": "https://api.github.com/repos/queen-project/queen/commits/HEAD",
+      "resolved_url": "https://api.github.com/repos/queen-project/queen/commits/HEAD",
+      "status": 200,
+      "bytes": 5197,
+      "sha256": "0f13dd8864aad01d4279bb69446b8dd0b4953b901298f2ba07793904875518e3",
+      "ETag": "W/\"49809272fe401819ea653e37ce60bc7adadc3b1d443eebce5ecdbaa8ecee0c8c\"",
+      "sha": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+      "lastModified": null,
+      "commit_date": "2026-10-05T00:16:36Z"
+    },
+    {
+      "name": "queen-model",
+      "url": "https://huggingface.co/api/models/princeton-nlp/queen_pawn-8",
+      "resolved_url": "https://huggingface.co/api/models/princeton-nlp/queen_pawn-8",
+      "status": 200,
+      "bytes": 8050,
+      "sha256": "08efc9c983b615dda333eec3e0325a4559ab5f3faa9f67b636731131ed5e1074",
+      "ETag": "W/\"1f72-ACYG1Kg+Z6Hy2D/L3uUQYP5fKFg\"",
+      "sha": "5027687fac08b64b2403b13aca5b198e68294fe9",
+      "lastModified": "2026-10-04T23:10:27.000Z",
+      "commit_date": null
+    }
+  ],
+  "model_or_dependency_changes": false,
+  "web_observations": {
+    "bounded_query": "site:arxiv.org chess language models coaching factuality October 2026",
+    "query_date_utc": "2026-10-16",
+    "stockfish_latest": "https://github.com/official-stockfish/Stockfish/releases/tag/sf_19",
+    "stockfish_latest_mark_observed": true,
+    "Queen_API_web_parser_failed_then_direct_public_HTTP_succeeded": true
+  },
+  "additional_reading": {
+    "id": "arxiv:2609.18286v1",
+    "url": "https://arxiv.org/html/2609.18286v1",
+    "title": "What Counts as Strategic Reasoning? A Systematic Mapping of Chess Research on Humans, Engines, and Language Models",
+    "date": "2026-09-16",
+    "reading_depth": "Selected methods, explanation, evaluation and validity sections; no replication-package audit.",
+    "publication_status": "Under review; no peer-review claim.",
+    "claims": "Maps84study families; separates action quality, explanation and assistance. Complete independent duplicate coding is absent; its taxonomy doesnot establish a cognitive sequence.",
+    "project_inference": "Keep model, assisted-interface and later tutor outcomes separate; no experimental change."
+  },
+  "limits": "Bounded freshness/read-depth supplement to earlier11-paper discovery; no newpaper-count claim, exhaustive census, corpus rights clearance, installedasset revalidation or localcapabilityresult."
+}

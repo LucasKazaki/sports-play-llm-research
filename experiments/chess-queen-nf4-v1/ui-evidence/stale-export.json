@@ -1,0 +1,512 @@
+{
+  "schema_version": "chess.tutor-candidate.v1",
+  "board": {
+    "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+    "turn": "white",
+    "status": "Ready",
+    "terminal": false,
+    "result": null,
+    "termination": null,
+    "pieces": {
+      "h8": "r",
+      "g8": "n",
+      "f8": "b",
+      "e8": "k",
+      "d8": "q",
+      "c8": "b",
+      "b8": "n",
+      "a8": "r",
+      "h7": "p",
+      "g7": "p",
+      "f7": "p",
+      "e7": "p",
+      "d7": "p",
+      "c7": "p",
+      "b7": "p",
+      "a7": "p",
+      "h2": "P",
+      "g2": "P",
+      "f2": "P",
+      "e2": "P",
+      "d2": "P",
+      "c2": "P",
+      "b2": "P",
+      "a2": "P",
+      "h1": "R",
+      "g1": "N",
+      "f1": "B",
+      "e1": "K",
+      "d1": "Q",
+      "c1": "B",
+      "b1": "N",
+      "a1": "R"
+    },
+    "legal_moves": [
+      {
+        "uci": "g1h3",
+        "san": "Nh3"
+      },
+      {
+        "uci": "g1f3",
+        "san": "Nf3"
+      },
+      {
+        "uci": "b1c3",
+        "san": "Nc3"
+      },
+      {
+        "uci": "b1a3",
+        "san": "Na3"
+      },
+      {
+        "uci": "h2h3",
+        "san": "h3"
+      },
+      {
+        "uci": "g2g3",
+        "san": "g3"
+      },
+      {
+        "uci": "f2f3",
+        "san": "f3"
+      },
+      {
+        "uci": "e2e3",
+        "san": "e3"
+      },
+      {
+        "uci": "d2d3",
+        "san": "d3"
+      },
+      {
+        "uci": "c2c3",
+        "san": "c3"
+      },
+      {
+        "uci": "b2b3",
+        "san": "b3"
+      },
+      {
+        "uci": "a2a3",
+        "san": "a3"
+      },
+      {
+        "uci": "h2h4",
+        "san": "h4"
+      },
+      {
+        "uci": "g2g4",
+        "san": "g4"
+      },
+      {
+        "uci": "f2f4",
+        "san": "f4"
+      },
+      {
+        "uci": "e2e4",
+        "san": "e4"
+      },
+      {
+        "uci": "d2d4",
+        "san": "d4"
+      },
+      {
+        "uci": "c2c4",
+        "san": "c4"
+      },
+      {
+        "uci": "b2b4",
+        "san": "b4"
+      },
+      {
+        "uci": "a2a4",
+        "san": "a4"
+      }
+    ]
+  },
+  "history": [
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "san": "Start",
+      "uci": null
+    }
+  ],
+  "selected_ply": 0,
+  "source": {
+    "kind": "user_position",
+    "label": "Supplied position",
+    "provenance": "User input; no game origin is verified."
+  },
+  "engine": {
+    "status": "ok",
+    "name": "Stockfish 19",
+    "budget": {
+      "max_nodes": 30000,
+      "max_seconds": 1.5,
+      "threads": 2,
+      "hash_mb": 32
+    },
+    "score_perspective": "white",
+    "elapsed_seconds": 0.281,
+    "alternatives": [
+      {
+        "rank": 1,
+        "move_uci": "e2e4",
+        "san": "e4",
+        "score": {
+          "type": "engine_observation",
+          "kind": "centipawn",
+          "value": 30,
+          "perspective": "white",
+          "bound": "exact",
+          "qualification": "Bounded search estimate; not a guarantee of perfect play or a teaching judgment."
+        },
+        "depth": 10,
+        "nodes": 30068,
+        "pv": [
+          {
+            "uci": "e2e4",
+            "san": "e4",
+            "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+          },
+          {
+            "uci": "e7e5",
+            "san": "e5",
+            "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+          },
+          {
+            "uci": "g1f3",
+            "san": "Nf3",
+            "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
+          },
+          {
+            "uci": "b8c6",
+            "san": "Nc6",
+            "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3"
+          },
+          {
+            "uci": "f1b5",
+            "san": "Bb5",
+            "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3"
+          },
+          {
+            "uci": "g8f6",
+            "san": "Nf6",
+            "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4"
+          }
+        ],
+        "facts": [
+          {
+            "type": "board_fact",
+            "kind": "movement",
+            "text": "White moves the pawn from e2 to e4.",
+            "squares": [
+              "e2",
+              "e4"
+            ]
+          },
+          {
+            "type": "board_fact",
+            "kind": "reply_count",
+            "text": "After this move, the opponent has 20 legal replies.",
+            "squares": []
+          }
+        ]
+      },
+      {
+        "rank": 2,
+        "move_uci": "d2d4",
+        "san": "d4",
+        "score": {
+          "type": "engine_observation",
+          "kind": "centipawn",
+          "value": 19,
+          "perspective": "white",
+          "bound": "upper",
+          "qualification": "Bounded search estimate; not a guarantee of perfect play or a teaching judgment."
+        },
+        "depth": 10,
+        "nodes": 30068,
+        "pv": [
+          {
+            "uci": "d2d4",
+            "san": "d4",
+            "fen": "rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR b KQkq - 0 1"
+          },
+          {
+            "uci": "g8f6",
+            "san": "Nf6",
+            "fen": "rnbqkb1r/pppppppp/5n2/8/3P4/8/PPP1PPPP/RNBQKBNR w KQkq - 1 2"
+          }
+        ],
+        "facts": [
+          {
+            "type": "board_fact",
+            "kind": "movement",
+            "text": "White moves the pawn from d2 to d4.",
+            "squares": [
+              "d2",
+              "d4"
+            ]
+          },
+          {
+            "type": "board_fact",
+            "kind": "reply_count",
+            "text": "After this move, the opponent has 20 legal replies.",
+            "squares": []
+          }
+        ]
+      },
+      {
+        "rank": 3,
+        "move_uci": "g1f3",
+        "san": "Nf3",
+        "score": {
+          "type": "engine_observation",
+          "kind": "centipawn",
+          "value": 21,
+          "perspective": "white",
+          "bound": "exact",
+          "qualification": "Bounded search estimate; not a guarantee of perfect play or a teaching judgment."
+        },
+        "depth": 9,
+        "nodes": 30068,
+        "pv": [
+          {
+            "uci": "g1f3",
+            "san": "Nf3",
+            "fen": "rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 1 1"
+          },
+          {
+            "uci": "d7d5",
+            "san": "d5",
+            "fen": "rnbqkbnr/ppp1pppp/8/3p4/8/5N2/PPPPPPPP/RNBQKB1R w KQkq - 0 2"
+          },
+          {
+            "uci": "d2d4",
+            "san": "d4",
+            "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R b KQkq - 0 2"
+          },
+          {
+            "uci": "e7e6",
+            "san": "e6",
+            "fen": "rnbqkbnr/ppp2ppp/4p3/3p4/3P4/5N2/PPP1PPPP/RNBQKB1R w KQkq - 0 3"
+          }
+        ],
+        "facts": [
+          {
+            "type": "board_fact",
+            "kind": "movement",
+            "text": "White moves the knight from g1 to f3.",
+            "squares": [
+              "g1",
+              "f3"
+            ]
+          },
+          {
+            "type": "board_fact",
+            "kind": "reply_count",
+            "text": "After this move, the opponent has 20 legal replies.",
+            "squares": []
+          }
+        ]
+      }
+    ],
+    "assistance": "Every continuation below is Stockfish-assisted and legally replayed. It is not a model prediction."
+  },
+  "model": {
+    "status": "ok",
+    "predictions": [
+      {
+        "ply": 1,
+        "fen_before": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+        "status": "ok",
+        "score_type": "logit",
+        "raw_topk": [
+          {
+            "class_id": 1031,
+            "move_uci": "e2e4",
+            "logit": 17.60222053527832,
+            "legal": true
+          },
+          {
+            "class_id": 761,
+            "move_uci": "d2d4",
+            "logit": 16.896984100341797,
+            "legal": true
+          },
+          {
+            "class_id": 495,
+            "move_uci": "c2c4",
+            "logit": 16.11822509765625,
+            "legal": true
+          }
+        ],
+        "legal_topk": [
+          {
+            "class_id": 1031,
+            "move_uci": "e2e4",
+            "logit": 17.60222053527832,
+            "legal": true
+          },
+          {
+            "class_id": 761,
+            "move_uci": "d2d4",
+            "logit": 16.896984100341797,
+            "legal": true
+          },
+          {
+            "class_id": 495,
+            "move_uci": "c2c4",
+            "logit": 16.11822509765625,
+            "legal": true
+          }
+        ],
+        "legal_move_count": 20,
+        "raw_choice_uci": "e2e4",
+        "raw_choice_is_legal": true,
+        "legal_choice_uci": "e2e4",
+        "accepted": true,
+        "san": "e4",
+        "fen_after": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1"
+      },
+      {
+        "ply": 2,
+        "fen_before": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+        "status": "ok",
+        "score_type": "logit",
+        "raw_topk": [
+          {
+            "class_id": 666,
+            "move_uci": "c7c5",
+            "logit": 17.165437698364258,
+            "legal": true
+          },
+          {
+            "class_id": 936,
+            "move_uci": "d7d5",
+            "logit": 16.129650115966797,
+            "legal": true
+          },
+          {
+            "class_id": 1206,
+            "move_uci": "e7e5",
+            "logit": 16.108806610107422,
+            "legal": true
+          }
+        ],
+        "legal_topk": [
+          {
+            "class_id": 666,
+            "move_uci": "c7c5",
+            "logit": 17.165437698364258,
+            "legal": true
+          },
+          {
+            "class_id": 936,
+            "move_uci": "d7d5",
+            "logit": 16.129650115966797,
+            "legal": true
+          },
+          {
+            "class_id": 1206,
+            "move_uci": "e7e5",
+            "logit": 16.108806610107422,
+            "legal": true
+          }
+        ],
+        "legal_move_count": 20,
+        "raw_choice_uci": "c7c5",
+        "raw_choice_is_legal": true,
+        "legal_choice_uci": "c7c5",
+        "accepted": true,
+        "san": "c5",
+        "fen_after": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2"
+      },
+      {
+        "ply": 3,
+        "fen_before": "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+        "status": "ok",
+        "score_type": "logit",
+        "raw_topk": [
+          {
+            "class_id": 1529,
+            "move_uci": "g1f3",
+            "logit": 16.55779457092285,
+            "legal": true
+          },
+          {
+            "class_id": 222,
+            "move_uci": "b1c3",
+            "logit": 14.91950511932373,
+            "legal": true
+          },
+          {
+            "class_id": 761,
+            "move_uci": "d2d4",
+            "logit": 14.878496170043945,
+            "legal": true
+          }
+        ],
+        "legal_topk": [
+          {
+            "class_id": 1529,
+            "move_uci": "g1f3",
+            "logit": 16.55779457092285,
+            "legal": true
+          },
+          {
+            "class_id": 222,
+            "move_uci": "b1c3",
+            "logit": 14.91950511932373,
+            "legal": true
+          },
+          {
+            "class_id": 761,
+            "move_uci": "d2d4",
+            "logit": 14.878496170043945,
+            "legal": true
+          }
+        ],
+        "legal_move_count": 30,
+        "raw_choice_uci": "g1f3",
+        "raw_choice_is_legal": true,
+        "legal_choice_uci": "g1f3",
+        "accepted": true,
+        "san": "Nf3",
+        "fen_after": "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"
+      }
+    ],
+    "interventions": 0,
+    "assistance": "Raw model choices only. An illegal choice stops the line; no engine fallback or legal-mask replacement.",
+    "stop_reason": "three_plies_complete",
+    "identity": {
+      "name": "ROOK-CLF-9m · local checkpoint",
+      "directory": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-classifier-v3\\checkpoints\\step-512",
+      "weight_sha256": "2643e51526335e5a33a67370bf1fa70ddf3c6b2e64b31550ad6ca033f9430a22",
+      "device": "cpu",
+      "input": "Current pre-move FEN only; no engine move, PV, or post-move board."
+    },
+    "elapsed_seconds": 0.047,
+    "root_raw_matches_engine": true,
+    "root_legal_filtered_matches_engine": true,
+    "exact_root_pv_prefix_plies": 1,
+    "comparison_scope": "Exact prefix of this bounded root engine PV only. After a divergence, model-visited boards differ; later moves are not compared as if the positions matched. No per-ply teacher search is run."
+  },
+  "limitations": [
+    "Research candidate for chess tutor feedback; teaching quality has not been established.",
+    "Explanations below are deterministic board facts and bounded engine observations. They do not establish a local model's strategic understanding.",
+    "The move model is a classifier, not a prose coach. Three plies mean three individual half-moves, not three full turns.",
+    "Loading or playing positions here is exploration, not held-out evaluation or training."
+  ],
+  "session_history": [
+    {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "san": "Start",
+      "uci": null
+    }
+  ],
+  "session_selected_ply": 0,
+  "session_selected_engine_move": "e2e4",
+  "coaching": null
+}

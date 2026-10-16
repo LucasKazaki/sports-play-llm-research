@@ -1,0 +1,109 @@
+{
+  "schema": "chess.counterfactual-cpu-recovery.v2",
+  "frozen_at": "2026-10-16T10:23:33.827288+00:00",
+  "driver_sha256": "c12dd5ae65375f95f307bd88fc0b1fd7e37f21e55dc4ac80f6d76162aa2b77ae",
+  "status": "source_review_candidate_not_execution_authorization",
+  "scientific_protocol_sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a",
+  "bindings": {
+    "driver": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\run_cpu_once.py",
+      "sha256": "c12dd5ae65375f95f307bd88fc0b1fd7e37f21e55dc4ac80f6d76162aa2b77ae"
+    },
+    "builder": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\build_protocol.py",
+      "sha256": "801e11df5c4b3682ca12498b00b3cb0fcd4cf1c908b99571d3c2a1205e47f44e"
+    },
+    "scientific_protocol": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\intake-protocol.json",
+      "sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a"
+    },
+    "intake": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_intake_v1.py",
+      "sha256": "3f0e7ab1cfed89d1ebf5c09ed44c7eac850688d628f3af89241dc9f1b2e5f09c"
+    },
+    "teacher": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_teacher_v1.py",
+      "sha256": "2cda3bc89ad0a5e2d7ef0a5dbce52f507cadad6ad83bad92d6fe271cc18db489"
+    },
+    "proposal": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-counterfactual-recovery-v2-proposal.json",
+      "sha256": "e19aff29c1f1a78467c2b89a905e0ad9eee6d7055daba5c79e64ed68afec9ad1"
+    },
+    "closed_held_worker": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\heldout-1-worker.json",
+      "sha256": "f443d8fa2ac23a38477413528949f086d27432523fb25b1a81910574ebd5dd60"
+    },
+    "root_changed_context": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\coach-held-failure-owner-closed.json",
+      "sha256": "e7777a4a59004c8df9031d446e6d925527c0f86e3c4ddaacbb323a6758582526"
+    }
+  },
+  "failed_attempt": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\intake-attempt.json",
+      "sha256": "2182d8de69d73af285146413346f83e8271f70fb99d6aad26f0c68e727f7a938",
+      "bytes": 140
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\intake-failure.json",
+      "sha256": "a105175cd00abfa7ba8bd5feb902af929e87a5318eb39e2e59ae1c245b7c4227",
+      "bytes": 173
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\cpu-resources.jsonl",
+      "sha256": "af3105dfa77d33108af0877daafba046bc353853a962e02dbb184c50cfc45081",
+      "bytes": 143
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-v1\\intake-sources\\manifest.json",
+      "sha256": "23c182483f51e1e69bd620c463c454f764cda85d195e9bc5bc2f1dd705c3e7d7",
+      "bytes": 7375
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-data-execution-intent.json",
+      "sha256": "e02ff0525e97e7c8596a40b5c3d647ee64870d504834512d8168304e36cfbe7c",
+      "bytes": 906
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-data-execution-closed.json",
+      "sha256": "8869feccc73d73896b5c8c3e6ba0d01d732ddf5dd0cea4f89ba0f473f0a4f911",
+      "bytes": 197
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-data-execution.log",
+      "sha256": "571443fb928cfb78a09d6dd95edef4ad80117b37b4c644aa0db3d28c155cb3dd",
+      "bytes": 1336
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual_data_once.py",
+      "sha256": "c2a022f11cff2209fafdfd35b83ca80ca815b06972233e126e9e783776ed0130",
+      "bytes": 5697
+    }
+  ],
+  "counts": {
+    "train": 512,
+    "development": 32,
+    "reserve": 512
+  },
+  "teacher_requests": 3168,
+  "filelock_version": "4.2.0",
+  "policy": {
+    "sample_count": 2,
+    "sample_interval_seconds": 1,
+    "commit_headroom_bytes": 8589934592,
+    "physical_available_bytes": 4294967296,
+    "intake_seconds": 1200,
+    "teacher_seconds": 3300,
+    "engine_exit_seconds": 15,
+    "cutoff_utc": "2026-10-16T13:00:00+00:00"
+  },
+  "output": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "scope": "ONE changed-context CPU sequence only. Root dispatch after independent full-source/test/protocol review. No automatic retry, source patches, lower reserves, changed sampling/targets/deadlines, new acquisition or learned calls.",
+  "changed_context": "Original guard failed at ordinal-1 while the owner was active; exact failed held worker is now terminal and root observed child absent/free lease/two passing CPU samples. Failure is not a coaching result.",
+  "admission": "Acquire existing shared lease with timeout0 across scientific work/cleanup; verify old child absent and repeat two CPU samples>=1s apart with8GiBcommit/4GiBphysical before any scientific module import. Busy/failure stops once.",
+  "readiness": "Exact512/32/512 intake; exactly3168 uniquely planned teachers all completed/coherent; observed owned Stockfish parent/PID and exit before unchanged export. All phase outcomes and unknown/not_run teacher outcomes retained.",
+  "deadlines": "Unchanged scientific1200s intake/3300s teachers/13UTC cutoff. Existing guards are cooperative; driver also verifies elapsed phase time before later phases. No claim of an OS hard deadline or unrelated process control.",
+  "provenance": "Sibling create-only intent/phases precede scientific access. Frozen sources and prior failed receipts copied into operational-sources after output creation/return or finalizer. operational-provenance.json and sibling operational-closed.json expose exact source/plan/corpus hashes, full phase statuses and observed engine exit.",
+  "future_training": "A completed CPU sequence is not independent corpus audit or model quality. New reviewed training/evaluation protocol plus explicit root dispatch still required; latest11:15UTC applies to each future GPU phase."
+}

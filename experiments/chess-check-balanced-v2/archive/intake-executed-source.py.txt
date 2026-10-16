@@ -1,0 +1,421 @@
+"""Balanced, game-disjoint check discrimination with a genuinely trained local LLM.
+
+Current board and candidate move only enter the model. Labels and engine lines
+never enter inference. This task measures check discrimination, not playing strength.
+"""
+from __future__ import annotations
+import argparse
+from collections import defaultdict
+from contextlib import nullcontext
+from datetime import datetime, timezone
+import hashlib
+import json
+import math
+import os
+from pathlib import Path
+import random
+import subprocess
+import sys
+import time
+
+import chess
+import chess_board_fact_core as facts
+from chess_fact_sft_common import read, save, sha
+from chess_fact_sft_intake import board_key, canonical_game_id, parquet_rows
+
+ROOT = Path(__file__).resolve().parents[1]
+TASK = 'chess.check-balanced.v2'
+INSTRUCTION = ('Does the selected legal move give check to the opposing king? '
+    'Use only this current board and move. Uppercase pieces are White; lowercase are Black. '
+    'Answer exactly true or false.\n')
+
+
+def prompt(fen, uci):
+    board, move = facts.board_and_move(fen, uci)
+    # No SAN (which would leak +/#), post-board, attacks-after-move, or labels.
+    packet = {'fen': board.fen(), 'move': move.uci(),
+              'pieces': ' '.join(chess.square_name(sq)+':'+piece.symbol()
+                                 for sq, piece in sorted(board.piece_map().items()))}
+    return INSTRUCTION + json.dumps(packet, sort_keys=True, separators=(',', ':'))
+
+
+def prefix_ids(tokenizer, row):
+    return tokenizer.apply_chat_template([{'role': 'user', 'content': prompt(row['fen'], row['selected_uci'])}],
+        add_generation_prompt=True, enable_thinking=False, tokenize=True, return_dict=False)
+
+
+def pair_for(board, game, seed, forbidden):
+    groups = defaultdict(lambda: {True: [], False: []})
+    for move in sorted(board.legal_moves, key=lambda m: m.uci()):
+        if move.promotion or board.is_castling(move) or board.is_en_passant(move):
+            continue
+        after = board.copy(stack=False)
+        after.push(move)
+        if board_key(after.fen()) in forbidden:
+            continue
+        piece, victim = board.piece_at(move.from_square), board.piece_at(move.to_square)
+        key = (move.from_square, piece.piece_type, board.is_capture(move), victim.piece_type if victim else None)
+        groups[key][board.gives_check(move)].append(move.uci())
+    pairs = [(yes, no) for group in groups.values() for yes in group[True] for no in group[False]]
+    if not pairs:
+        return None
+    return min(pairs, key=lambda pair: hashlib.sha256(f'{seed}:{game}:{pair[0]}:{pair[1]}'.encode()).hexdigest())
+
+
+def exclusions(repo, plan):
+    path = repo / plan['known_registry']['path']
+    if sha(path) != plan['known_registry']['sha256']:
+        raise ValueError('known-history exclusion registry changed')
+    registry = read(path)
+    games, boards = set(registry['games']), set(registry['board_keys'])
+    path = repo / plan['latest_spent_dataset']['path']
+    if sha(path) != plan['latest_spent_dataset']['sha256']:
+        raise ValueError('latest spent cohort changed')
+    dataset = read(path)
+    rows = dataset.get('rows', dataset.get('pairs', []))
+    if not rows:
+        rows = [r for values in dataset.get('splits', {}).values() for r in values]
+    if not rows:
+        raise ValueError('latest spent cohort has no source records')
+    for row in rows:
+        games.add(canonical_game_id(row['game_id']))
+        boards.update(row.get('successor_keys', []))
+        for name in ('fen', 'source_before_fen'):
+            if name in row:
+                boards.add(board_key(row[name]))
+        if 'selected_uci' in row:
+            board, move = facts.board_and_move(row['fen'], row['selected_uci'])
+            board.push(move)
+            boards.add(board_key(board.fen()))
+    return games, boards
+
+
+def intake(protocol, out):
+    plan = read(protocol)
+    if plan['schema'] != TASK or sha(Path(__file__)) != plan['implementation_sha256']:
+        raise ValueError('protocol or implementation differs from frozen plan')
+    if sha(Path(facts.__file__)) != plan['core_sha256']:
+        raise ValueError('board fact implementation changed')
+    source = ROOT / plan['source']['path']
+    if sha(source) != plan['source']['sha256']:
+        raise ValueError('source shard identity mismatch')
+    if out.exists():
+        raise ValueError('cohort is create-only')
+    out.mkdir(parents=True)
+    save(out / 'protocol.json', plan)
+    games, boards = exclusions(ROOT, plan)
+    initial = {'games': len(games), 'boards': len(boards)}
+    save(out / 'initial-exclusions.json', {'games': sorted(games), 'board_keys': sorted(boards)})
+    inputs = {key: [] for key in plan['groups']}
+    labels = {key: [] for key in inputs}
+    metadata = {key: [] for key in inputs}
+    rejected = defaultdict(int)
+    with (out / 'selection.jsonl').open('x', encoding='utf-8', buffering=1) as trace:
+        for location, row in parquet_rows(source):
+            ordinal = location['source_ordinal']
+            if ordinal >= plan['source_row_cap']:
+                break
+            try:
+                game = canonical_game_id(row['GameId'])
+                bucket = int(hashlib.sha256(f"{plan['seed']}:{game}".encode()).hexdigest(), 16) % 20
+                split = 'dev' if bucket == 0 else 'holdout' if bucket in (1, 2) else 'train'
+                if len(inputs[split]) == 2 * plan['groups'][split]:
+                    rejected['split_full'] += 1
+                    continue
+                board = chess.Board(row['FEN'])
+                if not board.is_valid() or board.chess960:
+                    raise ValueError('invalid source board')
+                before = board.fen()
+                if game in games or board_key(before) in boards:
+                    rejected['historical_or_duplicate'] += 1
+                    continue
+                # Only the setup token is consumed; no solution/theme is used.
+                setup = chess.Move.from_uci(row['Moves'].split(maxsplit=1)[0])
+                if setup not in board.legal_moves:
+                    raise ValueError('illegal source setup')
+                board.push(setup)
+                if not board.is_valid() or board.is_game_over() or board_key(board.fen()) in boards:
+                    rejected['terminal_or_duplicate'] += 1
+                    continue
+                pair = pair_for(board, game, plan['seed'], boards)
+                if pair is None:
+                    rejected['no_matched_pair'] += 1
+                    continue
+                ordered = sorted(pair, key=lambda move: hashlib.sha256(f'{game}:{move}'.encode()).hexdigest())
+                for move in ordered:
+                    truth = facts.expected_facts(board.fen(), move)
+                    if truth != facts.independent_facts(board.fen(), move):
+                        raise RuntimeError('independent fact routes disagree')
+                    case = f"check-v2-{row['PuzzleId']}-{move}"
+                    inputs[split].append({'case_id': case, 'fen': board.fen(), 'selected_uci': move})
+                    labels[split].append({'case_id': case, 'gives_check': truth['gives_check']})
+                    after = board.copy(stack=False)
+                    after.push_uci(move)
+                    boards.add(board_key(after.fen()))
+                metadata[split].append({'game_id': game, 'puzzle_id': row['PuzzleId'],
+                    'source_before_fen': before, 'setup_uci': setup.uci(), 'fen': board.fen(),
+                    'selected_pair': ordered, **location})
+                games.add(game)
+                boards.update((board_key(before), board_key(board.fen())))
+                trace.write(json.dumps({'ordinal': ordinal, 'split': split, 'game_id': game})+'\n')
+            except (ValueError, KeyError, IndexError, TypeError):
+                rejected['invalid'] += 1
+                continue
+            if all(len(inputs[s]) == 2*n for s, n in plan['groups'].items()):
+                break
+    if any(len(inputs[s]) != 2*n for s, n in plan['groups'].items()):
+        raise ValueError('bounded source did not fill declared groups')
+    for split in inputs:
+        if sum(row['gives_check'] for row in labels[split]) != plan['groups'][split]:
+            raise ValueError('balanced target invariant failed')
+        save(out / f'{split}-inputs.json', {'rows': inputs[split]})
+        save(out / f'{split}-labels.json', {'rows': labels[split]})
+    save(out / 'dataset.json', {'schema': TASK, 'groups': metadata, 'rejections': dict(rejected),
+         'source_sha256': sha(source), 'initial_exclusions': initial, 'last_source_ordinal': ordinal})
+    bindings = {p.name: sha(p) for p in out.iterdir() if p.is_file()}
+    save(out / 'frozen.json', {'schema': TASK, 'files_sha256': bindings,
+         'protocol_sha256': sha(protocol), 'counts': {s: len(v) for s,v in inputs.items()}, 'model_calls': 0})
+    return {'counts': {s: len(v) for s,v in inputs.items()}, 'last_source_ordinal': ordinal,
+            'frozen_sha256': sha(out/'frozen.json')}
+
+
+def score(raw_path, label_path, out, expected_labels_sha256):
+    raw = read(raw_path)
+    if sha(raw_path) != read(raw_path.with_suffix('.seal.json'))['sha256']:
+        raise ValueError('raw seal mismatch')
+    if sha(label_path) != expected_labels_sha256:
+        raise ValueError('label identity mismatch')
+    labels = read(label_path)['rows']
+    if [r['case_id'] for r in raw['rows']] != [r['case_id'] for r in labels]:
+        raise ValueError('prediction denominator mismatch')
+    confusion = dict(tp=0, tn=0, fp=0, fn=0, invalid_positive=0, invalid_negative=0)
+    pair_correct, group = 0, []
+    for row, label in zip(raw['rows'], labels, strict=True):
+        prediction, truth = row.get('prediction'), label['gives_check']
+        valid = type(prediction) is bool and row.get('status') == 'completed'
+        key = ('tp' if prediction else 'fn') if truth else ('fp' if prediction else 'tn')
+        confusion[key if valid else 'invalid_positive' if truth else 'invalid_negative'] += 1
+        group.append(valid and prediction == truth)
+        if len(group) == 2:
+            pair_correct += int(all(group))
+            group = []
+    positives = sum(r['gives_check'] for r in labels)
+    negatives = len(labels) - positives
+    value = {'schema': TASK, 'planned': len(labels), 'confusion': confusion,
+             'correct': confusion['tp']+confusion['tn'], 'pairs_correct': pair_correct,
+             'positive_support': positives, 'negative_support': negatives,
+             'balanced_accuracy': (confusion['tp']/positives + confusion['tn']/negatives)/2,
+             'raw_sha256': sha(raw_path), 'labels_sha256': sha(label_path)}
+    save(out, value)
+    return value
+
+
+def batch_inputs(rows, tokenizer, torch, device):
+    sequences = [prefix_ids(tokenizer, row) for row in rows]
+    width = max(map(len, sequences))
+    if width > 768:
+        raise ValueError('input exceeds frozen context cap')
+    ids = torch.full((len(rows), width), tokenizer.pad_token_id, dtype=torch.long, device=device)
+    mask = torch.zeros_like(ids)
+    for i, seq in enumerate(sequences):
+        ids[i, -len(seq):] = torch.tensor(seq, device=device)
+        mask[i, -len(seq):] = 1
+    return dict(input_ids=ids, attention_mask=mask,
+                position_ids=(mask.cumsum(-1)-1).masked_fill(mask == 0, 0))
+
+
+def predict_rows(model, tokenizer, rows, torch, device, batch_size, check):
+    model.eval()
+    yes, no = (tokenizer.encode(word, add_special_tokens=False) for word in ('true', 'false'))
+    if len(yes) != 1 or len(no) != 1:
+        raise ValueError('boolean words must be single native tokens')
+    results = []
+    with torch.inference_mode():
+        for offset in range(0, len(rows), batch_size):
+            check()
+            group = rows[offset:offset+batch_size]
+            started = time.monotonic()
+            batch = batch_inputs(group, tokenizer, torch, device)
+            logits = model(**batch, use_cache=False, logits_to_keep=1).logits[:, -1].float()
+            raw_ids = logits.argmax(-1).tolist()
+            probs = logits[:, [no[0], yes[0]]].softmax(-1).cpu().tolist()
+            elapsed = time.monotonic()-started
+            for row, token, prob in zip(group, raw_ids, probs, strict=True):
+                results.append({'case_id': row['case_id'], 'status': 'completed',
+                    'raw_token_id': token, 'raw_text': tokenizer.decode([token]),
+                    'prediction': True if token == yes[0] else False if token == no[0] else None,
+                    'conditional_true_probability': prob[1], 'batch_seconds': elapsed,
+                    'prompt_sha256': hashlib.sha256(json.dumps(prefix_ids(tokenizer,row)).encode()).hexdigest()})
+    return results
+
+
+def run(cohort, protocol, out):
+    import torch
+    import transformers
+    import peft
+    from transformers import AutoTokenizer, AutoModelForCausalLM
+    from peft import LoraConfig, get_peft_model, get_peft_model_state_dict, set_peft_model_state_dict
+    from safetensors.torch import load_file
+    from chess_native_resources import windows_sample, reasons, Policy
+    plan, frozen = read(protocol), read(cohort/'frozen.json')
+    if sha(protocol) != frozen['protocol_sha256'] or sha(Path(__file__)) != plan['implementation_sha256']:
+        raise ValueError('frozen source/plan mismatch')
+    if sha(Path(facts.__file__)) != plan['core_sha256']:
+        raise ValueError('board fact implementation changed')
+    for name, digest in frozen['files_sha256'].items():
+        if sha(cohort/name) != digest:
+            raise ValueError('frozen cohort changed: '+name)
+    base = ROOT/plan['base_model']['path']
+    for name, digest in plan['base_model']['files_sha256'].items():
+        if sha(base/name) != digest:
+            raise ValueError('pinned model asset changed: '+name)
+    if out.exists():
+        raise ValueError('run is create-only; choose a new version after failure')
+    out.mkdir(parents=True)
+    policy = Policy(start_physical_available_bytes=6*1024**3, start_commit_headroom_bytes=8*1024**3,
+                    start_gpu_free_bytes=6*1024**3)
+    started, last_sample = time.monotonic(), 0.
+    resources = (out/'resources.jsonl').open('x',encoding='utf-8',buffering=1)
+    def check():
+        nonlocal last_sample
+        if (out/'cancel.json').exists() or time.monotonic()-started > plan['maximum_seconds']:
+            raise RuntimeError('owned cancellation/deadline')
+        if time.monotonic()-last_sample >= 2:
+            sample = windows_sample()
+            from dataclasses import asdict
+            resources.write(json.dumps({'seconds':time.monotonic()-started, **asdict(sample)})+'\n')
+            issues = reasons(sample, policy, 'running' if last_sample else 'start')
+            if issues:
+                raise RuntimeError('resource reserve: '+','.join(issues))
+            last_sample = time.monotonic()
+    check()
+    random.seed(plan['seed']); torch.manual_seed(plan['seed']); torch.cuda.manual_seed_all(plan['seed'])
+    torch.set_num_threads(6)
+    tokenizer = AutoTokenizer.from_pretrained(base, local_files_only=True, trust_remote_code=False)
+    tokenizer.padding_side='left'
+    model = AutoModelForCausalLM.from_pretrained(base, local_files_only=True, trust_remote_code=False,
+        dtype=torch.bfloat16, attn_implementation='sdpa', use_safetensors=True).to('cuda')
+    model.tie_weights()
+    model = get_peft_model(model, LoraConfig(r=16, lora_alpha=32, lora_dropout=0.0,
+        target_modules=['q_proj','k_proj','v_proj','o_proj','gate_proj','up_proj','down_proj'],
+        task_type='CAUSAL_LM', bias='none'))
+    parameters=[p for p in model.parameters() if p.requires_grad]
+    save(out/'runtime.json', {'schema':TASK, 'pid':os.getpid(), 'python':sys.executable,
+        'gpu':torch.cuda.get_device_name(), 'torch':torch.__version__, 'transformers':transformers.__version__,
+        'peft':peft.__version__, 'trainable_parameters':sum(p.numel() for p in parameters),
+        'protocol_sha256':sha(protocol),'frozen_data_sha256':sha(cohort/'frozen.json'),
+        'source_snapshot_sha256':sha(Path(__file__))})
+    (out/'executed-source.py.txt').write_bytes(Path(__file__).read_bytes())
+    save(out/'protocol.json',plan)
+    train_inputs, train_labels = (read(cohort/f'train-{kind}.json')['rows'] for kind in ('inputs','labels'))
+    dev_inputs = read(cohort/'dev-inputs.json')['rows']
+    if [r['case_id'] for r in train_inputs] != [r['case_id'] for r in train_labels]:
+        raise ValueError('train input/label mismatch')
+    train = []
+    for row,label in zip(train_inputs,train_labels,strict=True):
+        ids = prefix_ids(tokenizer,row)
+        target=tokenizer.encode('true' if label['gives_check'] else 'false',add_special_tokens=False)
+        if len(target)!=1 or len(ids)>768:
+            raise ValueError('training token boundary outside contract')
+        train.append((ids,target[0]))
+    save(out/'tokenization.json',{'count':len(train),'min':min(len(x[0]) for x in train),
+        'max':max(len(x[0]) for x in train),'target_tokens_per_example':1})
+    scores=[]
+    def evaluate(name, rows, split):
+        results=predict_rows(model,tokenizer,rows,torch,'cuda',plan['evaluation_batch_size'],check)
+        path=out/(name+'.json')
+        save(path,{'schema':TASK,'rows':results,'planned':len(rows)})
+        save(path.with_suffix('.seal.json'),{'sha256':sha(path)})
+        score_path=out/(name+'-score.json')
+        subprocess.run([sys.executable,str(Path(__file__)),'score','--raw',str(path),
+            '--labels',str(cohort/f'{split}-labels.json'),'--out',str(score_path),
+            '--expected-labels-sha256',frozen['files_sha256'][f'{split}-labels.json']],
+            check=True,capture_output=True,text=True,timeout=60)
+        return read(score_path)
+    completed=0
+    try:
+        baseline=evaluate('dev-0',dev_inputs,'dev')
+        scores.append({'step':0,**baseline})
+        model.gradient_checkpointing_enable(gradient_checkpointing_kwargs={'use_reentrant':False})
+        optimizer=torch.optim.AdamW(parameters,lr=plan['learning_rate'],weight_decay=0,foreach=False)
+        order=[]; rng=random.Random(plan['seed'])
+        with (out/'training.jsonl').open('x',encoding='utf-8',buffering=1) as log:
+            for step in range(1,plan['steps']+1):
+                check()
+                if len(order)<plan['batch_size']:
+                    fresh=list(range(len(train)));rng.shuffle(fresh);order.extend(fresh)
+                indices,order=order[:plan['batch_size']],order[plan['batch_size']:]
+                rows=[train[i] for i in indices]
+                width=max(len(r[0]) for r in rows)
+                ids=torch.full((len(rows),width),tokenizer.pad_token_id,dtype=torch.long,device='cuda')
+                mask=torch.zeros_like(ids)
+                for i,(seq,_) in enumerate(rows):
+                    ids[i,-len(seq):]=torch.tensor(seq,device='cuda');mask[i,-len(seq):]=1
+                target=torch.tensor([r[1] for r in rows],device='cuda')
+                optimizer.zero_grad(set_to_none=True);model.train()
+                lr=plan['learning_rate']*min(1.,step/32)
+                for group in optimizer.param_groups:group['lr']=lr
+                output=model(input_ids=ids,attention_mask=mask,
+                    position_ids=(mask.cumsum(-1)-1).masked_fill(mask==0,0),use_cache=False,logits_to_keep=1)
+                loss=torch.nn.functional.cross_entropy(output.logits[:,-1].float(),target)
+                if not torch.isfinite(loss):raise FloatingPointError('nonfinite training loss')
+                loss.backward();norm=torch.nn.utils.clip_grad_norm_(parameters,1.,error_if_nonfinite=True)
+                optimizer.step();completed=step
+                log.write(json.dumps({'step':step,'loss':float(loss.detach()),'lr':lr,
+                    'gradient_norm':float(norm),'seconds':time.monotonic()-started})+'\n')
+                if step%32==0:
+                    save(out/'progress.json',{'phase':'train','step':step,'loss':float(loss.detach()),
+                         'seconds':time.monotonic()-started})
+                    print(json.dumps(read(out/'progress.json')),flush=True)
+                if step in plan['checkpoint_steps']:
+                    directory=out/f'checkpoint-{step}'
+                    model.save_pretrained(directory,safe_serialization=True)
+                    result=evaluate(f'dev-{step}',dev_inputs,'dev')
+                    scores.append({'step':step,**result})
+                    save(out/'dev-scores.json',scores)
+        selected=max(scores,key=lambda r:(r['correct'],r['pairs_correct'],-r['step']))['step']
+        selection={'step':selected,'scores':scores,'holdout_opened':False,
+            'adapter_sha256':sha(out/f'checkpoint-{selected}'/'adapter_model.safetensors') if selected else None}
+        save(out/'selection-before-holdout.json',selection)
+        if selected:
+            weights=load_file(out/f'checkpoint-{selected}'/'adapter_model.safetensors')
+            result=set_peft_model_state_dict(model,weights)
+            if result.unexpected_keys:raise ValueError('unexpected selected adapter keys')
+            loaded=get_peft_model_state_dict(model)
+            if set(loaded)!=set(weights) or any(not torch.equal(loaded[k].detach().cpu(),v) for k,v in weights.items()):
+                raise ValueError('selected adapter reload differs')
+        holdout=read(cohort/'holdout-inputs.json')['rows']
+        with model.disable_adapter():base_result=evaluate('holdout-base',holdout,'holdout')
+        with model.disable_adapter() if selected==0 else nullcontext():
+            selected_result=evaluate('holdout-selected',holdout,'holdout')
+        summary={'schema':TASK,'status':'completed_candidate','completed_updates':completed,
+            'selection':selection,'base':base_result,'selected':selected_result,
+            'elapsed_seconds':time.monotonic()-started,'protocol_sha256':sha(protocol),
+            'limitations':['Balanced same-piece tactical pairs are not a natural prevalence sample.',
+                'Binary check discrimination only; no Elo, move-quality or coaching-understanding claim.',
+                'Raw full-vocabulary token choices scored; conditional binary probabilities are separate.',
+                'Historical games excluded; upstream model pretraining overlap is unknown.']}
+        save(out/'outcome.json',summary)
+        print(json.dumps(summary),flush=True)
+    except Exception as error:
+        save(out/'failure.json',{'status':'failed','completed_updates':completed,
+            'error':type(error).__name__+':'+str(error),'elapsed_seconds':time.monotonic()-started})
+        raise
+    finally:
+        resources.close()
+
+
+def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('phase',choices=['intake','train','score'])
+    for name in ('protocol','cohort','out','raw','labels'):
+        parser.add_argument('--'+name,type=Path)
+    parser.add_argument('--expected-labels-sha256')
+    a=parser.parse_args()
+    if a.phase=='intake':result=intake(a.protocol,a.out)
+    elif a.phase=='train':result=run(a.cohort,a.protocol,a.out)
+    else:result=score(a.raw,a.labels,a.out,a.expected_labels_sha256)
+    if result is not None:print(json.dumps(result),flush=True)
+
+
+if __name__=='__main__':main()

@@ -1,0 +1,5 @@
+{
+  "scripts/chess_queen_coach_counterfactual_train_v1.py": "fca5d9365552d650cf18f33a19070f78e80d8b7d0dc57ff91fd63b31955185fd",
+  "tests/test_chess_queen_coach_counterfactual_train_v1.py": "83df2100e0e282d50bbd46abf104855fcca9b8cf0d1f4841ec375c87c87b4587",
+  "experiments/chess-queen-coach-counterfactual-v1/model-source-preflight.json": "df68c39732a4c476c164a84ba2cef018c5d4d25987d7e4b1eba495140076ef31"
+}

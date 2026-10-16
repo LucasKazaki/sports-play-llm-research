@@ -1,0 +1,64 @@
+{
+  "schema": "chess.queen-authored-smoke.v1",
+  "frozen_before_pretrained_forwards": false,
+  "packets": [
+    {
+      "path": "experiments/chess-queen-v1/authored-mate.json",
+      "sha256": "cacd2cfa6212959b97f583a39218d7d158e40be91c98ec078dd6f0fafd3831e4",
+      "input_keys": [
+        "fen"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-midgame.json",
+      "sha256": "9f9e8f428684214c3ecf1b7811a2505bd4ccd7d752d314a1e8dc1c3b223885ca",
+      "input_keys": [
+        "fen"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-opening.json",
+      "sha256": "9624697eef4f8da67c03ab4fb59240a10556318d1a12451e898d81a0aa394d43",
+      "input_keys": [
+        "fen"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-selected-c3.json",
+      "sha256": "cc639d6d2fc1bdf0b88c847201b6caebd5324e214e1ff22fbf117c1296be6b2c",
+      "input_keys": [
+        "fen",
+        "selected_uci"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    }
+  ],
+  "max_new_tokens": 1024,
+  "maximum_seconds": 240,
+  "temperature": 0,
+  "seed": 20260823,
+  "completion": "Retain full raw token IDs/text, finish reason and truncation; do not replace illegal or missing moves.",
+  "capability_claims_allowed": false,
+  "frozen_before_authored_generation": true,
+  "generation_mode": "no_cache",
+  "precision_profile": "math_sdpa_fp32_reduction",
+  "adapter_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+  "worker_sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0",
+  "runtime_qualification": {
+    "component": "canonical_no_cache_validation_passed",
+    "overall_receipt_status": "failed",
+    "cache_status": "failed and disabled",
+    "path": "data/private/chess-queen-v1/parity-authored-v5-1.json",
+    "sha256": "11259bfcfe6b271c3c71754419272a8ed237204682f1de572d736bc55b454e1b"
+  },
+  "running_resource_reserves": {
+    "commit_gib": 4,
+    "physical_gib": 4,
+    "gpu_gib": 1
+  },
+  "failure_policy": "One retained attempt per packet; backend/resource failure halts remaining packets, which remain not run. Semantic or truncation failures remain visible and count as failures; no move fallback.",
+  "frozen_at": "2026-10-16T06:55:03.5773256Z"
+}

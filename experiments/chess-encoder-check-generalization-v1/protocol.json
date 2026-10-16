@@ -1,0 +1,141 @@
+{
+  "schema": "chess.encoder-check-generalization-protocol.v1",
+  "stage": "cpu_intake_only_no_model_or_engine_calls",
+  "frozen_at": "2026-10-16T09:17:41.046896+00:00",
+  "implementation_sha256": "1cc6e52d35a2ac498cacc433ed0f30124d04ffbaed3d36bbf74b7a7cf34c1439",
+  "source": {
+    "path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+    "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "license": "CC0-1.0",
+    "bytes": 294920084,
+    "upstream": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet"
+  },
+  "source_row_cap": 500000,
+  "seed": 4082084,
+  "quotas": {
+    "king_mover": 16,
+    "pawn_mover": 16,
+    "double_check": 16,
+    "remaining_discovered_check": 16
+  },
+  "planned_pairs": 64,
+  "planned_move_slots": 128,
+  "allocation_priority": [
+    "king_mover",
+    "pawn_mover",
+    "double_check",
+    "remaining_discovered_check"
+  ],
+  "matching": {
+    "king_mover": "Sameboard, exactsameorigin,piecetype,captureflag,victimtype.",
+    "pawn_mover": "Sameboard, exactsameorigin,piecetype,captureflag,victimtype.",
+    "double_check": "Sameboard,piecetype,captureflag,victimtype; negative fromaDIFFERENTsame-typepieceinstance.",
+    "remaining_discovered_check": "Sameboard,piecetype,captureflag,victimtype; negative fromaDIFFERENTsame-typepieceinstance."
+  },
+  "matching_amendment": "Original unexecutedproposal requiredsameoriginforallstrata, structurallyexcludingordinarynonpawn/nonkingdiscovered-doublecontrasts. AmendedBEFOREanysourceconstruction orlearnedcall, withauthoredlegalfixture; retainoriginalproposal. Thisisnot matched-origin evidence forthe lasttwoallocations.",
+  "flags": "Everypositive retains pawn/king/discovered/double flags andcheckers. Allocationking>pawn>double>remainingdiscoveredisexclusive. Neverrelabelapositivebecauseaquotafilled; choosehighestpriorityopencategorythenfrozenseededSHA256pairtie-break.",
+  "source_consumption": "OnlyPuzzleId/GameId/FEN/Moves columns, onlyfirstMovessetuptoken; neverparseanswer tail/themes/additionalplies. Validnonterminalorthodoxbefore/current. Onegame/pair andallfourbefore/current/positiveafter/negativeaftercanonicalfirst4FENkeysuniqueandnovelagainstfullregistryandnewpairs.",
+  "shortages": "Fixed500ksourceprefix orallquotasfilled; noadaptivematching/cap/quotachange. Persist64plannedpairslots/128moveslots, actualconstructedinputs separately. Unfilledsource_shortageiscoverageunavailable,notmodelerror; neverinventFENs orsilentlydropstrata.",
+  "old_head_protocol": {
+    "path": "experiments/chess-encoder-check-v1/protocol-v2.json",
+    "sha256": "a72ffa9df05d1622688bfba2b9a749db2dfc157ea618c803e0f7a3800fff567a"
+  },
+  "old_selection": {
+    "path": "data/private/chess-encoder-check-v1/selection-before-holdout.json",
+    "sha256": "6180813493bf019acad4c63f17f87c427f44193b254c0b907ff5496bd9027f17"
+  },
+  "selected": {
+    "epoch": 4,
+    "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-4.pt",
+    "sha256": "9db9f9d9789d466a3942c2c02b8c18010f6b60a1d1185bf80e123b13b867b306",
+    "correct": 235,
+    "pairs_correct": 108
+  },
+  "original_untrained": {
+    "epoch": 0,
+    "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-0.pt",
+    "sha256": "f8f51b69dc2a3f7882bd20a3f1cd763cd200dbc28d49f51e8a1325a9ff992fd2",
+    "correct": 113,
+    "pairs_correct": 6
+  },
+  "expected_reserved_counts": {
+    "games": 109032,
+    "board_keys": 250895
+  },
+  "exclusions": {
+    "coach_reserved": {
+      "path": "data/private/chess-queen-coach-sft-v1/reserved-exclusions.json",
+      "sha256": "a5162e0404ef8935369445c8d8ec7417f8002f02ecdb32796e7a206dd9252249"
+    },
+    "coach_manifest": {
+      "path": "data/private/chess-queen-coach-sft-v1/manifest.json",
+      "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077"
+    },
+    "coach_initial": {
+      "path": "data/private/chess-queen-coach-sft-v1/initial-exclusions.json",
+      "sha256": "e40c647db32c3c3c32b77ca5a09cffdda53e6e69e48bd0e914a16595ca4d5222"
+    },
+    "coach_dataset": {
+      "path": "data/private/chess-queen-coach-sft-v1/dataset.json",
+      "sha256": "362393d1fb7cef900966728aec9441dc3eb2f8db860f37702ff776740331cc98"
+    },
+    "head_initial": {
+      "path": "data/private/chess-encoder-check-v1/initial-exclusions.json",
+      "sha256": "88d0452d05496437094a9d50545ef3ecab3508b3390afb456283748b73aab605"
+    },
+    "head_dataset": {
+      "path": "data/private/chess-encoder-check-v1/dataset.json",
+      "sha256": "59de14730e88647c58d08b5089f1d5998a76f04e31bc2560ae948f12d52ee71f"
+    },
+    "head_frozen": {
+      "path": "data/private/chess-encoder-check-v1/frozen.json",
+      "sha256": "78524886039b2be3e02eb4165582c70dcee69aa4b479211a47c21a76008e4db9"
+    },
+    "queen_pool": {
+      "path": "data/private/chess-queen-benchmark-v1/dataset.json",
+      "sha256": "2a7e6d660d1fc28c3b34e99c5dcd29dc8441fad30664e7d2690e6e812277c8cf"
+    }
+  },
+  "exclusion_scope": "Verify reservationhash againstcoachmanifest andsupersetsofhead/coachinitialregistries, everyheadroot/selectedsuccessor, all96Queenpoolroots andall1568coachsourcegames/before/current includingall512unusedheldreservoir. Persistedreservedregistryalsocarrieshistoricalteacherpaths. DoNOTopen coach held reference/teachercontents. No claim of excludingfuture generated paths or unregisteredboards.",
+  "maximum_cpu_seconds": 1200,
+  "cpu_physical_bytes": 4294967296,
+  "cpu_start_commit_bytes": 8589934592,
+  "cpu_running_commit_bytes": 6442450944,
+  "resources": "OneCPUprocess, Parquetuse_threadsFalse; hostcountersonly/noGPUquery. Cooperativeread-onlyguardbefore sourcework/every512rows, atmost1Hz. Stopownlaneonreserve/deadline/CANCEL,retainselectedjournal/failure; noGPU/OSchanges.",
+  "future_evaluation": "Notenabledbythisprotocol. Requireindependentactualcohortaudit andseparatelyfrozenroot-onlyinferenceplan. Fixedepoch0vsepoch4plusmajorityfalse, noretuning/selection. ExactlyoldcurrentFEN+legalUCI/3072currentfeatures/nativePOVindices; newlabel-freecache. Raw>=0threshold,nomask/rescue. Report perallocation/overlapflag/confusion/recalls/paircorrectness/failedunknownnotrun withactualandrequestedcoverage separately.",
+  "limits": "Deliberatelytargetedsmalltactical16pairs/allocation, differingorigincontrastforthelasttwoallocations,unknownencoderpretrainingoverlap. Not prevalence/Elo/movestrength/coachingquality; source shortageisnotmodel failure.",
+  "dependencies": [
+    {
+      "path": "scripts/chess_encoder_check_v1.py",
+      "sha256": "7914468174696ef17076792be6c0d280d9eb24001aa8833b4e76563c7b4072a3"
+    },
+    {
+      "path": "scripts/chess_board_fact_core.py",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "scripts/chess_check_balanced_v2.py",
+      "sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5"
+    },
+    {
+      "path": "scripts/chess_fact_sft_intake.py",
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "scripts/chess_fact_sft_common.py",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    {
+      "path": "scripts/chess_queen_materialize.py",
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "tests/test_chess_encoder_check_generalization_v1.py",
+      "sha256": "84313ffacd4a2ed4df2d68eacbe601f9000f8f9d7fe99aefdbb170eafcaede02"
+    },
+    {
+      "path": "experiments/chess-encoder-check-generalization-v1/exclusion-preflight.json",
+      "sha256": "0ba4e26c57c0cd93a186722e8a52af0892f78b8490467758348256dbf32876fc"
+    }
+  ]
+}

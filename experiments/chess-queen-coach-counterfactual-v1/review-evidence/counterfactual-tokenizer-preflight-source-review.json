@@ -1,0 +1,79 @@
+{
+  "schema": "chess.independent-counterfactual-tokenizer-source-review.v1",
+  "status": "passed_for_root_CPU_tokenizer_preflight_only",
+  "reviewed_at": "2026-10-16T10:37:26.476382+00:00",
+  "source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cpu_preflight.py",
+    "bytes": 3789,
+    "sha256": "18ca7b0e181a1c6a0a692a9bd55d131d7f70d40065dba2e4370ac0403e139f4c"
+  },
+  "trainer": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_train_v1.py",
+    "bytes": 21067,
+    "sha256": "6185ba3dbb146d4a3d2b76e59e7611e8f69a386ae27564bfa08562afdee3b34b"
+  },
+  "contract_helper": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_contract_v1.py",
+    "bytes": 1185,
+    "sha256": "b6caead2313327138c067c86b6514b57046d08b623a70315e0e2b7fb1f130051"
+  },
+  "scope": "Complete helper/tests/CPU-preflight/final-builder finite bundle plus exact trainer verification delta read; only current source and tokenizer/formatter byte provenance verified here.",
+  "checks": {
+    "official_formatter_exact_to_prior_frozen_QLoRA_diagnostic": true,
+    "tokenizer_inventory_from_exact_pinned_asset_manifest": true,
+    "all_current_tokenizer_asset_bytes_match": true,
+    "unmodified_tokenize_training_integer_prefix_EOS_no_truncation_path": true,
+    "Torch_CUDA_lazy_init_forbidden_before_tokenizer_construction": true,
+    "no_model_weights_or_learned_forward_path": true,
+    "new1536TRAIN96dev_context512_and_native_target_parse_checks": true,
+    "actual_preflight_source_not_executed_by_reviewer": true
+  },
+  "tests": {
+    "authored_combined_checks": 26,
+    "elapsed_seconds": 0.61,
+    "exit_code": 0
+  },
+  "pinned_provenance": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-qlora-v1\\diagnostic-protocol-v2.json",
+      "bytes": 11135,
+      "sha256": "32568dfddf9ee999b64294d8d260dfe6b68b188c445702c69104599c124a2a7f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-source\\utils\\instance_format.py",
+      "bytes": 6213,
+      "sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\asset-manifest.json",
+      "bytes": 4531,
+      "sha256": "dc909eca4d0e0b17b2b2d188f55e461c18121516d62d1fc8062fd33c81620ad3"
+    }
+  ],
+  "tokenizer_files": {
+    "chat_template.jinja": {
+      "sha256": "69650a344de9a33971f463750410208cb35e4bf351eb4af422ffb695bc6c8847",
+      "bytes": 5588
+    },
+    "special_tokens_map.json": {
+      "sha256": "12403efb970f069ba62ddf3b66166a27254be4a198166b61ad1ee604bd3a4515",
+      "bytes": 289
+    },
+    "tokenizer.json": {
+      "sha256": "c2786337a78babe4fa37aea5f1b8492bcdd4ac7f307f6f014a634c9981b6aa81",
+      "bytes": 17223270
+    },
+    "tokenizer_config.json": {
+      "sha256": "29ba0f7b8ec803909d29713b01870acc5e4309b601fc1838bfa870d2f97b0aaa",
+      "bytes": 64068
+    }
+  },
+  "limits": [
+    "Parent dispatch only after recovery is terminal/completed, actual owned engine exit verified and exclusive context lease free. This source GO permits CPU tokenization only, not training/GPU/data acceptance.",
+    "The preflight hashes all exported files, including held-reference bytes, for exact file identity; it does not parse held references. Only TRAIN/dev examples are tokenized or native-target-validated.",
+    "The small pre-GPU helper enforces receipt source/manifest/count/context/CPU flags. Independent actual receipt audit must also compare its nested formatter/tokenizer binding fields against these exact pinned records.",
+    "No actual fresh tokenizer receipt, completed corpus or final training protocol was accepted by this source-only review."
+  ],
+  "backend_imports": [],
+  "followUpTasks": []
+}

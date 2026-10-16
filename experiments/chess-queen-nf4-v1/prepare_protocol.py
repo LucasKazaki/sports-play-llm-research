@@ -1,0 +1,85 @@
+"""Create-only metadata freeze. No backend import, model or kernel execution."""
+from datetime import datetime, timezone
+import hashlib
+import importlib.metadata as metadata
+import json
+from pathlib import Path
+import sys
+
+ROOT = Path(__file__).resolve().parents[2]
+HERE = Path(__file__).resolve().parent
+PACKAGE = Path('C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-nf4')
+
+
+def sha(path):
+    value = hashlib.sha256()
+    with path.open('rb') as stream:
+        for block in iter(lambda: stream.read(4*1024**2), b''):
+            value.update(block)
+    return value.hexdigest()
+
+
+def item(path):
+    return {'path': str(path).replace('\\', '/'), 'sha256': sha(ROOT / path)}
+
+
+quantization = {'load_in_4bit': True, 'bnb_4bit_quant_type': 'nf4',
+    'bnb_4bit_use_double_quant': True, 'bnb_4bit_compute_dtype': 'bfloat16',
+    'bnb_4bit_quant_storage': 'uint8', 'llm_int8_skip_modules': ['lm_head']}
+gib = 1024**3
+plan = {
+    'schema': 'chess.queen-nf4-kernel.v1', 'frozen_at': datetime.now(timezone.utc).isoformat(),
+    'implementation_sha256': sha(ROOT / 'scripts/chess_queen_nf4_adapter.py'),
+    'kind': 'Tiny random numerical software diagnostic. No pretrained model or chess capability claim.',
+    'fixture': {'batch_size': 4, 'input_width': 128, 'output_width': 64, 'seed': 4082081,
+        'weight_initialization': 'Seeded CPU N(0,1)/sqrt128 FP32, then nested NF4 uint8 quantization',
+        'input_and_probe': 'Seeded independent CPU N(0,1), copied to cuda0 BF16',
+        'objective': 'mean(output.float()*probe.float()); input-only backward, quantized weights frozen'},
+    'reference': 'Dense BF16 F.linear using the SAME dequantized NF4 weights. This tests kernel/input-gradient coherence; does not require equality to original unquantized weights.',
+    'tolerances': {'forward': {'max_absolute_error': .0625, 'relative_l2_error': .02},
+                   'input_backward': {'max_absolute_error': .03125, 'relative_l2_error': .02}},
+    'additional_checks': ['Finite nonzero reference norm and finite outputs/input gradients',
+        'Exact4x64 output shape', 'uint8 nested quantized storage', 'Quantized weight has no gradient',
+        'BF16 compute dtype', 'cuda0 compute120 and CUDA12.8 runtime'],
+    'quantization': quantization,
+    'device': {'name_contains': 'RTX 5080', 'compute_capability': [12, 0], 'torch_cuda': '12.8'},
+    'python_version': '.'.join(str(x) for x in sys.version_info[:3]),
+    'runtime_versions': {name: metadata.version(name) for name in
+        ('torch', 'transformers', 'bitsandbytes', 'accelerate', 'safetensors')},
+    'package': {'wheel': item(PACKAGE / 'bitsandbytes-0.50.2-py3-none-win_amd64.whl'),
+        'installation_receipt': item(PACKAGE / 'installation.json'),
+        'license': 'MIT; publisher wheel notice retained under package acquisition/notices. Queen component licenses remain separate.'},
+    'publisher': {'model_id': 'princeton-nlp/queen_pawn-8',
+        'model_revision': '5027687fac08b64b2403b13aca5b198e68294fe9',
+        'source_revision': 'c372da22ca75e95c3c79bee8a83c220fc54d0dcb',
+        'asset_manifest': item('experiments/chess-queen-v1/asset-manifest.json'),
+        'source_manifest': item('experiments/chess-queen-v1/source-manifest.json')},
+    'resources': {'start_physical_available_bytes': 6*gib, 'start_commit_headroom_bytes': 10*gib,
+        'start_gpu_free_bytes': 10*gib, 'stop_physical_available_bytes': 4*gib,
+        'stop_commit_headroom_bytes': 4*gib, 'stop_gpu_free_bytes': gib},
+    'resource_sampling': 'Read-only initial/final samples and intermediate samples throttled to1second; cancellation checked at every guard call. Same4GiB commit floor as the BF16 authored run.',
+    'root_only_execution': {'diagnostic_worker_deadline_seconds': 180,
+        'model_worker_deadline_seconds': 270,
+        'worker': 'experiments/chess-queen-v1/gpu_worker.py; unchanged shared GPU lease and owned process lifetime',
+        'model_gate': 'Successful matching source/protocol/runtime tiny diagnostic plus independent source review and root-owned GPU dispatch. No agent GPU call.'},
+    'model_candidate': {'id': 'queen-pawn-8/native-nf4-v1', 'generation_mode': 'no_cache',
+        'precision_profile': 'math_sdpa_fp32_reduction', 'temperature': 0, 'seed': 20260823,
+        'max_new_tokens': 1024, 'maximum_seconds': 240,
+        'decoder': 'Only252 attention/MLP linears nested NF4, explicit cuda0/nooffload, full tied128333 vocabulary stays BF16; verify actual module inventory.',
+        'other_components': 'Stable target-only BF16 loading for frozen LC0 and16bridges; integer policy indices preserved.',
+        'no_forward_input': 'Inherited verified current FEN, validated actual prior FENs and optional selected legal UCI only. No engine/PV/evaluator fields.',
+        'claims': 'Separately versioned local quantization override, not publisher NF4 or published Elo reproduction. No QLoRA trainer and no weight distribution.'},
+    'dependencies': [item(path) for path in ('scripts/chess_queen_adapter.py',
+        'scripts/chess_queen_materialize.py', 'scripts/chess_native_resources.py',
+        'tests/test_chess_queen_nf4_adapter.py', 'experiments/chess-queen-v1/asset-manifest.json',
+        'experiments/chess-queen-v1/source-manifest.json')],
+    'primary_sources': ['https://huggingface.co/docs/bitsandbytes/v0.50.2/en/installation',
+        'https://huggingface.co/docs/transformers/v5.19.0/quantization/bitsandbytes',
+        'https://pypi.org/project/bitsandbytes/0.50.2/',
+        'https://developer.nvidia.com/cuda/gpus', 'https://huggingface.co/princeton-nlp/queen_pawn-8']}
+if plan['package']['wheel']['sha256'] != 'c697963c8fda3dcd0d7ebd9b5211ae4067feef7cd06e0350d4e816a434fe683d':
+    raise ValueError('Wheel differs from authorized publisher hash')
+with (HERE / 'kernel-protocol.json').open('x', encoding='utf-8') as stream:
+    json.dump(plan, stream, indent=2, allow_nan=False); stream.write('\n')
+print(json.dumps({'protocol_sha256': sha(HERE / 'kernel-protocol.json'),
+    'implementation_sha256': plan['implementation_sha256'], 'base_adapter_sha256': plan['dependencies'][0]['sha256']}))

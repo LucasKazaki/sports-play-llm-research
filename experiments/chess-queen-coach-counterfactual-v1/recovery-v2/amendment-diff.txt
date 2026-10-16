@@ -1,0 +1,100 @@
+--- experiments\chess-queen-coach-counterfactual-v1\recovery-v2\preexecution-draft-1\run_cpu_once.py
++++ experiments\chess-queen-coach-counterfactual-v1\recovery-v2\run_cpu_once.py
+@@ -199,8 +199,12 @@
+                 if row['pid'] not in self.rows:self.rows[row['pid']]=row;append(self.journal,{'event':'owned_engine',**row})
+         except Exception as error:
+             self.errors.append(type(error).__name__+': '+str(error))
+-            append(self.journal,{'event':'observation_failure','error':self.errors[-1],'at':utc()})
+-            if not self.cancel.exists():save(self.cancel,{'reason':'Owned PID observation failed; stop this sequence'})
++            try:append(self.journal,{'event':'observation_failure','error':self.errors[-1],'at':utc()})
++            except Exception as journal_error:self.errors.append('PID error journal: '+type(journal_error).__name__+': '+str(journal_error))
++            finally:
++                try:
++                    if not self.cancel.exists():save(self.cancel,{'reason':'Owned PID observation failed; stop this sequence'})
++                except Exception as cancel_error:self.errors.append('Owned cancellation write: '+type(cancel_error).__name__+': '+str(cancel_error))
+     def start(self):
+         self.sample()
+         def watch():
+@@ -255,7 +259,7 @@
+     source_paths=None;science=None;teacher=None;active_lease=None;lease_held=False;proof=None
+     result={'schema':SCHEMA,'status':'failed','error':None,'owned_engine_exit_verified':False,
+         'scientific_protocol_sha256':SCIENCE,'operational_protocol_sha256':expected_sha,
+-        'corpus_manifest_sha256':None,'closed_held_worker':plan['bindings']['closed_held_worker'],
++        'corpus_manifest_sha256':None,'closed_held_worker':plan.get('bindings',{}).get('closed_held_worker') if type(plan.get('bindings')) is dict else None,
+         'teacher_outcomes':{'not_run':3168},'model_calls':0,'GPU_calls':0,'no_retry':True}
+     def cutoff():
+         actual=now() if now else datetime.now(timezone.utc)
+--- experiments\chess-queen-coach-counterfactual-v1\recovery-v2\preexecution-draft-1\test_chess_counterfactual_recovery_v2.py
++++ tests\test_chess_counterfactual_recovery_v2.py
+@@ -249,6 +249,35 @@
+     assert driver.read(marker)['reason'].startswith('Owned PID observation failed')
+ 
+ 
++@pytest.mark.parametrize('change',['missing_closed_binding','null_bindings','list_bindings'])
++def test_malformed_binding_after_intent_always_has_closed_failed_phase_record(case,change):
++    plan=driver.read(case['protocol'])
++    if change=='missing_closed_binding':del plan['bindings']['closed_held_worker']
++    else:plan['bindings']=None if change=='null_bindings' else []
++    case['protocol'].write_text(json.dumps(plan))
++    result=run(case)
++    assert result['status']=='failed' and result['phases']['verify']=='failed'
++    assert result['closed_held_worker'] is None and 'loader' not in case['calls']
++    paths=driver.paths_for(case['out'])
++    assert paths['intent'].exists() and paths['phases'].exists() and paths['closed'].exists()
++    assert driver.read(paths['closed'])==result
++
++
++def test_observation_and_error_logging_failure_still_cancels_owned_attempt_before_teachers(case,monkeypatch):
++    original=driver.append;pids=driver.paths_for(case['out'])['pids']
++    def append(path,row):
++        if path==pids:raise OSError('Fake PID journal write failure')
++        return original(path,row)
++    monkeypatch.setattr(driver,'append',append)
++    monkeypatch.setattr(driver,'owned_children',lambda parent,image:[{'pid':90001,'parent_pid':parent,'image':image}])
++    case['kwargs']['observer_factory']=driver.EngineObserver
++    result=run(case)
++    assert result['status']=='failed' and 'teachers' not in case['calls'] and 'export' not in case['calls']
++    assert result['teacher_outcomes']=={'not_run':3168}
++    assert any('journal write failure' in error for error in result['pid_observation_errors'])
++    assert driver.read(case['out']/'CANCEL')['reason'].startswith('Owned PID observation failed')
++
++
+ def test_cpu_route_has_no_scientific_model_engine_or_process_imports(case,monkeypatch):
+     original=builtins.__import__
+     def imports(name,*args,**kwargs):
+--- experiments\chess-queen-coach-counterfactual-v1\recovery-v2\preexecution-draft-1\protocol.json
++++ experiments\chess-queen-coach-counterfactual-v1\recovery-v2\protocol.json
+@@ -1,13 +1,13 @@
+ {
+   "schema": "chess.counterfactual-cpu-recovery.v2",
+-  "frozen_at": "2026-10-16T10:23:33.827288+00:00",
+-  "driver_sha256": "c12dd5ae65375f95f307bd88fc0b1fd7e37f21e55dc4ac80f6d76162aa2b77ae",
++  "frozen_at": "2026-10-16T10:28:11.694725+00:00",
++  "driver_sha256": "2e818e86b1d7af254138ed31f9a6da7761863aa365e12c675e5821bd0543760e",
+   "status": "source_review_candidate_not_execution_authorization",
+   "scientific_protocol_sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a",
+   "bindings": {
+     "driver": {
+       "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\run_cpu_once.py",
+-      "sha256": "c12dd5ae65375f95f307bd88fc0b1fd7e37f21e55dc4ac80f6d76162aa2b77ae"
++      "sha256": "2e818e86b1d7af254138ed31f9a6da7761863aa365e12c675e5821bd0543760e"
+     },
+     "builder": {
+       "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\build_protocol.py",
+--- experiments\chess-queen-coach-counterfactual-v1\recovery-v2\preexecution-draft-1\README.md
++++ experiments\chess-queen-coach-counterfactual-v1\recovery-v2\README.md
+@@ -70,6 +70,13 @@
+ The latest 11:15 UTC start rule still applies independently to each later GPU
+ phase. No source-data, corpus or current held-quality metric changes here.
+ 
+-The software receipt records 31 CPU tests with authored fake files/functions,
++The software receipt records 35 CPU tests with authored fake files/functions,
+ resource samples, process observations and clocks. These prove bounded software
+ behavior, not real intake, engine lifecycle, chess correctness or model quality.
++
++`preexecution-draft-1/` preserves the exact previous unexecuted driver, operational
++protocol, tests, receipt and full bundles. The amended driver also closes a
++failed phase after an intent when a binding is malformed. PID observation or
++logging failure still attempts this request's cancellation even if its error
++journal cannot be written; any cancellation-write error is retained and export
++remains blocked. These repairs change no scientific source or reserve.

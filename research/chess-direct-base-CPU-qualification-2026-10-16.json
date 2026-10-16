@@ -1,0 +1,57 @@
+{
+  "schema": "chess.direct-base.CPU-qualification.public-metadata.v1",
+  "recorded_at_utc": "2026-10-16T15:15:57.766678+00:00",
+  "status": "CPU_engineering_only",
+  "worker_source_sha256": "fe4ce0abb0f6be934f2b78681115ec0aa0c9c85e2ef54a6955dc2e6778103ae8",
+  "source_checks": {
+    "worker_authored_and_independent": 32,
+    "observer_amendment_authored_and_independent": 67
+  },
+  "environment_parity": {
+    "planned": 2,
+    "completed": 2,
+    "exact12field_environment_equality": true,
+    "protocol_sha256": "c16d4f57d36cfb65764a1e8f987893febfb5504786ecd8e955b17485b1267608",
+    "result_sha256": "502978d0f2b979486f68b56eb9cefe5379f6e5e7b47225fa11ae1e826b0c0c77",
+    "candidate_worker_sha256": "dd833838ea7d98bf2cfeb60bb2683cf0b987a7b0a1541a7581d3c545ce98f7e8",
+    "audit_sha256": "fb347e00509dbc6d0bbc61fd0236632020dc90c22f0f407b333f60a8ac815335",
+    "root_seconds": 0.5620000000053551
+  },
+  "observer": {
+    "planned_cases": 4,
+    "completed_cases": 4,
+    "sampler_calls": 12,
+    "controlled_stale_attempts": 3,
+    "controlled_actual87_ABSENT": 3,
+    "natural_actual87_ABSENT": 1,
+    "fresh_absence_observations": 8,
+    "verified_query_process_images": 4,
+    "retained_unknown_image_EXIT_transients": 1,
+    "protocol_sha256": "c7952c2ebcd6e8a99957d8623c39478213577d1aae9694cc0dae60eb2086de7c",
+    "result_sha256": "d72ba3d40add33638ccafa84274403430930a17436eff9b7c6d5a6afc336e617",
+    "worker_sha256": "44c81fca6a1814ba6816a6790404639a959ed6702ca26291f05aba567171063d",
+    "audit_sha256": "6db2f4290a1d3079461507524b8dcd037bacc82232f7c529d06a6ddd67fbe928",
+    "probe_seconds": 1.9849999999860302,
+    "model_calls": 0,
+    "engine_calls": 0,
+    "CUDA_initializations": 0,
+    "Torch_imported": false
+  },
+  "ownership": "Actual direct child sole explicit creator-job member before GO; complete job empty and retained direct child EXIT at closure. Baseline boundaries and root known-PID/lease observations separately attributed.",
+  "limits": [
+    "Object-close flag means original.close returned/object None; no independent Win32CloseHandle-success attestation.",
+    "ABSENT is no identity, retained EXIT or termination authority. Twelve sampler calls are not twelve individually observed process identities.",
+    "Single authored environment pair/four-case observer; no broad OS reliability, parent-death behavior, model numeric parity or chess quality claim.",
+    "Private actual receipts remain local. Public source plans retain workstation paths and are historical create-once plans, not portable replay instructions."
+  ],
+  "as_of_recording": {
+    "fresh_direct_warm8_and_cold2": "plans_frozen_actual_not_run",
+    "scientific_TRAIN192": "not_run",
+    "fixed_HELD96": "not_run",
+    "current16_held_model_calls": 0,
+    "all512_reserve_excluded_from_TRAIN": true,
+    "trained_tutor_profile_enabled": false,
+    "coaching_goal_achieved": false,
+    "formal_UMD_or_coach_promotion": false
+  }
+}

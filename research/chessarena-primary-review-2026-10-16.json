@@ -1,0 +1,16 @@
+{
+  "schema": "chess.primary-source-selected-review.v1",
+  "observed_at_utc": "2026-10-16T13:54:02.975095+00:00",
+  "title": "ChessArena: A Chess Testbed for Evaluating Strategic Reasoning Capabilities of Large Language Models",
+  "source_url": "https://arxiv.org/html/2509.24239v4",
+  "HTTP_status": 200,
+  "resolved_url": "https://arxiv.org/html/2509.24239v4",
+  "raw_bytes": 776761,
+  "raw_sha256": "87b9e7ce4c494deff3bd94cb1714fe70eee34a18ddb16e0f5ef31f4695b6b577",
+  "raw_body_private_work_path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\chessarena-primary-refresh\\arxiv-v4.html",
+  "reading_depth": "Abstract/version history plus selected methods3.1-3.5,experimentalsetup5.1,posttrainingAppendixC.1-C.3,constructionAppendixD,E.7; not entirepaperproof/replication.",
+  "primary_metadata": "arXiv2509.24239v4 revised23April2026; firstsubmitted29September2025.",
+  "note": "Official authorhostedPDFfetch timedout inwebtool; arXivHTMLfallbacksucceeded. Code/datahaveNOTbeenacquiredorused.",
+  "no_model_or_engine_calls": true,
+  "scope": "Researchdesigninputonly; no localqualityresult or institutionalapproval."
+}

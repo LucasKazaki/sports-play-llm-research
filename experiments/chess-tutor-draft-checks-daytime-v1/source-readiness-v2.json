@@ -1,0 +1,247 @@
+{
+  "schema": "chess.daytime.tutor-source-readiness.v2",
+  "status": "reviewed_disk_source_and_existing_service_provenance_ready_for_plan_review_only",
+  "verified_at_utc": "2026-10-16T13:34:43.529956+00:00",
+  "source_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tutor-draft-checks-v1-source-review.json",
+    "bytes": 10833,
+    "sha256": "85e0dff0eaf0bb8586bb8d86760abe802783991437da6344fa9f02d50d679790"
+  },
+  "seven_path_source_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\manifest.json",
+    "bytes": 2703,
+    "sha256": "d0bbfbe868277299231b269e9712ff10ae4700ffd87da0979017a1c0c3483960"
+  },
+  "source_bundle_index": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\bundle-index.json",
+    "bytes": 3189,
+    "sha256": "ce411995e9db509d0675188513d93ee51e2a7d3e4554a60c3aed7542fe7ed9ff"
+  },
+  "exact_current_sources": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\draft_checks_v1.py",
+      "bytes": 10253,
+      "sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\coaching_jobs.py",
+      "bytes": 9846,
+      "sha256": "bf8b647d6b08592429a14ca614d0dedcc9dde3b26392af12af3a64a77013fe97"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.js",
+      "bytes": 14755,
+      "sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\index.html",
+      "bytes": 6961,
+      "sha256": "b12f16e9b2b84bee9fcd50b9817cbc7e8adbbbd8a4a09e5b79dbf38683368336"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_tutor_draft_checks_v1.py",
+      "bytes": 12492,
+      "sha256": "a1e9e233ba4cf16d7a5cabb0d6f828e25e917681decd53acfd5e7df24428cced"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_tutor_draft_checks_ui_v1.py",
+      "bytes": 6554,
+      "sha256": "d56c6eb5545fa6554c5090655b71d627632f10df78184f877a5982cdb722137e"
+    }
+  ],
+  "verified_unchanged_boundary_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\queen_runtime.py",
+      "bytes": 10709,
+      "sha256": "8295ada0e368ff5810ee81b977f5dc61bc51a759e821459b3111441145ddc740"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\server.py",
+      "bytes": 28830,
+      "sha256": "d3b88e9bfd184038da66c1ea7858be9b32647dd53e6974ea7a86456c6e58e2a5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\app.js",
+      "bytes": 16841,
+      "sha256": "20667639d629412e31f97632da7a544e78a07fa242fb7b88fd863a2fd567fdda"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    }
+  ],
+  "original_manual_qualification": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\queen-runtime.json",
+    "bytes": 4791,
+    "sha256": "0a17fcaa72bef97eec28e4bec0e245c4c42a28219dcf5da6d8c06f807278188d"
+  },
+  "qualified_runtime_bindings_rehashed_metadata_only": [
+    {
+      "role": "worker",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "role": "adapter",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_nf4_adapter_v2.py",
+      "bytes": 21493,
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "role": "base_adapter",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "role": "kernel_protocol",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\kernel-protocol-v2.json",
+      "bytes": 8418,
+      "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+    },
+    {
+      "role": "kernel_receipt",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\kernel-2.json",
+      "bytes": 3673,
+      "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+    },
+    {
+      "role": "kernel_worker",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\kernel-worker-2.json",
+      "bytes": 589,
+      "sha256": "82a93a694b1c81a261a10e99c872de41f1719d14fbdd603587dbc55122413f05"
+    },
+    {
+      "role": "parity_source",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\parity_no_cache_v2.py",
+      "bytes": 9874,
+      "sha256": "5387c50b5aa9e2c1479bc2a40ddd2d28a72016b40763bf7a3ea04abed611dca9"
+    },
+    {
+      "role": "parity_protocol",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\parity-protocol-v3.json",
+      "bytes": 4282,
+      "sha256": "6287196f26689aedcb5d8a314330ed26ff96cff5569e7f4b80073ebe3babe244"
+    },
+    {
+      "role": "parity_receipt",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\parity-2.json",
+      "bytes": 15731,
+      "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4"
+    },
+    {
+      "role": "parity_worker",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\parity-worker-2.json",
+      "bytes": 606,
+      "sha256": "28e55981247df3b381845c831efb02b180a18992531ceda54606d2c3031a5999"
+    },
+    {
+      "role": "asset_manifest",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\asset-manifest.json",
+      "bytes": 4531,
+      "sha256": "dc909eca4d0e0b17b2b2d188f55e461c18121516d62d1fc8062fd33c81620ad3"
+    },
+    {
+      "role": "source_manifest",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\source-manifest.json",
+      "bytes": 1758,
+      "sha256": "22ef4c5ecf7f7f79848eb3b261f74cee96296614ae99e38d3f16bdca06da08ff"
+    }
+  ],
+  "python_version": "3.12.2",
+  "runtime_versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "bitsandbytes": "0.50.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0"
+  },
+  "resources_unchanged": {
+    "start_physical_available_bytes": 6442450944,
+    "start_commit_headroom_bytes": 10737418240,
+    "start_gpu_free_bytes": 10737418240,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 4294967296,
+    "stop_gpu_free_bytes": 1073741824
+  },
+  "daytime_authority": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\resume-authority.json",
+    "bytes": 902,
+    "sha256": "330fa0c6ea5718604175bf8f650b85033ed84ea07de6cdb786825479915fc8c5"
+  },
+  "initial_context_preflight": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\initial-preflight.json",
+    "bytes": 857,
+    "sha256": "719d1fd35c7c6b99abe8122439b32bb8b2f906a34fc247194a29daf2efb3f339"
+  },
+  "old_unadmitted_smoke": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\draft-checks-authored-ui-smoke-unadmitted.json",
+    "bytes": 1285,
+    "sha256": "c50985176940188fb669b6d8c7b6601c9f2a9ef810a4b4a0dc4ef24f3ded082e"
+  },
+  "old_unadmitted_preparation_source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\prepare_draft_checks_ui_smoke.py",
+    "bytes": 3558,
+    "sha256": "7229738a1c7610a832c672c57d45dd1de83596cd3885f517bb062db719e1e886"
+  },
+  "exact_input_retention_supported_by_existing_source": true,
+  "retention_basis": "coaching_jobs.start retains request_packet and hashes actual input.json after writing but before starting _watch; _draft_checks passes the captured input SHA and exact raw bytes to audit_bytes and saves a separate create-only record.",
+  "loaded_server_identity": {
+    "mode": "retain_existing_reviewed_service_no_restart",
+    "pid": 4344,
+    "exec_session": 59824,
+    "creation_utc": "2026-10-16T12:03:54.8323420Z",
+    "evidence": "Original-start provenance plus unchanged current disk files and actual process metadata.",
+    "limit": "Current disk hashes and process provenance do not independently measure in-memory Python bytecode. No claim of a fresh restart or in-memory byte attestation.",
+    "required_new_evidence": "Actual new-controller response, captured file-byte input hash and separate checker artifact after the one prospective UI request."
+  },
+  "old_strict_input_hash_failure": "Retained historical failure. Frozen source establishes canonical-packet hash semantics, but this metadata check does not retrospectively pass or reconstruct the old input-file binding.",
+  "scope": {
+    "light_metadata_hash_and_package_version_reads_only": true,
+    "weights_hashed_or_loaded": false,
+    "model_engine_GPU_HTTP_browser_calls": 0,
+    "resource_sampling_or_process_control": 0,
+    "source_edits": 0,
+    "runtime_admission_or_model_quality_claim": false
+  },
+  "supersedes_unexecuted_restart_assumption": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\source-readiness.json",
+    "bytes": 11468,
+    "sha256": "128060e3811a85ee49c8a04e1217cdbe5dc26d394398b87514cb44eb412614d1"
+  },
+  "existing_service_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-existing-service-manifest.json",
+    "bytes": 5559,
+    "sha256": "911cd367850689b08d11d5bcc539366733befb397f52dcb1b38dffdbc845c1e7"
+  },
+  "forced_restart_rejection": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\forced-restart-rejection.json",
+    "bytes": 1250,
+    "sha256": "e4227c857562ad66625279892b976c9078abe50c4c9e892a41b704e7ea435b86"
+  },
+  "source_and_runtime_changes": false,
+  "restart_or_alternate_stop_authorized_by_this_plan": false,
+  "actual_new_request_or_checker_execution": false
+}

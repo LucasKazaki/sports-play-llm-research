@@ -1,0 +1,842 @@
+{
+  "schema": "chess.independent-encoder-generalization-cohort-review.v1",
+  "verdict": "PASS: exact64pair/128move cohort and source provenance; no model evaluation authorized by this receipt",
+  "reviewed_at_utc": "2026-10-16T09:35:42.590703+00:00",
+  "protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\protocol-v2.json",
+    "bytes": 8594,
+    "sha256": "476fff21b7697e0e847b6e8c859e599bb448473589eb94a8652501f6b4f99273"
+  },
+  "closed": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\closed.json",
+    "bytes": 1369,
+    "sha256": "a275762d265c4934ec8c946e9003bdfca36ff7d1cd213ed3ad00c68575f54279"
+  },
+  "dataset": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\dataset.json",
+    "bytes": 136060,
+    "sha256": "50a2046969610c94e42d87a6e70c2689016c78b620134800cfc5fa8bf28b9dbb"
+  },
+  "inputs": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\inputs.json",
+    "bytes": 21343,
+    "sha256": "2c3ed07eba8d8fe9d92aa5f38aa7c39859f1478e671d811a1e07827c55b0e519"
+  },
+  "labels": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\labels.json",
+    "bytes": 12371,
+    "sha256": "4410de98c8bf713bd222e05f332c70939a8c76a63e05151560bd20de3633483f"
+  },
+  "pair_count": 64,
+  "move_count": 128,
+  "positive_count": 64,
+  "negative_count": 64,
+  "allocations": {
+    "pawn_mover": 16,
+    "double_check": 16,
+    "king_mover": 16,
+    "remaining_discovered_check": 16
+  },
+  "positive_overlapping_flags": {
+    "king_mover": 16,
+    "pawn_mover": 16,
+    "double_check": 16,
+    "discovered_check": 48
+  },
+  "positive_mover_types": {
+    "pawn": 16,
+    "knight": 14,
+    "bishop": 12,
+    "king": 16,
+    "rook": 6
+  },
+  "all64_original_Parquet_locations_exact": true,
+  "setup_only_used": true,
+  "answers_or_themes_not_interpreted": true,
+  "all128_legal_move_rule_labels_exact": true,
+  "all64_deterministic_pair_choices_at_retained_roots_exact": true,
+  "historical_exclusion_sizes": {
+    "games": 109032,
+    "board_keys": 250895
+  },
+  "fresh_games": 64,
+  "fresh_path_keys": 256,
+  "reserved_final": {
+    "games": 109096,
+    "board_keys": 251151
+  },
+  "source_prefix_consumed": 172643,
+  "source_row_cap": 500000,
+  "all64planned_slots_constructed": true,
+  "source_shortages": 0,
+  "source_locations": [
+    {
+      "source_ordinal": 108209,
+      "row_group": 0,
+      "row_in_group": 108209,
+      "game_id": "957GR23H",
+      "allocation": "pawn_mover",
+      "slot": 1,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 108233,
+      "row_group": 0,
+      "row_in_group": 108233,
+      "game_id": "sGa1DD3t",
+      "allocation": "pawn_mover",
+      "slot": 2,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 108426,
+      "row_group": 0,
+      "row_in_group": 108426,
+      "game_id": "1cOJ0jtC",
+      "allocation": "pawn_mover",
+      "slot": 3,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 108660,
+      "row_group": 0,
+      "row_in_group": 108660,
+      "game_id": "emEwJf9h",
+      "allocation": "pawn_mover",
+      "slot": 4,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 108779,
+      "row_group": 0,
+      "row_in_group": 108779,
+      "game_id": "mzP08vaB",
+      "allocation": "pawn_mover",
+      "slot": 5,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 108917,
+      "row_group": 0,
+      "row_in_group": 108917,
+      "game_id": "51gjJ7VJ",
+      "allocation": "pawn_mover",
+      "slot": 6,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 108974,
+      "row_group": 0,
+      "row_in_group": 108974,
+      "game_id": "nyZXJubc",
+      "allocation": "double_check",
+      "slot": 1,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109119,
+      "row_group": 0,
+      "row_in_group": 109119,
+      "game_id": "K6FmW0Wx",
+      "allocation": "pawn_mover",
+      "slot": 7,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109195,
+      "row_group": 0,
+      "row_in_group": 109195,
+      "game_id": "3ecQ4lbx",
+      "allocation": "pawn_mover",
+      "slot": 8,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109293,
+      "row_group": 0,
+      "row_in_group": 109293,
+      "game_id": "bf6HjYkx",
+      "allocation": "pawn_mover",
+      "slot": 9,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109442,
+      "row_group": 0,
+      "row_in_group": 109442,
+      "game_id": "fP63uZhZ",
+      "allocation": "pawn_mover",
+      "slot": 10,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109461,
+      "row_group": 0,
+      "row_in_group": 109461,
+      "game_id": "tMX9cShY",
+      "allocation": "double_check",
+      "slot": 2,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109568,
+      "row_group": 0,
+      "row_in_group": 109568,
+      "game_id": "RV8C8aZp",
+      "allocation": "pawn_mover",
+      "slot": 11,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109572,
+      "row_group": 0,
+      "row_in_group": 109572,
+      "game_id": "bRCaaltj",
+      "allocation": "pawn_mover",
+      "slot": 12,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109612,
+      "row_group": 0,
+      "row_in_group": 109612,
+      "game_id": "uDbW48YZ",
+      "allocation": "pawn_mover",
+      "slot": 13,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109682,
+      "row_group": 0,
+      "row_in_group": 109682,
+      "game_id": "dW7tRWTH",
+      "allocation": "king_mover",
+      "slot": 1,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109722,
+      "row_group": 0,
+      "row_in_group": 109722,
+      "game_id": "rC0nKoMk",
+      "allocation": "pawn_mover",
+      "slot": 14,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 109870,
+      "row_group": 0,
+      "row_in_group": 109870,
+      "game_id": "2yw808zO",
+      "allocation": "pawn_mover",
+      "slot": 15,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 110148,
+      "row_group": 0,
+      "row_in_group": 110148,
+      "game_id": "LI0JAu1f",
+      "allocation": "pawn_mover",
+      "slot": 16,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 110853,
+      "row_group": 0,
+      "row_in_group": 110853,
+      "game_id": "gqIB63KW",
+      "allocation": "remaining_discovered_check",
+      "slot": 1,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 111009,
+      "row_group": 0,
+      "row_in_group": 111009,
+      "game_id": "sKWfU0HQ",
+      "allocation": "double_check",
+      "slot": 3,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 111259,
+      "row_group": 0,
+      "row_in_group": 111259,
+      "game_id": "QA75gwY2",
+      "allocation": "double_check",
+      "slot": 4,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 111361,
+      "row_group": 0,
+      "row_in_group": 111361,
+      "game_id": "7QXKcDiK",
+      "allocation": "double_check",
+      "slot": 5,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 111476,
+      "row_group": 0,
+      "row_in_group": 111476,
+      "game_id": "O3GpYvld",
+      "allocation": "remaining_discovered_check",
+      "slot": 2,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 112868,
+      "row_group": 0,
+      "row_in_group": 112868,
+      "game_id": "HDjmecUe",
+      "allocation": "double_check",
+      "slot": 6,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 113225,
+      "row_group": 0,
+      "row_in_group": 113225,
+      "game_id": "cDnJI1pf",
+      "allocation": "king_mover",
+      "slot": 2,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 113541,
+      "row_group": 0,
+      "row_in_group": 113541,
+      "game_id": "A652dgRP",
+      "allocation": "king_mover",
+      "slot": 3,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 113633,
+      "row_group": 0,
+      "row_in_group": 113633,
+      "game_id": "BYuuHh6C",
+      "allocation": "double_check",
+      "slot": 7,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 113696,
+      "row_group": 0,
+      "row_in_group": 113696,
+      "game_id": "jhOOjyrZ",
+      "allocation": "double_check",
+      "slot": 8,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 113912,
+      "row_group": 0,
+      "row_in_group": 113912,
+      "game_id": "cDdHfta1",
+      "allocation": "remaining_discovered_check",
+      "slot": 3,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 114569,
+      "row_group": 0,
+      "row_in_group": 114569,
+      "game_id": "GD3avCCy",
+      "allocation": "double_check",
+      "slot": 9,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 114689,
+      "row_group": 0,
+      "row_in_group": 114689,
+      "game_id": "lpVMhdpx",
+      "allocation": "remaining_discovered_check",
+      "slot": 4,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 115945,
+      "row_group": 0,
+      "row_in_group": 115945,
+      "game_id": "Gh1pc06X",
+      "allocation": "remaining_discovered_check",
+      "slot": 5,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 116925,
+      "row_group": 0,
+      "row_in_group": 116925,
+      "game_id": "3bCumO9r",
+      "allocation": "remaining_discovered_check",
+      "slot": 6,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 117978,
+      "row_group": 0,
+      "row_in_group": 117978,
+      "game_id": "sNaiNS5r",
+      "allocation": "double_check",
+      "slot": 10,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 121796,
+      "row_group": 0,
+      "row_in_group": 121796,
+      "game_id": "yZHokgpD",
+      "allocation": "double_check",
+      "slot": 11,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 121860,
+      "row_group": 0,
+      "row_in_group": 121860,
+      "game_id": "uDRwsIVo",
+      "allocation": "remaining_discovered_check",
+      "slot": 7,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 121957,
+      "row_group": 0,
+      "row_in_group": 121957,
+      "game_id": "h7N2zhCE",
+      "allocation": "remaining_discovered_check",
+      "slot": 8,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 122767,
+      "row_group": 0,
+      "row_in_group": 122767,
+      "game_id": "FHAEM7tQ",
+      "allocation": "double_check",
+      "slot": 12,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 123142,
+      "row_group": 0,
+      "row_in_group": 123142,
+      "game_id": "CMi9HEXv",
+      "allocation": "remaining_discovered_check",
+      "slot": 9,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 123513,
+      "row_group": 0,
+      "row_in_group": 123513,
+      "game_id": "kGZ5C1D8",
+      "allocation": "double_check",
+      "slot": 13,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 123892,
+      "row_group": 0,
+      "row_in_group": 123892,
+      "game_id": "uue4J9Ek",
+      "allocation": "king_mover",
+      "slot": 4,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 124461,
+      "row_group": 0,
+      "row_in_group": 124461,
+      "game_id": "GmKBc5s0",
+      "allocation": "double_check",
+      "slot": 14,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 124552,
+      "row_group": 0,
+      "row_in_group": 124552,
+      "game_id": "k5b1TgYg",
+      "allocation": "remaining_discovered_check",
+      "slot": 10,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 125115,
+      "row_group": 0,
+      "row_in_group": 125115,
+      "game_id": "k5lCUrOp",
+      "allocation": "remaining_discovered_check",
+      "slot": 11,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 125138,
+      "row_group": 0,
+      "row_in_group": 125138,
+      "game_id": "ABWFMCxL",
+      "allocation": "king_mover",
+      "slot": 5,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 125316,
+      "row_group": 0,
+      "row_in_group": 125316,
+      "game_id": "qEPDSf4T",
+      "allocation": "double_check",
+      "slot": 15,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 125476,
+      "row_group": 0,
+      "row_in_group": 125476,
+      "game_id": "2yxUGha0",
+      "allocation": "double_check",
+      "slot": 16,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 126140,
+      "row_group": 0,
+      "row_in_group": 126140,
+      "game_id": "62mxzO83",
+      "allocation": "remaining_discovered_check",
+      "slot": 12,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 126946,
+      "row_group": 0,
+      "row_in_group": 126946,
+      "game_id": "6GYQVsGk",
+      "allocation": "remaining_discovered_check",
+      "slot": 13,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 127292,
+      "row_group": 0,
+      "row_in_group": 127292,
+      "game_id": "Q4f4soGD",
+      "allocation": "remaining_discovered_check",
+      "slot": 14,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 127342,
+      "row_group": 0,
+      "row_in_group": 127342,
+      "game_id": "6UT6pjBQ",
+      "allocation": "king_mover",
+      "slot": 6,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 127423,
+      "row_group": 0,
+      "row_in_group": 127423,
+      "game_id": "X0Dh2EVS",
+      "allocation": "remaining_discovered_check",
+      "slot": 15,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 127878,
+      "row_group": 0,
+      "row_in_group": 127878,
+      "game_id": "2BnPGJCX",
+      "allocation": "remaining_discovered_check",
+      "slot": 16,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 129097,
+      "row_group": 0,
+      "row_in_group": 129097,
+      "game_id": "JiU7ugOR",
+      "allocation": "king_mover",
+      "slot": 7,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 131231,
+      "row_group": 0,
+      "row_in_group": 131231,
+      "game_id": "B8q2BVkQ",
+      "allocation": "king_mover",
+      "slot": 8,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 131534,
+      "row_group": 0,
+      "row_in_group": 131534,
+      "game_id": "oSkqfhPo",
+      "allocation": "king_mover",
+      "slot": 9,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 133515,
+      "row_group": 0,
+      "row_in_group": 133515,
+      "game_id": "57l042K2",
+      "allocation": "king_mover",
+      "slot": 10,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 135885,
+      "row_group": 0,
+      "row_in_group": 135885,
+      "game_id": "IRhRVQ5V",
+      "allocation": "king_mover",
+      "slot": 11,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 142760,
+      "row_group": 0,
+      "row_in_group": 142760,
+      "game_id": "CsYp0kim",
+      "allocation": "king_mover",
+      "slot": 12,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 143336,
+      "row_group": 0,
+      "row_in_group": 143336,
+      "game_id": "l7P2CW4A",
+      "allocation": "king_mover",
+      "slot": 13,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 159016,
+      "row_group": 0,
+      "row_in_group": 159016,
+      "game_id": "KiJOeyxw",
+      "allocation": "king_mover",
+      "slot": 14,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 166156,
+      "row_group": 0,
+      "row_in_group": 166156,
+      "game_id": "QAWksfno",
+      "allocation": "king_mover",
+      "slot": 15,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    },
+    {
+      "source_ordinal": 172642,
+      "row_group": 0,
+      "row_in_group": 172642,
+      "game_id": "BeNKKcjf",
+      "allocation": "king_mover",
+      "slot": 16,
+      "source_exact": true,
+      "pair_rule_and_tie_exact": true
+    }
+  ],
+  "resources": {
+    "samples": 127,
+    "startup_before_source_at_minus1": true,
+    "all_observed_floors_pass": true,
+    "minimum_commit_headroom_bytes": 16336240640,
+    "minimum_physical_available_bytes": 11665821696
+  },
+  "scope_limits": [
+    "Selected source locations and pair decisions independently checked; did not re-run a fresh intake or independently reselect the entire rejected prefix.",
+    "Lasttwo allocations use a different piece instance for negative, not a same-origin contrast.",
+    "Targeted balanced tactical64pairs do not estimate prevalence, general chess strength or coaching quality.",
+    "Frozen registered-history novelty cannot establish unknown publisher pretraining or future-unregistered-path absence.",
+    "No model/feature extraction/scoring was performed; root-only evaluation needs a separately frozen, reviewed protocol."
+  ],
+  "closed_file_seals": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\attempt.json",
+      "bytes": 208,
+      "sha256": "b8daa7acd9456077820fd580796a5bc16051d86fd43497a4cb387984a0859b3f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\closed.json",
+      "bytes": 1369,
+      "sha256": "a275762d265c4934ec8c946e9003bdfca36ff7d1cd213ed3ad00c68575f54279"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\cpu-resources.jsonl",
+      "bytes": 18919,
+      "sha256": "d26ffe9ace379041560e332f0aee03963b32fc34ddec5a43fb63422126c2b343"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\dataset.json",
+      "bytes": 136060,
+      "sha256": "50a2046969610c94e42d87a6e70c2689016c78b620134800cfc5fa8bf28b9dbb"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\initial-exclusions.json",
+      "bytes": 15807045,
+      "sha256": "8e48707caa462ff1d05cabcc7d1c7421cf9805aeb043177f5c062976481fc21f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\inputs.json",
+      "bytes": 21343,
+      "sha256": "2c3ed07eba8d8fe9d92aa5f38aa7c39859f1478e671d811a1e07827c55b0e519"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\labels.json",
+      "bytes": 12371,
+      "sha256": "4410de98c8bf713bd222e05f332c70939a8c76a63e05151560bd20de3633483f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\reserved-exclusions.json",
+      "bytes": 15821334,
+      "sha256": "5f6f8b97a0da0aeafa7f705b076d972dcc60b21871edea684b5218e2756a3f8b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\selected-source-journal.jsonl",
+      "bytes": 83697,
+      "sha256": "aa1b0a566c6c14ca2bb7a9d6664449bbbf9b3c3f3c784e8d3f708fc940288eee"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\00-chess_encoder_check_generalization_v1.py",
+      "bytes": 17873,
+      "sha256": "5f9e1b34a575aef39419adfba0851f215492f4608617949013e465018e5595bf"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\01-protocol-v2.json",
+      "bytes": 8594,
+      "sha256": "476fff21b7697e0e847b6e8c859e599bb448473589eb94a8652501f6b4f99273"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\02-chess_encoder_check_v1.py",
+      "bytes": 36260,
+      "sha256": "7914468174696ef17076792be6c0d280d9eb24001aa8833b4e76563c7b4072a3"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\03-chess_board_fact_core.py",
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\04-chess_check_balanced_v2.py",
+      "bytes": 27583,
+      "sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\05-chess_fact_sft_intake.py",
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\06-chess_fact_sft_common.py",
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\07-chess_queen_materialize.py",
+      "bytes": 1273,
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\08-test_chess_encoder_check_generalization_v1.py",
+      "bytes": 8057,
+      "sha256": "1ec26412f80a507f79b6dfd93f90451a67730c6bc4b4e4b736f3c58775b46239"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\09-exclusion-preflight.json",
+      "bytes": 678,
+      "sha256": "0ba4e26c57c0cd93a186722e8a52af0892f78b8490467758348256dbf32876fc"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-v1\\sources\\manifest.json",
+      "bytes": 2694,
+      "sha256": "aba09f8f0efdf1dcc2e1116b0bd3b2830576f8559b7ff192ac48aafac50d77cb"
+    }
+  ],
+  "all_files_unchanged_during_review": 20,
+  "blocking_findings": [],
+  "auditor": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\audit-encoder-generalization-cohort-v1.py",
+    "bytes": 14078,
+    "sha256": "025bbd2d1badf7b23683480dabb2e671f1eff8a7b9828fb361d2b3e125d8d6ac"
+  },
+  "new_intake_runs": 0,
+  "new_model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "coach_teacher_or_held_reference_content_read": false
+}

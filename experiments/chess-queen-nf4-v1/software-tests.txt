@@ -1,0 +1,16 @@
+Pure CPU verification, 2026-10-16, before pretrained NF4 calls
+
+.venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_nf4_adapter.py tests/test_chess_queen_nf4_parity.py -q
+30 passed in0.36s
+
+Fresh-process verify_plan(parity-protocol.json, kernel-1.json) passed every frozen binding, successful exact tiny diagnostic and completed exact worker; torch and bitsandbytes absent from sys.modules.
+
+Candidate source32899086467e42a8d0988f05ce6acd9416216a6e6c83a502cce25b3cc28970fc
+Kernel protocolf2e41e4e10889f791b11c149b636a5dcc18e724d37e5b2981eb7117a0249df6c
+Parity source1d49dd77ab8d171366c945b9930f78f0dbb0f236e97ac99ce32f57c23e86ef16
+Parity protocola8f9154305482dd8b5d07d0d55dda53574a0702efbaa14341c5696ee7efbb882
+Parity test5179e3492504e6de37e61f800f419a5df52d8743328faeba141bc60bf7eace04
+
+Root-owned tiny CUDA diagnostic completed separately: kernel-1.json SHA495f8d04d60aeb5f3d89566bb0d7a95f9ad41cd4e8cfa10a9f8481f7113034d8
+Root worker completed exit0 with child exited before lease release: kernel-worker-1.json SHA8de2ed77b60c770eb0a4b476a279b43ec3bdb5a47e020a890e0f99a2e85f58de
+These CPU checks and tiny random CUDA diagnostic do not measure pretrained chess capability.

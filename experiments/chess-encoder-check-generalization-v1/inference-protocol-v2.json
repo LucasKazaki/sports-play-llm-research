@@ -1,0 +1,182 @@
+{
+  "schema": "chess.encoder-check-generalization-inference.v2",
+  "frozen_at": "2026-10-16T09:58:55.885053+00:00",
+  "implementation_sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0",
+  "intake_protocol": {
+    "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/experiments/chess-encoder-check-generalization-v1/protocol-v2.json",
+    "sha256": "476fff21b7697e0e847b6e8c859e599bb448473589eb94a8652501f6b4f99273"
+  },
+  "actual_cohort_audit": {
+    "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/experiments/chess-encoder-check-generalization-v1/actual-cohort-review.json",
+    "sha256": "cf0a77a25aa5e3dd20ea32feb04e19ec98b8784447b7b07e990d39863a9bde56"
+  },
+  "independent_audit_origin": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\encoder-generalization-cohort-v1-closed-review.json",
+    "sha256": "cf0a77a25aa5e3dd20ea32feb04e19ec98b8784447b7b07e990d39863a9bde56"
+  },
+  "cohort": {
+    "closed": {
+      "path": "data/private/chess-encoder-check-generalization-v1/closed.json",
+      "sha256": "a275762d265c4934ec8c946e9003bdfca36ff7d1cd213ed3ad00c68575f54279"
+    },
+    "inputs": {
+      "path": "data/private/chess-encoder-check-generalization-v1/inputs.json",
+      "sha256": "2c3ed07eba8d8fe9d92aa5f38aa7c39859f1478e671d811a1e07827c55b0e519"
+    },
+    "labels": {
+      "path": "data/private/chess-encoder-check-generalization-v1/labels.json",
+      "sha256": "4410de98c8bf713bd222e05f332c70939a8c76a63e05151560bd20de3633483f"
+    },
+    "dataset": {
+      "path": "data/private/chess-encoder-check-generalization-v1/dataset.json",
+      "sha256": "50a2046969610c94e42d87a6e70c2689016c78b620134800cfc5fa8bf28b9dbb"
+    }
+  },
+  "selected": {
+    "epoch": 4,
+    "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-4.pt",
+    "sha256": "9db9f9d9789d466a3942c2c02b8c18010f6b60a1d1185bf80e123b13b867b306",
+    "correct": 235,
+    "pairs_correct": 108
+  },
+  "original_untrained": {
+    "epoch": 0,
+    "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-0.pt",
+    "sha256": "f8f51b69dc2a3f7882bd20a3f1cd763cd200dbc28d49f51e8a1325a9ff992fd2",
+    "correct": 113,
+    "pairs_correct": 6
+  },
+  "encoder": {
+    "model_id": "princeton-nlp/queen_pawn-8",
+    "model_revision": "5027687fac08b64b2403b13aca5b198e68294fe9",
+    "source_revision": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+    "directory": "data/private/chess-queen-v1/pawn-8/lc0",
+    "weights": {
+      "path": "data/private/chess-queen-v1/pawn-8/lc0/model.safetensors",
+      "sha256": "a72807f43a9b7e89b143bd6e25067315a0a4312a1340c865141ae763f393862e"
+    },
+    "config": {
+      "path": "data/private/chess-queen-v1/pawn-8/lc0/config.json",
+      "sha256": "0a5690de151cdea61d669ca4a10a9fde103232800073250fe210421608ff664a"
+    },
+    "source": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/encoder.py",
+      "sha256": "2fbf9494f20e9ccf957aa88753f6276a139c5476de9e1444857f709c3b44eb9a"
+    },
+    "planes_source": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/lc0_planes.py",
+      "sha256": "767bf0e89b2e0934e0f0f94909d10b1c46123eae055b6ce544b4082cca772e4c"
+    },
+    "precision": "All floating buffers explicitly BF16, policy_index_map int64, target-only meta materialization; encoder eval/frozen. No language decoder or bridge instantiated.",
+    "rights": "Queen source Apache-2.0. Publisher asserts no blanket combined-weights license; LC0 component terms retained. Private local experimentation only; no redistribution claim."
+  },
+  "batch_size": 128,
+  "maximum_seconds": 900,
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "conditions": [
+    "savedoriginalepoch0",
+    "savedselectedepoch4",
+    "majorityfalseCPUaftersameclosedrawconditions"
+  ],
+  "no_training": "Zerooptimizerupdates,nocheckpointselection,noretuning; originalepoch4wasfrozenbeforefreshcohortconstruction.",
+  "inputs": "ExactlycurrentFENandselectedlegalUCI. IDs usedforledgersonly. Nolabels,stratum,checkers,successors,history orPV entersencoder/head/featurecache.",
+  "features": "ExactoldfrozenLC0BF16eval,emptyhistoryFENplanes,currentstate mean/source/target3072FP32 andnativePOVsource/target/promotionindicesint64. ExactcurrentFENdedup, oneencoderforwardperboard; newcachepaths, allmoveidentitiesretained. NoLC0policy/value outputs cached.",
+  "loading": "Exactoldreviewedtarget-onlymaterializer, floatingbuffersBF16/policy_index_mapint64. Encoderreleasedbeforeheadinference. Strictactualepoch0/4FP32headloads1680169parameters; rawlogit>=0, no masks/fallback/rulereplacement.",
+  "proof": "Bothfullactualrawmodelledgers,64requestedsourcepairslots/128moveslots andlabel-freefeaturemanifestwrittenBEFOREresource/backendsetup. Fsyncedpre-callintents/completedrawresults andfullunknown/notrunrows. Firstbackend/resource/cancel/cutofffailurestopsalllatercalls/conditions; noreplay.",
+  "label_policy": "Hashinput/label/datasetbytesbeforecalls, butsemanticlabelsandcase-to-stratum/checker/successormetadataopenONLYafterBOTHrawconditionledgerscomplete. Anyfailedconditionendswithoutopeninglabels.",
+  "metrics": "Same-paneloverallandperexclusiveallocation/overlappingpositiveflags TP/TN/FP/FN,checking/noncheckingrecalls,completepaircorrectness andfullstatuses. Majorityfalseafterrawclosure. Reportrequestedsourcecoverage/shortagesseparatelyfromactualpredictions. Lasttwocategoriesusedifferentpieceinstancecontrasts; no matched-originclaimthere.",
+  "resources": "Root-owned inference only. Start >=6GiB physical/8GiB commit/4GiB GPU available; running >=4GiB physical/6GiB commit/1GiB GPU. At most one resource sample per second; cancellation and deadlines checked on every guard invocation. Owned CANCEL/900s/13UTC checks; no settings changes, no optimizer or training.",
+  "dispatcher": "Rootonlyaftercoachheldphase, independentclosedcohortauditandfullsource/protocolreview. SharedexclusiveGPUworker/ownedjob. AgentCPUtestsuseauthoredcallbacksandmakenomodelcalls.",
+  "limitations": "Smalltargetedmissing-coveragetacticaldiagnostic,unknownoriginalencoderpretrainingoverlap. Not coachingfactuality,languageunderstanding,movestrength,Eloorpopulationprevalence. NoUIpromotionfromthisresult.",
+  "dependencies": [
+    {
+      "path": "scripts/chess_board_fact_core.py",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "path": "scripts/chess_check_balanced_v2.py",
+      "sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5"
+    },
+    {
+      "path": "scripts/chess_fact_sft_common.py",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    {
+      "path": "scripts/chess_fact_sft_intake.py",
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "path": "scripts/chess_board_fact_diagnostic.py",
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    {
+      "path": "scripts/chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "path": "tests/test_chess_encoder_check_v1.py",
+      "sha256": "ca8fdeb41a4974f8e205172cdbfa37d376b6cb5c6c464d52d85741425a9657ed"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/models/encoder.py",
+      "sha256": "2fbf9494f20e9ccf957aa88753f6276a139c5476de9e1444857f709c3b44eb9a"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/lc0_planes.py",
+      "sha256": "767bf0e89b2e0934e0f0f94909d10b1c46123eae055b6ce544b4082cca772e4c"
+    },
+    {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/LICENSE",
+      "sha256": "f2ffa5942b316849be283deaeb2912e2e5b5b17e91012bede8210210ff3e91e7"
+    },
+    {
+      "path": "data/private/chess-queen-v1/pawn-8/lc0/config.json",
+      "sha256": "0a5690de151cdea61d669ca4a10a9fde103232800073250fe210421608ff664a"
+    },
+    {
+      "path": "scripts/chess_queen_materialize.py",
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "tests/test_chess_queen_materialize.py",
+      "sha256": "31db1ed1af68de50fcf1f44c2d07551ee04f74da7eb36a3042c666b7f2d03b17"
+    },
+    {
+      "path": "scripts/chess_encoder_check_v1.py",
+      "sha256": "7914468174696ef17076792be6c0d280d9eb24001aa8833b4e76563c7b4072a3"
+    },
+    {
+      "path": "scripts/chess_encoder_check_generalization_v1.py",
+      "sha256": "5f9e1b34a575aef39419adfba0851f215492f4608617949013e465018e5595bf"
+    },
+    {
+      "path": "tests\\test_chess_encoder_check_generalization_eval_v2.py",
+      "sha256": "83eddeee2ed3db866dafab4d79fa15af159f9eff1ffb7172f8161909d83e7631"
+    },
+    {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "path": "experiments/chess-encoder-check-generalization-v1/actual-cohort-ready.json",
+      "sha256": "991365643f1015a0ba0f77a4f154daac9ea889b47f15133ececfd0adcf6def4a"
+    },
+    {
+      "path": "scripts\\chess_encoder_check_generalization_eval_v1.py",
+      "sha256": "921cfffa395738c51a5ef209533a4b7700d06edc9dc3b5e2671a9e26b9a2ce24"
+    },
+    {
+      "path": "experiments\\chess-encoder-check-generalization-v1\\inference-protocol.json",
+      "sha256": "6f55d7c7e97cee216ab433de962e80a6632452670e2f3fb8577d4affe0e7c758"
+    },
+    {
+      "path": "experiments\\chess-encoder-check-generalization-v1\\prepare_inference_protocol_v2.py",
+      "sha256": "999a34ca053e8b64ff796aae634fe60635752f542db5b3f0bd5f0b75e3af53b5"
+    }
+  ],
+  "amendment": "Guard-only strengthening of unexecuted published v1: running GPU reserve512MiB to1GiB. All science, data, checkpoints, conditions, feature extraction, raw logits, full denominators and label embargo unchanged. Function ASTs match v1 after normalizing the owned guard call.",
+  "prior_unexecuted_protocol": {
+    "path": "experiments\\chess-encoder-check-generalization-v1\\inference-protocol.json",
+    "sha256": "6f55d7c7e97cee216ab433de962e80a6632452670e2f3fb8577d4affe0e7c758"
+  }
+}

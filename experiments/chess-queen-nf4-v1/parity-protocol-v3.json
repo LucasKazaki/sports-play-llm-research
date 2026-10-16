@@ -1,0 +1,86 @@
+{
+  "schema": "chess.queen-nf4-no-cache-parity-protocol.v1",
+  "frozen_at": "2026-10-16T07:24:39.966203+00:00",
+  "implementation_sha256": "5387c50b5aa9e2c1479bc2a40ddd2d28a72016b40763bf7a3ea04abed611dca9",
+  "kind": "Authored numerical software preflight. No chess evaluation or model tuning.",
+  "fixture": {
+    "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1"
+  },
+  "suffix": "<SQUARE_1><PIECE_MP><EMPTY>",
+  "conditions": [
+    "base_prompt",
+    "synthetic_vocabulary_suffix"
+  ],
+  "comparison": "Each complete token prefix is evaluated independently without a KV cache. Compare its final-position raw logits between the pinned official manual Flamingo walk and native bridge hooks, sharing the identical actual NF4 decoder and BF16 bridges. Both use the same once-encoded current FEN.",
+  "logit_scopes": {
+    "all_logits": [
+      0,
+      128333
+    ],
+    "original_vocab_logits": [
+      0,
+      128256
+    ],
+    "added_vocab_logits": [
+      128256,
+      128333
+    ]
+  },
+  "thresholds": {
+    "max_absolute_error": 0.01,
+    "mean_absolute_error": 0.001,
+    "minimum_cosine_similarity": 0.9999
+  },
+  "additional_requirements": [
+    "Finite logits and equal argmax in every scope for both prefixes",
+    "Three synthetic suffix tokens all belong to the added Queen vocabulary",
+    "Verified actual252 NF4 decoder linears, BF16 encoder/bridges/full tied vocabulary, CUDA0 only",
+    "No further forward after a backend exception or nonfinite output",
+    "Create-only attempt, intent persisted before each forward, completed comparisons saved immediately"
+  ],
+  "kernel_protocol": {
+    "path": "experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+    "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+  },
+  "diagnostic_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/kernel-2.json",
+    "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+  },
+  "diagnostic_worker_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/kernel-worker-2.json",
+    "sha256": "82a93a694b1c81a261a10e99c872de41f1719d14fbdd603587dbc55122413f05"
+  },
+  "root_only_execution": {
+    "worker_deadline_seconds": 270,
+    "worker_maximum_seconds_argument": 240,
+    "worker": {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    "resources": "Exactly the kernel-protocol reserves, including4GiB commit stop floor; cancellation and owned process lease preserved."
+  },
+  "dependencies": [
+    {
+      "path": "scripts/chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "path": "tests/test_chess_queen_nf4_parity_v2.py",
+      "sha256": "c37db76a0bfd4ea19e13aa45c69a6dc68428bb36fa2527c3d3d855b0191281af"
+    },
+    {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    }
+  ],
+  "interpretation": "Passing establishes two software-prefix implementations agree for the same locally quantized weights. It establishes neither BF16 equivalence, generation quality, chess understanding, coaching quality nor published Elo. Authored end-to-end generation is a separate next condition; no QLoRA training is implemented.",
+  "amendment": "Actual prior parity1 failed after loading/quantization but before any pretrained forward because optional Transformers5 hf_device_map was absent. Separately named v2 adapter/parity preserve the executed sources, verify actual CUDA0 tensors, report absent optional metadata honestly, and bind a fresh successful matching tiny kernel. The new parity also persists model_load_started before loading. Method, prefixes, thresholds and reserves are unchanged.",
+  "previous_executed_protocol": {
+    "path": "experiments/chess-queen-nf4-v1/parity-protocol-v2.json",
+    "sha256": "14a5b78f91cb7620034fafaef85646abdf519cc2e465b05b3ccd692785a5783b"
+  },
+  "preserved_failed_attempt": {
+    "path": "data/private/chess-queen-nf4-v1/parity-1.json",
+    "sha256": "7ce19697a80d83a46eed99c5fd0b1b6423a8c8a14e37533bee3891a8ab7fc6d9"
+  }
+}

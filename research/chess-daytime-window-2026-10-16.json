@@ -1,0 +1,14 @@
+{
+  "schema": "chess.daytime.resume-authority.v1",
+  "observed_at_utc": "2026-10-16T13:23:18.505508+00:00",
+  "source": "Direct human reply to pending operating-window question in this chat",
+  "human_text": "Continue today until 6:00 PM Eastern",
+  "timezone": "America/New_York",
+  "date": "2026-10-16",
+  "cutoff_utc": "2026-10-16T22:00:00+00:00",
+  "supersedes": "Only the prior operating-window end; old closeout, failed/unrun phases, scientific records, source/data/rights/resource limits remain historical and unchanged.",
+  "scope": "Continue previously authorized chess-first research, local engineering/training/evaluation, UI work, and hourly follow-ups until the new cutoff. Root-only GPU, one lease/owned worker, independent finite source/closed-result reviews.",
+  "fresh_blocked_audit_count": 0,
+  "prior_blocker_resolved": true,
+  "no_capability_completion_claim": true
+}

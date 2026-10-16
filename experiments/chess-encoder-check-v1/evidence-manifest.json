@@ -1,0 +1,25 @@
+{
+  "files_sha256": {
+    "evidence/checkpoints.json": "87423ec137eeecdc0984ff0d8bda3914da4e0af066165b65c7e5a2d3794bcafe",
+    "evidence/dev-epoch-0.json": "6cca87212df34d5084ceb8eac2127e9d679005e6617abce83bff99503a07544a",
+    "evidence/dev-epoch-1.json": "8b74d60bd20a74c062475a389ec86690409d68c275e3a061f65e0d8563fa5b80",
+    "evidence/dev-epoch-2.json": "e215861808c777e23b14f9b4358f30aa66369f5b3734f336573c6befc15b6b1d",
+    "evidence/dev-epoch-4.json": "d2df89e280e034e3b6995ac6803f2d451e9e63332c484a106faee60d3781e824",
+    "evidence/dev-epoch-8.json": "32a496fd4b7cc2cb70069bfe7b678a3e00cff7ed3c915bd1f5a024a798748732",
+    "evidence/dev-inputs.json": "9c8de1bfba76fa52271cf614ad0ccd8199abc561711b3145d423069e46b71f48",
+    "evidence/dev-labels.json": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9",
+    "evidence/holdout-inputs.json": "3ed1ba1eb226fdd1bf6efe8635aba0c73d4cde12b8f1e54ae2474a087bde71c9",
+    "evidence/holdout-labels.json": "925c7d0b936b7a579b46c5c2a1ae9c9512addb0e3355ccc272853e9e23157501",
+    "evidence/independent-audit.json": "ebb2cb2a0930cf2d87edc999815526280cc59572108db01562b0b139f674da26",
+    "evidence/independent-review.md": "5db7f9d3022b0e28aa940b35c61613a9e9ed3eaaa6b7a337c4c22e411538b3d5",
+    "evidence/loss.jsonl": "e2d8b7f25965076c0720857c64563b96324210e60921f6bcd41e0583e1144b34",
+    "evidence/majority-false.json": "bcc49eee9c72b1af8c43ef8b2293883c8fde5d61c2651b8efeb84eb5ff96e9de",
+    "evidence/run-worker-1.json": "9c41a6b027564e120c9efd8a7a76ee572595546c75e055b5e5df781c83af475d",
+    "evidence/selected_head.json": "864f3f0cd37683a92818f882ef9a30a5289f912dd7c8e9a53449b90429cef4a5",
+    "evidence/selection-before-holdout.json": "6180813493bf019acad4c63f17f87c427f44193b254c0b907ff5496bd9027f17",
+    "evidence/untrained_head.json": "1e57c479ee513473a1d6aa476d942d5f30829f725fed4ddf7bc433368dda4c34"
+  },
+  "summary_sha256": "59740f75aaed54f3053a049a7a3e3b199c8d8ba626d5f331477fb694906abfe4",
+  "weights_redistributed": false,
+  "feature_tensors_redistributed": false
+}

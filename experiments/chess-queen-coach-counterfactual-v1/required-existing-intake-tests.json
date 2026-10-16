@@ -1,0 +1,12 @@
+{
+  "status": "failed_existing_fixture_gap",
+  "command": ".venv-soccernet/Scripts/python.exe -m pytest -q tests/test_chess_broker_intake.py tests/test_chess_real_data.py tests/test_chess_no_forward_packet.py",
+  "exit_code": 1,
+  "failed": 9,
+  "passed": 5,
+  "errors": 89,
+  "elapsed_seconds": 2.39,
+  "tool_chunk_id": "25ed15",
+  "first_observed_error": "FileNotFoundError data/open/chess/lichess-real-seed-v1/source-page.html",
+  "interpretation": "Same9failed/89errors/5passed as prior repository run described by root; no original fixtures reconstructed or replaced. This is not evidence that new counterfactual intake caused a regression."
+}

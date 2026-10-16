@@ -1,5 +1,51 @@
 # Decision Log
 
+## October 16, 21:44 UTC — Reserve prepared games without reopening the model comparison
+
+The full 96-response model comparison missed its 20:30 UTC admission and is permanently UNRUN today, with zero new scientific-panel model requests. There is no smaller substitute, reopening or fresh matched improvement estimate. Completed training, repeated development scores and two cold software checks remain separate evidence.
+
+Accept CPU2 only as audited metadata/schema/provenance preparation. Keep its sixteen games reserved, all 512 games outside training, the first failed attempt intact and all seven unknown successor sets visible. No reference scoring or independent semantic rerun occurred.
+
+The overall human-authorized window remains ACTIVE until 22:00 UTC today. Prepared data does not reopen the missed model comparison. No future live-preview window or automatic extension is granted.
+
+## 2026-10-16 20:30 UTC — Retain the full comparison as unrun
+
+The full 96-response comparison missed its fixed 20:30 UTC admission and remains UNRUN, with zero new scientific comparison requests for this panel. There is no smaller substitute, same-panel replay or admission extension. Completed training, repeated development scores and two successful cold software checks remain valid within their respective scopes; they provide no fresh matched improvement estimate.
+
+Do not treat an oversized, correctly merged exposure draft as assembled input or fresh-data readiness. Resolve the separate capacity boundary only through a versioned source, actual closure and independent audit.
+
+The overall human-authorized window remains active until 22:00 UTC. Remaining source/backbone research and bounded repairs may continue under their own reviewed gates; the missed comparison admission is not reopened. Every historical failure, reservation and planned denominator remains intact.
+
+## 2026-10-16 — Compare both trained models before claiming a coaching gain
+
+Keep the completed current192 adapter as control and the prospectively fixed conditional terminal192 adapter as treatment. Training and exact-weight cold checks passed, but the repeated development panel shows a tradeoff: stronger recognized conditional facts and weaker free three-ply agreement relative to original64 step0. The [experiment record](chess-conditional-line-development-2026-10-16.md) retains both observations.
+
+Require a complete fresh 48-plus-48 comparison before judging the intervention. Preserve earlier failed games as spent, all 512 reserve games outside training, and every failed, unknown and unrun request in the denominator. Whole-prose accuracy, tutor usefulness and Archit/UMD approval remain unestablished. Stop owned work at 22:00 UTC.
+
+## 2026-10-16 — Preserve the failed167 attempt and qualify a fresh full run
+
+The second conditional-line attempt failed after 167 updates and 1,336
+training presentations when Windows denied replacement of its progress file.
+Its primary failure record and append-only journal establish 167; the stale
+progress file reports 166. Independent failure audit passed. Only checkpoints
+0, 48 and 96 were saved; no terminal checkpoint, selection or final frozen-base
+proof exists. Preserve the complete 1,536/384/24 planned denominators and the
+unrun 200 training presentations, 96 development loss calls and six raw calls.
+
+The additive bounded-save repair passed 15 checks, including actual temporary
+and persistent Windows sharing denial. Nine operating-contract checks passed.
+A fresh full attempt began at 19:07:56 UTC under an independently reviewed
+protocol. It starts from the original step-64 adapter and a fresh optimizer;
+the full 192 updates and fixed terminal selection remain unchanged. It does
+not resume the partial run. Its result is pending, and the global user cutoff
+remains 22:00 UTC.
+
+The save helper retries only bounded Windows sharing/access errors. It does
+not establish the historical locker or turn an OS call into a hard deadline.
+The root will monitor the append-only journal with delete-sharing allowed,
+without opening atomically replaced progress files while the run is active.
+
+
 ## 2026-09-22 — Exact implementation after failed planner handoffs
 
 Preserve malformed/missing-source proposals and failed jobs; supply a bounded native implementation with meaningful tests rather than an unchanged planner retry. The new evaluator distinguishes legal asserted variations from exact retained engine PV attribution. Full typed receipts remain evaluator-only. Correct the old assisted-generation instructions to the current strict no-forward contract. Record local independent-review failure separately from code-test success; a bundle of exact source/log bytes repairs the finite read-packet mismatch without changing budgets or model routing.
@@ -434,3 +480,377 @@ Job e943df82-a2d7-40fd-9162-551a5fe8bc03 passed 11 focused validator tests after
 ## D-045 — Bind the evidence-only CLI to the abstention contract
 
 Job 295fcd04-06d1-4c6e-a3e3-021c45b75b02 reproduced the real CLI payload defect: its successful abstention output failed the validator with `abstain_must_be_boolean`. Repair job 1ece129f-123c-4f89-aaa8-e184b5af334f added the explicit boolean abstention flag plus empty concepts and separately attributable empty engine/commentary references; its focused CLI suite passed 3 tests. This makes the absence of a configured generator inspectable. It does not make the displayed board evidence legal replay, make engine candidates executed or explanatory, grant commentary rights, verify chess concepts, or support a human/FIDE-quality claim.
+
+## October 16: preserve flat policies and isolate the learned check result
+
+The move-policy successors remain unpromoted after mixed or flat heldout results. A new frozen-encoder head reaches458/512 versus235/512 for its untrained baseline, supporting only check discrimination. Keep cached Queen inference disabled after numerical failures and require separate NF4 qualification. [Evidence and next actions](chess-overnight-checkpoint-2026-10-16.md).
+
+## October 16: preserve experimental failures and repeat evidence-led iterations
+
+The user's current steering requires repeated research, plan, implementation and debugging across the UI, backbone, models and data. Keep primary research current before each bounded methodological change. Train1's 20 confirmed updates / 160 backward passes and one unknown micro are resource/debugging evidence only. Preserve its original sources and reserves; require a separately versioned memory qualification before a new run. [Plan](chess-research-radar-2026-10-16.md).
+
+## October 16: check exact prose branches and preserve annotation provenance
+
+The separately reviewed offline checker binds response bytes, exact raw text
+spans and explicit legal branches. Four closed audits reproduce 9 supported,
+4 contradicted and 5 unassessed among 18 selected annotations. An illegal earlier
+prefix forces later abstention; a legal main line cannot validate a prose
+alternative. Agent-authored/agent-reviewed mappings are engineering diagnostics,
+not human gold labels. No output enters active training, generator inputs or
+heldout metrics. A separate source-stage proposal addresses absent king/pawn and
+discovered/double coverage with explicit matching contrasts and shortages.
+
+## October16: guarded next iteration after completed coaching training
+
+Keep the exact step64 selection; never reselect from held quality. The next
+coaching hypothesis is insufficient move-conditioned check grounding, not an
+unsupported positive-check prior. Its design requires both ANALYSIS move and
+accepted BEST to equal the supplied move for joint-fact success, and explicit
+TRAIN-to-development as well as reserved-path disjointness. Implementation only
+is authorized; collection and scoring await full finite source/protocol review.
+The fixed-head coverage inference is unexecuted; its delegated512MiB GPU floor
+will be strengthened to1GiB in a new version before calls, preserving v1 bytes.
+The new tuned tutor components stay unavailable pending actual evidence.
+
+
+## October 16, 10:35 UTC: close the failed comparison and start a targeted data cycle
+
+The coaching comparison stopped at its unchanged Windows commit reserve. Of
+64 planned responses, the baseline condition returned 28 complete responses and
+two partial responses; one request failed. The remaining 33 responses, including
+all 32 planned trained-model responses, never ran. No matched quality result
+exists, and the trained tutor remains ineligible. The observed global and
+process memory counters do not establish an exclusive cause of the stop.
+
+The closed audit retains an exposure disclosure: metadata inspection
+accidentally displayed one baseline decoded answer and the failed response's
+empty text field and token IDs. No semantic analysis or reference scoring
+followed; the root reports seeing no decoded prose. The successor curriculum
+was frozen before that exposure and excludes all 512 previously reserved games.
+
+The first new CPU intake stopped before source iteration at its unchanged
+8 GiB startup commit reserve. Its source and receipts remain intact. After the
+previous GPU worker exited, a separate operational recovery passed independent
+review and 35 CPU checks. As of 10:35 UTC, one authorized CPU sequence has passed
+admission, completed intake and begun generating engine targets under the same
+scientific protocol. No new model calls have run. A closed corpus audit,
+verification of owned engine exit, complete CPU tokenization and final model
+protocol review remain prerequisites for learning.
+
+The next experiment tests whether additional move-conditioned supervision
+improves check grounding. It pairs checking and nonchecking moves on the same
+board, matching piece type and capture properties. Inputs contain only the
+current FEN and an optional legal move. A separate process for each evaluation
+request is a resource-containment hypothesis; it needs software qualification
+on two previously used development requests before fresh evaluation. More
+training or lower loss alone cannot establish coaching quality.
+
+The [ChessQA source audit](chessqa-source-audit-2026-10-16/recommendation.md) pins current code and the older dataset
+separately. Choosing a source comment from several options does not measure
+whether a model can write accurate coaching. Training and redistribution rights
+for that commentary remain unresolved, so the text has not entered training.
+The UMD readiness and AI-assistance records remain working research materials;
+no institutional approval or professional coaching claim is made. This entry
+supersedes active-run statements in the earlier chronological entries.
+
+
+## October 16, 11:19 UTC: verified data; training admission expired
+
+The changed-context CPU recovery completed 3,168 engine requests over 1,056
+retained source positions. Independent audit verified the retained positions,
+paired moves, engine targets, cross-split exclusions and exports. Complete CPU
+tokenization passed for 1,536 training and 96 development examples, without
+truncation or model forward passes. The corpus contains no selected king moves;
+it is a targeted grounding curriculum rather than broad chess coverage.
+
+The new 192-update training plan remains unrun. Its stricter 11:00 UTC admission
+expired while the Windows cold-process controller was being repaired. No new
+adapter or learning result exists for this curriculum. The frozen plan and its
+independent source review remain available for a later, explicitly versioned
+cycle; this overnight run does not extend its deadline.
+
+A repaired two-request software qualification used the fixed existing step-64
+adapter on already-used development inputs. The first child completed and
+exited. A process-image query returned Windows Access Denied during the second
+child, so the overall qualification failed. The original sources, first topology
+failure and this second failure remain intact. A separate fix is under review;
+there is no successful qualification or fresh quality comparison yet.
+
+A separate proposed comparison would evaluate the fixed old trained terminal
+checkpoint 256 against the fixed old development-selected checkpoint 64 on 16
+fresh game groups, with 48 responses per condition. Both models are trained.
+This cannot estimate an untrained-to-trained gain or select a new checkpoint.
+It requires actual software qualification and independent review before its
+11:30 UTC admission, with the unchanged 13:00 UTC global cutoff. Otherwise all
+96 responses remain unrun. The trained tutor stays disabled.
+
+The resource-policy value of 120 seconds is metadata, not an enforced elapsed
+timer in the unchanged NF4 resource guard. Actual unchanged limits are 180
+seconds for generation and 210 seconds per child, with separate phase and global
+deadlines. The correction changes descriptions only. Heavy CPU analysis will
+be serialized with GPU work after the earlier encoder diagnostic stopped at its
+commit reserve while CPU analysis was also running; its contribution is unknown.
+
+This entry supersedes active-run and admission statements in earlier dated
+entries. No whole-prose coaching, playing-strength or institutional approval
+claim follows from data readiness or software checks.
+
+
+## October 16, 11:35 UTC: software qualified; both new scientific phases unrun
+
+The cold controller's fourth attempt completed both already-used development
+requests and passed independent closed software review. Exact inputs, source,
+checkpoint and generation settings matched. Frozen storage remained identical
+for all 2,268 tensors before and after each request. Resource floors and the
+1 GiB post-exit commit-growth criterion passed. Three initially live handles
+with image-query errors later signalled EXIT during the bounded observation;
+their executable identities remain explicitly unknown. This qualifies the
+original SFT software profile on two used requests only, with no new-model,
+coaching-quality or long-run stability claim. The three failures remain intact.
+
+The prepared counterfactual 192-update training phase was not admitted before
+11:00 UTC. A separate no-training comparison fixed the old trained terminal
+checkpoint 256 against the old trained development-selected checkpoint 64.
+Its final protocol review was conditional on whole-phase admission before
+11:30 UTC; that admission did not occur in time. All 96 responses remain unrun,
+with no worker, raw answer or score. Its sixteen-game reservation remains intact
+and no model call spent the cohort. Both unadmitted ledgers are planning records,
+not fabricated execution receipts. No deadline was extended.
+
+The corpus and complete CPU tokenization remain independently checked. The
+remaining cycle improves transparency in the current UI and verification tools,
+and publishes the reviewed source, readiness, software and failure evidence to
+the existing draft. The trained profile stays disabled. The overall coaching
+capability and shareable-candidate gates remain unmet; the 13:00 UTC cutoff and
+hourly follow-up boundary are unchanged.
+
+## Limited interface and backbone cycle — October 16, 12:09 UTC
+
+The seven-path post-generation draft checker and display passed full independent
+source review and 100 relevant CPU/UI checks (one real-engine check deselected).
+Raw input/output/parsed fields remain unchanged. BEST board observations,
+supplied-move identity and up to two canonical ANALYSIS check/capture statements
+have separate scopes; ordinary prose remains unassessed. The trained profile
+stays disabled and no quality or formal commentary promotion follows.
+
+Root inspected five authored rendering states, exact-span disclosure, stale
+export exclusion and return, light/dark presentation and 390-pixel layout with
+200% text sizing. Those records are fictional software fixtures, not model
+answers. The reviewed code is loaded in the live tutor; actual Stockfish 19,
+restored CPU forecasting and evidence export worked on the illustrative opening.
+The three legal raw forecast moves were c3, Bb6, d4, with a one-half-move shared
+prefix for this engine search. This is an exploration, not a benchmark.
+
+Strict older-response compatibility failed before the checker because the old
+response's input-hash field did not bind its saved input-file bytes. No expected
+hash was reconstructed. A proposed actual Queen UI smoke was not admitted below
+the unchanged 10 GiB startup commit reserve. It created no worker, request,
+response or model call. The first failing resource sample was not retained; the
+separate timestamped follow-up sample is context only. New-controller actual
+model completion remains unverified. Both failed/unadmitted attempts are retained.
+
+An independently reviewed backbone source investigation and standard-library
+probe narrow possible cache-failure causes without implementing a repair or
+measuring numerical behavior or speed. Conditional quantized dispatch under
+authored device properties cannot identify the prior BF16 failure's cause.
+The 11:44 public Queen code/model refresh retained the same revisions; reading
+depth and the bounded literature-search scope remain explicit.
+
+Evidence: experiments/chess-tutor-draft-checks-v1/ and
+research/chess-cache-backbone-investigation-2026-10-16/. No expired TRAIN192 or
+fresh96 comparison was restarted, no deadline or reserve changed, no creator
+media entered training and no contact or institutional approval is claimed.
+The overall coaching and shareable-candidate gates remain unmet. The 13:00 UTC
+cutoff still ends overnight experiments and the hourly heartbeat.
+
+## Descriptive coverage cycle and scope correction — October 16, 12:27 UTC
+
+A prospective, source-reviewed CPU audit inspected only the frozen TRAIN and
+development exports. Fifteen authored software checks passed in both owner and
+independent review. The single actual pass closed in 0.438 seconds; independent
+recomputation matched every split aggregate and separately recounted board facts.
+All 1,536 TRAIN and 96 development presentations passed the narrow schema/group
+checks, and all five cross-split overlap counts were zero. These are 512 and 32
+distinct source roots, each repeated in FREE and two selected-move presentations.
+No model, framework, engine, GPU, held-reference or reserve-content access was
+part of this audit. Process completion is not a general data-quality certificate.
+
+Scope correction: earlier 2,112-candidate piece counts concerned supplied-move
+pairs across the prepared corpus. They must not be read as all FREE targets.
+TRAIN contains four FREE king targets (4/512 FREE; 4/1,536 overall), zero selected
+king targets (0/1,024), and development has none (0/96). All 544 audited roots
+start outside check. Selected TRAIN targets are queens or rooks in 828/1,024
+presentations, while 130 of 132 selected captures take pawns. There are no
+castling or en-passant targets; the one TRAIN promotion and one double-check
+target are FREE. The intended selected checking/nonchecking contrast is exactly
+50%; it does not establish ordinary-play representativeness or learned ability.
+
+The frozen corpus and reservations remain unchanged. A future broader-coaching
+design should predeclare separate coverage for in-check inputs, king and pawn
+selected moves, varied capture victims and rare rules, record source shortages,
+and retain a separately fixed generalization evaluation. This is a future design
+decision, not authority to alter current held panels or restart expired phases.
+Counterfactual TRAIN192 and the fresh comparison96 remain unrun. No coaching,
+institutional approval or formal commentary/shareable-candidate claim follows.
+
+Evidence: research/chess-counterfactual-train-dev-coverage-2026-10-16/.
+Actual aggregate SHA256 e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6;
+independent closed-result review e18211457ebbf319c09ed4c2535259867c7bc97fd43a42021b41e6499cd57dcd.
+
+## Overnight window closed — October 16, 13:00 UTC
+
+The fixed 09:00 Eastern window has ended. The chess heartbeat is PAUSED, with
+its prompt and schedule preserved; readback verified the change. At 13:00:20
+UTC the default tutor reported ready and the shared GPU lease was free. These
+are service/lease observations, not a complete process inventory or quality test.
+Owned experiment closures remain in their individual receipts. No new feature
+or experiment starts after cutoff. Later available memory cannot retroactively
+admit an expired phase.
+
+The reviewed UI/backbone/radar batch and descriptive data audit are published
+in draft PR14. The trained coaching profile stays disabled. Counterfactual
+TRAIN192 and fixed comparison96 remain unrun; actual Queen completion through
+the new checker remains unverified. Reliable explanations, measured broad
+multi-move prediction, human tutoring usefulness and the formal promotion gates
+remain unmet. The overall capability goal is not marked achieved.
+
+Future work needs a new dated prospective operating plan, adequate whole-phase
+capacity and separately fixed evaluation; it must preserve the failed/unadmitted
+records and address the measured coverage gaps. UMD ownership/tool/venue and any
+future participant-study questions remain unresolved. No external contact or
+institutional approval is implied. See chess-overnight-closeout-2026-10-16.json.
+
+## Human-authorized daytime continuation — October 16, 13:23 UTC
+
+Lucas explicitly answered: “Continue today until 6:00 PM Eastern.” The new
+cutoff is 22:00 UTC. The existing hourly heartbeat is ACTIVE through that time;
+no second scheduler was created. The completed overnight window, its closeout,
+failed attempts and unrun phases remain historical and unchanged. This human
+instruction resolves the prior fixed-window blocker; the new blocked audit
+starts at zero. It grants a new operating window, not a capability verdict.
+
+Current physical/commit/GPU startup headroom passes the unchanged reserves.
+The original local tutor remains available. Automatic approval review rejected
+a proposed forced restart before execution, giving only “blocked by policy.”
+The safer path retains the existing verified process and binds current source,
+process provenance and actual controller/artifact behavior; it makes no claim
+that disk hashes alone attest in-memory bytecode. No stop was retried.
+
+First work is a separately frozen one-request actual UI integration, then a
+disposable exact counterfactual warm-start/backward/save/reload qualifier and a
+separate two-request cold-route qualifier. Only after independent source and
+actual software/resource review may a separately versioned full 192-update
+scientific run start from the unchanged original checkpoint64. The prior
+old-SFT-only cold PASS is not qualification of this counterfactual route.
+Science, data/reservations, memory reserves and full failure denominators stay
+fixed. No new model experiment has started as of this operational entry.
+
+The 13:28 official public metadata refresh retains the same Queen code/model
+revisions and Stockfish19 stable tag. No dependency, weight or method was
+updated; this is a bounded freshness check, not an exhaustive field survey.
+The coaching, professional-use, human-expert and institutional gates remain
+unmet. See chess-daytime-window-2026-10-16.json and work/daytime/ in this chat.
+
+
+## Daytime actual cycle — October 16, 13:57 UTC
+
+One separately planned original-manual UI request completed with EOS: 527 tokens,
+69.906 seconds in its owned worker. The actual controller/checker byte bindings,
+current/stale/restored exports and raw preservation passed independent closed
+review (corrected v2: fa1157f7). No canonical statements matched, so the prose
+remains unassessed. The optional public metadata projection has its own review
+pending; the actual UI audit is an engineering result only.
+
+The exact counterfactual warm-start route also passed an actual disposable
+eight-backward/one-update/save-reload check and independent audit (65f918a5).
+All144 FP32 adapter tensors began at the original64 values, changed after the
+update and reloaded identically; all2,268 frozen tensors stayed unchanged.
+These weights are retained as a software-test artifact and cannot start or be
+selected in the scientific run.
+
+Cold qualification1 failed after0.782seconds at OpenProcess error87. The first
+child recorded zero generation requests and model-load setup, with loading
+progress unknown. The original ledger stays one active/unknown plus one unrun.
+Known owned processes closed, were observed absent, and the lease was free.
+A separately versioned observer design will distinguish measured snapshot
+absence from a live unknown without calling absence an identity or handle EXIT.
+It requires source review and a bounded CPU lifecycle probe before any new
+model qualification. The failed phase is not replayed; reserves stay fixed.
+
+The full192-update run and fixed96-response comparison remain unrun. The same
+16 roots have zero generation calls; all512 reserve games stay excluded from
+training. The new operating window still ends22UTC/18:00Eastern. Current working
+metadata, UI/checker and warm software success establish no broad chess-coaching
+quality, professional use, human validation or institutional approval. Selected
+ChessArena v4 methods were added to the bounded primary-source radar; its data
+and weights were not acquired and the current scientific design did not change.
+
+## Daytime launch diagnosis — October 16, 14:40 UTC
+
+The new observer passed77 authored checks and full source review, but its actual
+CPU probe failed before all4 cases. Initial parent/job observations were not
+retained, so that attempt's cause remains unknown. A later, separately reviewed
+no-model launch diagnostic completed one case and20 durable observations. In
+that instrumented launch, the launcher belonged to the creator's actual Windows
+job and the base interpreter did not. Both known retained handles signalled
+EXIT before/after close; the creator job was empty. Independent closed review
+accepted these descriptive observations only. Added timing prevents a historical
+cause/rate claim, and no parent-death test or indirect-cleanup failure is proved.
+
+The next implementation uses a separately versioned direct-base launch, followed
+by exact venv/package-path parity and explicit ownership checks. Actual new CPU
+qualifications and independent closed audits precede fresh small warm8/cold2
+model qualifiers. Only those actual passes can admit the unchanged192-update
+scientific run and fixed96-response comparison. Both full phases remain unrun;
+the same16 held roots have0 generation calls and all512 reserves remain excluded
+from TRAIN. Existing software-test weights remain disposable. User authority
+continues through22UTC/18:00Eastern. See
+`research/chess-daytime-launch-diagnostic-2026-10-16.json` for exact audit hashes
+and selected official API/CPython source basis. No capability promotion follows.
+
+
+## October 16: direct-base CPU qualification
+
+The new worker's actual original/candidate environment pair passed exact 12-field
+equality. Its separate observer closed all four cases, 12 sampler calls and all
+three controlled OpenProcess87 branches. Independent closed audits are bound in
+`research/chess-direct-base-CPU-qualification-2026-10-16.json`. The actual direct
+child had explicit creator-job membership before GO, then retained EXIT and an
+empty complete owned-job list. ABSENT has no identity/EXIT/kill authority; the
+close flag is logical object metadata. Only four query process images were
+verified individually. These are bounded CPU engineering results, with no model
+or coaching-quality conclusion. The original failures remain intact. Fresh
+warm8/cold2 plans are frozen for review; full192 TRAIN and fixed96 HELD are unrun
+at this record. All512 reserved games remain excluded and current16 held roots
+have zero model calls. The reviewed 15-file worker subset preserves exact bytes;
+private inputs, raw answers and weights are excluded. No trained profile, formal
+Archit/UMD promotion or broad coaching acceptance is granted. Continue to22UTC.
+
+
+## October 16: completed daytime training and failed fresh comparison
+
+The direct route completed192 additional updates and1,536 backward presentations
+from original selected64 with a fresh optimizer. Independent closed review
+accepted the training, saved adapter changes and frozen development selection of
+new step192. On six raw responses from only two development games, recognized
+false immediate facts fell from5/11 (plus1unknown) to0/12. FREE three-ply matches
+remained2/2. Supplied first moves and template loss are not independent chess or
+whole-prose coaching success.
+
+The separate96-response comparison failed in the PID-only process observer:
+baseline9completed/1unknown/38notrun; selected48notrun. Ten EOS raw files were
+retained, but the tenth lacks accepted postprocessing/frozen-state completion.
+No references were opened for scoring and no matched gain exists. The trigger's
+exact PID/identity/branch was not logged. Known direct EXIT, empty owned job and
+free shared lease were recorded; no unseen-tree or parent-death proof follows.
+
+The failed16-game scope is spent with no replay; all512 reserve games stay
+excluded from TRAIN. A new16-game/96-response comparison requires separate fresh
+admission, ownership-aware latest exclusions and qualified versioned monitoring.
+The local192 preview remains disabled pending its actual completion/cancellation
+qualification. King-curriculum authored wrapper tests passed22 checks; its old
+390-minute experiment remains unrun. No coaching or institutional promotion.
+Exact aggregate hashes and limits are in
+`research/chess-daytime-training-and-held-failure-2026-10-16.json`. Selected new
+primary reading and input/judge caveats are in
+`research/chess-selected-primary-reading-addendum-2026-10-16.json`. Continue to22UTC.

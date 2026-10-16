@@ -1,0 +1,5 @@
+/* The existing study owns layout, focus and motion; this only labels the preview. */
+.research-preview{margin:0 auto 1.5rem;padding:1rem 1.25rem;max-width:1440px;border:1px solid var(--line,#d7ddd7);border-radius:14px;background:var(--surface,#fff);color:var(--text,#18241d)}
+.research-preview h2{font-size:1rem;line-height:1.45;margin:0 0 .3rem;font-weight:650}
+.research-preview p{font-size:.925rem;line-height:1.6;margin:0;max-width:75ch}
+@media(max-width:600px){.research-preview{margin-bottom:1rem;padding:.9rem 1rem}}

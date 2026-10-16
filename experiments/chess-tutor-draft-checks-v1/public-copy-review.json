@@ -1,0 +1,122 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-16T12:09:11.716444+00:00",
+  "scope": "Independent read-only public copy, accounting and claim review. No new execution or model-quality approval.",
+  "blocking_findings": [],
+  "copy_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-v1\\copy-manifest.json",
+    "bytes": 16829,
+    "sha256": "815dfb0d4dfd5d7d16271d02c573c072d83680cca778c9244d9424a3a7393d82"
+  },
+  "README": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-v1\\README.md",
+    "bytes": 3270,
+    "sha256": "c572706c1251f18b5ee1f42356b5db90ac87da86a89302e45bf1ebbd69e5defa"
+  },
+  "copies_verified": 40,
+  "full_exact_copy_index": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tutor-draft-checks-v1-public-copy-index.json",
+    "bytes": 16190,
+    "sha256": "88bae1a9520befc985f7ba8e5537f18dad14b8e0cfcabec93c1c62d49e8d95b8"
+  },
+  "current_source_pins_verified": [
+    {
+      "path": "prototype/chess_tutor_v1/draft_checks_v1.py",
+      "bytes": 10253,
+      "sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/coaching_jobs.py",
+      "bytes": 9846,
+      "sha256": "bf8b647d6b08592429a14ca614d0dedcc9dde3b26392af12af3a64a77013fe97"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/coaching.js",
+      "bytes": 14755,
+      "sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/index.html",
+      "bytes": 6961,
+      "sha256": "b12f16e9b2b84bee9fcd50b9817cbc7e8adbbbd8a4a09e5b79dbf38683368336"
+    },
+    {
+      "path": "tests/test_chess_tutor_draft_checks_v1.py",
+      "bytes": 12492,
+      "sha256": "a1e9e233ba4cf16d7a5cabb0d6f828e25e917681decd53acfd5e7df24428cced"
+    },
+    {
+      "path": "tests/test_chess_tutor_draft_checks_ui_v1.py",
+      "bytes": 6554,
+      "sha256": "d56c6eb5545fa6554c5090655b71d627632f10df78184f877a5982cdb722137e"
+    }
+  ],
+  "unchanged_boundary_pins_verified": [
+    {
+      "path": "prototype/chess_tutor_v1/queen_runtime.py",
+      "bytes": 10709,
+      "sha256": "8295ada0e368ff5810ee81b977f5dc61bc51a759e821459b3111441145ddc740"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/server.py",
+      "bytes": 28830,
+      "sha256": "d3b88e9bfd184038da66c1ea7858be9b32647dd53e6974ea7a86456c6e58e2a5"
+    },
+    {
+      "path": "prototype/chess_tutor_v1/static/app.js",
+      "bytes": 16841,
+      "sha256": "20667639d629412e31f97632da7a544e78a07fa242fb7b88fd863a2fd567fdda"
+    },
+    {
+      "path": "scripts/chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "scripts/chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    }
+  ],
+  "checks": {
+    "authored_exports": "Stale export coaching is null. Returned export coaching dictionary, including exact result and verification, equals the contradicted scenario fixture job. Supplied d2d4, structured BEST e2e4 and ANALYSIS Nf3 remain visibly distinct.",
+    "all_five_states": "All five authored scenario records are present. Four states have retained visibleText observations; the fifth contradicted state is evidenced by the desktop and narrow screenshots and matching returned export. I inspected all four screenshots as local images; no browser interaction was performed by me.",
+    "fixture_truth": "Renderer prefix and coaching style snapshots match production exactly. Fixture records are explicitly fictional and the original-profile production gate still refuses fixtures. Fixture-only controls set root font-size to 200%; this is not browser zoom. 390px observation records and wrapping screenshots are consistent; no full accessibility certification.",
+    "live_exploration": "Export binds Stockfish 19 and restored CPU classifier with three accepted raw legal moves c3/Bb6/d4, interventions zero, exact first engine-PV prefix one half-move, coaching null. Independent python-chess replay confirms each recorded move/FEN/SAN. This is one illustrative exploration, not a new benchmark or Queen completion.",
+    "failed_compatibility": "Retained source tests exact saved input bytes against the old response hash before any checker call. Failure receipt retains the unequal digests and zero checker/model/engine calls. No substitute hash or causal interpretation of old hash semantics is claimed.",
+    "unadmitted_smoke": "Retained preparer asserts unchanged 10 GiB commit headroom before prospective plan creation; its unadmitted receipt reports no plan/input/worker/response/model/checker call. The separate follow-up headroom is 9,136,648,192 bytes; first failing sample was not retained and is not reconstructed. Expected prospective plan is absent.",
+    "claim_scope": "Main README accurately limits this cycle to source/CPU/authored rendering and one engine/CPU exploration. It explicitly states no actual new-controller Queen completion and keeps trained profile disabled."
+  },
+  "limitations": [
+    "No original failing startup sample is available. I verify source order and retained operator failure record; the later resource sample is context only.",
+    "Historical fixture README requests a 200% zoom check but later distinguishes its text-size selector. Actual observations and the main package README correctly claim 200% text sizing only.",
+    "Live process restart PIDs 37340 to 4344/session59824 and actual test execution are root/operator observations, not independently re-probed here. No live process or HTTP checks were made.",
+    "Current production source pins match the independently reviewed implementation, but this cycle still has no actual Queen completion through its new post-generation controller.",
+    "Authored presentation records and screenshots are not learned outputs, human semantic labels, or evidence of chess-coaching quality.",
+    "Copy verification does not attest Git index bytes or publishing; root owns those actions."
+  ],
+  "reviewer_execution": {
+    "model_calls": 0,
+    "engine_calls": 0,
+    "gpu_calls": 0,
+    "http_calls": 0,
+    "browser_calls": 0,
+    "rule_replay_only": true
+  },
+  "followUpTasks": []
+}

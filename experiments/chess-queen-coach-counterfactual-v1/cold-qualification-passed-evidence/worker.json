@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T11:25:48.177964+00:00",
+  "script": "scripts\\chess_queen_coach_counterfactual_cold_eval_v5.py",
+  "arguments_sha256": "f57b21783e579ea3e335bf461f6ba8224c395d349b6df66613fb4aa96c76ff7a",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "completed",
+  "child_pid": 52844,
+  "exit_code": 0,
+  "log": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-4-worker.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 66.48500000001513
+}

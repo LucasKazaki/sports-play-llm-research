@@ -1,0 +1,46 @@
+{
+  "status": "passed_source_review_only",
+  "created_utc": "2026-10-16T11:21:38.736034+00:00",
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\existing-checkpoint-comparison-source-bundle-v3.txt",
+      "bytes": 22547,
+      "sha256": "d153afe55b6a446521055a09f9ea0af43f82a42fd25091155a63315a4a1ebc4b"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\prepare_protocol_v2.py",
+      "bytes": 6803,
+      "sha256": "b4b718c46bb420c166586b9b37356dcc733b5755751a1f4d3c6e78bda19a5765"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_existing_checkpoint_comparison_v2.py",
+      "bytes": 6770,
+      "sha256": "ecca8f0ebd600d0bce6b21326efb9db93cb77917f96c570842622b6c80ea97d2"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan-v2.json",
+      "bytes": 7556,
+      "sha256": "6aeeec01abc898ab35d614af4b53d5f827b91e7657ad0c1c31e989f1b0189e99"
+    }
+  ],
+  "full_read": "Complete22547-byte newbuilder/tests/result/unchangeddesign bundle read.",
+  "cpu_tests": {
+    "passed": 10,
+    "seconds": 0.4,
+    "tool_chunk": "586d84"
+  },
+  "independent_AST_equivalence": "Newbuilder exactlymatches reviewedoldbuilder after only outerv4import and self-testv2path normalization.",
+  "blocking_findings": [],
+  "go_scope": "SourceGO for preparing final fixed256vs64 plan after actualsame-source qualifierPASS+closedaudit. No actual fresh freeze/dispatch until finalplanreadback and strict11:30admission.",
+  "science": "Exact revieweddesign6aeeec01 unchanged;96raw/16groups/fixed256first64second/oldSFTprofile/all512futureTRAINexcluded/no learning or newselection.",
+  "previous_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-source-review-v2.json",
+    "bytes": 3392,
+    "sha256": "e8a39e7973c9d561f896edf4506a4af28194ccba7f91cef5dee822668ed0b016"
+  },
+  "limitations": [
+    "Current software qualification not inspected while active. Result/finalprotocol unavailable to this source review.",
+    "No model/engine/GPU calls or fresh/oldheldreference semantic inspection."
+  ],
+  "followUpTasks": []
+}

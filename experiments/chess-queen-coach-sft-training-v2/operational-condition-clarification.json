@@ -1,0 +1,22 @@
+{
+  "schema": "chess.memory-operational-condition-clarification.v1",
+  "date": "2026-10-16",
+  "frozen_protocol_sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168",
+  "reason": "The frozen operational_condition phrase 'idle model worker' is imprecise; retain the executed bytes and correct the description here.",
+  "actual_change": {
+    "stopped": "Only the owned tutor server with its optional CPU classifier already loaded; exact command and port ownership were checked before stopping.",
+    "old_server_pid": 31324,
+    "old_server_session": 31290,
+    "restarted": "Existing start-chess-tutor.ps1 launcher with -NoModel on the same loopback port 8793.",
+    "new_server_pid": 49872,
+    "new_server_session": 83641,
+    "health": "ready; model_configured=false; engine_available=true; manual Queen configured and ready",
+    "global_commit_after_bytes": 33239658496,
+    "global_commit_limit_bytes": 50637942784
+  },
+  "no_separate_gpu_worker_stopped": true,
+  "prior_gpu_jobs": "All prior GPU jobs were already terminal and their child processes were gone before this maintenance action.",
+  "scope": "The qualified condition combines this owned-server maintenance and the versioned inactive-cache cleanup. It does not establish cache cleanup as the sole cause of memory improvement.",
+  "preserved": "No unrelated user process stopped; no OS, package, data, objective, numerical kernel, resource floor or executed source/protocol changed.",
+  "restoration": "Restore the full tutor CPU classifier configuration when training maintenance ends."
+}

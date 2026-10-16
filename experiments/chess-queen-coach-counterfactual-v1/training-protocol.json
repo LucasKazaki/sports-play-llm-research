@@ -1,0 +1,316 @@
+{
+  "successful_diagnostic": {
+    "path": "data/private/chess-queen-qlora-v1/diagnostic-2.json",
+    "sha256": "99616936dc5caae3bf2424932b174f91cc7616c40a3e3f50013f0fb20b3fa979"
+  },
+  "diagnostic_protocol": {
+    "path": "experiments/chess-queen-qlora-v1/diagnostic-protocol-v2.json",
+    "sha256": "32568dfddf9ee999b64294d8d260dfe6b68b188c445702c69104599c124a2a7f"
+  },
+  "kernel_protocol": {
+    "path": "experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+    "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+  },
+  "kernel_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/kernel-2.json",
+    "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+  },
+  "successful_memory_qualification": {
+    "path": "data/private/chess-queen-coach-sft-training-v2/memory-qualification-1/qualification.json",
+    "sha256": "a063811d5a0165f31d6016ff263423b9b8584578a2f8d58a145560d562c035cc"
+  },
+  "closed_memory_worker": {
+    "path": "data/private/chess-queen-coach-sft-training-v2/memory-qualification-1-worker.json",
+    "sha256": "6e2145868ec8a3c09711a42bd63f7af3d5ac1cca30033e4f7118bfdaf9e0db55"
+  },
+  "memory_protocol": {
+    "path": "experiments/chess-queen-coach-sft-training-v2/memory-protocol.json",
+    "sha256": "418e4b13fed39d821b30ebc7b44a4b1ccc1da4661eb4e5b202688d975ec2fc69"
+  },
+  "memory_implementation": {
+    "path": "experiments/chess-queen-coach-sft-training-v2/memory_qualification_v1.py",
+    "sha256": "8da53d0f3efa64659324c23a284bdfaa9d919542269ea17a4327a0d1a13402c1"
+  },
+  "resources": "ExactlyreviewedNF4start6GiBphysical/10GiBcommit/10GiBGPU,stop4GiBphysical/4GiBcommit/1GiBGPU. Rootexclusivelease/ownedWindowsjob,cooperativeguardsandhardworker/cutoff. Noreservechange/offload/packageupgrade.",
+  "schema": "chess.queen-coach-counterfactual-training-protocol.v1",
+  "frozen_at": "2026-10-16T10:49:39.179646+00:00",
+  "implementation_sha256": "6185ba3dbb146d4a3d2b76e59e7611e8f69a386ae27564bfa08562afdee3b34b",
+  "qualified_parent_protocol": {
+    "path": "experiments\\chess-queen-coach-sft-training-v2\\protocol.json",
+    "sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168"
+  },
+  "warm_start": {
+    "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0064/adapter.pt",
+    "sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e",
+    "step": 64,
+    "presentations": 512,
+    "parameter_count": 1916928,
+    "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+    "source_sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+  },
+  "warm_start_metadata": {
+    "path": "data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\metadata.json",
+    "sha256": "5e23549b1f748f8c4b126873744444f584e802c72cba62c122736e62168b61b4"
+  },
+  "corpus_manifest": {
+    "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\manifest.json",
+    "sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854"
+  },
+  "cpu_preflight": {
+    "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\tokenizer-preflight.json",
+    "sha256": "995397bac354b4b9a1a840e30bcfb73893b9713478dd3ebf4f86d57f611303a3"
+  },
+  "cpu_preflight_source": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\cpu_preflight.py",
+    "sha256": "18ca7b0e181a1c6a0a692a9bd55d131d7f70d40065dba2e4370ac0403e139f4c"
+  },
+  "corpus_scientific_protocol": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\intake-protocol.json",
+    "sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a"
+  },
+  "corpus_operational_protocol": {
+    "path": "experiments\\chess-queen-coach-counterfactual-v1\\recovery-v2\\protocol.json",
+    "sha256": "3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b"
+  },
+  "corpus_operational_closed": {
+    "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2-operational-closed.json",
+    "sha256": "4a4e3b8784d936aa2bdab8b51496bf0e04301e3f74041650de2f683ddec4ae03"
+  },
+  "corpus_operational_provenance": {
+    "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\operational-provenance.json",
+    "sha256": "4a4e3b8784d936aa2bdab8b51496bf0e04301e3f74041650de2f683ddec4ae03"
+  },
+  "corpus_closed_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-recovery-v2-corpus-closed-review.json",
+    "sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462"
+  },
+  "data": {
+    "train": {
+      "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\train.jsonl",
+      "sha256": "828f022cdad4c8c142edd1c1ffb364c9c7ddc40f0d2ed93cadc7013fc68a615c"
+    },
+    "development": {
+      "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\development.jsonl",
+      "sha256": "b92db17df2cb9a0cbd3de63f9c6a4bf291bd513bee1a566bcb260e908a2c8d08"
+    },
+    "train_references": {
+      "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\train-references.jsonl",
+      "sha256": "2a691f79ae4f5c5e59a6c037afd643e5a975183c6b2b9df5d60aaf669f49c1e5"
+    },
+    "development_references": {
+      "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\development-references.jsonl",
+      "sha256": "9dbae1fd31f9c971050415a87a4d84e44165a28c76a59b6b07f45bba140fe547"
+    },
+    "heldout_inputs": {
+      "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\heldout-inputs.jsonl",
+      "sha256": "bb8cd76f985069d4e6c33c6e9147402b188d5a9309a61934368d726cebed8b59"
+    },
+    "heldout_references": {
+      "path": "data\\private\\chess-queen-coach-counterfactual-recovery-v2\\heldout-references.jsonl",
+      "sha256": "afd60d4cedd9026cd7fb7c82dc368dffcdc4982627c6e2721a4bbed6b378337d"
+    }
+  },
+  "development_raw_groups": [
+    "4OQdtC7J",
+    "pvjLlOIZ"
+  ],
+  "training": {
+    "seed": 4082086,
+    "updates": 192,
+    "batch_size": 1,
+    "gradient_accumulation": 8,
+    "presentations": 1536,
+    "learning_rate": 0.0001,
+    "warmup_updates": 16,
+    "scheduler": "linearwarmup,cosine to10percentLR",
+    "optimizer": "AdamW betas0.9/0.999 eps1e-8 decay0.01 foreachFalse, adapterFP32only",
+    "gradient_clip_norm": 1.0,
+    "max_total_tokens": 512,
+    "checkpoints": [
+      0,
+      48,
+      96,
+      192
+    ],
+    "objective": "Full128333-vocabulary shiftedCE, completeassistant/EOSonly; meanexampleloss/8 peraccumulation.",
+    "order": "One seeded permutation of all1536examples,512freshgames xFREE+two supplied contrasting legalmoves, oneepoch. No weighted loss or extra objective.",
+    "frozen": "ActualbaseNF4/encoder/bridges/BF16tiedvocabulary, exactstoragehash before/after includingnestedquantstates."
+  },
+  "generation": {
+    "max_new_tokens": 1024,
+    "maximum_seconds": 180,
+    "temperature": 0,
+    "seed": 20260823,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "phase_maximum_seconds": {
+    "training": 3000,
+    "heldout": 4500
+  },
+  "authorized_entrypoints": {
+    "training": "scripts/chess_queen_coach_counterfactual_train_v1.py mode=train only",
+    "heldout": "ONLY scripts/chess_queen_coach_counterfactual_cold_eval_v1.py with separately frozen cold-held protocol after actual software qualification; preserved unexecuted trainer.heldout is not an authorized entrypoint"
+  },
+  "expected_formatter": {
+    "path": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source/utils/instance_format.py",
+    "sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc"
+  },
+  "expected_tokenizer_bindings": {
+    "chat_template.jinja": {
+      "sha256": "69650a344de9a33971f463750410208cb35e4bf351eb4af422ffb695bc6c8847",
+      "bytes": 5588
+    },
+    "special_tokens_map.json": {
+      "sha256": "12403efb970f069ba62ddf3b66166a27254be4a198166b61ad1ee604bd3a4515",
+      "bytes": 289
+    },
+    "tokenizer.json": {
+      "sha256": "c2786337a78babe4fa37aea5f1b8492bcdd4ac7f307f6f014a634c9981b6aa81",
+      "bytes": 17223270
+    },
+    "tokenizer_config.json": {
+      "sha256": "29ba0f7b8ec803909d29713b01870acc5e4309b601fc1838bfa870d2f97b0aaa",
+      "bytes": 64068
+    }
+  },
+  "admission_latest_utc": "2026-10-16T11:15:00+00:00",
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "selection_method": "Prefer6/6 acceptedlegalBEST, elsemostlegal; thenFREE3plyagreement,FREEBESTagreement,lowest96recordtokenNLL,earliestincl0. Require96NLL+6raw complete. Facts do not alter selector.",
+  "heldout": "Fresh16full3plyeligible reservegames x3modes x2conditions=96rawcalls, both48pendingledgers before setup. All rawconditions must close before newheldrefs open. No oldcoachheldcontent used.",
+  "joint_fact_metric": "CompletedEOS+exactlyone acceptedBEST equals given+one unambiguous recognized ANALYSISmove equals given+complete true check/capture. Duplicates/contradictions/mismatch/unrecognized cannot jointsuccess; retainallrecognizedspans,unknown/partial. Other prose unaudited.",
+  "conditional_prediction_metric": "FREE1/2/3Stockfishprefix; suppliedfirstmove is not prediction. Report conditionalreply/2reply match and givenconsistency separately.",
+  "intervention": "Only freshpaired selected-move data plus retainedFREE supervision. Same qualifiedmodel/LoRA/tokenCE; fixedselected64warmbaseline, freshAdamW/no optimizerresume. Additionaldata+learning do not causally isolate pairdesign.",
+  "admission": "Each GPUphase independently must startbefore11:15UTC, not only training. Root must leave plausibleheldadmission; no192step/96response shrink or delayed implicitpermission. Global13UTC and phasecaps apply.",
+  "failures": "Firstbackend/resource/cancel/deadlinefailure haltsalllatercalls; fsyncedintent/rawoutcomes, allplannedunknown/notrun retained. No retries, repair, legalmask, wholeprose orElo claim.",
+  "dependencies": [
+    {
+      "path": "scripts\\chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_sft_eval_v1.py",
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "scripts\\chess_queen_qlora_v2.py",
+      "sha256": "958089517018cbbf2b22fcb878f2ba054419b41b5a9053fd0003b81c526f0bd9"
+    },
+    {
+      "path": "scripts\\chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "path": "scripts\\chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "scripts\\chess_queen_materialize.py",
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "d5fce78a9fc7ed58db393e44338c0d943687520ef0226635504b9862c328c99d"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_sft_train_v2.py",
+      "sha256": "9f62af5af7443282f3b0ae00dacd79fa4de5c84e5545642498f265cdd3fabd4b"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_sft_eval_v1.py",
+      "sha256": "f82164310cbb5ae09c2dc00ad4e4c6682cc259d7087a8c93efc86a98be520fba"
+    },
+    {
+      "path": "experiments\\chess-queen-v1\\gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "path": "data\\private\\chess-queen-qlora-v1\\diagnostic-worker-2.json",
+      "sha256": "42a5548365287e495471477666c0fc880dd02b079007fdcff66b89a7db413bd7"
+    },
+    {
+      "path": "experiments\\chess-queen-coach-sft-training-v1\\cpu_preflight.py",
+      "sha256": "e65c97bd7df80135933ddc4fd61c8dda9b0e3cda1fd060728a0c13ac8f9b86e8"
+    },
+    {
+      "path": "data\\private\\chess-queen-coach-sft-v1\\train-references.jsonl",
+      "sha256": "de6f03d50eb0765901f9e4980f43dd928e114b48c5ce7e631885717ad51455e7"
+    },
+    {
+      "path": "data\\private\\chess-queen-coach-sft-v1\\manifest.json",
+      "sha256": "c14d0005ea8f24c719866b1f72136f3c808805d57b013b2ab359985eba373077"
+    },
+    {
+      "path": "data\\private\\chess-queen-coach-sft-v1\\tokenizer-preflight.json",
+      "sha256": "3e078fc3e3ff28570b201f9129ad6b2da1b5289ecfb3cc031105239504aba4b7"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_sft_train_v1.py",
+      "sha256": "0a99081ba35de8b45d386ce8c81466c3cdf4cf08997933e44ce7cd4737128d4e"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_sft_runtime_v1.py",
+      "sha256": "de97771900ca67803c6138415627aeea42c5236982575d57c91153d7896abb7e"
+    },
+    {
+      "path": "data\\private\\chess-queen-coach-sft-training-v1\\train-1\\failure.json",
+      "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+    },
+    {
+      "path": "data\\private\\chess-queen-coach-sft-training-v1\\train-1\\training-calls.jsonl",
+      "sha256": "d1368094576d1302c5ef86c8e23c56cb0609e1b8c2d63ee20391c96aabf6681b"
+    },
+    {
+      "path": "data\\private\\chess-queen-coach-sft-training-v1\\train-1-worker.json",
+      "sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_sft_train_v2.py",
+      "sha256": "bc56efd3f2fe839859e1a0411bb11608a8e57f283c4f2f0add1b5ba4fb234c63"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_counterfactual_runtime_v1.py",
+      "sha256": "29f148855279fe0243bb4fbedac12057ab9d43cd6fe1c12a904606d4ca8f460b"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_counterfactual_eval_v1.py",
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_counterfactual_train_v1.py",
+      "sha256": "6185ba3dbb146d4a3d2b76e59e7611e8f69a386ae27564bfa08562afdee3b34b"
+    },
+    {
+      "path": "scripts\\chess_queen_coach_counterfactual_contract_v1.py",
+      "sha256": "b6caead2313327138c067c86b6514b57046d08b623a70315e0e2b7fb1f130051"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_counterfactual_contract_v1.py",
+      "sha256": "f278728e7f913215342c8c52482b713d4d0612e0915b6eeb8f41cf235a67e6b1"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_counterfactual_runtime_v1.py",
+      "sha256": "f5f602eeefdc71ff7c69b20b743c01478f192c68eff34096827ec07633129c3e"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_counterfactual_eval_v1.py",
+      "sha256": "36d2b0a96376bdf80514b92371e66e2f6fbe54f81014b9e08dd35df8ce69c7ee"
+    },
+    {
+      "path": "tests\\test_chess_queen_coach_counterfactual_train_v1.py",
+      "sha256": "e624d5517dfd3f176ac8b49d787ad9d9f194396c45dbabd404c42a3529850b61"
+    },
+    {
+      "path": "experiments\\chess-queen-coach-counterfactual-v1\\cpu_preflight.py",
+      "sha256": "18ca7b0e181a1c6a0a692a9bd55d131d7f70d40065dba2e4370ac0403e139f4c"
+    },
+    {
+      "path": "experiments\\chess-queen-coach-counterfactual-v1\\prepare_training_protocol.py",
+      "sha256": "21b138cc643203a24a6bdbe0b1658d9f384bbe64237a12259e7fab670f7059a8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-source\\utils\\instance_format.py",
+      "sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "files_sha256": {
+    "evidence/forecast-references.json": "a90ee0485ddb15b3a60929e40061118ddb6c7585e78b277f7cafb71239b9d227",
+    "evidence/independent-audit.json": "4cf8cdc2a6ec0538c03e7c2ca5930ad60a0a8c1fc52819fcd66b8641b1507433",
+    "evidence/outcome-ledger.json": "a79a8d1202b9edf563cb2cb66aa5b4ec9e3868cbe12532c3f94504b6b95cee30",
+    "evidence/selected-holdout.json": "f2343636238dbac4dd387eacf65a6cd76dc98d47aadb88476d664384aa854f68",
+    "evidence/selected-rollout-raw.json": "f5d934bc58a1f0d7256e534a9e15f29edbf553481440ba13198902b0d4d5d1fb",
+    "evidence/selected-rollout-score.json": "cb4e92f4a453e0be9263ed28502789d0f2132b2b80f074deab4d20afc723321a",
+    "evidence/selection-before-holdout.json": "fe335a6ac56b2bbdac22a59fe8675cd8defb38506f86fbc7d09e6935d56edcc9",
+    "evidence/starting-holdout.json": "e15c4deb4fbef124c43e19ca457a348bf447410867caf0912a485a30c74bc55a",
+    "evidence/starting-rollout-raw.json": "88631cf1264de99ef51117be0f336a3719aeb018dc9234c03a7995e80aab4a09",
+    "evidence/starting-rollout-score.json": "ca8e4f87e7428718c668d080ec9b7b3b6812be5f96e5ff3eaf0e6eb7961a687f",
+    "evidence/training-log.json": "7a466ea3533edc025c5b1bf19a6f0ece096cc9aa50062eb1d289f7470874f4bc",
+    "evidence/training-worker-1.json": "9f67b5784e4621fa8b47f5e8cf6515507bc2f4d2f9f76eb69388a56ee9d8205d"
+  },
+  "summary_sha256": "528d91c8212ba7d6d82350ef546bd9d1bff2673b0fc304d11235ddca93553ffe",
+  "private_run_receipt_sha256": "c066ec4ab973727d12ed31bf1d1eb6a184c96f51241ef3d3f2ea271238453255",
+  "weights_redistributed": false
+}

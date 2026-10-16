@@ -1,0 +1,53 @@
+{
+  "status": "passed_design_only",
+  "created_utc": "2026-10-16T11:03:07.048110+00:00",
+  "proposal": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan.json",
+    "bytes": 6818,
+    "sha256": "852782e2a7a49d105bec4545be47e936a800edbbfacefb8bdfd81d7da4b793b3"
+  },
+  "verdict": "Coherent separate fixed-checkpoint fresh comparison, no new training or selection. Implementation and exact protocol require separate review.",
+  "verified_binding_metadata": {
+    "closed_original_training_audit": {
+      "sha256": "6d6e98d80313f8650aea84c5e4c8ee12e0a012c916aafe72e519f88595a8a301",
+      "bytes": 63630
+    },
+    "closed_corpus_audit": {
+      "sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462",
+      "bytes": 39750
+    },
+    "inputs": {
+      "sha256": "bb8cd76f985069d4e6c33c6e9147402b188d5a9309a61934368d726cebed8b59",
+      "bytes": 9018
+    },
+    "references": {
+      "sha256": "afd60d4cedd9026cd7fb7c82dc368dffcdc4982627c6e2721a4bbed6b378337d",
+      "bytes": 81897
+    },
+    "reserved_exclusions": {
+      "sha256": "ea83e3d4db60f3f8bf4924c46dd291510116776a49830b7995be674ad665f05d",
+      "bytes": 16363411
+    }
+  },
+  "conditions": {
+    "first": "fixed terminal old SFT-v2 step256, trained comparison",
+    "second": "fixed original dev-selected old SFT-v2 step64"
+  },
+  "blocking_design_findings": [],
+  "requirements": [
+    "Use direct original SFT Runtime2 and truthful old checkpoint identity, not counterfactual-trained labels.",
+    "Actual matching-profile two-request topology qualification must pass and be independently audited before fresh calls.",
+    "Full96 planned responses and16 game-group denominators; no replacement, scoring on partial panels, quality peek or selection.",
+    "Persist separate spent-cohort receipt before first actual call; all16 are then spent for future independent evaluation and all512reserved games/boards remain excluded from future TRAIN.",
+    "Whole-phase admission strictly before11:30UTC, cap4500s and cutoff13UTC; serialized heavy CPU/GPU. No admission change implied.",
+    "Keep nominal180s decoder limit, inherited120s effective resource guard and210s process limit separately labelled."
+  ],
+  "limits": [
+    "Only16 source game groups, matched check/noncheck purposive cohort and50k-node teacher targets; no representative strength, Elo, causal-training-gain or whole-prose usefulness inference.",
+    "Supplied first moves measure following; only FREE teacher prefixes are independent move predictions.",
+    "Fixed terminal256 is trained, so internal baseline key must always carry explicit trained-comparison label in public output.",
+    "45-second average across96requests would use4320s; actual qualification latency must support feasibility, but phase cap still cannot guarantee completion."
+  ],
+  "scope": "Complete6818-byte design read and binding byte hashes only; no model/engine/GPU calls, no old held-reference semantic inspection, no new input/reference construction.",
+  "followUpTasks": []
+}

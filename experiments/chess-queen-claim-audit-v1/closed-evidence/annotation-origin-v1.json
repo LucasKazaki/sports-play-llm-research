@@ -1,0 +1,8 @@
+{
+  "schema": "chess.claim-annotation-origin.v1",
+  "mapping_candidate_sha256": "4c306b38950a459477eb75b984b4241397fb395fd4204287de939064545e4c04",
+  "annotation_origin": "Codex root agent manually selected and mapped text spans/predicates/branches.",
+  "independent_semantic_review": "Separate local check_review agent; not a human chess expert.",
+  "expert_human_semantic_validation": false,
+  "scope": "Engineering diagnostic over a purposive inventory of four spent demonstrations; no human-gold or whole-prose quality claim."
+}

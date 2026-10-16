@@ -1,0 +1,79 @@
+{
+  "fixture_only": true,
+  "no_models_or_engine": true,
+  "source_bindings": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.js",
+      "sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c",
+      "bytes": 14755
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\style.css",
+      "sha256": "6aa7990ba9b04d8753c8e381a6225d1c916f7e034ab7de3d9461fc1dde216681",
+      "bytes": 11590
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.css",
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0",
+      "bytes": 2532
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\draft_checks_v1.py",
+      "sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+      "bytes": 10253
+    }
+  ],
+  "renderer_projection": {
+    "source_sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c",
+    "prefix_bytes": 5462,
+    "prefix_sha256": "8817c3f104571465169b48ab11f3a9b82ab83c5fcbee0aa6600681247051e5b8",
+    "split_marker": "(() => {"
+  },
+  "files": [
+    {
+      "file": "coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0"
+    },
+    {
+      "file": "fixture.css",
+      "bytes": 1383,
+      "sha256": "623f6e39b99c7e8a531c233b6753217c0b48c742739b21021dd8917efadba204"
+    },
+    {
+      "file": "fixture.js",
+      "bytes": 2670,
+      "sha256": "d0ec58c4b86df59a74523e7c13a6a64b808c832c07dfbef4e8732fe4b37c2374"
+    },
+    {
+      "file": "fixtures.json",
+      "bytes": 19719,
+      "sha256": "b15749ccd1b232b1fb95059d342ca10f71d7552fa315f75a7a40774a48ddc7e1"
+    },
+    {
+      "file": "index.html",
+      "bytes": 2265,
+      "sha256": "fac17555e595af1a1bd609d0cad8e4d39c95e9dfcb22c6f55951d060b3e5fd8a"
+    },
+    {
+      "file": "README.md",
+      "bytes": 2211,
+      "sha256": "b2252571df8950297f7f79cdd1070b8ad77b37854fb4067ed83cdd4d0403a7b6"
+    },
+    {
+      "file": "renderer.js",
+      "bytes": 5462,
+      "sha256": "8817c3f104571465169b48ab11f3a9b82ab83c5fcbee0aa6600681247051e5b8"
+    },
+    {
+      "file": "serve.py",
+      "bytes": 2276,
+      "sha256": "e3f55d6bacb6b7712c4ecd79fe433bda85e9362549e43067fb8d0263c7f975e5"
+    },
+    {
+      "file": "style.css",
+      "bytes": 11590,
+      "sha256": "6aa7990ba9b04d8753c8e381a6225d1c916f7e034ab7de3d9461fc1dde216681"
+    }
+  ]
+}

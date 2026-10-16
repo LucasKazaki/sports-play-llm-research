@@ -1,0 +1,20 @@
+{
+  "schema": "chess.tuned-tutor-source-copy-manifest.v1",
+  "exact_copies": [
+    {
+      "origin": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tuned-tutor-v1-source-review-final.json",
+      "copy": "experiments\\chess-queen-tutor-adapter-v1\\source-review-final.json",
+      "sha256": "4556756a1ecdd5aee9b6ec920a5cec7354237ae082b39079c4ddee1784459ade",
+      "bytes": 5262
+    },
+    {
+      "origin": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tuned-tutor-v1-source-review-pre-repair.json",
+      "copy": "experiments\\chess-queen-tutor-adapter-v1\\source-review-pre-repair.json",
+      "sha256": "124c594a9ae8cbaa767613d61a2a8f9b400cca54f4e6a336934ccf78316d0ed4",
+      "bytes": 4302
+    }
+  ],
+  "actual_qualification_calls": 0,
+  "availability": false,
+  "scope": "Independent local-agent source/software review; no model-quality or human-expert acceptance."
+}

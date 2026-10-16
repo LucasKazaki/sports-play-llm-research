@@ -1,0 +1,104 @@
+{
+  "schema": "chess.existing-coach-checkpoint-fresh-comparison-design.v1",
+  "frozen_at": "2026-10-16T11:15:05.811841+00:00",
+  "status": "DESIGN_ONLY_NO_MODEL_DISPATCH",
+  "hypothesis": "On a fresh move-conditioned check/noncheck cohort, the development forecast-selected step64 and fixed terminal step256 may differ in immediate-fact accuracy and free three-ply teacher agreement. Lower development NLL at256 does not establish better forecasting or coaching.",
+  "reason": "New counterfactual TRAIN missed its strict11:00 admission during repair of an actual Windows process-topology failure. This separate no-training question uses completed old SFT checkpoints and preserves that unrun training plan.",
+  "condition_order": [
+    "baseline",
+    "selected"
+  ],
+  "condition_labels": {
+    "baseline": "Fixed terminal old SFT checkpoint256; trained comparison, NOT untrained baseline",
+    "selected": "Fixed old development-selected SFT checkpoint64; selection remains unchanged"
+  },
+  "conditions": {
+    "baseline": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0256/adapter.pt",
+      "sha256": "bd8a7b886f94c1199e2fc0a14481dc0603f72fe9503a562a82cf12ba0bf8059e",
+      "step": 256,
+      "presentations": 2048,
+      "parameter_count": 1916928,
+      "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+      "source_sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    "selected": {
+      "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0064/adapter.pt",
+      "sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e",
+      "step": 64,
+      "presentations": 512,
+      "parameter_count": 1916928,
+      "candidate_id": "queen-pawn-8/nf4-coach-sft-v2",
+      "source_sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    }
+  },
+  "checkpoint_metadata": {
+    "baseline": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0256\\metadata.json",
+      "sha256": "c205a72318170e32d8c771df05d39425c5fd682bb3064e30ea402489d28d024c"
+    },
+    "selected": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-sft-training-v2\\train-1\\checkpoint-0064\\metadata.json",
+      "sha256": "5e23549b1f748f8c4b126873744444f584e802c72cba62c122736e62168b61b4"
+    }
+  },
+  "closed_original_training_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\queen-coach-sft-training-v2-closed-review.json",
+    "sha256": "6d6e98d80313f8650aea84c5e4c8ee12e0a012c916aafe72e519f88595a8a301"
+  },
+  "closed_corpus_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\counterfactual-recovery-v2-corpus-closed-review.json",
+    "sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462"
+  },
+  "inputs": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\heldout-inputs.jsonl",
+    "sha256": "bb8cd76f985069d4e6c33c6e9147402b188d5a9309a61934368d726cebed8b59"
+  },
+  "references": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\heldout-references.jsonl",
+    "sha256": "afd60d4cedd9026cd7fb7c82dc368dffcdc4982627c6e2721a4bbed6b378337d"
+  },
+  "reserved_exclusions": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-recovery-v2\\reserved-exclusions.json",
+    "sha256": "ea83e3d4db60f3f8bf4924c46dd291510116776a49830b7995be674ad665f05d"
+  },
+  "cohort": "Already frozen first16source-order full-three-ply eligible reserve games;48label-free inputs:FREE+selected_a+selected_b. No quality-based selection or replacement.",
+  "planned": 96,
+  "records_per_condition": 48,
+  "source_game_groups": 16,
+  "reserved_source_games": 512,
+  "no_new_training": true,
+  "source_truthful_profile": "NEW cold child imports exact original SFT Runtime2 directly; output candidate/schema/adapter source remain old-SFTv2 and conditions retain actual old checkpoint identities. No counterfactual-trained relabelling.",
+  "generation": {
+    "max_new_tokens": 1024,
+    "maximum_seconds": 180,
+    "temperature": 0,
+    "seed": 20260823,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "effective_request_guard_seconds": null,
+  "child_outer_maximum_seconds": 210,
+  "phase_maximum_seconds": 4500,
+  "whole_phase_admission_latest_utc": "2026-10-16T11:30:00+00:00",
+  "cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "metrics": "Same strict immediate-fact scorer:EOS,legal accepted BEST,unambiguous ANALYSIS identity/check/capture and paired supplied success;FREE1/2/3teacher prefix. Supplied first ply never independent prediction. All recognized spans,unknown/partial/notrun and full game-group denominator retained. Other prose and teaching usefulness unscored.",
+  "embargo": "Both48raw conditions close without backend/process/resource failure before scoring references. No early quality inspection/reselection. Original failed held cases remain excluded; no retry,repair or legal mask.",
+  "future_spent_policy": "These16game groups become spent upon any actual comparison call and cannot be reused for independent future evaluation. All512reserved groups/registered boards remain excluded from future TRAIN. Persist separate spent-cohort receipt before dispatch without rewriting original reservations.",
+  "prerequisites": [
+    "Independent design/source/final exact protocol GO",
+    "Actual NEW direct-SFT-profile two-spent-development-request cold qualification PASS and independent audit",
+    "Stable owned process/job/exit proof; prior children gone and lease free",
+    "Root-only serialized GPU; no heavy CPU analysis concurrently",
+    "Plausible full96-call timing and complete phase admitted before11:30; otherwise not_run"
+  ],
+  "claims": "Descriptive fresh comparison of two already trained old checkpoints only. Does not reproduce failed untrained-versus-selected test,isolate causal training gains,select a new checkpoint,establish whole-prose coaching/Elo or enable UI automatically.",
+  "resource_policy_metadata_seconds": 120,
+  "resource_policy_timer_enforced": false,
+  "timer_clarification": "Unchanged nf4.guard_for enforces resource reserves only. Policy maximum_owned_request_seconds120 is unused metadata. Actual generation180 seconds, cumulative child210, phase4500, global13UTC remain unchanged.",
+  "superseded_documentation": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan.json",
+    "sha256": "852782e2a7a49d105bec4545be47e936a800edbbfacefb8bdfd81d7da4b793b3",
+    "only_change": "Correct timer description; preserve every cohort,checkpoint,scientific,generation,reserve,denominator and deadline setting."
+  }
+}

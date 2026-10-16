@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_encoder_check_generalization_v1.py -q",
+  "stdout": "13 passed in 0.13s",
+  "source_sha256": "1cc6e52d35a2ac498cacc433ed0f30124d04ffbaed3d36bbf74b7a7cf34c1439",
+  "tests_sha256": "84313ffacd4a2ed4df2d68eacbe601f9000f8f9d7fe99aefdbb170eafcaede02",
+  "metadata_verify": {
+    "torch_imported": false,
+    "pyarrow_imported": false,
+    "bitsandbytes_imported": false,
+    "source_rows_constructed": 0,
+    "coach_held_reference_reads": 0
+  }
+}

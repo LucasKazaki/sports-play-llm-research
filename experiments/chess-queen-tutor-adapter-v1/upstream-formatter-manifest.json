@@ -1,0 +1,14 @@
+{
+  "schema": "chess.tuned-tutor-upstream-formatter-manifest.v1",
+  "parent_source_manifest_sha256": "22ef4c5ecf7f7f79848eb3b261f74cee96296614ae99e38d3f16bdca06da08ff",
+  "diagnostic_protocol_sha256": "32568dfddf9ee999b64294d8d260dfe6b68b188c445702c69104599c124a2a7f",
+  "checkout": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/work/queen-source",
+  "repository": "https://github.com/queen-project/queen",
+  "revision": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+  "files": {
+    "utils/instance_format.py": {
+      "sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc"
+    }
+  },
+  "scope": "Supplemental exact source-file inventory already pinned by the frozen diagnostic; no code/checkout modification."
+}

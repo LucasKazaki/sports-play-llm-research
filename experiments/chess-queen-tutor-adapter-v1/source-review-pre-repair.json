@@ -1,0 +1,80 @@
+{
+  "schema": "chess.independent-tuned-tutor-source-review.v1",
+  "status": "repair_required_before_authored_qualification",
+  "reviewed_at": "2026-10-16T10:05:22.235388+00:00",
+  "scope": "All three final finite bundles, complete entrypoint/runner/tests/protocol/supplemental manifest, disabled qualification and README. CPU-only; no model/GPU/engine/HTTP/browser calls.",
+  "tested_exact_implementation": [
+    {
+      "path": "scripts/chess_queen_coach_tutor_v1.py",
+      "sha256": "2b6a1e5e9538613c0748db5a53b029ddf1d2dc8ad9851b17d73f93d5f0328d69",
+      "bytes": 16942
+    },
+    {
+      "path": "prototype/chess_tutor_v1/queen_tuned_runtime_v1.py",
+      "sha256": "69f5313b6aa6be141c7f329be8e9b18e0c9d995a48562ca0f2eb69d385b826c3",
+      "bytes": 10597
+    }
+  ],
+  "tested_exact_tests": {
+    "path": "tests/test_chess_queen_coach_tutor_v1.py",
+    "sha256": "c65105cf024dd147ae4f1e838c54eaa0f33755f599942399253ec90f4233a7dc",
+    "bytes": 20621
+  },
+  "protocol": {
+    "path": "experiments/chess-queen-tutor-adapter-v1/protocol.json",
+    "sha256": "186ce7fb9ce907d91018edbc046813173afbfcffb20427207e48da57e3c0caf7",
+    "bytes": 5967
+  },
+  "bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tuned-tutor-source-review\\entrypoint-bundle.txt",
+      "sha256": "b485b871a4972fa27918b6a5b17f8df0110eb40cf812ae660785ab550a463321",
+      "bytes": 24361
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tuned-tutor-source-review\\runner-bundle.txt",
+      "sha256": "dbb11888ee234618af47e05bb5c9c9ffe96f72d803118ceaf07b704953c0f659",
+      "bytes": 11929
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tuned-tutor-source-review\\tests-bundle.txt",
+      "sha256": "01e058aa257292e58f04fcfd0c7b4183732706ddf6bcab8d5257160c7a418de5",
+      "bytes": 23400
+    }
+  ],
+  "tests": {
+    "passed": 38,
+    "elapsed_seconds": 8.24,
+    "exit_code": 0
+  },
+  "findings": [
+    {
+      "id": "T1",
+      "priority": 2,
+      "functions": [
+        "entrypoint.run_request",
+        "QueenRunner.verify"
+      ],
+      "defect": "Cancellation qualification does not bind the original consumed input bytes. Intent contains input_sha256 but envelope entrypoint omits it; cancellation raw_response may be null. Runner only validates current canceled input packet and worker argument paths, so a changed input at the same path can be rebound after execution.",
+      "required_repair": "Retain intent input byte SHA in final entrypoint metadata and require it against completion/cancellation bound input bytes; regression for same-path canceled input mutation."
+    },
+    {
+      "id": "T2",
+      "priority": 2,
+      "functions": [
+        "QueenRunner.verify"
+      ],
+      "defect": "Declared independent actual entrypoint qualification review is not an admission binding. Current ten bindings include training/held audits, eligibility, and both input/envelope/worker trios, but no original independent qualification audit.",
+      "required_repair": "Bind a qualification review wrapper and original report covering both exact trios and source/protocol; require eligibility to reference that audit SHA. Validate canceled envelope via _check_envelope so any returned raw is also checked. Treat this as local-agent engineering evidence, not human expert validation."
+    }
+  ],
+  "positive_checks": [
+    "Shipped availability remains false. No existing server, launcher, frontend, trainer, evaluator or corpus source changed.",
+    "Only exact fixed step64 adapter is loaded before inference; response.raw.json and nested raw_response remain unchanged.",
+    "Input is restricted to present FEN, legal consecutive prior FENs and optional legal selected move; future/score/PV fields rejected.",
+    "Outside source dependencies require exact explicit manifest paths/hashes; traversal and external symlink substitutions reject.",
+    "Shared worker owns child lifetime; 180-second argument yields 210-second outer cap, correctly disclosed.",
+    "No activation or model quality approval follows CPU source review."
+  ],
+  "followUpTasks": []
+}

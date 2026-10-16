@@ -1,0 +1,113 @@
+{
+  "schema": "chess.queen-tutor-entrypoint-protocol.v1",
+  "profile_id": "coach-v2-step64",
+  "prepared_at_utc": "2026-10-16T09:51:37.868903+00:00",
+  "implementation_sha256": "9acce2c2c190738b4477c352fc87eaeae6fa716b042bfcd6276101ab26cf5915",
+  "scope": "root_dispatched_pre_activation_qualification_or_admitted_single_request",
+  "generation": {
+    "max_new_tokens": 1024,
+    "maximum_seconds": 180,
+    "temperature": 0,
+    "seed": 20260823,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "resources": {
+    "start_physical_available_bytes": 6442450944,
+    "start_commit_headroom_bytes": 10737418240,
+    "start_gpu_free_bytes": 10737418240,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 4294967296,
+    "stop_gpu_free_bytes": 1073741824
+  },
+  "outer_seconds": 210,
+  "python_version": "3.12.2",
+  "runtime_versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "bitsandbytes": "0.50.2",
+    "peft": "0.21.2",
+    "accelerate": "1.15.0",
+    "safetensors": "0.8.0",
+    "numpy": "2.5.4"
+  },
+  "bindings": {
+    "runtime": {
+      "path": "scripts/chess_queen_coach_sft_runtime_v2.py",
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349"
+    },
+    "selection": {
+      "path": "data/private/chess-queen-coach-sft-training-v2/train-1/selection.json",
+      "sha256": "79abaea0cba0a292ef17e2686dbb69c72e568bdefb61848d64a38cc6ee15e714"
+    },
+    "checkpoint": {
+      "path": "data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0064/adapter.pt",
+      "sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e"
+    },
+    "checkpoint_metadata": {
+      "path": "data/private/chess-queen-coach-sft-training-v2/train-1/checkpoint-0064/metadata.json",
+      "sha256": "5e23549b1f748f8c4b126873744444f584e802c72cba62c122736e62168b61b4"
+    },
+    "training_protocol": {
+      "path": "experiments/chess-queen-coach-sft-training-v2/protocol.json",
+      "sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168"
+    },
+    "native": {
+      "path": "scripts/chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    "nf4": {
+      "path": "scripts/chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    "qlora": {
+      "path": "scripts/chess_queen_qlora_v2.py",
+      "sha256": "958089517018cbbf2b22fcb878f2ba054419b41b5a9053fd0003b81c526f0bd9"
+    },
+    "materialize": {
+      "path": "scripts/chess_queen_materialize.py",
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    "resource": {
+      "path": "scripts/chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    "worker": {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    "assets": {
+      "path": "experiments/chess-queen-v1/asset-manifest.json",
+      "sha256": "dc909eca4d0e0b17b2b2d188f55e461c18121516d62d1fc8062fd33c81620ad3"
+    },
+    "sources": {
+      "path": "experiments/chess-queen-v1/source-manifest.json",
+      "sha256": "22ef4c5ecf7f7f79848eb3b261f74cee96296614ae99e38d3f16bdca06da08ff"
+    },
+    "kernel_protocol": {
+      "path": "experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+      "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+    },
+    "kernel_receipt": {
+      "path": "data/private/chess-queen-nf4-v1/kernel-2.json",
+      "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+    },
+    "diagnostic_protocol": {
+      "path": "experiments/chess-queen-qlora-v1/diagnostic-protocol-v2.json",
+      "sha256": "32568dfddf9ee999b64294d8d260dfe6b68b188c445702c69104599c124a2a7f"
+    }
+  },
+  "status": "frozen_for_independent_source_review_not_activated",
+  "source_review_before_actual_calls_required": true,
+  "preactivation_authority": "Only root dispatches source-reviewed authored qualification through the unchanged shared GPU worker, with --maximum-seconds180 (outer210). This is a local CLI, not a web endpoint or an OS user-identity proof.",
+  "availability": false,
+  "cold_start_limit": "180second generation cap plus30second outer startup/exit grace; actual cold startup must qualify before admission. No promise of180seconds if the outer210second deadline closes first.",
+  "qualification_required": {
+    "completed": "One authored EOS response with exact step64/raw/source identity and frozen-storage verification, closed worker/lease, observed memory/startup.",
+    "cancelled": "One separate owned cancelled authored request with exact input/arguments and closed nonzero child before lease release.",
+    "limits": "No held inputs, references, score/PV/future boards; qualification proves runtime behavior only."
+  },
+  "no_activation": "Closed held audit, explicit subsequent optional-demo eligibility and independent actual entrypoint qualification remain prerequisites. Source/test success never enables the candidate.",
+  "raw_contract": "Untouched Runtime.infer dict retained separately and under raw_response; entrypoint provenance is outside raw fields. runtime adapter_sha256 retains its original meaning, not entrypoint source.",
+  "trained_quality_limit": "Development includes5 false among12 recognized narrow facts as parent reported; other prose unscored. No expert or tutor validation, strength or whole-prose correctness claim."
+}

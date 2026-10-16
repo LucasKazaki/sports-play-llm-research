@@ -1,0 +1,8 @@
+{
+  "source_sha256": "c494f13bb778beb634e92035129a5c717ece0ac3f23ed5c6ddcfa4489503a93d",
+  "tests_sha256": "07b7b88948a55b3a72ef1850bbc46d08c66fd24d8c21286066d38e607dc23629",
+  "tests": 6,
+  "elapsed_seconds": 0.51,
+  "bundle_bytes": 7961,
+  "no_actual_freeze_or_model_calls": true
+}

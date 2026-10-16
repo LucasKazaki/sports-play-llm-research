@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T06:59:10.383409+00:00",
+  "script": "scripts\\chess_encoder_check_v1.py",
+  "arguments_sha256": "c15e89b22a5ca011da1556efcbb958a35d09109d9d7b4410b1940e7cb4862a28",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "completed",
+  "child_pid": 3468,
+  "exit_code": 0,
+  "log": "data\\private\\chess-encoder-check-v1\\run-worker-1.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 432.6570000000065
+}

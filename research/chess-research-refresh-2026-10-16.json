@@ -1,0 +1,146 @@
+{
+  "checked_on": "2026-10-16",
+  "scope": "Two bounded paper-index searches; full-text passages read for Queen, ACT-Eval and explanation-faithfulness. Not a systematic or exhaustive review. All findings remain reported literature, not local results.",
+  "queries": [
+    {
+      "query": "chess language models explain moves grounded explanations board encoder iterative distillation evaluation",
+      "from": "2026-07-01",
+      "to": "2026-10-16",
+      "k": 8
+    },
+    {
+      "query": "chess language model world state tracking legal moves explanation factuality benchmark data contamination chess understanding",
+      "from": "2025-01-01",
+      "to": "2026-10-16",
+      "k": 8
+    }
+  ],
+  "papers": [
+    {
+      "id": "arxiv:2610.03695",
+      "title": "Language Models that Play Chess and Explain Their Moves",
+      "url": "https://arxiv.org/abs/2610.03695",
+      "evidence_level": "selected full-text passages"
+    },
+    {
+      "id": "arxiv:2609.22245",
+      "title": "Do Chess Explanations Reflect Model Decisions? Behavioral and Token-Level Tests of LLM Reasoning Faithfulness",
+      "url": "https://arxiv.org/abs/2609.22245",
+      "evidence_level": "selected full-text passages"
+    },
+    {
+      "id": "arxiv:2608.04240",
+      "title": "Hallucinations on the Board: Tool-Augmented Evaluation of LLM Chess Commentary",
+      "url": "https://arxiv.org/abs/2608.04240",
+      "evidence_level": "selected full-text passages"
+    },
+    {
+      "id": "arxiv:2609.18286",
+      "title": "What Counts as Strategic Reasoning? A Systematic Mapping of Chess Research on Humans, Engines, and Language Models",
+      "url": "https://arxiv.org/abs/2609.18286",
+      "evidence_level": "abstract/metadata"
+    },
+    {
+      "id": "arxiv:2607.11486",
+      "title": "Communicating Chess Strategies in Natural Language",
+      "url": "https://arxiv.org/abs/2607.11486",
+      "evidence_level": "abstract/metadata"
+    },
+    {
+      "id": "arxiv:2508.19851",
+      "title": "Tracking World States with Language Models: State-Based Evaluation Using Chess",
+      "url": "https://arxiv.org/abs/2508.19851",
+      "evidence_level": "abstract/metadata"
+    },
+    {
+      "id": "arxiv:2510.04542",
+      "title": "Code World Models for General Game Playing",
+      "url": "https://arxiv.org/abs/2510.04542",
+      "evidence_level": "abstract/metadata"
+    },
+    {
+      "id": "arxiv:2605.17565",
+      "title": "Generalization or Memorization? Brittleness Testing for Chess-Trained Language Models",
+      "url": "https://arxiv.org/abs/2605.17565",
+      "evidence_level": "abstract/metadata"
+    },
+    {
+      "id": "arxiv:2605.30100",
+      "title": "Chess-World-Model: A 10M-Game Benchmark for Exact State Tracking from Chess Move Sequences",
+      "url": "https://arxiv.org/abs/2605.30100",
+      "evidence_level": "abstract/metadata"
+    },
+    {
+      "id": "arxiv:2512.01992",
+      "title": "LLM CHESS: Benchmarking Reasoning and Instruction-Following in LLMs through Chess",
+      "url": "https://arxiv.org/abs/2512.01992",
+      "evidence_level": "abstract/metadata"
+    },
+    {
+      "id": "arxiv:2510.23948",
+      "title": "ChessQA: Evaluating Large Language Models for Chess Understanding",
+      "url": "https://arxiv.org/abs/2510.23948",
+      "evidence_level": "abstract/metadata"
+    }
+  ],
+  "metadata": [
+    {
+      "id": "arxiv:2608.04240",
+      "status": "fulfilled",
+      "created": "2026-08-04",
+      "updated": "2026-08-06"
+    },
+    {
+      "id": "arxiv:2609.22245",
+      "status": "fulfilled",
+      "created": "2026-09-05",
+      "updated": "2026-09-22"
+    },
+    {
+      "id": "arxiv:2610.03695",
+      "status": "fulfilled",
+      "created": "2026-10-02",
+      "updated": "2026-10-05"
+    },
+    {
+      "id": "arxiv:2605.30100",
+      "status": "fulfilled",
+      "created": "Thu, 28 May 2026 15:43:31 GMT",
+      "updated": "2026-05-29"
+    }
+  ],
+  "metadata_semantics": "The metadata array retains original paper-index observations. Its created/updated or nested createdDate/updateDate fields are not canonical arXiv revision dates.",
+  "canonical_arxiv_versions": [
+    {
+      "id": "arxiv:2608.04240",
+      "version": "v1",
+      "submitted_utc": "2026-08-04T21:31:01Z",
+      "url": "https://arxiv.org/abs/2608.04240v1"
+    },
+    {
+      "id": "arxiv:2610.03695",
+      "version": "v1",
+      "submitted_utc": "2026-10-02T17:54:22Z",
+      "url": "https://arxiv.org/abs/2610.03695v1"
+    },
+    {
+      "id": "arxiv:2609.22245",
+      "version": "v1",
+      "submitted_utc": "2026-09-05T11:36:59Z",
+      "url": "https://arxiv.org/abs/2609.22245v1"
+    },
+    {
+      "id": "arxiv:2605.30100",
+      "version": "v1",
+      "submitted_utc": "2026-05-28T15:43:31Z",
+      "url": "https://arxiv.org/abs/2605.30100v1"
+    }
+  ],
+  "source_date_correction": {
+    "checked_on": "2026-10-16",
+    "source": "Canonical arXiv abstract pages and Submission history sections, directly read.",
+    "error": "Paper-index updateDate values were previously described as paper revision dates.",
+    "correction": "The four directly checked submission histories each show only v1. Preserve index dates as index observations, not evidence of a paper revision.",
+    "scope": "Source metadata correction only; no experimental source, frozen protocol, data, model or result changed."
+  }
+}

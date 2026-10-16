@@ -1,0 +1,83 @@
+{
+  "schema": "chess.check-balanced.v2",
+  "frozen_at": "2026-10-16T05:53:04.810877+00:00",
+  "hypothesis": "Balanced same-piece checking/nonchecking supervision can teach a local causal LLM check discrimination better than constant false.",
+  "seed": 4082040,
+  "groups": {
+    "train": 8192,
+    "dev": 128,
+    "holdout": 256
+  },
+  "source_row_cap": 500000,
+  "source": {
+    "path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+    "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "upstream": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet",
+    "license": "CC0-1.0; retained prior acquisition; no new download"
+  },
+  "base_model": {
+    "path": "data/private/chess-fact-sft-v1/models/base",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+    "license": "Apache-2.0",
+    "files_sha256": {
+      "LICENSE": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "README.md": "1ab64a26fcb3b461423b89a433a8c858f1bf8d4086f979cbb3ff878d47cf20e9",
+      "config.json": "660db3b73d788119c04535e48cf9be5f55bc3100841a718637ae695b442f27dd",
+      "generation_config.json": "2325da0f15bb848e018c5ae071b7943332e9f871d6b60e2ed22ca97d4cb993d2",
+      "merges.txt": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+      "model.safetensors": "f47f71177f32bcd101b7573ec9171e6a57f4f4d31148d38e382306f42996874b",
+      "tokenizer.json": "aeb13307a71acd8fe81861d94ad54ab689df773318809eed3cbe794b4492dae4",
+      "tokenizer_config.json": "d5d09f07b48c3086c508b30d1c9114bd1189145b74e982a265350c923acd8101",
+      "vocab.json": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  },
+  "known_registry": {
+    "path": "experiments/chess-matched-check-v1/archive/v2/known-history-exclusions-v2.json",
+    "sha256": "a11640f88970296a42f0a6d82f134fa4bca5b9f202b1eaa405cf586377f9bcfb"
+  },
+  "latest_spent_dataset": {
+    "path": "data/private/chess-matched-check-diagnostic-v1/cohort/dataset.json",
+    "sha256": "ae305d86cf415f2b48bd3cde7a36bd022cf43da567c019a4f8d8bb17b8c34a18"
+  },
+  "implementation_sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5",
+  "core_sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+  "steps": 4096,
+  "batch_size": 8,
+  "learning_rate": 0.0002,
+  "checkpoint_steps": [
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "evaluation_batch_size": 16,
+  "maximum_seconds": 7200,
+  "training": "Native Qwen3-0.6B r16 LoRA warm-started at saved run1step512, fresh AdamW for4096updates, full-vocabulary one-tokenCE; fixedseed; BF16base/FP32adapter; warmup32; train examples may recur. Base disabled-adapter development0 remains selector candidate.",
+  "selection": "Highest development rawtoken correctness then bothpairs correct then base0, unchangedwarm-1, earliest newcheckpoint. -1means zero newupdates on saved512warmadapter. Keep strongest known warmcandidate if newupdates regress.",
+  "inputs": "Current pre-move FEN, selected legal UCI move and occupied-square map only. No SAN/check suffix, post-move board, attacks-after, solution, theme, engine PV or target label.",
+  "evaluation": "Raw unrestricted next-token argmax. Non-boolean tokens invalid, never rescued by binary renormalization. Conditional binary probabilities retained separately. Every planned example remains denominator.",
+  "exclusions": "Pinned all-known history registry plus latest matched-check source games/current/before/successor boards. One new original game per pair; hash split by original game; no source solution tails consumed.",
+  "limits": [
+    "Only check detection; not broad chess understanding, strategic commentary, move strength or Elo.",
+    "Selected tactical same-piece pairs; not natural-game prevalence or complete special-move coverage.",
+    "Unknown overlap with original base pretraining. Historical evaluations remain spent.",
+    "Synthetic software tests are not evidence of learned chess capability."
+  ],
+  "sources": [
+    "https://database.lichess.org/",
+    "https://huggingface.co/Qwen/Qwen3-0.6B",
+    "https://python-chess.readthedocs.io/en/latest/"
+  ],
+  "intake_protocol_sha256": "7c7c7c4bc05e661874468c4dcd2b219c3f2c64a87fbc953d00097cad5ba24a83",
+  "cohort_frozen_sha256": "292b142a8e8f062259d07f7c12ed0765f55feff3cfa22141c15b264cb7378c3c",
+  "amendment": "Pre-forward run2: physical10.1GB and GPU12.5GB remained at original8GBcommit threshold. Coordinate CPUwork and require6GiB physical plus6GiB commit and1GiB GPU running reserves. Preserve original run and all2304planned outcomes. Freshoptimizer warm-start is separately versioned; holdout untouched until dev selection.",
+  "minimum_commit_headroom_gib": 6,
+  "minimum_physical_available_gib": 6,
+  "warm_start": {
+    "path": "data/private/chess-check-balanced-v2/run-1/checkpoint-512/adapter_model.safetensors",
+    "sha256": "16a1cd7234c6fc447b367eec4a7c1149b90a0f328d722b4950dc06f0e7a65c14",
+    "reason": "Run1 stopped on global Windows commit reserve after1004updates. Continue savedstep512 with fresh optimizer, not exact resume. Old updates513..1004 logs retained but weights not saved. No holdout calls occurred.",
+    "unchanged_adapter_is_selection_candidate": true
+  }
+}

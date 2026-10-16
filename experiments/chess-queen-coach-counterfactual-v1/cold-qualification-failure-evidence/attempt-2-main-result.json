@@ -1,0 +1,382 @@
+{
+  "status": "passed_closed_failure_accounting_not_qualified",
+  "reviewed_at": "2026-10-16T11:18:16.448199+00:00",
+  "protocol_sha256": "8eed0e30695c3f78861da210a8e7eeb20d10c987b19c7de3f8372c04b23961c5",
+  "qualification_sha256": "4757648fe1b7e157f8aef9229f78ef841dd9e822ff4708956d7317aed19f4c33",
+  "worker_sha256": "d4307b83bbb2ea3886f3d85626de3d7bdd29ffe66828d8b3d6387ec49ad5fe22",
+  "scope": "Closed software metadata/source/lifecycle/resource audit. Positive allowlist raw provenance checked only; no decoded/raw prose, accepted move, accuracy, fresh inputs/references or old held references inspected/scored. No model/engine/GPU calls.",
+  "denominator": {
+    "planned": 2,
+    "completed_panel_rows": 1,
+    "active_unknown_panel_rows": 1,
+    "failed_panel_rows": 0,
+    "not_run": 0,
+    "generation_intents": 2,
+    "retained_raw_outputs": 1,
+    "retained_EOS": 1,
+    "second_forward_or_tokens_confirmed": false,
+    "outer_status": "failed",
+    "outer_completed_children_counter": 1
+  },
+  "failure": {
+    "error": "PermissionError: [WinError 5] Access is denied.",
+    "traceback_stage": "outer.launch -> Tracker.observe -> Windows.retain -> QueryFullProcessImageNameW after successful OpenProcess",
+    "failed_process_PID_image_creation_job_EXIT_not_durably_captured": true,
+    "interpretation": "An exit-between-observation-and-image-query race is plausible but unproven. No resource/model exception is observed in the retained child metadata. The strict monitor error caused cleanup of retained processes; second request outcome remains unknown.",
+    "new_source_repair_or_retry_authorized_by_audit": false
+  },
+  "cases": [
+    {
+      "case_index": 0,
+      "case_id": "queen-coach-v1:PzsCDbPb:free",
+      "mode": "free",
+      "launcher_pid": 43148,
+      "runtime_pid": 33612,
+      "parent_pid": 43148,
+      "generation_intent": true,
+      "load_seconds": 27.125,
+      "child_receipt": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-2\\software-000\\child\\closed.json",
+        "bytes": 2108,
+        "sha256": "10ea96229e7ba20624f478bb9dce7e268c024249024252d29f9daf9e285a6cfc"
+      },
+      "process_closed": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-2\\software-000\\process-closed.json",
+        "bytes": 3775,
+        "sha256": "1b696131f3047fcc8def0ac0324177721fb8ba4ba70efe1b88c70ab534d279fa"
+      },
+      "retained": {
+        "status": "completed",
+        "finish_reason": "eos",
+        "tokens": 88,
+        "raw": {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-2\\software-000\\child\\raw.json",
+          "bytes": 19667,
+          "sha256": "2a1dbdda1e8ee1248b98a6c1bd96c9062a14b9bf4c171c9450b9a3e2de7df93b"
+        },
+        "frozen_storage": {
+          "before": {
+            "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+            "tensor_count": 2268,
+            "bytes_hashed": 3393484936
+          },
+          "after": {
+            "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+            "tensor_count": 2268,
+            "bytes_hashed": 3393484936
+          },
+          "identical": true
+        },
+        "lineage": {
+          "topology": "venv_redirector",
+          "runtime_pid": 33612,
+          "runtime_parent_pid": 43148,
+          "launcher_pid": 43148,
+          "observed_processes": [
+            {
+              "pid": 43148,
+              "parent_pid": 22412,
+              "image": "c:\\users\\lucas\\documents\\codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\scripts\\python.exe",
+              "created": 134366228704446348,
+              "in_job": true
+            },
+            {
+              "pid": 50896,
+              "parent_pid": 43148,
+              "image": "c:\\windows\\system32\\conhost.exe",
+              "created": 134366228704507031,
+              "in_job": true
+            },
+            {
+              "pid": 33612,
+              "parent_pid": 43148,
+              "image": "c:\\users\\lucas\\appdata\\local\\programs\\python\\python312\\python.exe",
+              "created": 134366228704631470,
+              "in_job": true
+            },
+            {
+              "pid": 11840,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366228707011938,
+              "in_job": true
+            },
+            {
+              "pid": 2692,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366228952880930,
+              "in_job": true
+            },
+            {
+              "pid": 48856,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366228962874465,
+              "in_job": true
+            },
+            {
+              "pid": 49484,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366228987203431,
+              "in_job": true
+            },
+            {
+              "pid": 30664,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366228997165168,
+              "in_job": true
+            },
+            {
+              "pid": 49364,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229007674468,
+              "in_job": true
+            },
+            {
+              "pid": 25044,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229018438763,
+              "in_job": true
+            },
+            {
+              "pid": 46976,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229038697071,
+              "in_job": true
+            },
+            {
+              "pid": 20560,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229049056496,
+              "in_job": true
+            },
+            {
+              "pid": 26556,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229059038762,
+              "in_job": true
+            },
+            {
+              "pid": 54040,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229079751233,
+              "in_job": true
+            },
+            {
+              "pid": 15668,
+              "parent_pid": 33612,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229099763460,
+              "in_job": true
+            }
+          ],
+          "all_observed_handles_exited": true,
+          "job_membership_required": true,
+          "resource_query_pids": [
+            2692,
+            11840,
+            15668,
+            20560,
+            25044,
+            26556,
+            30664,
+            46976,
+            48856,
+            49364,
+            49484,
+            54040
+          ],
+          "argument_contract": "Pinned unchanged windows_sample source; OS command line was not inspected"
+        }
+      }
+    },
+    {
+      "case_index": 1,
+      "case_id": "queen-coach-v1:qkaykA26:selected",
+      "mode": "selected",
+      "launcher_pid": 49212,
+      "runtime_pid": 13496,
+      "parent_pid": 49212,
+      "generation_intent": true,
+      "load_seconds": 20.469000000011874,
+      "child_receipt": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-2\\software-001\\child\\closed.json",
+        "bytes": 1509,
+        "sha256": "50208e28c9894a1c3a76f51d20eaeed91efae300aba1a6f1a205ec68dc9c415c"
+      },
+      "process_closed": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-coach-counterfactual-cold-qualification-v1\\attempt-2\\software-001\\process-closed.json",
+        "bytes": 167,
+        "sha256": "416e978b28ab3a832477aeb85b84de07c49b3a92c2dbad248d742677ab35515e"
+      },
+      "retained": {
+        "status": "active_unknown",
+        "phase": "generation_started",
+        "raw_retained": false,
+        "frozen_after_hash_available": false,
+        "process_exit_code": 2,
+        "retained_handle_cleanup_reports_exit": true,
+        "lineage_proof_complete": false,
+        "last_saved_lineage": {
+          "observed_processes": [
+            {
+              "pid": 49212,
+              "parent_pid": 22412,
+              "image": "c:\\users\\lucas\\documents\\codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\scripts\\python.exe",
+              "created": 134366229117428665,
+              "in_job": true
+            },
+            {
+              "pid": 51816,
+              "parent_pid": 49212,
+              "image": "c:\\windows\\system32\\conhost.exe",
+              "created": 134366229117504184,
+              "in_job": true
+            },
+            {
+              "pid": 13496,
+              "parent_pid": 49212,
+              "image": "c:\\users\\lucas\\appdata\\local\\programs\\python\\python312\\python.exe",
+              "created": 134366229117646271,
+              "in_job": true
+            },
+            {
+              "pid": 16920,
+              "parent_pid": 13496,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229120148944,
+              "in_job": true
+            },
+            {
+              "pid": 53912,
+              "parent_pid": 13496,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229177130855,
+              "in_job": true
+            },
+            {
+              "pid": 42924,
+              "parent_pid": 13496,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229274234943,
+              "in_job": true
+            },
+            {
+              "pid": 4788,
+              "parent_pid": 13496,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229290329579,
+              "in_job": true
+            },
+            {
+              "pid": 42812,
+              "parent_pid": 13496,
+              "image": "c:\\windows\\system32\\nvidia-smi.exe",
+              "created": 134366229310217538,
+              "in_job": true
+            }
+          ],
+          "launcher_pid": 49212,
+          "outer_pid": 22412,
+          "root_job_inheritance": "No BREAKAWAY; live ancestry and every retained handle job membership required"
+        }
+      }
+    }
+  ],
+  "resources": {
+    "per_case": [
+      {
+        "case_index": 0,
+        "samples": 19,
+        "minimum_available_bytes": {
+          "physical": 9394159616,
+          "commit": 4390514688,
+          "gpu": 10913579008
+        },
+        "all_observed_start_running_floors_passed": true,
+        "final_resource_array_exists": true,
+        "cleanup_events": 4
+      },
+      {
+        "case_index": 1,
+        "samples": 7,
+        "minimum_available_bytes": {
+          "physical": 10378907648,
+          "commit": 5786181632,
+          "gpu": 11041505280
+        },
+        "all_observed_start_running_floors_passed": true,
+        "final_resource_array_exists": false,
+        "cleanup_events": 2
+      }
+    ],
+    "outer_samples": 2,
+    "first_postexit_commit_growth_bytes": -66772992,
+    "first_postexit1GiBcriterion_passed": true,
+    "second_postexit_sample_exists": false,
+    "second_request_completion_no_resource_breach_claim": "All7 retained reserve observations pass; no guarantee about unobserved state after final sample."
+  },
+  "closure": {
+    "worker_child_pid": 42492,
+    "worker_child_exit_before_lease_release": true,
+    "worker_exit_code": 1,
+    "worker_elapsed_seconds": 63.51600000000326,
+    "first_complete_known_lineage_EXIT": true,
+    "second_saved_process_closed_true_exit2_lineage_null": true,
+    "independent_OS_delegate_absence_probe_by_reviewer": false,
+    "root_postclosure_receipt": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\cold-sft-qualification-attempt2-root-closed.json",
+      "bytes": 1295,
+      "sha256": "d885d41d6d6415b89fcebb6f29472a719d2aa5ad8b287c2629c992d85d044b3b"
+    },
+    "root_observed_all6_owned_PIDs_absent_OpenProcess87": true,
+    "root_shared_lease_free": true
+  },
+  "provenance": {
+    "source_snapshots_checked": 35,
+    "protocol": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-sft-qualification-protocol-v4.json",
+      "bytes": 15484,
+      "sha256": "8eed0e30695c3f78861da210a8e7eeb20d10c987b19c7de3f8372c04b23961c5"
+    },
+    "source_review": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-sampler-topology-qualification-source-review.json",
+      "bytes": 6845,
+      "sha256": "f3d88c96120821ef1dcd857b97ab5fd1d0e50286dd29a1722ffff7e2b58e16b2"
+    },
+    "root_authorization": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\cold-sft-qualification-v4-root-authorization.json",
+      "bytes": 1630,
+      "sha256": "895a51854a36600a6c23f54264492ef6f56feba043f067cd46880db8356d18d4"
+    },
+    "review_before_authorization_before_worker": true
+  },
+  "limits": [
+    "This failed attempt does not meet2request software qualification. Fixed256vs64 fresh comparison remains unadmitted; no new cohort was called.",
+    "One spentDEV EOS response and one interrupted generation intent cannot establish chess/prose quality or96request lifecycle stability.",
+    "Policy120seconds is unused timer metadata; actual generation180/child210/phase450/global13 limits unchanged.",
+    "Second child was terminated during outer failure cleanup before its raw/final storage/resource records; do not invent partial tokens, accepted model outcome or completed frozen hash."
+  ],
+  "followUpTasks": [],
+  "initial_review_before_root_closure_binding": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-qualification-attempt2-failure-pre-root-closure-review.json",
+    "bytes": 36174,
+    "sha256": "5b7846fc5e6ed8b83ab15e72982190752db293d3dc10bb4e59940f51836d2885"
+  },
+  "full_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-qualification-attempt2-failure-closed-review.json",
+    "bytes": 36922,
+    "sha256": "a6c4f2c8e3f214b3246e9095bd6cc18b0d070c43cdbfc09670be3139d75e4a5c"
+  },
+  "closed_file_count": 60,
+  "closed_file_index_sha256": "dbc0a1025af95e9bef00b8cbc972ded5db8bdd0f62eddb59ab4e2fa0e4007dc4"
+}

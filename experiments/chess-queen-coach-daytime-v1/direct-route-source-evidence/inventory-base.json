@@ -1,0 +1,566 @@
+{
+  "status": "source_only_inventory_not_staging_or_dispatch",
+  "repo": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\daytime_contract.py",
+      "bytes": 5623,
+      "sha256": "b3130b2f2562dde95339cee6e3971e30b31f310a80bcfdbf1db941ec7dede130",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/daytime_contract.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-initial-qualifiers-v3-source-review.json",
+        "bytes": 11295,
+        "sha256": "cf9ba3c8d7923b1e3532ddd445339701b8573174208882dc5f9da56a2582f0a4"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/daytime_contract.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\daytime_train.py",
+      "bytes": 21167,
+      "sha256": "1bb62c2e5438cef3e888e1ec4d5e115bc00ad0071e0dcecd96cd95d47a751c35",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/daytime_train.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-initial-qualifiers-v3-source-review.json",
+        "bytes": 11295,
+        "sha256": "cf9ba3c8d7923b1e3532ddd445339701b8573174208882dc5f9da56a2582f0a4"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/daytime_train.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\qualify_training.py",
+      "bytes": 11680,
+      "sha256": "292c935a0989f5a9c8cf36fe2e0d4717370f81136a6da516c32426d66d009041",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/qualify_training.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-initial-qualifiers-v3-source-review.json",
+        "bytes": 11295,
+        "sha256": "cf9ba3c8d7923b1e3532ddd445339701b8573174208882dc5f9da56a2582f0a4"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/qualify_training.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\build_protocols.py",
+      "bytes": 7577,
+      "sha256": "7e42ad932dcd800020e8ec3c828feccf81fd70ed50a3805b8120e38a667bf0a2",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/build_protocols.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-initial-qualifiers-v3-source-review.json",
+        "bytes": 11295,
+        "sha256": "cf9ba3c8d7923b1e3532ddd445339701b8573174208882dc5f9da56a2582f0a4"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/build_protocols.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_daytime.py",
+      "bytes": 12922,
+      "sha256": "17b8971cba09c30e538dd8e77f9ba5457ca01503ffa9df8fe8e72753b117ddd4",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_daytime.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-initial-qualifiers-v3-source-review.json",
+        "bytes": 11295,
+        "sha256": "cf9ba3c8d7923b1e3532ddd445339701b8573174208882dc5f9da56a2582f0a4"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_daytime.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\job_context.py",
+      "bytes": 8463,
+      "sha256": "69c9b896f7b0bca9376f6ed5bf509d837af9608c9c2a9eb911742a6670bc7d0b",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/job_context.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/job_context.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\process_lineage_v5.py",
+      "bytes": 13104,
+      "sha256": "fe93fd9d66767f07728f710106decb33ccaa2185840b55a1aed6b2066d3a2e10",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/process_lineage_v5.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/process_lineage_v5.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\cold_eval_v6.py",
+      "bytes": 22871,
+      "sha256": "200ac7014979eaae7d9a503cbac1d819c189ca5ab140ec5d7da499294d6685d3",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/cold_eval_v6.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/cold_eval_v6.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\probe_observer_child.py",
+      "bytes": 2867,
+      "sha256": "9efb727201be9fda148e7881c179d274cd1d05bf2d9259b90b7b97c1957dbeb7",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/probe_observer_child.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/probe_observer_child.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\prepare_observer_protocols.py",
+      "bytes": 6989,
+      "sha256": "e93e40eeaced06dd7bb807483080dcf841adb07f361607c2b666d80d4c865e1a",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/prepare_observer_protocols.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/prepare_observer_protocols.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_job_context.py",
+      "bytes": 6347,
+      "sha256": "ccd0ff188b3d75708fc9b041d4d6bd956bf58de11bc59feefa113446b8b94b3d",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_job_context.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_job_context.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_process_lineage_v5.py",
+      "bytes": 5480,
+      "sha256": "36b54b9c258d10ac6f906f02dae924a77120943eb885c35956a1a5e0ffe96e55",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_process_lineage_v5.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_process_lineage_v5.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_cold_eval_v6.py",
+      "bytes": 8878,
+      "sha256": "dcaf3cdb44261b4944a1974ff9ea59e50e02c51096df05b9f21be273fa2a0c3e",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_cold_eval_v6.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_cold_eval_v6.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_observer_probe.py",
+      "bytes": 3465,
+      "sha256": "0a34c2e8a00235f013abea26c6b408ee1a880faa3904f86f2cc1a99a3217c404",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_observer_probe.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_observer_probe.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_observer_builder.py",
+      "bytes": 1832,
+      "sha256": "4a19ed67be8d388f6b7bfa8040b88e361798ce6226e615557113cf9b5a9a96a1",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_observer_builder.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+        "bytes": 14541,
+        "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_observer_builder.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\job_context_direct_v1.py",
+      "bytes": 5759,
+      "sha256": "102a052c4ce542b5b5fa9e704e9ee759ddd3fb68ddac6b55825270c9f5c50622",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/job_context_direct_v1.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/job_context_direct_v1.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\direct_launch_contract.py",
+      "bytes": 3977,
+      "sha256": "881c93315c41298871501664808aaeac62cc1373bf273a2e60ae8ab5f2891965",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/direct_launch_contract.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/direct_launch_contract.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\cold_eval_v7.py",
+      "bytes": 23582,
+      "sha256": "c1877cdc4acf11feb4fb72035b0c87c8d36c991920c1eaa0735c8033635d32d5",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/cold_eval_v7.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/cold_eval_v7.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\probe_process_observer_v2.py",
+      "bytes": 10476,
+      "sha256": "cd4c8daccdcda32d1f04d07a197214323e2893de7a98df7f7cb8adb0fcb25735",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/probe_process_observer_v2.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/probe_process_observer_v2.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\qualify_training_direct_v1.py",
+      "bytes": 12219,
+      "sha256": "f9dba3fa67de338431ac0f51711fe0cfc116220fa64daf7548b83d55a0c2f531",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/qualify_training_direct_v1.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/qualify_training_direct_v1.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_job_context_direct_v1.py",
+      "bytes": 3544,
+      "sha256": "cd30303742cc7bc4c73e67a24df0874c728b9da8b427b2600fcedf93b0dc84ef",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_job_context_direct_v1.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_job_context_direct_v1.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_direct_launch_contract.py",
+      "bytes": 2835,
+      "sha256": "cccfbcefc3f84fa727eb5b609d9e7492e302bd716fa49960228cedccbb7e7f65",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_direct_launch_contract.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_direct_launch_contract.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_qualify_training_direct_v1.py",
+      "bytes": 3828,
+      "sha256": "fa2cae8ababdbe0fb2ea32c7701096fec1061c496aa5073578f862271021b4cc",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_qualify_training_direct_v1.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_qualify_training_direct_v1.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_direct_observer.py",
+      "bytes": 2677,
+      "sha256": "a31e26caf2ff0c545d60a7f1c9d4e7e9fa86a9d51dbbcafed222329f7412adea",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_direct_observer.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+        "bytes": 12090,
+        "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_direct_observer.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\prepare_held_v4.py",
+      "bytes": 8660,
+      "sha256": "e4ab145290b4ff26e2b9e32db3479923f603de069a8465f10459c6f1f625c17d",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/prepare_held_v4.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-CPU-protocol-source-review.json",
+        "bytes": 10708,
+        "sha256": "5043f5123efbb4e4c11553e57e85b339e5ed765d2aadeada28274f32bca8a8dc"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/prepare_held_v4.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_daytime_held_v4.py",
+      "bytes": 5923,
+      "sha256": "0d7b04adf3954d562d14c1beec3d8bc7b2e8c7424ab9a2cc695d72158ebf7d2e",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_daytime_held_v4.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-CPU-protocol-source-review.json",
+        "bytes": 10708,
+        "sha256": "5043f5123efbb4e4c11553e57e85b339e5ed765d2aadeada28274f32bca8a8dc"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_daytime_held_v4.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\prepare_direct_protocols_v3.py",
+      "bytes": 9895,
+      "sha256": "7377b0fd6de9dae0438ff1627d9fb8d5d6dbb2be054aaf8195cce2ce7052cedb",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/prepare_direct_protocols_v3.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-future-builder-v3-source-review.json",
+        "bytes": 3321,
+        "sha256": "9e50c43824c918578c1179d8e810ead278a935dd3702d81b2a8f30753602735d"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/prepare_direct_protocols_v3.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_prepare_direct_protocols_v3.py",
+      "bytes": 3581,
+      "sha256": "026f5cdc60524b54dd9684e98e31d2f658212d68523b1f565c97df1b0df092bc",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_prepare_direct_protocols_v3.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-future-builder-v3-source-review.json",
+        "bytes": 3321,
+        "sha256": "9e50c43824c918578c1179d8e810ead278a935dd3702d81b2a8f30753602735d"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_prepare_direct_protocols_v3.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\freeze_direct_training_v1.py",
+      "bytes": 2523,
+      "sha256": "61015967726023b519f5d7857b469e059e5bb05321968f7001452896f0552402",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/freeze_direct_training_v1.py",
+      "role": "reviewed_source",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-final-training-freezer-v1-source-review.json",
+        "bytes": 3284,
+        "sha256": "4c822eab54fad04466fa5723880d2eaf9fb25c5cea8bfcad367f543e51d38d50"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/freeze_direct_training_v1.py -text",
+      "source_must_remain_unchanged": true
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_freeze_direct_training_v1.py",
+      "bytes": 3793,
+      "sha256": "a8e3ce4432aa36efe7af453d0521d1f24f0b6cb11f223a51361810ebc8005e0f",
+      "repository_path": "experiments/chess-queen-coach-daytime-v1/test_freeze_direct_training_v1.py",
+      "role": "authored_CPU_test",
+      "review": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-final-training-freezer-v1-source-review.json",
+        "bytes": 3284,
+        "sha256": "4c822eab54fad04466fa5723880d2eaf9fb25c5cea8bfcad367f543e51d38d50"
+      },
+      "already_in_index": false,
+      "byte_preservation_attribute": "experiments/chess-queen-coach-daytime-v1/test_freeze_direct_training_v1.py -text",
+      "source_must_remain_unchanged": true
+    }
+  ],
+  "source_count": 17,
+  "test_count": 13,
+  "total_bytes": 242537,
+  "reviews": {
+    "core": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-initial-qualifiers-v3-source-review.json",
+      "bytes": 11295,
+      "sha256": "cf9ba3c8d7923b1e3532ddd445339701b8573174208882dc5f9da56a2582f0a4"
+    },
+    "support": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-observer-v2-source-review-final.json",
+      "bytes": 14541,
+      "sha256": "e87c772fa2a240fd1e117007e742f7c9029fab225737904247badd642904a565"
+    },
+    "direct": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-source-preparation-review.json",
+      "bytes": 12090,
+      "sha256": "a1c23c57a7d3b288e11fc8e2a63c24384e303b9fac820bb5c1b10c38e4536d82"
+    },
+    "held": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-observer-CPU-protocol-source-review.json",
+      "bytes": 10708,
+      "sha256": "5043f5123efbb4e4c11553e57e85b339e5ed765d2aadeada28274f32bca8a8dc"
+    },
+    "builder": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-direct-future-builder-v3-source-review.json",
+      "bytes": 3321,
+      "sha256": "9e50c43824c918578c1179d8e810ead278a935dd3702d81b2a8f30753602735d"
+    },
+    "final": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-final-training-freezer-v1-source-review.json",
+      "bytes": 3284,
+      "sha256": "4c822eab54fad04466fa5723880d2eaf9fb25c5cea8bfcad367f543e51d38d50"
+    }
+  },
+  "already_published_runtime_dependencies": [
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_runtime_v1.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_runtime_v1.py",
+      "bytes": 2287,
+      "sha256": "29f148855279fe0243bb4fbedac12057ab9d43cd6fe1c12a904606d4ca8f460b",
+      "already_in_index": true
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_counterfactual_train_v2.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_train_v2.py",
+      "bytes": 21155,
+      "sha256": "98623ce21801896b3139395355dc41d4580e3ec2707cbaf0a43e6741be170714",
+      "already_in_index": true
+    },
+    {
+      "repository_path": "scripts/chess_queen_coach_sft_runtime_v2.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_runtime_v2.py",
+      "bytes": 12874,
+      "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349",
+      "already_in_index": true
+    },
+    {
+      "repository_path": "scripts/chess_native_resources.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_native_resources.py",
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+      "already_in_index": true
+    },
+    {
+      "repository_path": "scripts/chess_queen_process_lineage_v4.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_process_lineage_v4.py",
+      "bytes": 14457,
+      "sha256": "47e2b3d14bbb04db4ec408df6d09a1147162b0c09774efeebddee6c3dc640192",
+      "already_in_index": true
+    },
+    {
+      "repository_path": "experiments/chess-queen-v1/gpu_worker.py",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0",
+      "already_in_index": true
+    }
+  ],
+  "historical_dependency_pins_excluded_from_active_list": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\prepare_direct_protocols_v2.py",
+      "bytes": 9642,
+      "sha256": "a48f7f1a2d00908f6a254c1d4a6465214e3a03c33ed291bdd1dd3bdcef8cb57e",
+      "reason": "Historical source pin only; superseded reviewed preparation file, excluded from active-source proposal pending root decision."
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-daytime-v1\\test_prepare_direct_protocols_v2.py",
+      "bytes": 2682,
+      "sha256": "6366a03543a836e58fcf4169bda7f704a037fe925abb6df70ea6292af2c8259d",
+      "reason": "Historical source pin only; superseded reviewed preparation file, excluded from active-source proposal pending root decision."
+    }
+  ],
+  "root_owned_worker_package_excluded": "Separate15file worker/parity package already owned/staged by parent; not duplicated.",
+  "excluded_categories": [
+    "private chess rows or reference/reserve content",
+    "weights",
+    "raw generated answers",
+    "credentials",
+    "scratch/drafts",
+    "superseded executable protocols",
+    "unreviewed files"
+  ],
+  "limits": [
+    "No staging, copying, source/index mutation or scientific execution claim.",
+    "Immutable protocols retain historical preparation pins. Active-source-only publication does not reconstruct every original hash walk unless historical support files are retained or separately reviewed for publication. Never rewrite executed pins.",
+    "Approved support sources are imported or hash-verification helpers; they are not current top-level dispatch entrypoints."
+  ],
+  "gitattributes_rule": "Parent should add exact-byte -text rules before staging and verify index-byte hashes. This lane made no attribute/index edit.",
+  "earlier_inventory_build": "Tool354550 stopped before producing files because the initial review has a specific passed_initial_software_qualifier_source_and_plans status. This version enforces that exact accepted status."
+}

@@ -1,0 +1,53 @@
+{
+  "observed_utc": "2026-10-16T13:28:35.457626+00:00",
+  "scope": "Public official revision/release metadata only before newly authorized daytime work. No paper-count increase, method/weight/dependency update or model-quality claim.",
+  "observations": [
+    {
+      "name": "queen-code",
+      "url": "https://api.github.com/repos/queen-project/queen/commits/HEAD",
+      "status": 200,
+      "resolved_url": "https://api.github.com/repos/queen-project/queen/commits/HEAD",
+      "bytes": 5197,
+      "sha256": "0f13dd8864aad01d4279bb69446b8dd0b4953b901298f2ba07793904875518e3",
+      "etag": "W/\"0f13dd8864aad01d4279bb69446b8dd0b4953b901298f2ba07793904875518e3\"",
+      "revision": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+      "commit_date": "2026-10-05T00:16:36Z",
+      "last_modified": null,
+      "release_tag": null,
+      "release_published_at": null,
+      "local_public_body": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\primary-refresh-132835\\queen-code.json"
+    },
+    {
+      "name": "queen-model",
+      "url": "https://huggingface.co/api/models/princeton-nlp/queen_pawn-8",
+      "status": 200,
+      "resolved_url": "https://huggingface.co/api/models/princeton-nlp/queen_pawn-8",
+      "bytes": 8050,
+      "sha256": "08efc9c983b615dda333eec3e0325a4559ab5f3faa9f67b636731131ed5e1074",
+      "etag": "W/\"1f72-ACYG1Kg+Z6Hy2D/L3uUQYP5fKFg\"",
+      "revision": "5027687fac08b64b2403b13aca5b198e68294fe9",
+      "commit_date": null,
+      "last_modified": "2026-10-04T23:10:27.000Z",
+      "release_tag": null,
+      "release_published_at": null,
+      "local_public_body": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\primary-refresh-132835\\queen-model.json"
+    },
+    {
+      "name": "stockfish-release",
+      "url": "https://api.github.com/repos/official-stockfish/Stockfish/releases/latest",
+      "status": 200,
+      "resolved_url": "https://api.github.com/repos/official-stockfish/Stockfish/releases/latest",
+      "bytes": 19822,
+      "sha256": "196f16b2491f90f77d6f9e4acbf061468e17897d7e909c0d9326db9674e58b62",
+      "etag": "W/\"196f16b2491f90f77d6f9e4acbf061468e17897d7e909c0d9326db9674e58b62\"",
+      "revision": null,
+      "commit_date": null,
+      "last_modified": null,
+      "release_tag": "sf_19",
+      "release_published_at": "2026-09-05T08:33:17Z",
+      "local_public_body": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\primary-refresh-132835\\stockfish-release.json"
+    }
+  ],
+  "web_parser_note": "Queen API pages failed in web tool; bounded direct official HTTP fallback used. Stockfish latest page resolved tosf_19.",
+  "new_assets_or_dependency_changes": false
+}

@@ -1,0 +1,439 @@
+{
+  "schema": "chess.queen-coach-training.v1",
+  "status": "failed",
+  "updates_planned": 256,
+  "updates_completed": 20,
+  "presentations_planned": 2048,
+  "presentations_completed": 160,
+  "partial_accumulation": 0,
+  "protocol_sha256": "5a1013b8e8baf44c0abd0e3ade6eb012777e75b7bbdb38da2487f3d79056a0e2",
+  "conditions": [
+    {
+      "step": 0,
+      "status": "completed",
+      "identity": {
+        "path": "C:/Users/lucas/Documents/Codex/2026-10-15/go/work/repos/sports-play-llm-research/data/private/chess-queen-coach-sft-training-v1/train-1/checkpoint-0000/adapter.pt",
+        "sha256": "5a6947f4cab791256e59b1b2a2364118f88c7e6bb2504c61119116be4fb0b403",
+        "step": 0,
+        "presentations": 0,
+        "parameter_count": 1916928,
+        "candidate_id": "queen-pawn-8/nf4-coach-sft-v1",
+        "source_sha256": "de97771900ca67803c6138415627aeea42c5236982575d57c91153d7896abb7e"
+      },
+      "raw_planned": 8,
+      "raw_completed": 8,
+      "nll_planned": 64,
+      "nll_completed": 64,
+      "nll_supervised_tokens": 4180,
+      "nll_weighted_sum": 8829.007447838783,
+      "nll_rows": [
+        {
+          "case_id": "queen-coach-v1:PzsCDbPb:free",
+          "status": "completed",
+          "loss": 2.3009696006774902,
+          "supervised_tokens": 69
+        },
+        {
+          "case_id": "queen-coach-v1:PzsCDbPb:selected",
+          "status": "completed",
+          "loss": 2.1397652626037598,
+          "supervised_tokens": 69
+        },
+        {
+          "case_id": "queen-coach-v1:Mbu57QPD:free",
+          "status": "completed",
+          "loss": 2.2899763584136963,
+          "supervised_tokens": 64
+        },
+        {
+          "case_id": "queen-coach-v1:Mbu57QPD:selected",
+          "status": "completed",
+          "loss": 2.1420955657958984,
+          "supervised_tokens": 64
+        },
+        {
+          "case_id": "queen-coach-v1:qkaykA26:free",
+          "status": "completed",
+          "loss": 2.431154727935791,
+          "supervised_tokens": 65
+        },
+        {
+          "case_id": "queen-coach-v1:qkaykA26:selected",
+          "status": "completed",
+          "loss": 2.246696949005127,
+          "supervised_tokens": 65
+        },
+        {
+          "case_id": "queen-coach-v1:1LOlKaIv:free",
+          "status": "completed",
+          "loss": 2.187854290008545,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:1LOlKaIv:selected",
+          "status": "completed",
+          "loss": 2.0118608474731445,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:FrE6YlJF:free",
+          "status": "completed",
+          "loss": 2.236865758895874,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:FrE6YlJF:selected",
+          "status": "completed",
+          "loss": 2.087414264678955,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:I9lAkQog:free",
+          "status": "completed",
+          "loss": 2.2544069290161133,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:I9lAkQog:selected",
+          "status": "completed",
+          "loss": 2.06546688079834,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:iHkOHZY3:free",
+          "status": "completed",
+          "loss": 2.3635315895080566,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:iHkOHZY3:selected",
+          "status": "completed",
+          "loss": 2.1164841651916504,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:GkW4HOM2:free",
+          "status": "completed",
+          "loss": 1.8889176845550537,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:GkW4HOM2:selected",
+          "status": "completed",
+          "loss": 1.7580792903900146,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:gVp88d8S:free",
+          "status": "completed",
+          "loss": 2.2594974040985107,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:gVp88d8S:selected",
+          "status": "completed",
+          "loss": 2.0919833183288574,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:2qcVyAV0:free",
+          "status": "completed",
+          "loss": 2.2350752353668213,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:2qcVyAV0:selected",
+          "status": "completed",
+          "loss": 2.0657379627227783,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:XMyUq349:free",
+          "status": "completed",
+          "loss": 1.8322283029556274,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:XMyUq349:selected",
+          "status": "completed",
+          "loss": 1.7228929996490479,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:VLN2dkUK:free",
+          "status": "completed",
+          "loss": 2.327152967453003,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:VLN2dkUK:selected",
+          "status": "completed",
+          "loss": 2.170097827911377,
+          "supervised_tokens": 68
+        },
+        {
+          "case_id": "queen-coach-v1:4DScJltc:free",
+          "status": "completed",
+          "loss": 2.2837235927581787,
+          "supervised_tokens": 63
+        },
+        {
+          "case_id": "queen-coach-v1:4DScJltc:selected",
+          "status": "completed",
+          "loss": 2.1155683994293213,
+          "supervised_tokens": 63
+        },
+        {
+          "case_id": "queen-coach-v1:okfyK3ge:free",
+          "status": "completed",
+          "loss": 2.091108560562134,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:okfyK3ge:selected",
+          "status": "completed",
+          "loss": 1.9121249914169312,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:4OZT4HYk:free",
+          "status": "completed",
+          "loss": 2.2036798000335693,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:4OZT4HYk:selected",
+          "status": "completed",
+          "loss": 2.034595251083374,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:y7MDuOKa:free",
+          "status": "completed",
+          "loss": 2.179935932159424,
+          "supervised_tokens": 70
+        },
+        {
+          "case_id": "queen-coach-v1:y7MDuOKa:selected",
+          "status": "completed",
+          "loss": 2.050767421722412,
+          "supervised_tokens": 70
+        },
+        {
+          "case_id": "queen-coach-v1:6Yq6qw1D:free",
+          "status": "completed",
+          "loss": 2.3274359703063965,
+          "supervised_tokens": 65
+        },
+        {
+          "case_id": "queen-coach-v1:6Yq6qw1D:selected",
+          "status": "completed",
+          "loss": 2.215224027633667,
+          "supervised_tokens": 65
+        },
+        {
+          "case_id": "queen-coach-v1:pWIlXLxl:free",
+          "status": "completed",
+          "loss": 2.0249927043914795,
+          "supervised_tokens": 71
+        },
+        {
+          "case_id": "queen-coach-v1:pWIlXLxl:selected",
+          "status": "completed",
+          "loss": 1.929351806640625,
+          "supervised_tokens": 71
+        },
+        {
+          "case_id": "queen-coach-v1:vhIWRf3l:free",
+          "status": "completed",
+          "loss": 2.311185121536255,
+          "supervised_tokens": 62
+        },
+        {
+          "case_id": "queen-coach-v1:vhIWRf3l:selected",
+          "status": "completed",
+          "loss": 2.174808979034424,
+          "supervised_tokens": 62
+        },
+        {
+          "case_id": "queen-coach-v1:w75iuA9N:free",
+          "status": "completed",
+          "loss": 2.1821370124816895,
+          "supervised_tokens": 69
+        },
+        {
+          "case_id": "queen-coach-v1:w75iuA9N:selected",
+          "status": "completed",
+          "loss": 2.079927444458008,
+          "supervised_tokens": 69
+        },
+        {
+          "case_id": "queen-coach-v1:qmhfGVNe:free",
+          "status": "completed",
+          "loss": 1.9206161499023438,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:qmhfGVNe:selected",
+          "status": "completed",
+          "loss": 1.8150078058242798,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:tOEP1Kpb:free",
+          "status": "completed",
+          "loss": 2.0231716632843018,
+          "supervised_tokens": 69
+        },
+        {
+          "case_id": "queen-coach-v1:tOEP1Kpb:selected",
+          "status": "completed",
+          "loss": 1.9329215288162231,
+          "supervised_tokens": 69
+        },
+        {
+          "case_id": "queen-coach-v1:wz51i0dq:free",
+          "status": "completed",
+          "loss": 2.307724714279175,
+          "supervised_tokens": 63
+        },
+        {
+          "case_id": "queen-coach-v1:wz51i0dq:selected",
+          "status": "completed",
+          "loss": 2.1375622749328613,
+          "supervised_tokens": 63
+        },
+        {
+          "case_id": "queen-coach-v1:0TdRWJwg:free",
+          "status": "completed",
+          "loss": 2.3133840560913086,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:0TdRWJwg:selected",
+          "status": "completed",
+          "loss": 2.126913070678711,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:qT3hrrTh:free",
+          "status": "completed",
+          "loss": 2.2859020233154297,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:qT3hrrTh:selected",
+          "status": "completed",
+          "loss": 2.1344847679138184,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:j2mq9OHl:free",
+          "status": "completed",
+          "loss": 2.1794021129608154,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:j2mq9OHl:selected",
+          "status": "completed",
+          "loss": 2.038794994354248,
+          "supervised_tokens": 67
+        },
+        {
+          "case_id": "queen-coach-v1:E2RFjrL7:free",
+          "status": "completed",
+          "loss": 2.3910462856292725,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:E2RFjrL7:selected",
+          "status": "completed",
+          "loss": 2.1818339824676514,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:QohvsoJq:free",
+          "status": "completed",
+          "loss": 2.1044232845306396,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:QohvsoJq:selected",
+          "status": "completed",
+          "loss": 1.9599369764328003,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:Do4SWvT3:free",
+          "status": "completed",
+          "loss": 1.8839776515960693,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:Do4SWvT3:selected",
+          "status": "completed",
+          "loss": 1.7789347171783447,
+          "supervised_tokens": 58
+        },
+        {
+          "case_id": "queen-coach-v1:EZbJSKQw:free",
+          "status": "completed",
+          "loss": 1.9023170471191406,
+          "supervised_tokens": 60
+        },
+        {
+          "case_id": "queen-coach-v1:EZbJSKQw:selected",
+          "status": "completed",
+          "loss": 1.8092317581176758,
+          "supervised_tokens": 60
+        },
+        {
+          "case_id": "queen-coach-v1:okjuSwjx:free",
+          "status": "completed",
+          "loss": 2.195009231567383,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:okjuSwjx:selected",
+          "status": "completed",
+          "loss": 2.0015041828155518,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:1FBrf5VN:free",
+          "status": "completed",
+          "loss": 2.1604979038238525,
+          "supervised_tokens": 66
+        },
+        {
+          "case_id": "queen-coach-v1:1FBrf5VN:selected",
+          "status": "completed",
+          "loss": 1.9751670360565186,
+          "supervised_tokens": 66
+        }
+      ],
+      "response_token_nll": 2.112202738717412,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 7,
+        "accepted_best_legal": 7,
+        "teacher_best_agreement": 7,
+        "complete_eos": 6,
+        "critical_3ply_legal": 7,
+        "critical_prefix_matches": {
+          "1": 7,
+          "2": 3,
+          "3": 2
+        },
+        "recognized_fact_claims": 0,
+        "false_recognized_claims": 0,
+        "grammar_complete_rows": 0,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 1,
+        "free_best_agreement": 4
+      }
+    }
+  ],
+  "error": "RuntimeError: Resource reserve: commit_headroom_bytes_below_reserve"
+}

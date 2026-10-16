@@ -1,0 +1,7 @@
+2026-10-16, pre-pilot CPU source validation
+.venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_coach_sft_eval_v1.py tests/test_chess_queen_coach_sft_train_v1.py tests/test_chess_queen_coach_sft_runtime_v1.py -q
+22 passed in0.22s
+
+Coverage: primary selector ordering/fallback/incomplete-condition refusal; exact paired label-free rows; future/answer input rejection; first-backend-failure stops remaining raw calls with retained partials/full denominator; interrupted call intent survives; both heldout pending panels precede resource setup/closed references; saved selector recomputed and checkpoint bytes verified; call journals fsync before return; tuned identity preserved and decoder/encoder/bridge eval mode restored; raw legality/native prefix scoring; Black POV capture/checker; en passant; exact false immediate claims; unknown unrelated prose not fabricated as wrong; missing/partial full denominators; selected-given copy separated.
+
+Independent reviewer read all runtime/train/eval sources and all tests. Fsync and explicit phase-budget amendments were rechecked. Actual pilot corpus/tokenizer receipt and final binding protocol remain required before CUDA. No learned model/teacher call was made by this implementation agent.

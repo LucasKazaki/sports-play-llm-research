@@ -1,0 +1,22 @@
+{
+  "status": "unexecuted_draft",
+  "source_rows_constructed": 0,
+  "files": {
+    "chess_encoder_check_generalization_v1.py": {
+      "source": "scripts/chess_encoder_check_generalization_v1.py",
+      "sha256": "1cc6e52d35a2ac498cacc433ed0f30124d04ffbaed3d36bbf74b7a7cf34c1439"
+    },
+    "test_chess_encoder_check_generalization_v1.py": {
+      "source": "tests/test_chess_encoder_check_generalization_v1.py",
+      "sha256": "84313ffacd4a2ed4df2d68eacbe601f9000f8f9d7fe99aefdbb170eafcaede02"
+    },
+    "protocol.json": {
+      "source": "experiments\\chess-encoder-check-generalization-v1\\protocol.json",
+      "sha256": "78f922786f66fe884068ce6c06b3ba327c51514e1d7b755c045721ec4c6a11e7"
+    },
+    "prepare_protocol.py": {
+      "source": "experiments\\chess-encoder-check-generalization-v1\\prepare_protocol.py",
+      "sha256": "f3626dc590ba813bf3e6358fa9a118a7378dc49aa8638b5b2df94dbf738b2bed"
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema": "chess.independent-coach-training-v2-public-copy-review.v1",
+  "verdict": "PASS: two exact closed evidence copies and derived training-only numbers/limits match the independent closed review",
+  "reviewed_at_utc": "2026-10-16T09:44:01.667783+00:00",
+  "manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\training-evidence-manifest.json",
+    "bytes": 1393,
+    "sha256": "6712189cb8bf1474feeacce0071f03243ba26d493bebc563b1b088df2a4feee8"
+  },
+  "exact_copy_count": 2,
+  "exact_copies": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\training-evidence\\queen-coach-sft-training-v2-closed-review.json",
+      "bytes": 63630,
+      "sha256": "6d6e98d80313f8650aea84c5e4c8ee12e0a012c916aafe72e519f88595a8a301"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\training-evidence\\train-1-worker.json",
+      "bytes": 621,
+      "sha256": "2cad9978cd1025863586f31572b98e141cbc956994bcc965e62922f82f1b4152"
+    }
+  ],
+  "no_additional_files_in_training_evidence": true,
+  "derived_result": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\training-result.json",
+    "bytes": 6624,
+    "sha256": "e9043e2acfc76001d693f02534540eb7f47bc28369a6a8d970118d6112926ea3"
+  },
+  "text_report": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-sft-training-v2\\TRAINING-RESULTS.md",
+    "bytes": 3171,
+    "sha256": "61f194a8fdd7a9b5c3f76a62928c9aef81f215b98cb69720ae5d68569c0cc2eb"
+  },
+  "full_docs_read": true,
+  "numbers_verified": [
+    "256optimizerupdates/2048backwards, finite losses and zero unknown/notrun",
+    "Four complete64NLL/eight-request dev conditions and exactNLL/forecast/EOS/recognized-claim trajectory",
+    "Selectedstep64/512presentations and exact selected/baseline/selection SHAs",
+    "144finiteFP32 tensors/1916928parameters and all144changed from initialization",
+    "Embedded2268-tensor/3393484936-byte unchanged frozen-storage receipt, not nonexistent standalone file",
+    "1920observed resource samples, minimumcommit8116699136B, worker2169.9689999999828s"
+  ],
+  "limits_verified": [
+    "Only four free development roots; reused development is not a fresh test or population estimate.",
+    "Selected64 still has5false among12 narrow recognized fact claims; baseline0recognized is not zero factual errors.",
+    "Later lower loss has worse1/4free3plymatch versus3/4at64; frozen selection retained rather than changed after inspection.",
+    "Whole prose, teaching quality, broad understanding andElo unmeasured; no tuned UIpromotion.",
+    "Five exact source snapshots had no prebound snapshot manifest; original post-extracted dispatch evidence clearly distinguished.",
+    "Frozen-storage inspection is receipt/hash-source readback, not a second original-weight tensor rehash or retained postexit base snapshot.",
+    "Heldout status is documented active as of this packaging request; no heldout content or quality inspected."
+  ],
+  "packaging_debug": "Initial nonexistent frozen-storage.json lookup is documented; package contains exactly the two declared originals and derives the embedded digest from the sealed review. No experiment replay or substitute source claimed.",
+  "blocking_findings": [],
+  "tests_rerun": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "active_quality_or_held_reference_content_opened": false
+}

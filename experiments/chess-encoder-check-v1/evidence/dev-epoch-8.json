@@ -1,0 +1,1817 @@
+{
+  "raw": [
+    {
+      "case_id": "check-v2-0ElIU-h7h6",
+      "status": "completed",
+      "logit": -8.677298545837402,
+      "probability": 0.0001703817688394338,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0ElIU-h7h8",
+      "status": "completed",
+      "logit": 17.32897186279297,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0FCNx-e7h7",
+      "status": "completed",
+      "logit": 7.366700649261475,
+      "probability": 0.9993684887886047,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0FCNx-e7b7",
+      "status": "completed",
+      "logit": -4.1530585289001465,
+      "probability": 0.015473094768822193,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0FJ5J-f4f8",
+      "status": "completed",
+      "logit": -0.14859606325626373,
+      "probability": 0.462919145822525,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0FJ5J-f4g4",
+      "status": "completed",
+      "logit": -3.6314334869384766,
+      "probability": 0.025795191526412964,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0FTFZ-c7c6",
+      "status": "completed",
+      "logit": -9.330284118652344,
+      "probability": 8.86891721165739e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0FTFZ-c7c8",
+      "status": "completed",
+      "logit": 10.334765434265137,
+      "probability": 0.9999675750732422,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0FU8Q-g2g8",
+      "status": "completed",
+      "logit": 1.8925139904022217,
+      "probability": 0.869041919708252,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0FU8Q-g2g6",
+      "status": "completed",
+      "logit": -1.219296932220459,
+      "probability": 0.22806020081043243,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Fh2T-e1e8",
+      "status": "completed",
+      "logit": 22.52764129638672,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Fh2T-e1g1",
+      "status": "completed",
+      "logit": -9.22441291809082,
+      "probability": 9.859287820290774e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Fo0d-h5g3",
+      "status": "completed",
+      "logit": -10.386972427368164,
+      "probability": 3.083058982156217e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Fo0d-h5f6",
+      "status": "completed",
+      "logit": 2.9717910289764404,
+      "probability": 0.9512833952903748,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Fu7r-f5h6",
+      "status": "completed",
+      "logit": 7.288674354553223,
+      "probability": 0.9993172883987427,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Fu7r-f5h4",
+      "status": "completed",
+      "logit": -9.889237403869629,
+      "probability": 5.071503619547002e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0FwA9-d6g3",
+      "status": "completed",
+      "logit": 3.616325855255127,
+      "probability": 0.9738224744796753,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0FwA9-d6e5",
+      "status": "completed",
+      "logit": -0.19566571712493896,
+      "probability": 0.45123904943466187,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0G7sN-c2h7",
+      "status": "completed",
+      "logit": 15.309277534484863,
+      "probability": 0.9999997615814209,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0G7sN-c2e4",
+      "status": "completed",
+      "logit": -5.316472053527832,
+      "probability": 0.004886054899543524,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0GAAc-e6c5",
+      "status": "completed",
+      "logit": 19.07863998413086,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0GAAc-e6f8",
+      "status": "completed",
+      "logit": -11.384554862976074,
+      "probability": 1.1369614185241517e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0GPSf-h7e4",
+      "status": "completed",
+      "logit": 2.641584873199463,
+      "probability": 0.9334903955459595,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0GPSf-h7g7",
+      "status": "completed",
+      "logit": 5.732336521148682,
+      "probability": 0.9967709183692932,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0GT9r-c2a3",
+      "status": "completed",
+      "logit": 14.861985206604004,
+      "probability": 0.9999996423721313,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0GT9r-c2e3",
+      "status": "completed",
+      "logit": -13.122281074523926,
+      "probability": 2.0001607481390238e-06,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0GehK-d1g1",
+      "status": "completed",
+      "logit": 1.8244348764419556,
+      "probability": 0.8610974550247192,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0GehK-d1h1",
+      "status": "completed",
+      "logit": -3.927121639251709,
+      "probability": 0.019319692626595497,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0GjXX-f7f2",
+      "status": "completed",
+      "logit": 4.211894512176514,
+      "probability": 0.9853980541229248,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0GjXX-f7d5",
+      "status": "completed",
+      "logit": -1.8895230293273926,
+      "probability": 0.13129885494709015,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Glma-g5a5",
+      "status": "completed",
+      "logit": -4.486030578613281,
+      "probability": 0.011139779351651669,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Glma-g5g7",
+      "status": "completed",
+      "logit": 12.533866882324219,
+      "probability": 0.9999964237213135,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0GrSV-e5g5",
+      "status": "completed",
+      "logit": -4.942825794219971,
+      "probability": 0.007083870004862547,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0GrSV-e5e3",
+      "status": "completed",
+      "logit": -2.1646127700805664,
+      "probability": 0.1029735878109932,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0GvGz-a5a4",
+      "status": "completed",
+      "logit": -2.4808712005615234,
+      "probability": 0.07721010595560074,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0GvGz-a5c5",
+      "status": "completed",
+      "logit": 14.37222957611084,
+      "probability": 0.9999994039535522,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0H8up-c2c4",
+      "status": "completed",
+      "logit": -8.185866355895996,
+      "probability": 0.0002784854150377214,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0H8up-c2c1",
+      "status": "completed",
+      "logit": 15.543298721313477,
+      "probability": 0.9999998807907104,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0HBGk-e4e3",
+      "status": "completed",
+      "logit": -4.597959995269775,
+      "probability": 0.009971922263503075,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HBGk-e4h7",
+      "status": "completed",
+      "logit": 25.145126342773438,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0HDVl-f4e2",
+      "status": "completed",
+      "logit": 0.9506711363792419,
+      "probability": 0.7212501168251038,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0HDVl-f4d5",
+      "status": "completed",
+      "logit": -6.834333896636963,
+      "probability": 0.0010750270448625088,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HMdh-g4h3",
+      "status": "completed",
+      "logit": -2.0469038486480713,
+      "probability": 0.1143656000494957,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HMdh-g4e6",
+      "status": "completed",
+      "logit": -1.4362547397613525,
+      "probability": 0.19212599098682404,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HO0Z-h3f2",
+      "status": "completed",
+      "logit": 15.274816513061523,
+      "probability": 0.9999997615814209,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0HO0Z-h3f4",
+      "status": "completed",
+      "logit": -1.972585678100586,
+      "probability": 0.12211143225431442,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HYZG-b3b4",
+      "status": "completed",
+      "logit": -3.9250876903533936,
+      "probability": 0.01935826614499092,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HYZG-b3e6",
+      "status": "completed",
+      "logit": 0.9930270910263062,
+      "probability": 0.7296854257583618,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0HaJU-d4g1",
+      "status": "completed",
+      "logit": 3.7218034267425537,
+      "probability": 0.9763810634613037,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0HaJU-d4b4",
+      "status": "completed",
+      "logit": -1.63242506980896,
+      "probability": 0.1634984165430069,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HbWu-d5d4",
+      "status": "completed",
+      "logit": -2.6498754024505615,
+      "probability": 0.0659966915845871,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0HbWu-d5f5",
+      "status": "completed",
+      "logit": 3.1783905029296875,
+      "probability": 0.9600129127502441,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Hd8q-b7a6",
+      "status": "completed",
+      "logit": -7.570298194885254,
+      "probability": 0.0005152730736881495,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Hd8q-b7g2",
+      "status": "completed",
+      "logit": 4.061024188995361,
+      "probability": 0.9830605387687683,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Hm22-f6a1",
+      "status": "completed",
+      "logit": -2.5674242973327637,
+      "probability": 0.0712645873427391,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Hm22-f6g5",
+      "status": "completed",
+      "logit": 0.8519183397293091,
+      "probability": 0.700969398021698,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0I0bA-c8d8",
+      "status": "completed",
+      "logit": 7.283246040344238,
+      "probability": 0.999313473701477,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0I0bA-c8c7",
+      "status": "completed",
+      "logit": -15.152501106262207,
+      "probability": 2.626348134526779e-07,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0I0qt-f4g6",
+      "status": "completed",
+      "logit": -3.2022533416748047,
+      "probability": 0.03908101096749306,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0I0qt-f4h5",
+      "status": "completed",
+      "logit": -2.327061891555786,
+      "probability": 0.08890637010335922,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0I76Y-d5e4",
+      "status": "completed",
+      "logit": 21.627010345458984,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0I76Y-d5f3",
+      "status": "completed",
+      "logit": -12.893471717834473,
+      "probability": 2.5144054234260693e-06,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0IDPe-a3b3",
+      "status": "completed",
+      "logit": -2.1973586082458496,
+      "probability": 0.0999879390001297,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0IDPe-a3a2",
+      "status": "completed",
+      "logit": -2.733001232147217,
+      "probability": 0.06105388328433037,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0IO3v-e8g8",
+      "status": "completed",
+      "logit": -9.07167911529541,
+      "probability": 0.00011486029688967392,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0IO3v-e8e1",
+      "status": "completed",
+      "logit": 0.6732965707778931,
+      "probability": 0.6622408628463745,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ia1O-h5g6",
+      "status": "completed",
+      "logit": 3.387861728668213,
+      "probability": 0.9673230648040771,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ia1O-h5h8",
+      "status": "completed",
+      "logit": 6.269001483917236,
+      "probability": 0.9981094598770142,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0IdRS-f6d4",
+      "status": "completed",
+      "logit": -5.7328200340271,
+      "probability": 0.003227482782676816,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0IdRS-f6d8",
+      "status": "completed",
+      "logit": 15.255960464477539,
+      "probability": 0.9999997615814209,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ipw1-d1d8",
+      "status": "completed",
+      "logit": 2.901200294494629,
+      "probability": 0.9479057192802429,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ipw1-d1c1",
+      "status": "completed",
+      "logit": -7.928107738494873,
+      "probability": 0.00036033798824064434,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Ipwi-b7b5",
+      "status": "completed",
+      "logit": -2.3884286880493164,
+      "probability": 0.08405933529138565,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Ipwi-b7h7",
+      "status": "completed",
+      "logit": 10.396187782287598,
+      "probability": 0.999969482421875,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0It22-c8e8",
+      "status": "completed",
+      "logit": -7.073990821838379,
+      "probability": 0.0008461301913484931,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0It22-c8g8",
+      "status": "completed",
+      "logit": 16.543678283691406,
+      "probability": 0.9999998807907104,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Iuob-e4d6",
+      "status": "completed",
+      "logit": -4.1721882820129395,
+      "probability": 0.015184363350272179,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Iuob-e4f6",
+      "status": "completed",
+      "logit": 15.486889839172363,
+      "probability": 0.9999997615814209,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0IxiQ-h6h5",
+      "status": "completed",
+      "logit": -2.4488327503204346,
+      "probability": 0.0795239508152008,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0IxiQ-h6g7",
+      "status": "completed",
+      "logit": 6.427563667297363,
+      "probability": 0.9983862638473511,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0JAap-a3c1",
+      "status": "completed",
+      "logit": 3.994683265686035,
+      "probability": 0.9819195866584778,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0JAap-a3a6",
+      "status": "completed",
+      "logit": -2.21378231048584,
+      "probability": 0.09851964563131332,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0JHAZ-f3f6",
+      "status": "completed",
+      "logit": 4.690804958343506,
+      "probability": 0.9909041523933411,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0JHAZ-f3b7",
+      "status": "completed",
+      "logit": -3.2456655502319336,
+      "probability": 0.03748295083642006,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0JIDu-b7d5",
+      "status": "completed",
+      "logit": -3.9301438331604004,
+      "probability": 0.019262515008449554,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0JIDu-b7e4",
+      "status": "completed",
+      "logit": 0.8137840628623962,
+      "probability": 0.6929152607917786,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0JW5z-e2h5",
+      "status": "completed",
+      "logit": 0.031684670597314835,
+      "probability": 0.507920503616333,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0JW5z-e2e6",
+      "status": "completed",
+      "logit": 7.255454063415527,
+      "probability": 0.9992941617965698,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0JgbT-f7f1",
+      "status": "completed",
+      "logit": -3.4136202335357666,
+      "probability": 0.031872499734163284,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0JgbT-f7g8",
+      "status": "completed",
+      "logit": 5.816870212554932,
+      "probability": 0.9970319271087646,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Jhbc-e2e3",
+      "status": "completed",
+      "logit": -9.238848686218262,
+      "probability": 9.717997454572469e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Jhbc-e2e1",
+      "status": "completed",
+      "logit": 11.976109504699707,
+      "probability": 0.9999936819076538,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Jif5-g6g3",
+      "status": "completed",
+      "logit": 2.2197837829589844,
+      "probability": 0.9020121097564697,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Jif5-g6g7",
+      "status": "completed",
+      "logit": -6.105226516723633,
+      "probability": 0.0022262088023126125,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0JyVU-d8d1",
+      "status": "completed",
+      "logit": 14.096713066101074,
+      "probability": 0.9999992847442627,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0JyVU-d8e8",
+      "status": "completed",
+      "logit": -4.465959548950195,
+      "probability": 0.011363059282302856,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0K3B5-d3g6",
+      "status": "completed",
+      "logit": 5.331273555755615,
+      "probability": 0.9951854348182678,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0K3B5-d3e4",
+      "status": "completed",
+      "logit": -3.1118407249450684,
+      "probability": 0.04262147098779678,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0K50s-c2c8",
+      "status": "completed",
+      "logit": 18.520240783691406,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0K50s-c2c7",
+      "status": "completed",
+      "logit": -9.214239120483398,
+      "probability": 9.960096213035285e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0K52j-b7a7",
+      "status": "completed",
+      "logit": -10.587241172790527,
+      "probability": 2.5235309294657782e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0K52j-b7b1",
+      "status": "completed",
+      "logit": 3.2720887660980225,
+      "probability": 0.963458776473999,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0K5P2-f8a8",
+      "status": "completed",
+      "logit": 13.406571388244629,
+      "probability": 0.9999984502792358,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0K5P2-f8e8",
+      "status": "completed",
+      "logit": -13.788320541381836,
+      "probability": 1.0275620070387959e-06,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0K7vK-f7f8",
+      "status": "completed",
+      "logit": 6.5438618659973145,
+      "probability": 0.9985631108283997,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0K7vK-f7f6",
+      "status": "completed",
+      "logit": -0.9508979320526123,
+      "probability": 0.27870428562164307,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0K87Y-h7h3",
+      "status": "completed",
+      "logit": -8.90928840637207,
+      "probability": 0.0001351097016595304,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0K87Y-h7b7",
+      "status": "completed",
+      "logit": 5.793702125549316,
+      "probability": 0.9969626069068909,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0K9ae-a3b2",
+      "status": "completed",
+      "logit": 1.0497663021087646,
+      "probability": 0.7407299876213074,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0K9ae-a3b4",
+      "status": "completed",
+      "logit": -0.7388356328010559,
+      "probability": 0.32325881719589233,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KAh7-d2h6",
+      "status": "completed",
+      "logit": -0.537615954875946,
+      "probability": 0.36874234676361084,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KAh7-d2b2",
+      "status": "completed",
+      "logit": -4.154244422912598,
+      "probability": 0.015455040149390697,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KBBW-h7h4",
+      "status": "completed",
+      "logit": -3.339949369430542,
+      "probability": 0.03422583267092705,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KBBW-h7g7",
+      "status": "completed",
+      "logit": 3.359877109527588,
+      "probability": 0.9664268493652344,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KFbp-g6g4",
+      "status": "completed",
+      "logit": -6.417733669281006,
+      "probability": 0.0016296912217512727,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KFbp-g6g7",
+      "status": "completed",
+      "logit": 12.82184886932373,
+      "probability": 0.9999972581863403,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KFod-e3g3",
+      "status": "completed",
+      "logit": 0.6521278619766235,
+      "probability": 0.6574897766113281,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KFod-e3h3",
+      "status": "completed",
+      "logit": 1.4115009307861328,
+      "probability": 0.8040025234222412,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KGyj-h3h6",
+      "status": "completed",
+      "logit": -4.876278400421143,
+      "probability": 0.007567634340375662,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KGyj-h3g2",
+      "status": "completed",
+      "logit": 8.344179153442383,
+      "probability": 0.999762237071991,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KHB8-a7a8",
+      "status": "completed",
+      "logit": 4.434286594390869,
+      "probability": 0.9882756471633911,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KHB8-a7a5",
+      "status": "completed",
+      "logit": -2.007026433944702,
+      "probability": 0.11846715211868286,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KHJo-f1f8",
+      "status": "completed",
+      "logit": 7.562732219696045,
+      "probability": 0.9994809031486511,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KHJo-f1a1",
+      "status": "completed",
+      "logit": -6.105776309967041,
+      "probability": 0.0022249878384172916,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KIZ9-e8h8",
+      "status": "completed",
+      "logit": 3.6264114379882812,
+      "probability": 0.9740782380104065,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KIZ9-e8e6",
+      "status": "completed",
+      "logit": -11.633538246154785,
+      "probability": 8.863692528393585e-06,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KIf7-g4c8",
+      "status": "completed",
+      "logit": 17.256593704223633,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KIf7-g4g6",
+      "status": "completed",
+      "logit": -0.05741565302014351,
+      "probability": 0.48565003275871277,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KJBA-d6d2",
+      "status": "completed",
+      "logit": -5.33162784576416,
+      "probability": 0.004812914878129959,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KJBA-d6d3",
+      "status": "completed",
+      "logit": 3.1510705947875977,
+      "probability": 0.9589508771896362,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KKKb-f5d6",
+      "status": "completed",
+      "logit": 14.676061630249023,
+      "probability": 0.9999995231628418,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KKKb-f5h6",
+      "status": "completed",
+      "logit": -6.868375301361084,
+      "probability": 0.001039084861986339,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KLFW-f4d6",
+      "status": "completed",
+      "logit": -1.4390032291412354,
+      "probability": 0.19169975817203522,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KLFW-f4f7",
+      "status": "completed",
+      "logit": 15.760467529296875,
+      "probability": 0.9999998807907104,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KLM2-c8e6",
+      "status": "completed",
+      "logit": -2.107602596282959,
+      "probability": 0.10836008191108704,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KLM2-c8f5",
+      "status": "completed",
+      "logit": 0.45772209763526917,
+      "probability": 0.6124736666679382,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KMxC-f8f4",
+      "status": "completed",
+      "logit": -6.116878032684326,
+      "probability": 0.0022004772908985615,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KMxC-f8f1",
+      "status": "completed",
+      "logit": 17.693679809570312,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KOQ7-e1f1",
+      "status": "completed",
+      "logit": -14.655937194824219,
+      "probability": 4.315261890042166e-07,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KOQ7-e1e8",
+      "status": "completed",
+      "logit": 5.413440227508545,
+      "probability": 0.9955635070800781,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KOmv-f6e7",
+      "status": "completed",
+      "logit": 1.1726574897766113,
+      "probability": 0.7636250257492065,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KOmv-f6e5",
+      "status": "completed",
+      "logit": -9.318074226379395,
+      "probability": 8.977859397418797e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KQ2S-d8h8",
+      "status": "completed",
+      "logit": 3.837925910949707,
+      "probability": 0.9789158701896667,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KQ2S-d8c7",
+      "status": "completed",
+      "logit": -2.6736457347869873,
+      "probability": 0.06454648822546005,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KQx0-h7g8",
+      "status": "completed",
+      "logit": 1.9536006450653076,
+      "probability": 0.8758386969566345,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KQx0-h7h8",
+      "status": "completed",
+      "logit": 0.6901352405548096,
+      "probability": 0.6659970283508301,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KR02-b6h6",
+      "status": "completed",
+      "logit": -3.5246312618255615,
+      "probability": 0.028619462624192238,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KR02-b6d8",
+      "status": "completed",
+      "logit": 9.096756935119629,
+      "probability": 0.9998879432678223,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KRKL-g6g4",
+      "status": "completed",
+      "logit": -6.87595796585083,
+      "probability": 0.001031243707984686,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KRKL-g6g8",
+      "status": "completed",
+      "logit": 3.4754223823547363,
+      "probability": 0.9699802994728088,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KS5H-f1f6",
+      "status": "completed",
+      "logit": 0.2644851505756378,
+      "probability": 0.5657385587692261,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KS5H-f1f8",
+      "status": "completed",
+      "logit": 6.383367538452148,
+      "probability": 0.9983134269714355,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KWFC-f7c7",
+      "status": "completed",
+      "logit": -7.758727550506592,
+      "probability": 0.00042681730701588094,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KWFC-f7f5",
+      "status": "completed",
+      "logit": 0.6148897409439087,
+      "probability": 0.6490554213523865,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KWSP-b2b5",
+      "status": "completed",
+      "logit": -8.300403594970703,
+      "probability": 0.00024835485965013504,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KWSP-b2b1",
+      "status": "completed",
+      "logit": 13.63437557220459,
+      "probability": 0.9999988079071045,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KWdo-e6a6",
+      "status": "completed",
+      "logit": -5.628852367401123,
+      "probability": 0.003579834708943963,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KWdo-e6g8",
+      "status": "completed",
+      "logit": 3.996462345123291,
+      "probability": 0.9819512367248535,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KWiT-a2g2",
+      "status": "completed",
+      "logit": 0.0729389637708664,
+      "probability": 0.518226683139801,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KWiT-a2h2",
+      "status": "completed",
+      "logit": 7.324879169464111,
+      "probability": 0.9993414282798767,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KYrR-b3g8",
+      "status": "completed",
+      "logit": 5.520789623260498,
+      "probability": 0.9960132837295532,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KYrR-b3b5",
+      "status": "completed",
+      "logit": -0.10538835823535919,
+      "probability": 0.47367724776268005,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KYrq-f4f6",
+      "status": "completed",
+      "logit": -7.159581661224365,
+      "probability": 0.0007767758215777576,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KYrq-f4c1",
+      "status": "completed",
+      "logit": 7.141247749328613,
+      "probability": 0.9992088675498962,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ka29-f5h5",
+      "status": "completed",
+      "logit": 13.458979606628418,
+      "probability": 0.9999985694885254,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ka29-f5b1",
+      "status": "completed",
+      "logit": -0.615696370601654,
+      "probability": 0.35076087713241577,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Kasx-g5f3",
+      "status": "completed",
+      "logit": 4.482773303985596,
+      "probability": 0.9888243079185486,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kasx-g5h3",
+      "status": "completed",
+      "logit": -6.194497585296631,
+      "probability": 0.002036472549661994,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Kb2F-h1h7",
+      "status": "completed",
+      "logit": 5.563032150268555,
+      "probability": 0.9961775541305542,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kb2F-h1h4",
+      "status": "completed",
+      "logit": -5.221643924713135,
+      "probability": 0.005369460675865412,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KbkP-g7d4",
+      "status": "completed",
+      "logit": 16.10653305053711,
+      "probability": 0.9999998807907104,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KbkP-g7c3",
+      "status": "completed",
+      "logit": -6.992589473724365,
+      "probability": 0.0009178213658742607,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KcU0-d5g8",
+      "status": "completed",
+      "logit": 7.182746887207031,
+      "probability": 0.9992409944534302,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KcU0-d5d3",
+      "status": "completed",
+      "logit": -2.987428665161133,
+      "probability": 0.04799704626202583,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KfFa-g7g6",
+      "status": "completed",
+      "logit": -2.508131504058838,
+      "probability": 0.07529009878635406,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KfFa-g7g5",
+      "status": "completed",
+      "logit": 0.6092720627784729,
+      "probability": 0.6477747559547424,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kfrm-d3d7",
+      "status": "completed",
+      "logit": -11.639691352844238,
+      "probability": 8.809321116132196e-06,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Kfrm-d3d8",
+      "status": "completed",
+      "logit": 12.00749397277832,
+      "probability": 0.9999939203262329,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KiZf-b2b5",
+      "status": "completed",
+      "logit": 0.4565003514289856,
+      "probability": 0.6121836304664612,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KiZf-b2c1",
+      "status": "completed",
+      "logit": 1.2512788772583008,
+      "probability": 0.7775211334228516,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kj2m-g6g2",
+      "status": "completed",
+      "logit": 4.033513069152832,
+      "probability": 0.9825962781906128,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kj2m-g6e4",
+      "status": "completed",
+      "logit": -1.7068665027618408,
+      "probability": 0.15357059240341187,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KjXE-f4f2",
+      "status": "completed",
+      "logit": 0.8475964665412903,
+      "probability": 0.7000627517700195,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KjXE-f4f1",
+      "status": "completed",
+      "logit": -0.02183222398161888,
+      "probability": 0.4945421516895294,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KmoV-b5d7",
+      "status": "completed",
+      "logit": -6.366938591003418,
+      "probability": 0.0017144643934443593,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KmoV-b5f1",
+      "status": "completed",
+      "logit": 6.690247058868408,
+      "probability": 0.9987585544586182,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Knu9-d6d8",
+      "status": "completed",
+      "logit": 8.827404975891113,
+      "probability": 0.9998533725738525,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Knu9-d6e6",
+      "status": "completed",
+      "logit": 1.0649232864379883,
+      "probability": 0.7436302304267883,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kpqu-c4c2",
+      "status": "completed",
+      "logit": 0.6345633864402771,
+      "probability": 0.6535235047340393,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kpqu-c4f1",
+      "status": "completed",
+      "logit": 2.812009334564209,
+      "probability": 0.9433214068412781,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kpyl-b8b1",
+      "status": "completed",
+      "logit": 14.179784774780273,
+      "probability": 0.9999992847442627,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kpyl-b8c8",
+      "status": "completed",
+      "logit": -7.176558017730713,
+      "probability": 0.000763710355386138,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KqNR-e2e4",
+      "status": "completed",
+      "logit": -0.24128998816013336,
+      "probability": 0.439968466758728,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KqNR-e2h5",
+      "status": "completed",
+      "logit": 5.392736911773682,
+      "probability": 0.9954711198806763,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KqUR-f1f6",
+      "status": "completed",
+      "logit": 3.2388625144958496,
+      "probability": 0.9622709155082703,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KqUR-f1f7",
+      "status": "completed",
+      "logit": -3.983429431915283,
+      "probability": 0.018281240016222,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KqWA-f1f4",
+      "status": "completed",
+      "logit": 1.6096447706222534,
+      "probability": 0.8333620429039001,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KqWA-f1f7",
+      "status": "completed",
+      "logit": 6.276933193206787,
+      "probability": 0.9981244206428528,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Krdp-h7h6",
+      "status": "completed",
+      "logit": -1.0685083866119385,
+      "probability": 0.25568684935569763,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Krdp-h7g7",
+      "status": "completed",
+      "logit": 3.5419540405273438,
+      "probability": 0.9718582630157471,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ksng-d3a6",
+      "status": "completed",
+      "logit": 0.7838303446769714,
+      "probability": 0.6865050792694092,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Ksng-d3f5",
+      "status": "completed",
+      "logit": 2.1433160305023193,
+      "probability": 0.8950425386428833,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kugo-f5h5",
+      "status": "completed",
+      "logit": 4.037148952484131,
+      "probability": 0.982658326625824,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kugo-f5f3",
+      "status": "completed",
+      "logit": -13.627513885498047,
+      "probability": 1.2068280739185866e-06,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Kv5P-g5d8",
+      "status": "completed",
+      "logit": -5.1098551750183105,
+      "probability": 0.006000731140375137,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0Kv5P-g5c1",
+      "status": "completed",
+      "logit": 17.844030380249023,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KvbB-c3d2",
+      "status": "completed",
+      "logit": -0.008306551724672318,
+      "probability": 0.497923344373703,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KvbB-c3e1",
+      "status": "completed",
+      "logit": 18.8626651763916,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kvh3-b4g4",
+      "status": "completed",
+      "logit": 10.34526252746582,
+      "probability": 0.9999678134918213,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0Kvh3-b4e4",
+      "status": "completed",
+      "logit": 0.19132861495018005,
+      "probability": 0.547686755657196,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KvrY-c7g3",
+      "status": "completed",
+      "logit": -1.9437830448150635,
+      "probability": 0.12523284554481506,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0KvrY-c7c8",
+      "status": "completed",
+      "logit": 5.352822780609131,
+      "probability": 0.9952875375747681,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KwXX-b7d7",
+      "status": "completed",
+      "logit": 0.9351033568382263,
+      "probability": 0.7181095480918884,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0KwXX-b7b2",
+      "status": "completed",
+      "logit": -3.6611580848693848,
+      "probability": 0.025058655068278313,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L13K-g3d3",
+      "status": "completed",
+      "logit": -11.232874870300293,
+      "probability": 1.3231792763690464e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L13K-g3g7",
+      "status": "completed",
+      "logit": 11.648941040039062,
+      "probability": 0.9999912977218628,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0L34t-e6d7",
+      "status": "completed",
+      "logit": -4.196397304534912,
+      "probability": 0.014826564118266106,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L34t-e6d5",
+      "status": "completed",
+      "logit": -1.422593116760254,
+      "probability": 0.19425538182258606,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L3x5-a6e6",
+      "status": "completed",
+      "logit": 14.662019729614258,
+      "probability": 0.9999995231628418,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0L3x5-a6a5",
+      "status": "completed",
+      "logit": -4.69716739654541,
+      "probability": 0.009038634598255157,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L6Qa-h6a6",
+      "status": "completed",
+      "logit": -2.996858596801758,
+      "probability": 0.04756799340248108,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L6Qa-h6d2",
+      "status": "completed",
+      "logit": 12.760987281799316,
+      "probability": 0.9999971389770508,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0L6jE-e5e4",
+      "status": "completed",
+      "logit": -6.8817338943481445,
+      "probability": 0.0010253104846924543,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L6jE-e5e1",
+      "status": "completed",
+      "logit": 10.643549919128418,
+      "probability": 0.9999761581420898,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0L9GP-c2d2",
+      "status": "completed",
+      "logit": -7.0126776695251465,
+      "probability": 0.000899584440048784,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0L9GP-c2h7",
+      "status": "completed",
+      "logit": 6.621940612792969,
+      "probability": 0.9986709356307983,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LBYJ-c6c1",
+      "status": "completed",
+      "logit": 19.088699340820312,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LBYJ-c6c2",
+      "status": "completed",
+      "logit": -1.234781265258789,
+      "probability": 0.2253456711769104,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LCTP-f2g2",
+      "status": "completed",
+      "logit": 18.913394927978516,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LCTP-f2e2",
+      "status": "completed",
+      "logit": 2.594511032104492,
+      "probability": 0.930507481098175,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LDXU-e4d6",
+      "status": "completed",
+      "logit": -9.40268611907959,
+      "probability": 8.249534585047513e-05,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LDXU-e4g3",
+      "status": "completed",
+      "logit": 10.400650978088379,
+      "probability": 0.9999696016311646,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LIcT-c8c1",
+      "status": "completed",
+      "logit": 16.668350219726562,
+      "probability": 1.0,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LIcT-c8c4",
+      "status": "completed",
+      "logit": -9.172521591186523,
+      "probability": 0.0001038435148075223,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LJIP-g4h5",
+      "status": "completed",
+      "logit": 5.097991466522217,
+      "probability": 0.993928074836731,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LJIP-g4g3",
+      "status": "completed",
+      "logit": -2.0529470443725586,
+      "probability": 0.11375494301319122,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LJrU-h6g6",
+      "status": "completed",
+      "logit": 2.992526054382324,
+      "probability": 0.9522354006767273,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LJrU-h6f6",
+      "status": "completed",
+      "logit": 1.1114301681518555,
+      "probability": 0.7523956298828125,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LL3G-d6h2",
+      "status": "completed",
+      "logit": -3.0117852687835693,
+      "probability": 0.04689628630876541,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LL3G-d6b8",
+      "status": "completed",
+      "logit": 3.43507719039917,
+      "probability": 0.9687830209732056,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LMEz-f5h7",
+      "status": "completed",
+      "logit": 8.397088050842285,
+      "probability": 0.9997745156288147,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LMEz-f5g4",
+      "status": "completed",
+      "logit": -1.8774062395095825,
+      "probability": 0.13268707692623138,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LPhq-a4h4",
+      "status": "completed",
+      "logit": 0.523321270942688,
+      "probability": 0.6279240250587463,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LPhq-a4a3",
+      "status": "completed",
+      "logit": -6.976332187652588,
+      "probability": 0.000932850583922118,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LQSI-c1c8",
+      "status": "completed",
+      "logit": 5.487717151641846,
+      "probability": 0.9958797693252563,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LQSI-c1d1",
+      "status": "completed",
+      "logit": -7.759476184844971,
+      "probability": 0.00042649806709960103,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LSuK-f7d7",
+      "status": "completed",
+      "logit": 10.664929389953613,
+      "probability": 0.999976634979248,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LSuK-f7b7",
+      "status": "completed",
+      "logit": -3.204847812652588,
+      "probability": 0.038983698934316635,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LTc1-e7g5",
+      "status": "completed",
+      "logit": -4.879593372344971,
+      "probability": 0.007542777806520462,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LTc1-e7c5",
+      "status": "completed",
+      "logit": 14.332797050476074,
+      "probability": 0.9999994039535522,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LThB-g4f5",
+      "status": "completed",
+      "logit": -4.287500858306885,
+      "probability": 0.013553011231124401,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LThB-g4f3",
+      "status": "completed",
+      "logit": 10.929112434387207,
+      "probability": 0.9999821186065674,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LZ10-h4h7",
+      "status": "completed",
+      "logit": 12.536661148071289,
+      "probability": 0.9999964237213135,
+      "prediction": true
+    },
+    {
+      "case_id": "check-v2-0LZ10-h4d4",
+      "status": "completed",
+      "logit": -8.90693473815918,
+      "probability": 0.00013542803935706615,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LZBt-h5h4",
+      "status": "completed",
+      "logit": -5.968503952026367,
+      "probability": 0.0025515384040772915,
+      "prediction": false
+    },
+    {
+      "case_id": "check-v2-0LZBt-h5f7",
+      "status": "completed",
+      "logit": 6.0333733558654785,
+      "probability": 0.9976083040237427,
+      "prediction": true
+    }
+  ],
+  "score": {
+    "planned": 256,
+    "positive_support": 128,
+    "negative_support": 128,
+    "statuses": {
+      "completed": 256
+    },
+    "confusion": {
+      "tp": 119,
+      "tn": 111,
+      "fp": 17,
+      "fn": 9,
+      "invalid_positive": 0,
+      "invalid_negative": 0
+    },
+    "correct": 230,
+    "checking_recall": 0.9296875,
+    "nonchecking_recall": 0.8671875,
+    "pairs_planned": 128,
+    "pairs_correct": 104
+  }
+}

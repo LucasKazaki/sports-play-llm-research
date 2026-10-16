@@ -1,0 +1,36 @@
+{
+  "status": "passed_runtime_deadline_clarification",
+  "created_utc": "2026-10-16T11:09:49.192040+00:00",
+  "source_observation": "NF4 guard_for constructs Policy and checks reasons(sample,policy,start/running). It never creates OwnedGuard or reads maximum_owned_request_seconds for an elapsed check. Policy120seconds is metadata in this call path.",
+  "actual_unchanged_enforced_limits": {
+    "generator_seconds": 180,
+    "cold_child_seconds_including_setup": 210,
+    "qualification_phase_seconds": 450,
+    "comparison_phase_seconds": 4500,
+    "global_cutoff": "2026-10-16T13:00:00+00:00"
+  },
+  "corrects_our_prior_review_descriptions": [
+    "existing-checkpoint-comparison-design-review.json effective120 description",
+    "cold-sft-topology-qualification-source-review.json effective120 description; already superseded by pre-dispatch hold"
+  ],
+  "effect": "Documentation/provenance correction only. No floor, timer, generation setting, code, actual outcome or prior executed experiment changes. New exact qualifier/comparison frozen plans should describe this correctly before dispatch.",
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_nf4_adapter_v2.py",
+      "bytes": 21493,
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_compare_cold_child_v1.py",
+      "bytes": 5214,
+      "sha256": "bdeef688546269e89a836707cf43ebb4385e4165e25ac61cf4aee3e01b89d997"
+    }
+  ],
+  "model_engine_gpu_calls": 0,
+  "followUpTasks": []
+}

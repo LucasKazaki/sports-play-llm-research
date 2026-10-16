@@ -1,0 +1,85 @@
+{
+  "schema": "research.soccermaster-watch.v1",
+  "checked_at_utc": "2026-10-16T08:36:10Z",
+  "checked_at_local": "2026-10-16T04:36:10-04:00",
+  "scope": "Dated read-only official-source watch. Chess remains the sole active capability domain.",
+  "evidence_kind": "Web-tool first-party page observations; not immutable source-byte snapshots or Agent Studio Company Runtime browser receipts.",
+  "baseline_files": [
+    "research/archit-lucas-requirements-and-radar.md",
+    "research/archit-next-meeting-soccermaster-brief-2026-08-27.md",
+    "research/research-loop-agenda-candidate-v1-2026-09-06.md",
+    "research/fixtures/soccermaster-encoder-head-preflight-v1.md",
+    "research/fixtures/soccermaster-official-preflight-v1.json"
+  ],
+  "observations": [
+    {
+      "role": "paper",
+      "url": "https://arxiv.org/abs/2512.11016",
+      "access": "returned HTML",
+      "tool_crawl_label": "yesterday",
+      "latest_visible_version": "2512.11016v2",
+      "latest_visible_revision_time": "2026-05-07T10:04:34Z",
+      "delta": "Same v2 identity and date as the retained August/September notes; no later version displayed.",
+      "license_url": "https://arxiv.org/licenses/nonexclusive-distrib/1.0/license.html",
+      "license_scope": "arXiv distribution license; not a code/model/media license."
+    },
+    {
+      "role": "project",
+      "url": "https://haolinyang-hlyang.github.io/SoccerMaster/",
+      "access": "returned HTML",
+      "tool_crawl_label": "today",
+      "visible_state": "CVPR 2026 Oral; official paper, code and Hugging Face links; encoder/multitask and SoccerFactory descriptions remain present.",
+      "delta": "No dated new version or release announcement identified on the bounded project page. Exact byte equality to the old snapshot was not checked.",
+      "website_license": "CC BY-SA 4.0",
+      "license_scope": "Website footer only; does not clear code, weights or footage."
+    },
+    {
+      "role": "code",
+      "url": "https://github.com/haolinyang-hlyang/SoccerMaster",
+      "readme_url": "https://raw.githubusercontent.com/haolinyang-hlyang/SoccerMaster/main/README.md",
+      "access": "repository and raw README returned",
+      "tool_crawl_label": "today for repository; yesterday on initial raw README open, today on follow-up find",
+      "visible_state": "12 commits; code and images folders; README describes environment setup, checkpoint access and SoccerFactory release.",
+      "historical_source_revision": "2e5619712d93f634b841aaf37231cd9fceb6b262",
+      "current_head_revision": null,
+      "code_license_status": "No LICENSE in displayed root listing and no License match in full README. GitHub API license metadata could not be refreshed; whole-source/component applicability remains unresolved.",
+      "delta": "Current HEAD identity was not exposed by the returned repository page. Commit-history/API access failed; no exact code no-change claim."
+    },
+    {
+      "role": "code_releases",
+      "url": "https://github.com/haolinyang-hlyang/SoccerMaster/releases",
+      "access": "returned HTML",
+      "tool_crawl_label": "yesterday",
+      "published_releases_visible": 0,
+      "delta": "Returned official releases page displays no published releases; this is not an all-branches or uncached-origin guarantee."
+    },
+    {
+      "role": "checkpoints",
+      "url": "https://huggingface.co/xleprime/SoccerMaster/tree/main",
+      "history_url": "https://huggingface.co/xleprime/SoccerMaster/commits/main",
+      "head_link_url": "https://huggingface.co/xleprime/SoccerMaster/commit/0d94573662dbd678df22aa5c61ae77f474b939c9",
+      "access": "model card, file tree, history and full commit link returned",
+      "tool_crawl_label": "today for model/tree/history; last week for commit detail",
+      "visible_revision": "0d94573662dbd678df22aa5c61ae77f474b939c9",
+      "license_metadata": "apache-2.0",
+      "visible_file_names": [".gitattributes", "CaptionClassification.pt", "KeypointsDetection.pt", "LinesDetection.pt", "README.md", "SoccerNetGSR_Detection.pt", "VideoCaption.pt", "backbone.pt", "yolo_v8x6_finetuned.pt"],
+      "delta": "Same repository revision and Apache-2.0 model-card metadata as the retained September preflight. No later checkpoint revision visible. Repository revision is not a checkpoint byte digest; no weights acquired or hashed."
+    }
+  ],
+  "access_limits": [
+    {"url": "https://api.github.com/repos/haolinyang-hlyang/SoccerMaster", "result": "Web tool Internal Error"},
+    {"url": "https://github.com/haolinyang-hlyang/SoccerMaster/commits/main/", "result": "Failed to fetch restricted URL; no-trailing-slash form also failed"},
+    {"url": "https://github.com/haolinyang-hlyang/SoccerMaster/tree/main", "result": "Failed to fetch restricted URL"},
+    {"url": "https://huggingface.co/api/models/xleprime/SoccerMaster", "result": "Web tool Internal Error; HTML tree/history supplied bounded revision observations"},
+    {"url": "https://huggingface.co/xleprime/SoccerMaster/raw/main/README.md", "result": "URL not accessible via this tool; visible model card/tree license metadata used"}
+  ],
+  "decision": "No material new method/checkpoint/release/license delta verified. Preserve existing soccer feasibility and semantic NO-GO limits. Current code HEAD/license refresh remains incomplete. No new sports experiment.",
+  "next_watch_due_utc": "2026-10-17T08:36:10Z",
+  "model_calls": 0,
+  "gpu_calls": 0,
+  "engine_calls": 0,
+  "data_or_weight_downloads": 0,
+  "source_code_checkout_or_downloads": 0,
+  "external_contact_or_publication": false,
+  "project_source_or_frozen_evidence_edits": 0
+}

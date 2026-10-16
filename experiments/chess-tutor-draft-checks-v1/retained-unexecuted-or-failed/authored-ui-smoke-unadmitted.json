@@ -1,0 +1,27 @@
+{
+  "schema": "chess.authored-ui-smoke-unadmitted.v1",
+  "status": "not_admitted_startup_commit_reserve",
+  "recorded_at_utc": "2026-10-16T12:04:28.178861+00:00",
+  "preflight_tool": "081678",
+  "preflight_source_sha256": "7229738a1c7610a832c672c57d45dd1de83596cd3885f517bb062db719e1e886",
+  "planned_requests": 1,
+  "model_calls": 0,
+  "checker_calls": 0,
+  "worker_created": false,
+  "input_created": false,
+  "response_created": false,
+  "startup_commit_requirement_bytes": 10737418240,
+  "original_failing_sample_retained": false,
+  "separate_followup_sample": {
+    "utc": "2026-10-16T12:03:29.627400+00:00",
+    "commit_limit_bytes": 50637942784,
+    "commit_total_bytes": 41501294592,
+    "commit_headroom_bytes": 9136648192,
+    "physical_available_bytes": 11039424512,
+    "gpu_free_bytes": 14766047232,
+    "tool": "1bff9c"
+  },
+  "plan_file_created": false,
+  "retry_or_reserve_relaxation": false,
+  "limit": "The original preflight failed its unchanged10GiB commit assertion before writing the prospective plan or dispatching a worker. The separately retained later sample is context, not a reconstruction of the original sample. New postcheck production integration has no actual model completion; source/CPU/UI fixture checks remain separate."
+}

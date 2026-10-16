@@ -1,0 +1,37 @@
+{
+  "status": "passed_source_review_only",
+  "created_utc": "2026-10-16T11:25:54.501355+00:00",
+  "complete_bundle": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\existing-checkpoint-comparison-source-bundle-v4.txt",
+    "bytes": 22519,
+    "sha256": "d3ecf74b4ffa3ed2d7a59d8060d9cff38b67ec9c44947f288311b5d09f1efc36"
+  },
+  "builder": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-existing-checkpoint-comparison-v1\\prepare_protocol_v3.py",
+    "bytes": 6803,
+    "sha256": "07266807c97fca1562ee21ab9fd39510948a4d73dec261efdc6c3514a1b068ca"
+  },
+  "tests": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_existing_checkpoint_comparison_v3.py",
+    "bytes": 6770,
+    "sha256": "918cda1504ba7cbf1150dbb8c024155d36f6ad9e2a1a935478f5ef2d40d00853"
+  },
+  "design": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\chess-existing-checkpoint-comparison-plan-v2.json",
+    "bytes": 7556,
+    "sha256": "6aeeec01abc898ab35d614af4b53d5f827b91e7657ad0c1c31e989f1b0189e99"
+  },
+  "full_read": "All22519bytes complete builder/tests/receipt/unchangeddesign read.",
+  "CPUtests": "10pass independently; concrete timing in preceding tool result",
+  "AST": "Identical previousreviewedv2 after outerv5 import+selftestv3 normalization only",
+  "blocking_findings": [],
+  "go_scope": "Mayprepare exact finalfixed256/64comparison protocol ONLY afteractualsame-source2requestPASS+closedaudit. No freshcalls until finalfrozenplanreadback/wholeadmissionstrict1130/global13.",
+  "no_new_training": true,
+  "no_model_engine_gpu_or_fresh_quality_reads": true,
+  "previous_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-builder-v2-source-review.json",
+    "bytes": 2520,
+    "sha256": "2cfbdea4ad44bf2c672b05aceca870a4dc2d7e5f89b5ea2cb9dd2d1ca7123591"
+  },
+  "followUpTasks": []
+}

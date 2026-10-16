@@ -36,3 +36,162 @@ reports/chess-matched-check-v1-2026-10-15.md -text
 scripts/chess_matched_check_intake.py text eol=lf
 tests/test_chess_matched_check_intake.py text eol=lf
 tests/test_chess_matched_check_exclusions.py text eol=lf
+
+# October 16 candidate source, protocols and receipts retain their hash-bound bytes.
+experiments/chess-check-balanced-v2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-move-policy-v5/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+prototype/chess_tutor_v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_check_balanced_v2.py -text
+scripts/chess_move_policy_v5.py -text
+scripts/start-chess-tutor.ps1 -text
+tests/test_chess_check_balanced_v2.py -text
+tests/test_chess_move_policy_v5.py -text
+# Retain the reviewed test's exact trailing blank line for source-bound receipts.
+tests/test_chess_tutor_v1.py -text whitespace=blank-at-eol,space-before-tab,cr-at-eol,-blank-at-eof
+
+# Successor experiments bind exact executed bytes across Windows checkouts.
+experiments/chess-move-policy-v6/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-move-policy-v6-run2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-benchmark-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-encoder-check-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_move_policy_v6.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_move_policy_v6_run2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_adapter.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_benchmark_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_move_policy_v6.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_move_policy_v6_run2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_adapter.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_benchmark_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_materialize.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_materialize.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-nf4-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_nf4_adapter*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_nf4*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_benchmark_nf4_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_benchmark_nf4_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-qlora-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-sft-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-sft-training-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-sft-training-v2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_qlora*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_sft*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_qlora*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_sft*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_memory_qualification_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_tutor_coaching_prose.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-claim-audit-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_claim_audit_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_claim_audit_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-research-radar-2026-10-16.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-research-refresh-2026-10-16.json -text
+research/chess-research-refresh-date-audit-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-ai-assistance-and-data-stewardship-2026-10-16.md -text
+experiments/chess-encoder-check-generalization-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_generalization_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_generalization_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_generalization_eval_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_generalization_eval_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_tutor_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_tutor_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_tutor_tuned_runtime_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-tutor-adapter-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_encoder_check_generalization_eval_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_encoder_check_generalization_eval_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-counterfactual-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_counterfactual*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_counterfactual*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_counterfactual_recovery_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chessqa-source-audit-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+# Preserve exact reviewed process-controller and comparison source bytes.
+scripts/chess_queen_process_lineage_v*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_process_lineage_v*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_queen_coach_sft_compare_cold_child_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_coach_sft_compare_cold_child_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-existing-checkpoint-comparison-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_existing_checkpoint_comparison_v*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-stable-engine-release-check-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Frozen review bundles and literal patches retain their original blank lines.
+experiments/**/*bundle.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+experiments/**/amendment-diff.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the reviewed limited-check implementation and exact evidence copies.
+tests/test_chess_tutor_draft_checks*.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-tutor-draft-checks-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-tutor-draft-checks-v1/finite-source-review/0*.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-tutor-draft-checks-v1/authored-rendering-fixture-review/0*.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+research/chess-cache-backbone-investigation-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-primary-refresh-2026-10-16-1144.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve reviewed descriptive coverage source and exact closed evidence.
+scripts/chess_queen_counterfactual_coverage_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+tests/test_chess_queen_counterfactual_coverage_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-counterfactual-train-dev-coverage-2026-10-16/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-counterfactual-train-dev-coverage-2026-10-16/**/finite-source-plan-tests-bundle.txt whitespace=-blank-at-eol,-blank-at-eof,space-before-tab,cr-at-eol
+research/chess-overnight-closeout-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the separately authorized daytime integration and primary-source receipts.
+experiments/chess-tutor-draft-checks-daytime-v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-daytime-window-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-primary-refresh-2026-10-16-1328.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chessarena-primary-review-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-daytime-launch-diagnostic-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the exact reviewed direct-base worker and bounded CPU evidence.
+experiments/chess-queen-coach-daytime-v1/owned_worker_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/environment_parity_child_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/environment_parity_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/prepare_environment_parity_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_owned_worker_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct-base-worker-v2-README.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/environment-parity-protocol-v1.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/build_worker_v2_review_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/01-worker-and-payload.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/02-driver-builder-and-design.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/03-tests-and-retained-result.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/04-protocol-and-review-builder.txt -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/authored-test-result.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/manifest.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-QUALIFICATION-LIMITS.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+research/chess-direct-base-CPU-qualification-2026-10-16.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/owned-worker-v2-evidence/publication-inventory.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct-base-worker-v2-EVIDENCE.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve reviewed daytime adaptation source and inventory bytes.
+experiments/chess-queen-coach-daytime-v1/daytime_contract.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/daytime_train.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/qualify_training.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/build_protocols.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_daytime.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/job_context.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/process_lineage_v5.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/cold_eval_v6.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/probe_observer_child.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/prepare_observer_protocols.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_job_context.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_process_lineage_v5.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_cold_eval_v6.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_observer_probe.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_observer_builder.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/job_context_direct_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct_launch_contract.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/cold_eval_v7.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/probe_process_observer_v2.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/qualify_training_direct_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_job_context_direct_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_direct_launch_contract.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_qualify_training_direct_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_direct_observer.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/prepare_held_v4.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_daytime_held_v4.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/prepare_direct_protocols_v3.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_prepare_direct_protocols_v3.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/freeze_direct_training_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/test_freeze_direct_training_v1.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/probe_process_observer.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct-route-source-evidence/inventory-base.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct-route-source-evidence/inventory-v2.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-queen-coach-daytime-v1/direct-route-source-README.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

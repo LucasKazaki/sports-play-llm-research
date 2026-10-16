@@ -1,0 +1,82 @@
+{
+  "schema": "chess.queen-native-nf4-candidate.v2",
+  "input": {
+    "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1",
+    "history": []
+  },
+  "prompt": "Analyze the position carefully and find the best move for player.",
+  "model_id": "princeton-nlp/queen_pawn-8",
+  "model_revision": "5027687fac08b64b2403b13aca5b198e68294fe9",
+  "source_revision": "c372da22ca75e95c3c79bee8a83c220fc54d0dcb",
+  "settings": {
+    "device": "cuda",
+    "max_new_tokens": 1024,
+    "maximum_seconds": 240,
+    "temperature": 0.0,
+    "seed": 20260823,
+    "top_k": 20,
+    "top_p": 0.95,
+    "use_kv_cache": false,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction",
+    "backend": "stock SmolLM3 with pinned16pre-layer board cross-attention hooks; no_cache; math_sdpa_fp32_reduction"
+  },
+  "no_forward_input_audit": {
+    "passed": true,
+    "allowed_fields": [
+      "fen",
+      "history"
+    ],
+    "engine_evaluation_or_pv_input": false,
+    "selected_move_supplied": false
+  },
+  "status": "failed",
+  "raw_text": "",
+  "decoded_text": "",
+  "limitations": [
+    "Native Torch candidate port; not a reproduction of published H100/vLLM strength.",
+    "Generated explanations are unverified model output, not accepted board facts.",
+    "No random legal fallback, no engine move replacement, no claim of tutor quality.",
+    "NF4 changes decoder weights in memory; BF16 equivalence, playing strength and coaching quality remain unestablished."
+  ],
+  "input_sha256": "5284f66597ca7599b3292f1f404aaf979f86c917b7ef292cb10b2e004f9bae4e",
+  "prompt_sha256": "5ea29068a7d202451b26a8ca4e35c331e1f9263accd3923dc55cc2dafc85359d",
+  "adapter_sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8",
+  "history_mode": "FEN only; upstream synthesizes missing history planes",
+  "error": "RuntimeError: Owned NF4 cancellation",
+  "generated_tokens": [],
+  "finish_reason": "error",
+  "elapsed_seconds": 5.593,
+  "base_adapter_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+  "candidate_id": "queen-pawn-8/native-nf4-v2",
+  "quantization": {
+    "requested": {
+      "load_in_4bit": true,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": true,
+      "bnb_4bit_compute_dtype": "bfloat16",
+      "bnb_4bit_quant_storage": "uint8",
+      "llm_int8_skip_modules": [
+        "lm_head"
+      ]
+    },
+    "actual_decoder_inventory": null,
+    "status": "not_loaded",
+    "origin": "Local separately versioned NF4 decoder override; not a publisher-provided quantized release",
+    "encoder_and_bridges": "Frozen BF16; no quantization override",
+    "bitsandbytes_version": "0.50.2"
+  },
+  "nf4_protocol_sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c",
+  "diagnostic_receipt_sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9",
+  "resource_samples": [],
+  "resource_policy": {
+    "start_physical_available_bytes": 6442450944,
+    "start_commit_headroom_bytes": 10737418240,
+    "start_gpu_free_bytes": 10737418240,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 4294967296,
+    "stop_gpu_free_bytes": 1073741824,
+    "maximum_owned_request_seconds": 120.0,
+    "maximum_sample_gap_seconds": 3.0
+  }
+}

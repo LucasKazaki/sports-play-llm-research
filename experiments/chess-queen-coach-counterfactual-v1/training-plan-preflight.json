@@ -1,0 +1,12 @@
+{
+  "status": "FINAL_METADATA_PROTOCOL_VERIFIED_NO_GPU",
+  "protocol_sha256": "c66a9f8d8efbcf0d175326d7635fe6ad366ce0d2351a08ed6e77b1301293e024",
+  "trainer_sha256": "6185ba3dbb146d4a3d2b76e59e7611e8f69a386ae27564bfa08562afdee3b34b",
+  "cpu_preflight_sha256": "995397bac354b4b9a1a840e30bcfb73893b9713478dd3ebf4f86d57f611303a3",
+  "corpus_manifest_sha256": "fbfdb07bb04e18d4b29326c32f0210889e104cfea99a207dfe253cd35f380854",
+  "operational_protocol_sha256": "3f9785466c0f35e8a01d3b05361370ce5e65bc9ba36f4667c2502dc25d98a65b",
+  "actual_corpus_audit_sha256": "cf7ab2bf3f94619f7f43fe076d821d68220c600a67bd7f4e1121d1eb10163462",
+  "forbidden_backend_imports": false,
+  "held_reference_semantics_read": false,
+  "trainer_gpu_calls": 0
+}

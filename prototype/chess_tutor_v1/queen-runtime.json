@@ -1,0 +1,99 @@
+{
+  "schema": "chess.tutor-queen-runtime.v1",
+  "status": "approved_for_authored_ui",
+  "candidate_id": "queen-pawn-8/native-nf4-v2",
+  "authorization": "Root authorized production UI integration after the complete authored mate response; root owns subsequent GPU dispatch and live restart.",
+  "scope": "Runtime qualification for manual local draft generation only. Not a chess capability, BF16 equivalence, factuality or coaching-quality acceptance.",
+  "known_authored_errors": "The completed mate draft includes an illegal alternative Qd8xh5 and false f2-pawn/e8 protection claim. The structured Qd8# move is legal; surrounding prose remains unverified.",
+  "bindings": {
+    "worker": {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    "adapter": {
+      "path": "scripts/chess_queen_nf4_adapter_v2.py",
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    "base_adapter": {
+      "path": "scripts/chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    "asset_manifest": {
+      "path": "experiments/chess-queen-v1/asset-manifest.json",
+      "sha256": "dc909eca4d0e0b17b2b2d188f55e461c18121516d62d1fc8062fd33c81620ad3"
+    },
+    "source_manifest": {
+      "path": "experiments/chess-queen-v1/source-manifest.json",
+      "sha256": "22ef4c5ecf7f7f79848eb3b261f74cee96296614ae99e38d3f16bdca06da08ff"
+    },
+    "kernel_protocol": {
+      "path": "experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+      "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+    },
+    "kernel_receipt": {
+      "path": "data/private/chess-queen-nf4-v1/kernel-2.json",
+      "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+    },
+    "kernel_worker": {
+      "path": "data/private/chess-queen-nf4-v1/kernel-worker-2.json",
+      "sha256": "82a93a694b1c81a261a10e99c872de41f1719d14fbdd603587dbc55122413f05"
+    },
+    "parity_source": {
+      "path": "experiments/chess-queen-nf4-v1/parity_no_cache_v2.py",
+      "sha256": "5387c50b5aa9e2c1479bc2a40ddd2d28a72016b40763bf7a3ea04abed611dca9"
+    },
+    "parity_protocol": {
+      "path": "experiments/chess-queen-nf4-v1/parity-protocol-v3.json",
+      "sha256": "6287196f26689aedcb5d8a314330ed26ff96cff5569e7f4b80073ebe3babe244"
+    },
+    "parity_receipt": {
+      "path": "data/private/chess-queen-nf4-v1/parity-2.json",
+      "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4"
+    },
+    "parity_worker": {
+      "path": "data/private/chess-queen-nf4-v1/parity-worker-2.json",
+      "sha256": "28e55981247df3b381845c831efb02b180a18992531ceda54606d2c3031a5999"
+    },
+    "authored_protocol": {
+      "path": "experiments/chess-queen-nf4-v1/authored-protocol.json",
+      "sha256": "9e3b0e9741505eabebf5336f0a8b82239ed65ed71a724de8ca889ce76f564d41"
+    },
+    "authored_receipt": {
+      "path": "data/private/chess-queen-nf4-v1/authored-0.json",
+      "sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91"
+    },
+    "authored_worker": {
+      "path": "data/private/chess-queen-nf4-v1/authored-0-worker.json",
+      "sha256": "b83c3d67e709414854245cfb37cf2c96cf7fe2dc37cff11af5fc83c15a9ec014"
+    },
+    "authored_ledger": {
+      "path": "data/private/chess-queen-nf4-v1/authored-outcomes.json",
+      "sha256": "058f964e69930755dbca654bbac8a77912f2eb2a95cf32f515cab05e4922ff84"
+    },
+    "authored_1_receipt": {
+      "path": "data/private/chess-queen-nf4-v1/authored-1.json",
+      "sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223"
+    },
+    "authored_1_worker": {
+      "path": "data/private/chess-queen-nf4-v1/authored-1-worker.json",
+      "sha256": "2093974e827c6e65cbaab6773bc722139aefffb27219ac3a9e7c6b541eb7adf0"
+    },
+    "authored_2_receipt": {
+      "path": "data/private/chess-queen-nf4-v1/authored-2.json",
+      "sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0"
+    },
+    "authored_2_worker": {
+      "path": "data/private/chess-queen-nf4-v1/authored-2-worker.json",
+      "sha256": "88efefde491b54cf34fa2de064ea59f7ef170540739d74a871d8e8e7b639a9cd"
+    },
+    "authored_3_receipt": {
+      "path": "data/private/chess-queen-nf4-v1/authored-3.json",
+      "sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea"
+    },
+    "authored_3_worker": {
+      "path": "data/private/chess-queen-nf4-v1/authored-3-worker.json",
+      "sha256": "e3e2d55ce6078a589a067038513efb21030e1baa3d44f7bdd559dd499687943a"
+    }
+  },
+  "actual_authored_smokes": 4
+}

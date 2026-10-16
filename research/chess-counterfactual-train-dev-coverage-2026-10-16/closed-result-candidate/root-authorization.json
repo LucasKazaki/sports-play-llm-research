@@ -1,0 +1,17 @@
+{
+  "status": "authorized_not_started",
+  "authorized_at_utc": "2026-10-16T12:27:54.491064+00:00",
+  "protocol_sha256": "f7791a14e498ea9ca0a3db3e2b8096892999a85a01fc5869db8edd862b240fb0",
+  "source_review_sha256": "6c82521357742ab07cf3b6dbf7ca6f5b86e7db64472e846b120c84c95c89c8cc",
+  "exact_arguments": [
+    ".venv-soccernet/Scripts/python.exe",
+    "scripts/chess_queen_counterfactual_coverage_v1.py",
+    "--protocol",
+    "research/chess-counterfactual-train-dev-coverage-2026-10-16/plan.json",
+    "--out",
+    "data/private/chess-queen-counterfactual-coverage-v1/attempt-1"
+  ],
+  "scope": "TRAIN1536/DEV96 only; bounded30s descriptive CPU audit, no held/reserve/teacher/model/engine calls",
+  "global_cutoff_utc": "2026-10-16T13:00:00+00:00",
+  "no_frozen_corpus_or_protocol_changes": true
+}

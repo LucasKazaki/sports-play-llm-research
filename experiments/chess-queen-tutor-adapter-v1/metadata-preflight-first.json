@@ -1,0 +1,13 @@
+{
+  "schema": "chess.tuned-tutor-metadata-preflight-failure.v1",
+  "status": "failed_before_any_model_call",
+  "execution_chunk_id": "9c14b5",
+  "stage": "verify_protocol dependency byte bindings",
+  "error": "ValueError: Binding is outside the repository or missing.",
+  "cause": "The already reviewed diagnostic protocol lists four exact pinned source-manifest files under the separate work/queen-source checkout; an initial repository-only dependency binder rejected them.",
+  "preserved": "preflight-draft-1 holds the exact initial source/runner/protocol/tests; no pretrained execution or candidate response exists for this failed metadata check.",
+  "repair_scope": "Permit only an exact dependency path/hash also present in the already bound source-manifest checkout and file list; reject unrelated outside paths.",
+  "model_calls": 0,
+  "GPU_calls": 0,
+  "engine_calls": 0
+}

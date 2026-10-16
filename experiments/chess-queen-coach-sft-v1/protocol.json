@@ -1,0 +1,169 @@
+{
+  "schema": "chess.queen-coach-sft-intake.v1",
+  "frozen_at": "2026-10-16T08:03:25.057683+00:00",
+  "implementation_sha256": "b205cf6e078c00b36facb8ba1c8e8884bdc7d213a7bb095f0a549a509e9c9524",
+  "seed": 4082083,
+  "counts": {
+    "train": 1024,
+    "development": 32,
+    "holdout": 512,
+    "rollout": 0
+  },
+  "strata": {
+    "discovered_or_double_check": 2,
+    "king_mover": 2,
+    "pawn_mover": 2,
+    "direct_check": 4,
+    "quiet": 4,
+    "noncheck_capture": 2
+  },
+  "source_row_cap": 500000,
+  "source": {
+    "path": "data/private/chess-fact-sft-v1/source/lichess-hf-train-00000.parquet",
+    "sha256": "5352e3bff4d6163851c07a0cc922b1ff72875cc6f75d994bdfc3272a37ca9e87",
+    "bytes": 294920084,
+    "license": "CC0-1.0",
+    "upstream": "https://huggingface.co/datasets/Lichess/chess-puzzles/resolve/461725966ea46898ec6481372a6326de3281bfbd/data/train-00000-of-00003.parquet"
+  },
+  "exclusions": {
+    "registry": {
+      "path": "data/private/chess-encoder-check-v1/initial-exclusions.json",
+      "sha256": "88d0452d05496437094a9d50545ef3ecab3508b3390afb456283748b73aab605",
+      "bytes": 15314733
+    },
+    "head": {
+      "path": "data/private/chess-encoder-check-v1/dataset.json",
+      "sha256": "59de14730e88647c58d08b5089f1d5998a76f04e31bc2560ae948f12d52ee71f",
+      "bytes": 3649127
+    },
+    "queen_pool": {
+      "path": "data/private/chess-queen-benchmark-v1/dataset.json",
+      "sha256": "2a7e6d660d1fc28c3b34e99c5dcd29dc8441fad30664e7d2690e6e812277c8cf",
+      "bytes": 37627
+    },
+    "queen_teachers": {
+      "path": "data/private/chess-queen-benchmark-v1/labels.json",
+      "sha256": "6ec401ce929b4b74b7bf270aab3199fa1497820fa24b104c79aa9c42c170584f",
+      "bytes": 73067
+    },
+    "authored_ledger": {
+      "path": "data/private/chess-queen-nf4-v1/authored-outcomes.json",
+      "sha256": "058f964e69930755dbca654bbac8a77912f2eb2a95cf32f515cab05e4922ff84",
+      "bytes": 16713
+    }
+  },
+  "authored_responses": [
+    {
+      "path": "data/private/chess-queen-nf4-v1/authored-0.json",
+      "sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91",
+      "bytes": 40623
+    },
+    {
+      "path": "data/private/chess-queen-nf4-v1/authored-1.json",
+      "sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223",
+      "bytes": 69108
+    },
+    {
+      "path": "data/private/chess-queen-nf4-v1/authored-2.json",
+      "sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0",
+      "bytes": 55081
+    },
+    {
+      "path": "data/private/chess-queen-nf4-v1/authored-3.json",
+      "sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea",
+      "bytes": 59375
+    }
+  ],
+  "expected_initial_registry": {
+    "games": 107208,
+    "board_keys": 242535
+  },
+  "teacher": {
+    "binary": {
+      "path": "data/private/chess-distill-v1/tools/stockfish/stockfish-windows-x86-64-universal.exe",
+      "sha256": "45bc8e4969147db9c2eb533810637994619bff0eacc81ccfd9854394901bcbd0",
+      "bytes": 103046300
+    },
+    "workers": 3,
+    "threads": 1,
+    "hash_mb": 32,
+    "nodes": 50000,
+    "deadline_seconds": 30,
+    "multipv": 1
+  },
+  "runtime_versions": {
+    "chess": "1.10.0",
+    "pyarrow": "26.0.0"
+  },
+  "dependencies": [
+    {
+      "path": "scripts/chess_move_policy_v5.py",
+      "sha256": "17ce1bbf1f31d750c13709def6a88e2de43a014ad849dc0304c9bbdd7bf55193",
+      "bytes": 25065
+    },
+    {
+      "path": "scripts/chess_queen_adapter.py",
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+      "bytes": 26811
+    },
+    {
+      "path": "scripts/chess_fact_sft_common.py",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+      "bytes": 10669
+    },
+    {
+      "path": "tests/test_chess_queen_coach_sft_intake_v1.py",
+      "sha256": "4c5e81c452ab05db832569cff9e07a803fc5180822d72e367e8bf3c120ca7e3e",
+      "bytes": 8480
+    },
+    {
+      "path": "scripts/chess_classifier_adapter.py",
+      "sha256": "11206b2bc7b9835f6f804263ac9d2ca617a88369d6681f340296b72be2c4fc5d",
+      "bytes": 14539
+    },
+    {
+      "path": "scripts/chess_classifier_experiment_v3.py",
+      "sha256": "1d9f7f9378eb6d92251de0d8d144bd71a63b7ac95f6ab46b2b54892e760b3506",
+      "bytes": 18882
+    },
+    {
+      "path": "scripts/chess_fact_sft_intake.py",
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+      "bytes": 15840
+    },
+    {
+      "path": "scripts/chess_stockfish_distill.py",
+      "sha256": "832d5c9012ed11c2d66015fc91a737265eabf8e128ab113861eb0561b7a8a9c7",
+      "bytes": 24592
+    },
+    {
+      "path": "scripts/chess_board_fact_core.py",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+      "bytes": 5902
+    },
+    {
+      "path": "data/private/chess-classifier-v3/checkpoints/step-512/config.json",
+      "sha256": "5a7d8a0c7b6d2e066434ec7e2fbdc16f977fa1cf1471f147adf0fe369a9be202",
+      "bytes": 77774
+    },
+    {
+      "path": "scripts/chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+      "bytes": 5573
+    }
+  ],
+  "selection": "Reuse frozen v5 select_rows, source order and original-game SHA buckets. Consume first setup token only, never source answer tail/themes. One game and before/current board role globally, including full unused512 holdout reservoir.",
+  "exclusion_policy": "Exact initial head registry; every head group and selected-pair successor; all96 Queen pool games/before/current and every legal teacher-PV successor; all4 authored current/legal critical successors. Verify raw response bindings against closed ledger.",
+  "held_selection": "After ALL planned teachers complete, full legal3-ply references only. Mutually exclusive priority: discovered/doublecheck; kingmover; pawnmover; remainingcheck; remainingquiet; remainingnoncheckcapture. First source-order roots per frozen quota; fail if any quota cannot fill. No model peeking or adaptation.",
+  "new_split_audit": "All original games and before/current roles unique. Fail before export on any new cross-split root/PV-successor or PV/PV-successor board overlap; no adaptive replacements.",
+  "grammar": {
+    "ANALYSIS": "The move {native_atom} gives checkmate.|gives check.|does not give check. Then immediately: It captures {native_victim_piece}.|It does not capture a piece.",
+    "BEST_MOVE": "verified teacher first atom",
+    "CRITICAL_LINE": "first up to3 legally replayed atoms, root POV throughout",
+    "PROMISING_MOVES": "teacher first atom only",
+    "EVALUATION": "Checkmate|Draw|Not assessed"
+  },
+  "inputs": "Exactly {fen}, or {fen,selected_uci:teacherbest}. No history/eval/future boards/PV/facts/labels. Two stable case IDs per original game.",
+  "proof": "Create-only intake/teacher attempt; snapshots; pre-call fsynced intent, raw UCI lines, terminal completion journal. Unknown active attempts distinguished from never-run. No replay. No target/readiness until all1568 teacher outcomes completed and held quotas filled.",
+  "claims": "Verified immediate board-fact grammar and bounded Stockfish target, not strategic why-best or human coaching acceptance. No learned call or source solution supplied."
+}

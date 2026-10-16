@@ -1,0 +1,500 @@
+{
+  "schema": "chess.manual-claim-mapping-candidate.v1",
+  "status": "candidate_not_measured_awaiting_independent_semantic_review",
+  "selection": "Purposive manual inventory of narrow counts, geometric attack, legal lines and known prose failures in four spent examples. Not exhaustive or representative. Include supported-looking and unsupported claims; no whole-prose rate.",
+  "source_pool": "Four exact public copies already verified against private raw receipts.",
+  "notation": "Native square N maps a1=1 to h8=64. M=side to move in original input; all four root inputs are White to move. Prose move-number ellipses are not used to change side or branch.",
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "actual_audit_calls": 0,
+  "claims": [
+    {
+      "response_index": 0,
+      "claim_id": "mate_white_queen_count",
+      "exact_raw_text": "with a <PIECE_MQ> and three <PIECE_MP>s (<SQUARE_14>, <SQUARE_15>, <SQUARE_16>) against three <PIECE_OP>s (<SQUARE_54>, <SQUARE_55>, <SQUARE_56>)",
+      "mapping_rationale": "Initial material description: singular own queen; own side is White in saved FEN. Only literal count assessed, not decisive advantage.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "queen",
+        "expected": 1
+      },
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      }
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_white_pawn_count",
+      "exact_raw_text": "with a <PIECE_MQ> and three <PIECE_MP>s (<SQUARE_14>, <SQUARE_15>, <SQUARE_16>) against three <PIECE_OP>s (<SQUARE_54>, <SQUARE_55>, <SQUARE_56>)",
+      "mapping_rationale": "Initial explicit three own pawns; count only.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "pawn",
+        "expected": 3
+      },
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      }
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_black_pawn_count",
+      "exact_raw_text": "with a <PIECE_MQ> and three <PIECE_MP>s (<SQUARE_14>, <SQUARE_15>, <SQUARE_16>) against three <PIECE_OP>s (<SQUARE_54>, <SQUARE_55>, <SQUARE_56>)",
+      "mapping_rationale": "Initial explicit three opposing pawns; count only.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "black",
+        "piece_type": "pawn",
+        "expected": 3
+      },
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      }
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_main_move_legal",
+      "exact_raw_text": "The best move is 1.<PIECE_MQ><SQUARE_39><SQUARE_60>#, delivering immediate checkmate.",
+      "mapping_rationale": "Native square tokens are one-based a1..h8. Checkmate/quality assertion outside this legality-only predicate.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "g5d8"
+        ],
+        "expected": true
+      },
+      "span": {
+        "start": 477,
+        "end": 562,
+        "sha256": "f7884d32c354953257a656eb0b3a6ee051586145e831bf8c16d7f9292ac8b8aa"
+      }
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_alternative_line_legal",
+      "exact_raw_text": "The player then plays 3.<PIECE_MQ><SQUARE_60><PIECE_OP><SQUARE_40>, capturing the pawn and activating the queen on the <SQUARE_64>-<SQUARE_1>.",
+      "mapping_rationale": "Exact declared alternative: Qg5-d5,h7-h5,Qd5-d8,Kg8-h7, then asserted Qd8xh5. Assess this move from the preceding explicit branch only.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7"
+        ],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "d8h5"
+        ],
+        "expected": true
+      },
+      "span": {
+        "start": 1207,
+        "end": 1349,
+        "sha256": "fa44234e63770aa8ddd4a30784b3d2b86251d169d92f938fb6f86958289d85d3"
+      }
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_protection_after_illegal_branch",
+      "exact_raw_text": "the queen is protected by the <PIECE_MP> on <SQUARE_14>",
+      "mapping_rationale": "Claim belongs after the complete asserted earlier line, including Qd8xh5. An illegal earlier prefix must make this unassessed; never replace it with the root or a fabricated board. Geometry alone would not establish legal recapture.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7",
+          "d8h5",
+          "h7g8",
+          "h5e8"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "geometric_attacks_square",
+        "piece": {
+          "color": "white",
+          "type": "pawn"
+        },
+        "from_square": "f2",
+        "target_square": "e8",
+        "expected": true
+      },
+      "span": {
+        "start": 1529,
+        "end": 1584,
+        "sha256": "2f7ee5a64c9574b98046ea8dae1bf511120de281ea61f07626b420c3a44a5c08"
+      }
+    },
+    {
+      "response_index": 0,
+      "claim_id": "mate_advantage_unsupported",
+      "exact_raw_text": "The player has a decisive material advantage",
+      "mapping_rationale": "Retain explicit unsupported evaluative claim; count predicates do not measure advantage.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "strategic_material_advantage",
+        "expected": "decisive"
+      },
+      "span": {
+        "start": 10,
+        "end": 54,
+        "sha256": "61c89f08099228ae1d30f692a2879fd1ff15ebd4206c90fbff81a3c1f448a912"
+      }
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_extra_pawn_unsupported",
+      "exact_raw_text": "the player holds a material edge with an extra <PIECE_MP> and the <PIECE_MB> pair",
+      "mapping_rationale": "Extra pawn is relative material, not an absolute seven-pawn assertion. Current checker lacks relative-count predicate; keep unsupported rather than invent other counts.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "relative_pawn_advantage",
+        "expected": 1
+      },
+      "span": {
+        "start": 49,
+        "end": 130,
+        "sha256": "5aa5668fb53f2c8caa1e85eb834819776024aab3a642b6fce02d8463830e8414"
+      }
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_initial_bishop_pair",
+      "exact_raw_text": "the player holds a material edge with an extra <PIECE_MP> and the <PIECE_MB> pair",
+      "mapping_rationale": "Only explicit own bishop-pair component, at initial White-to-move FEN; no material-edge inference.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "bishop",
+        "expected": 2
+      },
+      "span": {
+        "start": 49,
+        "end": 130,
+        "sha256": "5aa5668fb53f2c8caa1e85eb834819776024aab3a642b6fce02d8463830e8414"
+      }
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_knight_attacks_bishop",
+      "exact_raw_text": "where it attacks the <PIECE_OB> on <SQUARE_45> and exerts pressure on the opponent's position",
+      "mapping_rationale": "Immediately after explicit Nb3-c5, the white knight attacks the black bishop e6. Only geometric attack, no outpost/pressure or quality claim.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "b3c5"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "geometric_attacks_square",
+        "piece": {
+          "color": "white",
+          "type": "knight"
+        },
+        "from_square": "c5",
+        "target_square": "e6",
+        "expected": true
+      },
+      "span": {
+        "start": 606,
+        "end": 699,
+        "sha256": "26d549d25aa4fdb1437efa18f5d097f2b22bf49696711da4f715379959be7d78"
+      }
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_main_critical_legal",
+      "exact_raw_text": "CRITICAL_LINE: <PIECE_MN><SQUARE_18><SQUARE_35> <PIECE_OB><SQUARE_45><PIECE_MP><SQUARE_9> <PIECE_MN><SQUARE_35><SQUARE_25>",
+      "mapping_rationale": "Structured exact three-move main line; legality only.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "b3c5",
+          "e6a2",
+          "c5a4"
+        ],
+        "expected": true
+      },
+      "span": {
+        "start": 5092,
+        "end": 5214,
+        "sha256": "0709b87ca89fb6b861b77330b1c9a01081a207e6867db72c332d752c413cfdc4"
+      }
+    },
+    {
+      "response_index": 1,
+      "claim_id": "midgame_later_bishop_return_legal",
+      "exact_raw_text": "The opponent should preserve the bishop with 20.<PIECE_OB><SQUARE_9><SQUARE_45>",
+      "mapping_rationale": "Follow exact explicit main prose branch through Bf1-c4, then assess asserted black Ba2-e6. Do not let the legal structured prefix validate this later branch.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "b3c5",
+          "e6a2",
+          "c5a4",
+          "d8d7",
+          "a4b6",
+          "d7b7",
+          "b6a8",
+          "f8a8",
+          "f1c4"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "a2e6"
+        ],
+        "expected": true
+      },
+      "span": {
+        "start": 2003,
+        "end": 2082,
+        "sha256": "0f2e562417a90426599d3c204f5c9ed4e8d097b6dd3fb1b7128a8d21e8cebad2"
+      }
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_material_equality_unsupported",
+      "exact_raw_text": "The position is a quiet Italian Game structure with equal material.",
+      "mapping_rationale": "Equality comparison is not the supported complete single-side material_count schema; retained unassessed.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "material_equality",
+        "expected": true
+      },
+      "span": {
+        "start": 10,
+        "end": 77,
+        "sha256": "05263541c115f2e153e92765468db81923bbc20202c9dfc956710d3408fbafc0"
+      }
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_main_critical_legal",
+      "exact_raw_text": "CRITICAL_LINE: <PIECE_MP><SQUARE_12><SQUARE_20> <PIECE_OP><SQUARE_52><SQUARE_44> <PIECE_MK><SQUARE_5><SQUARE_7> <PIECE_ON><SQUARE_63><SQUARE_46> <PIECE_MP><SQUARE_11><SQUARE_19> <PIECE_OK><SQUARE_61><SQUARE_63> <PIECE_MN><SQUARE_2><SQUARE_12> <PIECE_OB><SQUARE_59><SQUARE_45> <PIECE_MP><SQUARE_16><SQUARE_24> <PIECE_OQ><SQUARE_60><SQUARE_52>",
+      "mapping_rationale": "Exact ten-ply structured main line; no quality/forcedness evaluation.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "d2d3",
+          "d7d6",
+          "e1g1",
+          "g8f6",
+          "c2c3",
+          "e8g8",
+          "b1d2",
+          "c8e6",
+          "h2h3",
+          "d8d7"
+        ],
+        "expected": true
+      },
+      "span": {
+        "start": 3608,
+        "end": 3949,
+        "sha256": "b09304711b4d4694780fc03dfbe97d75e9e0d80892d5c7501aed3c44a64311e0"
+      }
+    },
+    {
+      "response_index": 2,
+      "claim_id": "opening_alternative_white_bishop_pair",
+      "exact_raw_text": "the player accepts doubled <SQUARE_61>-<SQUARE_5>-pawns but gains the open <SQUARE_62>-<SQUARE_6> and the bishop pair",
+      "mapping_rationale": "Explicit third candidate branch: c3,Nf6,O-O,O-O,d3,d6,Be3,Bxe3,fxe3. The player is White; bishop-pair component only. No claim about doubled pawns/open file.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "c2c3",
+          "g8f6",
+          "e1g1",
+          "e8g8",
+          "d2d3",
+          "d7d6",
+          "c1e3",
+          "c5e3",
+          "f2e3"
+        ],
+        "expected_turn": "black"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "bishop",
+        "expected": 2
+      },
+      "span": {
+        "start": 3333,
+        "end": 3450,
+        "sha256": "040a2a83962356b94e5f94cec57ed25bef40d6674c40701229c2dd15585969fd"
+      }
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_material_equality_unsupported",
+      "exact_raw_text": "The position is a quiet Italian Game structure with equal material.",
+      "mapping_rationale": "Retain unsupported equality comparison; do not infer a complete piece-count assertion.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "material_equality",
+        "expected": true
+      },
+      "span": {
+        "start": 10,
+        "end": 77,
+        "sha256": "05263541c115f2e153e92765468db81923bbc20202c9dfc956710d3408fbafc0"
+      }
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_main_critical_legal",
+      "exact_raw_text": "CRITICAL_LINE: <PIECE_MP><SQUARE_11><SQUARE_19> <PIECE_OP><SQUARE_52><SQUARE_44> <PIECE_MK><SQUARE_5><SQUARE_7> <PIECE_ON><SQUARE_63><SQUARE_46> <PIECE_MR><SQUARE_6><SQUARE_5> <PIECE_OK><SQUARE_61><SQUARE_63> <PIECE_MP><SQUARE_12><SQUARE_20> <PIECE_OB><SQUARE_59><SQUARE_45> <PIECE_MB><SQUARE_27><PIECE_OB><SQUARE_45> <PIECE_OP><SQUARE_54><PIECE_MB><SQUARE_45> <PIECE_MN><SQUARE_2><SQUARE_12>",
+      "mapping_rationale": "Exact eleven-ply structured line; c2c3 was supplied in model input, so legality is not independent prediction.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "c2c3",
+          "d7d6",
+          "e1g1",
+          "g8f6",
+          "f1e1",
+          "e8g8",
+          "d2d3",
+          "c8e6",
+          "c4e6",
+          "f7e6",
+          "b1d2"
+        ],
+        "expected": true
+      },
+      "span": {
+        "start": 3865,
+        "end": 4257,
+        "sha256": "67928e92de52070808e5d9496edf8b9209a7a52158bd4258d7f74c821075dd01"
+      }
+    },
+    {
+      "response_index": 3,
+      "claim_id": "selected_main_black_bishop_pair",
+      "exact_raw_text": "the opponent accepts doubled <SQUARE_61>-<SQUARE_5>-pawns but gains the open <SQUARE_62>-<SQUARE_6> and the bishop pair",
+      "mapping_rationale": "Explicit main prose branch through black f7xe6. Opponent is Black; assess bishop-pair component only, no file/pawn structure assertions.",
+      "context": {
+        "resolution": "explicit",
+        "branch_uci": [
+          "c2c3",
+          "d7d6",
+          "e1g1",
+          "g8f6",
+          "f1e1",
+          "e8g8",
+          "d2d3",
+          "c8e6",
+          "c4e6",
+          "f7e6"
+        ],
+        "expected_turn": "white"
+      },
+      "claim": {
+        "kind": "piece_count",
+        "color": "black",
+        "piece_type": "bishop",
+        "expected": 2
+      },
+      "span": {
+        "start": 1911,
+        "end": 2030,
+        "sha256": "af27de55cb940ed856408bed285bf86c9b8d4fc72c49d6b1ccff8ed5b2ab770a"
+      }
+    }
+  ],
+  "annotations": [
+    {
+      "path": "work/claim-annotations/authored-0-annotations-v1.json",
+      "sha256": "c4973eae14437455c6cd44ec1dcb7a08a0ba70f22d8f90cdb6e76b015b650c25"
+    },
+    {
+      "path": "work/claim-annotations/authored-1-annotations-v1.json",
+      "sha256": "6f513a6433829bedbec88f627ed30b11c0368362fe70749437e529ca60314239"
+    },
+    {
+      "path": "work/claim-annotations/authored-2-annotations-v1.json",
+      "sha256": "c196b985c406df8a76a69a7c51b8b0cbf3bf5e1f005d6362444a368c8f24a566"
+    },
+    {
+      "path": "work/claim-annotations/authored-3-annotations-v1.json",
+      "sha256": "275bd042e66e74992d999ff2aeef560f7d5baff1d9b5133435707f9096fb9122"
+    }
+  ]
+}

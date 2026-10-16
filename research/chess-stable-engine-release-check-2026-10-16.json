@@ -1,0 +1,18 @@
+{
+  "schema": "chess.primary-stable-engine-release-observation.v1",
+  "observed_at_utc": "2026-10-16T10:39:28.1601952Z",
+  "sources": [
+    {
+      "url": "https://github.com/official-stockfish/Stockfish/releases/latest",
+      "resolved_url": "https://github.com/official-stockfish/Stockfish/releases/tag/sf_19",
+      "observation": "Stockfish19 marked Latest; short commit edb0d9d"
+    },
+    {
+      "observation": "Latest blog entry Stockfish19 dated2026-09-05",
+      "url": "https://stockfishchess.org/blog/"
+    }
+  ],
+  "assessment": "Existing pinned Stockfish19 matches the currently advertised stable VERSION; this web check does not re-establish local binary identity or teacher correctness.",
+  "changes": "No dependency, executable, data, experiment or running source changed",
+  "limitations": "Bounded primary-page observation; no original HTTP response archival copy or exhaustive development-branch survey"
+}

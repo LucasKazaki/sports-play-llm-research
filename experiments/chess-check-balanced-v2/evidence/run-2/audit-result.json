@@ -1,0 +1,153 @@
+{
+  "status": "passed",
+  "protocol_sha256": "a787c2931fa45a283e9cc22467d0339f2cf0b63486f49f84319803fcceb7724e",
+  "source_sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5",
+  "outcome_sha256": "904fa306bfa733255a87d7150bbf13c182ac60e9577fea5d8cab65497d62d841",
+  "selection_sha256": "929fc2394a6dd806159082a135592f19c5b46e258ce6b30d6f1b667c25ea57c3",
+  "input_files_sealed": 67,
+  "sealed_files_unchanged": true,
+  "completed_updates": 4096,
+  "training_presentations_by_frozen_batch_size": 32768,
+  "native_true_token_id": 1866,
+  "native_false_token_id": 3849,
+  "all_planned_outcome_statuses": {
+    "completed": 2816
+  },
+  "development": [
+    {
+      "step": 0,
+      "correct": 128,
+      "pairs_correct": 0,
+      "planned": 256
+    },
+    {
+      "step": -1,
+      "correct": 137,
+      "pairs_correct": 21,
+      "planned": 256
+    },
+    {
+      "step": 256,
+      "correct": 128,
+      "pairs_correct": 0,
+      "planned": 256
+    },
+    {
+      "step": 512,
+      "correct": 125,
+      "pairs_correct": 2,
+      "planned": 256
+    },
+    {
+      "step": 1024,
+      "correct": 130,
+      "pairs_correct": 9,
+      "planned": 256
+    },
+    {
+      "step": 2048,
+      "correct": 145,
+      "pairs_correct": 30,
+      "planned": 256
+    },
+    {
+      "step": 4096,
+      "correct": 128,
+      "pairs_correct": 0,
+      "planned": 256
+    }
+  ],
+  "selected_step": 2048,
+  "holdout_base": {
+    "schema": "chess.check-balanced.v2",
+    "planned": 512,
+    "confusion": {
+      "tp": 256,
+      "tn": 0,
+      "fp": 256,
+      "fn": 0,
+      "invalid_positive": 0,
+      "invalid_negative": 0
+    },
+    "correct": 256,
+    "pairs_correct": 0,
+    "positive_support": 256,
+    "negative_support": 256,
+    "balanced_accuracy": 0.5,
+    "raw_sha256": "9a01d6d59889d84873447b11cb95a29c62c3d38d2531d7c0ef6bdd39e41e9453",
+    "labels_sha256": "401ed1db8b92f9fe5c3c84bb25a971ceb3cf87401df0dcad629e82b7e423dae5"
+  },
+  "holdout_selected": {
+    "schema": "chess.check-balanced.v2",
+    "planned": 512,
+    "confusion": {
+      "tp": 182,
+      "tn": 107,
+      "fp": 149,
+      "fn": 74,
+      "invalid_positive": 0,
+      "invalid_negative": 0
+    },
+    "correct": 289,
+    "pairs_correct": 67,
+    "positive_support": 256,
+    "negative_support": 256,
+    "balanced_accuracy": 0.564453125,
+    "raw_sha256": "95b9810e346954b234c03524793f678d69cecf6ed15c5afa86f0a6e3b347c78a",
+    "labels_sha256": "401ed1db8b92f9fe5c3c84bb25a971ceb3cf87401df0dcad629e82b7e423dae5"
+  },
+  "exact_warm_saved_tensor_reload": true,
+  "checkpoint_tensors": {
+    "warm": {
+      "sha256": "16a1cd7234c6fc447b367eec4a7c1149b90a0f328d722b4950dc06f0e7a65c14",
+      "tensor_count": 392,
+      "elements": 10092544,
+      "tensors_equal_to_warm": 392
+    },
+    "256": {
+      "sha256": "23bc3d8a5bfd3d52fd75135ef13c70cfd8bae1291d0df509b882e6f1a4ed170f",
+      "tensor_count": 392,
+      "elements": 10092544,
+      "tensors_equal_to_warm": 0
+    },
+    "512": {
+      "sha256": "16f6889122b437e6c79cbb554d0a5fc55af1d68d7d9ee5d4b4cc1e2c083e7e3a",
+      "tensor_count": 392,
+      "elements": 10092544,
+      "tensors_equal_to_warm": 0
+    },
+    "1024": {
+      "sha256": "40f25df320451a9ec7fece8c47acf171a3d8dfe91491181a68a8b51fbf3a604a",
+      "tensor_count": 392,
+      "elements": 10092544,
+      "tensors_equal_to_warm": 0
+    },
+    "2048": {
+      "sha256": "52f281db52f5f1922ec6db872f61a128000f61da85bb78ad7be2f96f600b92be",
+      "tensor_count": 392,
+      "elements": 10092544,
+      "tensors_equal_to_warm": 0
+    },
+    "4096": {
+      "sha256": "cf4a64d89dcd6e399b2736cd5e75fec45d4989def3cd8bfcb67bfd121d146316",
+      "tensor_count": 392,
+      "elements": 10092544,
+      "tensors_equal_to_warm": 0
+    }
+  },
+  "timing_utc": {
+    "latest_dev_closed": "2026-10-16T06:21:31.708210+00:00",
+    "selection_written": "2026-10-16T06:21:31.991451+00:00",
+    "earliest_holdout_journal_created": "2026-10-16T06:21:32.090963+00:00",
+    "outcome_written": "2026-10-16T06:21:38.581249+00:00"
+  },
+  "actual_gpu_reload_evidence": "Reviewed executed source requires exact all-key/all-tensor equality before holdout; completed receipt implies the guard passed. No separate post-reload device tensor snapshot was saved.",
+  "limitations": [
+    "Full vocabulary logits were not retained. Raw argmax token IDs/decoded booleans and conditional probabilities are independently checked against frozen prompts and source, but full-logit argmax arithmetic cannot be recomputed from these artifacts.",
+    "File timestamps are local consistency evidence, not signed attestations. Selection holdout_opened:false is a frozen pre-call marker; these panels are now spent.",
+    "Only balanced check discrimination is measured, not playing strength or explanation quality."
+  ],
+  "new_model_calls": 0,
+  "new_engine_calls": 0,
+  "new_gpu_calls": 0
+}

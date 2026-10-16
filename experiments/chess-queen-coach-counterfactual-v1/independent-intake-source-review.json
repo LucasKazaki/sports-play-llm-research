@@ -1,0 +1,95 @@
+{
+  "schema": "chess.independent-counterfactual-data-v1-source-review.v1",
+  "status": "passed",
+  "reviewed_at": "2026-10-16T10:07:36.967118+00:00",
+  "scope": "Complete finite intake source/tests, teacher/export source/tests and data protocol/preparer read. CPU-only software/source review before any collection; no future trainer or model approval.",
+  "blocking_findings": [],
+  "tests": {
+    "passed": 18,
+    "elapsed_seconds": 0.43,
+    "exit_code": 0
+  },
+  "independent_metadata_verification": {
+    "protocol_bindings_passed": true,
+    "superset_games": 109096,
+    "superset_board_keys": 251151,
+    "backend_imports": []
+  },
+  "source_checks": {
+    "first_setup_token_only": true,
+    "nonterminal_before_and_current": true,
+    "guard_before_source_constructor_and_iteration": true,
+    "one_game_one_root_and_strict_before_current_both_successor_novelty": true,
+    "fixed_512_train_32_dev_512_reserve_or_explicit_shortage": true,
+    "same_type_capture_victim_and_same_origin_preference": true,
+    "opaque_a_b_assignment_ignores_check_label": true,
+    "all_3168_teacher_requests_written_before_engine_setup": true,
+    "unique_game_tokens_cold_engine_search_and_one_thread": true,
+    "forced_root_moves_and_same_score_event_PV_final_binding": true,
+    "legal_replay_stops_before_automatic_terminal": true,
+    "first_failure_halts_later_requests_with_active_unknown_vs_not_run": true,
+    "train_development_reserve_cross_split_path_collision_fails": true,
+    "selected_targets_empty_promising_and_not_global_best": true,
+    "input_only_fen_optional_selected_uci": true,
+    "all_teachers_complete_before_export": true,
+    "first_16_full_three_ply_held_roots_from_fixed_reservoir": true,
+    "all_reservoir_rows_and_entire_future_paths_reserved": true,
+    "held_inputs_and_semantic_references_separate": true
+  },
+  "limitations": [
+    "Historical novelty covers registered before/current/immediate successors; newly generated teacher tails may overlap older spent boards, reported separately. Selected held roots additionally reject such overlap.",
+    "Cross-split collisions fail the complete cohort without replacements; a completed teacher phase can therefore yield no admitted training corpus.",
+    "Same-type matched candidates may use different piece instances; no estimate of natural chess position prevalence or causal pairing effect.",
+    "FEN input does not reconstruct repetition history. Targets make only verified immediate check/capture/terminal facts, not unrestricted strategic explanation claims.",
+    "No source rows constructed, teachers invoked, GPU models loaded or active coaching held references opened by this review. Actual closed cohort and targets require separate audit before training.",
+    "Separate future training/held source and exact protocol remain required; no shortened quotas or adaptive replacement authorized."
+  ],
+  "sources_and_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_intake_v1.py",
+      "bytes": 9766,
+      "sha256": "3f0e7ab1cfed89d1ebf5c09ed44c7eac850688d628f3af89241dc9f1b2e5f09c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_teacher_v1.py",
+      "bytes": 15183,
+      "sha256": "2cda3bc89ad0a5e2d7ef0a5dbce52f507cadad6ad83bad92d6fe271cc18db489"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_counterfactual_intake_v1.py",
+      "bytes": 4121,
+      "sha256": "422e76f8b030bbf4ded0ce7775e22a97c3287112366d272e763bc2cce86f8c02"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_coach_counterfactual_teacher_v1.py",
+      "bytes": 6910,
+      "sha256": "d5722d220e84c4ef9ebcaf0f435aa27fdef3cf8c00ace1368300efc524f73801"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\intake-protocol.json",
+      "bytes": 9758,
+      "sha256": "f6dce48af4610b23d8c7a376e2f15221429c0b2d8b21b838842272aeca077a0a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\prepare_intake_protocol.py",
+      "bytes": 6647,
+      "sha256": "4c4fde2f109b3fabb3207c914dca63669cfa009e8bdca37e413260ced251c185"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-intake-source-bundle.txt",
+      "bytes": 14262,
+      "sha256": "6520d5abd1f4b94ef156957b0c904b2e5c65adf1d699c8228751d8c2fd923db0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-teacher-source-bundle.txt",
+      "bytes": 22587,
+      "sha256": "fdfc925c456d7ec33f8d1a855569b12ae66fc0f68d0026a7160b486effbc3229"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-data-plan-bundle.txt",
+      "bytes": 17820,
+      "sha256": "61bbf9bf6aa2543144f418ba8512adf82a10154ada579a402cc9ab1e4ba1478c"
+    }
+  ],
+  "followUpTasks": []
+}

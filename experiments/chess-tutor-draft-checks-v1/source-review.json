@@ -1,0 +1,158 @@
+{
+  "status": "passed",
+  "scope": "Independent complete finite source and CPU review only; GO for this limited implementation. Root owns activation and actual browser/saved-response compatibility QA.",
+  "reviewed_at_utc": "2026-10-16T11:58:16.095476+00:00",
+  "blocking_findings": [],
+  "source_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\manifest.json",
+    "bytes": 2703,
+    "sha256": "d0bbfbe868277299231b269e9712ff10ae4700ffd87da0979017a1c0c3483960"
+  },
+  "bundle_index": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\bundle-index.json",
+    "bytes": 3189,
+    "sha256": "ce411995e9db509d0675188513d93ee51e2a7d3e4554a60c3aed7542fe7ed9ff"
+  },
+  "complete_bundles_read": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\01-pure-checker-and-tests.txt",
+      "bytes": 23712,
+      "sha256": "17d33a113eeb5e7a03406e875e8a3bc7c2fa38a5bf71c6ac8aff54afd175d97a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\02-controller-and-contract.txt",
+      "bytes": 18543,
+      "sha256": "b6f1557fd1d76bce84106da877d89a1ff78281eb66ab9c0548462afaa1a01890"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\03-frontend-and-actual-ui-tests.txt",
+      "bytes": 22278,
+      "sha256": "c18978269f79cee8777bcfd27e3472847983ed32430b212aed04a80f2291a9c6"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\04-markup-and-styles.txt",
+      "bytes": 10005,
+      "sha256": "5ea91a08ab982923e71efee1e430f166cc2f8d9d1db4287ea2cb9845a1886529"
+    }
+  ],
+  "exact_current_sources": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\draft_checks_v1.py",
+      "bytes": 10253,
+      "sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\coaching_jobs.py",
+      "bytes": 9846,
+      "sha256": "bf8b647d6b08592429a14ca614d0dedcc9dde3b26392af12af3a64a77013fe97"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.js",
+      "bytes": 14755,
+      "sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\index.html",
+      "bytes": 6961,
+      "sha256": "b12f16e9b2b84bee9fcd50b9817cbc7e8adbbbd8a4a09e5b79dbf38683368336"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_tutor_draft_checks_v1.py",
+      "bytes": 12492,
+      "sha256": "a1e9e233ba4cf16d7a5cabb0d6f828e25e917681decd53acfd5e7df24428cced"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_tutor_draft_checks_ui_v1.py",
+      "bytes": 6554,
+      "sha256": "d56c6eb5545fa6554c5090655b71d627632f10df78184f877a5982cdb722137e"
+    }
+  ],
+  "verified_unchanged_boundary_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\queen_runtime.py",
+      "bytes": 10709,
+      "sha256": "8295ada0e368ff5810ee81b977f5dc61bc51a759e821459b3111441145ddc740"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\server.py",
+      "bytes": 28830,
+      "sha256": "d3b88e9bfd184038da66c1ea7858be9b32647dd53e6974ea7a86456c6e58e2a5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\static\\app.js",
+      "bytes": 16841,
+      "sha256": "20667639d629412e31f97632da7a544e78a07fa242fb7b88fd863a2fd567fdda"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    }
+  ],
+  "checks": {
+    "immutable_input_response_binding": "Controller retains original input byte SHA and a deep packet snapshot; checker bounded-decodes strict JSON, verifies saved input and response.input against that packet, and compares the exact undecorated response dictionary. QueenRunner.decorate_result returns a separate top-level dictionary; raw file/text/parsed data are not overwritten.",
+    "source_and_profile": "Pure native parser file is SHA checked before cached import. Production qualification is restricted to the original manual profile, validated response provenance, nonfixture completed EOS, and closed successful worker. Partial/cancelled/failed/unqualified/tuned profiles receive no statement judgments.",
+    "context_and_history": "Native input validation replays supplied history and preserves the board stack. Current FEN and selected identity must match retained controller context. Automatic terminal roots abstain.",
+    "narrow_claims": "Only one whole canonical two-sentence ANALYSIS block, first recognized field with whitespace-only prefix and one legal BEST_MOVE, can produce up to two check/mate and capture predicates. Unknown framing, ordinary prose, malformed or duplicate relevant fields abstain. ANALYSIS own move is legally mapped and visibly named independently of BEST and supplied-move identity.",
+    "fact_semantics": "Check includes checkmate; mate uses the stronger predicate. Capture observations include en passant. Wrong or unmappable native move atoms abstain rather than replacing the move. Rule observations are separated from claim judgments and never amount to prose approval.",
+    "raw_spans": "Python code-point offsets and UTF-8 substring SHA bind exact raw_text excerpts. Browser uses Array.from code points, bounds checks, and exact substring equality; source SHA is displayed. Browser does not independently recompute cryptographic hashes and relies on server-side verification.",
+    "controller_retention": "Separate draft-checks-v1.json is create-only. Binding or retention failures produce an unavailable result and preserve the draft. No model/engine calls or additional input fields are introduced.",
+    "frontend": "All generated content uses textContent. Per-request verification cache preserves disclosure state across position refreshes; selected-move and position stale checks continue to exclude mismatched exports. Return restores the captured study without inference. Verification is included only through the existing context-matched evidence getter.",
+    "presentation": "Restrained separated hierarchy, explicit supported/contradicted/unassessed words, visible ordinary-prose caveat, native disclosure with 44px target, wrapping long raw spans. Static source and authored DOM fixtures reviewed; actual visual/accessibility browser QA belongs to root."
+  },
+  "independent_test": {
+    "command": [
+      "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_chess_tutor_draft_checks_v1.py",
+      "tests/test_chess_tutor_draft_checks_ui_v1.py",
+      "tests/test_chess_tutor_coaching_prose.py",
+      "tests/test_chess_tutor_v1.py",
+      "-k",
+      "not real_engine",
+      "-q"
+    ],
+    "working_directory": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+    "tool_chunk": "47a0aa",
+    "exit_code": 0,
+    "passed": 100,
+    "deselected": 1,
+    "elapsed_seconds": 5.03,
+    "retained_independent_result": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tutor-draft-checks-v1-independent-cpu-result.txt",
+      "bytes": 249,
+      "sha256": "4fb8628a522584c458336fcb621126a8c4384a3c7c14b4cf8eea1d9216e95cfd"
+    },
+    "scope": "Authored board/DOM/API and isolated fake-worker/HTTP unit fixtures. Real-engine test deselected; no actual tutor/model/GPU/engine call."
+  },
+  "limitations": [
+    "This is a deterministic software feature review, not a chess-language quality result, human semantic validation, or model/checkpoint admission.",
+    "Ordinary original-model prose will commonly match zero canonical statements. Legal moves and correct listed facts do not verify surrounding text or teaching usefulness.",
+    "Frontend statement hashes are server-provided and displayed, not browser-rehashed. Local server and its retained evidence remain the authority.",
+    "Rendered fixture data are authored interface fixtures and must retain their fixture banner. No fixture outcome is evidence of actual model behavior.",
+    "No real saved-response compatibility, live browser, model forward, engine call, or held reference was opened for this review.",
+    "The new create-only verification file uses normal close, not explicit fsync; this review does not claim power-loss durability."
+  ],
+  "followUpTasks": []
+}

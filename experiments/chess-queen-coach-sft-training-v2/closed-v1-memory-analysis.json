@@ -1,0 +1,71 @@
+{
+  "schema": "chess.queen-coach-closed-memory-analysis.v1",
+  "source_conditions": [
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1/failure.json",
+      "sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1/training-calls.jsonl",
+      "sha256": "d1368094576d1302c5ef86c8e23c56cb0609e1b8c2d63ee20391c96aabf6681b"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1/training.resources.jsonl",
+      "sha256": "5a5408dec8cd3fb353a636a3930c6566161c80e67ada953a77ee9aace29e8e17"
+    },
+    {
+      "path": "data/private/chess-queen-coach-sft-training-v1/train-1-worker.json",
+      "sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_runtime_v1.py",
+      "sha256": "de97771900ca67803c6138415627aeea42c5236982575d57c91153d7896abb7e"
+    },
+    {
+      "path": "scripts/chess_queen_coach_sft_train_v1.py",
+      "sha256": "0a99081ba35de8b45d386ce8c81466c3cdf4cf08997933e44ce7cd4737128d4e"
+    }
+  ],
+  "closed_failure": "RuntimeError: Resource reserve: commit_headroom_bytes_below_reserve",
+  "confirmed_updates": 20,
+  "confirmed_backward_presentations": 160,
+  "active_unknown": [
+    {
+      "step": 21,
+      "micro": 0,
+      "case_id": "queen-coach-v1:UUSgwJbU:selected",
+      "status": "call_started"
+    }
+  ],
+  "heldout_opened": false,
+  "global_memory": {
+    "scope": "All Windows processes; attribution cannot be inferred from these counters alone",
+    "samples": 623,
+    "first": {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 11627720704,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 34893033472,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 14841544704,
+      "utc": "2026-10-16T08:13:44.293141+00:00"
+    },
+    "last": {
+      "physical_total_bytes": 33458073600,
+      "physical_available_bytes": 8834371584,
+      "commit_limit_bytes": 50637942784,
+      "commit_total_bytes": 46623997952,
+      "gpu_total_bytes": 17094934528,
+      "gpu_free_bytes": 8665432064,
+      "utc": "2026-10-16T08:24:53.655096+00:00"
+    },
+    "minimum_commit_headroom_bytes": 4013944832,
+    "stop_commit_floor_bytes": 4294967296
+  },
+  "source_analysis": {
+    "retained_training_values": "Caller retains scalar float losses; no loss graph/tensor is deliberately retained across Runtime.loss returns. Official nonreentrant checkpoint closures may be collected later; transient CUDA allocator blocks can remain reserved.",
+    "existing_guard_gap": "Post-backward resource check inside Runtime.loss can raise before backward_completed is journaled. Last started micro remains unknown even though saved partial_accumulation is zero.",
+    "hypothesis": "Collection plus inactive allocator release after returned calls may avoid accumulated transient/high-water memory; this remains a hypothesis pending actual bounded qualification.",
+    "scope_limits": "Original worker lacks process PrivateUsage and current CUDA allocator traces, so no claim that global growth belongs entirely to this worker. New condition also restarts only the owned tutor CPU classifier server with -NoModel; all prior GPU workers were already closed. Retain this operational difference."
+  }
+}

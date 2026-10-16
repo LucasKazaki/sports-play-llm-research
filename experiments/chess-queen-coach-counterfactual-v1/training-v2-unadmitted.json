@@ -1,0 +1,20 @@
+{
+  "schema": "chess.unadmitted-scientific-phase.v1",
+  "created_utc": "2026-10-16T11:32:20.760881+00:00",
+  "status": "not_run_admission_expired",
+  "kind": "New counterfactual coaching training v2",
+  "protocol_sha256": "eb59235c2bd070656d7b1c1512809addb22f2ce18c6e4fa4848b5dd73754b33e",
+  "source_review_sha256": "211b6538eecaac5d204ab6fdc0f0bf1ae2296839b6547501bedb7c694e4c0518",
+  "strict_admission_latest_utc": "2026-10-16T11:00:00+00:00",
+  "reason": "Required actual cold software qualification did not pass before admission. Preserve source plan and prepared data; no late training.",
+  "planned_updates": 192,
+  "planned_backwards": 1536,
+  "planned_development_NLL": 384,
+  "planned_development_raw": 24,
+  "updates": 0,
+  "backwards": 0,
+  "model_calls": 0,
+  "worker_created": false,
+  "new_adapter_created": false,
+  "claim": "Unadmitted planning ledger, not an execution or learned-quality result."
+}

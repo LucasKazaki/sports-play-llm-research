@@ -1,0 +1,78 @@
+{
+  "status": "passed_source_review",
+  "created_utc": "2026-10-16T11:25:30.300380+00:00",
+  "protocol_sha256": "e8da6217793016bebf7a661264053cef3744d2445fee5cd4b01ebd1e1f06cd4a",
+  "worker_arguments_sha256": "f57b21783e579ea3e335bf461f6ba8224c395d349b6df66613fb4aa96c76ff7a",
+  "files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-coach-counterfactual-v1\\cold-sft-qualification-protocol-v6.json",
+      "bytes": 17547,
+      "sha256": "e8da6217793016bebf7a661264053cef3744d2445fee5cd4b01ebd1e1f06cd4a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_process_lineage_v4.py",
+      "bytes": 14457,
+      "sha256": "47e2b3d14bbb04db4ec408df6d09a1147162b0c09774efeebddee6c3dc640192"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_coach_counterfactual_cold_eval_v5.py",
+      "bytes": 18883,
+      "sha256": "7a826b3faa9eae9c09684565986afbabd7f9c474ffc829f5cfcb4561c2e2d87c"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-venv-sampler-topology-probe-v4\\closed.json",
+      "bytes": 2624,
+      "sha256": "1943f774a35a656b753b4fa42164f2520cd5190ce0ee4fed634a7eb5ccaa6815"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-wait-helper-source-v4.txt",
+      "bytes": 14590,
+      "sha256": "c36e0201715d95b5651ad8cd3e4ae83950c8d4f13394cd2ff6552a1008e54034"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-wait-helper-tests-probe-v4.txt",
+      "bytes": 15129,
+      "sha256": "4a83bb85fee74e62b761bd67381114e3743bbbbc05edd8d1bb42a5d20baebd76"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-wait-outer-source-v5.txt",
+      "bytes": 19031,
+      "sha256": "138518d1b65acad27dc6a71a167ac5df2e5aace09d4dcacd63ac98b984a37551"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-wait-outer-tests-v5.txt",
+      "bytes": 14592,
+      "sha256": "7208c962e286da65d934255fc103832a2df28c498dbaeacba209f13123a737b2"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cold-wait-plan-v6.txt",
+      "bytes": 28796,
+      "sha256": "80cafca20d95f99ea68134a89f834ce49a6540eb2e9e9493805034d0b5633681"
+    }
+  ],
+  "full_read": "All5 complete finite newsource/tests/probe/builder/plan bundles read; directoldSFT child unchanged and previously reviewedwhole.",
+  "cpu_tests": {
+    "passed": 69,
+    "seconds": 1.49,
+    "tool_chunk": "c95056"
+  },
+  "metadata_verification": "All exact bindings pass with noTorch import; actualnewhelperCPU6sampler probe passed, known/transient handles exited.",
+  "closed_prior_failure_audit": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\cold-sft-qualification-attempt3-failure-closed-review.json",
+    "bytes": 4755,
+    "sha256": "6cc06629e7ca2a0267043dece6f781a4d106654caa4f73daee4b30b8c83b8c62"
+  },
+  "amendment": "Only Win5 image query on retained known-runtime-child handle with creation/job proof may await EXIT<=1000ms, cappedremainingchild/phase/global andzeroifcancelled. Initialstate/waitbound/result/elapsed retained. Still-live/error/unretainable remainsfailure; eventualEXIT stays unverified, neverknownexe/runtime/ancestryparent/terminationtarget.",
+  "independent_science_invariants": "Model/profile/old64/currentonly2softwareinputs/rawprovenance/generation/resources/180generator210child450qualification1130freshadmission13cutoff exactlyequal retainedv5.",
+  "blocking_findings": [],
+  "go_scope": "Root may run exactly NEW2spentDEV software qualification attempt4 under frozen fullargs; no fresh comparison/learning/UI or deadline extension. ActualPASS+independentclosedaudit still required before separate fresh96-call plan.",
+  "limitations": [
+    "ActualCPUprobe need not naturally exercise Win5wait branch; authored WinAPI/outerbudget regressions cover initialLIVE-toEXIT and stillLIVE/rejected errors.",
+    "Existing priorfailureLIVE unknown identity stays unknown; no claim nvidia or exit-at-original-error.",
+    "Fast/unretainable process races can stillfailclosed; no96request stability guarantee.",
+    "IsProcessInJob(None)+noBREAKAWAY observed parentchain is jobcontext proof, not namedjob query. OScommandline not inspected.",
+    "Policy120unusedtimer metadata; no enforced120s claim.",
+    "Cumulative\u22641swait countsagainst existing timers; cooperativecall overhead can stillrequire outer hardprocess deadline."
+  ],
+  "followUpTasks": []
+}

@@ -1,0 +1,57 @@
+{
+  "schema": "chess.daytime.launch-diagnostic-metadata.v1",
+  "date": "2026-10-16",
+  "scope": "Internal research operations and descriptive software evidence; no coaching-quality or institutional approval.",
+  "operating_cutoff_utc": "2026-10-16T22:00:00Z",
+  "observer_CPU_probe_1": {
+    "status": "failed_before_all_four_cases",
+    "completed": 0,
+    "not_run": 4,
+    "model_calls": 0,
+    "error": "Expected venv ancestor absent from immediate-current-job observations",
+    "initial_outer_parent_and_job_list": "not_retained_unknown",
+    "closed_sha256": "cad6768900b8f55bdb3e7aa28a57dc2f93f1939c1af4c86879f2ca2f21ab616c",
+    "independent_failure_audit_sha256": "c8f46f10abec76ea8f229e20d046b9aa87f1c8427ef1f2cdf383d3b34e8d8526"
+  },
+  "explicit_creator_job_diagnostic_1": {
+    "status": "completed_descriptive_ownership_not_qualified",
+    "planned": 1,
+    "completed": 1,
+    "events": 20,
+    "model_calls": 0,
+    "engine_calls": 0,
+    "Torch_imported": false,
+    "driver_seconds": 0.266,
+    "inner_worker_seconds": 0.203,
+    "launcher_in_actual_creator_job": true,
+    "delegate_in_actual_creator_job_before_and_after_GO": false,
+    "delegate_in_some_job": true,
+    "retained_launcher_and_delegate_EXIT_before_and_after_close": true,
+    "creator_job_empty_before_close": true,
+    "root_known_four_PIDs_absent_and_lease_free": true,
+    "closed_sha256": "807045396dd3ae520b481d4925b8afbda8481a33413a339d539f0a6e993a6c79",
+    "observations_sha256": "dd7d04ff9ddf4ffec99ee2e8ad0452865180186d6d8926c81c71db4a9ffd8044",
+    "independent_closed_audit_sha256": "13d76d198759419d1b60d8d4cbd6890894e7e5bfc7244ebffb22911a468b9e35",
+    "limits": "One instrumented launch; observation adds timing. No historical-cause or frequency claim, no parent-death experiment, no claim that indirect CPython launcher cleanup failed. Known EXIT is distinct from unobserved-tree closure."
+  },
+  "primary_source_basis": {
+    "local_executable_file_versions": "Both3.12.2; file metadata and binary hashes verified. No reproducible binary-to-source build claim.",
+    "launcher": "https://raw.githubusercontent.com/python/cpython/v3.12.2/PC/launcher.c",
+    "path_initialization": "https://raw.githubusercontent.com/python/cpython/v3.12.2/Modules/getpath.py",
+    "nested_jobs": "https://learn.microsoft.com/en-us/windows/win32/procthread/nested-jobs",
+    "job_query": "https://learn.microsoft.com/en-us/windows/win32/api/jobapi2/nf-jobapi2-queryinformationjobobject",
+    "finding": "The venv launcher creates a private job. A NULL immediate-job query need not identify a separate creator-owned job; explicit creator-held-handle membership is required for that claim.",
+    "version_correction": "Initially checked3.12.10 is comparison context; actual3.12.2 selected source was then checked."
+  },
+  "next_prospective_route": "New pinned direct-base launch with child-only CPython venv-path setting; exact environment/package-location parity and creator ownership must be measured before model qualification. No global environment, package, model, corpus, decoder, generation-setting or reserve-floor changes.",
+  "remaining": {
+    "new_direct_route_actual_runs": 0,
+    "new_route_warm8_and_cold2": "not_run",
+    "scientific_TRAIN192": "not_run",
+    "fixed_held96": "not_run",
+    "current16_held_generation_calls": 0,
+    "all512_reserved_from_TRAIN": true,
+    "broad_chess_coaching_goal": "not_achieved"
+  },
+  "private_evidence_notice": "This metadata contains hashes of private host receipts, not their payloads or a self-contained replay package. Original failed sources, plans and ledgers remain unchanged."
+}

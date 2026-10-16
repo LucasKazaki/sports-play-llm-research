@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "mode": "qualification",
+  "planned": 2,
+  "completed_children": 2,
+  "outer_torch_imported": false,
+  "protocol_sha256": "e8da6217793016bebf7a661264053cef3744d2445fee5cd4b01ebd1e1f06cd4a",
+  "child_results": [
+    {
+      "case_id": "queen-coach-v1:PzsCDbPb:free",
+      "condition": "software",
+      "elapsed_seconds": 34.07799999997951,
+      "child_receipt_sha256": "efa4569c235254edac97e3270a1a18d760c6cb06e509cecce9f79f2347eb7461"
+    },
+    {
+      "case_id": "queen-coach-v1:qkaykA26:selected",
+      "condition": "software",
+      "elapsed_seconds": 31.844000000011874,
+      "child_receipt_sha256": "4052ffb6ee4ee612b0fccef6ba31dfaa2708971f2c1ac4a4cfed18e5d29af7b8"
+    }
+  ],
+  "all_children_closed": true,
+  "labels_opened": false,
+  "claim": "Software qualification only",
+  "elapsed_seconds": 66.32800000000861
+}

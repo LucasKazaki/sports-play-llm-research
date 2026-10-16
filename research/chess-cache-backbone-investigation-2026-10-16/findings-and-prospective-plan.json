@@ -1,0 +1,309 @@
+{
+  "schema": "chess.cache-backbone-source-investigation.v1",
+  "status": "source_review_complete_no_repair_tested",
+  "time_utc": "2026-10-16T11:49:54.642818+00:00",
+  "scope": "Read-only source/retained numerical metadata and tiny standard-library math/dispatch probe. No Torch/Transformers/bitsandbytes import, model/engine/kernel/GPU call, held-reference read, runtime edit or training window extension.",
+  "main_conclusion": "Most plausible BF16 failure is sequence-row-shape-dependent finite-precision drift in DenseXAttn and decoder projections/attention when incremental decode changes M from a whole prefix to1. The exact first divergent operation is NOT measured. Current source has consistent cache positions, length/mask handling and token-local bridge insertion. NF4 cached decoding remains unqualified and has an additional concrete row-dependent kernel dispatch.",
+  "observed_retained_results": {
+    "bf16_v5": {
+      "receipt": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-v1\\parity-authored-v5-1.json",
+        "sha256": "11259bfcfe6b271c3c71754419272a8ed237204682f1de572d736bc55b454e1b",
+        "bytes": 8595
+      },
+      "adapter_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+      "parity_source_sha256": "bcf705e685faab0eb7305f9d68b923a57f9b5ea016c9122e0af729ddef2a2166",
+      "status": "failed",
+      "cache_rows": [
+        {
+          "cached_step": 1,
+          "max_absolute_error": 0.265625,
+          "mean_absolute_error": 0.04474908113479614,
+          "cosine_similarity": 0.9997825622558594,
+          "top1_equal": true,
+          "left_top1": 449,
+          "right_top1": 449,
+          "finite": true
+        },
+        {
+          "cached_step": 2,
+          "max_absolute_error": 0.375,
+          "mean_absolute_error": 0.04193611815571785,
+          "cosine_similarity": 0.9999833106994629,
+          "top1_equal": true,
+          "left_top1": 279,
+          "right_top1": 279,
+          "finite": true
+        },
+        {
+          "cached_step": 3,
+          "max_absolute_error": 0.25,
+          "mean_absolute_error": 0.05372437834739685,
+          "cosine_similarity": 0.9999909996986389,
+          "top1_equal": true,
+          "left_top1": 2851,
+          "right_top1": 2851,
+          "finite": true
+        }
+      ],
+      "manual_native_max_errors": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "frozen_thresholds": {
+        "hook_max_absolute_error": 0.01,
+        "cache_max_absolute_error": 0.25,
+        "cache_mean_absolute_error": 0.01,
+        "minimum_cosine_similarity": 0.9999,
+        "same_top1_required": true,
+        "cached_steps": 3
+      },
+      "interpretation": "Cache fails frozen numerical requirements: maximum error fails at steps1/2, mean error fails at all3, cosine fails at step1. Three matching argmax values do not qualify long decoding. Four exact full-prefix comparisons qualify only the no-cache port on this one authored software fixture."
+    },
+    "bf16_v4": {
+      "receipt": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-v1\\parity-authored-v4-1.json",
+        "sha256": "aae1519db4a8746b7fd6a647eed5026aaec84394022a1b6c30f4344e47526f21",
+        "bytes": 7321
+      },
+      "first_cache_max": 0.546875,
+      "first_cache_mean": 0.08681423217058182,
+      "adapter_sha256": "945cf2ce010074d780bb2b66a468dfed3f078a8545a682345446662f88622ea3",
+      "comparison_limit": "Adapter hashes differ (945cf2 versus e8f1). Descriptive error reduction under the newer math profile does not isolate a single causal factor."
+    },
+    "nf4_no_cache": {
+      "receipt": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\parity-2.json",
+        "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4",
+        "bytes": 15731
+      },
+      "protocol": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-nf4-v1\\parity-protocol-v3.json",
+        "sha256": "6287196f26689aedcb5d8a314330ed26ff96cff5569e7f4b80073ebe3babe244",
+        "bytes": 4282
+      },
+      "status": "passed",
+      "comparisons": 2,
+      "scopes_per_prefix": 3,
+      "max_errors": [
+        [
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "interpretation": "Native/manual exact equality at prefixes81/84 with the SAME quantized decoder. This receipt contains no NF4 cached comparison."
+    }
+  },
+  "confirmed_source_trace": [
+    {
+      "fact": "The native generator encodes the board once, installs16 pre-layer hooks at decoder layers0,2,...30, and removes every handle. Cached generation sends only next_token and prior KV; the attention mask grows by1. No-cache generation resends the full prefix.",
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+        "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+        "bytes": 26811,
+        "lines": [
+          196,
+          212,
+          335,
+          370
+        ]
+      }
+    },
+    {
+      "fact": "DenseXAttn uses per-token LayerNorm, projections and FFN; attention covers64 fixed board positions with eval dropout0. Decoder token rows never attend to other decoder rows inside the bridge. No sequence-global normalization or changing board conditioning was found.",
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-source\\models\\flamingo.py",
+        "sha256": "7757093bdb2187085e57dcebf2925ece7471475768a2f93f9b683fd49a903ab1",
+        "bytes": 25545,
+        "lines": [
+          123,
+          161
+        ]
+      }
+    },
+    {
+      "fact": "SmolLM3Model derives position_ids=arange(current_length)+past_key_values.get_seq_length(). The config has36 full-attention layers and no sliding window. Blindly adding the removed Transformers4 cache_position API would not address this installed5.19 path.",
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\models\\smollm3\\modeling_smollm3.py",
+        "sha256": "56ad67011d2abc78665fe47b6870dffeb11ba1256fa10bc063497e0441d80dd3",
+        "bytes": 21964,
+        "lines": [
+          363,
+          423
+        ]
+      },
+      "config": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-v1\\pawn-8\\config.json",
+        "sha256": "429ae56bb00f5c6727807112608e0df3d6c934683c22f69739e1eb238d289fe4",
+        "bytes": 1873
+      }
+    },
+    {
+      "fact": "DynamicLayer appends keys and values with torch.cat on the sequence axis. get_mask_sizes returns past+query. The all-one attention mask in the native loop covers that combined length.",
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\cache_utils.py",
+        "sha256": "abdcb0ae88aa5b924ef7d76879db680e9af8f3ec1dafbba7ce446ecb521a944b",
+        "bytes": 107721,
+        "lines": [
+          113,
+          160
+        ]
+      }
+    },
+    {
+      "fact": "For all-one inputs, _ignore_causal_mask_sdpa skips the explicit mask when q=1 or q=kv. sdpa_attention_forward sets is_causal=False for q=1 and True for full-prefix q>1. This is correct last-row geometry by source; actual masks and positions were not retained by failedv5.",
+      "sources": [
+        {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\masking_utils.py",
+          "sha256": "af3d84dfe82a0b57c40625c89fb32b2cd6bf7351432ee5e76a9e8eac4289575b",
+          "bytes": 80642,
+          "lines": [
+            236,
+            279
+          ]
+        },
+        {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\transformers\\integrations\\sdpa_attention.py",
+          "sha256": "0523b9e7b375941b91c226aa850ffc18af709d8f697701fd16f2babaec32f23f",
+          "bytes": 9385,
+          "lines": [
+            111,
+            136
+          ]
+        }
+      ]
+    },
+    {
+      "fact": "The math profile disables reduced BF16 GEMM reductions and TF32, and requests math SDPA with FP32 intermediates. It does not convert every BF16 projection output or activation to FP32. Shape-dependent projection arithmetic remains possible.",
+      "source": {
+        "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+        "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0",
+        "bytes": 26811,
+        "lines": [
+          241,
+          265
+        ]
+      }
+    },
+    {
+      "fact": "Installed bitsandbytes0.50.2 Linear4bit calls matmul_4bit, whose CUDA dispatch chooses raw custom cgemm or dequantize+F.linear based on M,N,K and the device. M=1 always selects custom in this heuristic; a full prefix may use the fallback. PyTorch matmul flags cannot be assumed to control a raw bitsandbytes C kernel.",
+      "sources": [
+        {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\bitsandbytes\\nn\\modules.py",
+          "sha256": "89025479d330abe35003eb46ea0a911992978bd408e515bdf602088b6112c250",
+          "bytes": 45482,
+          "lines": [
+            607,
+            638
+          ]
+        },
+        {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\bitsandbytes\\autograd\\_functions.py",
+          "sha256": "9b1e2132a2f210cfe4ecb927b52b9ac4e6d35233a6a1936d240414e52a24fc6c",
+          "bytes": 18191,
+          "lines": [
+            453,
+            489
+          ]
+        },
+        {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\bitsandbytes\\backends\\cuda\\ops.py",
+          "sha256": "b378955fbedf2ea78d1b7b4e24487245bc72f215d0d4f94bf763100de824be51",
+          "bytes": 43795,
+          "lines": [
+            584,
+            809,
+            846,
+            990
+          ]
+        }
+      ]
+    }
+  ],
+  "plain_cpu_probe": {
+    "script": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source_math_probe.py",
+      "sha256": "d161338879b5862cdaa722652af0e4d9fa9e072d5443e37eac14a394d459e724",
+      "bytes": 3892
+    },
+    "result": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source-math-result.json",
+      "sha256": "a503cc5fc9752cc3820fb4edb01d504d8b83ebb182a5e15b434949c332d95384",
+      "bytes": 3998
+    },
+    "summary": "No framework imports. Plain mathematical full-prefix last-row attention equals cached q=1 noncausal attention; the naive upper-left causal mask differs. The exact installed dispatch function ran ONLY with stub dtype/device properties (84 SMs, SM120). It selected M=1 custom versus M=84/85 fallback for q/k/v/o/down, and custom for up/gate. Device properties are authored, not measured. This demonstrates conditional code paths, not hardware output drift or latency."
+  },
+  "ranked_hypotheses": [
+    {
+      "rank": 1,
+      "hypothesis": "Row-shape-dependent BF16 arithmetic in bridge norm_y/W_Q/FFN, decoder QKV/MLP projections, or SDPA. Cached prefix keys preserve prefill rounding; full-prefix recomputation can round earlier token rows differently.",
+      "support": "No-cache manual/native equality is exact at all4 tested prefixes. The source has consistent token-local conditioning and causal bookkeeping. Cached outputs are finite and all3 top tokens match, but numerical limits fail.",
+      "uncertainty": "The exact first divergent operation is unmeasured. The receipt lacks per-layer tensors and a cached-flag versus no-cache prefill comparison. No repair success is claimed."
+    },
+    {
+      "rank": 2,
+      "hypothesis": "A genuine cache-position, mask or cache-mutation issue remains possible.",
+      "support": "Only final logits were retained; actual positions, masks and36 cache lengths were not recorded.",
+      "against": "Installed default positions, native mask-length updates and bridge operations are consistent by source."
+    },
+    {
+      "rank": 3,
+      "hypothesis": "NF4 custom-versus-dequant kernel changes could add new incremental/full-prefix drift.",
+      "support": "The installed source has a concrete row-count dispatch; the exact function was exercised with authored device properties.",
+      "uncertainty": "This cannot explain the old BF16 failure, which used an unquantized decoder. No NF4 cache kernel or numerical run occurred."
+    }
+  ],
+  "prospective_first_divergence_plan": {
+    "status": "DESIGN ONLY; rootreview/sourcefreeze/soleGPUdispatch required; no authorization implied",
+    "input": "Use exactly the existing authored mate FEN6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1, pinned prompt and old synthetic3-token vocabulary suffix. Force continuation input IDs[4580,449,279], already generated by failedv5. This is a numerical software test, not chess-quality evaluation. No fresh held-out data.",
+    "model": "One shared native NF4 decoder, encoder and bridges, publisher revision5027687/upstreamc372. Start with original LoRA-free weights. Call the decoder forward in a separate experiment; the existing production NF4 generator still rejects cached mode. No duplicate full model, CPU offload, training, precision/tolerance relaxation or qualified-runtime edits.",
+    "stages": [
+      "Record actual device properties, package/source/model manifests, the once-encoded board identity and the bridge count/schedule. Check the unmodified no-cache/manual canonical reference first.",
+      "Before incremental decoding, compare cached-prefill use_cache=True against use_cache=False on exactly the same prefix. Save finite/all/original/added-vocabulary errors and argmax equality. A difference here separates cache-flag behavior from one-token shape effects.",
+      "For the3 fixed forced input tokens, compare incremental q=1 against the independent full prefix. Record all36 cache lengths before/after, actual position IDs, mask shape/type/allowed-count/is_causal, rotary dtype, bridge call counts, and actual kernel routes where observable.",
+      "Summarize last-token hidden errors before/after each bridge and decoder layer. At the first divergent stage, retain norm/projection/attention metrics and prefill-slice versus current full-prefix K/V errors. Save compact hashes/metrics rather than whole GPU tensors.",
+      "Predeclare a small isolation diagnostic for first-bridge norm_y/W_Q and decoder-layer0 q_proj: evaluate the SAME captured input row at M=1 versus a repeated M=84 and compare final outputs. Any optional FP32 reference stays limited to these small modules; never allocate a full FP32 decoder. This can localize shape arithmetic separately from cache semantics."
+    ],
+    "thresholds": "Preserve cache max0.25/mean0.01/cosine0.9999/top1-equality requirements and canonical no-cache max0.01/mean0.001/cosine0.9999. Predeclare all128333/original128256/added77 scopes and3 steps. A numerical failure remains failed. The first backend, nonfinite or resource failure stops later calls, preserving every planned/missing row.",
+    "limits": "Root must freeze complete finite source, meaningful CPU contracts and a protocol, then obtain independent review before any model call. Keep current startup reserves and running floors4GiB physical/4GiB commit/1GiB GPU, owned lease/job and absolute13UTC for any overnight run. No automatic dispatch, timing-window extension, legality rescue or capability claim.",
+    "promotion": "Only measured parity success permits separate bounded latency tests on already-spent authored inputs. Any tuned adapter needs its own cached parity; publisher NF4 parity cannot qualify the tuned UI."
+  },
+  "lower_risk_latency_option": {
+    "idea": "Cache each frozen bridge board-side norm_x/W_K/W_V once per request while keepingdecoder no_cache.",
+    "reason": "The encoded board and frozen bridge weights are constant within a request. Board K/V projection inputs always have64 rows, independently of decoder sequence length. Current DenseXAttn recomputes32 board-side K/V projections across16 bridges on every decoder forward.",
+    "scope": "Request-local only: never reuse across boards, history, dtype, encoder or bridge identities. The16 bridges x2 K/V tensors x64 squares x2048 width x2 BF16 bytes require8,388,608bytes (8MiB), excluding temporaries.",
+    "test": "Use a separate adapter experiment. Compare with the qualified no-cache path on existing81/84-token prefixes and3 forced continuations, sharing the identical quantized decoder and BF16 bridges. Preserve raw-logit requirements in all3 vocabulary scopes. Measure latency and peak memory only after parity. A speed gain is unmeasured and may be modest while the decoder still recomputes its full prefix.",
+    "no_claim": "No implementation, speed result or correctness result was produced in this source-only cycle."
+  },
+  "primary_web_sources": [
+    {
+      "url": "https://docs.pytorch.org/docs/2.8/notes/numerical_accuracy.html",
+      "checked": "2026-10-16",
+      "support": "Mathematically identical batched/sliced floating computations need not be bitwise identical; BF16 reduction and SDPA FP32-intermediate controls have distinct effects."
+    },
+    {
+      "url": "https://docs.pytorch.org/docs/2.8/generated/torch.nn.functional.scaled_dot_product_attention.html",
+      "checked": "2026-10-16",
+      "support": "Kernel choice affects rounding; is_causal on nonsquare attention uses upper-left bias; the math backend keeps intermediates in float for BF16 inputs."
+    },
+    {
+      "url": "https://huggingface.co/docs/transformers/en/cache_explanation",
+      "checked": "2026-10-16",
+      "support": "Iterative attention masks cover past+new tokens; the KV cache appends per layer. General guidance only: installed5.19 source determines exact call signatures."
+    }
+  ],
+  "preservation": "All qualified sources, adapters, receipts and protocols remain unchanged. Only small files under this work directory were written. No fresh held-out content, creator media, corpus, model weights or new data acquisition was touched.",
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "bitsandbytes": "0.50.2"
+  }
+}

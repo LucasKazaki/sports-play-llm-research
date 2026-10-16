@@ -1,0 +1,155 @@
+{
+  "schema": "chess.public-hash-only-execution-snapshot-index.v1",
+  "origin_exact_review_sha256": "9bed6c3d5b2791a631f592865ff17933bf656ff119e0852edea77ed9434832be",
+  "basis": "Metadata projected from the accepted immutable review. No source snapshots or private case content copied; packaging did not re-execute or reopen source input/label/reference files.",
+  "execution_snapshot_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\manifest.json",
+    "sha256": "00a5acec0e44cb762adf9d06604af99f9e52e83e2671f47d6c77321f8f57305c",
+    "bytes": 6283
+  },
+  "source_bindings": {
+    "source": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_encoder_check_generalization_eval_v2.py",
+      "sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0",
+      "bytes": 17580
+    },
+    "protocol": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-protocol-v2.json",
+      "sha256": "f53d397465dd533b410ec8eb5115167f7aa3a482d87463ee6020bf53b1ade9eb",
+      "bytes": 10594
+    },
+    "source_GO": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-source-review-v2.json",
+      "sha256": "2af7aff2553ead9e93aa5aa768fd444c03c25b42fa5ed8269ac5548226f16c62",
+      "bytes": 3956
+    },
+    "dispatch": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-gen-inference-v2-source-1\\manifest.json",
+      "sha256": "96460a2046e0e03f19aabfaea8df2f0299e6521a5944804ba8daeae4879ae801",
+      "bytes": 5129
+    },
+    "audit_script": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\audit_encoder_generalization_v2_failure.py",
+      "sha256": "b5952337265f9eeabfb04832a4e0128934bfc3a70a8591cddc681e51e3906e3e",
+      "bytes": 16685
+    }
+  },
+  "snapshot_count": 23,
+  "snapshots": [
+    {
+      "snapshot_name": "00-chess_encoder_check_generalization_eval_v2.py",
+      "bytes": 17580,
+      "sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0"
+    },
+    {
+      "snapshot_name": "01-inference-protocol-v2.json",
+      "bytes": 10594,
+      "sha256": "f53d397465dd533b410ec8eb5115167f7aa3a482d87463ee6020bf53b1ade9eb"
+    },
+    {
+      "snapshot_name": "02-chess_board_fact_core.py",
+      "bytes": 5902,
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5"
+    },
+    {
+      "snapshot_name": "03-chess_check_balanced_v2.py",
+      "bytes": 27583,
+      "sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5"
+    },
+    {
+      "snapshot_name": "04-chess_fact_sft_common.py",
+      "bytes": 10669,
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f"
+    },
+    {
+      "snapshot_name": "05-chess_fact_sft_intake.py",
+      "bytes": 15840,
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db"
+    },
+    {
+      "snapshot_name": "06-chess_board_fact_diagnostic.py",
+      "bytes": 27798,
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d"
+    },
+    {
+      "snapshot_name": "07-chess_native_resources.py",
+      "bytes": 5573,
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1"
+    },
+    {
+      "snapshot_name": "08-test_chess_encoder_check_v1.py",
+      "bytes": 15126,
+      "sha256": "ca8fdeb41a4974f8e205172cdbfa37d376b6cb5c6c464d52d85741425a9657ed"
+    },
+    {
+      "snapshot_name": "09-encoder.py",
+      "bytes": 43771,
+      "sha256": "2fbf9494f20e9ccf957aa88753f6276a139c5476de9e1444857f709c3b44eb9a"
+    },
+    {
+      "snapshot_name": "10-lc0_planes.py",
+      "bytes": 7165,
+      "sha256": "767bf0e89b2e0934e0f0f94909d10b1c46123eae055b6ce544b4082cca772e4c"
+    },
+    {
+      "snapshot_name": "11-LICENSE",
+      "bytes": 11562,
+      "sha256": "f2ffa5942b316849be283deaeb2912e2e5b5b17e91012bede8210210ff3e91e7"
+    },
+    {
+      "snapshot_name": "12-config.json",
+      "bytes": 23567,
+      "sha256": "0a5690de151cdea61d669ca4a10a9fde103232800073250fe210421608ff664a"
+    },
+    {
+      "snapshot_name": "13-chess_queen_materialize.py",
+      "bytes": 1273,
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac"
+    },
+    {
+      "snapshot_name": "14-test_chess_queen_materialize.py",
+      "bytes": 2937,
+      "sha256": "31db1ed1af68de50fcf1f44c2d07551ee04f74da7eb36a3042c666b7f2d03b17"
+    },
+    {
+      "snapshot_name": "15-chess_encoder_check_v1.py",
+      "bytes": 36260,
+      "sha256": "7914468174696ef17076792be6c0d280d9eb24001aa8833b4e76563c7b4072a3"
+    },
+    {
+      "snapshot_name": "16-chess_encoder_check_generalization_v1.py",
+      "bytes": 17873,
+      "sha256": "5f9e1b34a575aef39419adfba0851f215492f4608617949013e465018e5595bf"
+    },
+    {
+      "snapshot_name": "17-test_chess_encoder_check_generalization_eval_v2.py",
+      "bytes": 9927,
+      "sha256": "83eddeee2ed3db866dafab4d79fa15af159f9eff1ffb7172f8161909d83e7631"
+    },
+    {
+      "snapshot_name": "18-gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "snapshot_name": "19-actual-cohort-ready.json",
+      "bytes": 15581,
+      "sha256": "991365643f1015a0ba0f77a4f154daac9ea889b47f15133ececfd0adcf6def4a"
+    },
+    {
+      "snapshot_name": "20-chess_encoder_check_generalization_eval_v1.py",
+      "bytes": 16441,
+      "sha256": "921cfffa395738c51a5ef209533a4b7700d06edc9dc3b5e2671a9e26b9a2ce24"
+    },
+    {
+      "snapshot_name": "21-inference-protocol.json",
+      "bytes": 9493,
+      "sha256": "6f55d7c7e97cee216ab433de962e80a6632452670e2f3fb8577d4affe0e7c758"
+    },
+    {
+      "snapshot_name": "22-prepare_inference_protocol_v2.py",
+      "bytes": 2826,
+      "sha256": "999a34ca053e8b64ff796aae634fe60635752f542db5b3f0bd5f0b75e3af53b5"
+    }
+  ]
+}

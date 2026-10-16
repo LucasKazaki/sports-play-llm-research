@@ -1,0 +1,88 @@
+{
+  "schema": "chess.independent-claim-audit-source-final-review.v1",
+  "verdict": "GO for exact amended evaluator software and the separately reviewed 18 Codex-authored annotations, as an engineering diagnostic only",
+  "reviewed_at_utc": "2026-10-16T09:10:53.454118+00:00",
+  "annotation_origin": "Codex/root",
+  "independent_semantic_reviewer": "Separate local AI agent /root/check_review",
+  "expert_human_semantic_validation": false,
+  "full_source_algorithm_previously_read": true,
+  "amended_source_protocol_README_full_read": true,
+  "tests_unchanged_from_full_read": true,
+  "amendment_comparison": "Exact text equality after only two source wording substitutions; no algorithm, function, input, predicate, scoring or output-logic change.",
+  "finite_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\research-loop-quality\\claim-audit-review\\bundle-1.txt",
+      "bytes": 28003,
+      "sha256": "244dc72de56e29ac8aa70c244463d1585ae7508e6450add5235781394d5a0745"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\research-loop-quality\\claim-audit-review\\bundle-2.txt",
+      "bytes": 16284,
+      "sha256": "db15c8f6cc2f7847857259e26ca1da18b5bf23f1e0fdb7ff2ce0806a99aca9b1"
+    }
+  ],
+  "execution_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_claim_audit_v1.py",
+      "bytes": 14378,
+      "sha256": "06a4bddcd90f96b79bdc5fbe41d4d11fd59a0065e94ce199d8338f7d89a5a7b7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-claim-audit-v1\\protocol.json",
+      "bytes": 5036,
+      "sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-claim-audit-v1\\software-tests.json",
+      "bytes": 1373,
+      "sha256": "e45356b2d811572e2bd209d50b19a4970104bef533000f977c4c3f8c993ab7c9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-claim-audit-v1\\README.md",
+      "bytes": 6969,
+      "sha256": "c8bb981c519bc15dfbc7821c6a3d663634e15c2daca2e422a874b2484143d176"
+    }
+  ],
+  "independent_cpu_test": {
+    "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_claim_audit_v1.py -q",
+    "exit_code": 0,
+    "output": "38 passed in 0.14s",
+    "tool_chunk_id": "3edf40",
+    "scope": "Synthetic fixtures; no actual authored audit implementation invoked."
+  },
+  "backend_free_metadata_verify_passed": true,
+  "response_pool_exact_hashes_verified": 4,
+  "mapping_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\claim-semantic-mapping-v1-review.json",
+    "bytes": 15175,
+    "sha256": "3cc75aa602f5982b7b446a2b7266032ea03fa65e9d7453e8b3896ca3d9cdf96a"
+  },
+  "annotation_origin_addendum": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\claim-annotations\\annotation-origin-v1.json",
+    "bytes": 541,
+    "sha256": "73495060a53f3da594ae05524592d436c6c80c46cb582f08b117899fbcbffe5e"
+  },
+  "working_disclosure": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-ai-assistance-and-data-stewardship-2026-10-16.md",
+    "bytes": 4485,
+    "sha256": "05d61fb96bcc4bfa2f8d08c37a44181f72601daa90701ee49d0c62abcd7d3c3a"
+  },
+  "disclosure_consistency": "Read complete; accurately separates AI, engine, deterministic rules and human roles. No institutional approval, backup completion, expert validation, blanket redistribution permission or teaching-quality success asserted.",
+  "blocking_findings": [],
+  "limits": [
+    "Codex-authored, local-agent-reviewed mappings are not human gold labels or expert validation.",
+    "Eighteen purposive annotations from four spent examples do not measure representative prose coverage, teaching quality, Elo or heldout gain.",
+    "Keep illegal-context protection and unsupported relative/evaluative predicates unassessed.",
+    "No audited output may feed the generator, active training corpus or heldout metrics."
+  ],
+  "actual_authored_audit_implementation_invocations_by_reviewer": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "gpu_calls": 0,
+  "held_reference_content_opened": false
+}

@@ -1,0 +1,45 @@
+{
+  "schema": "chess.queen-authored-smoke.v1",
+  "frozen_before_pretrained_forwards": true,
+  "packets": [
+    {
+      "path": "experiments/chess-queen-v1/authored-mate.json",
+      "sha256": "cacd2cfa6212959b97f583a39218d7d158e40be91c98ec078dd6f0fafd3831e4",
+      "input_keys": [
+        "fen"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-midgame.json",
+      "sha256": "9f9e8f428684214c3ecf1b7811a2505bd4ccd7d752d314a1e8dc1c3b223885ca",
+      "input_keys": [
+        "fen"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-opening.json",
+      "sha256": "9624697eef4f8da67c03ab4fb59240a10556318d1a12451e898d81a0aa394d43",
+      "input_keys": [
+        "fen"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-selected-c3.json",
+      "sha256": "cc639d6d2fc1bdf0b88c847201b6caebd5324e214e1ff22fbf117c1296be6b2c",
+      "input_keys": [
+        "fen",
+        "selected_uci"
+      ],
+      "kind": "Authored software fixture; no source-game evaluation claim"
+    }
+  ],
+  "max_new_tokens": 1024,
+  "maximum_seconds": 240,
+  "temperature": 0,
+  "seed": 20260823,
+  "completion": "Retain full raw token IDs/text, finish reason and truncation; do not replace illegal or missing moves.",
+  "capability_claims_allowed": false
+}

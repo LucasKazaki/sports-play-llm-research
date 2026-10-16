@@ -1,0 +1,50 @@
+{
+  "schema": "chess.tuned-tutor-source-software-tests.v1",
+  "execution": {
+    "tool": "exec_command",
+    "chunk_id": "6c25d2",
+    "initial_chunk_id": "a0fd38",
+    "exit_code": 0,
+    "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_coach_tutor_v1.py -q",
+    "stdout": "............................................... [100%]\n47 passed in12.28s\n"
+  },
+  "sources": [
+    {
+      "path": "scripts/chess_queen_coach_tutor_v1.py",
+      "sha256": "90f35841b875853f5572ed9a7a5439565277a81ba0b08d493423992569bcc697",
+      "bytes": 17502
+    },
+    {
+      "path": "prototype/chess_tutor_v1/queen_tuned_runtime_v1.py",
+      "sha256": "fc5ab69c2832f5497b3c2ee5797c31d41af3ab867f9295bea1e39bec41760095",
+      "bytes": 12900
+    }
+  ],
+  "tests": {
+    "path": "tests/test_chess_queen_coach_tutor_v1.py",
+    "sha256": "1b29468144483b0479b5227e40a4b06cc2189ec6b1ea976ffef10c2a6d6c3fd8",
+    "bytes": 26278
+  },
+  "protocol": {
+    "path": "experiments/chess-queen-tutor-adapter-v1/protocol.json",
+    "sha256": "3d0672eae40cd3543ef838c0a3bba1aadccea1a44b59b62803b776c9f8f3477c",
+    "bytes": 6654
+  },
+  "disabled_qualification": {
+    "path": "prototype/chess_tutor_v1/queen-tuned-runtime-v1.json",
+    "sha256": "ec3085263ec62bda5b68499663d7e0bad29557353c80f35e7996324948bc17bd",
+    "bytes": 925
+  },
+  "actual_metadata_protocol_check": "passed; fixed adapter/selection/runtime/dependency byte bindings and installed package metadata only",
+  "no_real_runtime_calls": true,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "GPU_calls": 0,
+  "HTTP_calls": 0,
+  "browser_calls": 0,
+  "actual_entrypoint_qualification_calls": 0,
+  "existing_production_or_experiment_source_edits": 0,
+  "limits": "Tests use authored fake weights/metadata/runtime; no model tensor loading. Metadata-only real asset byte hashing is not pretrained execution or quality evidence.",
+  "preserved_preflight_failures": "metadata-preflight-first/second.json and preflight-draft-1/2 retain both metadata binding failures before all pretrained calls; draft3 preserves prior metadata-pass source before explicit supplemental-manifest and traversal/symlink hardening.",
+  "prequalification_revision": "Previous exact sources, protocol, receipt, bundles and original42bdd qualification design preserved in current-chat work/tuned-tutor-source-review/prequalification-draft-4/. The first repair test run had46 passes and1 old assertion fail because the new audit guard rejected altered worker evidence earlier; the fixture was rebound to exercise the exact-argument guard. No implementation change followed that run."
+}

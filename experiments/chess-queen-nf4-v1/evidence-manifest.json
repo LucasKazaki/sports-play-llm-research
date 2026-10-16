@@ -1,0 +1,131 @@
+{
+  "schema": "chess.public-evidence-copy.v1",
+  "source": "Root-owned actual closed local attempts; private weights and media excluded",
+  "files": [
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/kernel-1.json",
+      "bytes": 4003,
+      "sha256": "495f8d04d60aeb5f3d89566bb0d7a95f9ad41cd4e8cfa10a9f8481f7113034d8"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/kernel-1.resources.jsonl",
+      "bytes": 1024,
+      "sha256": "9cf61c214e0d3ffe5fa9f3f3c88c923307bf7ebd16f9f88774574136f192abbc"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/kernel-worker-1.json",
+      "bytes": 599,
+      "sha256": "8de2ed77b60c770eb0a4b476a279b43ec3bdb5a47e020a890e0f99a2e85f58de"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/kernel-2.json",
+      "bytes": 3673,
+      "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/kernel-2.resources.jsonl",
+      "bytes": 768,
+      "sha256": "4a102211aa5de2923e3bf3887e00303ae4ce69f4dc93dbc0c82653e62ac03b39"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/kernel-worker-2.json",
+      "bytes": 589,
+      "sha256": "82a93a694b1c81a261a10e99c872de41f1719d14fbdd603587dbc55122413f05"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/parity-1.json",
+      "bytes": 1040,
+      "sha256": "7ce19697a80d83a46eed99c5fd0b1b6423a8c8a14e37533bee3891a8ab7fc6d9"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/parity-1.resources.jsonl",
+      "bytes": 256,
+      "sha256": "0cc251e457776e2395c68df2fad4089704dbdfd8bb5799f3459de75d96d5a75c"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/parity-worker-1.json",
+      "bytes": 613,
+      "sha256": "3e3036b798b48198e8bc3ffb7ead70df09706f2ffc882e0d7d9e16e541d5b5e7"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/parity-2.json",
+      "bytes": 15731,
+      "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/parity-2.resources.jsonl",
+      "bytes": 1279,
+      "sha256": "d1d5a59e0c7e6723d3d7555d72675f289441a29efdea055efaa89495e9755ae3"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/parity-worker-2.json",
+      "bytes": 606,
+      "sha256": "28e55981247df3b381845c831efb02b180a18992531ceda54606d2c3031a5999"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-outcomes.json",
+      "bytes": 16713,
+      "sha256": "058f964e69930755dbca654bbac8a77912f2eb2a95cf32f515cab05e4922ff84"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-0.json",
+      "bytes": 40623,
+      "sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-0.resources.jsonl",
+      "bytes": 11223,
+      "sha256": "0e8d90077d0210fb09fb1c960bb0332efc9e19d026c9905b139c2d50a31ad216"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-0-worker.json",
+      "bytes": 604,
+      "sha256": "b83c3d67e709414854245cfb37cf2c96cf7fe2dc37cff11af5fc83c15a9ec014"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-1.json",
+      "bytes": 69108,
+      "sha256": "561a61a8158c7dec100e3a7cafdd15c2d4744aa88ea1942876ee1abd5bd93223"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-1.resources.jsonl",
+      "bytes": 25306,
+      "sha256": "3e6535398c39d74012d9f9ce5eeb1755f564ce0cfdb6739cb941cd9e3ff41594"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-1-worker.json",
+      "bytes": 605,
+      "sha256": "2093974e827c6e65cbaab6773bc722139aefffb27219ac3a9e7c6b541eb7adf0"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-2.json",
+      "bytes": 55081,
+      "sha256": "459a88d6f329581a41c1cb19154c28bec3d4f78a248d43e8f7742593bb0df0f0"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-2.resources.jsonl",
+      "bytes": 16384,
+      "sha256": "e171903290dbf4389ed966bfad3ad03b9d701e49be21d6d4c4553467c0b8230a"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-2-worker.json",
+      "bytes": 604,
+      "sha256": "88efefde491b54cf34fa2de064ea59f7ef170540739d74a871d8e8e7b639a9cd"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-3.json",
+      "bytes": 59375,
+      "sha256": "bc978198dbb1382e113f8d768a0abc88f3a8a7ba1d497d7b7ce0a433002155ea"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-3.resources.jsonl",
+      "bytes": 18420,
+      "sha256": "2d41352b1254f14fa14ce4f27998e79d483bbe0a59806c0d2e7d8b5819b4657e"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/evidence/authored-3-worker.json",
+      "bytes": 593,
+      "sha256": "e3e2d55ce6078a589a067038513efb21030e1baa3d44f7bdd559dd499687943a"
+    }
+  ]
+}

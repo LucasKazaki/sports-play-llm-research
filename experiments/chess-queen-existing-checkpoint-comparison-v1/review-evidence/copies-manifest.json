@@ -1,0 +1,18 @@
+{
+  "schema": "chess.source-and-protocol-review-exact-copies.v1",
+  "files": [
+    {
+      "file": "existing-checkpoint-comparison-builder-v3-source-review.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-builder-v3-source-review.json",
+      "bytes": 2150,
+      "sha256": "9b7620f419e48db6bdd30691e3b1fe2782c28f2cdae6eb9d74f4d03d8f67da4d"
+    },
+    {
+      "file": "existing-checkpoint-comparison-final-protocol-v2-review.json",
+      "source": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\existing-checkpoint-comparison-final-protocol-v2-review.json",
+      "bytes": 4814,
+      "sha256": "89935f416f3441eecd4dc2ad4a03838141ff7de9380586b193b952d821b5cd75"
+    }
+  ],
+  "limits": "Conditionalsource/protocolGOonly; strictadmissionexpired, all96unrun."
+}

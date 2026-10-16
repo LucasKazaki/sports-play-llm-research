@@ -1,0 +1,33 @@
+{
+  "status": "metadata_only_passed",
+  "reserved_superset_audit": {
+    "head_initial": {
+      "games": 107208,
+      "board_keys": 242535
+    },
+    "coach_initial": {
+      "games": 107464,
+      "board_keys": 243835
+    },
+    "head_dataset": {
+      "games": 8576,
+      "board_keys": 34304
+    },
+    "queen_pool": {
+      "games": 96,
+      "board_keys": 192
+    },
+    "coach_dataset": {
+      "games": 1568,
+      "board_keys": 3136
+    },
+    "reserved_totals": {
+      "games": 109032,
+      "board_keys": 250895
+    }
+  },
+  "source_rows_constructed": 0,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "coach_held_reference_reads": 0
+}

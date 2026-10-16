@@ -1,0 +1,59 @@
+{
+  "schema": "archit.chessqa-primary-source-audit.v1",
+  "checked_date_utc": "2026-10-16",
+  "status": "research_only_future_proposal_no_current_protocol_change",
+  "scope": {
+    "corpus_files_downloaded": 0,
+    "weights_downloaded": 0,
+    "upstream_code_executions": 0,
+    "model_engine_GPU_calls": 0,
+    "current_held_inputs_or_references_read": 0,
+    "accounts_terms_acceptance_contact": 0,
+    "existing_repository_files_edited_for_this_audit": 0,
+    "read_method": "Official arXiv/GitHub/Hugging Face/Lichess pages plus bounded unauthenticated metadata and pinned documentation/source GETs. Only metadata projections, hashes and observations retained; no corpus rows saved."
+  },
+  "revisions": {
+    "paper": {"id": "2510.23948", "version": "v1", "submitted_utc": "2025-10-28T00:02:52Z", "url": "https://arxiv.org/abs/2510.23948"},
+    "code": {"repository": "CSSLab/chessqa-benchmark", "revision": "7b656c3316b5266acc596124610fa084f58ee717", "committed_utc": "2026-08-03T15:58:44Z", "tree": "550ded0e69a8b37c32b3b4287b311665542bacde", "observed_at_utc": "2026-10-16T10:08:41.574149+00:00"},
+    "dataset": {"repository": "wieeii/ChessQA-Benchmark", "revision": "18c5a789c6b358db1191642d31414a8bac540809", "last_modified_utc": "2025-11-01T20:56:03.000Z", "observed_at_utc": "2026-10-16T10:08:41.839504+00:00", "gated": false},
+    "equivalence": "UNVERIFIED: no corpus bytes were read or compared; newer GitHub code/README cannot be silently treated as identical to the older HF release."
+  },
+  "sources": [
+    {"id":"paper","url":"https://arxiv.org/html/2510.23948","sections":["3.1 Data Sources","C.5 Semantic"],"type":"official_paper"},
+    {"id":"repo","url":"https://github.com/CSSLab/chessqa-benchmark/blob/7b656c3316b5266acc596124610fa084f58ee717/README.md","sha256":"47a8b1b587948ad86f7f68273608cd98f0662d1bb8073cd133c2f1d068418aaa","type":"pinned_official_readme"},
+    {"id":"code-license","url":"https://github.com/CSSLab/chessqa-benchmark/blob/7b656c3316b5266acc596124610fa084f58ee717/LICENSE","sha256":"8b28faf9bc904f18d031f842460ad445d7a24a03b521258ec9c3d20636fda0d9","type":"pinned_code_license"},
+    {"id":"hf-card","url":"https://huggingface.co/datasets/wieeii/ChessQA-Benchmark/blob/18c5a789c6b358db1191642d31414a8bac540809/README.md","sha256":"a0acd60f7f030f744580613ac13d7e3e3d0cdb7348aad948e7707b5a8270700c","type":"pinned_official_dataset_card"},
+    {"id":"hf-license","url":"https://huggingface.co/datasets/wieeii/ChessQA-Benchmark/blob/18c5a789c6b358db1191642d31414a8bac540809/LICENSE","sha256":"8b28faf9bc904f18d031f842460ad445d7a24a03b521258ec9c3d20636fda0d9","type":"pinned_dataset_repo_license_text"},
+    {"id":"builder","url":"https://github.com/CSSLab/chessqa-benchmark/blob/7b656c3316b5266acc596124610fa084f58ee717/dataset/05_semantic.py","sha256":"fda36faecb59c7ceb03fb6592fa461c2264d017f1b14c4a059dee1a8c9033d60","type":"pinned_source_static_read_never_executed"},
+    {"id":"lichess","url":"https://database.lichess.org/","type":"official_source_license_statement"},
+    {"id":"code-metadata","url":"https://api.github.com/repos/CSSLab/chessqa-benchmark/commits/main","receipt":"official-metadata.json"},
+    {"id":"data-metadata","url":"https://huggingface.co/api/datasets/wieeii/ChessQA-Benchmark","receipt":"official-metadata.json"}
+  ],
+  "claims": [
+    {"id":"coverage","kind":"upstream_report_not_independent_data_count","claim":"50 tasks and 3,500 items: 1,100 structural, 600 motifs, 900 short tactics, 500 position judgment, 400 semantic.","sources":["repo","paper"]},
+    {"id":"labels","kind":"reported_method","claim":"Lichess puzzles/evaluations supply rule, motif, tactic and evaluation sources. Semantic originates in ChessBase 17 PGN comments with Qwen cleaning/relevance filtering and four distractor strategies.","sources":["paper"]},
+    {"id":"semantic-target","kind":"verified_source_definition","claim":"Given FEN-before, a move and four comments, predict the source-associated comment letter; not free explanation generation or per-claim truth certification.","sources":["paper","builder"]},
+    {"id":"semantic-dependence","kind":"upstream_report_plus_static_code","claim":"Current code shares 100 base state-move-comment triples across four variants and derives base_example_id from canonical four-field FEN, move and normalized comment.","sources":["repo","builder"]},
+    {"id":"annotation-limit","kind":"research_inference","claim":"HF expert-generated metadata does not establish that every released answer/explanation was independently expert-validated; paper-described relevance filtering is a different operation from factuality validation.","sources":["hf-card","paper"]},
+    {"id":"code-rights","kind":"explicit_upstream_license_scope","claim":"Code is MIT with notice obligations. Current README explicitly keeps benchmark data under source-material terms.","sources":["code-license","repo"]},
+    {"id":"data-rights-conflict","kind":"observed_provenance_gap","claim":"HF metadata says MIT and ships the same software-worded MIT file; current code README identifies purchased ChessBase17 commentary without an applicable commentary sublicense in the inspected sources.","sources":["hf-card","hf-license","repo"]},
+    {"id":"lichess-rights","kind":"explicit_provider_statement","claim":"Lichess database exports are CC0 and provider permits modification/redistribution. This does not license unrelated ChessBase comments.","sources":["lichess"]},
+    {"id":"leakage-fields","kind":"static_source_observation","claim":"Current semantic builder includes correct_text and fen_after in metadata and exports correct_answer separately. Whole-row model input would expose evaluator material.","sources":["builder"]},
+    {"id":"contamination","kind":"unresolved_plus_methodological_inference","claim":"No verified pretraining non-overlap or comparison to local source-game/board reservoirs was established. Treat repeated base examples, source games, canonical boards and comments as shared groups; never train on answer keys then claim independent performance.","sources":["repo","builder","hf-card"]}
+  ],
+  "rights_disposition": {
+    "MIT_code_local_reuse": "Applicable stated code license permits reuse with notices, subject to actual third-party dependencies; no package or distribution assessment performed.",
+    "Semantic_text_local_training": "UNRESOLVED_NOT_CLEARED_BY_THIS_AUDIT",
+    "Semantic_text_redistribution": "UNRESOLVED_NOT_CLEARED_BY_THIS_AUDIT",
+    "Lichess_exports": "Provider CC0 supports reuse of exact covered exports; source-bound future cohort still required. No acquisition performed.",
+    "why_unresolved": "Dataset-wide MIT tag and code license do not establish the upstream purchased-commentary rights. No rights-holder permission, actual applicable ChessBase data grant, university approval or legal conclusion is inferred.",
+    "project_policy_context": "Current AGENTS permits public local data acquisition only with verified applicable rights, and preserves actual restricted-source/publication boundaries. Existing local rights note separates code licenses from referenced commentary. No new approval gate or permission request is introduced; use approved CC0 sources for independent future work while this candidate remains unresolved."
+  },
+  "limits": [
+    "Counts and current benchmark grouping are upstream reports/static code observations, not an executed independent corpus audit.",
+    "No benchmark, learned generation, engine, training or current holdout inspection occurred.",
+    "No exact HF-versus-GitHub dataset comparison or source-game/comment deduplication occurred.",
+    "No claim of factual/expert/tutor readiness, novelty, legal clearance or university approval.",
+    "Web tool could not open both metadata API endpoints or commit-history pages reliably; bounded unauthenticated Python GETs succeeded and retain separate dated metadata receipts. No alternate account/authentication was used."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "chess.queen-load-amendment.v2",
+  "scope": "Loading allocation only; no model weights, prompts, parity tolerances or reserve policy change.",
+  "observed_attempt": "data/private/chess-queen-v1/parity-authored-v2-1.json",
+  "observed_worker": "data/private/chess-queen-v1/workers/parity-v2-worker-1.json",
+  "observed_adapter_sha256": "7e99e8b6cb650f9f668f122cf3609cdb9f66e863948d940cf6b1219672d97bf4",
+  "observation": "Commit reserve guard stopped before any forward after decoder plus bridges loaded; no GPU OOM exception.",
+  "after_load_commit_headroom_bytes": 5523542016,
+  "unchanged_running_commit_reserve_bytes": 6442450944,
+  "repair_adapter_sha256": "945cf2ce010074d780bb2b66a468dfed3f078a8545a682345446662f88622ea3",
+  "repair": [
+    "Construct bridges and encoder on meta, cast floating dtype on meta, allocate only target device storage with to_empty.",
+    "Copy pinned CPU-mapped xattn weights with weights_only=True, mmap=True, strict=True, assign=False.",
+    "Copy pinned encoder safetensors strictly into the audited local class; preserve integer buffers.",
+    "Avoid relying on Transformers dtype conversion for the buffer-only encoder, which a tiny local CPU probe found leaves floating buffers FP32."
+  ],
+  "validation": {
+    "focused_cpu_tests_passed": 25,
+    "test_sha256": "b48bd7a00743e42e94ae5c75fe6e9b4c1ad9b34f325a924ca2871019fc1dd42c",
+    "tiny_random_cpu_parity": "cpu-parity-memory-v2.json",
+    "upstream_manual_max_absolute_error": 0.0,
+    "cached_uncached_max_absolute_error": 2.086162567138672e-7,
+    "pretrained_forwards": 0,
+    "gpu_calls": 0
+  },
+  "next_attempt": "New create-only attempt2 output and worker receipts, after exclusive GPU ownership and independent review.",
+  "limitation": "The memory improvement is a hypothesis to measure on the next load, not established success or chess capability."
+}

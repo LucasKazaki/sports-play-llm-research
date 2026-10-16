@@ -1,0 +1,61 @@
+{
+  "schema": "chess.queen-ui-public-evidence.v1",
+  "scope": "Three predeclared actual authored browser conditions, two completed and one owned cancellation; no fresh chess benchmark",
+  "files": [
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-0-response.json",
+      "bytes": 40633,
+      "sha256": "8f597eb9f26053f9d58d80e861600ab06b40f2742e40db2d3385379972128064"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-0-worker.json",
+      "bytes": 725,
+      "sha256": "f6519babab2f1b9e2db21f7880afa1457ad9d06375b6f553c4cd593ca71f2f7f"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-0-response.resources.jsonl",
+      "bytes": 11223,
+      "sha256": "9c207385260d45eb4b33fa6ddbb57772be39b5adb8acf74a4db2e5bfb5def9a7"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-1-response.json",
+      "bytes": 3348,
+      "sha256": "d10f91bd3d5a40bf79c2dd2ad7837fa00777d3692ea89c68894278331ba3d483"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-1-worker.json",
+      "bytes": 721,
+      "sha256": "fe2676f7b0a15afaf1a861edbf5bc7b30812562fbc5d72fa0edd7d91327f6e4d"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-2-response.json",
+      "bytes": 40635,
+      "sha256": "9fa92dcc09b32cc8b366fdb3aab2309f192e404e6f97decf8aa5001a5b491a7f"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-2-worker.json",
+      "bytes": 724,
+      "sha256": "9a8f9648d9b2a231e19da08b175effc2b9a7a310a66beb80ed31f5553bfcf987"
+    },
+    {
+      "path": "experiments/chess-queen-nf4-v1/ui-evidence/request-2-response.resources.jsonl",
+      "bytes": 11223,
+      "sha256": "5b71f34d8745ff1aa6b5c0cb39460001da50621cafa4595048acf355f20f6617"
+    },
+    {
+      "path": "experiments\\chess-queen-nf4-v1\\ui-evidence\\browser-qa.json",
+      "bytes": 7576,
+      "sha256": "cf781d2a3f3dbdafb033f0edcf292400d2f86207a1bd3e0ce5cf322a0e4a8957"
+    },
+    {
+      "path": "experiments\\chess-queen-nf4-v1\\ui-evidence\\matched-export.json",
+      "bytes": 69639,
+      "sha256": "98d15a95a5474123d2e10f2c608c872f180334d0f5d8976e68fe84a8a3e9fd5e"
+    },
+    {
+      "path": "experiments\\chess-queen-nf4-v1\\ui-evidence\\stale-export.json",
+      "bytes": 13476,
+      "sha256": "64529b96d1b264008939a7c2f02021818255993d01fffb5bbd643985d26afd30"
+    }
+  ]
+}

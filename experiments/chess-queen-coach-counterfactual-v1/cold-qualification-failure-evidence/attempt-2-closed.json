@@ -1,0 +1,18 @@
+{
+  "status": "failed",
+  "mode": "qualification",
+  "planned": 2,
+  "completed_children": 1,
+  "outer_torch_imported": false,
+  "protocol_sha256": "8eed0e30695c3f78861da210a8e7eeb20d10c987b19c7de3f8372c04b23961c5",
+  "child_results": [
+    {
+      "case_id": "queen-coach-v1:PzsCDbPb:free",
+      "condition": "software",
+      "elapsed_seconds": 41.23399999999674,
+      "child_receipt_sha256": "10ea96229e7ba20624f478bb9dce7e268c024249024252d29f9daf9e285a6cfc"
+    }
+  ],
+  "error": "PermissionError: [WinError 5] Access is denied.",
+  "elapsed_seconds": 63.34299999999348
+}

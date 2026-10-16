@@ -1,0 +1,92 @@
+{
+  "selected_step": 2048,
+  "rule": "Highest development raw1968-way teacher move agreement, then raw legality, then earliest checkpoint including step0. Save selection before any holdout/rollout model scoring. Compare starting step512 versus newly selected on same fresh holdout; reuse identical-condition evidence if step0selected.",
+  "holdout_opened": false,
+  "development": {
+    "0": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 509,
+      "raw_top1_match_count": 373,
+      "raw_top3_match_count": 459,
+      "masked_top1_match_count": 373,
+      "failure_count": 0,
+      "cross_entropy": 0.9155974522956285,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 1.2739356999954907,
+      "logits_sha256": "34789891be74a0c6e2a496495f21fecb12be36eee0441756990c67a4b4f42442"
+    },
+    "256": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 509,
+      "raw_top1_match_count": 377,
+      "raw_top3_match_count": 461,
+      "masked_top1_match_count": 377,
+      "failure_count": 0,
+      "cross_entropy": 0.8829667843253901,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.575070599996252,
+      "logits_sha256": "a338cac6331ed07713607496ce0d0fa370ef422ee385fd95220a2a405e0fe3a1"
+    },
+    "512": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 508,
+      "raw_top1_match_count": 382,
+      "raw_top3_match_count": 466,
+      "masked_top1_match_count": 382,
+      "failure_count": 0,
+      "cross_entropy": 0.8693711141343101,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.5666866999963531,
+      "logits_sha256": "86040a52f646e6165404a8c85748a422cf0f983a4bc4b132257d992feb1a2a91"
+    },
+    "1024": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 389,
+      "raw_top3_match_count": 468,
+      "masked_top1_match_count": 389,
+      "failure_count": 0,
+      "cross_entropy": 0.8505224225913253,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.5796574999985751,
+      "logits_sha256": "429d7ae3328e55f19901cad5a10a71f9f38b7a77065290ffc8fc604a2cd6dd7f"
+    },
+    "2048": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 392,
+      "raw_top3_match_count": 469,
+      "masked_top1_match_count": 392,
+      "failure_count": 0,
+      "cross_entropy": 0.8400782825171973,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.5709202999860281,
+      "logits_sha256": "a873a477b2b1e036e8373672c1b2e2296383c768561aa7a984ea83f6305ea9fa"
+    },
+    "4096": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 509,
+      "raw_top1_match_count": 392,
+      "raw_top3_match_count": 465,
+      "masked_top1_match_count": 393,
+      "failure_count": 0,
+      "cross_entropy": 0.855298291586962,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.5872717000020202,
+      "logits_sha256": "cb98386b04fc73173ea5bdfeb7d1ea86b1d3ec6ede05a51f356aea71cb045f0e"
+    }
+  },
+  "selected_weights_sha256": "5de62c0decaadd8db7d13a24bf0d2b50c77104b80b0b72b35fc833111d143aa1"
+}

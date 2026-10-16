@@ -1,0 +1,30 @@
+{
+  "status": "CPU_SOFTWARE_SOURCE_TESTS_PASSED_NO_ACTUAL_GPU_CALLS",
+  "tests": 16,
+  "elapsed_seconds": 1.07,
+  "source_bindings": [
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_cold_child_v1.py",
+      "bytes": 5225,
+      "sha256": "e901e78c468754e952c4b1c7f9d3dbf2a165c66d29f86cb46ea53b235a15544b"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_counterfactual_cold_child_v1.py",
+      "bytes": 2905,
+      "sha256": "0cd151d10b398a6c14e142d14d310c5d645014cd786adcaa75577fd6c13b2ab1"
+    },
+    {
+      "path": "scripts/chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "bytes": 13703,
+      "sha256": "9ac604e3a3241bf4d13997456c262c2b259f922ebb6e31d03551b3f1871d4081"
+    },
+    {
+      "path": "tests/test_chess_queen_coach_counterfactual_cold_eval_v1.py",
+      "bytes": 8659,
+      "sha256": "f43d15f6d412432df9c738ab123ffee0c58e7f57e2c76ea2ac2a52e497ef0a64"
+    }
+  ],
+  "software_protocol_sha256": "a00f991bfc184565a151e1a88661ce997d0f04530dccdba82884d60ac6d6276d",
+  "source_models_loaded": false,
+  "old_held_reference_reads": 0
+}

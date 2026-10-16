@@ -1,0 +1,101 @@
+{
+  "selected_step": 4096,
+  "eligible_steps": [
+    0,
+    256,
+    512,
+    1024,
+    2048,
+    4096
+  ],
+  "fallback_used": false,
+  "rule": "First prefer checkpoints with raw development legality at least995/1000. Among eligible: highest raw teacher agreement, then raw legality, then earliest step including0. If none eligible, fallback to highest raw teacher agreement, then raw legality, then earliest. Freeze selection before heldout/rollout learned calls.",
+  "holdout_opened": false,
+  "selected_weights_sha256": "63264e9e925749da7d2ca147daa6c95a8ee2dcac1de3b74cccc647aec6eaa925",
+  "development": {
+    "0": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 391,
+      "raw_top3_match_count": 479,
+      "masked_top1_match_count": 392,
+      "failure_count": 0,
+      "cross_entropy": 0.76716235351401,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 5.660897099995054,
+      "logits_sha256": "f1c9818c8d82028d22ca8ecac494df3329c8b948f80c000321fbdf55ac8bce3d"
+    },
+    "256": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 391,
+      "raw_top3_match_count": 479,
+      "masked_top1_match_count": 392,
+      "failure_count": 0,
+      "cross_entropy": 0.7610786328212669,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.6240008000168018,
+      "logits_sha256": "8120e0d4edddb63e9483b629f82e977b0842438019c33278fa7412b9b2044ad5"
+    },
+    "512": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 394,
+      "raw_top3_match_count": 479,
+      "masked_top1_match_count": 395,
+      "failure_count": 0,
+      "cross_entropy": 0.7580106066909025,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.6341220999893267,
+      "logits_sha256": "2018e74329077c33191c055ff7ec39f98938cf7b61b95ed713c6ff704bf4657b"
+    },
+    "1024": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 397,
+      "raw_top3_match_count": 479,
+      "masked_top1_match_count": 398,
+      "failure_count": 0,
+      "cross_entropy": 0.7515469448280783,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.5764065999828745,
+      "logits_sha256": "85ca216101d718fc2281c21a6ab05bf2b165ed29e56725f14a38aaa2978057d9"
+    },
+    "2048": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 397,
+      "raw_top3_match_count": 481,
+      "masked_top1_match_count": 398,
+      "failure_count": 0,
+      "cross_entropy": 0.7439833677653382,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.5899947000143584,
+      "logits_sha256": "41970fbf1af3c86d0f0e205419822602e495df75b407cd61a2804b8bd406b0fa"
+    },
+    "4096": {
+      "count": 512,
+      "encoded_count": 512,
+      "raw_legal_count": 510,
+      "raw_top1_match_count": 399,
+      "raw_top3_match_count": 478,
+      "masked_top1_match_count": 400,
+      "failure_count": 0,
+      "cross_entropy": 0.7429487438561466,
+      "model_failure_stop": null,
+      "cross_entropy_count": 512,
+      "elapsed_seconds": 0.6250979000178631,
+      "logits_sha256": "9b0fa78457922414b3ac3e7918da12020f5f1848da30db4fa96d699235af7b7d"
+    }
+  }
+}

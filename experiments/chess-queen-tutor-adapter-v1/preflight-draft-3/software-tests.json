@@ -1,0 +1,48 @@
+{
+  "schema": "chess.tuned-tutor-source-software-tests.v1",
+  "execution": {
+    "tool": "exec_command",
+    "chunk_id": "e8ba55",
+    "exit_code": 0,
+    "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_queen_coach_tutor_v1.py -q",
+    "stdout": "..................................... [100%]\n37 passed in6.89s\n"
+  },
+  "sources": [
+    {
+      "path": "scripts/chess_queen_coach_tutor_v1.py",
+      "sha256": "8852c8478a89f4d5107110a78d0341447a39728078b915d0c2ac82d6af43894b",
+      "bytes": 16081
+    },
+    {
+      "path": "prototype/chess_tutor_v1/queen_tuned_runtime_v1.py",
+      "sha256": "69f5313b6aa6be141c7f329be8e9b18e0c9d995a48562ca0f2eb69d385b826c3",
+      "bytes": 10597
+    }
+  ],
+  "tests": {
+    "path": "tests/test_chess_queen_coach_tutor_v1.py",
+    "sha256": "7e7ad782d661b67fd2e9fe53fd2a73e9e26ac793a0fb80e5cef6b81eb76fedb2",
+    "bytes": 18671
+  },
+  "protocol": {
+    "path": "experiments/chess-queen-tutor-adapter-v1/protocol.json",
+    "sha256": "ad7d8284dc623eca7aff029035fce42cdcdad2223709820423c1c4c252f7b495",
+    "bytes": 5754
+  },
+  "disabled_qualification": {
+    "path": "prototype/chess_tutor_v1/queen-tuned-runtime-v1.json",
+    "sha256": "bb07b21d2cac440fcfca5a2fe6e2bb10d2c1d324b22873ede5cbf7bce35b6f58",
+    "bytes": 925
+  },
+  "actual_metadata_protocol_check": "passed; fixed adapter/selection/runtime/dependency byte bindings and installed package metadata only",
+  "no_real_runtime_calls": true,
+  "model_calls": 0,
+  "engine_calls": 0,
+  "GPU_calls": 0,
+  "HTTP_calls": 0,
+  "browser_calls": 0,
+  "actual_entrypoint_qualification_calls": 0,
+  "existing_production_or_experiment_source_edits": 0,
+  "limits": "Tests use authored fake weights/metadata/runtime; no model tensor loading. Metadata-only real asset byte hashing is not pretrained execution or quality evidence.",
+  "preserved_preflight_failures": "metadata-preflight-first/second.json and preflight-draft-1/2 retain both metadata binding failures before all pretrained calls; exact diagnostic formatter digest is separately allowed."
+}

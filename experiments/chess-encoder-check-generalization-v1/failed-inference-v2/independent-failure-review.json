@@ -1,0 +1,511 @@
+{
+  "schema": "chess.independent-encoder-generalization-v2-failed-closed-review.v1",
+  "status": "passed_failure_accounting_not_a_completed_generalization_evaluation",
+  "reviewed_at_utc": "2026-10-16T10:51:45.308355+00:00",
+  "blocking_findings": [],
+  "factual_correction": "Two board encodings completed before the third feature callback failed its pre-forward guard; the initial first-feature description is incorrect.",
+  "source_bindings": {
+    "source": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_encoder_check_generalization_eval_v2.py",
+      "sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0",
+      "bytes": 17580
+    },
+    "protocol": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-protocol-v2.json",
+      "sha256": "f53d397465dd533b410ec8eb5115167f7aa3a482d87463ee6020bf53b1ade9eb",
+      "bytes": 10594
+    },
+    "source_GO": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-source-review-v2.json",
+      "sha256": "2af7aff2553ead9e93aa5aa768fd444c03c25b42fa5ed8269ac5548226f16c62",
+      "bytes": 3956
+    },
+    "dispatch": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-gen-inference-v2-source-1\\manifest.json",
+      "sha256": "96460a2046e0e03f19aabfaea8df2f0299e6521a5944804ba8daeae4879ae801",
+      "bytes": 5129
+    },
+    "audit_script": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\audit_encoder_generalization_v2_failure.py",
+      "sha256": "b5952337265f9eeabfb04832a4e0128934bfc3a70a8591cddc681e51e3906e3e",
+      "bytes": 16685
+    }
+  },
+  "provenance_checks": {
+    "worker_arguments_match_exact_prepared_arguments": true,
+    "source_protocol_and_GO_match": true,
+    "all_23_execution_snapshots_match_current_files_and_manifest": true,
+    "feature_provenance_matches_protocol": true,
+    "both_pending_head_ledgers_prepared_before_backends_by_executed_source": true,
+    "feature_journal_exactly_reconstructs_final_manifest": true,
+    "input_id_sets_order_and_checkpoint_identities_coherent_without_reading_positions": true
+  },
+  "denominators": {
+    "requested_source_pairs": 64,
+    "constructed_source_pairs": 64,
+    "requested_moves": 128,
+    "actual_moves_per_condition": 128,
+    "conditions": {
+      "untrained_head": {
+        "planned": 128,
+        "statuses": {
+          "not_run": 128
+        },
+        "raw_logits": 0,
+        "prediction_calls_started": 0,
+        "checkpoint_identity": {
+          "epoch": 0,
+          "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-0.pt",
+          "sha256": "f8f51b69dc2a3f7882bd20a3f1cd763cd200dbc28d49f51e8a1325a9ff992fd2"
+        }
+      },
+      "selected_head": {
+        "planned": 128,
+        "statuses": {
+          "not_run": 128
+        },
+        "raw_logits": 0,
+        "prediction_calls_started": 0,
+        "checkpoint_identity": {
+          "epoch": 4,
+          "path": "data\\private\\chess-encoder-check-v1\\training\\epoch-4.pt",
+          "sha256": "9db9f9d9789d466a3942c2c02b8c18010f6b60a1d1185bf80e123b13b867b306"
+        }
+      }
+    },
+    "total_planned_head_predictions": 256,
+    "total_raw_head_predictions_completed": 0,
+    "total_raw_head_predictions_not_run": 256,
+    "unknown_head_predictions": 0
+  },
+  "feature_attempts": {
+    "planned_unique_current_boards": 64,
+    "callback_attempts_started": 3,
+    "completed_board_encodings": 2,
+    "failed_callbacks": 1,
+    "failure_before_encoder_forward": true,
+    "actual_encoder_forward_dispatches": 2,
+    "unattempted_unique_boards": 61,
+    "unknown_after_interruption": 0,
+    "planned_move_feature_records": 128,
+    "move_feature_statuses": {
+      "completed": 4,
+      "failed": 2,
+      "not_run": 122
+    },
+    "journal": [
+      {
+        "index": 0,
+        "status": "completed",
+        "move_feature_records": 2
+      },
+      {
+        "index": 1,
+        "status": "completed",
+        "move_feature_records": 2
+      },
+      {
+        "index": 2,
+        "status": "failed",
+        "move_feature_records": 2
+      }
+    ],
+    "tensor_shards": [
+      {
+        "file": {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\features\\features-0000.pt",
+          "sha256": "4415b1f06cf116e552c487975e6bbca5f8689d861e49d589597bde8ccb709023",
+          "bytes": 26517
+        },
+        "tensor_descriptors": {
+          "features": {
+            "dtype": "float32",
+            "shape": [
+              2,
+              3072
+            ],
+            "stride": [
+              3072,
+              1
+            ],
+            "storage_elements": 6144,
+            "storage_key": "0",
+            "offset": 0,
+            "requires_grad": false
+          },
+          "indices": {
+            "dtype": "int64",
+            "shape": [
+              2,
+              3
+            ],
+            "stride": [
+              3,
+              1
+            ],
+            "storage_elements": 6,
+            "storage_key": "1",
+            "offset": 0,
+            "requires_grad": false
+          }
+        },
+        "storage_byte_sizes": {
+          "0": 24576,
+          "1": 48
+        },
+        "numeric_storages_decoded": false
+      },
+      {
+        "file": {
+          "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\features\\features-0001.pt",
+          "sha256": "1080bc5e26c4cda5263d762b63e192714dab2c27952e17be244fa4234895be5c",
+          "bytes": 26517
+        },
+        "tensor_descriptors": {
+          "features": {
+            "dtype": "float32",
+            "shape": [
+              2,
+              3072
+            ],
+            "stride": [
+              3072,
+              1
+            ],
+            "storage_elements": 6144,
+            "storage_key": "0",
+            "offset": 0,
+            "requires_grad": false
+          },
+          "indices": {
+            "dtype": "int64",
+            "shape": [
+              2,
+              3
+            ],
+            "stride": [
+              3,
+              1
+            ],
+            "storage_elements": 6,
+            "storage_key": "1",
+            "offset": 0,
+            "requires_grad": false
+          }
+        },
+        "storage_byte_sizes": {
+          "0": 24576,
+          "1": 48
+        },
+        "numeric_storages_decoded": false
+      }
+    ],
+    "count_basis": "Completed label-free shard receipts plus the retained traceback at encode first-statement guard. No runtime forward hook counter was installed."
+  },
+  "resources": {
+    "samples": [
+      {
+        "index": 0,
+        "utc": "2026-10-16T10:44:39.727736+00:00",
+        "available": {
+          "physical_available_bytes": 10621083648,
+          "commit_headroom_bytes": 9846947840,
+          "gpu_free_bytes": 14755561472
+        },
+        "floors": {
+          "physical_available_bytes": 6442450944,
+          "commit_headroom_bytes": 8589934592,
+          "gpu_free_bytes": 4294967296
+        },
+        "below": [],
+        "global_commit_total_bytes": 40790994944,
+        "global_commit_limit_bytes": 50637942784
+      },
+      {
+        "index": 1,
+        "utc": "2026-10-16T10:44:49.907242+00:00",
+        "available": {
+          "physical_available_bytes": 9950253056,
+          "commit_headroom_bytes": 7058423808,
+          "gpu_free_bytes": 14035189760
+        },
+        "floors": {
+          "physical_available_bytes": 4294967296,
+          "commit_headroom_bytes": 6442450944,
+          "gpu_free_bytes": 1073741824
+        },
+        "below": [],
+        "global_commit_total_bytes": 43579518976,
+        "global_commit_limit_bytes": 50637942784
+      },
+      {
+        "index": 2,
+        "utc": "2026-10-16T10:44:50.900004+00:00",
+        "available": {
+          "physical_available_bytes": 9263087616,
+          "commit_headroom_bytes": 6088839168,
+          "gpu_free_bytes": 13930332160
+        },
+        "floors": {
+          "physical_available_bytes": 4294967296,
+          "commit_headroom_bytes": 6442450944,
+          "gpu_free_bytes": 1073741824
+        },
+        "below": [
+          "commit_headroom_bytes"
+        ],
+        "global_commit_total_bytes": 44549103616,
+        "global_commit_limit_bytes": 50637942784
+      }
+    ],
+    "actual_failure": "global commit headroom below unchanged6GiB running floor",
+    "no_observed_physical_or_GPU_floor_breach": true,
+    "no_recorded_CUDA_OOM": true,
+    "global_commit_growth_bytes": 3758108672,
+    "causal_limit": "Global counters alone do not attribute growth to this process or identify an exclusive cause. No per-process private-memory trajectory was retained here."
+  },
+  "ownership": {
+    "worker": {
+      "schema": "chess.gpu-worker.v1",
+      "started_at": "2026-10-16T10:44:39.337580+00:00",
+      "script": "scripts\\chess_encoder_check_generalization_eval_v2.py",
+      "arguments_sha256": "9eb4f97d0f525a9f240eb9606c2c2c8ea26e3522e95e0886602c3f1d75d3bca7",
+      "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+      "status": "failed",
+      "child_pid": 52276,
+      "exit_code": 1,
+      "log": "data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1-worker.log",
+      "child_exited_before_lease_release": true,
+      "elapsed_seconds": 12.046000000002095
+    },
+    "independent_read_only_child_observation": {
+      "pid": 52276,
+      "observed_at_utc": "2026-10-16T10:51:45.293350+00:00",
+      "absent": true,
+      "OpenProcess_error": 87,
+      "read_only": true
+    },
+    "current_shared_lease_not_probed": "Other root-owned work may now hold the lease; no current free-lease claim. Failed worker records its own child exit before release."
+  },
+  "label_embargo": {
+    "fresh_label_semantics_loaded_by_failed_execution": false,
+    "executed_verification_hashes_label_bytes_before_calls": true,
+    "labels_opened_or_rehashed_by_this_audit": false,
+    "basis": "Executed source opens fresh label fields only after both raw head panels complete. Failure is in extract before cache/head inference; both head panels remain pending and no scores/closed result exists.",
+    "limits": "Source/control-flow and retained outcome evidence, not a separate OS file-read tracer."
+  },
+  "scope": {
+    "input_positions_read_by_auditor": 0,
+    "fresh_labels_references_read_by_auditor": 0,
+    "tensor_numeric_storages_decoded": false,
+    "Torch_transformers_bnb_imported": false,
+    "model_engine_GPU_calls_by_auditor": 0,
+    "process_control_calls": 0,
+    "source_edits": 0,
+    "retry": false
+  },
+  "limitations": [
+    "Two encoder feature extractions are not head predictions, correct labels or a generalization score.",
+    "No matched baseline/selected inference result, completed evaluation, training/selection update, coaching/Elo claim or UI eligibility.",
+    "Previously spent feature inputs and partial feature files remain retained; no replay or same-cohort retry is authorized.",
+    "Tensor descriptors and storage sizes were inspected using a structural allowlist without Torch or numerical feature decoding."
+  ],
+  "sealed_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\failure.json",
+      "sha256": "011076f74b061ec598b9bdc53af5fd6951faf0ac38f1119e6956381b48c427c8",
+      "bytes": 276
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\feature-attempts.jsonl",
+      "sha256": "a4f79f2df27a5de909bb754a0b48c3ed73c4dfe38420e447689c42f452299e69",
+      "bytes": 2165
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\features\\features-0000.pt",
+      "sha256": "4415b1f06cf116e552c487975e6bbca5f8689d861e49d589597bde8ccb709023",
+      "bytes": 26517
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\features\\features-0001.pt",
+      "sha256": "1080bc5e26c4cda5263d762b63e192714dab2c27952e17be244fa4234895be5c",
+      "bytes": 26517
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\features.json",
+      "sha256": "556b5ab73a74a6ed00d112be156615a2b4ecd2220c116c89c6c5b018f5303e48",
+      "bytes": 25327
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\requested-source-slots.json",
+      "sha256": "7b836332470a06c0451e487c0e0b76ee7710e021a76ffef114c05e174cca2a89",
+      "bytes": 8311
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\resources.jsonl",
+      "sha256": "f985d1690562e09de6addb90c15ee50c2f0a20ee7cd0b9c0e31fc2af9efad8f6",
+      "bytes": 766
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\selected_head.json",
+      "sha256": "0aef0dffcf509512ea15c6ad281b0826775cf0ca80d7696cff5800195680d973",
+      "bytes": 12709
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\00-chess_encoder_check_generalization_eval_v2.py",
+      "sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0",
+      "bytes": 17580
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\01-inference-protocol-v2.json",
+      "sha256": "f53d397465dd533b410ec8eb5115167f7aa3a482d87463ee6020bf53b1ade9eb",
+      "bytes": 10594
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\02-chess_board_fact_core.py",
+      "sha256": "05f9e9ca2b71d813293924aad3fe9118b2ce35fd116bf77e33c0c60297257bc5",
+      "bytes": 5902
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\03-chess_check_balanced_v2.py",
+      "sha256": "aec0364e77a0205062bfb0d1ea5809061d96c6072bf3cba1e862ed545e6567f5",
+      "bytes": 27583
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\04-chess_fact_sft_common.py",
+      "sha256": "be75f50aa13a32f28dba20b48c946a7ace00f658027161289c426c17ee67977f",
+      "bytes": 10669
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\05-chess_fact_sft_intake.py",
+      "sha256": "c74dd909b36401b16c1f6adb774062f5d4286905275c73bdef1989bae58d84db",
+      "bytes": 15840
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\06-chess_board_fact_diagnostic.py",
+      "sha256": "723e0f55e5dd58f614b669663eaccc1e0c7e05f7c97e0013292556d3d458459d",
+      "bytes": 27798
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\07-chess_native_resources.py",
+      "sha256": "d4e426334dbe8579a907f663d101a5961584768902493e3cbe2e47971300c3a1",
+      "bytes": 5573
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\08-test_chess_encoder_check_v1.py",
+      "sha256": "ca8fdeb41a4974f8e205172cdbfa37d376b6cb5c6c464d52d85741425a9657ed",
+      "bytes": 15126
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\09-encoder.py",
+      "sha256": "2fbf9494f20e9ccf957aa88753f6276a139c5476de9e1444857f709c3b44eb9a",
+      "bytes": 43771
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\10-lc0_planes.py",
+      "sha256": "767bf0e89b2e0934e0f0f94909d10b1c46123eae055b6ce544b4082cca772e4c",
+      "bytes": 7165
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\11-LICENSE",
+      "sha256": "f2ffa5942b316849be283deaeb2912e2e5b5b17e91012bede8210210ff3e91e7",
+      "bytes": 11562
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\12-config.json",
+      "sha256": "0a5690de151cdea61d669ca4a10a9fde103232800073250fe210421608ff664a",
+      "bytes": 23567
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\13-chess_queen_materialize.py",
+      "sha256": "02e219f529f2dcb4798727f18feef068c1ccba634cf2f3fe79acb177b13b88ac",
+      "bytes": 1273
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\14-test_chess_queen_materialize.py",
+      "sha256": "31db1ed1af68de50fcf1f44c2d07551ee04f74da7eb36a3042c666b7f2d03b17",
+      "bytes": 2937
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\15-chess_encoder_check_v1.py",
+      "sha256": "7914468174696ef17076792be6c0d280d9eb24001aa8833b4e76563c7b4072a3",
+      "bytes": 36260
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\16-chess_encoder_check_generalization_v1.py",
+      "sha256": "5f9e1b34a575aef39419adfba0851f215492f4608617949013e465018e5595bf",
+      "bytes": 17873
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\17-test_chess_encoder_check_generalization_eval_v2.py",
+      "sha256": "83eddeee2ed3db866dafab4d79fa15af159f9eff1ffb7172f8161909d83e7631",
+      "bytes": 9927
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\18-gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0",
+      "bytes": 11825
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\19-actual-cohort-ready.json",
+      "sha256": "991365643f1015a0ba0f77a4f154daac9ea889b47f15133ececfd0adcf6def4a",
+      "bytes": 15581
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\20-chess_encoder_check_generalization_eval_v1.py",
+      "sha256": "921cfffa395738c51a5ef209533a4b7700d06edc9dc3b5e2671a9e26b9a2ce24",
+      "bytes": 16441
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\21-inference-protocol.json",
+      "sha256": "6f55d7c7e97cee216ab433de962e80a6632452670e2f3fb8577d4affe0e7c758",
+      "bytes": 9493
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\22-prepare_inference_protocol_v2.py",
+      "sha256": "999a34ca053e8b64ff796aae634fe60635752f542db5b3f0bd5f0b75e3af53b5",
+      "bytes": 2826
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\sources\\manifest.json",
+      "sha256": "00a5acec0e44cb762adf9d06604af99f9e52e83e2671f47d6c77321f8f57305c",
+      "bytes": 6283
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1\\untrained_head.json",
+      "sha256": "8d5284e182259a3d1ecd8f7af7bef3b7c8245de2f7ff45581967cce2d2218dfe",
+      "bytes": 12708
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1-worker.json",
+      "sha256": "a3fb354622f25ca61dbb59a242efb5ae486deca80826f3209b843afd66eea413",
+      "bytes": 643
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-encoder-check-generalization-eval-v2\\inference-1-worker.log",
+      "sha256": "fea21bb9ba9e39d60861dc716cf70f7c4bb8737f7ad3118c37bf89e2e75b018f",
+      "bytes": 3547
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_encoder_check_generalization_eval_v2.py",
+      "sha256": "7535fe39b62baf598f54a3f5da623c574d44e5885d9857159d9bded7f25fcfa0",
+      "bytes": 17580
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-protocol-v2.json",
+      "sha256": "f53d397465dd533b410ec8eb5115167f7aa3a482d87463ee6020bf53b1ade9eb",
+      "bytes": 10594
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-encoder-check-generalization-v1\\inference-source-review-v2.json",
+      "sha256": "2af7aff2553ead9e93aa5aa768fd444c03c25b42fa5ed8269ac5548226f16c62",
+      "bytes": 3956
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\encoder-gen-inference-v2-source-1\\manifest.json",
+      "sha256": "96460a2046e0e03f19aabfaea8df2f0299e6521a5944804ba8daeae4879ae801",
+      "bytes": 5129
+    }
+  ],
+  "followUpTasks": []
+}

@@ -1,0 +1,35 @@
+{
+  "schema": "chess.queen-qlora-tokenizer-cpu.v2",
+  "status": "passed",
+  "kind": "Actual tokenizer and chat formatter only. No model weights, learned forwards, backward, optimizer or CUDA initialization.",
+  "official_source_sha256": "daf763cc712a95442d65416a913cf37fa20f85d27345b2d96a98e1d826de83cc",
+  "default_template_result_type": "BatchEncoding",
+  "old_official_ids_length": 2,
+  "old_official_ids_types": [
+    "str"
+  ],
+  "old_official_ids_if_mapping_keys": [
+    "input_ids",
+    "attention_mask"
+  ],
+  "new_total_tokens": 141,
+  "new_prefix_tokens": 81,
+  "new_supervised_tokens": 60,
+  "max_context": 512,
+  "all_ids_labels_integer": true,
+  "exact_generation_prefix": true,
+  "exact_assistant_eos_mask": true,
+  "complete_untruncated": true,
+  "closing_token_id": 128012,
+  "tail_token_ids": [
+    3579,
+    25,
+    4343,
+    18543,
+    369,
+    2851,
+    128012,
+    198
+  ],
+  "cuda_initialized": false
+}

@@ -1,0 +1,86 @@
+{
+  "status": "passed_source_and_cpu_only",
+  "reviewed_at_utc": "2026-10-16T12:26:57.525848+00:00",
+  "scope": "Source GO for root to perform the exact bounded descriptive TRAIN/DEV audit. This review did not execute the real aggregate or open corpus exports, teachers, reserved data or evaluation references.",
+  "blocking_findings": [],
+  "full_finite_bundle_read": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\counterfactual-coverage-source-plan-tests-v1.txt",
+    "bytes": 29349,
+    "sha256": "125301bc351758fa55230cebf2f365c5682bcfd9010dd8d5cee09de0a2cbba3b"
+  },
+  "source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_counterfactual_coverage_v1.py",
+    "bytes": 13376,
+    "sha256": "f8bf73f3508324ffdf86fb78ac2669c267fb8cc863d6eb43271f04695411736e"
+  },
+  "tests": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_counterfactual_coverage_v1.py",
+    "bytes": 8026,
+    "sha256": "3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1"
+  },
+  "prospective_plan": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\research\\chess-counterfactual-train-dev-coverage-2026-10-16\\plan.json",
+    "bytes": 6354,
+    "sha256": "f7791a14e498ea9ca0a3db3e2b8096892999a85a01fc5869db8edd862b240fb0"
+  },
+  "verified_code_dependencies": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\tests\\test_chess_queen_counterfactual_coverage_v1.py",
+      "bytes": 8026,
+      "sha256": "3020b89731079e68cf6cdcea8dda374a10ff3e87124b016a43040734ffa7bbe1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Lib\\site-packages\\chess\\__init__.py",
+      "bytes": 147552,
+      "sha256": "0ce2e6977cc63ffb71cbda2caae477d53f9262f3be20091ea7158e220f5e45f2"
+    }
+  ],
+  "independent_cpu_execution": {
+    "command": [
+      "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\.venv-soccernet\\Scripts\\python.exe",
+      "-m",
+      "pytest",
+      "tests/test_chess_queen_counterfactual_coverage_v1.py",
+      "-q"
+    ],
+    "working_directory": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research",
+    "tool_chunk": "1a45a1",
+    "exit_code": 0,
+    "passed": 15,
+    "seconds": 0.16,
+    "data": "Authored temporary fixtures only. The deliberately forbidden reference fixture is rejected before read/hash. No actual aggregate, model, framework or engine call."
+  },
+  "checks": {
+    "file_scope": "Exact implementation/dependency hashes are checked. Manifest path must resolve to corpus_root/manifest.json; each content path must resolve to corpus_root/train.jsonl or development.jsonl before stat/hash/read. Each export is capped at 8 MiB and compared with exact manifest SHA and declared 1536/96 rows. No reference, teacher, reserve or historical source content is used.",
+    "target_semantics": "Strict schema/modes/case identity and six-field valid nonterminal FEN; exactly one complete native BEST_MOVE atom must parse to a legal move, and supplied modes must match selected_uci. The original mover, legal check/capture/mate/double-check, promotion, castling and en-passant facts are computed by python-chess. Quiet means only noncapture and noncheck.",
+    "grains": "A root contributes once only if it has exactly the three distinct modes and one normalized full FEN. Presentation profiles use valid individual rows; selected profiles use selected_a/b. Root target-piece presence uses a set per complete group, explicitly multi-label. Invalid, duplicate, missing, extra and incomplete groups remain separately counted; they are not relabeled to meet quotas.",
+    "denominators": "Requested split denominators remain 1536 and 96. Move-profile rates use actual valid presentations for that mode; root distributions use complete groups. Empty rates are null, not zero. Duplicate excess, affected and key counts are separately defined. Coverage values are descriptive rather than acceptance outcomes.",
+    "material_and_king": "Material totals use both sides and fixed P1/N3/B3/R5/Q9/K0 values. Nonpawn bands are numeric 0..13/14..38/39+, not inferred strategic phases. Legal king-move availability counts legal moves from a king and therefore includes castling, as disclosed. Target king checks remain a distinct presentation count.",
+    "overlap": "Group IDs, case IDs, normalized current-state first four FEN fields, full six-field FEN and native.input_packet-normalized JSON are separate sets/denominators. Exact normalized packet hashes include empty history and supplied selected move. First-four overlap is not described as full input leakage. State/full-FEN root sets use complete groups; packet sets use valid presentations, which is explicit in implementation.",
+    "privacy": "Serialized aggregate contains counts/rates, categories, line numbers for errors, file paths/hashes and group digests. Internal raw IDs/FENs/targets/move coordinates are not emitted as corpus rows. Malformed row details are reduced to line and exception type.",
+    "bounds_and_retention": "Create-only output attempt and initial requested counts precede the main verification try. Failures retain a failed result and finally elapsed time. Per-line callbacks enforce the same hardcoded 30 s cap and protocol 13:00 UTC cutoff; no rewriting, resampling or learning exists.",
+    "software_tests": "Independent 15-test rerun passed. Meaningful coverage includes root vs presentation weights, black POV, en passant/promotion/castling, material and king availability, schemas/missing/duplicates, first4 vs full6/packet distinctions, illegal targets, failure retention, empty denominators and forbidden reference path rejection."
+  },
+  "limitations": [
+    "Ordinary json.loads does not reject duplicate object keys. This review relies on the exact known-producer export hashes and prior corpus coherence audit; it does not claim generic JSON ambiguity detection.",
+    "Actual descriptive counts remain unknown until root executes the frozen plan. This is not a completed real-data result.",
+    "A completed audit means the descriptive process completed; rows or group anomalies remain explicit findings rather than being converted into a corpus-validity badge.",
+    "Only TRAIN versus DEV coverage/overlaps are measured. Historical/reserved/fresh-evaluation comparisons and teacher/prose/PV quality are outside this script.",
+    "Move profiles are presentation-weighted while root material and mover-presence profiles are group-weighted. Their denominators must remain visible when reporting later results.",
+    "File size/deadline controls bound this local audit but are not a general hostile-input sandbox; the exact frozen plan and trusted pinned local exports are the authorized scope.",
+    "No model-quality inference, representativeness claim, new training, cohort reselection or evaluation opening is authorized by this GO."
+  ],
+  "reviewer_access": {
+    "actual_corpus_exports_opened": 0,
+    "teacher_or_reserve_content_opened": 0,
+    "evaluation_reference_content_opened": 0,
+    "models_or_engines_called": 0,
+    "gpu_calls": 0
+  },
+  "followUpTasks": []
+}

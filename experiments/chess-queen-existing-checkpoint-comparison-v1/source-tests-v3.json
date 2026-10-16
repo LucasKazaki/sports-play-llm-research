@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": 10,
+  "seconds": 0.38,
+  "tool_chunk": "5bc17b",
+  "models": 0,
+  "actual_corpus_or_labels_opened": false,
+  "delta": "Preserved builderv2, changes onlyouter5+self-testversion binding."
+}

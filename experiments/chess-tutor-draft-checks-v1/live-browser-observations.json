@@ -1,0 +1,29 @@
+{
+  "scope": "Live reviewed source, actual Stockfish and restored CPU classifier; no new Queen request admitted",
+  "desktop": {
+    "viewport": 1477,
+    "scrollWidth": 1462,
+    "checks_panel_hidden_until_draft": true
+  },
+  "mobile": {
+    "board": {
+      "left": 16,
+      "right": 358.66668701171875,
+      "width": 342.66668701171875
+    },
+    "clientWidth": 375,
+    "coachButtonHeight": 44,
+    "mainRight": 374.6666870117187,
+    "scrollWidth": 375,
+    "viewport": 390
+  },
+  "model_line_observed": [
+    "c3",
+    "Bb6",
+    "d4"
+  ],
+  "engine_first_move": "c3",
+  "engine_version": "Stockfish19",
+  "forecast_prefix_agreement_halfmoves": 1,
+  "limit": "One illustrative software exploration, not new benchmark or improved model. No actual new-controller model completion; smoke preflight below startup commit reserve."
+}

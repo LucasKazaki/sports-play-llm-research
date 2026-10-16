@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "mode": "qualification",
+  "planned": 2,
+  "completed_children": 0,
+  "outer_torch_imported": false,
+  "protocol_sha256": "e11c7c843adee222c2b289b29f486911bded0d9fbbaaf0dee355bec35c89e9e2",
+  "child_results": [],
+  "error": "RuntimeError: Cold child/process/postprocessing failed",
+  "elapsed_seconds": 34.796000000002095
+}

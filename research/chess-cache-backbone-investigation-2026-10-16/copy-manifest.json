@@ -1,0 +1,30 @@
+{
+  "schema": "chess.cache-investigation-exact-copy.v1",
+  "created_at": "2026-10-16T11:57:01.663598+00:00",
+  "kind": "Exact copies of frozen source-only research artifacts; no runtime implementation or measured repair.",
+  "files": {
+    "findings-and-prospective-plan.json": {
+      "sha256": "197c19863ff7893da4c15bde6e9c3a2ad9b5caa89539f5af7490bf58ae860eec",
+      "bytes": 19549,
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\findings-and-prospective-plan.json",
+      "byte_identical": true
+    },
+    "source_math_probe.py": {
+      "sha256": "d161338879b5862cdaa722652af0e4d9fa9e072d5443e37eac14a394d459e724",
+      "bytes": 3892,
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source_math_probe.py",
+      "byte_identical": true
+    },
+    "source-math-result.json": {
+      "sha256": "a503cc5fc9752cc3820fb4edb01d504d8b83ebb182a5e15b434949c332d95384",
+      "bytes": 3998,
+      "original": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\source-math-result.json",
+      "byte_identical": true
+    }
+  },
+  "original_finite_bundle": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\cache-backbone-review\\finite-review-bundle.txt",
+    "sha256": "20440bf7239a7a2fe3613aea9c3906601ed7abf7006d04a419c5caee3fc82ae5"
+  },
+  "limits": "No actual BF16/NF4 numerical reproduction, cache repair, speed measurement, model training, chess-strength or coaching-quality result. Authored device properties are not a hardware observation."
+}

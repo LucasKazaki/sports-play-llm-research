@@ -1,0 +1,88 @@
+{
+  "status": "completed",
+  "protocol_sha256": "a72ffa9df05d1622688bfba2b9a749db2dfc157ea618c803e0f7a3800fff567a",
+  "selection_sha256": "6180813493bf019acad4c63f17f87c427f44193b254c0b907ff5496bd9027f17",
+  "majority_false": {
+    "planned": 512,
+    "positive_support": 256,
+    "negative_support": 256,
+    "statuses": {
+      "completed": 512
+    },
+    "confusion": {
+      "tp": 0,
+      "tn": 256,
+      "fp": 0,
+      "fn": 256,
+      "invalid_positive": 0,
+      "invalid_negative": 0
+    },
+    "correct": 256,
+    "checking_recall": 0.0,
+    "nonchecking_recall": 1.0,
+    "pairs_planned": 256,
+    "pairs_correct": 0
+  },
+  "conditions": {
+    "untrained_head": {
+      "planned": 512,
+      "positive_support": 256,
+      "negative_support": 256,
+      "statuses": {
+        "completed": 512
+      },
+      "confusion": {
+        "tp": 172,
+        "tn": 63,
+        "fp": 193,
+        "fn": 84,
+        "invalid_positive": 0,
+        "invalid_negative": 0
+      },
+      "correct": 235,
+      "checking_recall": 0.671875,
+      "nonchecking_recall": 0.24609375,
+      "pairs_planned": 256,
+      "pairs_correct": 24
+    },
+    "selected_head": {
+      "planned": 512,
+      "positive_support": 256,
+      "negative_support": 256,
+      "statuses": {
+        "completed": 512
+      },
+      "confusion": {
+        "tp": 230,
+        "tn": 228,
+        "fp": 28,
+        "fn": 26,
+        "invalid_positive": 0,
+        "invalid_negative": 0
+      },
+      "correct": 458,
+      "checking_recall": 0.8984375,
+      "nonchecking_recall": 0.890625,
+      "pairs_planned": 256,
+      "pairs_correct": 203
+    }
+  },
+  "scope": "Learned check discrimination from frozen expert current-board features; not language understanding, move strength or explanation correctness.",
+  "training": {
+    "actual_updates": 512,
+    "example_presentations": 131072,
+    "trainable_parameters": 1680169,
+    "selected_epoch": 4,
+    "selected_weights_sha256": "9db9f9d9789d466a3942c2c02b8c18010f6b60a1d1185bf80e123b13b867b306",
+    "encoder_frozen": true
+  },
+  "source_dataset_sha256": "59de14730e88647c58d08b5089f1d5998a76f04e31bc2560ae948f12d52ee71f",
+  "limitations": [
+    "This panel establishes only learned checking/nonchecking discrimination on matched tactical moves.",
+    "54/512 errors remain; no language, explanation factuality, move strength, Elo or tutor-readiness claim.",
+    "Training/development reused the declared earlier cohort. New heldout examples exclude known original games/boards; pretraining overlap is unknown.",
+    "Promotion, en passant and castling are absent from this matched panel.",
+    "No direct controlled comparison with the different heldout panel used by Qwen.",
+    "Selection chronology uses filesystem times plus the executed gate; no event UTC or post-load GPU tensor snapshots were saved."
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "schema": "chess.queen-claim-audit.v1",
+  "evaluation_only": true,
+  "response_sha256": "0b8e36239596db408035d7b7f9144e81b96066361540ff74b94ebf34f479bc91",
+  "raw_text_sha256": "9665a5296c5be0cbef3ece8f84e5b1314cd871ce2a6d39776257f31bc5de25ea",
+  "response_status": "completed",
+  "root_fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1",
+  "claims": [
+    {
+      "claim_id": "mate_white_queen_count",
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      },
+      "exact_raw_text": "with a <PIECE_MQ> and three <PIECE_MP>s (<SQUARE_14>, <SQUARE_15>, <SQUARE_16>) against three <PIECE_OP>s (<SQUARE_54>, <SQUARE_55>, <SQUARE_56>)",
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "queen",
+        "expected": 1
+      },
+      "status": "supported",
+      "expected": 1,
+      "observed": 1,
+      "scope": "Literal current-board count only.",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1"
+      }
+    },
+    {
+      "claim_id": "mate_white_pawn_count",
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      },
+      "exact_raw_text": "with a <PIECE_MQ> and three <PIECE_MP>s (<SQUARE_14>, <SQUARE_15>, <SQUARE_16>) against three <PIECE_OP>s (<SQUARE_54>, <SQUARE_55>, <SQUARE_56>)",
+      "claim": {
+        "kind": "piece_count",
+        "color": "white",
+        "piece_type": "pawn",
+        "expected": 3
+      },
+      "status": "supported",
+      "expected": 3,
+      "observed": 3,
+      "scope": "Literal current-board count only.",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1"
+      }
+    },
+    {
+      "claim_id": "mate_black_pawn_count",
+      "span": {
+        "start": 55,
+        "end": 200,
+        "sha256": "eca46b8c9ee0e64276ecef908fb2731713dc32331dd4d46e4cf2f230794972be"
+      },
+      "exact_raw_text": "with a <PIECE_MQ> and three <PIECE_MP>s (<SQUARE_14>, <SQUARE_15>, <SQUARE_16>) against three <PIECE_OP>s (<SQUARE_54>, <SQUARE_55>, <SQUARE_56>)",
+      "claim": {
+        "kind": "piece_count",
+        "color": "black",
+        "piece_type": "pawn",
+        "expected": 3
+      },
+      "status": "supported",
+      "expected": 3,
+      "observed": 3,
+      "scope": "Literal current-board count only.",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1"
+      }
+    },
+    {
+      "claim_id": "mate_main_move_legal",
+      "span": {
+        "start": 477,
+        "end": 562,
+        "sha256": "f7884d32c354953257a656eb0b3a6ee051586145e831bf8c16d7f9292ac8b8aa"
+      },
+      "exact_raw_text": "The best move is 1.<PIECE_MQ><SQUARE_39><SQUARE_60>#, delivering immediate checkmate.",
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "g5d8"
+        ],
+        "expected": true
+      },
+      "status": "supported",
+      "expected": true,
+      "observed": true,
+      "variation": {
+        "legal": true,
+        "plies": 1,
+        "fen_after": "3Q2k1/5ppp/8/8/8/8/5PPP/6K1 b - - 1 1"
+      },
+      "scope": "This explicitly annotated variation only. No forcedness, quality, engine attribution or whole-prose validity.",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1"
+      }
+    },
+    {
+      "claim_id": "mate_alternative_line_legal",
+      "span": {
+        "start": 1207,
+        "end": 1349,
+        "sha256": "fa44234e63770aa8ddd4a30784b3d2b86251d169d92f938fb6f86958289d85d3"
+      },
+      "exact_raw_text": "The player then plays 3.<PIECE_MQ><SQUARE_60><PIECE_OP><SQUARE_40>, capturing the pawn and activating the queen on the <SQUARE_64>-<SQUARE_1>.",
+      "claim": {
+        "kind": "legal_variation",
+        "moves_uci": [
+          "d8h5"
+        ],
+        "expected": true
+      },
+      "status": "contradicted",
+      "expected": true,
+      "observed": false,
+      "variation": {
+        "legal": false,
+        "failed_ply": 1,
+        "uci": "d8h5",
+        "reason": "move_not_legal",
+        "turn": "white",
+        "fen_before_failure": "3Q4/5ppk/8/7p/8/8/5PPP/6K1 w - - 2 3",
+        "legal_prefix_uci": []
+      },
+      "scope": "This explicitly annotated variation only. No forcedness, quality, engine attribution or whole-prose validity.",
+      "context": {
+        "branch_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7"
+        ],
+        "turn": "white",
+        "fen": "3Q4/5ppk/8/7p/8/8/5PPP/6K1 w - - 2 3"
+      }
+    },
+    {
+      "claim_id": "mate_protection_after_illegal_branch",
+      "span": {
+        "start": 1529,
+        "end": 1584,
+        "sha256": "2f7ee5a64c9574b98046ea8dae1bf511120de281ea61f07626b420c3a44a5c08"
+      },
+      "exact_raw_text": "the queen is protected by the <PIECE_MP> on <SQUARE_14>",
+      "claim": {
+        "kind": "geometric_attacks_square",
+        "piece": {
+          "color": "white",
+          "type": "pawn"
+        },
+        "from_square": "f2",
+        "target_square": "e8",
+        "expected": true
+      },
+      "status": "unassessed",
+      "reason": "illegal_context_prefix",
+      "prefix_failure": {
+        "legal": false,
+        "failed_ply": 5,
+        "uci": "d8h5",
+        "reason": "move_not_legal",
+        "turn": "white",
+        "fen_before_failure": "3Q4/5ppk/8/7p/8/8/5PPP/6K1 w - - 2 3",
+        "legal_prefix_uci": [
+          "g5d5",
+          "h7h5",
+          "d5d8",
+          "g8h7"
+        ]
+      }
+    },
+    {
+      "claim_id": "mate_advantage_unsupported",
+      "span": {
+        "start": 10,
+        "end": 54,
+        "sha256": "61c89f08099228ae1d30f692a2879fd1ff15ebd4206c90fbff81a3c1f448a912"
+      },
+      "exact_raw_text": "The player has a decisive material advantage",
+      "claim": {
+        "kind": "strategic_material_advantage",
+        "expected": "decisive"
+      },
+      "status": "unassessed",
+      "reason": "unsupported_claim_kind",
+      "context": {
+        "branch_uci": [],
+        "turn": "white",
+        "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1"
+      }
+    }
+  ],
+  "summary": {
+    "annotated": 7,
+    "supported": 4,
+    "contradicted": 1,
+    "unassessed": 2,
+    "assessed_annotation_fraction": 0.7142857142857143,
+    "supported_fraction_among_assessed": 0.8
+  },
+  "semantic_mapping_automatically_verified": false,
+  "whole_prose_coverage_established": false,
+  "limitations": [
+    "Python Unicode code points; zero-based [start,end); SHA-256 of exact UTF-8 substring",
+    "response.input.fen only; no annotator replacement FEN",
+    "Explicit legal branch replay and expected side to move; ambiguous or invalid context is unassessed",
+    "Independent semantic correspondence review is required separately; hashes do not establish it",
+    "Counts of pawn/knight/bishop/rook/queen by one side; not piece values or advantage",
+    "Occupancy-aware attack geometry includes pinned pieces; never legal recapture or tactical success",
+    "Explicit asserted line only; no engine attribution or whole-prose inference",
+    "Standalone current FEN and explicit branch only; prior repetition is not inferred",
+    "Evaluator only; never generator input, repair, training target or current heldout metric"
+  ],
+  "implementation_sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529",
+  "protocol_sha256": "635259b1d9aaa298e4946a1b1b28a1c078a7c91b214bf3e0483882209c5725a9",
+  "annotations_sha256": "c4973eae14437455c6cd44ec1dcb7a08a0ba70f22d8f90cdb6e76b015b650c25",
+  "response_pool_index": 0
+}

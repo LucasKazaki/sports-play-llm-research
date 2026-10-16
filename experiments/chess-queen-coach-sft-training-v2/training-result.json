@@ -1,0 +1,207 @@
+{
+  "schema": "chess.queen-coach-sft-training-result.v2",
+  "status": "training_completed_independently_audited_heldout_active",
+  "protocol_sha256": "5364c4c9a4b744770c5f0c9c617d6edc09730a0aa0dee2e3c0f55e6a80df6168",
+  "training": {
+    "updates": 256,
+    "confirmed_backwards": 2048,
+    "planned": 2048,
+    "active_unknown": 0,
+    "not_run": 0,
+    "journal_events": 4608,
+    "finite_losses": 2048,
+    "first_optimizer_mean_loss": 2.0949013978242874,
+    "last_optimizer_mean_loss": 0.03349866074859165,
+    "seeded_one_epoch_order_exact": true,
+    "fresh_zero_B_and_fresh_optimizer_savedstep0": true
+  },
+  "trainable_parameters": 1916928,
+  "selected_step": 64,
+  "selected_presentations": 512,
+  "selected_adapter_sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e",
+  "selection_sha256": "79abaea0cba0a292ef17e2686dbb69c72e568bdefb61848d64a38cc6ee15e714",
+  "baseline_adapter_sha256": "5a6947f4cab791256e59b1b2a2364118f88c7e6bb2504c61119116be4fb0b403",
+  "development": [
+    {
+      "step": 0,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 2.112202738717412,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 7,
+        "accepted_best_legal": 7,
+        "teacher_best_agreement": 7,
+        "complete_eos": 6,
+        "critical_3ply_legal": 7,
+        "critical_prefix_matches": {
+          "1": 7,
+          "2": 3,
+          "3": 2
+        },
+        "recognized_fact_claims": 0,
+        "false_recognized_claims": 0,
+        "grammar_complete_rows": 0,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 1,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        false,
+        7,
+        1,
+        4,
+        -2.112202738717412,
+        0
+      ]
+    },
+    {
+      "step": 64,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 0.12344497649364494,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 8,
+        "accepted_best_legal": 8,
+        "teacher_best_agreement": 8,
+        "complete_eos": 8,
+        "critical_3ply_legal": 8,
+        "critical_prefix_matches": {
+          "1": 8,
+          "2": 6,
+          "3": 6
+        },
+        "recognized_fact_claims": 12,
+        "false_recognized_claims": 5,
+        "grammar_complete_rows": 6,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 3,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        true,
+        8,
+        3,
+        4,
+        -0.12344497649364494,
+        -64
+      ]
+    },
+    {
+      "step": 128,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 0.042657997244055515,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 8,
+        "accepted_best_legal": 8,
+        "teacher_best_agreement": 8,
+        "complete_eos": 8,
+        "critical_3ply_legal": 6,
+        "critical_prefix_matches": {
+          "1": 8,
+          "2": 4,
+          "3": 2
+        },
+        "recognized_fact_claims": 16,
+        "false_recognized_claims": 2,
+        "grammar_complete_rows": 8,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 1,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        true,
+        8,
+        1,
+        4,
+        -0.042657997244055515,
+        -128
+      ]
+    },
+    {
+      "step": 256,
+      "nll_records": 64,
+      "nll_tokens": 4180,
+      "response_token_nll": 0.03617206557556924,
+      "raw_requests": 8,
+      "counts": {
+        "planned": 8,
+        "raw_best_legal": 8,
+        "accepted_best_legal": 8,
+        "teacher_best_agreement": 8,
+        "complete_eos": 8,
+        "critical_3ply_legal": 6,
+        "critical_prefix_matches": {
+          "1": 8,
+          "2": 4,
+          "3": 2
+        },
+        "recognized_fact_claims": 16,
+        "false_recognized_claims": 2,
+        "grammar_complete_rows": 8,
+        "whole_prose_unscored_rows": 8,
+        "whole_prose_factuality_measured": false,
+        "free_critical_3ply_agreement": 1,
+        "free_best_agreement": 4
+      },
+      "selector_key": [
+        true,
+        8,
+        1,
+        4,
+        -0.03617206557556924,
+        -256
+      ]
+    }
+  ],
+  "worker_elapsed_seconds": 2169.9689999999828,
+  "closed_independent_review_sha256": "6d6e98d80313f8650aea84c5e4c8ee12e0a012c916aafe72e519f88595a8a301",
+  "frozen_storage": {
+    "before": {
+      "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+      "tensor_count": 2268,
+      "bytes_hashed": 3393484936
+    },
+    "after": {
+      "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+      "tensor_count": 2268,
+      "bytes_hashed": 3393484936
+    },
+    "identical": true
+  },
+  "resources": {
+    "samples": 1920,
+    "journal_matches_saved_samples": true,
+    "all_recorded_start_and_running_floors_pass": true,
+    "minimum_physical_available_bytes": 8852148224,
+    "minimum_commit_headroom_bytes": 8116699136,
+    "minimum_gpu_free_bytes": 8866758656,
+    "peak_cuda_allocated_bytes": 3679693824,
+    "peak_cuda_reserved_bytes": 5813305344,
+    "cleanup_boundaries": 2593,
+    "cleanup_events": 5186,
+    "exact_expected_phase_order": true
+  },
+  "source_snapshot_limitation": "Five exact pre-dispatch snapshots equal current protocol-pinned sources. Operator retained no separate prebound snapshot manifest; do not invent one after execution.",
+  "frozen_storage_inspection_limit": "Independent equality/count/hash readback of executed receipts and reviewed hashing source, not a second CPU copy/re-hash of all3.39GB original model tensors.",
+  "raw_development_and_source_records_private": true,
+  "current_heldout_status": "Once-only matched64response job active; no heldout quality result accepted yet.",
+  "ui_model_promotion": false,
+  "claim_limits": [
+    "Development has only4 free roots/8 raw paired requests per checkpoint.",
+    "Selected64 still has5 false among12 recognized narrow fact claims.",
+    "Baseline0 has0 recognized grammar claims, not demonstrated zero factual errors.",
+    "All whole prose remains unscored; no teaching quality/Elo/broad understanding result.",
+    "Later128/256 lower loss does not override the predeclared forecast-first selection.",
+    "Model weights, source-game corpus and raw training/development records remain private."
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schema": "chess.queen-nf4-authored-generation-protocol.v1",
+  "frozen_at": "2026-10-16T07:27:12.589941+00:00",
+  "frozen_before_this_condition_generation": true,
+  "candidate_id": "queen-pawn-8/native-nf4-v2",
+  "adapter": {
+    "path": "scripts/chess_queen_nf4_adapter_v2.py",
+    "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+  },
+  "kernel_protocol": {
+    "path": "experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+    "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+  },
+  "kernel_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/kernel-2.json",
+    "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+  },
+  "kernel_worker": {
+    "path": "data/private/chess-queen-nf4-v1/kernel-worker-2.json",
+    "sha256": "82a93a694b1c81a261a10e99c872de41f1719d14fbdd603587dbc55122413f05"
+  },
+  "canonical_protocol": {
+    "path": "experiments/chess-queen-nf4-v1/parity-protocol-v3.json",
+    "sha256": "6287196f26689aedcb5d8a314330ed26ff96cff5569e7f4b80073ebe3babe244"
+  },
+  "canonical_source": {
+    "path": "experiments/chess-queen-nf4-v1/parity_no_cache_v2.py",
+    "sha256": "5387c50b5aa9e2c1479bc2a40ddd2d28a72016b40763bf7a3ea04abed611dca9"
+  },
+  "canonical_receipt": {
+    "path": "data/private/chess-queen-nf4-v1/parity-2.json",
+    "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4"
+  },
+  "canonical_worker": {
+    "path": "data/private/chess-queen-nf4-v1/parity-worker-2.json",
+    "sha256": "28e55981247df3b381845c831efb02b180a18992531ceda54606d2c3031a5999"
+  },
+  "packets": [
+    {
+      "path": "experiments/chess-queen-v1/authored-mate.json",
+      "sha256": "cacd2cfa6212959b97f583a39218d7d158e40be91c98ec078dd6f0fafd3831e4",
+      "input_keys": [
+        "fen"
+      ],
+      "initial_status": "not_run",
+      "kind": "Authored software fixture; no source-game capability claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-midgame.json",
+      "sha256": "9f9e8f428684214c3ecf1b7811a2505bd4ccd7d752d314a1e8dc1c3b223885ca",
+      "input_keys": [
+        "fen"
+      ],
+      "initial_status": "not_run",
+      "kind": "Authored software fixture; no source-game capability claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-opening.json",
+      "sha256": "9624697eef4f8da67c03ab4fb59240a10556318d1a12451e898d81a0aa394d43",
+      "input_keys": [
+        "fen"
+      ],
+      "initial_status": "not_run",
+      "kind": "Authored software fixture; no source-game capability claim"
+    },
+    {
+      "path": "experiments/chess-queen-v1/authored-selected-c3.json",
+      "sha256": "cc639d6d2fc1bdf0b88c847201b6caebd5324e214e1ff22fbf117c1296be6b2c",
+      "input_keys": [
+        "fen",
+        "selected_uci"
+      ],
+      "initial_status": "not_run",
+      "kind": "Authored software fixture; no source-game capability claim"
+    }
+  ],
+  "planned_denominator": 4,
+  "generation": {
+    "max_new_tokens": 1024,
+    "maximum_seconds": 240,
+    "temperature": 0,
+    "seed": 20260823,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "quantization": {
+    "load_in_4bit": true,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": true,
+    "bnb_4bit_compute_dtype": "bfloat16",
+    "bnb_4bit_quant_storage": "uint8",
+    "llm_int8_skip_modules": [
+      "lm_head"
+    ]
+  },
+  "resources": {
+    "start_physical_available_bytes": 6442450944,
+    "start_commit_headroom_bytes": 10737418240,
+    "start_gpu_free_bytes": 10737418240,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 4294967296,
+    "stop_gpu_free_bytes": 1073741824
+  },
+  "execution": {
+    "owner": "root only",
+    "parallel_workers": 1,
+    "fresh_short_lived_worker_each_packet": true,
+    "worker_maximum_seconds_argument": 240,
+    "actual_worker_deadline_seconds": 270,
+    "worker": {
+      "path": "experiments/chess-queen-v1/gpu_worker.py",
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    "arguments": [
+      "scripts/chess_queen_nf4_adapter_v2.py",
+      "--diagnostic-receipt",
+      "data/private/chess-queen-nf4-v1/kernel-2.json",
+      "--input",
+      "{packet.path}",
+      "--out",
+      "{new_create_only_receipt}"
+    ]
+  },
+  "durability": "Root writes all4 pending rows before worker dispatch, then persists each intent before its owned call and links actual worker/output hashes after closure. Retain partial raw text/token IDs, finish reason, truncation, resources and errors. Unknown interrupted calls stay unknown; undispatched calls stay not_run.",
+  "failure_policy": "First backend/resource/worker failure halts all remaining packets. Semantic missing/illegal/truncated output remains failed as software output quality, with full4 denominator; never replace a raw move or repair a continuation. No repeated attempts under this condition.",
+  "completion_checks": [
+    "Actual worker terminal and child exited before lease release",
+    "Raw complete response ends by EOS instead of token/time limit; no backend/resource error",
+    "Report structured BEST_MOVE parse, raw legality and CRITICAL_LINE legal prefix with missing/invalid results visible",
+    "Inspect exact raw explanation against each authored board; arbitrary plans remain unverified"
+  ],
+  "preserved_bf16_protocol": {
+    "path": "experiments/chess-queen-v1/authored-nocache-protocol-v2.json",
+    "sha256": "8d4ce3d87440531497c33ea07e17da8bd84581f670a6f2d43596ed80545fb38b"
+  },
+  "preserved_bf16_outcomes": {
+    "path": "data/private/chess-queen-v1/authored-nocache-outcomes-v2.json",
+    "sha256": "a7b3ffb5a1c1ee6ac3a8b6eec8e34069fc4ca0295f8043f5fe9d3a5444a2f989"
+  },
+  "capability_claims_allowed": false,
+  "interpretation": "Runtime/output inspection on four old authored boards only. Passing is a prerequisite for later measured chess-specific tuning/evaluation, not evidence of unseen-game strength, coaching correctness or Elo."
+}

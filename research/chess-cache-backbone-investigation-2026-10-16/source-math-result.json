@@ -1,0 +1,195 @@
+{
+  "schema": "chess.cache-source-math-probe.v1",
+  "status": "passed",
+  "torch_imported": false,
+  "transformers_imported": false,
+  "bitsandbytes_imported": false,
+  "model_or_kernel_calls": 0,
+  "versions": {
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "bitsandbytes": "0.50.2"
+  },
+  "bnb_source_sha256": "b378955fbedf2ea78d1b7b4e24487245bc72f215d0d4f94bf763100de824be51",
+  "dispatch_function_AST_sha256": "7e6b9795769c7935448bf15ee2412cf6a3c9250ee351d7ba92cd4b9e6b57400f",
+  "authored_device_properties": {
+    "multiprocessors": 84,
+    "major": 12,
+    "minor": 0,
+    "actual_hardware_query": false
+  },
+  "dispatch": [
+    {
+      "module": "q_proj",
+      "N": 2048,
+      "K": 2048,
+      "M": 1,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "q_proj",
+      "N": 2048,
+      "K": 2048,
+      "M": 84,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "q_proj",
+      "N": 2048,
+      "K": 2048,
+      "M": 85,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "k_proj",
+      "N": 512,
+      "K": 2048,
+      "M": 1,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "k_proj",
+      "N": 512,
+      "K": 2048,
+      "M": 84,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "k_proj",
+      "N": 512,
+      "K": 2048,
+      "M": 85,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "v_proj",
+      "N": 512,
+      "K": 2048,
+      "M": 1,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "v_proj",
+      "N": 512,
+      "K": 2048,
+      "M": 84,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "v_proj",
+      "N": 512,
+      "K": 2048,
+      "M": 85,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "o_proj",
+      "N": 2048,
+      "K": 2048,
+      "M": 1,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "o_proj",
+      "N": 2048,
+      "K": 2048,
+      "M": 84,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "o_proj",
+      "N": 2048,
+      "K": 2048,
+      "M": 85,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "gate_proj",
+      "N": 11008,
+      "K": 2048,
+      "M": 1,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "gate_proj",
+      "N": 11008,
+      "K": 2048,
+      "M": 84,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "gate_proj",
+      "N": 11008,
+      "K": 2048,
+      "M": 85,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "up_proj",
+      "N": 11008,
+      "K": 2048,
+      "M": 1,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "up_proj",
+      "N": 11008,
+      "K": 2048,
+      "M": 84,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "up_proj",
+      "N": 11008,
+      "K": 2048,
+      "M": 85,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "down_proj",
+      "N": 2048,
+      "K": 11008,
+      "M": 1,
+      "use_custom_cuda": true
+    },
+    {
+      "module": "down_proj",
+      "N": 2048,
+      "K": 11008,
+      "M": 84,
+      "use_custom_cuda": false
+    },
+    {
+      "module": "down_proj",
+      "N": 2048,
+      "K": 11008,
+      "M": 85,
+      "use_custom_cuda": false
+    }
+  ],
+  "mask_math": {
+    "full_prefix_last_allowed": [
+      true,
+      true,
+      true
+    ],
+    "cached_expected_allowed": [
+      true,
+      true,
+      true
+    ],
+    "wrong_upper_left_q1_allowed": [
+      true,
+      false,
+      false
+    ],
+    "full_last_output": 21.356613246323988,
+    "cached_expected_output": 21.356613246323988,
+    "wrong_upper_left_output": 10.0,
+    "position_offset_example": {
+      "past_length": 84,
+      "new_position": 84
+    }
+  },
+  "limits": "Only source dispatch and mathematical mask geometry demonstrated. No actual BF16/NF4 numerical drift, hardware kernel, timing, accuracy or repair measured."
+}

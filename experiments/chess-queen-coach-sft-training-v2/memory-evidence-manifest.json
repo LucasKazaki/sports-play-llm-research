@@ -1,0 +1,46 @@
+{
+  "schema": "chess.memory-qualification-public-copy.v1",
+  "scope": "Actual closed software memory qualification, not a chess-quality result; qualification adapter discarded",
+  "files": [
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/qualification.json",
+      "bytes": 82926,
+      "sha256": "a063811d5a0165f31d6016ff263423b9b8584578a2f8d58a145560d562c035cc"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/calls.jsonl",
+      "bytes": 101103,
+      "sha256": "15dcf52e87655096573d408ad7433ab21cf1ec2c41efb649792f7063a8bb4380"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/memory-lifetime.jsonl",
+      "bytes": 354949,
+      "sha256": "86f84a961be48905dfe320fdbd2b57ae60e71691a13142173f615aadaf958813"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/memory-qualification.resources.jsonl",
+      "bytes": 65779,
+      "sha256": "bf1156b4bd9b42ed628920be777f92ccebf8fcca1fb2619ccc729bf911718d13"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/resources.json",
+      "bytes": 76878,
+      "sha256": "4650255dc596caa44c94404588e176a1b845fd72071995b06edf095a3e51b985"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/spent-development-raw.json",
+      "bytes": 38442,
+      "sha256": "d5be01979c2674c7520b72494aab6d12f90a70a97b40f2ef02f75bc185d1372f"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/update-memory.json",
+      "bytes": 13029,
+      "sha256": "288b90d4ae01d38d6c941e60ad3b73f39944a7506c58f9f5e85e8285bfa2373a"
+    },
+    {
+      "path": "experiments/chess-queen-coach-sft-training-v2/memory-evidence/worker.json",
+      "bytes": 667,
+      "sha256": "6e2145868ec8a3c09711a42bd63f7af3d5ac1cca30033e4f7118bfdaf9e0db55"
+    }
+  ]
+}

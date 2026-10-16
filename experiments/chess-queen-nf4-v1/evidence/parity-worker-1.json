@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T07:20:47.253851+00:00",
+  "script": "experiments\\chess-queen-nf4-v1\\parity_no_cache.py",
+  "arguments_sha256": "acbfb8d16b21d592404c785fea3640eac116f308538f0925c7f4525d3dfcb868",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "failed",
+  "child_pid": 48400,
+  "exit_code": 2,
+  "log": "data\\private\\chess-queen-nf4-v1\\parity-worker-1.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 15.547000000020489
+}

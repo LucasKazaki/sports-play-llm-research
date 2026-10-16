@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "checks": 10,
+  "seconds": 0.38,
+  "tool_chunk": "167e34",
+  "models": 0,
+  "actual_corpus_or_labels_opened": false,
+  "delta": "Exact builderv1/science preserved; newbuilderv2 changes onlyouter4+self-testversion bindings."
+}

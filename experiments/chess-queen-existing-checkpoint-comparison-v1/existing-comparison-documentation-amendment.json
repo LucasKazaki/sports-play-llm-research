@@ -1,0 +1,17 @@
+{
+  "old_protocol_sha256": "c25397d5cef7e85252dc1199d7b3b28acbe8c6a215eae811b1b8242fb1783bc2",
+  "new_protocol_sha256": "fd6808215566a3a93370a4bee44462d970cf5e2e0b972a48c652da919060944d",
+  "changed_keys": [
+    "profile",
+    "selection",
+    "acceptance",
+    "root_dispatch",
+    "guard_limit",
+    "expected_worker_arguments",
+    "frozen_at",
+    "superseded_documentation_protocol"
+  ],
+  "unchanged_executable_scientific_fields": true,
+  "new_protocol_bytes": 28362,
+  "worker_args_sha256": "711eacea349d06ed0e8cdcceebbbdea7c303303c40f1bb17bfe8e9b9c4ba7f74"
+}

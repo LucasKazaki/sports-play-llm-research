@@ -1,0 +1,24 @@
+{
+  "schema": "chess.tutor-software-verification.v1",
+  "created_at": "2026-10-16T05:47:27.1832132Z",
+  "source_sha256": {
+    "prototype/chess_tutor_v1/server.py": "8dd174ce8ab75b7ba68ca8c611c97eb4915faf2a8624404f91d0af01ab6469b8",
+    "prototype/chess_tutor_v1/static/index.html": "b725c27bc038cd9191ff2ca8a7d11c8ccb1bf8cb25a13d16b24f786d6ee5501f",
+    "prototype/chess_tutor_v1/static/app.js": "83bb20f87d3fa93a839788a47399f8734669b05e7b2a2a361cd323a1ace1bf12",
+    "prototype/chess_tutor_v1/static/style.css": "6aa7990ba9b04d8753c8e381a6225d1c916f7e034ab7de3d9461fc1dde216681",
+    "prototype/chess_tutor_v1/README.md": "4fa5410acf0b3dd3643364e0b2c5bec326315f0b32ddc0df5667b0b1fe2c52d1",
+    "prototype/chess_tutor_v1/qa-browser.cjs": "8233381854946b93c4f2f434a02b8dbd34698dc4534991ce0d343da873b24073",
+    "scripts/start-chess-tutor.ps1": "d41ddd734da6d5d8361172175d15eecff19b75ac088694614b17661110d31832",
+    "tests/test_chess_tutor_v1.py": "c81e31f792aadd11f6b6a9f596834481743adffe709acd1b09a60384f17f7157"
+  },
+  "focused_tests": {
+    "passed": 32,
+    "command": ".venv-soccernet/Scripts/python.exe -m pytest tests/test_chess_tutor_v1.py -q",
+    "failed": 0
+  },
+  "browser_qa": "C:/Users/lucas/Documents/Codex/2026-10-16/first-i-want-you-to-look/outputs/chess-tutor-browser-qa.json",
+  "live_engine": "Stockfish 19",
+  "model_weight_sha256": "2643e51526335e5a33a67370bf1fa70ddf3c6b2e64b31550ad6ca033f9430a22",
+  "fixture_kind": "Illustrative legal opening, not a held-out empirical evaluation",
+  "limits": "Software/UI verification only; independent research candidate promotion and coaching-quality acceptance remain separate"
+}
