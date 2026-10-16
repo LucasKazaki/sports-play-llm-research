@@ -1,0 +1,83 @@
+{
+  "status": "passed_prospective_integration_plan_only",
+  "reviewed_at_utc": "2026-10-16T13:37:57.029229+00:00",
+  "scope": "Complete independent read of four finite protocol/readiness/context/preparation bundles and light source/metadata/input-serialization checks. Conditional plan GO for one root-owned normal-UI request; no actual dispatch or integration result.",
+  "blocking_findings": [],
+  "protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\protocol.json",
+    "bytes": 19753,
+    "sha256": "459bcbf0ec8902535e8304fd8a3ea4c99be109b3baca8389c754d5d433875263"
+  },
+  "readiness": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\source-readiness-v2.json",
+    "bytes": 13018,
+    "sha256": "e23bd4a75567205fc907d2b6def43f9125a40fc106557041a579d8cac20f28c2"
+  },
+  "bundle_index": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\bundle-index.json",
+    "bytes": 6395,
+    "sha256": "60f93085403fc64fc62e4623521add405b1abf0f44a76d106f814db266b93a41"
+  },
+  "complete_finite_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\01-protocol-and-readme.txt",
+      "bytes": 22277,
+      "sha256": "a1d89aeb4b353a329b6576dec1f475e897fdbe9b20a112e807d369edfd4e2f74"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\02-readiness-and-inputs.txt",
+      "bytes": 16189,
+      "sha256": "02ab6255164b26824be83139151ce4204ff9cae66980d68d1ac0af410140d630"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\03-preserved-context-and-service.txt",
+      "bytes": 22373,
+      "sha256": "61140d8f7f55a133be1af5e7b07a547a42a30265f6735e102a20eb979eaa1285"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\04-preparation-and-receipt.txt",
+      "bytes": 28755,
+      "sha256": "f07f44c449a5aa5019546f478d92bbf4a77c8449051ba9a1a404e3b5590e6c84"
+    }
+  ],
+  "independent_light_checks": {
+    "complete_bundle_file_hashes_match": true,
+    "source_and_metadata_bindings_match": 30,
+    "input_assets_match": 4,
+    "package_versions_match": {
+      "torch": "2.8.0+cu128",
+      "transformers": "5.19.0",
+      "bitsandbytes": "0.50.2",
+      "accelerate": "1.15.0",
+      "safetensors": "0.8.0"
+    },
+    "prospective_browser_packet_exact": true,
+    "windows_pretty_file_exact": true,
+    "canonical_packet_exact": true,
+    "argument_template_hash_exact": true,
+    "fixed_existing_service_manifest_and_rejection_bound": true,
+    "production_source_change_or_backend_execution": false
+  },
+  "findings": [
+    "The normal controller retains the real input-file SHA before its worker thread. Its prospective72-byte Windows CRLF file is distinct from the60-byte sorted compact generator packet. Both identities are frozen; no old expected hash or raw response field is rebound.",
+    "Existing process4344/session59824 is retained. Rejected forced restart is preserved and no alternate process stop/restart/bypass is proposed. Source/process provenance is correctly limited: it is not in-memory bytecode attestation.",
+    "Only one original manual NF4 request on the already-spent authored mate is planned. No selected move, score, PV, future board, reference, expected answer or checker data is sent. The trained profile stays disabled.",
+    "Generation/resources/worker source are unchanged. Runtime240s, wrapper270s and controller285s are distinguished from the15:00 admission and15:15 cleanup clocks. Root retains two fixed fresh startup samples and a lease-free observation before the one click.",
+    "Worker argument hash uses the complete child script-prefixed vector, excluding Python/wrapper options, with only declared request UUID path substitution. Actual closure must bind the expanded vector and owned exit.",
+    "Success requires completed EOS/provenance/worker exit and actual new-controller checker sibling bound to exact input/response/raw_text/source/request. Checked or correctly bound zero-claim unassessed may pass software integration; unavailable/partial/resource/provenance failure may not.",
+    "Current/stale/restored exports, request ID, raw fields, independent verification and final rehash are required. Stale coaching is null; return must not regenerate. Failure accounting keeps the full one-request denominator and separates UI submission, worker launch and confirmed forwards."
+  ],
+  "root_dispatch_conditions": [
+    "Retain create-only admission/intent after fresh process/health/source checks and two startup samples, before15:00UTC. No resample-until-pass, retry, alternate profile or floor relaxation.",
+    "Use the existing reviewed service and normal browser control once. No simultaneous GPU process or heavy CPU audit.",
+    "Retain original private input/response/worker/log/checker/public-job/exports/closure artifacts for independent closed review. Any failure stops this plan; no second request is implied.",
+    "Close and verify owned cleanup by15:15UTC; preserve actual unknowns if closure is unavailable. The wider22UTC user window does not silently extend this protocol."
+  ],
+  "limits": [
+    "No live service, process, health, resource, HTTP or browser observation was made by this reviewer. Bound root observations are historical readiness and must be refreshed for admission.",
+    "No model, engine, GPU, weight, held/reserve or corpus access occurred. Existing closed kernel/parity metadata files were hashed only.",
+    "No real new-controller completion exists yet under this plan. This GO does not establish chess understanding, whole-prose correctness, human validation or tuned checkpoint admission.",
+    "The original strict saved-byte failure and overnight unadmitted attempt remain failed/unadmitted. New prospective canonical semantics do not retroactively change them."
+  ],
+  "followUpTasks": []
+}

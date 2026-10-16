@@ -1,0 +1,283 @@
+{
+  "schema": "chess.tutor-draft-checks-daytime-integration.protocol.v1",
+  "state": "prospective_not_dispatched",
+  "purpose": "One original-manual Queen UI request to check actual controller, input-byte, post-generation rule-check and current/stale export integration.",
+  "authority": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\resume-authority.json",
+    "bytes": 902,
+    "sha256": "330fa0c6ea5718604175bf8f650b85033ed84ea07de6cdb786825479915fc8c5"
+  },
+  "operation_window": {
+    "date": "2026-10-16",
+    "user_cutoff_utc": "2026-10-16T22:00:00Z",
+    "last_admission_utc": "2026-10-16T15:00:00Z",
+    "close_and_owned_cleanup_by_utc": "2026-10-16T15:15:00Z",
+    "old_deadlines_and_outcomes_preserved": true
+  },
+  "owners": {
+    "dispatch_browser_GPU_and_service": "Root only",
+    "proposal_and_metadata": "/root/tutor_ui; no runtime calls",
+    "source_and_plan_review": "Independent local agent before dispatch",
+    "closed_integration_review": "Independent local agent after terminal artifacts",
+    "human_chess_expert_validation": false
+  },
+  "frozen_readiness": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\source-readiness-v2.json",
+    "bytes": 13018,
+    "sha256": "e23bd4a75567205fc907d2b6def43f9125a40fc106557041a579d8cac20f28c2"
+  },
+  "source_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\tutor-draft-checks-v1-source-review.json",
+    "bytes": 10833,
+    "sha256": "85e0dff0eaf0bb8586bb8d86760abe802783991437da6344fa9f02d50d679790"
+  },
+  "seven_path_manifest": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\tutor-draft-checks-design-v1\\source-review\\manifest.json",
+    "bytes": 2703,
+    "sha256": "d0bbfbe868277299231b269e9712ff10ae4700ffd87da0979017a1c0c3483960"
+  },
+  "existing_service": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-existing-service-manifest.json",
+    "bytes": 5559,
+    "sha256": "911cd367850689b08d11d5bcc539366733befb397f52dcb1b38dffdbc845c1e7"
+  },
+  "restart_rejection": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\forced-restart-rejection.json",
+    "bytes": 1250,
+    "sha256": "e4227c857562ad66625279892b976c9078abe50c4c9e892a41b704e7ea435b86"
+  },
+  "service_rules": [
+    "Retain PID 4344, creation time and exec session in the bound existing-service manifest; no stop, restart, alternate termination or bypass.",
+    "Root rechecks the same owned process, current source hashes and ready original-manual health before admission. A mismatch makes this request not admitted.",
+    "Current disk hashes plus original-start provenance are not in-memory byte attestation. Actual captured-input and checker behavior is separately required.",
+    "Original manual Queen is configured with fixture=false; the CPU classifier remains the existing default and the trained coaching profile stays disabled."
+  ],
+  "historical_context": {
+    "old_unadmitted_request": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\overnight\\draft-checks-authored-ui-smoke-unadmitted.json",
+      "bytes": 1285,
+      "sha256": "c50985176940188fb669b6d8c7b6601c9f2a9ef810a4b4a0dc4ef24f3ded082e"
+    },
+    "old_preparation": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\prepare_draft_checks_ui_smoke.py",
+      "bytes": 3558,
+      "sha256": "7229738a1c7610a832c672c57d45dd1de83596cd3885f517bb062db719e1e886"
+    },
+    "initial_daytime_sample_context_only": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\initial-preflight.json",
+      "bytes": 857,
+      "sha256": "719d1fd35c7c6b99abe8122439b32bb8b2f906a34fc247194a29daf2efb3f339"
+    },
+    "old_strict_byte_failure": "Preserved failure before checker. Do not repair, reconstruct an old expected hash, reinterpret a raw hash field or retroactively count it as a pass.",
+    "unexecuted_restart_readiness_draft": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\source-readiness.json",
+      "bytes": 11468,
+      "sha256": "128060e3811a85ee49c8a04e1217cdbe5dc26d394398b87514cb44eb412614d1"
+    }
+  },
+  "request": {
+    "planned_requests": 1,
+    "maximum_actual_coaching_submissions": 1,
+    "profile": "original qualified manual Queen NF4 v2 only",
+    "qualification": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\prototype\\chess_tutor_v1\\queen-runtime.json",
+      "bytes": 4791,
+      "sha256": "0a17fcaa72bef97eec28e4bec0e245c4c42a28219dcf5da6d8c06f807278188d"
+    },
+    "candidate_id": "queen-pawn-8/native-nf4-v2",
+    "position_source": "Already-spent authored mate board from the bound old unadmitted preparation; no fresh held or reserve root.",
+    "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1",
+    "mode": "This position",
+    "selected_uci": null,
+    "browser_request": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\browser-request.json",
+      "bytes": 71,
+      "sha256": "d93cfbf3c587fddf9abef65368bf0e69768d57869194848fa09458cca667bcc5"
+    },
+    "controller_input_bytes": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\controller-input-template.json",
+      "bytes": 72,
+      "sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7"
+    },
+    "generator_canonical_packet": {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\canonical-packet.json",
+      "bytes": 60,
+      "sha256": "5284f66597ca7599b3292f1f404aaf979f86c917b7ef292cb10b2e004f9bae4e"
+    },
+    "packet": {
+      "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1",
+      "history": []
+    },
+    "forbidden_generator_input": [
+      "Stockfish move",
+      "score",
+      "PV",
+      "future board",
+      "reference",
+      "expected answer",
+      "checker result"
+    ],
+    "preexisting_board_analysis": "Root may use the existing board interface to load this already-spent position; any Stockfish/classifier display is separate and not in the coaching packet.",
+    "no_retry_or_regenerate": true,
+    "no_output_repair_or_fallback": true
+  },
+  "prospective_input_identity_contract": {
+    "saved_file_sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7",
+    "saved_file_bytes": 72,
+    "raw_response_input_sha256_semantics": "Frozen generator SHA256 of the sorted compact normalized packet JSON, not the input-file byte hash.",
+    "expected_raw_response_input_sha256": "5284f66597ca7599b3292f1f404aaf979f86c917b7ef292cb10b2e004f9bae4e",
+    "captured_controller_hash": "Existing start() hashes actual input.json bytes immediately after its create-only write, before _watch starts, and retains request_packet independently.",
+    "verification_binding": "draft-checks-v1.json input_sha256 must equal the prospective 72-byte file hash. response_sha256 is the full actual raw response file hash; raw_text_sha256 is UTF-8 of response.raw_text.",
+    "span_unit": "Unicode code points of response.raw_text, never translated display text or response-file byte offsets.",
+    "comparison": "Compare actual input bytes directly with the frozen template. Do not reserialize the observed response to manufacture a passing input identity."
+  },
+  "fixed_generation": {
+    "max_new_tokens": 1024,
+    "maximum_seconds": 240,
+    "temperature": 0.0,
+    "seed": 20260823,
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction",
+    "use_kv_cache": false,
+    "source_and_qualification_pins": "Exactly those in frozen readiness-v2 and queen-runtime.json; no source, model, dependency or resource-policy changes."
+  },
+  "resources": {
+    "start_physical_available_bytes": 6442450944,
+    "start_commit_headroom_bytes": 10737418240,
+    "start_gpu_free_bytes": 10737418240,
+    "stop_physical_available_bytes": 4294967296,
+    "stop_commit_headroom_bytes": 4294967296,
+    "stop_gpu_free_bytes": 1073741824,
+    "startup_display": "6 GiB physical, 10 GiB commit headroom, 10 GiB GPU free",
+    "running_display": "4 GiB physical, 4 GiB commit headroom, 1 GiB GPU free",
+    "admission": "Root retains two fresh full samples at least one second apart after the authored board is loaded. Both must meet every startup floor before the one click. These are two fixed samples, not a poll-until-pass loop.",
+    "failure": "Retain any failed admission samples before deciding. No automatic resampling, floor reduction, request retry or alternate model.",
+    "serialization": "No concurrent GPU jobs or heavy CPU audit. Root probes the shared lease and releases the probe before the UI click; the frozen worker alone acquires FileLock timeout=0 during the request.",
+    "initial_context_is_not_admission": true
+  },
+  "frozen_launch": {
+    "worker": {
+      "role": "worker",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-queen-v1\\gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    "child": {
+      "role": "adapter",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_nf4_adapter_v2.py",
+      "bytes": 21493,
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    "diagnostic_receipt": {
+      "role": "kernel_receipt",
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\kernel-2.json",
+      "bytes": 3673,
+      "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+    },
+    "python": "Existing service sys.executable; its actual executable is recorded by the existing-service manifest. No substitute interpreter is launched by this protocol.",
+    "wrapper_options": [
+      "--receipt",
+      "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\{request_id}\\worker.json",
+      "--maximum-seconds",
+      "240",
+      "--"
+    ],
+    "child_arguments_template": [
+      "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\scripts\\chess_queen_nf4_adapter_v2.py",
+      "--diagnostic-receipt",
+      "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-queen-nf4-v1\\kernel-2.json",
+      "--input",
+      "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\{request_id}\\input.json",
+      "--out",
+      "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\{request_id}\\response.json"
+    ],
+    "template_sha256_default_json_list": "fdcc9ebce38f615c015d88beb516cd026884e9f74b303dfe50553368191baba8",
+    "request_id_substitution": "The sole variable is the controller-returned 32 lowercase hexadecimal UUID, replacing {request_id} in exactly the input/out/receipt paths. Retain the dispatch link and expanded list without changing any other argument.",
+    "actual_worker_arguments_sha256": "Compare worker.arguments_sha256 to SHA256(json.dumps(expanded child_arguments_template).encode()); this frozen worker hash excludes Python and wrapper options.",
+    "ownership": "Existing shared GPU worker uses stdin GO gate, an owned kill-on-close Windows job and the shared lease until child exit. No unrelated process may be stopped.",
+    "generation_timer": "240 seconds inside generate() after model construction; this is not a cold-start wall-clock guarantee.",
+    "wrapper_timer": "Frozen command maximum-seconds 240 is passed to run_worker with 30 added: 270 seconds after child gate release, including model load and generation, then bounded owned shutdown.",
+    "controller_timer": "QueenRunner maximum_seconds 270 plus 15 gives 285 seconds after wrapper spawn, followed by the existing owned cancellation/exit waits. Global 15:15 close remains separate."
+  },
+  "root_sequence": [
+    "Before any coaching click, finish independent plan review; record create-only admission and intent with this exact protocol SHA, source pins, existing-service observation, two resource samples, lease-free observation and request budget one.",
+    "Use the normal UI already loaded on localhost:8793. Confirm the illustrative mate board and This position mode. No selected move or additional context is supplied.",
+    "Click Explain this position once. Retain the returned request ID, original public context and first public job snapshot; expand only the declared UUID argument template. Do not reload or close the page during an active request.",
+    "Wait for a terminal public job with the existing UI polling. Save exact local input/response/worker/log/checker files, terminal public job JSON, and root owned-worker/lease closure observations without changing source artifacts.",
+    "Before claiming software integration, independently verify the direct input-file byte comparison, canonical packet hash, response input, actual source/runtime attribution, worker arguments/closure, original profile gate and separate checker bindings.",
+    "Save the current position evidence using the normal export control and a screenshot showing the original unverified draft and limited rule-check panel. Open relevant existing raw/statement disclosures without editing content.",
+    "Use the normal New board control without another coaching request. Save the stale-state screenshot and exported evidence; its coaching field must be null.",
+    "Use Return to this position. Save restored screenshot and export; the original job/checks/raw fields must return without a new request or inference. Rehash all original raw/input files after these UI actions.",
+    "Retain a closed accounting record and request independent artifact review. A source/UI integration pass never admits strategic explanation quality or the trained profile."
+  ],
+  "actual_artifacts": {
+    "controller_folder_template": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\{request_id}",
+    "controller_files": [
+      "input.json",
+      "response.json",
+      "worker.json",
+      "worker.log",
+      "controller.log",
+      "draft-checks-v1.json",
+      "response.CANCEL if actually created"
+    ],
+    "worker_log_note": "The frozen worker derives receipt.with_suffix(.log). Retain if created; absence is reported, not filled with invented content.",
+    "root_create_only_evidence_folder": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1",
+    "root_records": [
+      "admission.json",
+      "intent.json",
+      "dispatch-link.json",
+      "terminal-public-job.json",
+      "source-and-process-after.json",
+      "artifact-manifest.json",
+      "closure.json"
+    ],
+    "exports": [
+      "current-evidence.json",
+      "stale-evidence.json",
+      "restored-evidence.json"
+    ],
+    "screenshots": "Root-owned user outputs or evidence folder; retain exact paths and SHA256 in the artifact manifest.",
+    "create_only": true,
+    "private_retention": "Keep complete actual prose, tokens, logs, failure/partial bytes and request context private. Any future public projection is separately reviewed and metadata-only."
+  },
+  "software_acceptance": {
+    "completion": "One completed EOS original-manual response with qualified canonical provenance, no ui_validation_error, completed exit-zero worker and child_exited_before_lease_release true.",
+    "actual_loaded_behavior": "The actual terminal public job contains the new verification sibling, and the create-only draft-checks-v1.json has this request ID and exact captured input/response/raw_text/source bindings.",
+    "checker_statuses": [
+      "checked",
+      "unassessed with bound root context and truthful zero recognized canonical claims"
+    ],
+    "unavailable_is_not_success": true,
+    "zero_claims_is_normal": true,
+    "checker_context": {
+      "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1",
+      "selected_uci": null,
+      "branch_uci": [],
+      "turn": "white"
+    },
+    "no_required_model_answer_or_claim_count": true,
+    "raw_preservation": "Raw response file bytes are unchanged; terminal public result raw_text, decoded_text and parsed equal the actual raw response values. Existing separately labelled execution metadata may be added outside those fields.",
+    "export_behavior": "Current and restored export coaching values retain the same original request ID/result/verification; elapsed_seconds may differ. Stale export coaching is null. Returning does not call generator or engine.",
+    "claim_limits": "Board observations and matched statement verdicts remain separate. Each matched claim names its own ANALYSIS move. No whole-prose badge, strategic-understanding, chess strength or formal tutor-quality conclusion.",
+    "trained_option": "Disabled and unavailable; this protocol makes no admission decision for any trained checkpoint."
+  },
+  "failure_and_accounting": {
+    "planned": 1,
+    "terminal_buckets": [
+      "completed",
+      "partial",
+      "failed",
+      "active_unknown",
+      "not_run"
+    ],
+    "denominator": "Exactly one final bucket for the one planned coaching request. Report actual UI submissions, worker launches and confirmed model forwards separately; never infer forwards from input/intent existence.",
+    "not_run": "No submission or retained evidence conclusively establishing no child/model execution, such as a pre-click admission failure. Retain the failed gate and zero-call evidence.",
+    "busy_or_dispatch_error": "No queue or retry. Classify execution from actual wrapper/child evidence. A busy response counts as a submitted UI attempt but no model forward only when supported by closure evidence.",
+    "active_unknown": "A launch/generation intent with incomplete closure or absent raw output remains unknown; missing response is not proof of never run.",
+    "partial_failed": "Preserve exact partial/failed response, worker/resource logs and checks state. Resource or provenance failure is not repaired and is not an integration pass.",
+    "owned_cancel": "Root may use only the existing request-specific UI cancellation path if needed, and retains actual CANCEL/worker/child-exit evidence. No new cancellation test or second model request is planned.",
+    "global_close": "If the request cannot be safely admitted before 15:00 UTC, mark not admitted. Close with honest terminal/unknown accounting and owned cleanup by 15:15 UTC; no timeline extension is inferred."
+  },
+  "review_scope": "Local-agent engineering integration only. No new capability benchmark, learning, accuracy estimate, whole-prose assessment, human expert approval or shareable coaching-quality claim."
+}

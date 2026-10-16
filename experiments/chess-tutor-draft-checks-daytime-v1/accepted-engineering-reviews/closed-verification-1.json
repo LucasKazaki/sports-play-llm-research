@@ -1,0 +1,106 @@
+{
+  "schema": "chess.daytime.closed-artifact-verification.v1",
+  "status": "artifact_checks_passed_root_observations_bound",
+  "verified_at_utc": "2026-10-16T13:48:24.038358+00:00",
+  "helper_sha256": "9df34e0d411aa92d5b5a0e0cca30b67fa2dc0d264c97b4bb59470230be6b9ec0",
+  "protocol_sha256": "459bcbf0ec8902535e8304fd8a3ea4c99be109b3baca8389c754d5d433875263",
+  "request_id": "9431d3a155a146c0851dcaa2be10e80b",
+  "model_engine_GPU_HTTP_browser_process_calls": 0,
+  "production_source_or_original_artifact_edits": 0,
+  "quality_or_trained_profile_admission": false,
+  "scope": "Read-only artifact engineering checks. Root OS/UI observations are bound, not independently observed here. No whole-prose or model capability assessment.",
+  "protocol": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\protocol.json",
+    "bytes": 19753,
+    "sha256": "459bcbf0ec8902535e8304fd8a3ea4c99be109b3baca8389c754d5d433875263"
+  },
+  "source_and_runtime_metadata_bindings_rehashed": 27,
+  "qualification_file_bindings_rehashed_without_semantic_reads": 22,
+  "artifacts": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\input.json",
+      "bytes": 72,
+      "sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\response.json",
+      "bytes": 40634,
+      "sha256": "284a7329f97cd66db0e4992dda8359cc20aa9104d856dd6c9574d1a1ed5182a5"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\worker.json",
+      "bytes": 724,
+      "sha256": "0baf83a8c66123e2e4a869bc3b3b6d9a4abb9c5a2671c3f0601aeea53e3403d7"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-v1\\coaching\\9431d3a155a146c0851dcaa2be10e80b\\draft-checks-v1.json",
+      "bytes": 1941,
+      "sha256": "edb9bae9a8be337d8343206398bc7df0269e02ea6937e3b5fd60f5e75b06043e"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\terminal-public-job.json",
+      "bytes": 59885,
+      "sha256": "77fd654db0cab0c18ad87b3e79a8b3c7c70893a067e09bf5f6d9ed1e1166b42a"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\helper-observations.json",
+      "bytes": 2323,
+      "sha256": "362572c7b3d8f6daf539a8dedd923b11156c12cded2ee007f13fde359e00e037"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\current-evidence.json",
+      "bytes": 72435,
+      "sha256": "05c60ef8162c3875af1e09089ff6c57a107b11bd871838e5f2cb2d85f7705975"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\stale-evidence.json",
+      "bytes": 13793,
+      "sha256": "4f4a061c7ba52fe6e28919c7fa7221ff73659f20b4fbcc9a6c1c4508ed1cabc3"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-tutor-draft-checks-daytime-v1\\attempt-1\\restored-evidence.json",
+      "bytes": 72435,
+      "sha256": "05c60ef8162c3875af1e09089ff6c57a107b11bd871838e5f2cb2d85f7705975"
+    }
+  ],
+  "observed_raw_metadata": {
+    "status": "completed",
+    "finish_reason": "eos",
+    "generated_token_count": 527,
+    "candidate_id": "queen-pawn-8/native-nf4-v2",
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "limited_checks": {
+    "status": "unassessed",
+    "matched_statement_count": 0,
+    "span_hashes_checked": 2,
+    "whole_prose_assessed": false,
+    "supported": 0,
+    "contradicted": 0,
+    "unassessed": 0
+  },
+  "validated": [
+    "prospective exact input bytes",
+    "distinct canonical packet hash meaning",
+    "source/runtime/worker argument bindings",
+    "completed EOS and owned worker closure record",
+    "raw public/export field preservation",
+    "separate pure rule-check recomputation and spans",
+    "current/stale/restored export contexts",
+    "unchanged original artifacts after UI actions"
+  ],
+  "root_observations_bound_not_measured_by_helper": [
+    "owned child absent",
+    "shared lease free",
+    "one actual UI submission",
+    "return uses retained position with no new coaching request",
+    "before-UI snapshot chronology"
+  ],
+  "independent_closed_review_still_required": [
+    "admission timing and actual resource samples",
+    "browser screenshots and visible controls",
+    "root process and lease observations",
+    "pre-UI snapshot chronology and complete planned/failed/unknown accounting"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "chess.daytime.authored-input-identities.v1",
+  "prospective_only": true,
+  "position_already_spent_authored": true,
+  "fresh_held_or_reservoir_input": false,
+  "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1",
+  "packet": {
+    "fen": "6k1/5ppp/8/6Q1/8/8/5PPP/6K1 w - - 0 1",
+    "history": []
+  },
+  "browser_request": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\browser-request.json",
+    "bytes": 71,
+    "sha256": "d93cfbf3c587fddf9abef65368bf0e69768d57869194848fa09458cca667bcc5"
+  },
+  "exact_saved_controller_file": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\controller-input-template.json",
+    "bytes": 72,
+    "sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7"
+  },
+  "canonical_generator_packet": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\canonical-packet.json",
+    "bytes": 60,
+    "sha256": "5284f66597ca7599b3292f1f404aaf979f86c917b7ef292cb10b2e004f9bae4e"
+  },
+  "exact_file_serialization": "Existing coaching_jobs.py writes json.dumps(packet,indent=2) using Path.write_text(encoding=utf-8) on Windows, no final newline; LF becomes CRLF. Prospective template uses that identical write operation.",
+  "canonical_serialization": "Frozen native generate uses json.dumps(normalized_packet,sort_keys=True,separators=(comma,colon)).encode(). This is a distinct digest from file bytes and its raw response field is not rebound.",
+  "no_old_expected_hash_reconstruction": true
+}

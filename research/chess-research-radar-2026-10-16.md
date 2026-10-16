@@ -164,3 +164,29 @@ institutional approval or formal commentary/shareable-candidate claim follows.
 Evidence: research/chess-counterfactual-train-dev-coverage-2026-10-16/.
 Actual aggregate SHA256 e6730fb8d0d373236c0b53b1bfa7cd99b2a0d4cd40374f9d211e512abbec22a6;
 independent closed-result review e18211457ebbf319c09ed4c2535259867c7bc97fd43a42021b41e6499cd57dcd.
+
+## Daytime freshness check — 13:28 UTC
+
+Direct bounded public HTTP metadata retains Queen code c372da22ca75e95c3c79bee8a83c220fc54d0dcb,
+model5027687fac08b64b2403b13aca5b198e68294fe9 and Stockfish stable sf_19.
+The web parser could not read the Queen API endpoints; the official API bodies
+were saved and hashed locally instead. Stockfish's latest web page also resolves
+to sf_19. No source, dependency or weight was updated, and no new paper or model
+quality result is claimed. Receipt: chess-primary-refresh-2026-10-16-1328.json.
+
+
+## Daytime addition: ChessArena
+
+[ChessArena v4](https://arxiv.org/html/2509.24239v4) was revised April 23, 2026.
+Selected methods, training and evaluation sections were checked; this is not a
+full-paper audit or local reproduction. It separates piece/rule understanding,
+move quality, full games and multi-step puzzles, and distinguishes supplied
+legal-move conditions. These are useful evaluation categories for this project.
+Its training combines SFT with verifiable format, legality and engine-move
+rewards. The reported RL setup used eight 80 GB H800 GPUs, so it is not an
+immediate local recipe. Its distilled move filter does not itself validate every
+explanatory claim. Our next curriculum should use explicit game and position
+exclusions; a large chess state space does not prove absence of contamination.
+No ChessArena data, code or weights entered this project. The current fixed
+counterfactual experiment remains unchanged. Exact retrieval metadata and
+reading depth are in `chessarena-primary-review-2026-10-16.json`.

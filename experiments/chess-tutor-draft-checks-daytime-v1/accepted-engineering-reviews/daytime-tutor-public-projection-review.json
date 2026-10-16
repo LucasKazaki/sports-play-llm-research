@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-16T13:58:56.888982+00:00",
+  "scope": "Public positive metadata projection and README only; no private payload copy or model-quality approval.",
+  "candidate_files": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\closed-result-candidate\\build_projection.py",
+      "bytes": 13815,
+      "sha256": "b81ffbdec4138a2f0f4697dd4d336a7434aa2ae9a94ad13b68b4fb4b69abb2b1"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\closed-result-candidate\\evidence-manifest.json",
+      "bytes": 1285,
+      "sha256": "ec7a8b94349160933b7bf5b31d3e700f8f077064081f18e9702134f1b6bad6fd"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\closed-result-candidate\\README.md",
+      "bytes": 2541,
+      "sha256": "382330392814de1a4e3b9f063adb41fb26c464d96e14f3c920e8fbba284d9066"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\experiments\\chess-tutor-draft-checks-daytime-v1\\closed-result-candidate\\result-candidate.json",
+      "bytes": 17735,
+      "sha256": "932be8802b29892b3a10c8752f2f951bee18bc67a3150b521d03858ba5184459"
+    }
+  ],
+  "fully_read_bundles": [
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\06-public-candidate-builder-and-preparation.txt",
+      "bytes": 19304,
+      "sha256": "39fe30213b5ea5479851a88ba771f5dfab7769d0d2a542fc64ce8e129cb1aba9"
+    },
+    {
+      "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\07-public-candidate-result-and-manifest.txt",
+      "bytes": 19547,
+      "sha256": "edb2b9aa6906b71e620791b748d247b4dee6e4ed370232954f580a2081a13c59"
+    }
+  ],
+  "independent_helper_source_result_review": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\queen-review\\daytime-tutor-closed-helper-source-result-review.json",
+    "bytes": 3366,
+    "sha256": "8c2f81fb0f6b78a7183febcfe7457602837e07b965bf2b9a84e83ffb642de544"
+  },
+  "binding_checks": {
+    "all_recursive_source_evidence_bindings_match": true,
+    "binding_occurrences_checked": 58,
+    "unique_bound_locations": 55,
+    "public_manifest_files": 3,
+    "actual_candidate_tree_files": 4,
+    "private_payload_copies": 0,
+    "actual_UI_manifest_entries": 21
+  },
+  "claims_verified": {
+    "one_actual_EOS_request": true,
+    "generated_token_count": 527,
+    "worker_seconds_rounded3": 69.906,
+    "zero_matched_statements_unassessed": true,
+    "two_spans_are_not_two_verified_claims": true,
+    "saved_file_bytes": 72,
+    "canonical_packet_bytes": 60,
+    "input_meanings_distinct": true,
+    "current_restored_exports_equal": true,
+    "stale_coaching_null": true,
+    "corrected_independent_actual_audit_bound": true,
+    "original_manual_only": true,
+    "trained_profile_unavailable": true
+  },
+  "privacy": {
+    "blocked_private_payload_keys_absent": true,
+    "full_private_payloads_copied": false,
+    "source_builder_positive_projection_inspected": true,
+    "paths_and_request_identity_hash_metadata_remain": true
+  },
+  "findings": [],
+  "limits": [
+    "The candidate accurately retains its historical pending-review status at creation. This independent receipt closes the later helper/projection review; do not rewrite historical candidate bytes to pretend review preceded creation.",
+    "The builder uses assertions and an ordinary JSON reader on exact already-pinned producer metadata. It is a single fixed projection, not a general untrusted-data validator. No new builder run was needed or performed.",
+    "Private evidence paths, request UUID and source hashes are included as provenance; no raw FEN, generated prose, token IDs, export/public-job payloads, screenshots or reference content is copied into this candidate tree.",
+    "The source string describing helpers as runtime-free correctly allows the separately reviewed pure rule checker. No model or engine was called. Root OS/browser observations retain their attribution; disk checks do not attest in-memory code or OS write durability.",
+    "One successful authored integration and normal zero grammar matches establish engineering wiring only. All ordinary prose remains unassessed; no trained admission, human validation or strategic/chess-strength claim."
+  ],
+  "reviewer_execution": {
+    "projection_builder_runs": 0,
+    "new_model_engine_GPU_HTTP_browser_process_or_resource_calls": 0,
+    "held_or_reserve_semantic_reads": 0,
+    "candidate_or_original_edits": 0
+  },
+  "followUpTasks": []
+}

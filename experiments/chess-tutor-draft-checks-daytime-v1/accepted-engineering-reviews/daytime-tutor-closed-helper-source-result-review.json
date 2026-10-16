@@ -1,0 +1,53 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-16T13:58:56.879982+00:00",
+  "scope": "Finite closed helper source and actual receipt only; pure artifact/rule replay, no quality or OS attestation.",
+  "complete_source_bundle": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\05-closed-helper-complete.txt",
+    "bytes": 23879,
+    "sha256": "44222046e276abcfeb3d189222c28595b8b4519c2d18b12e2bac54fd4d32bd84"
+  },
+  "helper_source": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\verify_closed.py",
+    "bytes": 18097,
+    "sha256": "9df34e0d411aa92d5b5a0e0cca30b67fa2dc0d264c97b4bb59470230be6b9ec0"
+  },
+  "actual_root_result": {
+    "path": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-16\\first-i-want-you-to-look\\work\\daytime\\tutor-draft-checks-integration-v1\\closed-verification-1.json",
+    "bytes": 5385,
+    "sha256": "a878f1c936652f6c14af0e8bb2ba663f8f9448b028119f06ff1060e2e3edb786"
+  },
+  "independent_recalculation": {
+    "verify_function_invocations": 1,
+    "new_CLI_attempts": 0,
+    "all_returned_fields_equal_actual_receipt": true,
+    "source_and_runtime_bindings": 27,
+    "qualification_hash_bindings": 22,
+    "actual_artifacts_bound": 9,
+    "token_count": 527,
+    "matched_statements": 0,
+    "span_hashes": 2
+  },
+  "source_findings": [],
+  "checks": [
+    "Bounded duplicate-key/nonfinite-rejecting file parser; exact protocol and source hashes before importing the reviewed pure checker.",
+    "Exact saved input bytes remain distinct from sorted-compact canonical packet identity; all raw fields survive public/export views.",
+    "Worker full arguments and profile/runtime settings bind actual receipt; no new worker invocation.",
+    "Pure checker recomputation and code-point span hashes reproduce exact retained checks; normal zero-match unassessed output.",
+    "Current/restored/stale rules and before/after artifact hashes pass independently."
+  ],
+  "limits": [
+    "No authored software tests were supplied for this helper; its retained preparation was syntax-only. This review read its entire source and exercised the actual successful closed artifact path once in memory. Malformed-path branches were inspected, not exhaustively tested.",
+    "Root process absence, lease, one-click count, before-UI chronology and no-new-return call stay attributed to root sidecar. Helper checks binding/truth-value consistency and does not measure those OS/UI states.",
+    "Helper verifies nine named actual artifacts, 27 source/runtime records and 22 qualification hashes; these counts differ from the actual21-entry private artifact manifest. The prior independent UI-v2 audit covers admission/resources/screenshots/full accounting.",
+    "Completed EOS, legal observations and zero narrow grammar matches prove no whole-prose accuracy, strength, coaching usefulness, human approval or tuned-profile eligibility."
+  ],
+  "reviewer_execution": {
+    "pure_checker_recalculations": 1,
+    "model_engine_GPU_HTTP_browser_process_resource_or_tokenizer_calls": 0,
+    "new_tests": 0,
+    "held_or_reserve_semantic_reads": 0,
+    "source_or_original_artifact_edits": 0
+  },
+  "followUpTasks": []
+}

@@ -1,0 +1,405 @@
+{
+  "schema": "chess.tutor-draft-checks-daytime.public-result-candidate.v1",
+  "status": "candidate_pending_independent_public_projection_and_helper_review",
+  "created_at_utc": "2026-10-16T13:54:31.651645+00:00",
+  "scope": "One authored original-manual UI integration. Engineering metadata only; no model-quality or whole-prose conclusion.",
+  "projection_builder": {
+    "location": "repo:experiments/chess-tutor-draft-checks-daytime-v1/closed-result-candidate/build_projection.py",
+    "bytes": 13815,
+    "sha256": "b81ffbdec4138a2f0f4697dd4d336a7434aa2ae9a94ad13b68b4fb4b69abb2b1"
+  },
+  "prospective_protocol": {
+    "location": "repo:experiments/chess-tutor-draft-checks-daytime-v1/protocol.json",
+    "bytes": 19753,
+    "sha256": "459bcbf0ec8902535e8304fd8a3ea4c99be109b3baca8389c754d5d433875263"
+  },
+  "source_readiness": {
+    "location": "repo:experiments/chess-tutor-draft-checks-daytime-v1/source-readiness-v2.json",
+    "bytes": 13018,
+    "sha256": "e23bd4a75567205fc907d2b6def43f9125a40fc106557041a579d8cac20f28c2"
+  },
+  "existing_service_provenance": {
+    "location": "task:work/daytime/tutor-existing-service-manifest.json",
+    "bytes": 5559,
+    "sha256": "911cd367850689b08d11d5bcc539366733befb397f52dcb1b38dffdbc845c1e7"
+  },
+  "original_runtime_qualification": {
+    "location": "repo:prototype/chess_tutor_v1/queen-runtime.json",
+    "bytes": 4791,
+    "sha256": "0a17fcaa72bef97eec28e4bec0e245c4c42a28219dcf5da6d8c06f807278188d"
+  },
+  "prior_source_review": {
+    "location": "task:work/queen-review/tutor-draft-checks-v1-source-review.json",
+    "bytes": 10833,
+    "sha256": "85e0dff0eaf0bb8586bb8d86760abe802783991437da6344fa9f02d50d679790"
+  },
+  "independent_prospective_plan_review": {
+    "location": "task:work/queen-review/daytime-tutor-draft-checks-integration-plan-review.json",
+    "bytes": 6392,
+    "sha256": "6e7377ffcdf367b78e156d02e0af39f14abe6c1da36925cf7bb1e11a81b08b13"
+  },
+  "root_closed_helper": {
+    "location": "task:work/daytime/tutor-draft-checks-integration-v1/closed-verification-1.json",
+    "bytes": 5385,
+    "sha256": "a878f1c936652f6c14af0e8bb2ba663f8f9448b028119f06ff1060e2e3edb786"
+  },
+  "independent_actual_UI_closed_audit": {
+    "status": "passed",
+    "report": {
+      "location": "task:work/queen-review/daytime-tutor-draft-checks-integration-closed-review-v2.json",
+      "bytes": 8374,
+      "sha256": "fa1157f7b56cf41d3489561df3fb3ec2589febb56150c799d944d82ddc77f0c9"
+    },
+    "scope": "Actual original-manual UI integration evidence; excludes separate pending helper-source/result and public-projection reviews."
+  },
+  "actual_private_artifact_manifest_entry_count": 21,
+  "actual_accounting": {
+    "planned": 1,
+    "completed": 1,
+    "partial": 0,
+    "failed": 0,
+    "active_unknown": 0,
+    "not_run": 0,
+    "actual_UI_submissions": 1,
+    "actual_worker_launches": 1,
+    "confirmed_generation_requests": 1,
+    "completion_status": "completed",
+    "finish_reason": "eos",
+    "generated_token_count": 527,
+    "worker_elapsed_seconds_rounded_3dp": 69.906,
+    "worker_exit_code": 0,
+    "child_exited_before_lease_release": true,
+    "root_observed_child_absent": true,
+    "root_observed_shared_lease_free": true,
+    "selected_move_supplied": false,
+    "source": "Already-spent authored board; no fresh held or reserve input."
+  },
+  "input_identities": {
+    "saved_input_file_bytes": 72,
+    "saved_input_file_sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7",
+    "normalized_packet_bytes": 60,
+    "raw_response_normalized_packet_sha256": "5284f66597ca7599b3292f1f404aaf979f86c917b7ef292cb10b2e004f9bae4e",
+    "meanings": "The saved-file digest binds exact controller bytes. The raw response field retains its frozen sorted-compact normalized-packet meaning. These are distinct identities.",
+    "prospective_templates_and_actual_byte_comparison": "The closed helper passed the direct comparison; no reconstructed old expected hash or old failure repair."
+  },
+  "retained_response_bindings": {
+    "response_file_sha256": "284a7329f97cd66db0e4992dda8359cc20aa9104d856dd6c9574d1a1ed5182a5",
+    "raw_text_utf8_sha256": "9665a5296c5be0cbef3ece8f84e5b1314cd871ce2a6d39776257f31bc5de25ea",
+    "verifier_sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a",
+    "native_parser_sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+  },
+  "limited_checker_result": {
+    "status": "unassessed",
+    "matched_statement_count": 0,
+    "hashed_text_spans_checked": 2,
+    "supported_matched_statements": 0,
+    "contradicted_matched_statements": 0,
+    "whole_prose_assessed": false,
+    "meaning": "No statements matched the narrow canonical grammar. Two text-span hashes were checked; they are not two accepted factual claims. Other prose remains unassessed.",
+    "generator_repairs": 0,
+    "checker_engine_calls": 0
+  },
+  "actual_runtime_metadata": {
+    "status": "completed",
+    "finish_reason": "eos",
+    "generated_token_count": 527,
+    "candidate_id": "queen-pawn-8/native-nf4-v2",
+    "generation_mode": "no_cache",
+    "precision_profile": "math_sdpa_fp32_reduction"
+  },
+  "engineering_evidence": {
+    "closed_helper_status": "artifact_checks_passed_root_observations_bound",
+    "reviewed_source_and_runtime_bindings_rehashed": 27,
+    "qualification_bindings_hashed_without_semantic_reads": 22,
+    "current_export_retained_original_job_and_raw_fields": true,
+    "stale_export_excluded_coaching": true,
+    "restored_export_matched_current_export_bytes": true,
+    "original_artifact_bytes_unchanged_after_UI": true,
+    "return_used_retained_position_root_observation": true,
+    "no_new_coaching_request_on_return_root_observation": true,
+    "in_memory_byte_attestation": false,
+    "loaded_source_limit": "Original-start provenance plus unchanged reviewed disk source and actual captured-input/checker behavior. Disk hashes alone do not attest in-memory Python bytecode.",
+    "browser_label_difference": "Plan prose said Return to this position; the actual control said Return to that position. A label wait timed out without a click, then the observed control was clicked once. No second coaching request."
+  },
+  "resources_and_window": {
+    "startup_GiB_physical_commit_GPU": [
+      6,
+      10,
+      10
+    ],
+    "running_GiB_physical_commit_GPU": [
+      4,
+      4,
+      1
+    ],
+    "admission_observed_at_utc": "2026-10-16T13:42:45.080134+00:00",
+    "root_recorded_startup_sample_count": 2,
+    "root_recorded_samples_spaced_at_least_one_second": true,
+    "root_recorded_admitted": true,
+    "closure_observed_at_utc": "2026-10-16T13:46:19.806921+00:00",
+    "last_admission_utc": "2026-10-16T15:00:00Z",
+    "close_by_utc": "2026-10-16T15:15:00Z",
+    "user_work_cutoff_utc": "2026-10-16T22:00:00Z",
+    "no_retry_or_floor_change": true
+  },
+  "governance": {
+    "independent_actual_UI_closed_review": "Passed in the exact corrected v2 report bound above; 21 manifest entries plus the separately hashed manifest are 22 files. The older wording draft is preserved.",
+    "independent_helper_source_result_and_public_projection_review": "Pending when this candidate was sealed. Root helper PASS is separately attributed and not part of the initial runtime source GO.",
+    "root_OS_and_UI_observations": "Bound observations; the pure helper did not operate or independently measure processes, locks or browser actions.",
+    "human_chess_expert_validation": false,
+    "formal_coaching_quality_claim": false,
+    "whole_prose_quality_claim": false,
+    "trained_profile_admission": false,
+    "trained_profile_remains_unavailable": true,
+    "older_failed_or_unadmitted_attempts_preserved": true,
+    "publication_scope": "Hashes and aggregate engineering metadata only. No response prose, token IDs, positions, public job objects, export payloads, screenshots, references or private file contents copied."
+  },
+  "source_pins": [
+    {
+      "location": "repo:prototype/chess_tutor_v1/draft_checks_v1.py",
+      "bytes": 10253,
+      "sha256": "668962562842274eb61ad97d072dd01fbaa62ff2ba739d67b77d8e87673ae70a"
+    },
+    {
+      "location": "repo:prototype/chess_tutor_v1/coaching_jobs.py",
+      "bytes": 9846,
+      "sha256": "bf8b647d6b08592429a14ca614d0dedcc9dde3b26392af12af3a64a77013fe97"
+    },
+    {
+      "location": "repo:prototype/chess_tutor_v1/static/coaching.js",
+      "bytes": 14755,
+      "sha256": "ea847657bcb46cc7602477f33ff5365054720d15f6c94677319dc27837ecf47c"
+    },
+    {
+      "location": "repo:prototype/chess_tutor_v1/static/coaching.css",
+      "bytes": 2532,
+      "sha256": "a361b386f6694d1a34d9b4483ba36b00f9be60d7f958118666bc7354cf3e51b0"
+    },
+    {
+      "location": "repo:prototype/chess_tutor_v1/static/index.html",
+      "bytes": 6961,
+      "sha256": "b12f16e9b2b84bee9fcd50b9817cbc7e8adbbbd8a4a09e5b79dbf38683368336"
+    },
+    {
+      "location": "repo:tests/test_chess_tutor_draft_checks_v1.py",
+      "bytes": 12492,
+      "sha256": "a1e9e233ba4cf16d7a5cabb0d6f828e25e917681decd53acfd5e7df24428cced"
+    },
+    {
+      "location": "repo:tests/test_chess_tutor_draft_checks_ui_v1.py",
+      "bytes": 6554,
+      "sha256": "d56c6eb5545fa6554c5090655b71d627632f10df78184f877a5982cdb722137e"
+    },
+    {
+      "location": "repo:prototype/chess_tutor_v1/queen_runtime.py",
+      "bytes": 10709,
+      "sha256": "8295ada0e368ff5810ee81b977f5dc61bc51a759e821459b3111441145ddc740"
+    },
+    {
+      "location": "repo:prototype/chess_tutor_v1/server.py",
+      "bytes": 28830,
+      "sha256": "d3b88e9bfd184038da66c1ea7858be9b32647dd53e6974ea7a86456c6e58e2a5"
+    },
+    {
+      "location": "repo:prototype/chess_tutor_v1/static/app.js",
+      "bytes": 16841,
+      "sha256": "20667639d629412e31f97632da7a544e78a07fa242fb7b88fd863a2fd567fdda"
+    },
+    {
+      "location": "repo:scripts/chess_queen_claim_audit_v1.py",
+      "bytes": 15223,
+      "sha256": "15b28179638d9c5c3b1b95e7299e9b6e9390c87bc8bedc5aea4e2f7490893529"
+    },
+    {
+      "location": "repo:scripts/chess_queen_coach_counterfactual_eval_v1.py",
+      "bytes": 7382,
+      "sha256": "64f9081fb8621999e8933b5d7737e5d1cbb85d57520be334452f759a4e7cd06e"
+    },
+    {
+      "location": "repo:scripts/chess_queen_coach_sft_eval_v1.py",
+      "bytes": 7354,
+      "sha256": "901da0d154330ab86ec5e72e9ed5159ace4ab7a53a51bf508bf2c91f6ffbb9fe"
+    },
+    {
+      "location": "repo:scripts/chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    }
+  ],
+  "runtime_source_and_metadata_pins": [
+    {
+      "role": "worker",
+      "location": "repo:experiments/chess-queen-v1/gpu_worker.py",
+      "bytes": 11825,
+      "sha256": "1164d8fd1dbc59221a7d51ce410bb5e9a3109998fd3b6f9d00db071d237948c0"
+    },
+    {
+      "role": "adapter",
+      "location": "repo:scripts/chess_queen_nf4_adapter_v2.py",
+      "bytes": 21493,
+      "sha256": "0305b7af2661bc9554171774f49f1b14e5fc20767bbf01416e2e2497313367a8"
+    },
+    {
+      "role": "base_adapter",
+      "location": "repo:scripts/chess_queen_adapter.py",
+      "bytes": 26811,
+      "sha256": "e8f1c2d9d9fb1270e49288d9e39732cf5c2f521fe2e07962015fc776e8bb7ea0"
+    },
+    {
+      "role": "kernel_protocol",
+      "location": "repo:experiments/chess-queen-nf4-v1/kernel-protocol-v2.json",
+      "bytes": 8418,
+      "sha256": "515cf1d0ecabc5e058fbe6d8ac6ef04375cf9e9e5b8bd292dfcc80acf70fe83c"
+    },
+    {
+      "role": "kernel_receipt",
+      "location": "repo:data/private/chess-queen-nf4-v1/kernel-2.json",
+      "bytes": 3673,
+      "sha256": "85cfb012f98c627b5d1c8a4b317ed554d683bb530de395b5f7f0df09e20ba7a9"
+    },
+    {
+      "role": "kernel_worker",
+      "location": "repo:data/private/chess-queen-nf4-v1/kernel-worker-2.json",
+      "bytes": 589,
+      "sha256": "82a93a694b1c81a261a10e99c872de41f1719d14fbdd603587dbc55122413f05"
+    },
+    {
+      "role": "parity_source",
+      "location": "repo:experiments/chess-queen-nf4-v1/parity_no_cache_v2.py",
+      "bytes": 9874,
+      "sha256": "5387c50b5aa9e2c1479bc2a40ddd2d28a72016b40763bf7a3ea04abed611dca9"
+    },
+    {
+      "role": "parity_protocol",
+      "location": "repo:experiments/chess-queen-nf4-v1/parity-protocol-v3.json",
+      "bytes": 4282,
+      "sha256": "6287196f26689aedcb5d8a314330ed26ff96cff5569e7f4b80073ebe3babe244"
+    },
+    {
+      "role": "parity_receipt",
+      "location": "repo:data/private/chess-queen-nf4-v1/parity-2.json",
+      "bytes": 15731,
+      "sha256": "77e18dd141bf4c74142c1d074bf3509a0db6e40644b1a7c73aa98480dc58bcd4"
+    },
+    {
+      "role": "parity_worker",
+      "location": "repo:data/private/chess-queen-nf4-v1/parity-worker-2.json",
+      "bytes": 606,
+      "sha256": "28e55981247df3b381845c831efb02b180a18992531ceda54606d2c3031a5999"
+    },
+    {
+      "role": "asset_manifest",
+      "location": "repo:experiments/chess-queen-v1/asset-manifest.json",
+      "bytes": 4531,
+      "sha256": "dc909eca4d0e0b17b2b2d188f55e461c18121516d62d1fc8062fd33c81620ad3"
+    },
+    {
+      "role": "source_manifest",
+      "location": "repo:experiments/chess-queen-v1/source-manifest.json",
+      "bytes": 1758,
+      "sha256": "22ef4c5ecf7f7f79848eb3b261f74cee96296614ae99e38d3f16bdca06da08ff"
+    }
+  ],
+  "private_evidence_hashes_only": [
+    {
+      "location": "repo:data/private/chess-tutor-v1/coaching/9431d3a155a146c0851dcaa2be10e80b/input.json",
+      "bytes": 72,
+      "sha256": "07124a60c3dc4aaab070ae6250b143e4a93ca4f09b3afea7e02a5d755ab4e2d7"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-v1/coaching/9431d3a155a146c0851dcaa2be10e80b/response.json",
+      "bytes": 40634,
+      "sha256": "284a7329f97cd66db0e4992dda8359cc20aa9104d856dd6c9574d1a1ed5182a5"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-v1/coaching/9431d3a155a146c0851dcaa2be10e80b/worker.json",
+      "bytes": 724,
+      "sha256": "0baf83a8c66123e2e4a869bc3b3b6d9a4abb9c5a2671c3f0601aeea53e3403d7"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-v1/coaching/9431d3a155a146c0851dcaa2be10e80b/draft-checks-v1.json",
+      "bytes": 1941,
+      "sha256": "edb9bae9a8be337d8343206398bc7df0269e02ea6937e3b5fd60f5e75b06043e"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/terminal-public-job.json",
+      "bytes": 59885,
+      "sha256": "77fd654db0cab0c18ad87b3e79a8b3c7c70893a067e09bf5f6d9ed1e1166b42a"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/helper-observations.json",
+      "bytes": 2323,
+      "sha256": "362572c7b3d8f6daf539a8dedd923b11156c12cded2ee007f13fde359e00e037"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/current-evidence.json",
+      "bytes": 72435,
+      "sha256": "05c60ef8162c3875af1e09089ff6c57a107b11bd871838e5f2cb2d85f7705975"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/stale-evidence.json",
+      "bytes": 13793,
+      "sha256": "4f4a061c7ba52fe6e28919c7fa7221ff73659f20b4fbcc9a6c1c4508ed1cabc3"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/restored-evidence.json",
+      "bytes": 72435,
+      "sha256": "05c60ef8162c3875af1e09089ff6c57a107b11bd871838e5f2cb2d85f7705975"
+    },
+    {
+      "location": "task:work/daytime/tutor-draft-checks-integration-v1/closed-verification-1.json",
+      "bytes": 5385,
+      "sha256": "a878f1c936652f6c14af0e8bb2ba663f8f9448b028119f06ff1060e2e3edb786"
+    },
+    {
+      "location": "task:work/daytime/tutor-draft-checks-integration-v1/verify_closed.py",
+      "bytes": 18097,
+      "sha256": "9df34e0d411aa92d5b5a0e0cca30b67fa2dc0d264c97b4bb59470230be6b9ec0"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/closure.json",
+      "bytes": 2704,
+      "sha256": "a4ddb6962d5075ef6a0520baa142df8aa05d0e495ac56c5316ca44b2d91fecc7"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/admission.json",
+      "bytes": 10015,
+      "sha256": "0bfad358b22fc356aa3ac9dc3b342ed0aa3707df0b97e75ccf47f4dcdc9378d0"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/intent.json",
+      "bytes": 1003,
+      "sha256": "c5c26c9987c7919bd196427189e680d21f5b3fefba827ff66171ef9973a928d3"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/dispatch-link.json",
+      "bytes": 2051,
+      "sha256": "68d273632b78a9167132159402b237a35226c8ce95b9655df6e883ba49f6e251"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/before-ui-artifacts.json",
+      "bytes": 1286,
+      "sha256": "c8481acb342f54e362f0ac49d84f5c5d4894c651660af441753acf07e4aeaa53"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/source-and-process-after.json",
+      "bytes": 5039,
+      "sha256": "3493ba687a4d62a2ac8c40175e406c3b8c115dbdd5a35d8ee99945bcafae1b9b"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-draft-checks-daytime-v1/attempt-1/artifact-manifest.json",
+      "bytes": 6638,
+      "sha256": "a78108ba3b92a6c5b0d3451006305e67d131af35eb23c57d4c3b321127253641"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-v1/coaching/9431d3a155a146c0851dcaa2be10e80b/worker.log",
+      "bytes": 2576,
+      "sha256": "6f5ee7a8925fe6510c679d51cf3f66e1a0c6f7b150fa1f488da6a3071d258ece"
+    },
+    {
+      "location": "repo:data/private/chess-tutor-v1/coaching/9431d3a155a146c0851dcaa2be10e80b/controller.log",
+      "bytes": 690,
+      "sha256": "a7ff0ed463508eae442edd9f4412a447b90ad5fea4c06ce59decbc7a83130b27"
+    }
+  ]
+}

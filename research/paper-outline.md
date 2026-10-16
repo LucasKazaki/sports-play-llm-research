@@ -326,3 +326,68 @@ capacity and separately fixed evaluation; it must preserve the failed/unadmitted
 records and address the measured coverage gaps. UMD ownership/tool/venue and any
 future participant-study questions remain unresolved. No external contact or
 institutional approval is implied. See chess-overnight-closeout-2026-10-16.json.
+
+## Human-authorized daytime continuation — October 16, 13:23 UTC
+
+Lucas explicitly answered: “Continue today until 6:00 PM Eastern.” The new
+cutoff is 22:00 UTC. The existing hourly heartbeat is ACTIVE through that time;
+no second scheduler was created. The completed overnight window, its closeout,
+failed attempts and unrun phases remain historical and unchanged. This human
+instruction resolves the prior fixed-window blocker; the new blocked audit
+starts at zero. It grants a new operating window, not a capability verdict.
+
+Current physical/commit/GPU startup headroom passes the unchanged reserves.
+The original local tutor remains available. Automatic approval review rejected
+a proposed forced restart before execution, giving only “blocked by policy.”
+The safer path retains the existing verified process and binds current source,
+process provenance and actual controller/artifact behavior; it makes no claim
+that disk hashes alone attest in-memory bytecode. No stop was retried.
+
+First work is a separately frozen one-request actual UI integration, then a
+disposable exact counterfactual warm-start/backward/save/reload qualifier and a
+separate two-request cold-route qualifier. Only after independent source and
+actual software/resource review may a separately versioned full 192-update
+scientific run start from the unchanged original checkpoint64. The prior
+old-SFT-only cold PASS is not qualification of this counterfactual route.
+Science, data/reservations, memory reserves and full failure denominators stay
+fixed. No new model experiment has started as of this operational entry.
+
+The 13:28 official public metadata refresh retains the same Queen code/model
+revisions and Stockfish19 stable tag. No dependency, weight or method was
+updated; this is a bounded freshness check, not an exhaustive field survey.
+The coaching, professional-use, human-expert and institutional gates remain
+unmet. See chess-daytime-window-2026-10-16.json and work/daytime/ in this chat.
+
+
+## Daytime engineering evidence and limits — October 16, 13:57 UTC
+
+One separately planned original-manual UI request completed with EOS: 527 tokens,
+69.906 seconds in its owned worker. The actual controller/checker byte bindings,
+current/stale/restored exports and raw preservation passed independent closed
+review (corrected v2: fa1157f7). No canonical statements matched, so the prose
+remains unassessed. The optional public metadata projection has its own review
+pending; the actual UI audit is an engineering result only.
+
+The exact counterfactual warm-start route also passed an actual disposable
+eight-backward/one-update/save-reload check and independent audit (65f918a5).
+All144 FP32 adapter tensors began at the original64 values, changed after the
+update and reloaded identically; all2,268 frozen tensors stayed unchanged.
+These weights are retained as a software-test artifact and cannot start or be
+selected in the scientific run.
+
+Cold qualification1 failed after0.782seconds at OpenProcess error87. The first
+child recorded zero generation requests and model-load setup, with loading
+progress unknown. The original ledger stays one active/unknown plus one unrun.
+Known owned processes closed, were observed absent, and the lease was free.
+A separately versioned observer design will distinguish measured snapshot
+absence from a live unknown without calling absence an identity or handle EXIT.
+It requires source review and a bounded CPU lifecycle probe before any new
+model qualification. The failed phase is not replayed; reserves stay fixed.
+
+The full192-update run and fixed96-response comparison remain unrun. The same
+16 roots have zero generation calls; all512 reserve games stay excluded from
+training. The new operating window still ends22UTC/18:00Eastern. Current working
+metadata, UI/checker and warm software success establish no broad chess-coaching
+quality, professional use, human validation or institutional approval. Selected
+ChessArena v4 methods were added to the bounded primary-source radar; its data
+and weights were not acquired and the current scientific design did not change.
