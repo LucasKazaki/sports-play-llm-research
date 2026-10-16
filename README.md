@@ -1,5 +1,20 @@
 # SportsPlayLLMResearch
 
+## Live chess study candidate — October 16, 2026
+
+The [new local tutor view](prototype/chess_tutor_v1/README.md) imports FEN/PGN,
+plays and replays legal moves, compares Stockfish alternatives, and shows an
+independent local classifier's raw three-ply forecast. Engine continuations and
+checked board facts are clearly attributed. Run `scripts/start-chess-tutor.ps1`
+and open `http://127.0.0.1:8793/`. The interface has 32 focused software checks
+and desktop/mobile browser verification; teaching quality remains unmeasured.
+
+New experiments address the failures below: [balanced check learning](experiments/chess-check-balanced-v2/README.md)
+and [a larger move-policy distillation](experiments/chess-move-policy-v5/README.md).
+Their actual outcomes, including interruptions and regressions, are reported
+separately from interface readiness. No engine binary, model weight or creator
+video is redistributed by this source change.
+
 ## Move-only language-policy pilot v4 — October 15, 2026
 
 The [new language-policy experiment](reports/chess-move-only-lm-v4-2026-10-15.md)

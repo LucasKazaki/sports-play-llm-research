@@ -1,0 +1,3380 @@
+{
+  "rows": [
+    {
+      "id": "policy-v5-0Fgeb",
+      "puzzle_id": "0Fgeb",
+      "game_id": "fomH6TPW",
+      "source_before_fen": "3rrbk1/1p3p1p/2p1bp2/p1n5/P2Np3/1P4N1/2P2PPP/3RRBK1 w - - 0 21",
+      "setup_uci": "g3e4",
+      "fen": "3rrbk1/1p3p1p/2p1bp2/p1n5/P2NN3/1P6/2P2PPP/3RRBK1 b - - 0 21",
+      "source_ordinal": 25173,
+      "row_group": 0,
+      "row_in_group": 25173,
+      "status": "completed",
+      "teacher_move_uci": "c5e4",
+      "reference_pv": [
+        "c5e4",
+        "e1e4",
+        "c6c5"
+      ],
+      "score": {
+        "cp": 427,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50007,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0GfVb",
+      "puzzle_id": "0GfVb",
+      "game_id": "Sy1OZwMx",
+      "source_before_fen": "r2Q1k1r/pp2npp1/2p4p/4Pq2/5P2/2N3B1/PPP3PP/2KR1B1R b - - 2 18",
+      "setup_uci": "a8d8",
+      "fen": "3r1k1r/pp2npp1/2p4p/4Pq2/5P2/2N3B1/PPP3PP/2KR1B1R w - - 0 19",
+      "source_ordinal": 26722,
+      "row_group": 0,
+      "row_in_group": 26722,
+      "status": "completed",
+      "teacher_move_uci": "d1d8",
+      "reference_pv": [
+        "d1d8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 7598,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0Iq5s",
+      "puzzle_id": "0Iq5s",
+      "game_id": "itXJcS9F",
+      "source_before_fen": "r3k2r/pp2ppbp/1qbp2p1/8/2B5/P1P2P2/1P1B2PP/R2Q1R1K b kq - 2 14",
+      "setup_uci": "b6b2",
+      "fen": "r3k2r/pp2ppbp/2bp2p1/8/2B5/P1P2P2/1q1B2PP/R2Q1R1K w kq - 0 15",
+      "source_ordinal": 30080,
+      "row_group": 0,
+      "row_in_group": 30080,
+      "status": "completed",
+      "teacher_move_uci": "c4b3",
+      "reference_pv": [
+        "c4b3",
+        "c6b5",
+        "f1e1"
+      ],
+      "score": {
+        "cp": 519,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50033,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0Ix3o",
+      "puzzle_id": "0Ix3o",
+      "game_id": "iObqjvRn",
+      "source_before_fen": "6k1/5p1p/P4p2/1pP5/7P/6P1/6K1/1r3B2 b - - 0 39",
+      "setup_uci": "b1a1",
+      "fen": "6k1/5p1p/P4p2/1pP5/7P/6P1/6K1/r4B2 w - - 1 40",
+      "source_ordinal": 30250,
+      "row_group": 0,
+      "row_in_group": 30250,
+      "status": "completed",
+      "teacher_move_uci": "f1b5",
+      "reference_pv": [
+        "f1b5",
+        "a1a5"
+      ],
+      "score": {
+        "cp": 349,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50011,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0J3ql",
+      "puzzle_id": "0J3ql",
+      "game_id": "SB5XH81p",
+      "source_before_fen": "7r/3nkpp1/P1qbpnp1/8/3P4/2NB2Pr/1P1B1PKP/R2Q3R w - - 5 20",
+      "setup_uci": "d1f3",
+      "fen": "7r/3nkpp1/P1qbpnp1/8/3P4/2NB1QPr/1P1B1PKP/R6R b - - 6 20",
+      "source_ordinal": 30440,
+      "row_group": 0,
+      "row_in_group": 30440,
+      "status": "completed",
+      "teacher_move_uci": "h3h2",
+      "reference_pv": [
+        "h3h2",
+        "h1h2"
+      ],
+      "score": {
+        "cp": 574,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50028,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0JQs0",
+      "puzzle_id": "0JQs0",
+      "game_id": "n8Hno3jv",
+      "source_before_fen": "r2qr1k1/1pp2ppp/p1n5/3n3b/8/2PB1N1P/PPP2PP1/R1BQ1RK1 w - - 1 15",
+      "setup_uci": "c1g5",
+      "fen": "r2qr1k1/1pp2ppp/p1n5/3n2Bb/8/2PB1N1P/PPP2PP1/R2Q1RK1 b - - 2 15",
+      "source_ordinal": 31021,
+      "row_group": 0,
+      "row_in_group": 31021,
+      "status": "completed",
+      "teacher_move_uci": "h5f3",
+      "reference_pv": [
+        "h5f3",
+        "d1c1"
+      ],
+      "score": {
+        "cp": 392,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": true
+      },
+      "nodes": 50044,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0JTVv",
+      "puzzle_id": "0JTVv",
+      "game_id": "AVOjaS3w",
+      "source_before_fen": "r4rk1/ppp3pp/2nq1b2/4pp2/1PP5/PQ1pPN2/1B1P1PPP/R3K2R b KQ - 3 15",
+      "setup_uci": "e5e4",
+      "fen": "r4rk1/ppp3pp/2nq1b2/5p2/1PP1p3/PQ1pPN2/1B1P1PPP/R3K2R w KQ - 0 16",
+      "source_ordinal": 31073,
+      "row_group": 0,
+      "row_in_group": 31073,
+      "status": "completed",
+      "teacher_move_uci": "c4c5",
+      "reference_pv": [
+        "c4c5",
+        "g8h8"
+      ],
+      "score": {
+        "cp": 710,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50034,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0K62D",
+      "puzzle_id": "0K62D",
+      "game_id": "JCK0u089",
+      "source_before_fen": "8/5Rr1/4K2k/8/4P2p/8/8/8 w - - 0 60",
+      "setup_uci": "f7f6",
+      "fen": "8/6r1/4KR1k/8/4P2p/8/8/8 b - - 1 60",
+      "source_ordinal": 32061,
+      "row_group": 0,
+      "row_in_group": 32061,
+      "status": "completed",
+      "teacher_move_uci": "g7g6",
+      "reference_pv": [
+        "g7g6",
+        "e4e5"
+      ],
+      "score": {
+        "cp": 462,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50004,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0KP7U",
+      "puzzle_id": "0KP7U",
+      "game_id": "F3G2dAT4",
+      "source_before_fen": "8/8/4p3/4k2p/5p1P/P3pK2/1r3r2/4RR2 w - - 0 41",
+      "setup_uci": "f1f2",
+      "fen": "8/8/4p3/4k2p/5p1P/P3pK2/1r3R2/4R3 b - - 0 41",
+      "source_ordinal": 32555,
+      "row_group": 0,
+      "row_in_group": 32555,
+      "status": "completed",
+      "teacher_move_uci": "b2f2",
+      "reference_pv": [
+        "b2f2"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 4424,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0KrBv",
+      "puzzle_id": "0KrBv",
+      "game_id": "Q3lGxs5e",
+      "source_before_fen": "2r5/pk2b1Q1/3pqp2/1P2p3/7B/8/5PP1/R5K1 b - - 2 36",
+      "setup_uci": "d6d5",
+      "fen": "2r5/pk2b1Q1/4qp2/1P1pp3/7B/8/5PP1/R5K1 w - - 0 37",
+      "source_ordinal": 33303,
+      "row_group": 0,
+      "row_in_group": 33303,
+      "status": "completed",
+      "teacher_move_uci": "a1a6",
+      "reference_pv": [
+        "a1a6",
+        "e6d7"
+      ],
+      "score": {
+        "cp": 179,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50032,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0LOHi",
+      "puzzle_id": "0LOHi",
+      "game_id": "0c18PRAh",
+      "source_before_fen": "4r1k1/1p4b1/1q4pp/p3P1N1/3r4/7Q/PP3PPP/R3R1K1 w - - 0 29",
+      "setup_uci": "h3b3",
+      "fen": "4r1k1/1p4b1/1q4pp/p3P1N1/3r4/1Q6/PP3PPP/R3R1K1 b - - 1 29",
+      "source_ordinal": 34122,
+      "row_group": 0,
+      "row_in_group": 34122,
+      "status": "completed",
+      "teacher_move_uci": "b6b3",
+      "reference_pv": [
+        "b6b3",
+        "a2b3"
+      ],
+      "score": {
+        "cp": 413,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50034,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0LjX2",
+      "puzzle_id": "0LjX2",
+      "game_id": "UqH2w0Uo",
+      "source_before_fen": "r3r1k1/1bp2pp1/p6p/1pb4n/4Pq1B/1PNP1N1P/1PPQ2P1/2KR1R2 w - - 6 20",
+      "setup_uci": "g2g4",
+      "fen": "r3r1k1/1bp2pp1/p6p/1pb4n/4PqPB/1PNP1N1P/1PPQ4/2KR1R2 b - - 0 20",
+      "source_ordinal": 34681,
+      "row_group": 0,
+      "row_in_group": 34681,
+      "status": "completed",
+      "teacher_move_uci": "c5e3",
+      "reference_pv": [
+        "c5e3",
+        "g4h5"
+      ],
+      "score": {
+        "cp": 362,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50010,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0MQY4",
+      "puzzle_id": "0MQY4",
+      "game_id": "zuSFW7yT",
+      "source_before_fen": "2r3k1/p6p/1q3ppB/2rpp3/P7/3QP2P/5PP1/3R2K1 b - - 3 26",
+      "setup_uci": "c5c1",
+      "fen": "2r3k1/p6p/1q3ppB/3pp3/P7/3QP2P/5PP1/2rR2K1 w - - 4 27",
+      "source_ordinal": 35840,
+      "row_group": 0,
+      "row_in_group": 35840,
+      "status": "completed",
+      "teacher_move_uci": "d3d5",
+      "reference_pv": [
+        "d3d5",
+        "g8h8"
+      ],
+      "score": {
+        "cp": 510,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50017,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0N6hx",
+      "puzzle_id": "0N6hx",
+      "game_id": "MCAILupf",
+      "source_before_fen": "8/p5pk/1p1p3p/8/3NqP2/1Q4P1/PR3K1P/2r5 w - - 1 35",
+      "setup_uci": "b3e3",
+      "fen": "8/p5pk/1p1p3p/8/3NqP2/4Q1P1/PR3K1P/2r5 b - - 2 35",
+      "source_ordinal": 36982,
+      "row_group": 0,
+      "row_in_group": 36982,
+      "status": "completed",
+      "teacher_move_uci": "c1f1",
+      "reference_pv": [
+        "c1f1",
+        "f2e2",
+        "f1e1"
+      ],
+      "score": {
+        "cp": 590,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50045,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0NVZL",
+      "puzzle_id": "0NVZL",
+      "game_id": "YBDg49tO",
+      "source_before_fen": "r2q1rk1/1b3p2/3p2pQ/1pp1p3/4P3/2P2N1P/PP3PP1/R4RK1 b - - 0 19",
+      "setup_uci": "b7e4",
+      "fen": "r2q1rk1/5p2/3p2pQ/1pp1p3/4b3/2P2N1P/PP3PP1/R4RK1 w - - 0 20",
+      "source_ordinal": 37596,
+      "row_group": 0,
+      "row_in_group": 37596,
+      "status": "completed",
+      "teacher_move_uci": "f3g5",
+      "reference_pv": [
+        "f3g5",
+        "d8g5",
+        "h6g5"
+      ],
+      "score": {
+        "cp": 770,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50049,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0NzSn",
+      "puzzle_id": "0NzSn",
+      "game_id": "xxJPzNOB",
+      "source_before_fen": "r2q1rk1/pp3p1N/6b1/4Pn2/3p1P2/7Q/P1P2P1P/R5RK b - - 1 22",
+      "setup_uci": "d8d5",
+      "fen": "r4rk1/pp3p1N/6b1/3qPn2/3p1P2/7Q/P1P2P1P/R5RK w - - 2 23",
+      "source_ordinal": 38380,
+      "row_group": 0,
+      "row_in_group": 38380,
+      "status": "completed",
+      "teacher_move_uci": "f2f3",
+      "reference_pv": [
+        "f2f3",
+        "g8g7",
+        "h7f6"
+      ],
+      "score": {
+        "cp": 372,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50035,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0O163",
+      "puzzle_id": "0O163",
+      "game_id": "HZ2zWciY",
+      "source_before_fen": "1kr5/pp1b1p2/3q3p/Q2Pnp2/3Np3/4P1P1/P4P1P/1R3BK1 b - - 6 32",
+      "setup_uci": "e5f3",
+      "fen": "1kr5/pp1b1p2/3q3p/Q2P1p2/3Np3/4PnP1/P4P1P/1R3BK1 w - - 7 33",
+      "source_ordinal": 38423,
+      "row_group": 0,
+      "row_in_group": 38423,
+      "status": "completed",
+      "teacher_move_uci": "d4f3",
+      "reference_pv": [
+        "d4f3",
+        "e4f3"
+      ],
+      "score": {
+        "cp": 437,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50025,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0O7fF",
+      "puzzle_id": "0O7fF",
+      "game_id": "45Bz3yXo",
+      "source_before_fen": "8/7p/8/p3k3/Pp1pP2P/3K4/2P5/8 b - - 0 30",
+      "setup_uci": "b4b3",
+      "fen": "8/7p/8/p3k3/P2pP2P/1p1K4/2P5/8 w - - 0 31",
+      "source_ordinal": 38559,
+      "row_group": 0,
+      "row_in_group": 38559,
+      "status": "completed",
+      "teacher_move_uci": "c2b3",
+      "reference_pv": [
+        "c2b3",
+        "h7h6",
+        "h4h5"
+      ],
+      "score": {
+        "cp": 534,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50009,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0OEMK",
+      "puzzle_id": "0OEMK",
+      "game_id": "npEcpu5P",
+      "source_before_fen": "8/8/8/r7/6PK/8/pk4P1/R7 w - - 1 55",
+      "setup_uci": "a1a2",
+      "fen": "8/8/8/r7/6PK/8/Rk4P1/8 b - - 0 55",
+      "source_ordinal": 38733,
+      "row_group": 0,
+      "row_in_group": 38733,
+      "status": "completed",
+      "teacher_move_uci": "a5a2",
+      "reference_pv": [
+        "a5a2",
+        "h4g5",
+        "b2c3"
+      ],
+      "score": {
+        "cp": 404,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50048,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0OIxJ",
+      "puzzle_id": "0OIxJ",
+      "game_id": "ZlGdbISE",
+      "source_before_fen": "5k2/8/7p/1B2n1p1/P7/6PK/1r3P1P/5R2 w - - 0 41",
+      "setup_uci": "f2f4",
+      "fen": "5k2/8/7p/1B2n1p1/P4P2/6PK/1r5P/5R2 b - - 0 41",
+      "source_ordinal": 38853,
+      "row_group": 0,
+      "row_in_group": 38853,
+      "status": "completed",
+      "teacher_move_uci": "g5g4",
+      "reference_pv": [
+        "g5g4",
+        "h3h4",
+        "b2h2"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 12050,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0OgIP",
+      "puzzle_id": "0OgIP",
+      "game_id": "EOblv42u",
+      "source_before_fen": "1r4k1/p5pp/4p3/3pPr2/1P4Q1/2Pq3P/P2B1PP1/3R2K1 b - - 4 29",
+      "setup_uci": "b8f8",
+      "fen": "5rk1/p5pp/4p3/3pPr2/1P4Q1/2Pq3P/P2B1PP1/3R2K1 w - - 5 30",
+      "source_ordinal": 39437,
+      "row_group": 0,
+      "row_in_group": 39437,
+      "status": "completed",
+      "teacher_move_uci": "d2h6",
+      "reference_pv": [
+        "d2h6",
+        "d3d1",
+        "g4d1"
+      ],
+      "score": {
+        "cp": 424,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50014,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0OuVB",
+      "puzzle_id": "0OuVB",
+      "game_id": "k01VCcU6",
+      "source_before_fen": "rn3rk1/ppp2ppp/4b3/3Nbq2/2B5/1Q6/PPP2PPP/R1B2RK1 b - - 1 13",
+      "setup_uci": "b7b6",
+      "fen": "rn3rk1/p1p2ppp/1p2b3/3Nbq2/2B5/1Q6/PPP2PPP/R1B2RK1 w - - 0 14",
+      "source_ordinal": 39786,
+      "row_group": 0,
+      "row_in_group": 39786,
+      "status": "completed",
+      "teacher_move_uci": "d5e7",
+      "reference_pv": [
+        "d5e7",
+        "g8h8",
+        "e7f5"
+      ],
+      "score": {
+        "cp": 859,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50041,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0OwmM",
+      "puzzle_id": "0OwmM",
+      "game_id": "FBaUaYk7",
+      "source_before_fen": "r1bqkb1r/1p1n1ppp/p3p3/4N3/3p1P2/2N5/PPP3PP/R1BQ1RK1 w kq - 0 11",
+      "setup_uci": "d1d4",
+      "fen": "r1bqkb1r/1p1n1ppp/p3p3/4N3/3Q1P2/2N5/PPP3PP/R1B2RK1 b kq - 0 11",
+      "source_ordinal": 39848,
+      "row_group": 0,
+      "row_in_group": 39848,
+      "status": "completed",
+      "teacher_move_uci": "f8c5",
+      "reference_pv": [
+        "f8c5",
+        "d4c5",
+        "d7c5"
+      ],
+      "score": {
+        "cp": 630,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50035,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0PUl2",
+      "puzzle_id": "0PUl2",
+      "game_id": "rEh8JvSD",
+      "source_before_fen": "r2qk2r/p1pn1pb1/1p1ppnp1/6B1/3Pb1PP/2N5/PPPQ4/2KR1BNR w kq - 0 12",
+      "setup_uci": "c3e4",
+      "fen": "r2qk2r/p1pn1pb1/1p1ppnp1/6B1/3PN1PP/8/PPPQ4/2KR1BNR b kq - 0 12",
+      "source_ordinal": 40772,
+      "row_group": 0,
+      "row_in_group": 40772,
+      "status": "completed",
+      "teacher_move_uci": "f6e4",
+      "reference_pv": [
+        "f6e4",
+        "g5d8"
+      ],
+      "score": {
+        "cp": 202,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50020,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0PjT0",
+      "puzzle_id": "0PjT0",
+      "game_id": "x72eotvd",
+      "source_before_fen": "1k6/p1pq3p/2pb1p2/6p1/Q5b1/2N1B3/PP3PPP/R3rB1K b - - 3 20",
+      "setup_uci": "e1a1",
+      "fen": "1k6/p1pq3p/2pb1p2/6p1/Q5b1/2N1B3/PP3PPP/r4B1K w - - 0 21",
+      "source_ordinal": 41136,
+      "row_group": 0,
+      "row_in_group": 41136,
+      "status": "completed",
+      "teacher_move_uci": "a4a7",
+      "reference_pv": [
+        "a4a7",
+        "b8c8",
+        "a7a8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 18434,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0PtAL",
+      "puzzle_id": "0PtAL",
+      "game_id": "ZvEDerq5",
+      "source_before_fen": "6k1/6q1/p1Q5/2pP4/1pP2pP1/1P4bP/P2P3r/4R1K1 w - - 0 38",
+      "setup_uci": "e1e8",
+      "fen": "4R1k1/6q1/p1Q5/2pP4/1pP2pP1/1P4bP/P2P3r/6K1 b - - 1 38",
+      "source_ordinal": 41382,
+      "row_group": 0,
+      "row_in_group": 41382,
+      "status": "completed",
+      "teacher_move_uci": "g8h7",
+      "reference_pv": [
+        "g8h7",
+        "e8h8",
+        "g7h8"
+      ],
+      "score": {
+        "cp": 799,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50038,
+      "depth": 12
+    },
+    {
+      "id": "policy-v5-0Pzgv",
+      "puzzle_id": "0Pzgv",
+      "game_id": "cPI9iaXi",
+      "source_before_fen": "q4rk1/5pn1/8/r2B2Q1/2P5/3P3P/1R3PPK/8 b - - 0 31",
+      "setup_uci": "a8d8",
+      "fen": "3q1rk1/5pn1/8/r2B2Q1/2P5/3P3P/1R3PPK/8 w - - 1 32",
+      "source_ordinal": 41545,
+      "row_group": 0,
+      "row_in_group": 41545,
+      "status": "completed",
+      "teacher_move_uci": "d5f7",
+      "reference_pv": [
+        "d5f7",
+        "g8f7",
+        "b2b7"
+      ],
+      "score": {
+        "cp": 307,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50060,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0Q1ZQ",
+      "puzzle_id": "0Q1ZQ",
+      "game_id": "ZHSkaCHv",
+      "source_before_fen": "r4rk1/5p2/2p2p1p/1pP1pq2/1Q6/1P3N2/PK4PP/3R3R w - - 2 22",
+      "setup_uci": "h2h4",
+      "fen": "r4rk1/5p2/2p2p1p/1pP1pq2/1Q5P/1P3N2/PK4P1/3R3R b - - 0 22",
+      "source_ordinal": 41594,
+      "row_group": 0,
+      "row_in_group": 41594,
+      "status": "completed",
+      "teacher_move_uci": "a8a2",
+      "reference_pv": [
+        "a8a2",
+        "b2a2",
+        "f5c2"
+      ],
+      "score": {
+        "cp": 836,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50083,
+      "depth": 23
+    },
+    {
+      "id": "policy-v5-0QNb2",
+      "puzzle_id": "0QNb2",
+      "game_id": "ocliI1h9",
+      "source_before_fen": "8/3k2pp/1p1q1p2/3r4/8/8/PP2QPPP/3R2K1 w - - 8 32",
+      "setup_uci": "e2b5",
+      "fen": "8/3k2pp/1p1q1p2/1Q1r4/8/8/PP3PPP/3R2K1 b - - 9 32",
+      "source_ordinal": 42167,
+      "row_group": 0,
+      "row_in_group": 42167,
+      "status": "completed",
+      "teacher_move_uci": "d5b5",
+      "reference_pv": [
+        "d5b5",
+        "d1d6",
+        "d7d6"
+      ],
+      "score": {
+        "cp": 820,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50010,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0Qek5",
+      "puzzle_id": "0Qek5",
+      "game_id": "Xm3bcqkZ",
+      "source_before_fen": "5nk1/7p/4p3/1pPpPp1B/3P1P1R/4PQ1K/r7/2q5 b - - 5 39",
+      "setup_uci": "c1d2",
+      "fen": "5nk1/7p/4p3/1pPpPp1B/3P1P1R/4PQ1K/r2q4/8 w - - 6 40",
+      "source_ordinal": 42609,
+      "row_group": 0,
+      "row_in_group": 42609,
+      "status": "completed",
+      "teacher_move_uci": "f3g3",
+      "reference_pv": [
+        "f3g3",
+        "g8h8",
+        "h5f7"
+      ],
+      "score": {
+        "cp": 735,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50002,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0RR9l",
+      "puzzle_id": "0RR9l",
+      "game_id": "Evrk8Tpf",
+      "source_before_fen": "6k1/3r3p/1p4pP/p1p2b2/8/KPQ1R3/P3qpP1/5R2 b - - 5 38",
+      "setup_uci": "e2f1",
+      "fen": "6k1/3r3p/1p4pP/p1p2b2/8/KPQ1R3/P4pP1/5q2 w - - 0 39",
+      "source_ordinal": 43894,
+      "row_group": 0,
+      "row_in_group": 43894,
+      "status": "completed",
+      "teacher_move_uci": "c3h8",
+      "reference_pv": [
+        "c3h8",
+        "g8h8",
+        "e3e8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 15576,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0SEhu",
+      "puzzle_id": "0SEhu",
+      "game_id": "Lga50OsV",
+      "source_before_fen": "8/6p1/N5p1/1p3k2/5np1/2P3K1/PP3PPP/8 w - - 2 37",
+      "setup_uci": "a6b4",
+      "fen": "8/6p1/6p1/1p3k2/1N3np1/2P3K1/PP3PPP/8 b - - 3 37",
+      "source_ordinal": 45137,
+      "row_group": 0,
+      "row_in_group": 45137,
+      "status": "completed",
+      "teacher_move_uci": "f4e2",
+      "reference_pv": [
+        "f4e2",
+        "g3h4",
+        "g6g5"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 3,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 49459,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0SepG",
+      "puzzle_id": "0SepG",
+      "game_id": "mSZZ5uzo",
+      "source_before_fen": "6k1/6p1/4b3/4p1qp/2P1Pp2/1Q1P1R1P/6PN/r6K w - - 1 35",
+      "setup_uci": "h2f1",
+      "fen": "6k1/6p1/4b3/4p1qp/2P1Pp2/1Q1P1R1P/6P1/r4N1K b - - 2 35",
+      "source_ordinal": 45827,
+      "row_group": 0,
+      "row_in_group": 45827,
+      "status": "completed",
+      "teacher_move_uci": "e6g4",
+      "reference_pv": [
+        "e6g4",
+        "f3f2",
+        "g4e2"
+      ],
+      "score": {
+        "cp": 377,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50050,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0Sjev",
+      "puzzle_id": "0Sjev",
+      "game_id": "q41UtLet",
+      "source_before_fen": "r1bk1b1r/pp1npB1p/1B4p1/8/8/1QP5/P4PqP/2KR2NR b - - 3 13",
+      "setup_uci": "a7b6",
+      "fen": "r1bk1b1r/1p1npB1p/1p4p1/8/8/1QP5/P4PqP/2KR2NR w - - 0 14",
+      "source_ordinal": 45970,
+      "row_group": 0,
+      "row_in_group": 45970,
+      "status": "completed",
+      "teacher_move_uci": "b3b6",
+      "reference_pv": [
+        "b3b6"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9559,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0SpKJ",
+      "puzzle_id": "0SpKJ",
+      "game_id": "xLOcnqKp",
+      "source_before_fen": "r1bqkb1r/pp1pp1pp/8/3P1p2/4nP2/4K2P/PP4P1/RNBQ1BNR w kq - 0 10",
+      "setup_uci": "f1d3",
+      "fen": "r1bqkb1r/pp1pp1pp/8/3P1p2/4nP2/3BK2P/PP4P1/RNBQ2NR b kq - 1 10",
+      "source_ordinal": 46111,
+      "row_group": 0,
+      "row_in_group": 46111,
+      "status": "completed",
+      "teacher_move_uci": "d8b6",
+      "reference_pv": [
+        "d8b6",
+        "e3f3",
+        "b6f2"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 11865,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0Spac",
+      "puzzle_id": "0Spac",
+      "game_id": "fHwqNuCA",
+      "source_before_fen": "8/1p1n3p/2pPk1p1/2P2pB1/1PK2P1P/8/8/8 b - - 5 38",
+      "setup_uci": "b7b6",
+      "fen": "8/3n3p/1ppPk1p1/2P2pB1/1PK2P1P/8/8/8 w - - 0 39",
+      "source_ordinal": 46117,
+      "row_group": 0,
+      "row_in_group": 46117,
+      "status": "completed",
+      "teacher_move_uci": "c5b6",
+      "reference_pv": [
+        "c5b6",
+        "e6d6"
+      ],
+      "score": {
+        "cp": 343,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50033,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0SzA6",
+      "puzzle_id": "0SzA6",
+      "game_id": "TWu5lon9",
+      "source_before_fen": "r2qkb1r/pp2nppp/2n1b3/1Bp1N3/3p4/3P4/PPP1QPPP/RNB1K2R w KQkq - 0 9",
+      "setup_uci": "c1g5",
+      "fen": "r2qkb1r/pp2nppp/2n1b3/1Bp1N1B1/3p4/3P4/PPP1QPPP/RN2K2R b KQkq - 1 9",
+      "source_ordinal": 46348,
+      "row_group": 0,
+      "row_in_group": 46348,
+      "status": "completed",
+      "teacher_move_uci": "d8a5",
+      "reference_pv": [
+        "d8a5",
+        "b1d2",
+        "a5b5"
+      ],
+      "score": {
+        "cp": 556,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50030,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0TJPG",
+      "puzzle_id": "0TJPG",
+      "game_id": "Tf2jLqvC",
+      "source_before_fen": "r3r1k1/ppp2pp1/3p2B1/4P1q1/8/P7/1PP4Q/1K1b3R b - - 0 22",
+      "setup_uci": "g5g6",
+      "fen": "r3r1k1/ppp2pp1/3p2q1/4P3/8/P7/1PP4Q/1K1b3R w - - 0 23",
+      "source_ordinal": 46873,
+      "row_group": 0,
+      "row_in_group": 46873,
+      "status": "completed",
+      "teacher_move_uci": "h2h8",
+      "reference_pv": [
+        "h2h8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 6132,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0TOzQ",
+      "puzzle_id": "0TOzQ",
+      "game_id": "Tqfuekqf",
+      "source_before_fen": "2kr1b1r/1bppnppp/1p6/1B2P3/4q3/PRB1P3/N1P2PPP/3QK2R w K - 1 18",
+      "setup_uci": "e1g1",
+      "fen": "2kr1b1r/1bppnppp/1p6/1B2P3/4q3/PRB1P3/N1P2PPP/3Q1RK1 b - - 2 18",
+      "source_ordinal": 47002,
+      "row_group": 0,
+      "row_in_group": 47002,
+      "status": "completed",
+      "teacher_move_uci": "e4g2",
+      "reference_pv": [
+        "e4g2"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9555,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0TRDE",
+      "puzzle_id": "0TRDE",
+      "game_id": "RvnkxjpQ",
+      "source_before_fen": "r1b1kb1r/pp2pp1p/2p2np1/2P3N1/8/1B2B2q/PP3P1P/R2QK1R1 b Qkq - 3 15",
+      "setup_uci": "h3h2",
+      "fen": "r1b1kb1r/pp2pp1p/2p2np1/2P3N1/8/1B2B3/PP3P1q/R2QK1R1 w Qkq - 0 16",
+      "source_ordinal": 47051,
+      "row_group": 0,
+      "row_in_group": 47051,
+      "status": "completed",
+      "teacher_move_uci": "b3f7",
+      "reference_pv": [
+        "b3f7"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 10803,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0TVFb",
+      "puzzle_id": "0TVFb",
+      "game_id": "oZUPBm7p",
+      "source_before_fen": "3r2k1/2Q2pp1/p1b2q2/7p/4pP2/1P2P3/P5PP/2R3K1 w - - 0 32",
+      "setup_uci": "c1c6",
+      "fen": "3r2k1/2Q2pp1/p1R2q2/7p/4pP2/1P2P3/P5PP/6K1 b - - 0 32",
+      "source_ordinal": 47164,
+      "row_group": 0,
+      "row_in_group": 47164,
+      "status": "completed",
+      "teacher_move_uci": "d8d1",
+      "reference_pv": [
+        "d8d1",
+        "g1f2",
+        "f6h4"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 3,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50005,
+      "depth": 80
+    },
+    {
+      "id": "policy-v5-0TWAw",
+      "puzzle_id": "0TWAw",
+      "game_id": "n9GVkIq7",
+      "source_before_fen": "8/4kpp1/4p2p/8/p3P2P/N4PP1/3K4/3n4 b - - 4 41",
+      "setup_uci": "d1b2",
+      "fen": "8/4kpp1/4p2p/8/p3P2P/N4PP1/1n1K4/8 w - - 5 42",
+      "source_ordinal": 47182,
+      "row_group": 0,
+      "row_in_group": 47182,
+      "status": "completed",
+      "teacher_move_uci": "d2c2",
+      "reference_pv": [
+        "d2c2",
+        "f7f5"
+      ],
+      "score": {
+        "cp": 344,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50015,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0TchM",
+      "puzzle_id": "0TchM",
+      "game_id": "qNtPwY3h",
+      "source_before_fen": "8/6kp/p5p1/1p4Q1/4q1N1/6PP/5p1K/4rR2 b - - 13 42",
+      "setup_uci": "e1f1",
+      "fen": "8/6kp/p5p1/1p4Q1/4q1N1/6PP/5p1K/5r2 w - - 0 43",
+      "source_ordinal": 47352,
+      "row_group": 0,
+      "row_in_group": 47352,
+      "status": "completed",
+      "teacher_move_uci": "g5f6",
+      "reference_pv": [
+        "g5f6",
+        "g7g8",
+        "g4h6"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 10467,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0TglQ",
+      "puzzle_id": "0TglQ",
+      "game_id": "azfsWtVW",
+      "source_before_fen": "1rbq2n1/pp1n1p1k/3p2Pp/2pP4/2P5/1PQNr1PP/P3P1B1/1R3RK1 b - - 0 19",
+      "setup_uci": "f7g6",
+      "fen": "1rbq2n1/pp1n3k/3p2pp/2pP4/2P5/1PQNr1PP/P3P1B1/1R3RK1 w - - 0 20",
+      "source_ordinal": 47446,
+      "row_group": 0,
+      "row_in_group": 47446,
+      "status": "completed",
+      "teacher_move_uci": "f1f7",
+      "reference_pv": [
+        "f1f7"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 11518,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0TiN1",
+      "puzzle_id": "0TiN1",
+      "game_id": "9uQX3CGg",
+      "source_before_fen": "7k/p3PP1p/8/4r3/8/P7/KP6/8 b - - 0 47",
+      "setup_uci": "e5e7",
+      "fen": "7k/p3rP1p/8/8/8/P7/KP6/8 w - - 0 48",
+      "source_ordinal": 47486,
+      "row_group": 0,
+      "row_in_group": 47486,
+      "status": "completed",
+      "teacher_move_uci": "f7f8q",
+      "reference_pv": [
+        "f7f8q"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 2456,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0UJsq",
+      "puzzle_id": "0UJsq",
+      "game_id": "0mSD3i5Z",
+      "source_before_fen": "r4rk1/p1qN3p/2p3p1/3p1n2/8/2PB4/PPQ3Pb/2B1RRK1 w - - 0 23",
+      "setup_uci": "g1h1",
+      "fen": "r4rk1/p1qN3p/2p3p1/3p1n2/8/2PB4/PPQ3Pb/2B1RR1K b - - 1 23",
+      "source_ordinal": 48452,
+      "row_group": 0,
+      "row_in_group": 48452,
+      "status": "completed",
+      "teacher_move_uci": "f5g3",
+      "reference_pv": [
+        "f5g3",
+        "h1h2",
+        "g3f1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 3,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50002,
+      "depth": 51
+    },
+    {
+      "id": "policy-v5-0URY2",
+      "puzzle_id": "0URY2",
+      "game_id": "eDctbrPv",
+      "source_before_fen": "8/7k/R5p1/6K1/6PP/p7/8/r7 b - - 1 42",
+      "setup_uci": "a3a2",
+      "fen": "8/7k/R5p1/6K1/6PP/8/p7/r7 w - - 0 43",
+      "source_ordinal": 48646,
+      "row_group": 0,
+      "row_in_group": 48646,
+      "status": "completed",
+      "teacher_move_uci": "a6a7",
+      "reference_pv": [
+        "a6a7",
+        "h7g8",
+        "g5g6"
+      ],
+      "score": {
+        "cp": 451,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50037,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0UbPw",
+      "puzzle_id": "0UbPw",
+      "game_id": "o1dhngmM",
+      "source_before_fen": "6k1/8/4p1p1/p2p1p1p/2qP1P2/6P1/3Q3P/2r1BR1K w - - 2 39",
+      "setup_uci": "d2a5",
+      "fen": "6k1/8/4p1p1/Q2p1p1p/2qP1P2/6P1/7P/2r1BR1K b - - 0 39",
+      "source_ordinal": 48902,
+      "row_group": 0,
+      "row_in_group": 48902,
+      "status": "completed",
+      "teacher_move_uci": "c4f1",
+      "reference_pv": [
+        "c4f1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 7352,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0UwCJ",
+      "puzzle_id": "0UwCJ",
+      "game_id": "5wsPU4iy",
+      "source_before_fen": "6k1/1p5p/4bp2/8/4Pp1P/1N1K4/r1r1BP2/3R3R w - - 0 27",
+      "setup_uci": "b3d4",
+      "fen": "6k1/1p5p/4bp2/8/3NPp1P/3K4/r1r1BP2/3R3R b - - 1 27",
+      "source_ordinal": 49444,
+      "row_group": 0,
+      "row_in_group": 49444,
+      "status": "completed",
+      "teacher_move_uci": "e6c4",
+      "reference_pv": [
+        "e6c4"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9083,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0UwuT",
+      "puzzle_id": "0UwuT",
+      "game_id": "nd3zwUas",
+      "source_before_fen": "3k3r/2pq3p/3p1p2/3Pn1p1/1Q2PP2/4B1RP/1PPK1P2/6r1 w - - 0 26",
+      "setup_uci": "g3g1",
+      "fen": "3k3r/2pq3p/3p1p2/3Pn1p1/1Q2PP2/4B2P/1PPK1P2/6R1 b - - 0 26",
+      "source_ordinal": 49463,
+      "row_group": 0,
+      "row_in_group": 49463,
+      "status": "completed",
+      "teacher_move_uci": "e5f3",
+      "reference_pv": [
+        "e5f3",
+        "d2c1",
+        "f3g1"
+      ],
+      "score": {
+        "cp": 323,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50016,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0V0m1",
+      "puzzle_id": "0V0m1",
+      "game_id": "1gLtNCKw",
+      "source_before_fen": "8/pp6/3p3p/5k2/3P4/2P2r1p/P1R3pK/4R3 w - - 4 38",
+      "setup_uci": "e1e2",
+      "fen": "8/pp6/3p3p/5k2/3P4/2P2r1p/P1R1R1pK/8 b - - 5 38",
+      "source_ordinal": 49568,
+      "row_group": 0,
+      "row_in_group": 49568,
+      "status": "completed",
+      "teacher_move_uci": "f3f1",
+      "reference_pv": [
+        "f3f1",
+        "e2g2",
+        "h3g2"
+      ],
+      "score": {
+        "cp": 254,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50016,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0V6ZB",
+      "puzzle_id": "0V6ZB",
+      "game_id": "mHtwOPJn",
+      "source_before_fen": "8/8/3b1P2/3k3p/1p3B2/p6P/2P5/1K6 w - - 2 50",
+      "setup_uci": "f4d6",
+      "fen": "8/8/3B1P2/3k3p/1p6/p6P/2P5/1K6 b - - 0 50",
+      "source_ordinal": 49728,
+      "row_group": 0,
+      "row_in_group": 49728,
+      "status": "completed",
+      "teacher_move_uci": "d5d6",
+      "reference_pv": [
+        "d5d6",
+        "b1a2"
+      ],
+      "score": {
+        "cp": 403,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50039,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0VK0U",
+      "puzzle_id": "0VK0U",
+      "game_id": "XMYQA7De",
+      "source_before_fen": "r4rk1/ppp1bp2/5n1Q/4p3/5qR1/3B3P/PPP2PP1/RN4K1 b - - 0 17",
+      "setup_uci": "f6g4",
+      "fen": "r4rk1/ppp1bp2/7Q/4p3/5qn1/3B3P/PPP2PP1/RN4K1 w - - 0 18",
+      "source_ordinal": 50090,
+      "row_group": 0,
+      "row_in_group": 50090,
+      "status": "completed",
+      "teacher_move_uci": "h6h7",
+      "reference_pv": [
+        "h6h7"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9572,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0VUHj",
+      "puzzle_id": "0VUHj",
+      "game_id": "gI7Fnb4V",
+      "source_before_fen": "8/1p6/p1p3k1/P2p2pp/1P1P3P/2Pr2P1/6K1/5R2 w - - 2 38",
+      "setup_uci": "f1f3",
+      "fen": "8/1p6/p1p3k1/P2p2pp/1P1P3P/2Pr1RP1/6K1/8 b - - 3 38",
+      "source_ordinal": 50363,
+      "row_group": 0,
+      "row_in_group": 50363,
+      "status": "completed",
+      "teacher_move_uci": "d3f3",
+      "reference_pv": [
+        "d3f3",
+        "g2f3",
+        "g5h4"
+      ],
+      "score": {
+        "cp": 544,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50021,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0VZmX",
+      "puzzle_id": "0VZmX",
+      "game_id": "QtP4oEUW",
+      "source_before_fen": "1k2r3/1p2N3/p6p/6p1/4R3/6P1/Pb3P1P/6K1 b - - 0 30",
+      "setup_uci": "b2a3",
+      "fen": "1k2r3/1p2N3/p6p/6p1/4R3/b5P1/P4P1P/6K1 w - - 1 31",
+      "source_ordinal": 50499,
+      "row_group": 0,
+      "row_in_group": 50499,
+      "status": "completed",
+      "teacher_move_uci": "e7c6",
+      "reference_pv": [
+        "e7c6",
+        "b8c7",
+        "e4e8"
+      ],
+      "score": {
+        "cp": 581,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50007,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0VcKI",
+      "puzzle_id": "0VcKI",
+      "game_id": "X4tkygFA",
+      "source_before_fen": "3q1k2/p7/1p3b2/5Qp1/PP1pB2p/3P4/r2B1PP1/3K4 b - - 20 41",
+      "setup_uci": "d8e7",
+      "fen": "5k2/p3q3/1p3b2/5Qp1/PP1pB2p/3P4/r2B1PP1/3K4 w - - 21 42",
+      "source_ordinal": 50570,
+      "row_group": 0,
+      "row_in_group": 50570,
+      "status": "completed",
+      "teacher_move_uci": "d2g5",
+      "reference_pv": [
+        "d2g5",
+        "a2a1",
+        "d1e2"
+      ],
+      "score": {
+        "cp": 432,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50059,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0Vfux",
+      "puzzle_id": "0Vfux",
+      "game_id": "yhAk6DLg",
+      "source_before_fen": "2b4r/4ppk1/3p1n2/p1p2PBp/Pq2P1nP/1P1P2NN/1P4P1/3Q1K1R w - - 0 22",
+      "setup_uci": "h3f4",
+      "fen": "2b4r/4ppk1/3p1n2/p1p2PBp/Pq2PNnP/1P1P2N1/1P4P1/3Q1K1R b - - 1 22",
+      "source_ordinal": 50669,
+      "row_group": 0,
+      "row_in_group": 50669,
+      "status": "completed",
+      "teacher_move_uci": "g4e3",
+      "reference_pv": [
+        "g4e3",
+        "f1e2",
+        "e3d1"
+      ],
+      "score": {
+        "cp": 627,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50012,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0Vsax",
+      "puzzle_id": "0Vsax",
+      "game_id": "TNxzERgj",
+      "source_before_fen": "r1bqk2r/3n1pp1/p1p5/1p1p3p/2PPp1n1/PPN1PP2/1B1NB1PK/R2Q1R2 w kq - 1 14",
+      "setup_uci": "f3g4",
+      "fen": "r1bqk2r/3n1pp1/p1p5/1p1p3p/2PPp1P1/PPN1P3/1B1NB1PK/R2Q1R2 b kq - 0 14",
+      "source_ordinal": 50998,
+      "row_group": 0,
+      "row_in_group": 50998,
+      "status": "completed",
+      "teacher_move_uci": "h5g4",
+      "reference_pv": [
+        "h5g4",
+        "h2g1",
+        "h8h1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 7,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50003,
+      "depth": 23
+    },
+    {
+      "id": "policy-v5-0VzDC",
+      "puzzle_id": "0VzDC",
+      "game_id": "ojk7nkLG",
+      "source_before_fen": "8/7p/3k2pP/p4p2/1pPp1P2/1P4P1/P2K4/8 b - - 1 41",
+      "setup_uci": "d6c5",
+      "fen": "8/7p/6pP/p1k2p2/1pPp1P2/1P4P1/P2K4/8 w - - 2 42",
+      "source_ordinal": 51179,
+      "row_group": 0,
+      "row_in_group": 51179,
+      "status": "completed",
+      "teacher_move_uci": "d2d3",
+      "reference_pv": [
+        "d2d3",
+        "c5d6"
+      ],
+      "score": {
+        "cp": 566,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50033,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0W0U5",
+      "puzzle_id": "0W0U5",
+      "game_id": "xK0IaWTM",
+      "source_before_fen": "3r4/p1q3kp/2p3p1/1p2bp2/1PQ5/P3P2P/R1R2PP1/3r1NK1 w - - 0 26",
+      "setup_uci": "c4c6",
+      "fen": "3r4/p1q3kp/2Q3p1/1p2bp2/1P6/P3P2P/R1R2PP1/3r1NK1 b - - 0 26",
+      "source_ordinal": 51208,
+      "row_group": 0,
+      "row_in_group": 51208,
+      "status": "completed",
+      "teacher_move_uci": "e5h2",
+      "reference_pv": [
+        "e5h2",
+        "g1h1",
+        "d1f1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 21705,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0W4gc",
+      "puzzle_id": "0W4gc",
+      "game_id": "A1KWshkc",
+      "source_before_fen": "7r/1R6/p4ppk/P2P4/3q3b/1B1n1Q2/1P4K1/5R2 w - - 0 39",
+      "setup_uci": "f1h1",
+      "fen": "7r/1R6/p4ppk/P2P4/3q3b/1B1n1Q2/1P4K1/7R b - - 1 39",
+      "source_ordinal": 51309,
+      "row_group": 0,
+      "row_in_group": 51309,
+      "status": "completed",
+      "teacher_move_uci": "h8e8",
+      "reference_pv": [
+        "h8e8",
+        "h1h4"
+      ],
+      "score": {
+        "cp": 133,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": true
+      },
+      "nodes": 50024,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0W4kG",
+      "puzzle_id": "0W4kG",
+      "game_id": "BzmfUnf7",
+      "source_before_fen": "1r6/1P3k2/1R6/4K3/3P4/n7/6PP/8 w - - 9 47",
+      "setup_uci": "d4d5",
+      "fen": "1r6/1P3k2/1R6/3PK3/8/n7/6PP/8 b - - 0 47",
+      "source_ordinal": 51310,
+      "row_group": 0,
+      "row_in_group": 51310,
+      "status": "completed",
+      "teacher_move_uci": "a3c4",
+      "reference_pv": [
+        "a3c4",
+        "e5d4",
+        "c4b6"
+      ],
+      "score": {
+        "cp": 517,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50012,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0W4z7",
+      "puzzle_id": "0W4z7",
+      "game_id": "wN1MefaQ",
+      "source_before_fen": "2QR4/2p2qp1/5pkp/1r2p3/4P3/6P1/n3bP1P/6K1 b - - 1 31",
+      "setup_uci": "b5b4",
+      "fen": "2QR4/2p2qp1/5pkp/4p3/1r2P3/6P1/n3bP1P/6K1 w - - 2 32",
+      "source_ordinal": 51318,
+      "row_group": 0,
+      "row_in_group": 51318,
+      "status": "completed",
+      "teacher_move_uci": "c8f5",
+      "reference_pv": [
+        "c8f5"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 6862,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0W6fs",
+      "puzzle_id": "0W6fs",
+      "game_id": "KWBhc2DG",
+      "source_before_fen": "5rk1/7p/R7/6p1/3Bn1K1/7P/5PP1/8 w - - 2 42",
+      "setup_uci": "f2f3",
+      "fen": "5rk1/7p/R7/6p1/3Bn1K1/5P1P/6P1/8 b - - 0 42",
+      "source_ordinal": 51361,
+      "row_group": 0,
+      "row_in_group": 51361,
+      "status": "completed",
+      "teacher_move_uci": "f8f4",
+      "reference_pv": [
+        "f8f4",
+        "g4h5",
+        "f4h4"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9314,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0W8Sd",
+      "puzzle_id": "0W8Sd",
+      "game_id": "ybJeGkfE",
+      "source_before_fen": "1r4k1/1p4pp/pPbr1p2/2N1pP1q/2Rp4/1P1Q3P/1P4PK/2R5 b - - 3 32",
+      "setup_uci": "c6b5",
+      "fen": "1r4k1/1p4pp/pP1r1p2/1bN1pP1q/2Rp4/1P1Q3P/1P4PK/2R5 w - - 4 33",
+      "source_ordinal": 51396,
+      "row_group": 0,
+      "row_in_group": 51396,
+      "status": "completed",
+      "teacher_move_uci": "c5b7",
+      "reference_pv": [
+        "c5b7",
+        "b8b7"
+      ],
+      "score": {
+        "cp": 107,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50021,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0Wexp",
+      "puzzle_id": "0Wexp",
+      "game_id": "MvEheRYT",
+      "source_before_fen": "5rk1/pp1q2pp/2np3N/3B4/8/4r2P/PPP3P1/2KR1R2 b - - 1 21",
+      "setup_uci": "g8h8",
+      "fen": "5r1k/pp1q2pp/2np3N/3B4/8/4r2P/PPP3P1/2KR1R2 w - - 2 22",
+      "source_ordinal": 52219,
+      "row_group": 0,
+      "row_in_group": 52219,
+      "status": "completed",
+      "teacher_move_uci": "f1f8",
+      "reference_pv": [
+        "f1f8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9070,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0Wtja",
+      "puzzle_id": "0Wtja",
+      "game_id": "1AjmGa2U",
+      "source_before_fen": "8/8/1k1r4/pP6/P3pp1p/1K5P/2R2P2/8 w - - 0 51",
+      "setup_uci": "c2e2",
+      "fen": "8/8/1k1r4/pP6/P3pp1p/1K5P/4RP2/8 b - - 1 51",
+      "source_ordinal": 52609,
+      "row_group": 0,
+      "row_in_group": 52609,
+      "status": "completed",
+      "teacher_move_uci": "d6d3",
+      "reference_pv": [
+        "d6d3",
+        "b3b2"
+      ],
+      "score": {
+        "cp": 241,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50024,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0Wxot",
+      "puzzle_id": "0Wxot",
+      "game_id": "2r4iALnt",
+      "source_before_fen": "3rr2k/1pp3pb/pn6/4p2q/2P1N2N/1P5P/P3BB2/3RR1K1 b - - 2 30",
+      "setup_uci": "d8d1",
+      "fen": "4r2k/1pp3pb/pn6/4p2q/2P1N2N/1P5P/P3BB2/3rR1K1 w - - 0 31",
+      "source_ordinal": 52705,
+      "row_group": 0,
+      "row_in_group": 52705,
+      "status": "completed",
+      "teacher_move_uci": "e2h5",
+      "reference_pv": [
+        "e2h5",
+        "d1e1",
+        "f2e1"
+      ],
+      "score": {
+        "cp": 353,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50027,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0XAGl",
+      "puzzle_id": "0XAGl",
+      "game_id": "ftVd38W6",
+      "source_before_fen": "r3nrk1/2qn1pbp/p3p1p1/1p2P1B1/2p5/P1N2Q2/BPP2PPP/R3R1K1 b - - 0 18",
+      "setup_uci": "d7e5",
+      "fen": "r3nrk1/2q2pbp/p3p1p1/1p2n1B1/2p5/P1N2Q2/BPP2PPP/R3R1K1 w - - 0 19",
+      "source_ordinal": 53047,
+      "row_group": 0,
+      "row_in_group": 53047,
+      "status": "completed",
+      "teacher_move_uci": "f3a8",
+      "reference_pv": [
+        "f3a8",
+        "e8f6",
+        "a8a6"
+      ],
+      "score": {
+        "cp": 306,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50022,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0XFLp",
+      "puzzle_id": "0XFLp",
+      "game_id": "AfoWwZiV",
+      "source_before_fen": "r1br2k1/pp3ppp/4p3/q7/2P4Q/P1B3P1/4PPBP/R4K1R b - - 0 17",
+      "setup_uci": "a5c3",
+      "fen": "r1br2k1/pp3ppp/4p3/8/2P4Q/P1q3P1/4PPBP/R4K1R w - - 0 18",
+      "source_ordinal": 53159,
+      "row_group": 0,
+      "row_in_group": 53159,
+      "status": "completed",
+      "teacher_move_uci": "h4d8",
+      "reference_pv": [
+        "h4d8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 8089,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0XLJs",
+      "puzzle_id": "0XLJs",
+      "game_id": "8YnKRyy3",
+      "source_before_fen": "7k/2p3pp/2rp4/4r3/8/5PKP/P5P1/1R6 b - - 5 35",
+      "setup_uci": "c6c4",
+      "fen": "7k/2p3pp/3p4/4r3/2r5/5PKP/P5P1/1R6 w - - 6 36",
+      "source_ordinal": 53322,
+      "row_group": 0,
+      "row_in_group": 53322,
+      "status": "completed",
+      "teacher_move_uci": "b1b8",
+      "reference_pv": [
+        "b1b8",
+        "e5e8",
+        "b8e8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 8980,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0XSFq",
+      "puzzle_id": "0XSFq",
+      "game_id": "aDRfPrNz",
+      "source_before_fen": "6k1/6pp/4P3/p1rp1P2/4p3/4P3/6KP/R7 b - - 3 33",
+      "setup_uci": "g7g6",
+      "fen": "6k1/7p/4P1p1/p1rp1P2/4p3/4P3/6KP/R7 w - - 0 34",
+      "source_ordinal": 53497,
+      "row_group": 0,
+      "row_in_group": 53497,
+      "status": "completed",
+      "teacher_move_uci": "a1b1",
+      "reference_pv": [
+        "a1b1",
+        "c5c2"
+      ],
+      "score": {
+        "cp": 411,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50043,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0XVL2",
+      "puzzle_id": "0XVL2",
+      "game_id": "Sj3Xjo64",
+      "source_before_fen": "r2qkb1r/pp1b1ppp/4p3/2p1P3/2B5/2P2Q2/P1PP2PP/R1B2RK1 b kq - 2 11",
+      "setup_uci": "d7c6",
+      "fen": "r2qkb1r/pp3ppp/2b1p3/2p1P3/2B5/2P2Q2/P1PP2PP/R1B2RK1 w kq - 3 12",
+      "source_ordinal": 53596,
+      "row_group": 0,
+      "row_in_group": 53596,
+      "status": "completed",
+      "teacher_move_uci": "f3f7",
+      "reference_pv": [
+        "f3f7"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9559,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0XhB7",
+      "puzzle_id": "0XhB7",
+      "game_id": "wjvBrNy4",
+      "source_before_fen": "5rk1/r2R1Bpp/8/8/3b4/6P1/P5KP/5R2 b - - 0 30",
+      "setup_uci": "f8f7",
+      "fen": "6k1/r2R1rpp/8/8/3b4/6P1/P5KP/5R2 w - - 0 31",
+      "source_ordinal": 53888,
+      "row_group": 0,
+      "row_in_group": 53888,
+      "status": "completed",
+      "teacher_move_uci": "d7d8",
+      "reference_pv": [
+        "d7d8",
+        "f7f8",
+        "f1f8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 13426,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0Xlmp",
+      "puzzle_id": "0Xlmp",
+      "game_id": "AmbbAiRy",
+      "source_before_fen": "2r3k1/6p1/p4pQ1/1p2bP2/3pN3/3P2P1/1qP1R2P/6K1 b - - 1 32",
+      "setup_uci": "c8c2",
+      "fen": "6k1/6p1/p4pQ1/1p2bP2/3pN3/3P2P1/1qr1R2P/6K1 w - - 0 33",
+      "source_ordinal": 54029,
+      "row_group": 0,
+      "row_in_group": 54029,
+      "status": "completed",
+      "teacher_move_uci": "e4f6",
+      "reference_pv": [
+        "e4f6",
+        "g8f8",
+        "g6e8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 15375,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0XnVh",
+      "puzzle_id": "0XnVh",
+      "game_id": "otffLQ7s",
+      "source_before_fen": "rn1qkbnr/ppp2ppp/6b1/3pp3/6P1/1P1P1P2/PBP1P2P/RN1QKBNR w KQkq - 0 6",
+      "setup_uci": "b1d2",
+      "fen": "rn1qkbnr/ppp2ppp/6b1/3pp3/6P1/1P1P1P2/PBPNP2P/R2QKBNR b KQkq - 1 6",
+      "source_ordinal": 54078,
+      "row_group": 0,
+      "row_in_group": 54078,
+      "status": "completed",
+      "teacher_move_uci": "d8h4",
+      "reference_pv": [
+        "d8h4"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 8820,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0Xwsx",
+      "puzzle_id": "0Xwsx",
+      "game_id": "LQlMKjWp",
+      "source_before_fen": "r5k1/3q1p1p/5Rp1/4p3/4P3/1r5P/1P2Q1P1/5RK1 b - - 0 30",
+      "setup_uci": "g8g7",
+      "fen": "r7/3q1pkp/5Rp1/4p3/4P3/1r5P/1P2Q1P1/5RK1 w - - 1 31",
+      "source_ordinal": 54306,
+      "row_group": 0,
+      "row_in_group": 54306,
+      "status": "completed",
+      "teacher_move_uci": "f6f7",
+      "reference_pv": [
+        "f6f7",
+        "d7f7",
+        "f1f7"
+      ],
+      "score": {
+        "cp": 844,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50026,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0YOVO",
+      "puzzle_id": "0YOVO",
+      "game_id": "wazPl3W3",
+      "source_before_fen": "N4rk1/1q2bppp/4p3/Q2nP3/8/P4N1P/1P3PP1/R3R1K1 w - - 1 23",
+      "setup_uci": "b2b4",
+      "fen": "N4rk1/1q2bppp/4p3/Q2nP3/1P6/P4N1P/5PP1/R3R1K1 b - - 0 23",
+      "source_ordinal": 54990,
+      "row_group": 0,
+      "row_in_group": 54990,
+      "status": "completed",
+      "teacher_move_uci": "f8a8",
+      "reference_pv": [
+        "f8a8",
+        "a5a8",
+        "b7a8"
+      ],
+      "score": {
+        "cp": 298,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50009,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0YU9j",
+      "puzzle_id": "0YU9j",
+      "game_id": "khzS55St",
+      "source_before_fen": "6k1/1p2npp1/p4q2/2pbp2p/5n2/2P2Q1P/PPBrNPP1/3RR2K w - - 0 27",
+      "setup_uci": "c2e4",
+      "fen": "6k1/1p2npp1/p4q2/2pbp2p/4Bn2/2P2Q1P/PP1rNPP1/3RR2K b - - 1 27",
+      "source_ordinal": 55135,
+      "row_group": 0,
+      "row_in_group": 55135,
+      "status": "completed",
+      "teacher_move_uci": "d5e4",
+      "reference_pv": [
+        "d5e4",
+        "f3e4",
+        "f4d3"
+      ],
+      "score": {
+        "cp": 485,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50014,
+      "depth": 17
+    },
+    {
+      "id": "policy-v5-0Ybc0",
+      "puzzle_id": "0Ybc0",
+      "game_id": "u4Owj85E",
+      "source_before_fen": "k1Qr1bnr/pn4pp/8/1q1Npp2/4P3/5b2/PP1B1PPP/2R2RK1 b - - 3 18",
+      "setup_uci": "d8c8",
+      "fen": "k1r2bnr/pn4pp/8/1q1Npp2/4P3/5b2/PP1B1PPP/2R2RK1 w - - 0 19",
+      "source_ordinal": 55314,
+      "row_group": 0,
+      "row_in_group": 55314,
+      "status": "completed",
+      "teacher_move_uci": "c1c8",
+      "reference_pv": [
+        "c1c8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9807,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0Ycmf",
+      "puzzle_id": "0Ycmf",
+      "game_id": "8E9fIxZz",
+      "source_before_fen": "6r1/ppk1n3/3b4/2p1p2r/2PpQ3/PP1P2Pq/1B3P1N/R5KR w - - 6 28",
+      "setup_uci": "b3b4",
+      "fen": "6r1/ppk1n3/3b4/2p1p2r/1PPpQ3/P2P2Pq/1B3P1N/R5KR b - - 0 28",
+      "source_ordinal": 55349,
+      "row_group": 0,
+      "row_in_group": 55349,
+      "status": "completed",
+      "teacher_move_uci": "g8g3",
+      "reference_pv": [
+        "g8g3",
+        "f2g3",
+        "h3g3"
+      ],
+      "score": {
+        "cp": 651,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50004,
+      "depth": 20
+    },
+    {
+      "id": "policy-v5-0YtDx",
+      "puzzle_id": "0YtDx",
+      "game_id": "ctucJAbY",
+      "source_before_fen": "r1b2rk1/pp1n1ppp/3N2q1/8/2B5/P7/1P3PPP/R2QR1K1 b - - 2 18",
+      "setup_uci": "d7b6",
+      "fen": "r1b2rk1/pp3ppp/1n1N2q1/8/2B5/P7/1P3PPP/R2QR1K1 w - - 3 19",
+      "source_ordinal": 55743,
+      "row_group": 0,
+      "row_in_group": 55743,
+      "status": "completed",
+      "teacher_move_uci": "c4f7",
+      "reference_pv": [
+        "c4f7",
+        "g6f7",
+        "d6f7"
+      ],
+      "score": {
+        "cp": 920,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50068,
+      "depth": 21
+    },
+    {
+      "id": "policy-v5-0Z375",
+      "puzzle_id": "0Z375",
+      "game_id": "lulnaGmQ",
+      "source_before_fen": "5rk1/p4ppp/1p5b/5Q2/P1B1P3/1P6/2q1r1PP/3R1R1K b - - 6 30",
+      "setup_uci": "e2g2",
+      "fen": "5rk1/p4ppp/1p5b/5Q2/P1B1P3/1P6/2q3rP/3R1R1K w - - 0 31",
+      "source_ordinal": 56006,
+      "row_group": 0,
+      "row_in_group": 56006,
+      "status": "completed",
+      "teacher_move_uci": "f5f7",
+      "reference_pv": [
+        "f5f7",
+        "f8f7",
+        "d1d8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 23257,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0Z4aD",
+      "puzzle_id": "0Z4aD",
+      "game_id": "yCwmFRaf",
+      "source_before_fen": "r3rk2/p4p1p/2p2p2/3p2q1/7Q/1P5P/P1PR2P1/5R1K w - - 3 23",
+      "setup_uci": "h4h7",
+      "fen": "r3rk2/p4p1Q/2p2p2/3p2q1/8/1P5P/P1PR2P1/5R1K b - - 0 23",
+      "source_ordinal": 56046,
+      "row_group": 0,
+      "row_in_group": 56046,
+      "status": "completed",
+      "teacher_move_uci": "g5d2",
+      "reference_pv": [
+        "g5d2",
+        "h7h8",
+        "f8e7"
+      ],
+      "score": {
+        "cp": 550,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50009,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0Z5Ab",
+      "puzzle_id": "0Z5Ab",
+      "game_id": "VNInInUm",
+      "source_before_fen": "8/5pqk/2p2n2/pp1pQ2P/3P2PK/P1P2P2/1P6/8 b - - 2 37",
+      "setup_uci": "f6d7",
+      "fen": "8/3n1pqk/2p5/pp1pQ2P/3P2PK/P1P2P2/1P6/8 w - - 3 38",
+      "source_ordinal": 56058,
+      "row_group": 0,
+      "row_in_group": 56058,
+      "status": "completed",
+      "teacher_move_uci": "e5f5",
+      "reference_pv": [
+        "e5f5",
+        "h7h8",
+        "f5d7"
+      ],
+      "score": {
+        "cp": 495,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50055,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0Z6DD",
+      "puzzle_id": "0Z6DD",
+      "game_id": "z2Iz4FuF",
+      "source_before_fen": "1r4k1/q4r1p/2pp2p1/p3b1N1/Pn2P1n1/Q1N5/1PP3P1/R1B2R1K w - - 0 20",
+      "setup_uci": "f1f7",
+      "fen": "1r4k1/q4R1p/2pp2p1/p3b1N1/Pn2P1n1/Q1N5/1PP3P1/R1B4K b - - 0 20",
+      "source_ordinal": 56083,
+      "row_group": 0,
+      "row_in_group": 56083,
+      "status": "completed",
+      "teacher_move_uci": "g4f2",
+      "reference_pv": [
+        "g4f2",
+        "f7f2"
+      ],
+      "score": {
+        "cp": 334,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": true
+      },
+      "nodes": 50005,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0ZCmP",
+      "puzzle_id": "0ZCmP",
+      "game_id": "CUA7O0Gt",
+      "source_before_fen": "6RR/4p2p/5rpk/p6n/4P1PP/5P2/r7/7K b - - 0 34",
+      "setup_uci": "f6f3",
+      "fen": "6RR/4p2p/6pk/p6n/4P1PP/5r2/r7/7K w - - 0 35",
+      "source_ordinal": 56262,
+      "row_group": 0,
+      "row_in_group": 56262,
+      "status": "completed",
+      "teacher_move_uci": "g4g5",
+      "reference_pv": [
+        "g4g5"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 3191,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0ZKBZ",
+      "puzzle_id": "0ZKBZ",
+      "game_id": "B4uH377c",
+      "source_before_fen": "8/8/2KP1kp1/5p1p/4pN1P/6P1/5n2/8 b - - 1 52",
+      "setup_uci": "f2d3",
+      "fen": "8/8/2KP1kp1/5p1p/4pN1P/3n2P1/8/8 w - - 2 53",
+      "source_ordinal": 56470,
+      "row_group": 0,
+      "row_in_group": 56470,
+      "status": "completed",
+      "teacher_move_uci": "f4d3",
+      "reference_pv": [
+        "f4d3",
+        "e4d3",
+        "d6d7"
+      ],
+      "score": {
+        "cp": 792,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50015,
+      "depth": 21
+    },
+    {
+      "id": "policy-v5-0ZKTH",
+      "puzzle_id": "0ZKTH",
+      "game_id": "mbX1Rgw1",
+      "source_before_fen": "6k1/5ppp/p1Np4/1pnPr3/6P1/P3PK1P/8/2R5 b - - 8 33",
+      "setup_uci": "e5d5",
+      "fen": "6k1/5ppp/p1Np4/1pnr4/6P1/P3PK1P/8/2R5 w - - 0 34",
+      "source_ordinal": 56482,
+      "row_group": 0,
+      "row_in_group": 56482,
+      "status": "completed",
+      "teacher_move_uci": "c6e7",
+      "reference_pv": [
+        "c6e7",
+        "g8f8",
+        "e7d5"
+      ],
+      "score": {
+        "cp": 631,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50043,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0ZRbc",
+      "puzzle_id": "0ZRbc",
+      "game_id": "1huBgbbK",
+      "source_before_fen": "2Rr1rk1/1Q1P2p1/4R3/p3N1qb/8/P4pp1/1PB2PP1/6K1 w - - 0 40",
+      "setup_uci": "c8d8",
+      "fen": "3R1rk1/1Q1P2p1/4R3/p3N1qb/8/P4pp1/1PB2PP1/6K1 b - - 0 40",
+      "source_ordinal": 56664,
+      "row_group": 0,
+      "row_in_group": 56664,
+      "status": "completed",
+      "teacher_move_uci": "g5c1",
+      "reference_pv": [
+        "g5c1",
+        "c2d1",
+        "c1d1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 11671,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0ZadC",
+      "puzzle_id": "0ZadC",
+      "game_id": "ar1pkZ0b",
+      "source_before_fen": "8/3k4/6n1/4PK2/1p1N4/1P5p/8/8 w - - 0 56",
+      "setup_uci": "d4f3",
+      "fen": "8/3k4/6n1/4PK2/1p6/1P3N1p/8/8 b - - 1 56",
+      "source_ordinal": 56875,
+      "row_group": 0,
+      "row_in_group": 56875,
+      "status": "completed",
+      "teacher_move_uci": "g6h4",
+      "reference_pv": [
+        "g6h4",
+        "f5g4",
+        "h4f3"
+      ],
+      "score": {
+        "cp": 515,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50030,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0ZcMH",
+      "puzzle_id": "0ZcMH",
+      "game_id": "nI0wE0J3",
+      "source_before_fen": "5r2/2b5/2N1R2p/6pk/8/1P4PP/r1P2PK1/8 b - - 4 40",
+      "setup_uci": "a2c2",
+      "fen": "5r2/2b5/2N1R2p/6pk/8/1P4PP/2r2PK1/8 w - - 0 41",
+      "source_ordinal": 56909,
+      "row_group": 0,
+      "row_in_group": 56909,
+      "status": "completed",
+      "teacher_move_uci": "g3g4",
+      "reference_pv": [
+        "g3g4",
+        "h5h4",
+        "e6h6"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 11511,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0ZdDA",
+      "puzzle_id": "0ZdDA",
+      "game_id": "8FjGjCAZ",
+      "source_before_fen": "4r3/1k6/1p1P3p/6p1/6q1/1P6/1K1Qp1P1/4R3 b - - 0 39",
+      "setup_uci": "b7c8",
+      "fen": "2k1r3/8/1p1P3p/6p1/6q1/1P6/1K1Qp1P1/4R3 w - - 1 40",
+      "source_ordinal": 56930,
+      "row_group": 0,
+      "row_in_group": 56930,
+      "status": "completed",
+      "teacher_move_uci": "e1c1",
+      "reference_pv": [
+        "e1c1",
+        "c8b8"
+      ],
+      "score": {
+        "cp": 500,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50038,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0ZjRI",
+      "puzzle_id": "0ZjRI",
+      "game_id": "hiq8mzcJ",
+      "source_before_fen": "3r4/p2r3k/2p3pp/8/2q5/4Q1P1/PBP2PK1/3R4 b - - 1 35",
+      "setup_uci": "c4c2",
+      "fen": "3r4/p2r3k/2p3pp/8/8/4Q1P1/PBq2PK1/3R4 w - - 0 36",
+      "source_ordinal": 57100,
+      "row_group": 0,
+      "row_in_group": 57100,
+      "status": "completed",
+      "teacher_move_uci": "d1d7",
+      "reference_pv": [
+        "d1d7",
+        "d8d7"
+      ],
+      "score": {
+        "cp": 825,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50014,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0ZqRz",
+      "puzzle_id": "0ZqRz",
+      "game_id": "sLxnA5IE",
+      "source_before_fen": "r3k2r/5pp1/p1p1p2p/3p4/8/2Nqb3/PPb2QPP/R3NR1K w kq - 2 19",
+      "setup_uci": "f2c2",
+      "fen": "r3k2r/5pp1/p1p1p2p/3p4/8/2Nqb3/PPQ3PP/R3NR1K b kq - 0 19",
+      "source_ordinal": 57276,
+      "row_group": 0,
+      "row_in_group": 57276,
+      "status": "completed",
+      "teacher_move_uci": "d3f1",
+      "reference_pv": [
+        "d3f1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 11031,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0ZsEC",
+      "puzzle_id": "0ZsEC",
+      "game_id": "9DYmkYOS",
+      "source_before_fen": "3r1rk1/pbp2pnp/1p2pqp1/8/2PR1P1N/P1N4P/1P3Q2/1K3BR1 w - - 1 24",
+      "setup_uci": "c3e4",
+      "fen": "3r1rk1/pbp2pnp/1p2pqp1/8/2PRNP1N/P6P/1P3Q2/1K3BR1 b - - 2 24",
+      "source_ordinal": 57321,
+      "row_group": 0,
+      "row_in_group": 57321,
+      "status": "completed",
+      "teacher_move_uci": "f6d4",
+      "reference_pv": [
+        "f6d4",
+        "f2d4",
+        "d8d4"
+      ],
+      "score": {
+        "cp": 745,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50015,
+      "depth": 18
+    },
+    {
+      "id": "policy-v5-0aiC6",
+      "puzzle_id": "0aiC6",
+      "game_id": "EgFqY8lv",
+      "source_before_fen": "4r1k1/ppp2ppp/1q4b1/8/Q2N4/2P2Bn1/PP3PPP/R5K1 b - - 1 22",
+      "setup_uci": "g3e4",
+      "fen": "4r1k1/ppp2ppp/1q4b1/8/Q2Nn3/2P2B2/PP3PPP/R5K1 w - - 2 23",
+      "source_ordinal": 58678,
+      "row_group": 0,
+      "row_in_group": 58678,
+      "status": "completed",
+      "teacher_move_uci": "a4e8",
+      "reference_pv": [
+        "a4e8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9800,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0andn",
+      "puzzle_id": "0andn",
+      "game_id": "jUVlxL1W",
+      "source_before_fen": "8/5p2/3k1pp1/2pP3p/p1P1P2P/Pr1RK1P1/8/8 b - - 4 47",
+      "setup_uci": "b3d3",
+      "fen": "8/5p2/3k1pp1/2pP3p/p1P1P2P/P2rK1P1/8/8 w - - 0 48",
+      "source_ordinal": 58815,
+      "row_group": 0,
+      "row_in_group": 58815,
+      "status": "completed",
+      "teacher_move_uci": "e3d3",
+      "reference_pv": [
+        "e3d3",
+        "g6g5"
+      ],
+      "score": {
+        "cp": 100,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50038,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0awF2",
+      "puzzle_id": "0awF2",
+      "game_id": "6MLqMULi",
+      "source_before_fen": "2r3k1/pp1r1p1p/1n4p1/5N2/2B5/1P5P/P4PP1/R3R1K1 b - - 0 22",
+      "setup_uci": "b6c4",
+      "fen": "2r3k1/pp1r1p1p/6p1/5N2/2n5/1P5P/P4PP1/R3R1K1 w - - 0 23",
+      "source_ordinal": 59045,
+      "row_group": 0,
+      "row_in_group": 59045,
+      "status": "completed",
+      "teacher_move_uci": "f5e7",
+      "reference_pv": [
+        "f5e7",
+        "d7e7",
+        "e1e7"
+      ],
+      "score": {
+        "cp": 612,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50017,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0bFlG",
+      "puzzle_id": "0bFlG",
+      "game_id": "fM9l6GAR",
+      "source_before_fen": "4r1k1/p4ppp/3q4/4r3/2pp4/1PQbPB1P/P2R1PP1/3R2K1 w - - 0 28",
+      "setup_uci": "e3d4",
+      "fen": "4r1k1/p4ppp/3q4/4r3/2pP4/1PQb1B1P/P2R1PP1/3R2K1 b - - 0 28",
+      "source_ordinal": 59541,
+      "row_group": 0,
+      "row_in_group": 59541,
+      "status": "completed",
+      "teacher_move_uci": "e5e1",
+      "reference_pv": [
+        "e5e1",
+        "d1e1",
+        "e8e1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 22988,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0bV5t",
+      "puzzle_id": "0bV5t",
+      "game_id": "F6f7Xa99",
+      "source_before_fen": "7r/ppp1n1p1/1k1pN3/4p3/2Q1P2q/2PP4/PP1N4/2K5 b - - 7 29",
+      "setup_uci": "c7c5",
+      "fen": "7r/pp2n1p1/1k1pN3/2p1p3/2Q1P2q/2PP4/PP1N4/2K5 w - - 0 30",
+      "source_ordinal": 59896,
+      "row_group": 0,
+      "row_in_group": 59896,
+      "status": "completed",
+      "teacher_move_uci": "c4b3",
+      "reference_pv": [
+        "c4b3",
+        "b6c6"
+      ],
+      "score": {
+        "cp": 417,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50024,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0bYma",
+      "puzzle_id": "0bYma",
+      "game_id": "QtR4hrRw",
+      "source_before_fen": "R7/P7/r5nk/4pKp1/4P1Pp/7P/5P1B/8 w - - 21 53",
+      "setup_uci": "h2e5",
+      "fen": "R7/P7/r5nk/4BKp1/4P1Pp/7P/5P2/8 b - - 0 53",
+      "source_ordinal": 59985,
+      "row_group": 0,
+      "row_in_group": 59985,
+      "status": "completed",
+      "teacher_move_uci": "g6e7",
+      "reference_pv": [
+        "g6e7"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 4169,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0bsLD",
+      "puzzle_id": "0bsLD",
+      "game_id": "4kr8bTGJ",
+      "source_before_fen": "5r1k/p2Q2bp/1pP5/6p1/2B5/2P2PqP/PP4P1/4R1K1 w - - 1 30",
+      "setup_uci": "c6c7",
+      "fen": "5r1k/p1PQ2bp/1p6/6p1/2B5/2P2PqP/PP4P1/4R1K1 b - - 0 30",
+      "source_ordinal": 60456,
+      "row_group": 0,
+      "row_in_group": 60456,
+      "status": "completed",
+      "teacher_move_uci": "g3e1",
+      "reference_pv": [
+        "g3e1",
+        "c4f1"
+      ],
+      "score": {
+        "cp": 627,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50018,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0btmd",
+      "puzzle_id": "0btmd",
+      "game_id": "dV3OvThv",
+      "source_before_fen": "2k2r2/ppp5/2n5/6N1/P1R1p1K1/5BP1/7r/R7 w - - 0 36",
+      "setup_uci": "f3e4",
+      "fen": "2k2r2/ppp5/2n5/6N1/P1R1B1K1/6P1/7r/R7 b - - 0 36",
+      "source_ordinal": 60490,
+      "row_group": 0,
+      "row_in_group": 60490,
+      "status": "completed",
+      "teacher_move_uci": "c6e5",
+      "reference_pv": [
+        "c6e5"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9558,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0c28k",
+      "puzzle_id": "0c28k",
+      "game_id": "q3SywAL9",
+      "source_before_fen": "8/7p/5k2/1p1p2pP/6K1/P1P5/8/8 b - - 1 41",
+      "setup_uci": "f6e5",
+      "fen": "8/7p/8/1p1pk1pP/6K1/P1P5/8/8 w - - 2 42",
+      "source_ordinal": 60696,
+      "row_group": 0,
+      "row_in_group": 60696,
+      "status": "completed",
+      "teacher_move_uci": "g4g5",
+      "reference_pv": [
+        "g4g5",
+        "e5e4"
+      ],
+      "score": {
+        "cp": 377,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50008,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0cGsW",
+      "puzzle_id": "0cGsW",
+      "game_id": "1Ckf7oLO",
+      "source_before_fen": "6k1/4p2p/3pR1p1/B2nb3/2B5/7P/7r/6K1 b - - 4 36",
+      "setup_uci": "d5e3",
+      "fen": "6k1/4p2p/3pR1p1/B3b3/2B5/4n2P/7r/6K1 w - - 5 37",
+      "source_ordinal": 61059,
+      "row_group": 0,
+      "row_in_group": 61059,
+      "status": "completed",
+      "teacher_move_uci": "e6g6",
+      "reference_pv": [
+        "e6g6",
+        "g8h8",
+        "g6g8"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 10814,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0cWhG",
+      "puzzle_id": "0cWhG",
+      "game_id": "OMQPbDzn",
+      "source_before_fen": "1r4k1/4b1pp/p1p1pp2/2Pp4/P3PQ2/nr6/6PP/R2N2K1 w - - 0 26",
+      "setup_uci": "a1a3",
+      "fen": "1r4k1/4b1pp/p1p1pp2/2Pp4/P3PQ2/Rr6/6PP/3N2K1 b - - 0 26",
+      "source_ordinal": 61448,
+      "row_group": 0,
+      "row_in_group": 61448,
+      "status": "completed",
+      "teacher_move_uci": "e7c5",
+      "reference_pv": [
+        "e7c5",
+        "g1f1",
+        "c5a3"
+      ],
+      "score": {
+        "cp": 484,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50049,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0cjfo",
+      "puzzle_id": "0cjfo",
+      "game_id": "vfdB4sjQ",
+      "source_before_fen": "2r2rk1/p3qpbp/1pn1bnp1/8/2Pp4/BPN2N2/P3BPPP/1R1Q1RK1 w - - 0 14",
+      "setup_uci": "f3d4",
+      "fen": "2r2rk1/p3qpbp/1pn1bnp1/8/2PN4/BPN5/P3BPPP/1R1Q1RK1 b - - 0 14",
+      "source_ordinal": 61768,
+      "row_group": 0,
+      "row_in_group": 61768,
+      "status": "completed",
+      "teacher_move_uci": "e7a3",
+      "reference_pv": [
+        "e7a3",
+        "c3b5",
+        "a3e7"
+      ],
+      "score": {
+        "cp": 649,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50017,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0cjrd",
+      "puzzle_id": "0cjrd",
+      "game_id": "SswmaujW",
+      "source_before_fen": "5k2/p7/3p1P2/1P4Q1/8/1q2RKPP/8/5r2 w - - 4 54",
+      "setup_uci": "f3e2",
+      "fen": "5k2/p7/3p1P2/1P4Q1/8/1q2R1PP/4K3/5r2 b - - 5 54",
+      "source_ordinal": 61774,
+      "row_group": 0,
+      "row_in_group": 61774,
+      "status": "completed",
+      "teacher_move_uci": "b3d1",
+      "reference_pv": [
+        "b3d1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 8095,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0cjyS",
+      "puzzle_id": "0cjyS",
+      "game_id": "TrkPkxHt",
+      "source_before_fen": "5rk1/2b2rpp/p7/P1p5/4N3/8/1P4PP/1Q2B1qK w - - 0 40",
+      "setup_uci": "h1g1",
+      "fen": "5rk1/2b2rpp/p7/P1p5/4N3/8/1P4PP/1Q2B1K1 b - - 0 40",
+      "source_ordinal": 61775,
+      "row_group": 0,
+      "row_in_group": 61775,
+      "status": "completed",
+      "teacher_move_uci": "f7f1",
+      "reference_pv": [
+        "f7f1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 6861,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0csrd",
+      "puzzle_id": "0csrd",
+      "game_id": "ryZ6kWo4",
+      "source_before_fen": "2r3k1/p4p1p/1p4p1/8/3B4/P7/1P1n1PPP/3R2K1 w - - 0 27",
+      "setup_uci": "d1d2",
+      "fen": "2r3k1/p4p1p/1p4p1/8/3B4/P7/1P1R1PPP/6K1 b - - 0 27",
+      "source_ordinal": 62027,
+      "row_group": 0,
+      "row_in_group": 62027,
+      "status": "completed",
+      "teacher_move_uci": "c8c1",
+      "reference_pv": [
+        "c8c1",
+        "d2d1",
+        "c1d1"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 9443,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0d7JW",
+      "puzzle_id": "0d7JW",
+      "game_id": "Wul4iZeT",
+      "source_before_fen": "3r1rk1/4ppbp/1qN2np1/1p1P4/2p5/P6P/1PBQ1PP1/1R2R1K1 b - - 2 24",
+      "setup_uci": "d8d5",
+      "fen": "5rk1/4ppbp/1qN2np1/1p1r4/2p5/P6P/1PBQ1PP1/1R2R1K1 w - - 0 25",
+      "source_ordinal": 62362,
+      "row_group": 0,
+      "row_in_group": 62362,
+      "status": "completed",
+      "teacher_move_uci": "c6e7",
+      "reference_pv": [
+        "c6e7",
+        "g8h8",
+        "e7d5"
+      ],
+      "score": {
+        "cp": 702,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50012,
+      "depth": 17
+    },
+    {
+      "id": "policy-v5-0d8Vf",
+      "puzzle_id": "0d8Vf",
+      "game_id": "0KbOIfXz",
+      "source_before_fen": "N3k3/4P3/4K3/8/8/6P1/1p6/8 b - - 0 55",
+      "setup_uci": "b2b1q",
+      "fen": "N3k3/4P3/4K3/8/8/6P1/8/1q6 w - - 0 56",
+      "source_ordinal": 62398,
+      "row_group": 0,
+      "row_in_group": 62398,
+      "status": "completed",
+      "teacher_move_uci": "a8c7",
+      "reference_pv": [
+        "a8c7"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 1715,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0dLsN",
+      "puzzle_id": "0dLsN",
+      "game_id": "YkzfEHFC",
+      "source_before_fen": "r1b1r1k1/p1pnqpb1/1p3nB1/4p2p/7P/1QP1PNB1/PP1N1PP1/R3K2R w KQ - 0 13",
+      "setup_uci": "f3e5",
+      "fen": "r1b1r1k1/p1pnqpb1/1p3nB1/4N2p/7P/1QP1P1B1/PP1N1PP1/R3K2R b KQ - 0 13",
+      "source_ordinal": 62730,
+      "row_group": 0,
+      "row_in_group": 62730,
+      "status": "completed",
+      "teacher_move_uci": "d7e5",
+      "reference_pv": [
+        "d7e5",
+        "g3e5",
+        "c8e6"
+      ],
+      "score": {
+        "cp": 356,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50076,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0dVlo",
+      "puzzle_id": "0dVlo",
+      "game_id": "ZcWIRZZe",
+      "source_before_fen": "7Q/2p1kp2/1p5p/2p2Kp1/2P3P1/1P1P1P2/8/5q2 w - - 5 40",
+      "setup_uci": "h8h6",
+      "fen": "8/2p1kp2/1p5Q/2p2Kp1/2P3P1/1P1P1P2/8/5q2 b - - 0 40",
+      "source_ordinal": 63001,
+      "row_group": 0,
+      "row_in_group": 63001,
+      "status": "completed",
+      "teacher_move_uci": "f1f3",
+      "reference_pv": [
+        "f1f3",
+        "f5g5",
+        "f7f6"
+      ],
+      "score": {
+        "cp": 1005,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50053,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0dXhf",
+      "puzzle_id": "0dXhf",
+      "game_id": "sLhFu1oo",
+      "source_before_fen": "6k1/8/pB3KPr/P7/8/8/8/8 b - - 8 54",
+      "setup_uci": "g8h8",
+      "fen": "7k/8/pB3KPr/P7/8/8/8/8 w - - 9 55",
+      "source_ordinal": 63049,
+      "row_group": 0,
+      "row_in_group": 63049,
+      "status": "completed",
+      "teacher_move_uci": "f6f7",
+      "reference_pv": [
+        "f6f7",
+        "h6h7",
+        "g6h7"
+      ],
+      "score": {
+        "cp": 732,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50011,
+      "depth": 21
+    },
+    {
+      "id": "policy-v5-0dZtU",
+      "puzzle_id": "0dZtU",
+      "game_id": "Z31N12az",
+      "source_before_fen": "3r2k1/1b3pp1/p1q1p2p/1pP1P3/1P3Q2/5RP1/4P2P/1BRr2K1 w - - 3 26",
+      "setup_uci": "c1d1",
+      "fen": "3r2k1/1b3pp1/p1q1p2p/1pP1P3/1P3Q2/5RP1/4P2P/1B1R2K1 b - - 0 26",
+      "source_ordinal": 63109,
+      "row_group": 0,
+      "row_in_group": 63109,
+      "status": "completed",
+      "teacher_move_uci": "d8d1",
+      "reference_pv": [
+        "d8d1",
+        "g1f2",
+        "d1b1"
+      ],
+      "score": {
+        "cp": 498,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50024,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0e4uh",
+      "puzzle_id": "0e4uh",
+      "game_id": "icpeVQN3",
+      "source_before_fen": "8/8/8/4p1K1/2Pk3p/8/7P/8 w - - 1 42",
+      "setup_uci": "g5h4",
+      "fen": "8/8/8/4p3/2Pk3K/8/7P/8 b - - 0 42",
+      "source_ordinal": 63866,
+      "row_group": 0,
+      "row_in_group": 63866,
+      "status": "completed",
+      "teacher_move_uci": "e5e4",
+      "reference_pv": [
+        "e5e4",
+        "h4g3"
+      ],
+      "score": {
+        "cp": 600,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50053,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0eHz0",
+      "puzzle_id": "0eHz0",
+      "game_id": "Shv0BhPI",
+      "source_before_fen": "5qk1/8/p3p1Q1/1p1r2P1/1P4nP/P1pP4/2P3P1/2B4K b - - 0 30",
+      "setup_uci": "f8g7",
+      "fen": "6k1/6q1/p3p1Q1/1p1r2P1/1P4nP/P1pP4/2P3P1/2B4K w - - 1 31",
+      "source_ordinal": 64218,
+      "row_group": 0,
+      "row_in_group": 64218,
+      "status": "completed",
+      "teacher_move_uci": "g6e6",
+      "reference_pv": [
+        "g6e6",
+        "g7f7"
+      ],
+      "score": {
+        "cp": 230,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50044,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0eIDy",
+      "puzzle_id": "0eIDy",
+      "game_id": "vQBKWK2u",
+      "source_before_fen": "8/1p6/p1pR2n1/4p1k1/PP2PrB1/N1PPb1KP/3r4/R7 w - - 11 35",
+      "setup_uci": "a3c4",
+      "fen": "8/1p6/p1pR2n1/4p1k1/PPN1PrB1/2PPb1KP/3r4/R7 b - - 12 35",
+      "source_ordinal": 64223,
+      "row_group": 0,
+      "row_in_group": 64223,
+      "status": "completed",
+      "teacher_move_uci": "f4g4",
+      "reference_pv": [
+        "f4g4",
+        "g3f3",
+        "g4g3"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 4,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50020,
+      "depth": 20
+    },
+    {
+      "id": "policy-v5-0eMEY",
+      "puzzle_id": "0eMEY",
+      "game_id": "MdQWXmBx",
+      "source_before_fen": "6Bk/8/5pR1/p6P/Pb1P1p2/4P3/2r2P2/5K2 w - - 0 43",
+      "setup_uci": "h5h6",
+      "fen": "6Bk/8/5pRP/p7/Pb1P1p2/4P3/2r2P2/5K2 b - - 0 43",
+      "source_ordinal": 64323,
+      "row_group": 0,
+      "row_in_group": 64323,
+      "status": "completed",
+      "teacher_move_uci": "f4f3",
+      "reference_pv": [
+        "f4f3",
+        "f1g1",
+        "b4d6"
+      ],
+      "score": {
+        "cp": 563,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50053,
+      "depth": 14
+    },
+    {
+      "id": "policy-v5-0eVWl",
+      "puzzle_id": "0eVWl",
+      "game_id": "9QRKJuyA",
+      "source_before_fen": "r3r1k1/ppp2pp1/3b3p/8/3Bn1q1/3Q1N2/PPP2PP1/3RR1K1 b - - 6 26",
+      "setup_uci": "e4c5",
+      "fen": "r3r1k1/ppp2pp1/3b3p/2n5/3B2q1/3Q1N2/PPP2PP1/3RR1K1 w - - 7 27",
+      "source_ordinal": 64547,
+      "row_group": 0,
+      "row_in_group": 64547,
+      "status": "completed",
+      "teacher_move_uci": "e1e8",
+      "reference_pv": [
+        "e1e8",
+        "a8e8",
+        "d4c5"
+      ],
+      "score": {
+        "cp": 394,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50051,
+      "depth": 13
+    },
+    {
+      "id": "policy-v5-0eVsy",
+      "puzzle_id": "0eVsy",
+      "game_id": "xoi6eGPZ",
+      "source_before_fen": "r2qr1kb/pbpnnp1p/1p1pN1pB/8/2B1P3/P1NP4/1PPQ1PPP/R4RK1 b - - 0 12",
+      "setup_uci": "f7e6",
+      "fen": "r2qr1kb/pbpnn2p/1p1pp1pB/8/2B1P3/P1NP4/1PPQ1PPP/R4RK1 w - - 0 13",
+      "source_ordinal": 64564,
+      "row_group": 0,
+      "row_in_group": 64564,
+      "status": "completed",
+      "teacher_move_uci": "c4e6",
+      "reference_pv": [
+        "c4e6"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 1,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 11272,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0eZJy",
+      "puzzle_id": "0eZJy",
+      "game_id": "j04wsHrC",
+      "source_before_fen": "8/6p1/3q1k1p/p6P/2P1Q3/8/2P2P2/2K5 w - - 4 40",
+      "setup_uci": "e4d5",
+      "fen": "8/6p1/3q1k1p/p2Q3P/2P5/8/2P2P2/2K5 b - - 5 40",
+      "source_ordinal": 64636,
+      "row_group": 0,
+      "row_in_group": 64636,
+      "status": "completed",
+      "teacher_move_uci": "d6d5",
+      "reference_pv": [
+        "d6d5",
+        "c4d5"
+      ],
+      "score": {
+        "cp": 174,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50040,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0ekGi",
+      "puzzle_id": "0ekGi",
+      "game_id": "zhr8DKqf",
+      "source_before_fen": "r4rk1/1pq2ppp/p3pR2/8/P7/1P2P1P1/1B1P3P/3Q2K1 b - - 0 25",
+      "setup_uci": "g7f6",
+      "fen": "r4rk1/1pq2p1p/p3pp2/8/P7/1P2P1P1/1B1P3P/3Q2K1 w - - 0 26",
+      "source_ordinal": 64888,
+      "row_group": 0,
+      "row_in_group": 64888,
+      "status": "completed",
+      "teacher_move_uci": "d1g4",
+      "reference_pv": [
+        "d1g4",
+        "g8h8",
+        "b2f6"
+      ],
+      "score": {
+        "cp": null,
+        "mate": 2,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 12557,
+      "depth": 245
+    },
+    {
+      "id": "policy-v5-0eptT",
+      "puzzle_id": "0eptT",
+      "game_id": "cYXxYw7I",
+      "source_before_fen": "1r2k2r/7p/3pP1pR/q1p1p3/2b1P1P1/2N2P2/1P1Q4/2K4R w k - 1 24",
+      "setup_uci": "d2d6",
+      "fen": "1r2k2r/7p/3QP1pR/q1p1p3/2b1P1P1/2N2P2/1P6/2K4R b k - 0 24",
+      "source_ordinal": 65015,
+      "row_group": 0,
+      "row_in_group": 65015,
+      "status": "completed",
+      "teacher_move_uci": "a5a1",
+      "reference_pv": [
+        "a5a1",
+        "c1d2"
+      ],
+      "score": {
+        "cp": 575,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": true,
+        "upperbound": false
+      },
+      "nodes": 50064,
+      "depth": 15
+    },
+    {
+      "id": "policy-v5-0exna",
+      "puzzle_id": "0exna",
+      "game_id": "N4FwWkrX",
+      "source_before_fen": "7r/2p5/2p3kP/5p2/3P1K1R/4P3/5PP1/8 w - - 5 42",
+      "setup_uci": "f4e5",
+      "fen": "7r/2p5/2p3kP/4Kp2/3P3R/4P3/5PP1/8 b - - 6 42",
+      "source_ordinal": 65216,
+      "row_group": 0,
+      "row_in_group": 65216,
+      "status": "completed",
+      "teacher_move_uci": "g6g5",
+      "reference_pv": [
+        "g6g5",
+        "e5e6",
+        "g5h4"
+      ],
+      "score": {
+        "cp": 264,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50043,
+      "depth": 16
+    },
+    {
+      "id": "policy-v5-0f6Es",
+      "puzzle_id": "0f6Es",
+      "game_id": "OqM62p4Z",
+      "source_before_fen": "2r2k2/2r3pQ/5p1p/4pP2/1p1nN3/q7/6PP/1R3R1K b - - 1 41",
+      "setup_uci": "a3d3",
+      "fen": "2r2k2/2r3pQ/5p1p/4pP2/1p1nN3/3q4/6PP/1R3R1K w - - 2 42",
+      "source_ordinal": 65406,
+      "row_group": 0,
+      "row_in_group": 65406,
+      "status": "completed",
+      "teacher_move_uci": "h7h8",
+      "reference_pv": [
+        "h7h8",
+        "f8f7",
+        "e4d6"
+      ],
+      "score": {
+        "cp": 807,
+        "mate": null,
+        "perspective": "side_to_move",
+        "lowerbound": false,
+        "upperbound": false
+      },
+      "nodes": 50010,
+      "depth": 20
+    }
+  ],
+  "source_labels_sha256": "04ccf7e0161b047318b1c905762f4e078df2c95517e4480534bc29e6b0e5dfc1",
+  "scope": "Source-bound held-out tactical roots and bounded engine references; no teacher continuation entered forecasts."
+}

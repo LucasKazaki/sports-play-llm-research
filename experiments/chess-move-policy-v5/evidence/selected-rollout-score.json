@@ -1,0 +1,29 @@
+{
+  "planned": 128,
+  "status": {
+    "completed": 100,
+    "game_over": 21,
+    "illegal_move": 7
+  },
+  "prefix": {
+    "1": {
+      "teacher_supported": 128,
+      "exact": 97,
+      "all_planned_denominator": 128,
+      "legal_through_ply": 126
+    },
+    "2": {
+      "teacher_supported": 102,
+      "exact": 48,
+      "all_planned_denominator": 128,
+      "legal_through_ply": 101
+    },
+    "3": {
+      "teacher_supported": 72,
+      "exact": 32,
+      "all_planned_denominator": 128,
+      "legal_through_ply": 100
+    }
+  },
+  "raw_sha256": "8908b03047ce29d4d7b48fbbb1d1880a4145c770523960da976f5acfa8aad2c5"
+}

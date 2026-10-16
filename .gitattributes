@@ -36,3 +36,14 @@ reports/chess-matched-check-v1-2026-10-15.md -text
 scripts/chess_matched_check_intake.py text eol=lf
 tests/test_chess_matched_check_intake.py text eol=lf
 tests/test_chess_matched_check_exclusions.py text eol=lf
+
+# October 16 candidate source, protocols and receipts retain their hash-bound bytes.
+experiments/chess-check-balanced-v2/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+experiments/chess-move-policy-v5/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+prototype/chess_tutor_v1/** -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+scripts/chess_check_balanced_v2.py -text
+scripts/chess_move_policy_v5.py -text
+scripts/start-chess-tutor.ps1 -text
+tests/test_chess_check_balanced_v2.py -text
+tests/test_chess_move_policy_v5.py -text
+tests/test_chess_tutor_v1.py -text

@@ -1,0 +1,137 @@
+{
+  "schema": "chess.move-policy.v5",
+  "protocol_sha256": "7cba8468e2220c998fe099048cb5e3d049123b2fcd474fb4ec9ab532028c91ac",
+  "labels_sha256": "04ccf7e0161b047318b1c905762f4e078df2c95517e4480534bc29e6b0e5dfc1",
+  "selection_sha256": "b2c3058ca92dc70a7d070fb9c8eab2297f711e4c27f68371a8d3718c4b9e45f5",
+  "selected_step": 2048,
+  "training": {
+    "optimizer": "AdamW",
+    "learning_rate": 1e-05,
+    "weight_decay": 0.01,
+    "batch_size": 64,
+    "steps": 4096,
+    "checkpoints": [
+      0,
+      256,
+      512,
+      1024,
+      2048,
+      4096
+    ],
+    "seed": 4082051,
+    "gradient_clip": 1,
+    "precision": "FP32 full9m parameters; root-coordinator CUDA only",
+    "presentations": 262144,
+    "seconds_including_evaluation": 113.06154719999176
+  },
+  "runtime": {
+    "python": "3.12.2",
+    "torch": "2.8.0+cu128",
+    "transformers": "5.19.0",
+    "gpu": "NVIDIA GeForce RTX 5080",
+    "peak_cuda_allocated": 1277825536
+  },
+  "finished_at": "2026-10-16T05:55:46.704048+00:00",
+  "limitations": [
+    "Stockfish agreement is bounded teacher agreement, not mathematical chess correctness, playing Elo, teaching ability or broad understanding.",
+    "Source is a tactical puzzle convenience shard; ordinary quiet-game generalization unmeasured and original-pretraining overlap unknown.",
+    "No originalbasecrosspanel delta; primarycomparison is previous-selected starting checkpoint and newselected on identical freshcohort.",
+    "No legalmask rescuing rawforecast; failed/short-reference cases retained in complete denominators.",
+    "Current policies are move-only; explanations require separately tested language and verification components."
+  ],
+  "starting_weights_sha256": "2643e51526335e5a33a67370bf1fa70ddf3c6b2e64b31550ad6ca033f9430a22",
+  "selected_weights_sha256": "5de62c0decaadd8db7d13a24bf0d2b50c77104b80b0b72b35fc833111d143aa1",
+  "results": {
+    "starting": {
+      "holdout": {
+        "count": 512,
+        "encoded_count": 512,
+        "raw_legal_count": 510,
+        "raw_top1_match_count": 384,
+        "raw_top3_match_count": 466,
+        "masked_top1_match_count": 384,
+        "failure_count": 0,
+        "cross_entropy": 0.90224649019558,
+        "model_failure_stop": null,
+        "cross_entropy_count": 512,
+        "elapsed_seconds": 0.5759958999988157,
+        "logits_sha256": "72564cf1e0125abe5134e0af27fb43897584e4ea8e7c97e47a6e3922d33a98f6"
+      },
+      "rollout": {
+        "planned": 128,
+        "status": {
+          "completed": 104,
+          "game_over": 21,
+          "illegal_move": 3
+        },
+        "prefix": {
+          "1": {
+            "teacher_supported": 128,
+            "exact": 92,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 127
+          },
+          "2": {
+            "teacher_supported": 102,
+            "exact": 47,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 104
+          },
+          "3": {
+            "teacher_supported": 72,
+            "exact": 30,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 104
+          }
+        },
+        "raw_sha256": "d19d464e1295dbcf2a90214ed9cc0f74c51dc05122f225bdf13c56e2729e8071"
+      }
+    },
+    "selected": {
+      "holdout": {
+        "count": 512,
+        "encoded_count": 512,
+        "raw_legal_count": 509,
+        "raw_top1_match_count": 389,
+        "raw_top3_match_count": 470,
+        "masked_top1_match_count": 389,
+        "failure_count": 0,
+        "cross_entropy": 0.8323404968284649,
+        "model_failure_stop": null,
+        "cross_entropy_count": 512,
+        "elapsed_seconds": 0.5826788999984274,
+        "logits_sha256": "d5885ba0294db0d9cac6c66691ffc783d33fdc1280c092a7167ce4a17a04e582"
+      },
+      "rollout": {
+        "planned": 128,
+        "status": {
+          "completed": 100,
+          "game_over": 21,
+          "illegal_move": 7
+        },
+        "prefix": {
+          "1": {
+            "teacher_supported": 128,
+            "exact": 97,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 126
+          },
+          "2": {
+            "teacher_supported": 102,
+            "exact": 48,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 101
+          },
+          "3": {
+            "teacher_supported": 72,
+            "exact": 32,
+            "all_planned_denominator": 128,
+            "legal_through_ply": 100
+          }
+        },
+        "raw_sha256": "8908b03047ce29d4d7b48fbbb1d1880a4145c770523960da976f5acfa8aad2c5"
+      }
+    }
+  },
+  "claim_boundary": "Descriptive pilot. Small agreement gain with worse raw legality; no automatic default promotion, Elo, general strength or coaching-quality claim."
+}

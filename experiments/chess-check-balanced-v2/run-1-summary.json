@@ -1,0 +1,81 @@
+{
+  "schema": "chess.check-balanced.v2.interrupted",
+  "failure": {
+    "status": "failed",
+    "completed_updates": 1004,
+    "error": "RuntimeError:resource reserve: commit_headroom_bytes_below_reserve",
+    "elapsed_seconds": 353.39100000000326
+  },
+  "last_periodic_progress": {
+    "phase": "train",
+    "step": 992,
+    "loss": 0.703378438949585,
+    "seconds": 349.39100000000326
+  },
+  "development": [
+    {
+      "step": 0,
+      "schema": "chess.check-balanced.v2",
+      "planned": 256,
+      "confusion": {
+        "tp": 128,
+        "tn": 0,
+        "fp": 128,
+        "fn": 0,
+        "invalid_positive": 0,
+        "invalid_negative": 0
+      },
+      "correct": 128,
+      "pairs_correct": 0,
+      "positive_support": 128,
+      "negative_support": 128,
+      "balanced_accuracy": 0.5,
+      "raw_sha256": "54edb8a55116ca068e3f8b0b18e372598cfe2a45e312813f475401467746e450",
+      "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+    },
+    {
+      "step": 256,
+      "schema": "chess.check-balanced.v2",
+      "planned": 256,
+      "confusion": {
+        "tp": 0,
+        "tn": 128,
+        "fp": 0,
+        "fn": 128,
+        "invalid_positive": 0,
+        "invalid_negative": 0
+      },
+      "correct": 128,
+      "pairs_correct": 0,
+      "positive_support": 128,
+      "negative_support": 128,
+      "balanced_accuracy": 0.5,
+      "raw_sha256": "5d5cb849978d97207e5a6f2c9f7e8d496f03b7479311e082912f950e915adde3",
+      "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+    },
+    {
+      "step": 512,
+      "schema": "chess.check-balanced.v2",
+      "planned": 256,
+      "confusion": {
+        "tp": 45,
+        "tn": 92,
+        "fp": 36,
+        "fn": 83,
+        "invalid_positive": 0,
+        "invalid_negative": 0
+      },
+      "correct": 137,
+      "pairs_correct": 21,
+      "positive_support": 128,
+      "negative_support": 128,
+      "balanced_accuracy": 0.53515625,
+      "raw_sha256": "98be9c96bf689196582a2d2c402a0ee17f936c6c35b6805b5da3048d7c109949",
+      "labels_sha256": "e9b825845dc1c9daad87beb1597ad190ffd2474cc0d520a08fd76b5e55229cd9"
+    }
+  ],
+  "planned": 2304,
+  "holdout_calls": 0,
+  "limits": "Interrupted run; no final selection or heldout result. Raw journals, checkpoints and full outcome ledger retained privately.",
+  "source_sha256": "1d6cfcb10e6ef3b5aecb4526309bc6a8c0c3a6581c10f5225d9a406c68849a25"
+}
