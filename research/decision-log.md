@@ -438,3 +438,7 @@ Job 295fcd04-06d1-4c6e-a3e3-021c45b75b02 reproduced the real CLI payload defect:
 ## October 16: preserve flat policies and isolate the learned check result
 
 The move-policy successors remain unpromoted after mixed or flat heldout results. A new frozen-encoder head reaches458/512 versus235/512 for its untrained baseline, supporting only check discrimination. Keep cached Queen inference disabled after numerical failures and require separate NF4 qualification. [Evidence and next actions](chess-overnight-checkpoint-2026-10-16.md).
+
+## October 16: preserve experimental failures and repeat evidence-led iterations
+
+The user's current steering requires repeated research, plan, implementation and debugging across the UI, backbone, models and data. Keep primary research current before each bounded methodological change. Train1's 20 confirmed updates / 160 backward passes and one unknown micro are resource/debugging evidence only. Preserve its original sources and reserves; require a separately versioned memory qualification before a new run. [Plan](chess-research-radar-2026-10-16.md).

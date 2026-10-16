@@ -1,0 +1,13 @@
+{
+  "schema": "chess.gpu-worker.v1",
+  "started_at": "2026-10-16T08:13:38.336643+00:00",
+  "script": "scripts\\chess_queen_coach_sft_train_v1.py",
+  "arguments_sha256": "3cda19264b7b88b7f1793d8901464b77d138d228d72b06eaeeb5b68f8e774d02",
+  "lock": "C:\\Users\\lucas\\Documents\\Codex\\2026-10-15\\go\\work\\repos\\sports-play-llm-research\\data\\private\\chess-gpu-owner.lock",
+  "status": "failed",
+  "child_pid": 47176,
+  "exit_code": 1,
+  "log": "data\\private\\chess-queen-coach-sft-training-v1\\train-1-worker.log",
+  "child_exited_before_lease_release": true,
+  "elapsed_seconds": 676.3429999999935
+}

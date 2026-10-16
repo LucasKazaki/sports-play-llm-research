@@ -365,3 +365,7 @@ The locally supplied chess-phase handoff was imported without external acquisiti
 ## October 16 overnight chess frontier
 
 See [the current native checkpoint](chess-overnight-checkpoint-2026-10-16.md). Next: qualify the compressed Queen runtime, expose actual authored coaching, freeze fresh no-forward measurements, and prepare a separate local fine-tune. The independently audited check head reaches458/512; broad coaching and commentary acceptance remain open.
+
+## October 16 repeated iteration cycle
+
+Follow the [current research/test/debug plan](chess-research-radar-2026-10-16.md) and [cycle log](chess-iteration-log-2026-10-16.jsonl). The first coaching pilot is closed after a commit-reserve stop, with no selected trained checkpoint or held evaluation. Next: independently review and execute a distinct memory qualification, then condition further training on actual qualification. Keep data provenance, UI clarity, backend reliability, raw model skills and whole-prose evaluation separate.

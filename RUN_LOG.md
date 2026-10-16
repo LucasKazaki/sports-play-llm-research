@@ -685,3 +685,7 @@ Three recent GothamChess videos downloaded privately with source identity, hashe
 ## October 16 native overnight chess checkpoint
 
 Completed source-bound V5, balanced-check retry, V6 legality and encoder-check training/evaluation. Independent audit confirms the latter458/512 result with54 errors remaining. Queen BF16 memory failure and disabled cached path are retained; actual NF4 tiny CUDA test passed. Full-model parity, authored generation and fine-tuning remain active. [Detailed checkpoint](research/chess-overnight-checkpoint-2026-10-16.md).
+
+## October 16: current research refresh and train1 failure closure
+
+Checked current primary chess literature and official UMD research guidance. Current Queen code HEAD and PAWN-8 model SHA still match the pinned local revisions. First coach pilot closed at 20 confirmed updates / 160 backward passes plus one unknown micro, below its fixed commit reserve;zero held-out calls, no selection or post-training checkpoint. Owned tutor server restarted with optional CPU classifier disabled, reducing measured global commit to 33.24 GB; unrelated processes untouched. Separate memory qualification is in preparation. [Research/next cycle](research/chess-research-radar-2026-10-16.md).

@@ -1,0 +1,58 @@
+{
+  "status": "passed_closed_failure_audit",
+  "actual_run_status": "failed",
+  "completed_optimizer_updates": 20,
+  "confirmed_backward_completions": 160,
+  "training_micro_attempts": 161,
+  "unknown_micro_attempt": {
+    "step": 21,
+    "micro": 0,
+    "case_id": "queen-coach-v1:UUSgwJbU:selected",
+    "status": "call_started"
+  },
+  "never_run_remaining_micros": 1887,
+  "last_saved_partial_accumulation": 0,
+  "baseline_development_nll_completed": 64,
+  "baseline_response_token_nll": 2.112202738717412,
+  "baseline_raw_requests": 8,
+  "baseline_raw_statuses": {
+    "completed": 6,
+    "partial": 2
+  },
+  "baseline_counts": {
+    "planned": 8,
+    "raw_best_legal": 7,
+    "accepted_best_legal": 7,
+    "teacher_best_agreement": 7,
+    "complete_eos": 6,
+    "critical_3ply_legal": 7,
+    "critical_prefix_matches": {
+      "1": 7,
+      "2": 3,
+      "3": 2
+    },
+    "recognized_fact_claims": 0,
+    "false_recognized_claims": 0,
+    "grammar_complete_rows": 0,
+    "whole_prose_unscored_rows": 8,
+    "whole_prose_factuality_measured": false,
+    "free_critical_3ply_agreement": 1,
+    "free_best_agreement": 4
+  },
+  "future_raw_not_run": 24,
+  "future_nll_not_run": 192,
+  "held_calls": 0,
+  "selection_exists": false,
+  "final_frozen_storage_accepted": false,
+  "saved_post_training_weights": false,
+  "last_commit_headroom_bytes": 4013944832,
+  "resource_samples": 623,
+  "frozen_source_snapshots": 44,
+  "stable_files": 27,
+  "run_sha256": "9bd4a4c61007eb41e19da523d6965091476e9d6911a10d81219be463ee25092f",
+  "worker_sha256": "8701aba45612b14409db1629d6a195d43dbea55d71ffd7a33a611ea888c4be31",
+  "limits": "No evidence of model gain; no final frozen-storage verification, no selected checkpoint, no saved20-step weights. Unknown21st micro may have reached backward before its post-loss guard.",
+  "new_model_calls": 0,
+  "new_engine_calls": 0,
+  "held_references_opened": false
+}

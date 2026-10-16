@@ -1,0 +1,22 @@
+{
+  "schema": "sportsplay.official-metadata-check.v1",
+  "checked_at": "2026-10-16T08:39:39.1344816Z",
+  "methods": [
+    "git ls-remote official public repository HEAD",
+    "Unauthenticated official public Hugging Face model API"
+  ],
+  "code": {
+    "url": "https://github.com/haolinyang-hlyang/SoccerMaster",
+    "head": "2e5619712d93f634b841aaf37231cd9fceb6b262",
+    "matches_prior_pin": true
+  },
+  "model": {
+    "url": "https://huggingface.co/xleprime/SoccerMaster",
+    "sha": "0d94573662dbd678df22aa5c61ae77f474b939c9",
+    "last_modified": "2026-05-03T13:07:16Z",
+    "card_license": "apache-2.0",
+    "gated": false,
+    "matches_prior_pin": true
+  },
+  "scope": "Metadata only; no clone, weights, code execution or blanket component/media rights conclusion. Supplements the earlier browser-tool access limits, with no new soccer capability."
+}

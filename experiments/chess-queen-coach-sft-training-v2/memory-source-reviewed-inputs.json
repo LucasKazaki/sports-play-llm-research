@@ -1,0 +1,27 @@
+[
+  {
+    "path": "scripts/chess_queen_coach_sft_runtime_v2.py",
+    "sha256": "7f28693ae26c82575539c603783fc37c0a35a6fcf43e281b99fe02dc6d105349",
+    "bytes": 12874
+  },
+  {
+    "path": "tests/test_chess_queen_coach_sft_runtime_v2.py",
+    "sha256": "d5fce78a9fc7ed58db393e44338c0d943687520ef0226635504b9862c328c99d",
+    "bytes": 4321
+  },
+  {
+    "path": "experiments/chess-queen-coach-sft-training-v2/memory_qualification_v1.py",
+    "sha256": "8da53d0f3efa64659324c23a284bdfaa9d919542269ea17a4327a0d1a13402c1",
+    "bytes": 11333
+  },
+  {
+    "path": "tests/test_chess_queen_coach_memory_qualification_v1.py",
+    "sha256": "6c2ff599844a0ff8d807ff58eef4b9a213b440233b55e51bb8adb0f334dc352a",
+    "bytes": 3333
+  },
+  {
+    "path": "experiments/chess-queen-coach-sft-training-v2/memory-protocol.json",
+    "sha256": "418e4b13fed39d821b30ebc7b44a4b1ccc1da4661eb4e5b202688d975ec2fc69",
+    "bytes": 4891
+  }
+]
