@@ -432,3 +432,32 @@ at this record. All512 reserved games remain excluded and current16 held roots
 have zero model calls. The reviewed 15-file worker subset preserves exact bytes;
 private inputs, raw answers and weights are excluded. No trained profile, formal
 Archit/UMD promotion or broad coaching acceptance is granted. Continue to22UTC.
+
+
+## October 16: completed daytime training and failed fresh comparison
+
+The direct route completed192 additional updates and1,536 backward presentations
+from original selected64 with a fresh optimizer. Independent closed review
+accepted the training, saved adapter changes and frozen development selection of
+new step192. On six raw responses from only two development games, recognized
+false immediate facts fell from5/11 (plus1unknown) to0/12. FREE three-ply matches
+remained2/2. Supplied first moves and template loss are not independent chess or
+whole-prose coaching success.
+
+The separate96-response comparison failed in the PID-only process observer:
+baseline9completed/1unknown/38notrun; selected48notrun. Ten EOS raw files were
+retained, but the tenth lacks accepted postprocessing/frozen-state completion.
+No references were opened for scoring and no matched gain exists. The trigger's
+exact PID/identity/branch was not logged. Known direct EXIT, empty owned job and
+free shared lease were recorded; no unseen-tree or parent-death proof follows.
+
+The failed16-game scope is spent with no replay; all512 reserve games stay
+excluded from TRAIN. A new16-game/96-response comparison requires separate fresh
+admission, ownership-aware latest exclusions and qualified versioned monitoring.
+The local192 preview remains disabled pending its actual completion/cancellation
+qualification. King-curriculum authored wrapper tests passed22 checks; its old
+390-minute experiment remains unrun. No coaching or institutional promotion.
+Exact aggregate hashes and limits are in
+`research/chess-daytime-training-and-held-failure-2026-10-16.json`. Selected new
+primary reading and input/judge caveats are in
+`research/chess-selected-primary-reading-addendum-2026-10-16.json`. Continue to22UTC.

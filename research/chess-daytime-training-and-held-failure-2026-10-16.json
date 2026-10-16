@@ -1,0 +1,189 @@
+{
+  "schema": "chess.daytime.training-and-held-failure.public.v1",
+  "recorded_at_utc": "2026-10-16T16:27:52.601619+00:00",
+  "scope": "Aggregate internal research record for the user; not formal Archit/UMD candidate promotion.",
+  "training": {
+    "status": "completed_independently_audited",
+    "additional_updates": 192,
+    "backward_presentations": 1536,
+    "distinct_train_games": 512,
+    "warm_start": "original selected64 adapter, fresh optimizer",
+    "warm_start_sha256": "73e632f65d9146c789223ddcd7cbe106041b84aecab25ed9a775efc11bb28e3e",
+    "selected_additional_step": 192,
+    "selected_adapter_sha256": "27d6b171c98a96257e2a267a340bdb981cebc1c5114cd54d87d7973f80ac714b",
+    "adapter_float_values": 1916928,
+    "adapter_tensor_storages": 144,
+    "all_adapter_storages_changed_at48_96_192": true,
+    "all_adapter_values_finite": true,
+    "frozen_storage": {
+      "before": {
+        "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+        "tensor_count": 2268,
+        "bytes_hashed": 3393484936
+      },
+      "after": {
+        "sha256": "a59e491a55b7d60cbce8e924fb711819bfdf1279733c868cdb79fd8f0772565f",
+        "tensor_count": 2268,
+        "bytes_hashed": 3393484936
+      },
+      "identical": true
+    },
+    "elapsed_seconds": 1230.5629999999946,
+    "run_sha256": "b9caef3b60963368c4a7b809d3fdf59a5818149e29558935779750bb7a89d0d0",
+    "selection_sha256": "27baa5c33229dae385b98cbbc131890b0baef883f395b4a6149c064ddbc4276a",
+    "protocol_sha256": "d9b025cb372fcc6e78a797c717998a385d5273c0f127bf468d8503e3d2ff72af",
+    "independent_closed_audit": {
+      "file": "daytime-training-1-closed-review-main.json",
+      "bytes": 28325,
+      "sha256": "7f505338a802b0b6acc5c3b12ac66c0da1784dedcfce4e11daae5d968f005eb4"
+    },
+    "development": [
+      {
+        "additional_update": 0,
+        "raw_development_responses": 6,
+        "raw_development_game_groups": 2,
+        "nll_examples": 96,
+        "nll_game_groups": 32,
+        "nll_supervised_tokens": 5954,
+        "response_token_nll": 0.3174592401703452,
+        "completed_eos": 6,
+        "raw_best_legal": 6,
+        "free_best_agreement": 2,
+        "free_three_ply_agreement": 2,
+        "selected_given_consistency": 3,
+        "selected_joint_immediate_facts_correct": 0,
+        "recognized_immediate_fact_claims": 11,
+        "false_recognized_claims": 5,
+        "unknown_recognized_claims": 1,
+        "selected_conditional_two_reply_agreement": 3
+      },
+      {
+        "additional_update": 48,
+        "raw_development_responses": 6,
+        "raw_development_game_groups": 2,
+        "nll_examples": 96,
+        "nll_game_groups": 32,
+        "nll_supervised_tokens": 5954,
+        "response_token_nll": 0.07054709111423872,
+        "completed_eos": 6,
+        "raw_best_legal": 6,
+        "free_best_agreement": 2,
+        "free_three_ply_agreement": 2,
+        "selected_given_consistency": 4,
+        "selected_joint_immediate_facts_correct": 4,
+        "recognized_immediate_fact_claims": 12,
+        "false_recognized_claims": 0,
+        "unknown_recognized_claims": 0,
+        "selected_conditional_two_reply_agreement": 3
+      },
+      {
+        "additional_update": 96,
+        "raw_development_responses": 6,
+        "raw_development_game_groups": 2,
+        "nll_examples": 96,
+        "nll_game_groups": 32,
+        "nll_supervised_tokens": 5954,
+        "response_token_nll": 0.05419669254432061,
+        "completed_eos": 6,
+        "raw_best_legal": 6,
+        "free_best_agreement": 2,
+        "free_three_ply_agreement": 2,
+        "selected_given_consistency": 4,
+        "selected_joint_immediate_facts_correct": 4,
+        "recognized_immediate_fact_claims": 12,
+        "false_recognized_claims": 0,
+        "unknown_recognized_claims": 0,
+        "selected_conditional_two_reply_agreement": 3
+      },
+      {
+        "additional_update": 192,
+        "raw_development_responses": 6,
+        "raw_development_game_groups": 2,
+        "nll_examples": 96,
+        "nll_game_groups": 32,
+        "nll_supervised_tokens": 5954,
+        "response_token_nll": 0.04980741626149601,
+        "completed_eos": 6,
+        "raw_best_legal": 6,
+        "free_best_agreement": 2,
+        "free_three_ply_agreement": 2,
+        "selected_given_consistency": 4,
+        "selected_joint_immediate_facts_correct": 4,
+        "recognized_immediate_fact_claims": 12,
+        "false_recognized_claims": 0,
+        "unknown_recognized_claims": 0,
+        "selected_conditional_two_reply_agreement": 3
+      }
+    ],
+    "selection_rule": "Prefer6/6 acceptedlegalBEST, elsemostlegal; thenFREE3plyagreement,FREEBESTagreement,lowest96recordtokenNLL,earliestincl0. Require96NLL+6raw complete. Facts do not alter selector.",
+    "resource_samples": 1081,
+    "maximum_observed_sample_gap_seconds": 8.817762,
+    "minimum_physical_bytes": 8656154624,
+    "minimum_commit_headroom_bytes": 7701626880,
+    "minimum_gpu_free_bytes": 10791944192,
+    "limits": [
+      "Six raw responses at each checkpoint represent only two development games. The same development set selected the checkpoint.",
+      "The two FREE three-ply answers were already correct at checkpoint0; this is no demonstrated prediction gain.",
+      "Four supplied first moves are conditioning, not independent prediction. All six first moves are noncaptures.",
+      "The checker measures a narrow immediate check/capture grammar; ordinary prose, strategic why and tutoring quality remain unassessed.",
+      "Archive byte/FP32 inspection proves saved adapter changes. Saved scientific checkpoints were not cold reloaded by this TRAIN phase.",
+      "Resource measurements are sampled. The 3-second policy field is not a continuous guarantee."
+    ]
+  },
+  "held_attempt": {
+    "execution_status": "failed",
+    "audit_status": "passed_audit_of_failed_execution",
+    "planned_responses": 96,
+    "planned_game_groups": 16,
+    "baseline": {
+      "completed": 9,
+      "active_unknown": 1,
+      "not_run": 38
+    },
+    "selected": {
+      "not_run": 48
+    },
+    "generation_requests_started": 10,
+    "retained_raw_eos_files": 10,
+    "tenth_raw_not_an_accepted_completion": true,
+    "selected_generation_requests": 0,
+    "references_opened_for_scoring": false,
+    "scores_created": 0,
+    "matched_gain": null,
+    "error": "Previously absent PID reappeared/reused or became ancestry parent",
+    "actual_trigger_identity_or_branch": "unknown; failing observation was not retained",
+    "source_findings": [
+      "Global bare-PID absence tombstones can reject unrelated numeric reuse.",
+      "The thrown exception omits matching PID, snapshot and role, preventing exact attribution."
+    ],
+    "worker_sha256": "4a2cd6765901fc21a2becbd0c7d66cfd7859d1f8891b83a109b4fceba8f9c21e",
+    "result_sha256": "a68fd168b20c6c6f3bf5e7d2857d0c48c6becbedf6d3aad576ebeb3082520eac",
+    "protocol_sha256": "0077e6fea1763d7e526d9ab923849fbbf0a3800294847c6a68a05a314e1f48ce",
+    "independent_closed_audit": {
+      "file": "daytime-held-1-failure-closed-review.json",
+      "bytes": 18830,
+      "sha256": "1e7c2d2335e0c5f13ff8efbbab8e572e95a05c980c35d1fb5b2432657d020655"
+    },
+    "reservation_scope_amendment": {
+      "file": "daytime-held-1-failure-scope-amendment.json",
+      "bytes": 1517,
+      "sha256": "9fe0541eba280491b071cddd28048705fe54ceb03370f48f502d81ff05a787eb"
+    },
+    "all96_outcomes_retained": true,
+    "known_direct_exit_and_empty_owned_job": true,
+    "root_observed_lease_free": true,
+    "no_unseen_tree_or_parent_death_proof": true,
+    "resource_samples": 164,
+    "maximum_observed_sample_gap_seconds": 8.926817,
+    "minimum_commit_headroom_bytes": 8710172672,
+    "current16_spent_no_replay": true,
+    "all512_excluded_from_training": true,
+    "remaining496": "Not declared evaluation-spent; any new evaluation needs separate fresh admission, latest ownership-aware exclusions and no-prior-forward audit."
+  },
+  "capability_goal_achieved": false,
+  "trained_profile_active": false,
+  "formal_promotion": false,
+  "next": "Versioned process-identity repair and actual qualification, then separately admitted fresh16/96 comparison. Separate disabled research-preview implementation is in progress.",
+  "authority_cutoff_utc": "2026-10-16T22:00:00+00:00",
+  "private_assets_published": false
+}
